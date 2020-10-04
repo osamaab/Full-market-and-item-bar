@@ -1,0 +1,21 @@
+
+/* Class = "UIButton"; normalTitle = "Arabic"; ObjectID = "63a-Hl-thO"; */
+"63a-Hl-thO.normalTitle" = "Arabic";
+
+/* Class = "UILabel"; text = "Welcome!"; ObjectID = "6kF-bf-4th"; */
+"6kF-bf-4th.text" = "Welcome!";
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "Adb-0z-aPb"; */
+"Adb-0z-aPb.normalTitle" = "Sign Up";
+
+/* Class = "UIButton"; normalTitle = "English"; ObjectID = "INI-MK-c5s"; */
+"INI-MK-c5s.normalTitle" = "English";
+
+/* Class = "UILabel"; text = "Select language"; ObjectID = "SDy-cT-G0A"; */
+"SDy-cT-G0A.text" = "Select language";
+
+/* Class = "UIButton"; normalTitle = "Language: English >"; ObjectID = "qgU-YO-GxU"; */
+"qgU-YO-GxU.normalTitle" = "Language: English >";
+
+/* Class = "UIButton"; normalTitle = "Sign In"; ObjectID = "wlK-Tm-p2Y"; */
+"wlK-Tm-p2Y.normalTitle" = "Sign In";

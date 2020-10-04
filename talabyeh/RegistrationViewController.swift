@@ -14,7 +14,8 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         signInButton.layer.borderColor = #colorLiteral(red: 0.0639943555, green: 0.4317309856, blue: 0.2556748986, alpha: 1)
@@ -26,6 +27,13 @@ class RegistrationViewController: UIViewController {
         signUpButton.layer.cornerRadius = 10
 
     }
+    
+    @IBAction func changeLanguage(_ sender: Any)
+    {
+        let changeLanguageVC = (self.storyboard?.instantiateViewController(withIdentifier: "ChangeLanguage"))!
+        self.present(changeLanguageVC, animated: true, completion: nil)
+    }
+    
 
 
 }
