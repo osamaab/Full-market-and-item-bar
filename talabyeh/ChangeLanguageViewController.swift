@@ -10,10 +10,26 @@ import UIKit
 import LanguageManager_iOS
 
 class ChangeLanguageViewController: UIViewController {
+    
+    @IBOutlet weak var selectLanguageLabel: UILabel!
+    @IBOutlet weak var englishButton: UIButton!
+    @IBOutlet weak var arabicButton: UIButton!
+    
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        if LanguageManager.shared.currentLanguage == .ar{
+            englishButton.contentHorizontalAlignment = .right
+            arabicButton.contentHorizontalAlignment = .right
+            
+            selectLanguageLabel.font = UIFont(name: "DIN-NEXT™-ARABIC-MEDIUM", size: 17)
+            englishButton.titleLabel?.font = UIFont(name: "DIN-NEXT™-ARABIC-MEDIUM", size: 17)
+            arabicButton.titleLabel?.font = UIFont(name: "DIN-NEXT™-ARABIC-MEDIUM", size: 17)
+
+            
+        }
 
     }
     

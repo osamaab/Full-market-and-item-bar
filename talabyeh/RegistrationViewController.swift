@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController: UIViewController
+{
     
+    @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var changeLanguageButton: UIButton!
     
 
     override func viewDidLoad()
@@ -25,6 +29,13 @@ class RegistrationViewController: UIViewController {
         signUpButton.layer.borderColor = #colorLiteral(red: 0.0639943555, green: 0.4317309856, blue: 0.2556748986, alpha: 1)
         signUpButton.layer.borderWidth = 1
         signUpButton.layer.cornerRadius = 10
+        
+        if LanguageManager.shared.currentLanguage == .ar{
+            welcomeLabel.font = UIFont(name: "DIN-NEXT™-ARABIC-MEDIUM", size: 17)
+            signUpButton.titleLabel?.font = UIFont(name: "DIN-NEXT™-ARABIC-MEDIUM", size: 17)
+            signUpButton.titleLabel?.font = UIFont(name: "DIN-NEXT™-ARABIC-MEDIUM", size: 17)
+            changeLanguageButton.titleLabel?.font = UIFont(name: "DIN-NEXT™-ARABIC-MEDIUM", size: 17)
+        }
 
     }
     

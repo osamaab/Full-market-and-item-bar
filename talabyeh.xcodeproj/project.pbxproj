@@ -10,6 +10,7 @@
 		1DB82D71E9947F4E954F2EAB /* Pods_talabyeh_talabyehUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0E2B1636889447B2D74FE0 /* Pods_talabyeh_talabyehUITests.framework */; };
 		2A1EE79FF68369F4CA5D3A77 /* Pods_talabyehTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05FE4E8241006F1C906DB477 /* Pods_talabyehTests.framework */; };
 		CC20C5899017F17D235D43A6 /* Pods_talabyeh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC09FED4C8A6910C1D7CDCF /* Pods_talabyeh.framework */; };
+		F939E724252B39E1008BFE84 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = F939E723252B39E1008BFE84 /* Fonts */; };
 		F96B85202529A05800CEDCF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B851F2529A05800CEDCF8 /* AppDelegate.swift */; };
 		F96B85222529A05800CEDCF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B85212529A05800CEDCF8 /* SceneDelegate.swift */; };
 		F96B85242529A05800CEDCF8 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B85232529A05800CEDCF8 /* RegistrationViewController.swift */; };
@@ -49,6 +50,7 @@
 		8198DD651C626992FF8ADE61 /* Pods-talabyeh-talabyehUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talabyeh-talabyehUITests.release.xcconfig"; path = "Target Support Files/Pods-talabyeh-talabyehUITests/Pods-talabyeh-talabyehUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AAC1EEA6F124DCF800E38E71 /* Pods-talabyehTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talabyehTests.debug.xcconfig"; path = "Target Support Files/Pods-talabyehTests/Pods-talabyehTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD0E2B1636889447B2D74FE0 /* Pods_talabyeh_talabyehUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talabyeh_talabyehUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F939E723252B39E1008BFE84 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		F96B851C2529A05700CEDCF8 /* talabyeh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = talabyeh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96B851F2529A05800CEDCF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F96B85212529A05800CEDCF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				F96B85232529A05800CEDCF8 /* RegistrationViewController.swift */,
 				F96B85252529A05800CEDCF8 /* Main.storyboard */,
 				F96B854F2529B67200CEDCF8 /* ChangeLanguageViewController.swift */,
+				F939E723252B39E1008BFE84 /* Fonts */,
 				F96B85282529A05A00CEDCF8 /* Assets.xcassets */,
 				F96B852A2529A05A00CEDCF8 /* LaunchScreen.storyboard */,
 				F96B852D2529A05A00CEDCF8 /* Info.plist */,
@@ -287,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F939E724252B39E1008BFE84 /* Fonts in Resources */,
 				F96B852C2529A05A00CEDCF8 /* LaunchScreen.storyboard in Resources */,
 				F9F842F5252A2BAD00593C8A /* Localizable.strings in Resources */,
 				F96B85292529A05A00CEDCF8 /* Assets.xcassets in Resources */,
