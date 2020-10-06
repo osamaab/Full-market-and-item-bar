@@ -24,17 +24,26 @@ class RegistrationViewController: UIViewController
         
         signInButton.layer.borderColor = #colorLiteral(red: 0.0639943555, green: 0.4317309856, blue: 0.2556748986, alpha: 1)
         signInButton.layer.borderWidth = 1
-        signInButton.layer.cornerRadius = 10
+        //signInButton.layer.cornerRadius = 10
         
         signUpButton.layer.borderColor = #colorLiteral(red: 0.0639943555, green: 0.4317309856, blue: 0.2556748986, alpha: 1)
         signUpButton.layer.borderWidth = 1
-        signUpButton.layer.cornerRadius = 10
+        //signUpButton.layer.cornerRadius = 10
         
+
+        for family: String in UIFont.familyNames
+        {
+            print(family)
+            for names: String in UIFont.fontNames(forFamilyName: family)
+            {
+                print("== \(names)")
+            }
+        }
         if LanguageManager.shared.currentLanguage == .ar{
-            welcomeLabel.font = UIFont(name: "DIN-NEXT™-ARABIC-MEDIUM", size: 17)
-            signUpButton.titleLabel?.font = UIFont(name: "DIN-NEXT™-ARABIC-MEDIUM", size: 17)
-            signUpButton.titleLabel?.font = UIFont(name: "DIN-NEXT™-ARABIC-MEDIUM", size: 17)
-            changeLanguageButton.titleLabel?.font = UIFont(name: "DIN-NEXT™-ARABIC-MEDIUM", size: 17)
+            welcomeLabel.font = UIFont(name: "DINNextLTW23-Light", size: 28)
+            signUpButton.titleLabel?.font = UIFont(name: "DINNextLTW23-Regular", size: 17)
+            signInButton.titleLabel?.font = UIFont(name: "DINNextLTW23-Regular", size: 17)
+            changeLanguageButton.titleLabel?.font = UIFont(name: "DINNextLTW23-Regular", size: 17)
         }
 
     }

@@ -10,7 +10,21 @@
 		1DB82D71E9947F4E954F2EAB /* Pods_talabyeh_talabyehUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0E2B1636889447B2D74FE0 /* Pods_talabyeh_talabyehUITests.framework */; };
 		2A1EE79FF68369F4CA5D3A77 /* Pods_talabyehTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05FE4E8241006F1C906DB477 /* Pods_talabyehTests.framework */; };
 		CC20C5899017F17D235D43A6 /* Pods_talabyeh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC09FED4C8A6910C1D7CDCF /* Pods_talabyeh.framework */; };
-		F939E724252B39E1008BFE84 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = F939E723252B39E1008BFE84 /* Fonts */; };
+		F9571B9F252CEA700090C285 /* SFUIDisplay-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B8F252CEA700090C285 /* SFUIDisplay-Heavy.ttf */; };
+		F9571BA0252CEA700090C285 /* SFUIDisplay-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B90252CEA700090C285 /* SFUIDisplay-Light.ttf */; };
+		F9571BA1252CEA700090C285 /* SFUIDisplay-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B91252CEA700090C285 /* SFUIDisplay-Semibold.ttf */; };
+		F9571BA2252CEA700090C285 /* SFUIDisplay-Ultralight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B92252CEA700090C285 /* SFUIDisplay-Ultralight.ttf */; };
+		F9571BA3252CEA700090C285 /* SFUIDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B93252CEA700090C285 /* SFUIDisplay-Bold.ttf */; };
+		F9571BA4252CEA700090C285 /* SFUIDisplay-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B94252CEA700090C285 /* SFUIDisplay-Thin.ttf */; };
+		F9571BA5252CEA700090C285 /* SFUIDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B95252CEA700090C285 /* SFUIDisplay-Medium.ttf */; };
+		F9571BA6252CEA700090C285 /* SFUIDisplay-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B96252CEA700090C285 /* SFUIDisplay-Black.ttf */; };
+		F9571BA7252CEA700090C285 /* DIN NEXT™ ARABIC MEDIUM .otf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B98252CEA700090C285 /* DIN NEXT™ ARABIC MEDIUM .otf */; };
+		F9571BA8252CEA700090C285 /* DIN NEXT™ ARABIC BLACK.otf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B99252CEA700090C285 /* DIN NEXT™ ARABIC BLACK.otf */; };
+		F9571BA9252CEA700090C285 /* DIN NEXT™ ARABIC ULTRALIGHT.otf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B9A252CEA700090C285 /* DIN NEXT™ ARABIC ULTRALIGHT.otf */; };
+		F9571BAA252CEA700090C285 /* DIN NEXT™ ARABIC REGULAR.otf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B9B252CEA700090C285 /* DIN NEXT™ ARABIC REGULAR.otf */; };
+		F9571BAB252CEA700090C285 /* DIN NEXT™ ARABIC HEAVY.otf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B9C252CEA700090C285 /* DIN NEXT™ ARABIC HEAVY.otf */; };
+		F9571BAC252CEA700090C285 /* DIN NEXT™ ARABIC BOLD.otf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B9D252CEA700090C285 /* DIN NEXT™ ARABIC BOLD.otf */; };
+		F9571BAD252CEA700090C285 /* DIN NEXT™ ARABIC LIGHT.otf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B9E252CEA700090C285 /* DIN NEXT™ ARABIC LIGHT.otf */; };
 		F96B85202529A05800CEDCF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B851F2529A05800CEDCF8 /* AppDelegate.swift */; };
 		F96B85222529A05800CEDCF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B85212529A05800CEDCF8 /* SceneDelegate.swift */; };
 		F96B85242529A05800CEDCF8 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B85232529A05800CEDCF8 /* RegistrationViewController.swift */; };
@@ -20,6 +34,10 @@
 		F96B85372529A05A00CEDCF8 /* talabyehTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B85362529A05A00CEDCF8 /* talabyehTests.swift */; };
 		F96B85422529A05A00CEDCF8 /* talabyehUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B85412529A05A00CEDCF8 /* talabyehUITests.swift */; };
 		F96B85502529B67200CEDCF8 /* ChangeLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B854F2529B67200CEDCF8 /* ChangeLanguageViewController.swift */; };
+		F9D3113C252CF0C400429F8B /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = F9D3113B252CF0C400429F8B /* Fonts */; };
+		F9EA0496252C83E800DC288B /* MainSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA0495252C83E800DC288B /* MainSignUpViewController.swift */; };
+		F9EA049B252C858500DC288B /* RoundedEdgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA049A252C858500DC288B /* RoundedEdgesView.swift */; };
+		F9EA04F4252C90E500DC288B /* RoundedEdgesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA04F3252C90E500DC288B /* RoundedEdgesButton.swift */; };
 		F9F842F5252A2BAD00593C8A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9F842F7252A2BAD00593C8A /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +68,21 @@
 		8198DD651C626992FF8ADE61 /* Pods-talabyeh-talabyehUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talabyeh-talabyehUITests.release.xcconfig"; path = "Target Support Files/Pods-talabyeh-talabyehUITests/Pods-talabyeh-talabyehUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AAC1EEA6F124DCF800E38E71 /* Pods-talabyehTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talabyehTests.debug.xcconfig"; path = "Target Support Files/Pods-talabyehTests/Pods-talabyehTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD0E2B1636889447B2D74FE0 /* Pods_talabyeh_talabyehUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talabyeh_talabyehUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F939E723252B39E1008BFE84 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		F9571B8F252CEA700090C285 /* SFUIDisplay-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Heavy.ttf"; sourceTree = "<group>"; };
+		F9571B90252CEA700090C285 /* SFUIDisplay-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Light.ttf"; sourceTree = "<group>"; };
+		F9571B91252CEA700090C285 /* SFUIDisplay-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Semibold.ttf"; sourceTree = "<group>"; };
+		F9571B92252CEA700090C285 /* SFUIDisplay-Ultralight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Ultralight.ttf"; sourceTree = "<group>"; };
+		F9571B93252CEA700090C285 /* SFUIDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Bold.ttf"; sourceTree = "<group>"; };
+		F9571B94252CEA700090C285 /* SFUIDisplay-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Thin.ttf"; sourceTree = "<group>"; };
+		F9571B95252CEA700090C285 /* SFUIDisplay-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Medium.ttf"; sourceTree = "<group>"; };
+		F9571B96252CEA700090C285 /* SFUIDisplay-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Black.ttf"; sourceTree = "<group>"; };
+		F9571B98252CEA700090C285 /* DIN NEXT™ ARABIC MEDIUM .otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC MEDIUM .otf"; sourceTree = "<group>"; };
+		F9571B99252CEA700090C285 /* DIN NEXT™ ARABIC BLACK.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC BLACK.otf"; sourceTree = "<group>"; };
+		F9571B9A252CEA700090C285 /* DIN NEXT™ ARABIC ULTRALIGHT.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC ULTRALIGHT.otf"; sourceTree = "<group>"; };
+		F9571B9B252CEA700090C285 /* DIN NEXT™ ARABIC REGULAR.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC REGULAR.otf"; sourceTree = "<group>"; };
+		F9571B9C252CEA700090C285 /* DIN NEXT™ ARABIC HEAVY.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC HEAVY.otf"; sourceTree = "<group>"; };
+		F9571B9D252CEA700090C285 /* DIN NEXT™ ARABIC BOLD.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC BOLD.otf"; sourceTree = "<group>"; };
+		F9571B9E252CEA700090C285 /* DIN NEXT™ ARABIC LIGHT.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC LIGHT.otf"; sourceTree = "<group>"; };
 		F96B851C2529A05700CEDCF8 /* talabyeh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = talabyeh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96B851F2529A05800CEDCF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F96B85212529A05800CEDCF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +98,10 @@
 		F96B85412529A05A00CEDCF8 /* talabyehUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = talabyehUITests.swift; sourceTree = "<group>"; };
 		F96B85432529A05A00CEDCF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F96B854F2529B67200CEDCF8 /* ChangeLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguageViewController.swift; sourceTree = "<group>"; };
+		F9D3113B252CF0C400429F8B /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = Fonts/Fonts; sourceTree = "<group>"; };
+		F9EA0495252C83E800DC288B /* MainSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSignUpViewController.swift; sourceTree = "<group>"; };
+		F9EA049A252C858500DC288B /* RoundedEdgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedEdgesView.swift; sourceTree = "<group>"; };
+		F9EA04F3252C90E500DC288B /* RoundedEdgesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedEdgesButton.swift; sourceTree = "<group>"; };
 		F9F842F1252A2B2400593C8A /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		F9F842F2252A2B2400593C8A /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F9F842F6252A2BAD00593C8A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -123,6 +159,53 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F9571B84252CDD9E0090C285 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F9D3113B252CF0C400429F8B /* Fonts */,
+				F9571B8D252CEA700090C285 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F9571B8D252CEA700090C285 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F9571B8E252CEA700090C285 /* English */,
+				F9571B97252CEA700090C285 /* Arabic */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F9571B8E252CEA700090C285 /* English */ = {
+			isa = PBXGroup;
+			children = (
+				F9571B8F252CEA700090C285 /* SFUIDisplay-Heavy.ttf */,
+				F9571B90252CEA700090C285 /* SFUIDisplay-Light.ttf */,
+				F9571B91252CEA700090C285 /* SFUIDisplay-Semibold.ttf */,
+				F9571B92252CEA700090C285 /* SFUIDisplay-Ultralight.ttf */,
+				F9571B93252CEA700090C285 /* SFUIDisplay-Bold.ttf */,
+				F9571B94252CEA700090C285 /* SFUIDisplay-Thin.ttf */,
+				F9571B95252CEA700090C285 /* SFUIDisplay-Medium.ttf */,
+				F9571B96252CEA700090C285 /* SFUIDisplay-Black.ttf */,
+			);
+			path = English;
+			sourceTree = "<group>";
+		};
+		F9571B97252CEA700090C285 /* Arabic */ = {
+			isa = PBXGroup;
+			children = (
+				F9571B98252CEA700090C285 /* DIN NEXT™ ARABIC MEDIUM .otf */,
+				F9571B99252CEA700090C285 /* DIN NEXT™ ARABIC BLACK.otf */,
+				F9571B9A252CEA700090C285 /* DIN NEXT™ ARABIC ULTRALIGHT.otf */,
+				F9571B9B252CEA700090C285 /* DIN NEXT™ ARABIC REGULAR.otf */,
+				F9571B9C252CEA700090C285 /* DIN NEXT™ ARABIC HEAVY.otf */,
+				F9571B9D252CEA700090C285 /* DIN NEXT™ ARABIC BOLD.otf */,
+				F9571B9E252CEA700090C285 /* DIN NEXT™ ARABIC LIGHT.otf */,
+			);
+			path = Arabic;
+			sourceTree = "<group>";
+		};
 		F96B85132529A05700CEDCF8 = {
 			isa = PBXGroup;
 			children = (
@@ -149,13 +232,16 @@
 		F96B851E2529A05700CEDCF8 /* talabyeh */ = {
 			isa = PBXGroup;
 			children = (
+				F9571B84252CDD9E0090C285 /* Resources */,
 				F96B851F2529A05800CEDCF8 /* AppDelegate.swift */,
 				F96B85212529A05800CEDCF8 /* SceneDelegate.swift */,
 				F96B85232529A05800CEDCF8 /* RegistrationViewController.swift */,
 				F96B85252529A05800CEDCF8 /* Main.storyboard */,
 				F96B854F2529B67200CEDCF8 /* ChangeLanguageViewController.swift */,
-				F939E723252B39E1008BFE84 /* Fonts */,
 				F96B85282529A05A00CEDCF8 /* Assets.xcassets */,
+				F9EA0495252C83E800DC288B /* MainSignUpViewController.swift */,
+				F9EA049A252C858500DC288B /* RoundedEdgesView.swift */,
+				F9EA04F3252C90E500DC288B /* RoundedEdgesButton.swift */,
 				F96B852A2529A05A00CEDCF8 /* LaunchScreen.storyboard */,
 				F96B852D2529A05A00CEDCF8 /* Info.plist */,
 			);
@@ -290,11 +376,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F939E724252B39E1008BFE84 /* Fonts in Resources */,
+				F9571BA2252CEA700090C285 /* SFUIDisplay-Ultralight.ttf in Resources */,
 				F96B852C2529A05A00CEDCF8 /* LaunchScreen.storyboard in Resources */,
+				F9571BA5252CEA700090C285 /* SFUIDisplay-Medium.ttf in Resources */,
+				F9571BAD252CEA700090C285 /* DIN NEXT™ ARABIC LIGHT.otf in Resources */,
+				F9571BAC252CEA700090C285 /* DIN NEXT™ ARABIC BOLD.otf in Resources */,
+				F9571BAA252CEA700090C285 /* DIN NEXT™ ARABIC REGULAR.otf in Resources */,
+				F9571BA3252CEA700090C285 /* SFUIDisplay-Bold.ttf in Resources */,
+				F9571BA6252CEA700090C285 /* SFUIDisplay-Black.ttf in Resources */,
+				F9571BA1252CEA700090C285 /* SFUIDisplay-Semibold.ttf in Resources */,
+				F9571BA0252CEA700090C285 /* SFUIDisplay-Light.ttf in Resources */,
 				F9F842F5252A2BAD00593C8A /* Localizable.strings in Resources */,
 				F96B85292529A05A00CEDCF8 /* Assets.xcassets in Resources */,
+				F9571BAB252CEA700090C285 /* DIN NEXT™ ARABIC HEAVY.otf in Resources */,
+				F9571BA7252CEA700090C285 /* DIN NEXT™ ARABIC MEDIUM .otf in Resources */,
 				F96B85272529A05800CEDCF8 /* Main.storyboard in Resources */,
+				F9D3113C252CF0C400429F8B /* Fonts in Resources */,
+				F9571B9F252CEA700090C285 /* SFUIDisplay-Heavy.ttf in Resources */,
+				F9571BA8252CEA700090C285 /* DIN NEXT™ ARABIC BLACK.otf in Resources */,
+				F9571BA9252CEA700090C285 /* DIN NEXT™ ARABIC ULTRALIGHT.otf in Resources */,
+				F9571BA4252CEA700090C285 /* SFUIDisplay-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,10 +523,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9EA04F4252C90E500DC288B /* RoundedEdgesButton.swift in Sources */,
 				F96B85242529A05800CEDCF8 /* RegistrationViewController.swift in Sources */,
 				F96B85202529A05800CEDCF8 /* AppDelegate.swift in Sources */,
 				F96B85502529B67200CEDCF8 /* ChangeLanguageViewController.swift in Sources */,
+				F9EA049B252C858500DC288B /* RoundedEdgesView.swift in Sources */,
 				F96B85222529A05800CEDCF8 /* SceneDelegate.swift in Sources */,
+				F9EA0496252C83E800DC288B /* MainSignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

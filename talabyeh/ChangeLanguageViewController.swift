@@ -14,8 +14,13 @@ class ChangeLanguageViewController: UIViewController {
     @IBOutlet weak var selectLanguageLabel: UILabel!
     @IBOutlet weak var englishButton: UIButton!
     @IBOutlet weak var arabicButton: UIButton!
+    @IBOutlet weak var englishCheckMarkImage: UIImageView!
+    @IBOutlet weak var arabicCheckMarkImage: UIImageView!
     
-
+    @IBOutlet var mainView: UIView!
+    
+    @IBOutlet weak var upperView: UIView!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -24,16 +29,33 @@ class ChangeLanguageViewController: UIViewController {
             englishButton.contentHorizontalAlignment = .right
             arabicButton.contentHorizontalAlignment = .right
             
-            selectLanguageLabel.font = UIFont(name: "DIN-NEXT™-ARABIC-MEDIUM", size: 17)
-            englishButton.titleLabel?.font = UIFont(name: "DIN-NEXT™-ARABIC-MEDIUM", size: 17)
-            arabicButton.titleLabel?.font = UIFont(name: "DIN-NEXT™-ARABIC-MEDIUM", size: 17)
+            selectLanguageLabel.font = UIFont(name: "DINNextLTW23-Regular", size: 17)
+            englishButton.titleLabel?.font = UIFont(name: "DINNextLTW23-Regular", size: 17)
+            arabicButton.titleLabel?.font = UIFont(name: "DINNextLTW23-Regular", size: 17)
+            
+            
+            
+            arabicCheckMarkImage.isHidden = false
+            englishCheckMarkImage.isHidden = true
 
             
+        }else{
+            arabicCheckMarkImage.isHidden = true
+            englishCheckMarkImage.isHidden = false
         }
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.extraLight)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = upperView.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        upperView.addSubview(blurEffectView)
+        let button = UIButton(frame: upperView.frame)
+        button.addTarget(self, action: #selector(self.dismissButton), for: .touchUpInside)
+        upperView.addSubview(button)
 
     }
     
-    @IBAction func dismissButton(_ sender: Any)
+    @objc func dismissButton()
     {
         self.dismiss(animated: true, completion: nil)
     }
@@ -42,6 +64,13 @@ class ChangeLanguageViewController: UIViewController {
     {
         let selectedLanguage: Languages = (sender as AnyObject).tag == 1 ? .en : .ar
               
+//        if selectedLanguage == .en{
+//            arabicCheckMarkImage.isHidden = true
+//            englishCheckMarkImage.isHidden = false
+//        }else{
+//            arabicCheckMarkImage.isHidden = false
+//            englishCheckMarkImage.isHidden = true
+//        }
         // change the language.
         LanguageManager.shared.setLanguage(language: selectedLanguage,
                                            viewControllerFactory: { title -> UIViewController in
