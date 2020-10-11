@@ -54,6 +54,14 @@ class RegistrationViewController: UIViewController
         self.present(changeLanguageVC, animated: true, completion: nil)
     }
     
+    
+    
+    @IBAction func signInButton(_ sender: Any)
+    {
+        let vc = SignInViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 
 
 }

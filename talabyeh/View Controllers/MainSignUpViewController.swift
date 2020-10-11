@@ -64,7 +64,15 @@ class MainSignUpViewController: UIViewController {
             distributorView.backgroundColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
             companyView.backgroundColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
         }
+        
+        nextButton.isEnabled = true
     }
+    
+    @IBAction func next(_ sender: Any) {
+        let signUpWizardVC = SignUpWizardViewController()
+        self.navigationController?.pushViewController(signUpWizardVC, animated: true)
+    }
+    
     
     
 

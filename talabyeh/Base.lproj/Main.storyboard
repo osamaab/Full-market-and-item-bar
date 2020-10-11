@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kF-bf-4th">
-                                <rect key="frame" x="120.5" y="555" width="173" height="51"/>
+                                <rect key="frame" x="120.5" y="556" width="173" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="bOJ-84-fTK"/>
                                     <constraint firstAttribute="width" constant="173" id="gm1-Qf-coo"/>
@@ -42,8 +42,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wlK-Tm-p2Y" customClass="RoundedEdgesButton" customModule="talabyeh" customModuleProvider="target">
-                                <rect key="frame" x="82" y="626" width="250" height="44"/>
-                                <color key="backgroundColor" red="0.74117647058823533" green="0.93725490196078431" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="82" y="627" width="250" height="44"/>
+                                <color key="backgroundColor" red="0.74117647058823533" green="0.93725490196078431" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="NFc-dd-0hz"/>
                                     <constraint firstAttribute="width" constant="250" id="QpC-kk-mZy"/>
@@ -52,9 +52,12 @@
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" red="0.074509803920000006" green="0.36470588240000001" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uqr-Y3-g60"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adb-0z-aPb" customClass="RoundedEdgesButton" customModule="talabyeh" customModuleProvider="target">
-                                <rect key="frame" x="86" y="690" width="242" height="45"/>
+                                <rect key="frame" x="86" y="691" width="242" height="45"/>
                                 <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="17"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" red="0.066666666666666666" green="0.36078431372549019" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
@@ -64,7 +67,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgU-YO-GxU">
-                                <rect key="frame" x="130" y="765" width="154" height="33"/>
+                                <rect key="frame" x="129.5" y="766" width="155" height="32"/>
                                 <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="17"/>
                                 <state key="normal" title="Language: English &gt;">
                                     <color key="titleColor" red="0.066666666666666666" green="0.36078431372549019" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
@@ -74,7 +77,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="urn_aaid_sc_US_5bddbe3d-8df8-4da5-a6c8-03c3408bbc56" translatesAutoresizingMaskIntoConstraints="NO" id="lyw-GH-gIn">
-                                <rect key="frame" x="121" y="248" width="172" height="206"/>
+                                <rect key="frame" x="121" y="249" width="172" height="206"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="206" id="S4X-BG-3rN"/>
                                     <constraint firstAttribute="width" constant="172" id="dsN-Te-FCZ"/>
@@ -232,7 +235,7 @@
                                     <constraint firstAttribute="width" constant="81" id="sU8-zd-1ba"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="17"/>
-                                <color key="textColor" red="0.60392156862745094" green="0.63137254901960782" blue="0.69411764705882351" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.60392156862745094" green="0.63137254901960782" blue="0.69411764705882351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVb-rt-Zti">
@@ -257,7 +260,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's get started" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKp-ag-uJa">
-                                <rect key="frame" x="20" y="141" width="122" height="20"/>
+                                <rect key="frame" x="20" y="141" width="124.5" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="6tL-2c-QoV"/>
                                 </constraints>
@@ -409,7 +412,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0lg-H2-8Gs">
                                 <rect key="frame" x="0.0" y="801" width="414" height="95"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDv-1K-pbp" customClass="RoundedEdgesButton" customModule="talabyeh" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDv-1K-pbp" customClass="RoundedEdgesButton" customModule="talabyeh" customModuleProvider="target">
                                         <rect key="frame" x="114.5" y="10" width="185" height="37"/>
                                         <color key="backgroundColor" red="0.74117647058823533" green="0.93725490196078431" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -420,6 +423,9 @@
                                         <state key="normal" title="Next">
                                             <color key="titleColor" red="0.066666666669999999" green="0.36078431370000003" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="next:" destination="dSI-pH-Het" eventType="touchUpInside" id="svm-yS-rMR"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.066666666669999999" green="0.36078431370000003" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
@@ -493,13 +499,13 @@
     </scenes>
     <designables>
         <designable name="Adb-0z-aPb">
-            <size key="intrinsicContentSize" width="60" height="33"/>
+            <size key="intrinsicContentSize" width="62" height="32"/>
         </designable>
         <designable name="JDv-1K-pbp">
-            <size key="intrinsicContentSize" width="36" height="33"/>
+            <size key="intrinsicContentSize" width="36" height="32"/>
         </designable>
         <designable name="wlK-Tm-p2Y">
-            <size key="intrinsicContentSize" width="52" height="33"/>
+            <size key="intrinsicContentSize" width="53" height="32"/>
         </designable>
     </designables>
     <resources>
