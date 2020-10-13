@@ -51,7 +51,8 @@ class SignInView: UIView {
             backButton.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
         
-        backButton.leading(16).top(55).height(50).width(50)
+        backButton.leading(16)/*.top(30)*/.height(50).width(50)
+        backButton.Top == self.safeAreaLayoutGuide.Top
 
         
         signInLabel.text = "Sign In".localiz()
@@ -59,7 +60,7 @@ class SignInView: UIView {
         signInLabel.textColor = Constants.darkGrey
         signInLabel.textAlignment = .center
         
-        signInLabel.top(55).height(40).centerHorizontally()
+        signInLabel/*.top(30)*/.height(40).centerHorizontally()
         signInLabel.CenterY == backButton.CenterY
         
         welcomeLabel.text = "Welcome to TALABYEH".localiz()
