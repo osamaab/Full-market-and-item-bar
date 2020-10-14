@@ -127,7 +127,7 @@ class SignUpWizardView: UIView, UITableViewDelegate, UITableViewDataSource {
         
         merchantTypeImage.image = UIImage(named: "Group 2709")
         merchantTypeImage.leading(16).trailing(16).height(33)
-        merchantTypeImage.Top == welcomeLabel.Bottom + 10
+        merchantTypeImage.Top == welcomeLabel.Bottom + 9
         
 
         companytf.placeholder = "Company Name".localiz()

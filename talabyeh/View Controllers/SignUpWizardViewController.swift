@@ -26,10 +26,17 @@ class SignUpWizardViewController: UIViewController, UITextFieldDelegate {
         signUpView.nationalNumbertf.delegate = self
         signUpView.telephonetf.delegate = self
         
+        signUpView.nextButton.addTarget(self, action: #selector(showCategories), for: .touchUpInside)
+        
     }
     
     @objc func backButton(){
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func showCategories(){
+        let vc = SignUpCategoriesListViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool

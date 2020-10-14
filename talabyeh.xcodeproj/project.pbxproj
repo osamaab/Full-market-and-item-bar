@@ -10,6 +10,8 @@
 		1DB82D71E9947F4E954F2EAB /* Pods_talabyeh_talabyehUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0E2B1636889447B2D74FE0 /* Pods_talabyeh_talabyehUITests.framework */; };
 		2A1EE79FF68369F4CA5D3A77 /* Pods_talabyehTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05FE4E8241006F1C906DB477 /* Pods_talabyehTests.framework */; };
 		CC20C5899017F17D235D43A6 /* Pods_talabyeh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC09FED4C8A6910C1D7CDCF /* Pods_talabyeh.framework */; };
+		F93B1FDD25373D8E00E48657 /* SignUpCategoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93B1FDC25373D8E00E48657 /* SignUpCategoriesListView.swift */; };
+		F93B1FE225373DAE00E48657 /* SignUpCategoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93B1FE125373DAE00E48657 /* SignUpCategoriesListViewController.swift */; };
 		F9571B9F252CEA700090C285 /* SFUIDisplay-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B8F252CEA700090C285 /* SFUIDisplay-Heavy.ttf */; };
 		F9571BA0252CEA700090C285 /* SFUIDisplay-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B90252CEA700090C285 /* SFUIDisplay-Light.ttf */; };
 		F9571BA1252CEA700090C285 /* SFUIDisplay-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B91252CEA700090C285 /* SFUIDisplay-Semibold.ttf */; };
@@ -76,6 +78,8 @@
 		8198DD651C626992FF8ADE61 /* Pods-talabyeh-talabyehUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talabyeh-talabyehUITests.release.xcconfig"; path = "Target Support Files/Pods-talabyeh-talabyehUITests/Pods-talabyeh-talabyehUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AAC1EEA6F124DCF800E38E71 /* Pods-talabyehTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talabyehTests.debug.xcconfig"; path = "Target Support Files/Pods-talabyehTests/Pods-talabyehTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD0E2B1636889447B2D74FE0 /* Pods_talabyeh_talabyehUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talabyeh_talabyehUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F93B1FDC25373D8E00E48657 /* SignUpCategoriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpCategoriesListView.swift; path = talabyeh/SignUpCategoriesListView.swift; sourceTree = SOURCE_ROOT; };
+		F93B1FE125373DAE00E48657 /* SignUpCategoriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCategoriesListViewController.swift; sourceTree = "<group>"; };
 		F9571B8F252CEA700090C285 /* SFUIDisplay-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Heavy.ttf"; sourceTree = "<group>"; };
 		F9571B90252CEA700090C285 /* SFUIDisplay-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Light.ttf"; sourceTree = "<group>"; };
 		F9571B91252CEA700090C285 /* SFUIDisplay-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Semibold.ttf"; sourceTree = "<group>"; };
@@ -290,6 +294,8 @@
 		F98D0E8A252F786200D46EE9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F93B1FDC25373D8E00E48657 /* SignUpCategoriesListView.swift */,
+				F93B1FE125373DAE00E48657 /* SignUpCategoriesListViewController.swift */,
 				F96B854F2529B67200CEDCF8 /* ChangeLanguageViewController.swift */,
 				F9EA0495252C83E800DC288B /* MainSignUpViewController.swift */,
 				F96B85232529A05800CEDCF8 /* RegistrationViewController.swift */,
@@ -583,12 +589,14 @@
 				F98D0E54252DE6F200D46EE9 /* SignUpWizardViewController.swift in Sources */,
 				F96B85202529A05800CEDCF8 /* AppDelegate.swift in Sources */,
 				F96B85502529B67200CEDCF8 /* ChangeLanguageViewController.swift in Sources */,
+				F93B1FDD25373D8E00E48657 /* SignUpCategoriesListView.swift in Sources */,
 				F98D0E69252E20F200D46EE9 /* Constants.swift in Sources */,
 				F9EA049B252C858500DC288B /* RoundedEdgesView.swift in Sources */,
 				F9CC27C625332B6B00408FDA /* SignInViewController.swift in Sources */,
 				F98D0E59252DE73500D46EE9 /* SignUpWizardView.swift in Sources */,
 				F96B85222529A05800CEDCF8 /* SceneDelegate.swift in Sources */,
 				F9EA0496252C83E800DC288B /* MainSignUpViewController.swift in Sources */,
+				F93B1FE225373DAE00E48657 /* SignUpCategoriesListViewController.swift in Sources */,
 				F9CC27CB25332B8900408FDA /* SignInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
