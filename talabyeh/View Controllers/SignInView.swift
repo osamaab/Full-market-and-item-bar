@@ -51,8 +51,8 @@ class SignInView: UIView {
             backButton.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
         
-        backButton.leading(16)/*.top(30)*/.height(50).width(50)
-        backButton.Top == self.safeAreaLayoutGuide.Top
+        backButton.leading(16)/*.top(30)*/.height(13).width(22)
+        backButton.Top == self.safeAreaLayoutGuide.Top + 22
 
         
         signInLabel.text = "Sign In".localiz()
@@ -85,6 +85,7 @@ class SignInView: UIView {
         emailtf.cornerRadius = 10
         emailtf.paddingValue = 16
         emailtf.textAlignment =  LanguageManager.shared.currentLanguage == .ar ? .right : .left
+        emailtf.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(16, .regular) : getEnglishFont(16, .medium)
         
         passwordtf.placeholder = "Password".localiz()
         passwordtf.borderWidth = 0.5
@@ -92,6 +93,7 @@ class SignInView: UIView {
         passwordtf.cornerRadius = 10
         passwordtf.paddingValue = 16
         passwordtf.textAlignment =  LanguageManager.shared.currentLanguage == .ar ? .right : .left
+        passwordtf.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(16, .regular) : getEnglishFont(16, .medium)
         
         
         emailtf.leading(16).trailing(16).height(44)

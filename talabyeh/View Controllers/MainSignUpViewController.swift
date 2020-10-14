@@ -8,6 +8,7 @@
 
 import UIKit
 import LanguageManager_iOS
+import Stevia
 
 class MainSignUpViewController: UIViewController {
 
@@ -22,6 +23,10 @@ class MainSignUpViewController: UIViewController {
     @IBOutlet weak var distributorLabel: UILabel!
     @IBOutlet weak var resellerLabel: UILabel!
     @IBOutlet weak var nextButton: RoundedEdgesButton!
+    @IBOutlet weak var signUplabel: UILabel!
+    @IBOutlet weak var signUpBackButtonCenterY: NSLayoutConstraint!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +40,13 @@ class MainSignUpViewController: UIViewController {
             distributorLabel.font = UIFont(name: "DINNextLTW23-Heavy", size: 17)
             resellerLabel.font = UIFont(name: "DINNextLTW23-Heavy", size: 17)
             nextButton.titleLabel?.font = UIFont(name: "DINNextLTW23-Regular", size: 17)
- 
+            signUplabel.font = getArabicFont(17, .regular)
+
+            self.view.removeConstraint(signUpBackButtonCenterY)
+            backButton.CenterY == signUplabel.CenterY + 3
             
+            //nextButton.contentVerticalAlignment = .top
+            nextButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 6, right: 0)
             
         }
         // Do any additional setup after loading the view.

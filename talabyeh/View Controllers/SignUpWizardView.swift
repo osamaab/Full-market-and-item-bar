@@ -92,7 +92,7 @@ class SignUpWizardView: UIView, UITableViewDelegate, UITableViewDataSource {
         contentTableView.separatorStyle = .none
         contentTableView.allowsSelection = false
         
-        contentTableView.leading(0).trailing(0).height(600)
+        contentTableView.leading(0).trailing(0).height(900)
         contentTableView.Top == signUpLabel.Bottom + 8
 
         
@@ -104,7 +104,8 @@ class SignUpWizardView: UIView, UITableViewDelegate, UITableViewDataSource {
             backButton.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
         
-        backButton.leading(16).top(30).height(50).width(50)
+        backButton.leading(16)/*.top(30)*/.height(13).width(22)
+        backButton.Top == self.safeAreaLayoutGuide.Top + 22
 
         
         signUpLabel.text = "Sign Up".localiz()
@@ -112,7 +113,8 @@ class SignUpWizardView: UIView, UITableViewDelegate, UITableViewDataSource {
         signUpLabel.textColor = Constants.darkGrey
         signUpLabel.textAlignment = .center
         
-        signUpLabel.top(30).height(40).centerHorizontally()
+        signUpLabel/*.top(30)*/.height(40).centerHorizontally()
+        //signUpLabel.Top == self.safeAreaLayoutGuide.Top + 22
         signUpLabel.CenterY == backButton.CenterY
         
         welcomeLabel.text = "Welcome to TALABYEH".localiz()
@@ -134,6 +136,7 @@ class SignUpWizardView: UIView, UITableViewDelegate, UITableViewDataSource {
         companytf.cornerRadius = 10
         companytf.paddingValue = 16
         companytf.textAlignment =  LanguageManager.shared.currentLanguage == .ar ? .right : .left
+        companytf.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(16, .regular) : getEnglishFont(16, .medium)
         
         passwordtf.placeholder = "Password".localiz()
         passwordtf.borderWidth = 0.5
@@ -141,6 +144,7 @@ class SignUpWizardView: UIView, UITableViewDelegate, UITableViewDataSource {
         passwordtf.cornerRadius = 10
         passwordtf.paddingValue = 16
         passwordtf.textAlignment =  LanguageManager.shared.currentLanguage == .ar ? .right : .left
+        passwordtf.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(16, .regular) : getEnglishFont(16, .medium)
         
         emailtf.placeholder = "Email".localiz()
         emailtf.borderWidth = 0.5
@@ -148,6 +152,7 @@ class SignUpWizardView: UIView, UITableViewDelegate, UITableViewDataSource {
         emailtf.cornerRadius = 10
         emailtf.paddingValue = 16
         emailtf.textAlignment =  LanguageManager.shared.currentLanguage == .ar ? .right : .left
+        emailtf.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(16, .regular) : getEnglishFont(16, .medium)
         
         nationalNumbertf.placeholder = "Facility National Number".localiz()
         nationalNumbertf.borderWidth = 0.5
@@ -155,6 +160,7 @@ class SignUpWizardView: UIView, UITableViewDelegate, UITableViewDataSource {
         nationalNumbertf.cornerRadius = 10
         nationalNumbertf.paddingValue = 16
         nationalNumbertf.textAlignment =  LanguageManager.shared.currentLanguage == .ar ? .right : .left
+        nationalNumbertf.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(16, .regular) : getEnglishFont(16, .medium)
         
         telephonetf.placeholder = "Telephone".localiz()
         telephonetf.borderWidth = 0.5
@@ -162,6 +168,7 @@ class SignUpWizardView: UIView, UITableViewDelegate, UITableViewDataSource {
         telephonetf.cornerRadius = 10
         telephonetf.paddingValue = 16
         telephonetf.textAlignment =  LanguageManager.shared.currentLanguage == .ar ? .right : .left
+        telephonetf.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(16, .regular) : getEnglishFont(16, .medium)
         
         companytf.leading(16).trailing(16).height(44)
         companytf.Top == merchantTypeImage.Bottom + 17
@@ -240,6 +247,7 @@ class SignUpWizardView: UIView, UITableViewDelegate, UITableViewDataSource {
         label3.bottom(15).width(135).height(19).centerHorizontally()
 
         icon3.image = UIImage(named: "Group 2711")
+        icon3.contentMode = .scaleAspectFit
         icon3.top(23).width(28).height(22).centerHorizontally()
         
         companyLocationView.backgroundColor = #colorLiteral(red: 0.6039215686, green: 0.631372549, blue: 0.6941176471, alpha: 1)
@@ -285,6 +293,9 @@ class SignUpWizardView: UIView, UITableViewDelegate, UITableViewDataSource {
         nextButton.setTitle("Next".localiz(), for: .normal)
         nextButton.titleLabel?.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(16, .regular) : getEnglishFont(16, .medium)
         nextButton.layer.cornerRadius = 20
+        if LanguageManager.shared.currentLanguage == .ar{
+            nextButton.contentVerticalAlignment = .top
+        }
         
         bottomView.backgroundColor = #colorLiteral(red: 0.5764705882, green: 0.8352941176, blue: 0, alpha: 1)
         bottomView.leading(0).trailing(0).bottom(0).height(83)
@@ -305,7 +316,7 @@ class SignUpWizardView: UIView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        800
+        1100
     }
     
     
