@@ -29,9 +29,9 @@ class ChangeLanguageViewController: UIViewController {
             englishButton.contentHorizontalAlignment = .right
             arabicButton.contentHorizontalAlignment = .right
             
-            selectLanguageLabel.font = UIFont(name: "DINNextLTW23-Regular", size: 17)
-            englishButton.titleLabel?.font = UIFont(name: "DINNextLTW23-Regular", size: 17)
-            arabicButton.titleLabel?.font = UIFont(name: "DINNextLTW23-Regular", size: 17)
+            selectLanguageLabel.font = getArabicFont(16, .regular)
+            englishButton.titleLabel?.font = getArabicFont(17, .regular)
+            arabicButton.titleLabel?.font = getArabicFont(17, .bold)
             
             
             
@@ -42,6 +42,10 @@ class ChangeLanguageViewController: UIViewController {
         }else{
             arabicCheckMarkImage.isHidden = true
             englishCheckMarkImage.isHidden = false
+            
+            englishButton.titleLabel?.font = getEnglishFont(17, .bold)
+            selectLanguageLabel.font = getEnglishFont(16, .medium)
+            arabicButton.titleLabel?.font = getEnglishFont(17, .medium)
         }
         
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.extraLight)
