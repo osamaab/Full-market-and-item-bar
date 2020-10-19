@@ -8,6 +8,7 @@ target 'talabyeh' do
   # Pods for talabyeh
 
 pod 'LanguageManager-iOS'
+pod 'ValidationTextField'
 
   target 'talabyehTests' do
     inherit! :search_paths

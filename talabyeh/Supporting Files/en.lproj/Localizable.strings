@@ -1,0 +1,42 @@
+/* 
+  Localizable.strings
+  talabyeh
+
+  Created by loai elayan on 10/4/20.
+  Copyright © 2020 Converged Technology. All rights reserved.
+*/
+"Sign In" = "Sign In";
+"Sign Up" = "Sign Up";
+"Welcome!" = "Welcome!";
+"Language: English >" = "Language: English >";
+"Select language" = "Select language";
+"English" = "English";
+"Arabic" = "Arabic";
+"Company" = "Company";
+"Reseller" = "Reseller";
+"Distriutor" = "Distriutor";
+"Welcome to TALABYEH" = "Welcome to TALABYEH";
+"Let's get started" = "Let's get started";
+"Next" = "Next";
+
+"Company Name" = "Company Name";
+"Password" = "Password";
+"Email" = "Email";
+"Facility National Number" = "Facility National Number";
+"Telephone" = "Telephone";
+"Commercial licence" = "Commercial licence";
+"Company Logo" = "Company Logo";
+"Company Location" = "Company Location";
+"Category" = "Category";
+"Company name should be 100 character maximum" = "Company name should be 100 character maximum";
+"Email is not valid" = "Email is not valid";
+"Facility national number should be 100 character maximum" = "Facility national number should be 100 character maximum";
+"Telephone number should be 25 character maximum" = "Telephone number should be 25 character maximum";
+"Strong" = "Strong";
+"Medium" = "Medium";
+"Weak" = "Weak";
+
+"Please choose the category of resellers You can serve" = "Please choose the category of resellers You can serve";
+
+
+
