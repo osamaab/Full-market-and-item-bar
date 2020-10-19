@@ -10,6 +10,7 @@ import UIKit
 
 class Constants{
 
+    static let baseURL = "http://www.talabyeh.com/api/"
     
     static let darkGreen = #colorLiteral(red: 0.06666666667, green: 0.3607843137, blue: 0.1960784314, alpha: 1) //#115C32
     static let lightGreen = #colorLiteral(red: 0.7411764706, green: 0.937254902, blue: 0.2078431373, alpha: 1) //BDEF35

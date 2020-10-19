@@ -271,7 +271,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7s5-H2-woO" customClass="RoundedEdgesView" customModule="talabyeh" customModuleProvider="target">
                                 <rect key="frame" x="20" y="229" width="374" height="100"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 2123" translatesAutoresizingMaskIntoConstraints="NO" id="8Bc-kP-nT2">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Bc-kP-nT2">
                                         <rect key="frame" x="27" y="33.5" width="31" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="33" id="8uo-Mi-OAW"/>
@@ -286,8 +286,8 @@
                                             <constraint firstAttribute="height" constant="50" id="jxe-Fo-K10"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULd-3d-jGq">
-                                        <rect key="frame" x="104" y="40" width="250" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULd-3d-jGq">
+                                        <rect key="frame" x="104" y="50" width="250" height="0.0"/>
                                         <fontDescription key="fontDescription" name="SFUIDisplay-Semibold" family="SF UI Display" pointSize="17"/>
                                         <color key="textColor" red="0.066666666669999999" green="0.36078431370000003" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -318,7 +318,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ITK-MQ-vfF" customClass="RoundedEdgesView" customModule="talabyeh" customModuleProvider="target">
                                 <rect key="frame" x="20" y="351" width="374" height="100"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 2106" translatesAutoresizingMaskIntoConstraints="NO" id="Qfj-Iv-yiY">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qfj-Iv-yiY">
                                         <rect key="frame" x="27" y="33.5" width="31" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="31" id="287-31-eTr"/>
@@ -333,8 +333,8 @@
                                             <constraint firstAttribute="height" constant="50" id="tAf-cD-SjD"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distriutor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggb-9R-PLT">
-                                        <rect key="frame" x="104" y="40" width="250" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggb-9R-PLT">
+                                        <rect key="frame" x="104" y="50" width="250" height="0.0"/>
                                         <fontDescription key="fontDescription" name="SFUIDisplay-Semibold" family="SF UI Display" pointSize="17"/>
                                         <color key="textColor" red="0.066666666669999999" green="0.36078431370000003" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -365,7 +365,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fEg-h4-f58" customClass="RoundedEdgesView" customModule="talabyeh" customModuleProvider="target">
                                 <rect key="frame" x="20" y="473" width="374" height="100"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 2091" translatesAutoresizingMaskIntoConstraints="NO" id="ydH-vW-ZtZ">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ydH-vW-ZtZ">
                                         <rect key="frame" x="27" y="33.5" width="31" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="31" id="gQX-H5-tkY"/>
@@ -380,8 +380,8 @@
                                             <constraint firstAttribute="height" constant="50" id="dug-ZZ-qVw"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reseller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZvY-e7-qbq">
-                                        <rect key="frame" x="104" y="40" width="250" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZvY-e7-qbq">
+                                        <rect key="frame" x="104" y="50" width="250" height="0.0"/>
                                         <fontDescription key="fontDescription" name="SFUIDisplay-Semibold" family="SF UI Display" pointSize="17"/>
                                         <color key="textColor" red="0.066666666669999999" green="0.36078431370000003" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -464,12 +464,15 @@
                     <navigationItem key="navigationItem" id="yvq-eo-6T4"/>
                     <connections>
                         <outlet property="backButton" destination="uVb-rt-Zti" id="4Aa-Gs-Ttl"/>
+                        <outlet property="companyImage" destination="8Bc-kP-nT2" id="66x-X6-R5v"/>
                         <outlet property="companyLabel" destination="ULd-3d-jGq" id="RCZ-6c-xjY"/>
                         <outlet property="companyView" destination="7s5-H2-woO" id="5kS-4R-D2N"/>
+                        <outlet property="distributorImage" destination="Qfj-Iv-yiY" id="AhT-4s-bMl"/>
                         <outlet property="distributorLabel" destination="Ggb-9R-PLT" id="WXw-HL-jjg"/>
                         <outlet property="distributorView" destination="ITK-MQ-vfF" id="DgQ-Rv-9tU"/>
                         <outlet property="letsgetStartedLabel" destination="vKp-ag-uJa" id="na8-DX-BXh"/>
                         <outlet property="nextButton" destination="JDv-1K-pbp" id="Gc7-FS-iMg"/>
+                        <outlet property="resellerImage" destination="ydH-vW-ZtZ" id="jGl-7w-e2m"/>
                         <outlet property="resellerLabel" destination="ZvY-e7-qbq" id="pp8-5M-NCz"/>
                         <outlet property="resellerView" destination="fEg-h4-f58" id="Fzh-9Y-DBv"/>
                         <outlet property="signUpBackButtonCenterY" destination="5SN-ih-PMe" id="WIQ-4d-tJR"/>
@@ -512,9 +515,6 @@
     </designables>
     <resources>
         <image name="Group 2026" width="172.5780029296875" height="206.69000244140625"/>
-        <image name="Group 2091" width="36.192001342773438" height="33.882999420166016"/>
-        <image name="Group 2106" width="35.765998840332031" height="33.687999725341797"/>
-        <image name="Group 2123" width="31.39900016784668" height="32.925998687744141"/>
         <image name="Group 2725" width="44" height="44"/>
         <image name="Path 2586" width="22.016000747680664" height="13.657999992370605"/>
         <systemColor name="systemBackgroundColor">

@@ -9,12 +9,16 @@
 import UIKit
 import Stevia
 import LanguageManager_iOS
+import SDWebImage
+import ProgressHUD
 
 class SignUpCategoriesListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     
     
     let signUpCategoriesListView = SignUpCategoriesListView()
+    var categories = [Category]()
+    
     
     override func loadView() {
         view = signUpCategoriesListView
@@ -26,7 +30,20 @@ class SignUpCategoriesListViewController: UIViewController, UICollectionViewDele
         signUpCategoriesListView.backButton.addTarget(self, action: #selector(backButton), for: .touchUpInside)
         signUpCategoriesListView.categoriesCollectionView.delegate = self
         signUpCategoriesListView.categoriesCollectionView.dataSource = self
-        signUpCategoriesListView.categoriesCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        signUpCategoriesListView.categoriesCollectionView.register(CategoryCell.self, forCellWithReuseIdentifier: "cell")
+        
+        ProgressHUD.show()
+        RequestManger.shared.getCategories { (categories, error) in
+            if error != nil{
+                print(error.debugDescription)
+                return
+            }
+            self.categories.removeAll()
+            self.categories = categories!.results
+            self.signUpCategoriesListView.categoriesCollectionView.reloadData()
+            
+            ProgressHUD.dismiss()
+        }
         
     }
     
@@ -36,56 +53,100 @@ class SignUpCategoriesListViewController: UIViewController, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 11
+        return categories.count
     }
+    
+//    let cview = UIView()
+//    let icon = UIImageView()
+//    let ctitle = UILabel()
+//    let checkMark = UIImageView()
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CategoryCell
         
-        let view = UIView()
-        let icon = UIImageView()
-        let title = UILabel()
-        let checkMark = UIImageView()
-        
-        cell.subviews([view, title])
-        
-        view.backgroundColor = Constants.lightGrey
-        view.layer.cornerRadius = 11.75
-        view.width(100%).height(78.2).top(0)
-        
-        title.text = "Title".localiz()
-        title.font = LanguageManager.shared.currentLanguage == .en ? getEnglishFont(13, .semiBold): getArabicFont(13, .heavy)
-        title.textColor = Constants.blackText
-        title.height(15).centerHorizontally()
-        title.Top == view.Bottom + 7.24
-        
-        view.subviews(icon)
-        view.subviews(checkMark)
-        
-        icon.image = UIImage(named: "Group 2729")
+        cell?.cTitle.text = categories[indexPath.row].title//LanguageManager.shared.currentLanguage == .en ? categories[indexPath.row].en_title: categories[indexPath.row].ar_title //"Title".localiz()
 
-        icon.height(30.74).width(47.41).centerHorizontally().top(34)
         
-        checkMark.image = UIImage(named: "Group 2696")
-        if selectedIndexPath != nil{
-            if selectedIndexPath! == indexPath{
-                checkMark.image = UIImage(named: "Group 2753")
+        if let url = URL(string:categories[indexPath.row].logo!){
+            print(url)
+            //icon.sd_setImage(with: url, placeholderImage: nil, options: .fromCacheOnly, context: nil) //= UIImage(named: "Group 2729")
+            cell?.icon.contentMode = .scaleAspectFit
+            cell?.icon.sd_setImage(with: url) { (image, error, cacheType, url) in
+                
             }
         }
-        checkMark.height(22.56).width(22.56).trailing(7.56).top(7.56)
         
-        return cell
+        
+        cell?.checkMark.image = UIImage(named: "Group 2696")
+        
+        if selectedIndices.contains(indexPath){
+            cell?.checkMark.image = UIImage(named: "Group 2753")
+        }
+
+        
+        
+        return cell!
     }
     
-    var selectedIndexPath : IndexPath?
+    var selectedIndices = [IndexPath]()
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 103.67, height: 100.44)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedIndexPath = indexPath
+        if (selectedIndices.contains(indexPath)){
+            if let index = selectedIndices.firstIndex(of: indexPath){
+                selectedIndices.remove(at: index)
+                collectionView.reloadData()
+                
+            }
+            return
+        }
+        selectedIndices.append(indexPath)
         collectionView.reloadData()
     }
     
 
 }
+
+
+class CategoryCell: UICollectionViewCell{
+    
+    let cView = UIView()
+    let icon = UIImageView()
+    let cTitle = UILabel()
+    let checkMark = UIImageView()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    fileprivate func setup() {
+        
+        self.subviews([cView, cTitle])
+        
+        cView.backgroundColor = Constants.lightGrey
+        cView.layer.cornerRadius = 11.75
+        cView.width(100%).height(78.2).top(0)
+        
+        cTitle.font = LanguageManager.shared.currentLanguage == .en ? getEnglishFont(13, .semiBold): getArabicFont(13, .heavy)
+        cTitle.textColor = Constants.blackText
+        cTitle.height(15).centerHorizontally()
+        cTitle.Top == cView.Bottom + 7.24
+        
+        cView.subviews(icon)
+        cView.subviews(checkMark)
+        
+        icon.height(30.74).width(47.41).centerHorizontally().top(34)
+        checkMark.height(22.56).width(22.56).trailing(7.56).top(7.56)
+
+    }
+    
+}
+
+

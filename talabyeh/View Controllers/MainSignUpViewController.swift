@@ -9,6 +9,9 @@
 import UIKit
 import LanguageManager_iOS
 import Stevia
+import SDWebImage
+import ProgressHUD
+
 
 class MainSignUpViewController: UIViewController {
 
@@ -25,6 +28,11 @@ class MainSignUpViewController: UIViewController {
     @IBOutlet weak var nextButton: RoundedEdgesButton!
     @IBOutlet weak var signUplabel: UILabel!
     @IBOutlet weak var signUpBackButtonCenterY: NSLayoutConstraint!
+    
+    @IBOutlet weak var companyImage: UIImageView!
+    
+    @IBOutlet weak var distributorImage: UIImageView!
+    @IBOutlet weak var resellerImage: UIImageView!
     
     
     
@@ -48,8 +56,39 @@ class MainSignUpViewController: UIViewController {
             //nextButton.contentVerticalAlignment = .top
             nextButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 6, right: 0)
             
+
+            
         }
-        // Do any additional setup after loading the view.
+        
+        ProgressHUD.show()
+        RequestManger.shared.getUserTypes { (types, error) in
+            self.companyLabel.text = types!.results[0].name//LanguageManager.shared.currentLanguage == .en ? types![0].en_name : types![0].ar_name
+            self.distributorLabel.text = types!.results[1].name//LanguageManager.shared.currentLanguage == .en ? types![1].en_name : types![1].ar_name
+            self.resellerLabel.text = types!.results[2].name//LanguageManager.shared.currentLanguage == .en ? types![2].en_name : types![2].ar_name
+            
+            if let cLogourl = URL(string: types!.results[0].logo!), let dLogourl = URL(string:types!.results[1].logo!) , let rLogourl = URL(string:types!.results[2].logo!)
+            {
+                print(cLogourl)
+//                self.companyImage.sd_setImage(with: cLogourl) { (image, error, cacheType, url) in
+//
+//                }
+                
+                self.companyImage.sd_setImage(with: cLogourl) { (image, error, cacheType, url) in
+                    
+                }
+                
+                self.distributorImage.sd_setImage(with: dLogourl) { (image, error, cacheType, url) in
+                    
+                }
+                self.resellerImage.sd_setImage(with: rLogourl) { (image, error, cacheType, url) in
+                    
+                }
+            }
+            ProgressHUD.dismiss()
+            
+        }
+        
+        
     }
     
     

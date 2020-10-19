@@ -1,20 +1,24 @@
 PODS:
   - LanguageManager-iOS (1.2.0)
+  - ProgressHUD (13.4)
   - ValidationTextField (1.0.4)
 
 DEPENDENCIES:
   - LanguageManager-iOS
+  - ProgressHUD
   - ValidationTextField
 
 SPEC REPOS:
   trunk:
     - LanguageManager-iOS
+    - ProgressHUD
     - ValidationTextField
 
 SPEC CHECKSUMS:
   LanguageManager-iOS: 516c4f088435c83cbdbddfc5179f88e4e0d39eb4
+  ProgressHUD: 137a7fc677487c5581668f4490563124fb35c232
   ValidationTextField: 91bc04170ba4b4358912c372e12d7af4c9143ad5
 
-PODFILE CHECKSUM: 3e7824b8ae2fd5430b262d730b52947e23a0365d
+PODFILE CHECKSUM: aff7c36e0ae6fdcf7ebcf52046306f5b4801f7e7
 
 COCOAPODS: 1.9.3

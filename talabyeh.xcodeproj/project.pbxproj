@@ -10,6 +10,9 @@
 		1DB82D71E9947F4E954F2EAB /* Pods_talabyeh_talabyehUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0E2B1636889447B2D74FE0 /* Pods_talabyeh_talabyehUITests.framework */; };
 		2A1EE79FF68369F4CA5D3A77 /* Pods_talabyehTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05FE4E8241006F1C906DB477 /* Pods_talabyehTests.framework */; };
 		CC20C5899017F17D235D43A6 /* Pods_talabyeh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC09FED4C8A6910C1D7CDCF /* Pods_talabyeh.framework */; };
+		F9365AE125388A9000190C68 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9365AE025388A9000190C68 /* UserType.swift */; };
+		F9365AE92538920800190C68 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9365AE82538920800190C68 /* RequestManager.swift */; };
+		F9365AEF2538A79C00190C68 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F9365AEE2538A79C00190C68 /* Alamofire */; };
 		F93B1FDD25373D8E00E48657 /* SignUpCategoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93B1FDC25373D8E00E48657 /* SignUpCategoriesListView.swift */; };
 		F93B1FE225373DAE00E48657 /* SignUpCategoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93B1FE125373DAE00E48657 /* SignUpCategoriesListViewController.swift */; };
 		F9571B9F252CEA700090C285 /* SFUIDisplay-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B8F252CEA700090C285 /* SFUIDisplay-Heavy.ttf */; };
@@ -45,6 +48,8 @@
 		F9CC27C625332B6B00408FDA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC27C525332B6B00408FDA /* SignInViewController.swift */; };
 		F9CC27CB25332B8900408FDA /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC27CA25332B8900408FDA /* SignInView.swift */; };
 		F9D3113C252CF0C400429F8B /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = F9D3113B252CF0C400429F8B /* Fonts */; };
+		F9E5E83F253C65B200B0040D /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F9E5E83E253C65B200B0040D /* SDWebImage */; };
+		F9E5E844253C911700B0040D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E5E843253C911700B0040D /* Category.swift */; };
 		F9EA0496252C83E800DC288B /* MainSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA0495252C83E800DC288B /* MainSignUpViewController.swift */; };
 		F9EA049B252C858500DC288B /* RoundedEdgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA049A252C858500DC288B /* RoundedEdgesView.swift */; };
 		F9EA04F4252C90E500DC288B /* RoundedEdgesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA04F3252C90E500DC288B /* RoundedEdgesButton.swift */; };
@@ -78,6 +83,8 @@
 		8198DD651C626992FF8ADE61 /* Pods-talabyeh-talabyehUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talabyeh-talabyehUITests.release.xcconfig"; path = "Target Support Files/Pods-talabyeh-talabyehUITests/Pods-talabyeh-talabyehUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AAC1EEA6F124DCF800E38E71 /* Pods-talabyehTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talabyehTests.debug.xcconfig"; path = "Target Support Files/Pods-talabyehTests/Pods-talabyehTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD0E2B1636889447B2D74FE0 /* Pods_talabyeh_talabyehUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talabyeh_talabyehUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9365AE025388A9000190C68 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
+		F9365AE82538920800190C68 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		F93B1FDC25373D8E00E48657 /* SignUpCategoriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpCategoriesListView.swift; path = talabyeh/SignUpCategoriesListView.swift; sourceTree = SOURCE_ROOT; };
 		F93B1FE125373DAE00E48657 /* SignUpCategoriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCategoriesListViewController.swift; sourceTree = "<group>"; };
 		F9571B8F252CEA700090C285 /* SFUIDisplay-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Heavy.ttf"; sourceTree = "<group>"; };
@@ -117,6 +124,7 @@
 		F9CC27C525332B6B00408FDA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		F9CC27CA25332B8900408FDA /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		F9D3113B252CF0C400429F8B /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = Fonts/Fonts; sourceTree = "<group>"; };
+		F9E5E843253C911700B0040D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F9EA0495252C83E800DC288B /* MainSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSignUpViewController.swift; sourceTree = "<group>"; };
 		F9EA049A252C858500DC288B /* RoundedEdgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedEdgesView.swift; sourceTree = "<group>"; };
 		F9EA04F3252C90E500DC288B /* RoundedEdgesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedEdgesButton.swift; sourceTree = "<group>"; };
@@ -132,8 +140,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F98D0E5F252DEDAF00D46EE9 /* Stevia in Frameworks */,
+				F9365AEF2538A79C00190C68 /* Alamofire in Frameworks */,
 				CC20C5899017F17D235D43A6 /* Pods_talabyeh.framework in Frameworks */,
 				F98D0E7B252F718000D46EE9 /* IQKeyboardManagerSwift in Frameworks */,
+				F9E5E83F253C65B200B0040D /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +187,15 @@
 				05FE4E8241006F1C906DB477 /* Pods_talabyehTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9365ADF25388A4D00190C68 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F9365AE025388A9000190C68 /* UserType.swift */,
+				F9E5E843253C911700B0040D /* Category.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F9571B84252CDD9E0090C285 /* Resources */ = {
@@ -251,6 +270,7 @@
 		F96B851E2529A05700CEDCF8 /* talabyeh */ = {
 			isa = PBXGroup;
 			children = (
+				F9365ADF25388A4D00190C68 /* Models */,
 				F98D0E8B252F78B100D46EE9 /* Supporting Files */,
 				F98D0E8A252F786200D46EE9 /* View Controllers */,
 				F98D0E72252F171000D46EE9 /* Custom Views */,
@@ -314,6 +334,7 @@
 				F96B851F2529A05800CEDCF8 /* AppDelegate.swift */,
 				F9F842F7252A2BAD00593C8A /* Localizable.strings */,
 				F98D0E68252E20F200D46EE9 /* Constants.swift */,
+				F9365AE82538920800190C68 /* RequestManager.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -339,6 +360,8 @@
 			packageProductDependencies = (
 				F98D0E5E252DEDAF00D46EE9 /* Stevia */,
 				F98D0E7A252F718000D46EE9 /* IQKeyboardManagerSwift */,
+				F9365AEE2538A79C00190C68 /* Alamofire */,
+				F9E5E83E253C65B200B0040D /* SDWebImage */,
 			);
 			productName = talabyeh;
 			productReference = F96B851C2529A05700CEDCF8 /* talabyeh.app */;
@@ -419,6 +442,8 @@
 			packageReferences = (
 				F98D0E5D252DEDAF00D46EE9 /* XCRemoteSwiftPackageReference "Stevia" */,
 				F98D0E79252F718000D46EE9 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				F9365AED2538A79C00190C68 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				F9E5E83D253C65B200B0040D /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = F96B851D2529A05700CEDCF8 /* Products */;
 			projectDirPath = "";
@@ -583,16 +608,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9365AE92538920800190C68 /* RequestManager.swift in Sources */,
 				F9EA04F4252C90E500DC288B /* RoundedEdgesButton.swift in Sources */,
 				F98D0E6E252F14D200D46EE9 /* CustomTextField.swift in Sources */,
 				F96B85242529A05800CEDCF8 /* RegistrationViewController.swift in Sources */,
 				F98D0E54252DE6F200D46EE9 /* SignUpWizardViewController.swift in Sources */,
+				F9E5E844253C911700B0040D /* Category.swift in Sources */,
 				F96B85202529A05800CEDCF8 /* AppDelegate.swift in Sources */,
 				F96B85502529B67200CEDCF8 /* ChangeLanguageViewController.swift in Sources */,
 				F93B1FDD25373D8E00E48657 /* SignUpCategoriesListView.swift in Sources */,
 				F98D0E69252E20F200D46EE9 /* Constants.swift in Sources */,
 				F9EA049B252C858500DC288B /* RoundedEdgesView.swift in Sources */,
 				F9CC27C625332B6B00408FDA /* SignInViewController.swift in Sources */,
+				F9365AE125388A9000190C68 /* UserType.swift in Sources */,
 				F98D0E59252DE73500D46EE9 /* SignUpWizardView.swift in Sources */,
 				F96B85222529A05800CEDCF8 /* SceneDelegate.swift in Sources */,
 				F9EA0496252C83E800DC288B /* MainSignUpViewController.swift in Sources */,
@@ -947,6 +975,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F9365AED2538A79C00190C68 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
 		F98D0E5D252DEDAF00D46EE9 /* XCRemoteSwiftPackageReference "Stevia" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/freshOS/Stevia";
@@ -963,9 +999,22 @@
 				minimumVersion = 6.5.6;
 			};
 		};
+		F9E5E83D253C65B200B0040D /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F9365AEE2538A79C00190C68 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F9365AED2538A79C00190C68 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		F98D0E5E252DEDAF00D46EE9 /* Stevia */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F98D0E5D252DEDAF00D46EE9 /* XCRemoteSwiftPackageReference "Stevia" */;
@@ -975,6 +1024,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F98D0E79252F718000D46EE9 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		F9E5E83E253C65B200B0040D /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F9E5E83D253C65B200B0040D /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
