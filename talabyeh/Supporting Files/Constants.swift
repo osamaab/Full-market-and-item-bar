@@ -18,7 +18,7 @@ class Constants{
     static let darkGrey = #colorLiteral(red: 0.6039215686, green: 0.631372549, blue: 0.6941176471, alpha: 1) //9AA1B1
     static let borderGrey = #colorLiteral(red: 0.6862745098, green: 0.6862745098, blue: 0.6862745098, alpha: 1) //AFAFAF
     static let textGrey = #colorLiteral(red: 0.4980392157, green: 0.5647058824, blue: 0.5098039216, alpha: 1) //#7F9082
-
+    static let blackText = #colorLiteral(red: 0.1529411765, green: 0.1647058824, blue: 0.2470588235, alpha: 1)//#272A3F
 }
 
 
