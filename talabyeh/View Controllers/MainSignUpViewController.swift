@@ -97,6 +97,10 @@ class MainSignUpViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    var chosenUserType: UserTypeEnum?
+    
+
+    
     @IBAction func chooseMerchantType(_ sender: Any)
     {
         let tag = (sender as AnyObject).tag!
@@ -104,14 +108,20 @@ class MainSignUpViewController: UIViewController {
             companyView.backgroundColor = #colorLiteral(red: 0.7823992372, green: 0.9342591763, blue: 0.2648603916, alpha: 1)
             distributorView.backgroundColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
             resellerView.backgroundColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
+            
+            chosenUserType = .Company
         }else if tag == 1{
             distributorView.backgroundColor = #colorLiteral(red: 0.7823992372, green: 0.9342591763, blue: 0.2648603916, alpha: 1)
             companyView.backgroundColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
             resellerView.backgroundColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
+            
+            chosenUserType = .Distributor
         }else if tag == 2{
             resellerView.backgroundColor = #colorLiteral(red: 0.7823992372, green: 0.9342591763, blue: 0.2648603916, alpha: 1)
             distributorView.backgroundColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
             companyView.backgroundColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
+            
+            chosenUserType = .Reseller
         }
         
         nextButton.isEnabled = true
@@ -119,6 +129,7 @@ class MainSignUpViewController: UIViewController {
     
     @IBAction func next(_ sender: Any) {
         let signUpWizardVC = SignUpWizardViewController()
+        signUpWizardVC.chosenUserType = self.chosenUserType!
         self.navigationController?.pushViewController(signUpWizardVC, animated: true)
     }
     
@@ -135,4 +146,10 @@ class MainSignUpViewController: UIViewController {
     }
     */
 
+}
+
+enum UserTypeEnum {
+    case Company
+    case Distributor
+    case Reseller
 }

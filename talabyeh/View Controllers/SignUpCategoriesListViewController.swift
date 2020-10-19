@@ -19,6 +19,8 @@ class SignUpCategoriesListViewController: UIViewController, UICollectionViewDele
     let signUpCategoriesListView = SignUpCategoriesListView()
     var categories = [Category]()
     
+    var chosenUserType: UserTypeEnum?
+    
     
     override func loadView() {
         view = signUpCategoriesListView
@@ -26,6 +28,16 @@ class SignUpCategoriesListViewController: UIViewController, UICollectionViewDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        switch chosenUserType! {
+        case .Company:
+            signUpCategoriesListView.headerImage.image = LanguageManager.shared.currentLanguage == .en ? UIImage(named: "CompanyImageEnglish") : UIImage(named: "CompanyImageArabic")
+        case .Distributor:
+            signUpCategoriesListView.headerImage.image = LanguageManager.shared.currentLanguage == .en ? UIImage(named: "DistributorImageEnglish") : UIImage(named: "DistributorImageArabic")
+        case .Reseller:
+            signUpCategoriesListView.headerImage.image = LanguageManager.shared.currentLanguage == .en ? UIImage(named: "ResellerImageEnglish") : UIImage(named: "ResellerImageArabic")
+  
+        }
         
         signUpCategoriesListView.backButton.addTarget(self, action: #selector(backButton), for: .touchUpInside)
         signUpCategoriesListView.categoriesCollectionView.delegate = self
