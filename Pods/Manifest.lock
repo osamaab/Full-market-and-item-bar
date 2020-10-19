@@ -1,16 +1,20 @@
 PODS:
   - LanguageManager-iOS (1.2.0)
+  - ValidationTextField (1.0.4)
 
 DEPENDENCIES:
   - LanguageManager-iOS
+  - ValidationTextField
 
 SPEC REPOS:
   trunk:
     - LanguageManager-iOS
+    - ValidationTextField
 
 SPEC CHECKSUMS:
   LanguageManager-iOS: 516c4f088435c83cbdbddfc5179f88e4e0d39eb4
+  ValidationTextField: 91bc04170ba4b4358912c372e12d7af4c9143ad5
 
-PODFILE CHECKSUM: bef60a09961248c93babac35c9bf1ee92c09e9ae
+PODFILE CHECKSUM: 3e7824b8ae2fd5430b262d730b52947e23a0365d
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3
