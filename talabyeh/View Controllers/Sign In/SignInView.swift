@@ -26,7 +26,7 @@ class SignInView: UIView {
     convenience init() {
         
         self.init(frame:CGRect.zero)
-        backgroundColor = .white
+        backgroundColor = UIColor.systemBackground
         
         defaultLayout()
 
@@ -46,6 +46,7 @@ class SignInView: UIView {
         self.semanticContentAttribute = LanguageManager.shared.currentLanguage == .ar ? .forceRightToLeft : .forceLeftToRight
         
         backButton.setImage(UIImage(named: "Path 2586"), for: .normal)
+        backButton.tintColor = .white
         
         if LanguageManager.shared.currentLanguage == .ar{
             backButton.transform = CGAffineTransform(scaleX: -1, y: 1)
@@ -65,7 +66,7 @@ class SignInView: UIView {
         
         welcomeLabel.text = "Welcome to TALABYEH".localiz()
         welcomeLabel.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(22, .bold) : getEnglishFont(22, .bold)
-        welcomeLabel.textColor = Constants.darkGreen
+        welcomeLabel.textColor = UIColor(named: "Green Adaptive")//Constants.darkGreen
         welcomeLabel.textAlignment = .justified
         
         welcomeLabel.height(26).leading(16)
