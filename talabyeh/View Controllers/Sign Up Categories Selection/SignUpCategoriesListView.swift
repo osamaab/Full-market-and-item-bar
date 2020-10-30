@@ -25,7 +25,7 @@ class SignUpCategoriesListView: UIView {
     convenience init() {
         
         self.init(frame:CGRect.zero)
-        backgroundColor = .white
+        backgroundColor = UIColor.systemBackground
         
         defaultLayout()
 
@@ -57,7 +57,7 @@ class SignUpCategoriesListView: UIView {
         
         catgoryLabel.text = "Category".localiz()
         catgoryLabel.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(17, .heavy) : getEnglishFont(17, .semiBold)
-        catgoryLabel.textColor = Constants.darkGrey
+        catgoryLabel.textColor = UIColor(named: AdaptiveColors.darkGrey.rawValue)
         catgoryLabel.textAlignment = .center
         
         catgoryLabel/*.top(30)*/.height(20).centerHorizontally().width(100)
@@ -66,7 +66,7 @@ class SignUpCategoriesListView: UIView {
         
         welcomeLabel.text = "Welcome to TALABYEH".localiz()
         welcomeLabel.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(22, .bold) : getEnglishFont(22, .bold)
-        welcomeLabel.textColor = Constants.darkGreen
+        welcomeLabel.textColor = UIColor(named: AdaptiveColors.green.rawValue)
         welcomeLabel.textAlignment = .justified
         
         welcomeLabel.height(26).leading(16)
@@ -79,7 +79,7 @@ class SignUpCategoriesListView: UIView {
         
         informativeLabel.text = "Please choose the category of resellers You can serve".localiz()
         informativeLabel.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(16, .regular) : getEnglishFont(16, .medium)
-        informativeLabel.textColor = Constants.darkGreen
+        informativeLabel.textColor = UIColor(named: AdaptiveColors.green.rawValue)
         informativeLabel.textAlignment = LanguageManager.shared.currentLanguage == .en ? .left : .right
         informativeLabel.numberOfLines = 2
         
@@ -87,7 +87,7 @@ class SignUpCategoriesListView: UIView {
         informativeLabel.Top == headerImage.Bottom + 14
         informativeLabel.Trailing == catgoryLabel.Trailing
         
-        categoriesCollectionView.backgroundColor = .white
+        categoriesCollectionView.backgroundColor = UIColor.systemBackground
         
         categoriesCollectionView.trailing(16).leading(16)
         categoriesCollectionView.Top == informativeLabel.Bottom + 18
