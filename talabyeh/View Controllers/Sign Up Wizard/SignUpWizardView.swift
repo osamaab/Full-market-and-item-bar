@@ -48,7 +48,7 @@ class SignUpWizardView: UIView, UITableViewDelegate, UITableViewDataSource {
     convenience init() {
         
         self.init(frame:CGRect.zero)
-        backgroundColor = .white
+        backgroundColor = UIColor.systemBackground
         
         defaultLayout()
 
@@ -110,7 +110,7 @@ class SignUpWizardView: UIView, UITableViewDelegate, UITableViewDataSource {
         
         signUpLabel.text = "Sign Up".localiz()
         signUpLabel.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(17, .regular) : getEnglishFont(17, .medium)
-        signUpLabel.textColor = Constants.darkGrey
+        signUpLabel.textColor = UIColor(named: AdaptiveColors.darkGrey.rawValue)
         signUpLabel.textAlignment = .center
         
         signUpLabel/*.top(30)*/.height(40).centerHorizontally()
@@ -119,13 +119,15 @@ class SignUpWizardView: UIView, UITableViewDelegate, UITableViewDataSource {
         
         welcomeLabel.text = "Welcome to TALABYEH".localiz()
         welcomeLabel.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(22, .bold) : getEnglishFont(22, .bold)
-        welcomeLabel.textColor = Constants.darkGreen
+        welcomeLabel.textColor = UIColor(named: AdaptiveColors.green.rawValue)
         welcomeLabel.textAlignment = .justified
         
         welcomeLabel.height(26).leading(16).top(0)
         //welcomeLabel.Top == signUpLabel.Bottom + 10
         
         merchantTypeImage.image = UIImage(named: "Group 2709")
+        merchantTypeImage.image = merchantTypeImage.image?.withRenderingMode(.alwaysTemplate)
+        merchantTypeImage.tintColor = UIColor(named: AdaptiveColors.green.rawValue)
         merchantTypeImage.leading(16).trailing(16).height(33)
         merchantTypeImage.Top == welcomeLabel.Bottom + 9
         
@@ -202,7 +204,7 @@ class SignUpWizardView: UIView, UITableViewDelegate, UITableViewDataSource {
         icon.image = UIImage(named: "Group 2710")
         icon.top(23).width(28).height(22).centerHorizontally()
         
-        comLicenceView.backgroundColor = #colorLiteral(red: 0.6039215686, green: 0.631372549, blue: 0.6941176471, alpha: 1)
+        comLicenceView.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
         comLicenceView.layer.cornerRadius = 10
         comLicenceView.leading(16).width(167).height(91)
         comLicenceView.Top == telephonetf.Bottom + 12 + 22
@@ -225,7 +227,7 @@ class SignUpWizardView: UIView, UITableViewDelegate, UITableViewDataSource {
         icon2.image = UIImage(named: "Group 2710")
         icon2.top(23).width(28).height(22).centerHorizontally()
         
-        companyLogoView.backgroundColor = #colorLiteral(red: 0.6039215686, green: 0.631372549, blue: 0.6941176471, alpha: 1)
+        companyLogoView.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
         companyLogoView.layer.cornerRadius = 10
         companyLogoView.trailing(16).width(167).height(91)
         companyLogoView.Top == telephonetf.Bottom + 12  + 22
@@ -250,7 +252,7 @@ class SignUpWizardView: UIView, UITableViewDelegate, UITableViewDataSource {
         icon3.contentMode = .scaleAspectFit
         icon3.top(23).width(28).height(22).centerHorizontally()
         
-        companyLocationView.backgroundColor = #colorLiteral(red: 0.6039215686, green: 0.631372549, blue: 0.6941176471, alpha: 1)
+        companyLocationView.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
         companyLocationView.layer.cornerRadius = 10
         companyLocationView.leading(16).width(167).height(91)
         companyLocationView.Top == companyLogoView.Bottom + 10
@@ -274,7 +276,7 @@ class SignUpWizardView: UIView, UITableViewDelegate, UITableViewDataSource {
         icon4.image = UIImage(named: "Path 2437")
         icon4.top(23).width(28).height(22).centerHorizontally()
         
-        categoryView.backgroundColor = #colorLiteral(red: 0.6039215686, green: 0.631372549, blue: 0.6941176471, alpha: 1)
+        categoryView.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
         categoryView.layer.cornerRadius = 10
         categoryView.trailing(16).width(167).height(91)
         categoryView.Top == companyLogoView.Bottom + 10

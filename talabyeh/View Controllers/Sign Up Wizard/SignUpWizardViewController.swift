@@ -9,7 +9,9 @@
 import UIKit
 import LanguageManager_iOS
 
-class SignUpWizardViewController: UIViewController, UITextFieldDelegate {
+
+class SignUpWizardViewController: UIViewController, UITextFieldDelegate
+{
     
     let signUpView = SignUpWizardView()
     
@@ -20,6 +22,7 @@ class SignUpWizardViewController: UIViewController, UITextFieldDelegate {
     }
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         switch chosenUserType! {
