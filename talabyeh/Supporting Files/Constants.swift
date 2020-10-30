@@ -8,6 +8,17 @@
 import Foundation
 import UIKit
 
+
+enum AdaptiveColors: String{
+    case black = "Black Adaptive"
+    case green = "Green Adaptive"
+    case lightGrey = "Light Grey Adaptive"
+    case white = "White Adaptive"
+    case buttonGrey = "Button Grey Background Adaptive"
+    case textGrey = "Text Grey Adaptive"
+    case darkGrey = "Dark Grey Adaptive"
+}
+
 class Constants{
 
     static let baseURL = "http://www.talabyeh.com/api/"
@@ -20,6 +31,9 @@ class Constants{
     static let borderGrey = #colorLiteral(red: 0.6862745098, green: 0.6862745098, blue: 0.6862745098, alpha: 1) //AFAFAF
     static let textGrey = #colorLiteral(red: 0.4980392157, green: 0.5647058824, blue: 0.5098039216, alpha: 1) //#7F9082
     static let blackText = #colorLiteral(red: 0.1529411765, green: 0.1647058824, blue: 0.2470588235, alpha: 1)//#272A3F
+    static let whiteText = #colorLiteral(red: 0.9529411765, green: 0.9568627451, blue: 0.9607843137, alpha: 1) // #F3F4F5
+    
+
 }
 
 

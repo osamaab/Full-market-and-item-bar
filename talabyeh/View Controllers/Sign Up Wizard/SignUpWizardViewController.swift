@@ -7,17 +7,33 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
-class SignUpWizardViewController: UIViewController, UITextFieldDelegate {
+
+class SignUpWizardViewController: UIViewController, UITextFieldDelegate
+{
     
     let signUpView = SignUpWizardView()
+    
+    var chosenUserType: UserTypeEnum?
     
     override func loadView() {
         view = signUpView
     }
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        switch chosenUserType! {
+        case .Company:
+            signUpView.merchantTypeImage.image = LanguageManager.shared.currentLanguage == .en ? UIImage(named: "CompanyImageEnglish") : UIImage(named: "CompanyImageArabic")
+        case .Distributor:
+            signUpView.merchantTypeImage.image = LanguageManager.shared.currentLanguage == .en ? UIImage(named: "DistributorImageEnglish") : UIImage(named: "DistributorImageArabic")
+        case .Reseller:
+            signUpView.merchantTypeImage.image = LanguageManager.shared.currentLanguage == .en ? UIImage(named: "ResellerImageEnglish") : UIImage(named: "ResellerImageArabic")
+  
+        }
 
         signUpView.backButton.addTarget(self, action: #selector(backButton), for: .touchUpInside)
         signUpView.passwordtf.delegate = self
@@ -36,6 +52,7 @@ class SignUpWizardViewController: UIViewController, UITextFieldDelegate {
     
     @objc func showCategories(){
         let vc = SignUpCategoriesListViewController()
+        vc.chosenUserType = self.chosenUserType!
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

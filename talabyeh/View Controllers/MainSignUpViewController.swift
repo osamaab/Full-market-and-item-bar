@@ -34,6 +34,10 @@ class MainSignUpViewController: UIViewController {
     @IBOutlet weak var distributorImage: UIImageView!
     @IBOutlet weak var resellerImage: UIImageView!
     
+    @IBOutlet weak var lineView1: UIView!
+    @IBOutlet weak var lineView2: UIView!
+    @IBOutlet weak var lineView3: UIView!
+    
     
     
     override func viewDidLoad() {
@@ -60,11 +64,29 @@ class MainSignUpViewController: UIViewController {
             
         }
         
+        
+        lineView1.backgroundColor = UIColor(named: AdaptiveColors.green.rawValue)
+        lineView2.backgroundColor = UIColor(named: AdaptiveColors.green.rawValue)
+        lineView3.backgroundColor = UIColor(named: AdaptiveColors.green.rawValue)
+        
+        self.companyImage.image = self.companyImage.image?.withRenderingMode(.alwaysTemplate)
+        self.companyImage.tintColor = UIColor(named: AdaptiveColors.green.rawValue)
+        
+        self.distributorImage.image = self.companyImage.image?.withRenderingMode(.alwaysTemplate)
+        self.distributorImage.tintColor = UIColor(named: AdaptiveColors.green.rawValue)
+        
+        self.resellerImage.image = self.companyImage.image?.withRenderingMode(.alwaysTemplate)
+        self.resellerImage.tintColor = .white
+        
+        
+        
         ProgressHUD.show()
         RequestManger.shared.getUserTypes { (types, error) in
             self.companyLabel.text = types!.results[0].name//LanguageManager.shared.currentLanguage == .en ? types![0].en_name : types![0].ar_name
             self.distributorLabel.text = types!.results[1].name//LanguageManager.shared.currentLanguage == .en ? types![1].en_name : types![1].ar_name
             self.resellerLabel.text = types!.results[2].name//LanguageManager.shared.currentLanguage == .en ? types![2].en_name : types![2].ar_name
+            
+
             
             if let cLogourl = URL(string: types!.results[0].logo!), let dLogourl = URL(string:types!.results[1].logo!) , let rLogourl = URL(string:types!.results[2].logo!)
             {
@@ -74,15 +96,25 @@ class MainSignUpViewController: UIViewController {
 //                }
                 
                 self.companyImage.sd_setImage(with: cLogourl) { (image, error, cacheType, url) in
+//                    image?.withRenderingMode(.alwaysTemplate)
+//                    image?.withTintColor(UIColor(named: AdaptiveColors.green.rawValue)!)
+                    
+                    self.companyImage.image = image?.withRenderingMode(.alwaysTemplate)
+                    self.companyImage.tintColor = UIColor(named: AdaptiveColors.green.rawValue)
                     
                 }
                 
                 self.distributorImage.sd_setImage(with: dLogourl) { (image, error, cacheType, url) in
                     
+                    self.distributorImage.image = image?.withRenderingMode(.alwaysTemplate)
+                    self.distributorImage.tintColor = UIColor(named: AdaptiveColors.green.rawValue)
                 }
                 self.resellerImage.sd_setImage(with: rLogourl) { (image, error, cacheType, url) in
-                    
+                    self.resellerImage.image = image?.withRenderingMode(.alwaysTemplate)
+                    self.resellerImage.tintColor = UIColor(named: AdaptiveColors.green.rawValue)
                 }
+ 
+                
             }
             ProgressHUD.dismiss()
             
@@ -97,29 +129,47 @@ class MainSignUpViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    var chosenUserType: UserTypeEnum?
+    
+
+    
     @IBAction func chooseMerchantType(_ sender: Any)
     {
         let tag = (sender as AnyObject).tag!
         if tag == 0{
             companyView.backgroundColor = #colorLiteral(red: 0.7823992372, green: 0.9342591763, blue: 0.2648603916, alpha: 1)
-            distributorView.backgroundColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
-            resellerView.backgroundColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
+            distributorView.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
+            resellerView.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
+            
+            chosenUserType = .Company
         }else if tag == 1{
             distributorView.backgroundColor = #colorLiteral(red: 0.7823992372, green: 0.9342591763, blue: 0.2648603916, alpha: 1)
-            companyView.backgroundColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
-            resellerView.backgroundColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
+            companyView.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
+            resellerView.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
+            
+            chosenUserType = .Distributor
         }else if tag == 2{
             resellerView.backgroundColor = #colorLiteral(red: 0.7823992372, green: 0.9342591763, blue: 0.2648603916, alpha: 1)
-            distributorView.backgroundColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
-            companyView.backgroundColor = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
+            distributorView.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
+            companyView.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
+            
+            chosenUserType = .Reseller
         }
         
         nextButton.isEnabled = true
     }
     
     @IBAction func next(_ sender: Any) {
-        let signUpWizardVC = SignUpWizardViewController()
-        self.navigationController?.pushViewController(signUpWizardVC, animated: true)
+        switch chosenUserType {
+        case .Distributor:
+            let distributorSignUp = DistributorSignUpViewController()
+            self.navigationController?.pushViewController(distributorSignUp, animated: true)
+        default:
+            let signUpWizardVC = SignUpWizardViewController()
+            signUpWizardVC.chosenUserType = self.chosenUserType!
+            self.navigationController?.pushViewController(signUpWizardVC, animated: true)
+        }
+
     }
     
     
@@ -135,4 +185,10 @@ class MainSignUpViewController: UIViewController {
     }
     */
 
+}
+
+enum UserTypeEnum {
+    case Company
+    case Distributor
+    case Reseller
 }

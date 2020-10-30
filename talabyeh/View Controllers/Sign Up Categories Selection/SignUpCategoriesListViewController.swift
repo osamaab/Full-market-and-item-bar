@@ -19,6 +19,8 @@ class SignUpCategoriesListViewController: UIViewController, UICollectionViewDele
     let signUpCategoriesListView = SignUpCategoriesListView()
     var categories = [Category]()
     
+    var chosenUserType: UserTypeEnum?
+    
     
     override func loadView() {
         view = signUpCategoriesListView
@@ -26,6 +28,16 @@ class SignUpCategoriesListViewController: UIViewController, UICollectionViewDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        switch chosenUserType! {
+        case .Company:
+            signUpCategoriesListView.headerImage.image = LanguageManager.shared.currentLanguage == .en ? UIImage(named: "CompanyImageEnglish") : UIImage(named: "CompanyImageArabic")
+        case .Distributor:
+            signUpCategoriesListView.headerImage.image = LanguageManager.shared.currentLanguage == .en ? UIImage(named: "DistributorImageEnglish") : UIImage(named: "DistributorImageArabic")
+        case .Reseller:
+            signUpCategoriesListView.headerImage.image = LanguageManager.shared.currentLanguage == .en ? UIImage(named: "ResellerImageEnglish") : UIImage(named: "ResellerImageArabic")
+  
+        }
         
         signUpCategoriesListView.backButton.addTarget(self, action: #selector(backButton), for: .touchUpInside)
         signUpCategoriesListView.categoriesCollectionView.delegate = self
@@ -72,12 +84,15 @@ class SignUpCategoriesListViewController: UIViewController, UICollectionViewDele
             //icon.sd_setImage(with: url, placeholderImage: nil, options: .fromCacheOnly, context: nil) //= UIImage(named: "Group 2729")
             cell?.icon.contentMode = .scaleAspectFit
             cell?.icon.sd_setImage(with: url) { (image, error, cacheType, url) in
-                
+                cell?.icon.image = image?.withRenderingMode(.alwaysTemplate)
+                cell?.icon.tintColor = UIColor(named: AdaptiveColors.darkGrey.rawValue)
             }
         }
         
         
         cell?.checkMark.image = UIImage(named: "Group 2696")
+        cell?.checkMark.image = cell?.checkMark.image?.withRenderingMode(.alwaysTemplate)
+        cell?.checkMark.tintColor = UIColor(named: AdaptiveColors.darkGrey.rawValue)
         
         if selectedIndices.contains(indexPath){
             cell?.checkMark.image = UIImage(named: "Group 2753")
@@ -130,12 +145,12 @@ class CategoryCell: UICollectionViewCell{
         
         self.subviews([cView, cTitle])
         
-        cView.backgroundColor = Constants.lightGrey
+        cView.backgroundColor = UIColor(named: AdaptiveColors.lightGrey.rawValue)
         cView.layer.cornerRadius = 11.75
         cView.width(100%).height(78.2).top(0)
         
         cTitle.font = LanguageManager.shared.currentLanguage == .en ? getEnglishFont(13, .semiBold): getArabicFont(13, .heavy)
-        cTitle.textColor = Constants.blackText
+        cTitle.textColor = UIColor(named: AdaptiveColors.black.rawValue)
         cTitle.height(15).centerHorizontally()
         cTitle.Top == cView.Bottom + 7.24
         
