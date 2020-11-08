@@ -52,11 +52,15 @@
 		F9CC27C625332B6B00408FDA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC27C525332B6B00408FDA /* SignInViewController.swift */; };
 		F9CC27CB25332B8900408FDA /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC27CA25332B8900408FDA /* SignInView.swift */; };
 		F9D3113C252CF0C400429F8B /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = F9D3113B252CF0C400429F8B /* Fonts */; };
+		F9E2AF95254C6611000A93CC /* CollectionViewWithTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E2AF94254C6611000A93CC /* CollectionViewWithTitleView.swift */; };
+		F9E2AF9A254C6619000A93CC /* CollectionViewWithTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E2AF99254C6619000A93CC /* CollectionViewWithTitleView.xib */; };
 		F9E5E83F253C65B200B0040D /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F9E5E83E253C65B200B0040D /* SDWebImage */; };
 		F9E5E844253C911700B0040D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E5E843253C911700B0040D /* Category.swift */; };
 		F9EA0496252C83E800DC288B /* MainSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA0495252C83E800DC288B /* MainSignUpViewController.swift */; };
 		F9EA049B252C858500DC288B /* RoundedEdgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA049A252C858500DC288B /* RoundedEdgesView.swift */; };
 		F9EA04F4252C90E500DC288B /* RoundedEdgesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA04F3252C90E500DC288B /* RoundedEdgesButton.swift */; };
+		F9F65B8C254F1FD300D347D6 /* MarketScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F65B8B254F1FD300D347D6 /* MarketScreenViewController.swift */; };
+		F9F65B91254F205300D347D6 /* MarketScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F65B90254F205300D347D6 /* MarketScreenView.swift */; };
 		F9F842F5252A2BAD00593C8A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9F842F7252A2BAD00593C8A /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -132,10 +136,14 @@
 		F9CC27C525332B6B00408FDA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		F9CC27CA25332B8900408FDA /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		F9D3113B252CF0C400429F8B /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = Fonts/Fonts; sourceTree = "<group>"; };
+		F9E2AF94254C6611000A93CC /* CollectionViewWithTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewWithTitleView.swift; sourceTree = "<group>"; };
+		F9E2AF99254C6619000A93CC /* CollectionViewWithTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewWithTitleView.xib; sourceTree = "<group>"; };
 		F9E5E843253C911700B0040D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F9EA0495252C83E800DC288B /* MainSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSignUpViewController.swift; sourceTree = "<group>"; };
 		F9EA049A252C858500DC288B /* RoundedEdgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedEdgesView.swift; sourceTree = "<group>"; };
 		F9EA04F3252C90E500DC288B /* RoundedEdgesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedEdgesButton.swift; sourceTree = "<group>"; };
+		F9F65B8B254F1FD300D347D6 /* MarketScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketScreenViewController.swift; sourceTree = "<group>"; };
+		F9F65B90254F205300D347D6 /* MarketScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketScreenView.swift; sourceTree = "<group>"; };
 		F9F842F1252A2B2400593C8A /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		F9F842F2252A2B2400593C8A /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		F9F842F6252A2BAD00593C8A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -312,6 +320,8 @@
 		F98D0E72252F171000D46EE9 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				F9E2AF94254C6611000A93CC /* CollectionViewWithTitleView.swift */,
+				F9E2AF99254C6619000A93CC /* CollectionViewWithTitleView.xib */,
 				F98D0E6D252F14D200D46EE9 /* CustomTextField.swift */,
 				F9EA04F3252C90E500DC288B /* RoundedEdgesButton.swift */,
 				F9EA049A252C858500DC288B /* RoundedEdgesView.swift */,
@@ -332,6 +342,8 @@
 				F990A387254082C500ABC4CF /* DistributorSignUpView.swift */,
 				F94608ED2545D91600C74D95 /* ProfilePageView.swift */,
 				F94608F22545D92B00C74D95 /* ProfilePageViewController.swift */,
+				F9F65B8B254F1FD300D347D6 /* MarketScreenViewController.swift */,
+				F9F65B90254F205300D347D6 /* MarketScreenView.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -499,6 +511,7 @@
 			files = (
 				F9571BA2252CEA700090C285 /* SFUIDisplay-Ultralight.ttf in Resources */,
 				F96B852C2529A05A00CEDCF8 /* LaunchScreen.storyboard in Resources */,
+				F9E2AF9A254C6619000A93CC /* CollectionViewWithTitleView.xib in Resources */,
 				F9571BA5252CEA700090C285 /* SFUIDisplay-Medium.ttf in Resources */,
 				F9571BAD252CEA700090C285 /* DIN NEXT™ ARABIC LIGHT.otf in Resources */,
 				F9571BAC252CEA700090C285 /* DIN NEXT™ ARABIC BOLD.otf in Resources */,
@@ -657,12 +670,15 @@
 				F93B1FDD25373D8E00E48657 /* SignUpCategoriesListView.swift in Sources */,
 				F98D0E69252E20F200D46EE9 /* Constants.swift in Sources */,
 				F9EA049B252C858500DC288B /* RoundedEdgesView.swift in Sources */,
+				F9E2AF95254C6611000A93CC /* CollectionViewWithTitleView.swift in Sources */,
 				F94608EE2545D91600C74D95 /* ProfilePageView.swift in Sources */,
 				F9CC27C625332B6B00408FDA /* SignInViewController.swift in Sources */,
 				F94608F32545D92B00C74D95 /* ProfilePageViewController.swift in Sources */,
 				F9365AE125388A9000190C68 /* UserType.swift in Sources */,
+				F9F65B91254F205300D347D6 /* MarketScreenView.swift in Sources */,
 				F98D0E59252DE73500D46EE9 /* SignUpWizardView.swift in Sources */,
 				F96B85222529A05800CEDCF8 /* SceneDelegate.swift in Sources */,
+				F9F65B8C254F1FD300D347D6 /* MarketScreenViewController.swift in Sources */,
 				F9EA0496252C83E800DC288B /* MainSignUpViewController.swift in Sources */,
 				F93B1FE225373DAE00E48657 /* SignUpCategoriesListViewController.swift in Sources */,
 				F9CC27CB25332B8900408FDA /* SignInView.swift in Sources */,
