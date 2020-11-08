@@ -37,9 +37,17 @@ class SignInViewController: UIViewController, UITextFieldDelegate
     {
         let mainVC = UITabBarController()
         let profileVC = ProfilePageViewController()
-        mainVC.setViewControllers([profileVC], animated: true)
+        profileVC.title = "Profile".localiz()
+        let market = MarketScreenViewController()
+        market.title = "Market".localiz()
+        mainVC.setViewControllers([market,profileVC], animated: true)
         mainVC.modalTransitionStyle = .crossDissolve
         mainVC.modalPresentationStyle = .fullScreen
+        mainVC.tabBar.items?[0].image = UIImage(named: "")
+        //mainVC.tabBar.items?[0].selectedImage = UIImage(named: "")
+        mainVC.tabBar.items?[1].image = UIImage(named: "Group 2720")
+        //mainVC.tabBar.items?[1].selectedImage = UIImage(named: "")
+        mainVC.tabBar.tintColor = Constants.darkGreen
         //mainVC.tabBar.frame.size.height = 82.81
         //mainVC.tabBar.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.present(mainVC, animated: true, completion: nil)
