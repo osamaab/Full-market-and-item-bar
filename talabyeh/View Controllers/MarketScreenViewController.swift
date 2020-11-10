@@ -11,6 +11,7 @@ import LanguageManager_iOS
 import Stevia
 
 class MarketScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
 
     
     
@@ -54,6 +55,8 @@ class MarketScreenViewController: UIViewController, UICollectionViewDelegate, UI
         marketView.itemCollectionView2.collectionView.delegate = self
         marketView.itemCollectionView2.collectionView.dataSource = self
         marketView.itemCollectionView2.collectionView.register(ItemCell2.self, forCellWithReuseIdentifier: "Cell3")
+        
+        marketView.searchButton.addTarget(self, action: #selector(searchTapped), for: .touchUpInside)
         
         
     }
@@ -109,9 +112,123 @@ class MarketScreenViewController: UIViewController, UICollectionViewDelegate, UI
         }
     }
     
+    
+    @objc func searchTapped(){
+        
+        let resultsController = ResultsController()
+        resultsController.modalTransitionStyle = .crossDissolve
+        resultsController.modalPresentationStyle = .overFullScreen
+        self.present(resultsController, animated: true, completion: nil)
+        
+        
+//        let searchController = UISearchController(searchResultsController: resultsController)
+//
+//        // 1
+//        searchController.searchResultsUpdater = self
+//        // 2
+//        //searchController.obscuresBackgroundDuringPresentation = false
+//        // 3
+//        searchController.searchBar.placeholder = "Search".localiz()
+//        // 4
+//        //navigationItem.searchController = searchController
+//        // 5
+//        definesPresentationContext = true
+//
+//        searchController.searchBar.barTintColor = UIColor(named: AdaptiveColors.green.rawValue)
+//        searchController.searchBar.tintColor = .white
+//        //searchController.searchBar.backgroundColor = .white
+//        searchController.modalTransitionStyle = .crossDissolve
+//        self.present(searchController, animated: true, completion: nil)
+        
+        
+    }
+    
+
+    
+//    func updateSearchResults(for searchController: UISearchController) {
+////        let searchBar = searchController.searchBar
+////        filterContentForSearchText(searchBar.text!)
+//
+//    }
+    
 
 
 
+}
+
+class ResultsController : UIViewController, UISearchBarDelegate{
+    
+    
+    let tableView = UITableView()
+    let headerView = UIView()
+    let searchBar = UISearchBar()
+    let filterButton = UIButton()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = .clear
+        
+        tableView.backgroundColor = UIColor.systemBackground
+        tableView.separatorStyle = .none
+        tableView.isHidden =  true
+        
+        headerView.backgroundColor = Constants.darkGreen
+
+        filterButton.addTarget(self, action: #selector(filterTapped), for: .touchUpInside)
+        filterButton.setImage(UIImage(named: "Group 2731"), for: .normal)
+        
+        searchBar.delegate = self
+        searchBar.placeholder = "Search".localiz()
+        //searchBar.tintColor = .white
+        
+        //searchBar.searchBarStyle = .minimal
+        searchBar.backgroundImage = UIImage()
+        //searchBar.backgroundColor = .white
+        //searchBar.barTintColor = .white
+        //searchBar.tintColor = .white
+        searchBar.textField?.backgroundColor = .white
+        searchBar.textField?.layer.cornerRadius = 12
+        searchBar.becomeFirstResponder()
+        
+        view.subviews(tableView)
+        view.subviews(headerView)
+        headerView.top(0).leading(0).trailing(0).height(88.11)
+        tableView.bottom(0).leading(0).trailing(0)
+        tableView.Top == headerView.Bottom
+        
+        headerView.subviews([searchBar, filterButton])
+        searchBar.bottom(7.39).leading(10).trailing(56).height(37)
+        //searchBar.layer.cornerRadius = 12
+        filterButton.trailing(18.75).width(20).height(20)
+        filterButton.CenterY == searchBar.CenterY
+        
+    }
+    
+    @objc func filterTapped(){
+        
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        
+    }
+    
+
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text != ""{
+            tableView.isHidden = false
+            
+        }else{
+            tableView.isHidden = true
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        tableView.isHidden = true
+    }
+    
+    
 }
 
 
@@ -273,3 +390,117 @@ class ItemCell2: UICollectionViewCell{
     }
     
 }
+
+
+extension UISearchBar {
+    public var textField: UITextField? {
+        if #available(iOS 13, *) {
+            return searchTextField
+        }
+        let subViews = subviews.flatMap { $0.subviews }
+        guard let textField = (subViews.filter { $0 is UITextField }).first as? UITextField else {
+            return nil
+        }
+        return textField
+    }
+
+    func clearBackgroundColor() {
+        guard let UISearchBarBackground: AnyClass = NSClassFromString("UISearchBarBackground") else { return }
+
+        for view in subviews {
+            for subview in view.subviews where subview.isKind(of: UISearchBarBackground) {
+                subview.alpha = 0
+            }
+        }
+    }
+
+    public var activityIndicator: UIActivityIndicatorView? {
+        return textField?.leftView?.subviews.compactMap { $0 as? UIActivityIndicatorView }.first
+    }
+
+    var isLoading: Bool {
+        get {
+            return activityIndicator != nil
+        } set {
+            if newValue {
+                if activityIndicator == nil {
+                    let newActivityIndicator = UIActivityIndicatorView(style: .gray)
+                    newActivityIndicator.color = UIColor.gray
+                    newActivityIndicator.startAnimating()
+                    newActivityIndicator.backgroundColor = textField?.backgroundColor ?? UIColor.white
+                    textField?.leftView?.addSubview(newActivityIndicator)
+                    let leftViewSize = textField?.leftView?.frame.size ?? CGSize.zero
+
+                    newActivityIndicator.center = CGPoint(x: leftViewSize.width - newActivityIndicator.frame.width / 2,
+                                                          y: leftViewSize.height / 2)
+                }
+            } else {
+                activityIndicator?.removeFromSuperview()
+            }
+        }
+    }
+
+    func changePlaceholderColor(_ color: UIColor) {
+        guard let UISearchBarTextFieldLabel: AnyClass = NSClassFromString("UISearchBarTextFieldLabel"),
+            let field = textField else {
+            return
+        }
+        for subview in field.subviews where subview.isKind(of: UISearchBarTextFieldLabel) {
+            (subview as! UILabel).textColor = color
+        }
+    }
+
+    func setRightImage(normalImage: UIImage,
+                       highLightedImage: UIImage) {
+        showsBookmarkButton = true
+        if let btn = textField?.rightView as? UIButton {
+            btn.setImage(normalImage,
+                         for: .normal)
+            btn.setImage(highLightedImage,
+                         for: .highlighted)
+        }
+    }
+    
+        func setLeftImage(_ image: UIImage,
+                      with padding: CGFloat = 0,
+                      tintColor: UIColor) {
+        let imageView = UIImageView()
+        imageView.image = image
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        imageView.tintColor = tintColor
+
+        if padding != 0 {
+            let stackView = UIStackView()
+            stackView.axis = .horizontal
+            stackView.alignment = .center
+            stackView.distribution = .fill
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+            
+            let paddingView = UIView()
+            paddingView.translatesAutoresizingMaskIntoConstraints = false
+            paddingView.widthAnchor.constraint(equalToConstant: padding).isActive = true
+            paddingView.heightAnchor.constraint(equalToConstant: padding).isActive = true
+            stackView.addArrangedSubview(paddingView)
+            stackView.addArrangedSubview(imageView)
+            textField?.leftView = stackView
+
+        } else {
+            textField?.leftView = imageView
+        }
+    }
+}
+
+extension UIImage {
+    convenience init(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
+        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
+        color.setFill()
+        UIRectFill(rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.init(cgImage: (image?.cgImage!)!)
+    }
+}
+
