@@ -10,24 +10,11 @@ import Foundation
 
 
 struct Category: Codable {
-
-
     let ID: Int?
-    //let ar_title: String?
-    //let en_title: String?
     let title: String?
     let logo: String?
-  
-
 }
 
 struct Categories: Codable {
-  
   let results: [Category]
-  
-//  enum CodingKeys: String, CodingKey {
-//
-//    case all
-//  }
-    
 }

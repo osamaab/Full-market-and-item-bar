@@ -11,6 +11,12 @@ pod 'LanguageManager-iOS'
 pod 'ValidationTextField'
 pod 'ProgressHUD'
 
+# new pods
+pod 'IQKeyboardManager'
+pod 'Moya'
+pod 'SDWebImage', '~> 5.0'
+
+
   target 'talabyehTests' do
     inherit! :search_paths
     # Pods for testing

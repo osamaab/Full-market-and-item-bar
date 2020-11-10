@@ -10,10 +10,22 @@
 		1DB82D71E9947F4E954F2EAB /* Pods_talabyeh_talabyehUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD0E2B1636889447B2D74FE0 /* Pods_talabyeh_talabyehUITests.framework */; };
 		2A1EE79FF68369F4CA5D3A77 /* Pods_talabyehTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05FE4E8241006F1C906DB477 /* Pods_talabyehTests.framework */; };
 		CC20C5899017F17D235D43A6 /* Pods_talabyeh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC09FED4C8A6910C1D7CDCF /* Pods_talabyeh.framework */; };
+		E496B249255B214C001BEC0F /* FontProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B248255B214C001BEC0F /* FontProviderType.swift */; };
+		E496B260255B22A2001BEC0F /* SignUpCategoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B25F255B22A2001BEC0F /* SignUpCategoriesListView.swift */; };
+		E496B2A4255B2730001BEC0F /* ColorsProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2A3255B2730001BEC0F /* ColorsProviderType.swift */; };
+		E496B2AC255B2771001BEC0F /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2AB255B2771001BEC0F /* UIColor+Additions.swift */; };
+		E496B2B6255B28C0001BEC0F /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2B5255B28C0001BEC0F /* UIView+Additions.swift */; };
+		E496B2C5255B29A3001BEC0F /* InsetedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2C4255B29A3001BEC0F /* InsetedTextField.swift */; };
+		E496B2CA255B2ABF001BEC0F /* ValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2C9255B2ABF001BEC0F /* ValidationTextField.swift */; };
+		E496B2CF255B2B10001BEC0F /* BorderedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2CE255B2B10001BEC0F /* BorderedTextField.swift */; };
+		E496B2D8255B2D3F001BEC0F /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2D7255B2D3F001BEC0F /* BackButton.swift */; };
+		E496B2DD255B2D44001BEC0F /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2DC255B2D44001BEC0F /* BorderedButton.swift */; };
+		E496B2E2255B2D4A001BEC0F /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2E1255B2D4A001BEC0F /* ActionButton.swift */; };
+		E496B2F1255B2ED9001BEC0F /* GeneralRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2F0255B2ED9001BEC0F /* GeneralRoutes.swift */; };
+		E496B2F9255B2FBB001BEC0F /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2F8255B2FBB001BEC0F /* NetworkConfiguration.swift */; };
+		E496B2FE255B3088001BEC0F /* Moya+DefaultProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2FD255B3088001BEC0F /* Moya+DefaultProvider.swift */; };
 		F9365AE125388A9000190C68 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9365AE025388A9000190C68 /* UserType.swift */; };
 		F9365AE92538920800190C68 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9365AE82538920800190C68 /* RequestManager.swift */; };
-		F9365AEF2538A79C00190C68 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F9365AEE2538A79C00190C68 /* Alamofire */; };
-		F93B1FDD25373D8E00E48657 /* SignUpCategoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93B1FDC25373D8E00E48657 /* SignUpCategoriesListView.swift */; };
 		F93B1FE225373DAE00E48657 /* SignUpCategoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93B1FE125373DAE00E48657 /* SignUpCategoriesListViewController.swift */; };
 		F94608EE2545D91600C74D95 /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94608ED2545D91600C74D95 /* ProfilePageView.swift */; };
 		F94608F32545D92B00C74D95 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94608F22545D92B00C74D95 /* ProfilePageViewController.swift */; };
@@ -44,21 +56,16 @@
 		F98D0E54252DE6F200D46EE9 /* SignUpWizardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D0E53252DE6F200D46EE9 /* SignUpWizardViewController.swift */; };
 		F98D0E59252DE73500D46EE9 /* SignUpWizardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D0E58252DE73500D46EE9 /* SignUpWizardView.swift */; };
 		F98D0E5F252DEDAF00D46EE9 /* Stevia in Frameworks */ = {isa = PBXBuildFile; productRef = F98D0E5E252DEDAF00D46EE9 /* Stevia */; };
-		F98D0E69252E20F200D46EE9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D0E68252E20F200D46EE9 /* Constants.swift */; };
-		F98D0E6E252F14D200D46EE9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D0E6D252F14D200D46EE9 /* CustomTextField.swift */; };
-		F98D0E7B252F718000D46EE9 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F98D0E7A252F718000D46EE9 /* IQKeyboardManagerSwift */; };
 		F990A386254082AB00ABC4CF /* DistributorSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F990A385254082AB00ABC4CF /* DistributorSignUpViewController.swift */; };
 		F990A388254082C500ABC4CF /* DistributorSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F990A387254082C500ABC4CF /* DistributorSignUpView.swift */; };
 		F9CC27C625332B6B00408FDA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC27C525332B6B00408FDA /* SignInViewController.swift */; };
 		F9CC27CB25332B8900408FDA /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC27CA25332B8900408FDA /* SignInView.swift */; };
-		F9D3113C252CF0C400429F8B /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = F9D3113B252CF0C400429F8B /* Fonts */; };
 		F9E2AF95254C6611000A93CC /* CollectionViewWithTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E2AF94254C6611000A93CC /* CollectionViewWithTitleView.swift */; };
 		F9E2AF9A254C6619000A93CC /* CollectionViewWithTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9E2AF99254C6619000A93CC /* CollectionViewWithTitleView.xib */; };
-		F9E5E83F253C65B200B0040D /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F9E5E83E253C65B200B0040D /* SDWebImage */; };
 		F9E5E844253C911700B0040D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E5E843253C911700B0040D /* Category.swift */; };
 		F9EA0496252C83E800DC288B /* MainSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA0495252C83E800DC288B /* MainSignUpViewController.swift */; };
-		F9EA049B252C858500DC288B /* RoundedEdgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA049A252C858500DC288B /* RoundedEdgesView.swift */; };
-		F9EA04F4252C90E500DC288B /* RoundedEdgesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA04F3252C90E500DC288B /* RoundedEdgesButton.swift */; };
+		F9EA049B252C858500DC288B /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA049A252C858500DC288B /* RoundedView.swift */; };
+		F9EA04F4252C90E500DC288B /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA04F3252C90E500DC288B /* RoundedButton.swift */; };
 		F9F65B8C254F1FD300D347D6 /* MarketScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F65B8B254F1FD300D347D6 /* MarketScreenViewController.swift */; };
 		F9F65B91254F205300D347D6 /* MarketScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F65B90254F205300D347D6 /* MarketScreenView.swift */; };
 		F9F842F5252A2BAD00593C8A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9F842F7252A2BAD00593C8A /* Localizable.strings */; };
@@ -91,9 +98,22 @@
 		8198DD651C626992FF8ADE61 /* Pods-talabyeh-talabyehUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talabyeh-talabyehUITests.release.xcconfig"; path = "Target Support Files/Pods-talabyeh-talabyehUITests/Pods-talabyeh-talabyehUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AAC1EEA6F124DCF800E38E71 /* Pods-talabyehTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talabyehTests.debug.xcconfig"; path = "Target Support Files/Pods-talabyehTests/Pods-talabyehTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD0E2B1636889447B2D74FE0 /* Pods_talabyeh_talabyehUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talabyeh_talabyehUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E496B248255B214C001BEC0F /* FontProviderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontProviderType.swift; sourceTree = "<group>"; };
+		E496B25F255B22A2001BEC0F /* SignUpCategoriesListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpCategoriesListView.swift; sourceTree = "<group>"; };
+		E496B2A3255B2730001BEC0F /* ColorsProviderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsProviderType.swift; sourceTree = "<group>"; };
+		E496B2AB255B2771001BEC0F /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
+		E496B2B5255B28C0001BEC0F /* UIView+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Additions.swift"; sourceTree = "<group>"; };
+		E496B2C4255B29A3001BEC0F /* InsetedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetedTextField.swift; sourceTree = "<group>"; };
+		E496B2C9255B2ABF001BEC0F /* ValidationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTextField.swift; sourceTree = "<group>"; };
+		E496B2CE255B2B10001BEC0F /* BorderedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedTextField.swift; sourceTree = "<group>"; };
+		E496B2D7255B2D3F001BEC0F /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		E496B2DC255B2D44001BEC0F /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
+		E496B2E1255B2D4A001BEC0F /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		E496B2F0255B2ED9001BEC0F /* GeneralRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRoutes.swift; sourceTree = "<group>"; };
+		E496B2F8255B2FBB001BEC0F /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
+		E496B2FD255B3088001BEC0F /* Moya+DefaultProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Moya+DefaultProvider.swift"; sourceTree = "<group>"; };
 		F9365AE025388A9000190C68 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		F9365AE82538920800190C68 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
-		F93B1FDC25373D8E00E48657 /* SignUpCategoriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpCategoriesListView.swift; path = "talabyeh/View Controllers/Sign Up Categories Selection/SignUpCategoriesListView.swift"; sourceTree = SOURCE_ROOT; };
 		F93B1FE125373DAE00E48657 /* SignUpCategoriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCategoriesListViewController.swift; sourceTree = "<group>"; };
 		F94608ED2545D91600C74D95 /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
 		F94608F22545D92B00C74D95 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
@@ -129,19 +149,16 @@
 		F96B854F2529B67200CEDCF8 /* ChangeLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguageViewController.swift; sourceTree = "<group>"; };
 		F98D0E53252DE6F200D46EE9 /* SignUpWizardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWizardViewController.swift; sourceTree = "<group>"; };
 		F98D0E58252DE73500D46EE9 /* SignUpWizardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWizardView.swift; sourceTree = "<group>"; };
-		F98D0E68252E20F200D46EE9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		F98D0E6D252F14D200D46EE9 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		F990A385254082AB00ABC4CF /* DistributorSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorSignUpViewController.swift; sourceTree = "<group>"; };
 		F990A387254082C500ABC4CF /* DistributorSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorSignUpView.swift; sourceTree = "<group>"; };
 		F9CC27C525332B6B00408FDA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		F9CC27CA25332B8900408FDA /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
-		F9D3113B252CF0C400429F8B /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = Fonts/Fonts; sourceTree = "<group>"; };
 		F9E2AF94254C6611000A93CC /* CollectionViewWithTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewWithTitleView.swift; sourceTree = "<group>"; };
 		F9E2AF99254C6619000A93CC /* CollectionViewWithTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewWithTitleView.xib; sourceTree = "<group>"; };
 		F9E5E843253C911700B0040D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F9EA0495252C83E800DC288B /* MainSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSignUpViewController.swift; sourceTree = "<group>"; };
-		F9EA049A252C858500DC288B /* RoundedEdgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedEdgesView.swift; sourceTree = "<group>"; };
-		F9EA04F3252C90E500DC288B /* RoundedEdgesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedEdgesButton.swift; sourceTree = "<group>"; };
+		F9EA049A252C858500DC288B /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		F9EA04F3252C90E500DC288B /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		F9F65B8B254F1FD300D347D6 /* MarketScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketScreenViewController.swift; sourceTree = "<group>"; };
 		F9F65B90254F205300D347D6 /* MarketScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketScreenView.swift; sourceTree = "<group>"; };
 		F9F842F1252A2B2400593C8A /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
@@ -156,10 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F98D0E5F252DEDAF00D46EE9 /* Stevia in Frameworks */,
-				F9365AEF2538A79C00190C68 /* Alamofire in Frameworks */,
 				CC20C5899017F17D235D43A6 /* Pods_talabyeh.framework in Frameworks */,
-				F98D0E7B252F718000D46EE9 /* IQKeyboardManagerSwift in Frameworks */,
-				F9E5E83F253C65B200B0040D /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +219,121 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E496B235255B2079001BEC0F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F9365AE82538920800190C68 /* RequestManager.swift */,
+				E496B2B4255B286E001BEC0F /* Additions */,
+				E496B2B3255B2868001BEC0F /* Routes */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E496B239255B20B0001BEC0F /* Authentication Flow */ = {
+			isa = PBXGroup;
+			children = (
+				F96B854F2529B67200CEDCF8 /* ChangeLanguageViewController.swift */,
+				F9EA0495252C83E800DC288B /* MainSignUpViewController.swift */,
+				F96B85232529A05800CEDCF8 /* RegistrationViewController.swift */,
+				E496B2E6255B2D7F001BEC0F /* Distributor Sign Up */,
+				F990A3832540824000ABC4CF /* Sign In */,
+				F990A3822540822B00ABC4CF /* Sign Up Wizard */,
+				F990A3842540825800ABC4CF /* Sign Up Categories Selection */,
+			);
+			path = "Authentication Flow";
+			sourceTree = "<group>";
+		};
+		E496B23A255B20E8001BEC0F /* Market Flow */ = {
+			isa = PBXGroup;
+			children = (
+				F9F65B8B254F1FD300D347D6 /* MarketScreenViewController.swift */,
+				F9F65B90254F205300D347D6 /* MarketScreenView.swift */,
+			);
+			path = "Market Flow";
+			sourceTree = "<group>";
+		};
+		E496B23E255B20EF001BEC0F /* Profile Flow */ = {
+			isa = PBXGroup;
+			children = (
+				F94608ED2545D91600C74D95 /* ProfilePageView.swift */,
+				F94608F22545D92B00C74D95 /* ProfilePageViewController.swift */,
+			);
+			path = "Profile Flow";
+			sourceTree = "<group>";
+		};
+		E496B242255B2115001BEC0F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E496B2AB255B2771001BEC0F /* UIColor+Additions.swift */,
+				E496B2B5255B28C0001BEC0F /* UIView+Additions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E496B243255B2135001BEC0F /* Collection With TItle */ = {
+			isa = PBXGroup;
+			children = (
+				F9E2AF94254C6611000A93CC /* CollectionViewWithTitleView.swift */,
+				F9E2AF99254C6619000A93CC /* CollectionViewWithTitleView.xib */,
+			);
+			path = "Collection With TItle";
+			sourceTree = "<group>";
+		};
+		E496B247255B213E001BEC0F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E496B248255B214C001BEC0F /* FontProviderType.swift */,
+				E496B2A3255B2730001BEC0F /* ColorsProviderType.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E496B2B3255B2868001BEC0F /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				E496B2F0255B2ED9001BEC0F /* GeneralRoutes.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
+		E496B2B4255B286E001BEC0F /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				E496B2F8255B2FBB001BEC0F /* NetworkConfiguration.swift */,
+				E496B2FD255B3088001BEC0F /* Moya+DefaultProvider.swift */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		E496B2C3255B298A001BEC0F /* Text Field */ = {
+			isa = PBXGroup;
+			children = (
+				E496B2C4255B29A3001BEC0F /* InsetedTextField.swift */,
+				E496B2C9255B2ABF001BEC0F /* ValidationTextField.swift */,
+				E496B2CE255B2B10001BEC0F /* BorderedTextField.swift */,
+			);
+			path = "Text Field";
+			sourceTree = "<group>";
+		};
+		E496B2D6255B2D39001BEC0F /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				E496B2D7255B2D3F001BEC0F /* BackButton.swift */,
+				E496B2DC255B2D44001BEC0F /* BorderedButton.swift */,
+				E496B2E1255B2D4A001BEC0F /* ActionButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		E496B2E6255B2D7F001BEC0F /* Distributor Sign Up */ = {
+			isa = PBXGroup;
+			children = (
+				F990A385254082AB00ABC4CF /* DistributorSignUpViewController.swift */,
+				F990A387254082C500ABC4CF /* DistributorSignUpView.swift */,
+			);
+			path = "Distributor Sign Up";
+			sourceTree = "<group>";
+		};
 		F9365ADF25388A4D00190C68 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,8 +346,12 @@
 		F9571B84252CDD9E0090C285 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F9D3113B252CF0C400429F8B /* Fonts */,
 				F9571B8D252CEA700090C285 /* Fonts */,
+				F96B85252529A05800CEDCF8 /* Main.storyboard */,
+				F96B85282529A05A00CEDCF8 /* Assets.xcassets */,
+				F96B852A2529A05A00CEDCF8 /* LaunchScreen.storyboard */,
+				F96B852D2529A05A00CEDCF8 /* Info.plist */,
+				F9F842F7252A2BAD00593C8A /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -235,14 +368,14 @@
 		F9571B8E252CEA700090C285 /* English */ = {
 			isa = PBXGroup;
 			children = (
-				F9571B8F252CEA700090C285 /* SFUIDisplay-Heavy.ttf */,
 				F9571B90252CEA700090C285 /* SFUIDisplay-Light.ttf */,
-				F9571B91252CEA700090C285 /* SFUIDisplay-Semibold.ttf */,
 				F9571B92252CEA700090C285 /* SFUIDisplay-Ultralight.ttf */,
-				F9571B93252CEA700090C285 /* SFUIDisplay-Bold.ttf */,
 				F9571B94252CEA700090C285 /* SFUIDisplay-Thin.ttf */,
 				F9571B95252CEA700090C285 /* SFUIDisplay-Medium.ttf */,
+				F9571B91252CEA700090C285 /* SFUIDisplay-Semibold.ttf */,
+				F9571B93252CEA700090C285 /* SFUIDisplay-Bold.ttf */,
 				F9571B96252CEA700090C285 /* SFUIDisplay-Black.ttf */,
+				F9571B8F252CEA700090C285 /* SFUIDisplay-Heavy.ttf */,
 			);
 			path = English;
 			sourceTree = "<group>";
@@ -286,15 +419,15 @@
 		F96B851E2529A05700CEDCF8 /* talabyeh */ = {
 			isa = PBXGroup;
 			children = (
+				F96B85212529A05800CEDCF8 /* SceneDelegate.swift */,
+				F96B851F2529A05800CEDCF8 /* AppDelegate.swift */,
+				E496B247255B213E001BEC0F /* Services */,
+				E496B242255B2115001BEC0F /* Extensions */,
+				E496B235255B2079001BEC0F /* Networking */,
 				F9365ADF25388A4D00190C68 /* Models */,
-				F98D0E8B252F78B100D46EE9 /* Supporting Files */,
 				F98D0E8A252F786200D46EE9 /* View Controllers */,
-				F98D0E72252F171000D46EE9 /* Custom Views */,
+				F98D0E72252F171000D46EE9 /* Components */,
 				F9571B84252CDD9E0090C285 /* Resources */,
-				F96B85252529A05800CEDCF8 /* Main.storyboard */,
-				F96B85282529A05A00CEDCF8 /* Assets.xcassets */,
-				F96B852A2529A05A00CEDCF8 /* LaunchScreen.storyboard */,
-				F96B852D2529A05A00CEDCF8 /* Info.plist */,
 			);
 			path = talabyeh;
 			sourceTree = "<group>";
@@ -317,47 +450,26 @@
 			path = talabyehUITests;
 			sourceTree = "<group>";
 		};
-		F98D0E72252F171000D46EE9 /* Custom Views */ = {
+		F98D0E72252F171000D46EE9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				F9E2AF94254C6611000A93CC /* CollectionViewWithTitleView.swift */,
-				F9E2AF99254C6619000A93CC /* CollectionViewWithTitleView.xib */,
-				F98D0E6D252F14D200D46EE9 /* CustomTextField.swift */,
-				F9EA04F3252C90E500DC288B /* RoundedEdgesButton.swift */,
-				F9EA049A252C858500DC288B /* RoundedEdgesView.swift */,
+				E496B2D6255B2D39001BEC0F /* Buttons */,
+				E496B2C3255B298A001BEC0F /* Text Field */,
+				E496B243255B2135001BEC0F /* Collection With TItle */,
+				F9EA04F3252C90E500DC288B /* RoundedButton.swift */,
+				F9EA049A252C858500DC288B /* RoundedView.swift */,
 			);
-			path = "Custom Views";
+			path = Components;
 			sourceTree = "<group>";
 		};
 		F98D0E8A252F786200D46EE9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F990A3832540824000ABC4CF /* Sign In */,
-				F990A3822540822B00ABC4CF /* Sign Up Wizard */,
-				F990A3842540825800ABC4CF /* Sign Up Categories Selection */,
-				F96B854F2529B67200CEDCF8 /* ChangeLanguageViewController.swift */,
-				F9EA0495252C83E800DC288B /* MainSignUpViewController.swift */,
-				F96B85232529A05800CEDCF8 /* RegistrationViewController.swift */,
-				F990A385254082AB00ABC4CF /* DistributorSignUpViewController.swift */,
-				F990A387254082C500ABC4CF /* DistributorSignUpView.swift */,
-				F94608ED2545D91600C74D95 /* ProfilePageView.swift */,
-				F94608F22545D92B00C74D95 /* ProfilePageViewController.swift */,
-				F9F65B8B254F1FD300D347D6 /* MarketScreenViewController.swift */,
-				F9F65B90254F205300D347D6 /* MarketScreenView.swift */,
+				E496B239255B20B0001BEC0F /* Authentication Flow */,
+				E496B23E255B20EF001BEC0F /* Profile Flow */,
+				E496B23A255B20E8001BEC0F /* Market Flow */,
 			);
 			path = "View Controllers";
-			sourceTree = "<group>";
-		};
-		F98D0E8B252F78B100D46EE9 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				F96B85212529A05800CEDCF8 /* SceneDelegate.swift */,
-				F96B851F2529A05800CEDCF8 /* AppDelegate.swift */,
-				F9F842F7252A2BAD00593C8A /* Localizable.strings */,
-				F98D0E68252E20F200D46EE9 /* Constants.swift */,
-				F9365AE82538920800190C68 /* RequestManager.swift */,
-			);
-			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		F990A3822540822B00ABC4CF /* Sign Up Wizard */ = {
@@ -381,7 +493,7 @@
 		F990A3842540825800ABC4CF /* Sign Up Categories Selection */ = {
 			isa = PBXGroup;
 			children = (
-				F93B1FDC25373D8E00E48657 /* SignUpCategoriesListView.swift */,
+				E496B25F255B22A2001BEC0F /* SignUpCategoriesListView.swift */,
 				F93B1FE125373DAE00E48657 /* SignUpCategoriesListViewController.swift */,
 			);
 			path = "Sign Up Categories Selection";
@@ -407,9 +519,6 @@
 			name = talabyeh;
 			packageProductDependencies = (
 				F98D0E5E252DEDAF00D46EE9 /* Stevia */,
-				F98D0E7A252F718000D46EE9 /* IQKeyboardManagerSwift */,
-				F9365AEE2538A79C00190C68 /* Alamofire */,
-				F9E5E83E253C65B200B0040D /* SDWebImage */,
 			);
 			productName = talabyeh;
 			productReference = F96B851C2529A05700CEDCF8 /* talabyeh.app */;
@@ -461,7 +570,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = "Converged Technology";
 				TargetAttributes = {
 					F96B851B2529A05700CEDCF8 = {
@@ -489,9 +598,6 @@
 			mainGroup = F96B85132529A05700CEDCF8;
 			packageReferences = (
 				F98D0E5D252DEDAF00D46EE9 /* XCRemoteSwiftPackageReference "Stevia" */,
-				F98D0E79252F718000D46EE9 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
-				F9365AED2538A79C00190C68 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				F9E5E83D253C65B200B0040D /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = F96B851D2529A05700CEDCF8 /* Products */;
 			projectDirPath = "";
@@ -525,7 +631,6 @@
 				F9571BAB252CEA700090C285 /* DIN NEXT™ ARABIC HEAVY.otf in Resources */,
 				F9571BA7252CEA700090C285 /* DIN NEXT™ ARABIC MEDIUM .otf in Resources */,
 				F96B85272529A05800CEDCF8 /* Main.storyboard in Resources */,
-				F9D3113C252CF0C400429F8B /* Fonts in Resources */,
 				F9571B9F252CEA700090C285 /* SFUIDisplay-Heavy.ttf in Resources */,
 				F9571BA8252CEA700090C285 /* DIN NEXT™ ARABIC BLACK.otf in Resources */,
 				F9571BA9252CEA700090C285 /* DIN NEXT™ ARABIC ULTRALIGHT.otf in Resources */,
@@ -658,27 +763,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9365AE92538920800190C68 /* RequestManager.swift in Sources */,
-				F9EA04F4252C90E500DC288B /* RoundedEdgesButton.swift in Sources */,
+				F9EA04F4252C90E500DC288B /* RoundedButton.swift in Sources */,
+				E496B2CF255B2B10001BEC0F /* BorderedTextField.swift in Sources */,
 				F990A388254082C500ABC4CF /* DistributorSignUpView.swift in Sources */,
-				F98D0E6E252F14D200D46EE9 /* CustomTextField.swift in Sources */,
+				E496B2A4255B2730001BEC0F /* ColorsProviderType.swift in Sources */,
+				E496B249255B214C001BEC0F /* FontProviderType.swift in Sources */,
 				F96B85242529A05800CEDCF8 /* RegistrationViewController.swift in Sources */,
+				E496B2E2255B2D4A001BEC0F /* ActionButton.swift in Sources */,
+				E496B2CA255B2ABF001BEC0F /* ValidationTextField.swift in Sources */,
 				F98D0E54252DE6F200D46EE9 /* SignUpWizardViewController.swift in Sources */,
 				F990A386254082AB00ABC4CF /* DistributorSignUpViewController.swift in Sources */,
+				E496B2F9255B2FBB001BEC0F /* NetworkConfiguration.swift in Sources */,
 				F9E5E844253C911700B0040D /* Category.swift in Sources */,
+				E496B2C5255B29A3001BEC0F /* InsetedTextField.swift in Sources */,
 				F96B85202529A05800CEDCF8 /* AppDelegate.swift in Sources */,
 				F96B85502529B67200CEDCF8 /* ChangeLanguageViewController.swift in Sources */,
-				F93B1FDD25373D8E00E48657 /* SignUpCategoriesListView.swift in Sources */,
-				F98D0E69252E20F200D46EE9 /* Constants.swift in Sources */,
-				F9EA049B252C858500DC288B /* RoundedEdgesView.swift in Sources */,
+				E496B260255B22A2001BEC0F /* SignUpCategoriesListView.swift in Sources */,
+				E496B2B6255B28C0001BEC0F /* UIView+Additions.swift in Sources */,
+				E496B2DD255B2D44001BEC0F /* BorderedButton.swift in Sources */,
+				F9EA049B252C858500DC288B /* RoundedView.swift in Sources */,
 				F9E2AF95254C6611000A93CC /* CollectionViewWithTitleView.swift in Sources */,
+				E496B2FE255B3088001BEC0F /* Moya+DefaultProvider.swift in Sources */,
 				F94608EE2545D91600C74D95 /* ProfilePageView.swift in Sources */,
 				F9CC27C625332B6B00408FDA /* SignInViewController.swift in Sources */,
 				F94608F32545D92B00C74D95 /* ProfilePageViewController.swift in Sources */,
 				F9365AE125388A9000190C68 /* UserType.swift in Sources */,
 				F9F65B91254F205300D347D6 /* MarketScreenView.swift in Sources */,
+				E496B2D8255B2D3F001BEC0F /* BackButton.swift in Sources */,
+				E496B2AC255B2771001BEC0F /* UIColor+Additions.swift in Sources */,
 				F98D0E59252DE73500D46EE9 /* SignUpWizardView.swift in Sources */,
 				F96B85222529A05800CEDCF8 /* SceneDelegate.swift in Sources */,
 				F9F65B8C254F1FD300D347D6 /* MarketScreenViewController.swift in Sources */,
+				E496B2F1255B2ED9001BEC0F /* GeneralRoutes.swift in Sources */,
 				F9EA0496252C83E800DC288B /* MainSignUpViewController.swift in Sources */,
 				F93B1FE225373DAE00E48657 /* SignUpCategoriesListViewController.swift in Sources */,
 				F9CC27CB25332B8900408FDA /* SignInView.swift in Sources */,
@@ -774,6 +890,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -835,6 +952,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -870,7 +988,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 98VZ6LKU7M;
-				INFOPLIST_FILE = talabyeh/Info.plist;
+				INFOPLIST_FILE = talabyeh/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -889,7 +1007,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 98VZ6LKU7M;
-				INFOPLIST_FILE = talabyeh/Info.plist;
+				INFOPLIST_FILE = talabyeh/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1031,14 +1149,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F9365AED2538A79C00190C68 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.2.2;
-			};
-		};
 		F98D0E5D252DEDAF00D46EE9 /* XCRemoteSwiftPackageReference "Stevia" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/freshOS/Stevia";
@@ -1047,44 +1157,13 @@
 				minimumVersion = 5.1.0;
 			};
 		};
-		F98D0E79252F718000D46EE9 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.5.6;
-			};
-		};
-		F9E5E83D253C65B200B0040D /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.9.3;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F9365AEE2538A79C00190C68 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F9365AED2538A79C00190C68 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
 		F98D0E5E252DEDAF00D46EE9 /* Stevia */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F98D0E5D252DEDAF00D46EE9 /* XCRemoteSwiftPackageReference "Stevia" */;
 			productName = Stevia;
-		};
-		F98D0E7A252F718000D46EE9 /* IQKeyboardManagerSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F98D0E79252F718000D46EE9 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
-			productName = IQKeyboardManagerSwift;
-		};
-		F9E5E83E253C65B200B0040D /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F9E5E83D253C65B200B0040D /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
