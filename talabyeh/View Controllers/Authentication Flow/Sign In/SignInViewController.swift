@@ -34,7 +34,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate
         let mainVC = UITabBarController()
         let profileVC = ProfilePageViewController()
         profileVC.title = "Profile".localiz()
-        let market = MarketScreenViewController()
+        let market = MarketViewController()
         market.title = "Market".localiz()
         mainVC.setViewControllers([market,profileVC], animated: true)
         mainVC.modalTransitionStyle = .crossDissolve

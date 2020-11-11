@@ -79,53 +79,53 @@ class MainSignUpViewController: UIViewController {
         
         
         
-        self.startAnimating()
+//        self.startAnimating()
         
-        GeneralRoutes.userTypes.request { (result: Result<Types, Error>) in
-            guard case .success(let types) = result else {
-                // get the error
-                
-                return
-            }
-            
-            self.companyLabel.text = types.results[0].name//LanguageManager.shared.currentLanguage == .en ? types![0].en_name : types![0].ar_name
-            self.distributorLabel.text = types.results[1].name//LanguageManager.shared.currentLanguage == .en ? types![1].en_name : types![1].ar_name
-            self.resellerLabel.text = types.results[2].name//LanguageManager.shared.currentLanguage == .en ? types![2].en_name : types![2].ar_name
-            
-
-            
-            if let cLogourl = URL(string: types.results[0].logo!), let dLogourl = URL(string:types.results[1].logo!) , let rLogourl = URL(string:types.results[2].logo!)
-            {
-                print(cLogourl)
+//        GeneralRoutes.userTypes.request { (result: Result<Types, Error>) in
+//            guard case .success(let types) = result else {
+//                // get the error
+//
+//                return
+//            }
+//
+//            self.companyLabel.text = types.results[0].name//LanguageManager.shared.currentLanguage == .en ? types![0].en_name : types![0].ar_name
+//            self.distributorLabel.text = types.results[1].name//LanguageManager.shared.currentLanguage == .en ? types![1].en_name : types![1].ar_name
+//            self.resellerLabel.text = types.results[2].name//LanguageManager.shared.currentLanguage == .en ? types![2].en_name : types![2].ar_name
+//
+//
+//
+//            if let cLogourl = URL(string: types.results[0].logo!), let dLogourl = URL(string:types.results[1].logo!) , let rLogourl = URL(string:types.results[2].logo!)
+//            {
+//                print(cLogourl)
+////                self.companyImage.sd_setImage(with: cLogourl) { (image, error, cacheType, url) in
+////
+////                }
+//
 //                self.companyImage.sd_setImage(with: cLogourl) { (image, error, cacheType, url) in
+////                    image?.withRenderingMode(.alwaysTemplate)
+////                    image?.withTintColor(UIColor(named: AdaptiveColors.green.rawValue)!)
+//
+//                    self.companyImage.image = image?.withRenderingMode(.alwaysTemplate)
+//                    self.companyImage.tintColor = UIColor(named: AdaptiveColors.green.rawValue)
 //
 //                }
-                
-                self.companyImage.sd_setImage(with: cLogourl) { (image, error, cacheType, url) in
-//                    image?.withRenderingMode(.alwaysTemplate)
-//                    image?.withTintColor(UIColor(named: AdaptiveColors.green.rawValue)!)
-                    
-                    self.companyImage.image = image?.withRenderingMode(.alwaysTemplate)
-                    self.companyImage.tintColor = UIColor(named: AdaptiveColors.green.rawValue)
-                    
-                }
-                
-                self.distributorImage.sd_setImage(with: dLogourl) { (image, error, cacheType, url) in
-                    
-                    self.distributorImage.image = image?.withRenderingMode(.alwaysTemplate)
-                    self.distributorImage.tintColor = UIColor(named: AdaptiveColors.green.rawValue)
-                }
-                self.resellerImage.sd_setImage(with: rLogourl) { (image, error, cacheType, url) in
-                    self.resellerImage.image = image?.withRenderingMode(.alwaysTemplate)
-                    self.resellerImage.tintColor = UIColor(named: AdaptiveColors.green.rawValue)
-                }
- 
-                
-            }
-            self.stopAnimating()
-            
-            
-        }
+//
+//                self.distributorImage.sd_setImage(with: dLogourl) { (image, error, cacheType, url) in
+//
+//                    self.distributorImage.image = image?.withRenderingMode(.alwaysTemplate)
+//                    self.distributorImage.tintColor = UIColor(named: AdaptiveColors.green.rawValue)
+//                }
+//                self.resellerImage.sd_setImage(with: rLogourl) { (image, error, cacheType, url) in
+//                    self.resellerImage.image = image?.withRenderingMode(.alwaysTemplate)
+//                    self.resellerImage.tintColor = UIColor(named: AdaptiveColors.green.rawValue)
+//                }
+//
+//
+//            }
+//            self.stopAnimating()
+//
+//
+//        }
     }
     
     

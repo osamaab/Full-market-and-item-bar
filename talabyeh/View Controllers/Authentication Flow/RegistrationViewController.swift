@@ -37,13 +37,10 @@ class RegistrationViewController: UIViewController
             changeLanguageButton.titleLabel?.font = UIFont(name: "DINNextLTW23-Regular", size: 17)
             signInButton.contentVerticalAlignment = .top
             signUpButton.contentVerticalAlignment = .top
-            //signInButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         }
-
     }
     
-    @IBAction func changeLanguage(_ sender: Any)
-    {
+    @IBAction func changeLanguage(_ sender: Any) {
         let changeLanguageVC = (self.storyboard?.instantiateViewController(withIdentifier: "ChangeLanguage"))!
         self.present(changeLanguageVC, animated: true, completion: nil)
     }

@@ -23,6 +23,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         setupServices()
+        setupApperance()
+        
+        
+        let marketCoordinator = MarketCoordinator()
+        let profileCoordinator = ProfileCoordinator()
+        let tabBarCoordinator = TabBarCoordinator(coordinators: [marketCoordinator, profileCoordinator])
+
+        tabBarCoordinator.start()
+        
+//        let authenticationCoordinator = AuthenticationCoordinator()
+//        authenticationCoordinator.start()
         
         return true
     }
@@ -32,6 +43,9 @@ extension AppDelegate {
     func setupServices(){
         LanguageManager.shared.defaultLanguage = .en
         IQKeyboardManager.shared().isEnabled = true
+    }
+    
+    func setupApperance(){
     }
 }
 

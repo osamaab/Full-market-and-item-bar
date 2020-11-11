@@ -45,7 +45,7 @@ class SignUpCategoriesListView: UIView {
         
         self.semanticContentAttribute = LanguageManager.shared.currentLanguage == .ar ? .forceRightToLeft : .forceLeftToRight
         
-        backButton.setImage(UIImage(named: "Path 2586"), for: .normal)
+        backButton.setImage(UIImage(named: "back"), for: .normal)
         
         if LanguageManager.shared.currentLanguage == .ar{
             backButton.transform = CGAffineTransform(scaleX: -1, y: 1)

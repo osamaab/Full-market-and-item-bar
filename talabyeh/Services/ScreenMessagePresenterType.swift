@@ -33,9 +33,6 @@ protocol ScreenMessagePresenterType: class {
     func show(message: String, messageType: TaskMessageType)
 }
 
-
-
-
 extension UIViewController {
     
     fileprivate var messagePresenter: ScreenMessagePresenterType {

@@ -17,7 +17,6 @@ class SignUpCategoriesListViewController: UIViewController, UICollectionViewDele
     
     let signUpCategoriesListView = SignUpCategoriesListView()
     var categories = [Category]()
-    
     var chosenUserType: UserTypeEnum?
     
     
@@ -42,19 +41,19 @@ class SignUpCategoriesListViewController: UIViewController, UICollectionViewDele
         signUpCategoriesListView.categoriesCollectionView.dataSource = self
         signUpCategoriesListView.categoriesCollectionView.register(CategoryCell.self, forCellWithReuseIdentifier: "cell")
         
-        self.startAnimating()
-        GeneralRoutes.categories.request { (result: Result<Categories, Error>) in
-            self.stopAnimating()
-            
-            switch result {
-            case .failure(let error):
-                print(error.localizedDescription)
-            case .success(let categories):
-                self.categories.removeAll()
-                self.categories = categories.results
-                self.signUpCategoriesListView.categoriesCollectionView.reloadData()
-            }
-        }
+//        self.startAnimating()
+//        GeneralRoutes.categories.request { (result: Result<Categories, Error>) in
+//            self.stopAnimating()
+//
+//            switch result {
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            case .success(let categories):
+//                self.categories.removeAll()
+//                self.categories = categories.results
+//                self.signUpCategoriesListView.categoriesCollectionView.reloadData()
+//            }
+//        }
     }
     
     @objc func backButton()
