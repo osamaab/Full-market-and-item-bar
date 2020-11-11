@@ -10,7 +10,6 @@ import UIKit
 import Stevia
 import LanguageManager_iOS
 import SDWebImage
-import ProgressHUD
 
 class SignUpCategoriesListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -43,9 +42,9 @@ class SignUpCategoriesListViewController: UIViewController, UICollectionViewDele
         signUpCategoriesListView.categoriesCollectionView.dataSource = self
         signUpCategoriesListView.categoriesCollectionView.register(CategoryCell.self, forCellWithReuseIdentifier: "cell")
         
-        ProgressHUD.show()
+        self.startAnimating()
         GeneralRoutes.categories.request { (result: Result<Categories, Error>) in
-            ProgressHUD.dismiss()
+            self.stopAnimating()
             
             switch result {
             case .failure(let error):

@@ -10,7 +10,6 @@ import UIKit
 import LanguageManager_iOS
 import Stevia
 import SDWebImage
-import ProgressHUD
 
 
 class MainSignUpViewController: UIViewController {
@@ -80,7 +79,7 @@ class MainSignUpViewController: UIViewController {
         
         
         
-        ProgressHUD.show()
+        self.startAnimating()
         
         GeneralRoutes.userTypes.request { (result: Result<Types, Error>) in
             guard case .success(let types) = result else {
@@ -123,7 +122,7 @@ class MainSignUpViewController: UIViewController {
  
                 
             }
-            ProgressHUD.dismiss()
+            self.stopAnimating()
             
             
         }

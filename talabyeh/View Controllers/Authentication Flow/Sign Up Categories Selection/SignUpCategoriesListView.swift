@@ -25,7 +25,7 @@ class SignUpCategoriesListView: UIView {
     convenience init() {
         
         self.init(frame:CGRect.zero)
-        backgroundColor = UIColor.systemBackground
+        backgroundColor = DefaultColorsProvider.background
         
         defaultLayout()
 
@@ -87,7 +87,7 @@ class SignUpCategoriesListView: UIView {
         informativeLabel.Top == headerImage.Bottom + 14
         informativeLabel.Trailing == catgoryLabel.Trailing
         
-        categoriesCollectionView.backgroundColor = UIColor.systemBackground
+        categoriesCollectionView.backgroundColor = DefaultColorsProvider.background
         
         categoriesCollectionView.trailing(16).leading(16)
         categoriesCollectionView.Top == informativeLabel.Bottom + 18

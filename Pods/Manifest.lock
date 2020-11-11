@@ -1,44 +1,50 @@
 PODS:
   - Alamofire (5.4.0)
+  - AwaitToast (1.2.0)
   - IQKeyboardManager (6.5.6)
   - LanguageManager-iOS (1.2.0)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
-  - ProgressHUD (13.4)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
   - SDWebImage (5.9.4):
     - SDWebImage/Core (= 5.9.4)
   - SDWebImage/Core (5.9.4)
   - ValidationTextField (1.0.4)
 
 DEPENDENCIES:
+  - AwaitToast
   - IQKeyboardManager
   - LanguageManager-iOS
   - Moya
-  - ProgressHUD
+  - NVActivityIndicatorView
   - SDWebImage (~> 5.0)
   - ValidationTextField
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AwaitToast
     - IQKeyboardManager
     - LanguageManager-iOS
     - Moya
-    - ProgressHUD
+    - NVActivityIndicatorView
     - SDWebImage
     - ValidationTextField
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  AwaitToast: 87bbcebcec9b45f530c88e3f38ef0d247f888705
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   LanguageManager-iOS: 516c4f088435c83cbdbddfc5179f88e4e0d39eb4
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
-  ProgressHUD: 137a7fc677487c5581668f4490563124fb35c232
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
   ValidationTextField: 91bc04170ba4b4358912c372e12d7af4c9143ad5
 
-PODFILE CHECKSUM: dcacc3e3e242848be0ab6c0f20e0e52a8f471f30
+PODFILE CHECKSUM: e17fe5528440dfb53b72a62a5c29dd29b0cbd838
 
 COCOAPODS: 1.10.0

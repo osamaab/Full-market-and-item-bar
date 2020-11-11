@@ -11,7 +11,6 @@ import LanguageManager_iOS
 import Stevia
 
 class MarketScreenView: UIView, UITableViewDelegate, UITableViewDataSource {
-    
 
     let tableView = UITableView()
     let tableViewCell = UITableViewCell()
@@ -27,7 +26,7 @@ class MarketScreenView: UIView, UITableViewDelegate, UITableViewDataSource {
     convenience init() {
         
         self.init(frame:CGRect.zero)
-        backgroundColor = UIColor.systemBackground
+        backgroundColor = DefaultColorsProvider.background
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -48,20 +47,20 @@ class MarketScreenView: UIView, UITableViewDelegate, UITableViewDataSource {
         tableView.Top == headerView.Bottom
         
         //subviews([headerView,allCategoriesCollectionViewWithTitle,itemsCollectionView1, itemCollectionView2])
-        tableViewCell.backgroundColor = UIColor.systemBackground
+        tableViewCell.backgroundColor = DefaultColorsProvider.background
         tableViewCell.subviews([allCategoriesCollectionViewWithTitle,itemsCollectionView1, itemCollectionView2])
         
 
         
-        allCategoriesCollectionViewWithTitle.backgroundColor = UIColor.systemBackground
+        allCategoriesCollectionViewWithTitle.backgroundColor = DefaultColorsProvider.background
         allCategoriesCollectionViewWithTitle.leading(0).trailing(0).height(151.92 ).top(22.38)
         //allCategoriesCollectionViewWithTitle.Top == headerView.Bottom + 22.38
         
-        itemsCollectionView1.backgroundColor = UIColor.systemBackground
+        itemsCollectionView1.backgroundColor = DefaultColorsProvider.background
         itemsCollectionView1.leading(0).trailing(0).height(202.01 )
         itemsCollectionView1.Top == allCategoriesCollectionViewWithTitle.Bottom + 19.29
         
-        itemCollectionView2.backgroundColor = UIColor.systemBackground
+        itemCollectionView2.backgroundColor = DefaultColorsProvider.background
         itemCollectionView2.leading(0).trailing(0).height(163.84 )
         itemCollectionView2.Top == itemsCollectionView1.Bottom + 27.64
         

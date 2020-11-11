@@ -21,6 +21,14 @@ struct DefaultColorsProvider {
     static let darkTint = UIColor(rgb: 0x115C32)
     
     //TODO: Add more colors
+    
+    static var background: UIColor {
+        if #available(iOS 13.0, *) {
+            return .systemBackground
+        } else {
+            return UIColor.white
+        }
+    }
 }
 
 

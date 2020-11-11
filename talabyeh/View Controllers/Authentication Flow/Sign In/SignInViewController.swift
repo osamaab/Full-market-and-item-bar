@@ -23,18 +23,14 @@ class SignInViewController: UIViewController, UITextFieldDelegate
         
         signInView.backButton.addTarget(self, action: #selector(backButton), for: .touchUpInside)
         signInView.signInButton.addTarget(self, action: #selector(signInButton), for: .touchUpInside)
-        
-        
     }
     
     
-    @objc func backButton()
-    {
+    @objc func backButton() {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @objc func signInButton()
-    {
+    @objc func signInButton() {
         let mainVC = UITabBarController()
         let profileVC = ProfilePageViewController()
         profileVC.title = "Profile".localiz()
@@ -52,7 +48,4 @@ class SignInViewController: UIViewController, UITextFieldDelegate
         //mainVC.tabBar.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.present(mainVC, animated: true, completion: nil)
     }
-    
-    
-    
 }

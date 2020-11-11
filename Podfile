@@ -9,12 +9,13 @@ target 'talabyeh' do
 
 pod 'LanguageManager-iOS'
 pod 'ValidationTextField'
-pod 'ProgressHUD'
 
 # new pods
 pod 'IQKeyboardManager'
 pod 'Moya'
 pod 'SDWebImage', '~> 5.0'
+pod 'AwaitToast'
+pod 'NVActivityIndicatorView'
 
 
   target 'talabyehTests' do

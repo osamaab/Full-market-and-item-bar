@@ -99,8 +99,7 @@ class SignUpWizardViewController: UIViewController, UITextFieldDelegate
         return true
     }
     
-    func showPasswordStrength(for text:String)
-    {
+    func showPasswordStrength(for text:String) {
         
         let strongPassword = NSPredicate(format: "SELF MATCHES %@ ", "^(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z]).{8,}$")
         if strongPassword.evaluate(with: text){
@@ -124,8 +123,4 @@ class SignUpWizardViewController: UIViewController, UITextFieldDelegate
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
     }
-    
-
-
-
 }

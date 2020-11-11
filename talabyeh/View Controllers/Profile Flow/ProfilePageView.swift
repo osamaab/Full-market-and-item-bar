@@ -28,10 +28,9 @@ class ProfilePageView: UIView {
     convenience init() {
         
         self.init(frame:CGRect.zero)
-        backgroundColor = UIColor.systemBackground
+        backgroundColor = DefaultColorsProvider.background
 
         defaultLayout()
-
     }
     
     final private func defaultLayout()
@@ -43,7 +42,7 @@ class ProfilePageView: UIView {
         headerView.backgroundColor = Constants.darkGreen
         headerView.leading(0).trailing(0).top(0).height(88.09)
         
-        personalInfoView.backgroundColor = UIColor.systemBackground
+        personalInfoView.backgroundColor = DefaultColorsProvider.background
         
         
         personalInfoView.leading(0).trailing(0).height(259.91)
@@ -82,52 +81,27 @@ class ProfilePageView: UIView {
         nameLabel.centerHorizontally().height(26)
         nameLabel.Top == profileImageView.Bottom + 10
         
+        let isLight: Bool
+        
+        if #available(iOS 12.0, *) {
+            isLight = self.traitCollection.userInterfaceStyle == .light
+        } else {
+            isLight = true
+        }
+        
         emailLabel.font = .font(for: .heavy, size: 16)
-        emailLabel.textColor = self.traitCollection.userInterfaceStyle == .dark ? .white : #colorLiteral(red: 0.4980392157, green: 0.5647058824, blue: 0.5098039216, alpha: 1)
+        emailLabel.textColor = !isLight ? .white : #colorLiteral(red: 0.4980392157, green: 0.5647058824, blue: 0.5098039216, alpha: 1)
         emailLabel.height(19).centerHorizontally()
         emailLabel.Top == nameLabel.Bottom + 10.41
         
         phoneNumberLabel.font = .font(for: .regular, size: 13)
-        phoneNumberLabel.textColor = self.traitCollection.userInterfaceStyle == .dark ? .white : #colorLiteral(red: 0.4980392157, green: 0.5647058824, blue: 0.5098039216, alpha: 1)
+        phoneNumberLabel.textColor = !isLight ? .white : #colorLiteral(red: 0.4980392157, green: 0.5647058824, blue: 0.5098039216, alpha: 1)
         phoneNumberLabel.height(15).centerHorizontally()
         phoneNumberLabel.Top == emailLabel.Bottom + 14.41
     }
 }
 
-extension UIView {
-   func roundCorners(corners: UIRectCorner, radius: CGFloat) {
-        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        let mask = CAShapeLayer()
-        mask.path = path.cgPath
-        layer.mask = mask
-    }
-    
-    // OUTPUT 1
-     func dropShadow(scale: Bool = true) {
-       layer.masksToBounds = false
-       layer.shadowColor = UIColor.black.cgColor
-       layer.shadowOpacity = 0.5
-       layer.shadowOffset = CGSize(width: -1, height: 1)
-       layer.shadowRadius = 1
 
-       layer.shadowPath = UIBezierPath(rect: bounds).cgPath
-       layer.shouldRasterize = true
-       layer.rasterizationScale = scale ? UIScreen.main.scale : 1
-     }
-
-     // OUTPUT 2
-     func dropShadow(color: UIColor, opacity: Float = 0.5, offSet: CGSize, radius: CGFloat = 1, scale: Bool = true) {
-       layer.masksToBounds = false
-       layer.shadowColor = color.cgColor
-       layer.shadowOpacity = opacity
-       layer.shadowOffset = offSet
-       layer.shadowRadius = radius
-
-       layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-       layer.shouldRasterize = true
-       layer.rasterizationScale = scale ? UIScreen.main.scale : 1
-     }
-}
 
 class ProfileTableViewCell: UITableViewCell{
     
@@ -159,7 +133,15 @@ class ProfileTableViewCell: UITableViewCell{
         label.height(19).centerVertically()
         label.Leading == icon.Trailing + 8
         
-        if self.traitCollection.userInterfaceStyle == .dark {
+        let isLight: Bool
+        
+        if #available(iOS 12.0, *) {
+            isLight = self.traitCollection.userInterfaceStyle == .light
+        } else {
+            isLight = true
+        }
+        
+        if !isLight {
             let icon = UIImage(named: "right-arrow")
             arrow.image = icon
             arrow.image = arrow.image?.withRenderingMode(.alwaysTemplate)
@@ -172,15 +154,10 @@ class ProfileTableViewCell: UITableViewCell{
         
         arrow.image = UIImage(named: "right-arrow")
         arrow.contentMode = .scaleAspectFit
-//        if self.traitCollection.userInterfaceStyle == .dark {
-//            arrow.image?.withRenderingMode(.alwaysTemplate)
-//            arrow.tintColor = .white
-//        }
         arrow.trailing(16).height(12).width(12).centerVertically()
+        
         if LanguageManager.shared.currentLanguage == .ar{
             arrow.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
-
-
     }
 }

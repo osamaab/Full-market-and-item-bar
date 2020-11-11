@@ -26,7 +26,7 @@ class SignInView: UIView {
     convenience init() {
         
         self.init(frame:CGRect.zero)
-        backgroundColor = UIColor.systemBackground
+        backgroundColor = DefaultColorsProvider.background
         
         defaultLayout()
 

@@ -1,8 +1,9 @@
 ${PODS_ROOT}/Target Support Files/Pods-talabyeh-talabyehUITests/Pods-talabyeh-talabyehUITests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/AwaitToast/AwaitToast.framework
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
 ${BUILT_PRODUCTS_DIR}/LanguageManager-iOS/LanguageManager_iOS.framework
 ${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
-${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/ValidationTextField/ValidationTextField.framework

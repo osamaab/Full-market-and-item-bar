@@ -176,19 +176,21 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AwaitToast/AwaitToast.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LanguageManager-iOS/LanguageManager_iOS.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ValidationTextField/ValidationTextField.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/AwaitToast/AwaitToast.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LanguageManager-iOS/LanguageManager_iOS.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ValidationTextField/ValidationTextField.framework"
 fi

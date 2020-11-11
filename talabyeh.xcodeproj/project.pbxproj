@@ -24,8 +24,11 @@
 		E496B2F1255B2ED9001BEC0F /* GeneralRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2F0255B2ED9001BEC0F /* GeneralRoutes.swift */; };
 		E496B2F9255B2FBB001BEC0F /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2F8255B2FBB001BEC0F /* NetworkConfiguration.swift */; };
 		E496B2FE255B3088001BEC0F /* Moya+DefaultProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2FD255B3088001BEC0F /* Moya+DefaultProvider.swift */; };
+		E4C705AB255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C705AA255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift */; };
+		E4C705B0255BB18100DD29E3 /* ScreenMessagePresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C705AF255BB18100DD29E3 /* ScreenMessagePresenterType.swift */; };
+		E4C705C6255BB2FA00DD29E3 /* UISearchBar+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C705C5255BB2FA00DD29E3 /* UISearchBar+Additions.swift */; };
+		E4C705EC255BBD6100DD29E3 /* UIImage+Addtions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C705EB255BBD6100DD29E3 /* UIImage+Addtions.swift */; };
 		F9365AE125388A9000190C68 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9365AE025388A9000190C68 /* UserType.swift */; };
-		F9365AE92538920800190C68 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9365AE82538920800190C68 /* RequestManager.swift */; };
 		F93B1FE225373DAE00E48657 /* SignUpCategoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93B1FE125373DAE00E48657 /* SignUpCategoriesListViewController.swift */; };
 		F94608EE2545D91600C74D95 /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94608ED2545D91600C74D95 /* ProfilePageView.swift */; };
 		F94608F32545D92B00C74D95 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94608F22545D92B00C74D95 /* ProfilePageViewController.swift */; };
@@ -45,7 +48,6 @@
 		F9571BAC252CEA700090C285 /* DIN NEXT™ ARABIC BOLD.otf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B9D252CEA700090C285 /* DIN NEXT™ ARABIC BOLD.otf */; };
 		F9571BAD252CEA700090C285 /* DIN NEXT™ ARABIC LIGHT.otf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B9E252CEA700090C285 /* DIN NEXT™ ARABIC LIGHT.otf */; };
 		F96B85202529A05800CEDCF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B851F2529A05800CEDCF8 /* AppDelegate.swift */; };
-		F96B85222529A05800CEDCF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B85212529A05800CEDCF8 /* SceneDelegate.swift */; };
 		F96B85242529A05800CEDCF8 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B85232529A05800CEDCF8 /* RegistrationViewController.swift */; };
 		F96B85272529A05800CEDCF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96B85252529A05800CEDCF8 /* Main.storyboard */; };
 		F96B85292529A05A00CEDCF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F96B85282529A05A00CEDCF8 /* Assets.xcassets */; };
@@ -112,8 +114,11 @@
 		E496B2F0255B2ED9001BEC0F /* GeneralRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRoutes.swift; sourceTree = "<group>"; };
 		E496B2F8255B2FBB001BEC0F /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
 		E496B2FD255B3088001BEC0F /* Moya+DefaultProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Moya+DefaultProvider.swift"; sourceTree = "<group>"; };
+		E4C705AA255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBlockingLoaderType.swift; sourceTree = "<group>"; };
+		E4C705AF255BB18100DD29E3 /* ScreenMessagePresenterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenMessagePresenterType.swift; sourceTree = "<group>"; };
+		E4C705C5255BB2FA00DD29E3 /* UISearchBar+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Additions.swift"; sourceTree = "<group>"; };
+		E4C705EB255BBD6100DD29E3 /* UIImage+Addtions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Addtions.swift"; sourceTree = "<group>"; };
 		F9365AE025388A9000190C68 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
-		F9365AE82538920800190C68 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		F93B1FE125373DAE00E48657 /* SignUpCategoriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCategoriesListViewController.swift; sourceTree = "<group>"; };
 		F94608ED2545D91600C74D95 /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
 		F94608F22545D92B00C74D95 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
@@ -134,7 +139,6 @@
 		F9571B9E252CEA700090C285 /* DIN NEXT™ ARABIC LIGHT.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC LIGHT.otf"; sourceTree = "<group>"; };
 		F96B851C2529A05700CEDCF8 /* talabyeh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = talabyeh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96B851F2529A05800CEDCF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F96B85212529A05800CEDCF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F96B85232529A05800CEDCF8 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		F96B85262529A05800CEDCF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F96B85282529A05A00CEDCF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -222,7 +226,6 @@
 		E496B235255B2079001BEC0F /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				F9365AE82538920800190C68 /* RequestManager.swift */,
 				E496B2B4255B286E001BEC0F /* Additions */,
 				E496B2B3255B2868001BEC0F /* Routes */,
 			);
@@ -255,8 +258,8 @@
 		E496B23E255B20EF001BEC0F /* Profile Flow */ = {
 			isa = PBXGroup;
 			children = (
-				F94608ED2545D91600C74D95 /* ProfilePageView.swift */,
 				F94608F22545D92B00C74D95 /* ProfilePageViewController.swift */,
+				F94608ED2545D91600C74D95 /* ProfilePageView.swift */,
 			);
 			path = "Profile Flow";
 			sourceTree = "<group>";
@@ -266,6 +269,8 @@
 			children = (
 				E496B2AB255B2771001BEC0F /* UIColor+Additions.swift */,
 				E496B2B5255B28C0001BEC0F /* UIView+Additions.swift */,
+				E4C705C5255BB2FA00DD29E3 /* UISearchBar+Additions.swift */,
+				E4C705EB255BBD6100DD29E3 /* UIImage+Addtions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -284,6 +289,8 @@
 			children = (
 				E496B248255B214C001BEC0F /* FontProviderType.swift */,
 				E496B2A3255B2730001BEC0F /* ColorsProviderType.swift */,
+				E4C705AA255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift */,
+				E4C705AF255BB18100DD29E3 /* ScreenMessagePresenterType.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -332,6 +339,13 @@
 				F990A387254082C500ABC4CF /* DistributorSignUpView.swift */,
 			);
 			path = "Distributor Sign Up";
+			sourceTree = "<group>";
+		};
+		E4C705D0255BB67500DD29E3 /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pickers;
 			sourceTree = "<group>";
 		};
 		F9365ADF25388A4D00190C68 /* Models */ = {
@@ -419,7 +433,6 @@
 		F96B851E2529A05700CEDCF8 /* talabyeh */ = {
 			isa = PBXGroup;
 			children = (
-				F96B85212529A05800CEDCF8 /* SceneDelegate.swift */,
 				F96B851F2529A05800CEDCF8 /* AppDelegate.swift */,
 				E496B247255B213E001BEC0F /* Services */,
 				E496B242255B2115001BEC0F /* Extensions */,
@@ -465,6 +478,7 @@
 		F98D0E8A252F786200D46EE9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E4C705D0255BB67500DD29E3 /* Pickers */,
 				E496B239255B20B0001BEC0F /* Authentication Flow */,
 				E496B23E255B20EF001BEC0F /* Profile Flow */,
 				E496B23A255B20E8001BEC0F /* Market Flow */,
@@ -493,8 +507,8 @@
 		F990A3842540825800ABC4CF /* Sign Up Categories Selection */ = {
 			isa = PBXGroup;
 			children = (
-				E496B25F255B22A2001BEC0F /* SignUpCategoriesListView.swift */,
 				F93B1FE125373DAE00E48657 /* SignUpCategoriesListViewController.swift */,
+				E496B25F255B22A2001BEC0F /* SignUpCategoriesListView.swift */,
 			);
 			path = "Sign Up Categories Selection";
 			sourceTree = "<group>";
@@ -762,16 +776,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9365AE92538920800190C68 /* RequestManager.swift in Sources */,
+				E4C705B0255BB18100DD29E3 /* ScreenMessagePresenterType.swift in Sources */,
 				F9EA04F4252C90E500DC288B /* RoundedButton.swift in Sources */,
 				E496B2CF255B2B10001BEC0F /* BorderedTextField.swift in Sources */,
 				F990A388254082C500ABC4CF /* DistributorSignUpView.swift in Sources */,
 				E496B2A4255B2730001BEC0F /* ColorsProviderType.swift in Sources */,
 				E496B249255B214C001BEC0F /* FontProviderType.swift in Sources */,
+				E4C705C6255BB2FA00DD29E3 /* UISearchBar+Additions.swift in Sources */,
 				F96B85242529A05800CEDCF8 /* RegistrationViewController.swift in Sources */,
 				E496B2E2255B2D4A001BEC0F /* ActionButton.swift in Sources */,
 				E496B2CA255B2ABF001BEC0F /* ValidationTextField.swift in Sources */,
 				F98D0E54252DE6F200D46EE9 /* SignUpWizardViewController.swift in Sources */,
+				E4C705EC255BBD6100DD29E3 /* UIImage+Addtions.swift in Sources */,
 				F990A386254082AB00ABC4CF /* DistributorSignUpViewController.swift in Sources */,
 				E496B2F9255B2FBB001BEC0F /* NetworkConfiguration.swift in Sources */,
 				F9E5E844253C911700B0040D /* Category.swift in Sources */,
@@ -792,7 +808,7 @@
 				E496B2D8255B2D3F001BEC0F /* BackButton.swift in Sources */,
 				E496B2AC255B2771001BEC0F /* UIColor+Additions.swift in Sources */,
 				F98D0E59252DE73500D46EE9 /* SignUpWizardView.swift in Sources */,
-				F96B85222529A05800CEDCF8 /* SceneDelegate.swift in Sources */,
+				E4C705AB255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift in Sources */,
 				F9F65B8C254F1FD300D347D6 /* MarketScreenViewController.swift in Sources */,
 				E496B2F1255B2ED9001BEC0F /* GeneralRoutes.swift in Sources */,
 				F9EA0496252C83E800DC288B /* MainSignUpViewController.swift in Sources */,
@@ -989,6 +1005,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 98VZ6LKU7M;
 				INFOPLIST_FILE = talabyeh/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1008,6 +1025,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 98VZ6LKU7M;
 				INFOPLIST_FILE = talabyeh/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

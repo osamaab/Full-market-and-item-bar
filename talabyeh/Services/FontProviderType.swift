@@ -65,7 +65,7 @@ struct ArabicFontProvider: FontProviderType {
         case .light:
             return "Light"
         case .regular:
-            return "Regular" // still don't know why the reuglar font isn't provided, but we're dealing with generic traits, so providing a regular font for regular trait is a must
+            return "Regular"
         case .medium:
             return "Regular"
         case .semiBold:
