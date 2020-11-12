@@ -14,41 +14,73 @@ import Stevia
  
  TODO: change the implementation
  */
-class ValidationTextField: InsetedTextField {
+class ValidationTextField: BorderedTextField {
     
-    enum PasswordStrength: String {
-        case Strong = "Strong"
-        case Medium = "Medium"
-        case Weak = "Weak"
+    private var errorMessageLabel = UILabel()
+    
+    var validator: ValidatorType? {
+        didSet {
+            self.performValidationAndShowError(for: text)
+        }
     }
 
-    
-    private var strengthText = UILabel()
-    private var errorMessageLabel = UILabel()
-
-    public func showPasswordStrengthMessage(type: PasswordStrength) {
-        strengthText.removeFromSuperview()
-        subviews(strengthText)
-        strengthText.text = type.rawValue.localiz()
-        if type == PasswordStrength.Strong{
-            strengthText.textColor = #colorLiteral(red: 0, green: 0.7843137255, blue: 0.5490196078, alpha: 1)
-        }else if type == .Medium{
-            strengthText.textColor = #colorLiteral(red: 0.7843137255, green: 0.7529411765, blue: 0, alpha: 1)
-        }else if type == .Weak{
-            strengthText.textColor = #colorLiteral(red: 0.7843137255, green: 0, blue: 0, alpha: 1)
+    var hasErrors: Bool {
+        guard let validator = self.validator else {
+            return false
         }
         
-        strengthText.trailing(16).width(60).height(20).centerVertically()
+        return (try? validator.validated(self.text)) == nil
     }
     
-    public func showErrorMessage(message: String) {
+    override func setup(){
+        NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: UITextField.textDidChangeNotification, object: self)
+    }
+    
+    @objc func textDidChange(){
+        performValidationAndShowError(for: text)
+    }
+    
+    func performValidationAndShowError(for text: String?) {
+        guard let validator = self.validator else {
+            return
+        }
+        
+        let errorMessage: String?
+        do {
+            _ = try validator.validated(text)
+            errorMessage = nil
+        } catch let error as ValidationError {
+            errorMessage = error.message
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+        
+        if let message = errorMessage {
+            showErrorMessage(message: message)
+        } else {
+            removeErrorMessage()
+        }
+    }
+    
+    func removeErrorMessage(){
         errorMessageLabel.removeFromSuperview()
+    }
+    
+    func showErrorMessage(message: String) {
+        errorMessageLabel.removeFromSuperview()
+
         self.superview!.subviews(errorMessageLabel)
+
         errorMessageLabel.text = message
         errorMessageLabel.textColor = #colorLiteral(red: 0.7843137255, green: 0, blue: 0, alpha: 1)
         errorMessageLabel.leading(16).width(self.frame.size.width).height(20)
-        errorMessageLabel.Top == self.Bottom //+ 5
-        
+        errorMessageLabel.Top == self.Bottom
         errorMessageLabel.font = .font(for: .medium, size: 14)
     }
 }
+
+/**
+ Quiz skitch:
+ - we need to validate the content using regular expression
+ - validation happens when the text field is editing, and the message is shwon upon finish editing.
+ */

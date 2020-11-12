@@ -10,10 +10,8 @@ import UIKit
 
 /**
  Text field with border feature
-
- TODO: change the implementaition
  */
-class BorderedTextField: ValidationTextField {
+class BorderedTextField: InsetedTextField {
     
     @IBInspectable var borderColor: UIColor? = UIColor.clear {
         didSet {

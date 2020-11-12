@@ -26,14 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupApperance()
         
         
-        let marketCoordinator = MarketCoordinator()
-        let profileCoordinator = ProfileCoordinator()
-        let tabBarCoordinator = TabBarCoordinator(coordinators: [marketCoordinator, profileCoordinator])
-
-        tabBarCoordinator.start()
+//        let marketCoordinator = MarketCoordinator()
+//        let profileCoordinator = ProfileCoordinator()
+//        let tabBarCoordinator = TabBarCoordinator(coordinators: [marketCoordinator, profileCoordinator])
+//
+//        tabBarCoordinator.start()
         
-//        let authenticationCoordinator = AuthenticationCoordinator()
-//        authenticationCoordinator.start()
+        let authenticationCoordinator = AuthenticationCoordinator()
+        authenticationCoordinator.start()
         
         return true
     }

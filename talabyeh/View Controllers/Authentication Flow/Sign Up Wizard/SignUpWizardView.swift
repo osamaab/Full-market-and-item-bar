@@ -21,11 +21,11 @@ class SignUpWizardView: UIView, UITableViewDelegate, UITableViewDataSource {
     let merchantTypeImage = UIImageView()
     
     
-    let companytf = BorderedTextField()
-    let passwordtf = BorderedTextField()
-    let emailtf = BorderedTextField()
-    let nationalNumbertf = BorderedTextField()
-    let telephonetf = BorderedTextField()
+    let companytf = ValidationTextField()
+    let passwordtf = PasswordTextField()
+    let emailtf = ValidationTextField()
+    let nationalNumbertf = ValidationTextField()
+    let telephonetf = ValidationTextField()
     
     
     let comLicenceView = UIView()
