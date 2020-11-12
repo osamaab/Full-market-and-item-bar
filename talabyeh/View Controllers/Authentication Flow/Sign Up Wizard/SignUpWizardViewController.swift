@@ -44,6 +44,11 @@ class SignUpWizardViewController: UIViewController {
         signUpView.backButton.addTarget(self, action: #selector(backButton), for: .touchUpInside)
         signUpView.nextButton.addTarget(self, action: #selector(showCategories), for: .touchUpInside)
         
+        signUpView.companyLocationView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(locationViewTapped)))
+    }
+    
+    @objc func locationViewTapped(){
+        LocationPickerController(location: nil, delegate: self).present(on: self)
     }
     
     @objc func backButton(){
@@ -54,5 +59,11 @@ class SignUpWizardViewController: UIViewController {
         let vc = SignUpCategoriesListViewController()
         vc.chosenUserType = self.chosenUserType!
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension SignUpWizardViewController: LocationPickerControllerDelegate {
+    func locationPickerController(_ sender: LocationPickerController, didFinishWith location: PickedLocation?) {
+        print("finished")
     }
 }

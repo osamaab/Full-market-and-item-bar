@@ -29,7 +29,4 @@ class DistributorSignUpViewController: UIViewController {
     @objc func backButton(){
         self.navigationController?.popViewController(animated: true)
     }
-    
-
-
 }

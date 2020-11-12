@@ -9,6 +9,8 @@
 import UIKit
 import LanguageManager_iOS
 
+
+//TODO: Change it to language picker type, not change language
 class ChangeLanguageViewController: UIViewController {
     
     @IBOutlet weak var selectLanguageLabel: UILabel!
@@ -62,14 +64,12 @@ class ChangeLanguageViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func setLanguage(_ sender: Any)
-    {
+    @IBAction func setLanguage(_ sender: Any) {
         let selectedLanguage: Languages = (sender as AnyObject).tag == 1 ? .en : .ar
         // change the language.
         LanguageManager.shared.setLanguage(language: selectedLanguage,
                                            viewControllerFactory: { title -> UIViewController in
           // you can check the title to set a specific for specific scene.
-          print(title ?? "")
           // get the storyboard.
           let storyboard = UIStoryboard(name: "Main", bundle: nil)
           // instantiate the view controller that you want to show after changing the language.

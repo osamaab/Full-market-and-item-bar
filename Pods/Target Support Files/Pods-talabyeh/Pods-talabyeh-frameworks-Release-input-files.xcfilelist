@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-talabyeh/Pods-talabyeh-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Actions/Actions.framework
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/AwaitToast/AwaitToast.framework
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework

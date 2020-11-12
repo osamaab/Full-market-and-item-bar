@@ -40,52 +40,18 @@ class SignUpCategoriesListViewController: UIViewController, UICollectionViewDele
         signUpCategoriesListView.categoriesCollectionView.delegate = self
         signUpCategoriesListView.categoriesCollectionView.dataSource = self
         signUpCategoriesListView.categoriesCollectionView.register(CategoryCell.self, forCellWithReuseIdentifier: "cell")
-        
-//        self.startAnimating()
-//        GeneralRoutes.categories.request { (result: Result<Categories, Error>) in
-//            self.stopAnimating()
-//
-//            switch result {
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            case .success(let categories):
-//                self.categories.removeAll()
-//                self.categories = categories.results
-//                self.signUpCategoriesListView.categoriesCollectionView.reloadData()
-//            }
-//        }
     }
     
-    @objc func backButton()
-    {
+    @objc func backButton() {
         self.navigationController?.popViewController(animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
+        return 3
     }
-    
-//    let cview = UIView()
-//    let icon = UIImageView()
-//    let ctitle = UILabel()
-//    let checkMark = UIImageView()
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CategoryCell
-        
-        cell?.cTitle.text = categories[indexPath.row].title//LanguageManager.shared.currentLanguage == .en ? categories[indexPath.row].en_title: categories[indexPath.row].ar_title //"Title".localiz()
-
-        
-        if let url = URL(string:categories[indexPath.row].logo!){
-            print(url)
-            //icon.sd_setImage(with: url, placeholderImage: nil, options: .fromCacheOnly, context: nil) //= UIImage(named: "Group 2729")
-            cell?.icon.contentMode = .scaleAspectFit
-            cell?.icon.sd_setImage(with: url) { (image, error, cacheType, url) in
-                cell?.icon.image = image?.withRenderingMode(.alwaysTemplate)
-                cell?.icon.tintColor = UIColor(named: AdaptiveColors.darkGrey.rawValue)
-            }
-        }
-        
         
         cell?.checkMark.image = UIImage(named: "Group 2696")
         cell?.checkMark.image = cell?.checkMark.image?.withRenderingMode(.alwaysTemplate)
@@ -117,8 +83,6 @@ class SignUpCategoriesListViewController: UIViewController, UICollectionViewDele
         selectedIndices.append(indexPath)
         collectionView.reloadData()
     }
-    
-
 }
 
 

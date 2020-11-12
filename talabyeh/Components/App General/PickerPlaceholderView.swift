@@ -11,13 +11,27 @@ import Stevia
 
 class PickerPlaceholderView: UIView {
     
+    enum Style {
+        case active
+        case inactive
+    }
+    
     let stackView: UIStackView = .init()
     let titleLabel: UILabel = .init()
     let imageView: UIImageView = .init()
     
-    init(){
+    var style: Style = .inactive {
+        didSet {
+            
+        }
+    }
+    
+    init(title: String? = nil, image: UIImage? = nil){
         super.init(frame: .zero)
         setup()
+        
+        self.titleLabel.text = title
+        self.imageView.image = image
     }
     
     required init?(coder: NSCoder) {
@@ -38,7 +52,7 @@ class PickerPlaceholderView: UIView {
         stackView.addingArrangedSubviews([imageView, titleLabel])
         
         addSubview(stackView)
-        stackView.fillContainer(padding: 5)
+        stackView.fillContainer(padding: 20)
         
         // putting a sample image
         titleLabel.font = .font(for: .regular, size: 16)
@@ -50,5 +64,11 @@ class PickerPlaceholderView: UIView {
         // sample conetnt
         imageView.image = UIImage(named: "camera")
         titleLabel.text = "Personal ID"
+        
+        self.update(for: style)
+    }
+    
+    func update(for style: Style){
+        
     }
 }

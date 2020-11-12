@@ -73,18 +73,6 @@ class SignUpWizardView: UIView, UITableViewDelegate, UITableViewDataSource {
         contentTableViewCell.subviews(companyLocationView)
         contentTableViewCell.subviews(categoryView)
         
-//        subviews(welcomeLabel)
-//        subviews(merchantTypeImage)
-//        subviews(companytf)
-//        subviews(passwordtf)
-//        subviews(emailtf)
-//        subviews(nationalNumbertf)
-//        subviews(telephonetf)
-//        subviews(comLicenceView)
-//        subviews(companyLogoView)
-//        subviews(companyLocationView)
-//        subviews(categoryView)
-        
         subviews(bottomView)
         
         contentTableView.delegate = self

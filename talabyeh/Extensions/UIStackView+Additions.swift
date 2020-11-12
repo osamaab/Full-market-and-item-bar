@@ -8,6 +8,11 @@
 
 import UIKit
 
+@_functionBuilder public struct SubviewsBuilder {
+    public static func buildBlock(_ content: UIView...) -> [UIView] {
+        return content
+    }
+}
 
 /**
  Creating a chainable stackview to make life easiere
@@ -50,6 +55,15 @@ extension UIStackView {
     @discardableResult
     func preparedForAutolayout() -> UIStackView {
         translatesAutoresizingMaskIntoConstraints = false
+        return self
+    }
+    
+    @discardableResult
+    func arrangedSubviews(@SubviewsBuilder content: () -> [UIView]) -> UIStackView {
+        for sv in content() {
+            addArrangedSubview(sv)
+            sv.translatesAutoresizingMaskIntoConstraints = false
+        }
         return self
     }
 }
