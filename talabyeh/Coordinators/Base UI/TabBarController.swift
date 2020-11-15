@@ -18,6 +18,7 @@ class TabBarController: UITabBarController {
         tabBar.barTintColor = .white
         tabBar.backgroundImage = .init()
         tabBar.shadowImage = UIImage()
-        tabBar.tintColor = DefaultColorsProvider.darkTint
+        tabBar.tintColor = DefaultColorsProvider.darkerTint
+        tabBar.unselectedItemTintColor = DefaultColorsProvider.tabbarUnselected
     }
 }

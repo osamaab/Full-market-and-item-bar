@@ -53,11 +53,10 @@ class ProfileTableViewCell: UITableViewCell{
             arrow.image = icon
             arrow.image = arrow.image?.withRenderingMode(.alwaysTemplate)
             arrow.tintColor = .white
-        }else{
+        } else {
             arrow.image = UIImage(named: "right-arrow")
             
         }
-        
         
         arrow.image = UIImage(named: "right-arrow")
         arrow.contentMode = .scaleAspectFit

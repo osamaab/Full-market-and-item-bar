@@ -22,7 +22,7 @@ class NavigationController: UINavigationController {
         navigationBar.shadowImage = UIImage()
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.isTranslucent = false
-        navigationBar.barTintColor = DefaultColorsProvider.darkTint
+        navigationBar.barTintColor = DefaultColorsProvider.darkerTint
         
         navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor.white,

@@ -26,8 +26,6 @@ protocol ScreenBlockingLoaderType: class {
 }
 
 
-
-
 extension UIViewController {
     
     /**

@@ -40,7 +40,7 @@ class PickerPlaceholderView: UIView {
     }
     
     func setup(){
-        backgroundColor = UIColor(rgb: 0x9AA1B1)
+        backgroundColor = DefaultColorsProvider.pickerBackground
         layer.cornerRadius = 10
         
         stackView
