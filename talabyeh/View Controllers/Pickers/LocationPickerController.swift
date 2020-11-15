@@ -8,7 +8,6 @@
 
 import UIKit
 
-private let title = "Store Locator"
 private let nextButtonTitle = "Next"
 private let searchPlaceholder = "City / Street / Building no. / office"
 
@@ -25,16 +24,18 @@ class LocationPickerController: NSObject {
      */
     private static var current: LocationPickerController?
     
-    
     private var locationPicker: LocationPickerViewController
     private var navigationController: UINavigationController
     private var nextButtonView: BottomNextButtonView
+    
+    let title: String
     
     weak var delegate: LocationPickerControllerDelegate?
     
     fileprivate(set) var location: PickedLocation?
     
-    init(location: PickedLocation?, delegate: LocationPickerControllerDelegate){
+    init(title: String, location: PickedLocation?, delegate: LocationPickerControllerDelegate){
+        self.title = title
         self.location = location
         self.delegate = delegate
 
@@ -46,6 +47,18 @@ class LocationPickerController: NSObject {
         
         super.init()
         Self.current = self
+        
+        self.nextButtonView.nextButton.add(event: .touchUpInside) { [unowned self] in
+            if let location = self.locationPicker.location {
+                self.select(location: location)
+            }
+        }
+    }
+    
+    func select(location: Location?){
+        self.locationPicker.dismiss(animated: true, completion: nil)
+        self.delegate?.locationPickerController(self, didFinishWith: location)
+        Self.current = nil
     }
     
     
@@ -74,7 +87,7 @@ class LocationPickerController: NSObject {
         locationPicker.completion = { location in
             // do some awesome stuff with location
             
-            self.delegate?.locationPickerController(self, didFinishWith: location)
+            self.select(location: location)
         }
         
         locationPicker.view.addSubview(nextButtonView)
@@ -82,7 +95,6 @@ class LocationPickerController: NSObject {
         nextButtonView.bottom(0).leading(0).centerHorizontally()
         
         locationPicker.navigationItem.title = title
-        
         navigationController.modalPresentationStyle = .fullScreen
         
         controller.present(navigationController, animated: true, completion: nil)

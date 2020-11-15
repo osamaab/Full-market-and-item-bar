@@ -46,6 +46,8 @@ class PasswordTextField: BorderedTextField {
     private var strengthText = UILabel()
     
     override func setup() {
+        super.setup()
+        
         isSecureTextEntry = true
         NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: UITextField.textDidChangeNotification, object: self)
     }

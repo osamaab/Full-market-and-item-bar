@@ -59,7 +59,7 @@ extension UIStackView {
     }
     
     @discardableResult
-    func arrangedSubviews(@SubviewsBuilder content: () -> [UIView]) -> UIStackView {
+    func addingArrangedSubviews(@SubviewsBuilder content: () -> [UIView]) -> UIStackView {
         for sv in content() {
             addArrangedSubview(sv)
             sv.translatesAutoresizingMaskIntoConstraints = false

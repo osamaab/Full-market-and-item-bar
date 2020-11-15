@@ -20,9 +20,21 @@ class PickerPlaceholderView: UIView {
     let titleLabel: UILabel = .init()
     let imageView: UIImageView = .init()
     
+    /**
+     sometimes it's better to save the information here, ex. the image.
+     */
+    var associatedValue: AnyObject? {
+        didSet {
+            self.style = associatedValue == nil ? .inactive : .active
+        }
+    }
+    
+    var onTap: (() -> Void)?
+    var onClear: (() -> Void)?
+    
     var style: Style = .inactive {
         didSet {
-            
+            update(for: style)
         }
     }
     
@@ -60,15 +72,18 @@ class PickerPlaceholderView: UIView {
         titleLabel.textAlignment = .center
         
         imageView.contentMode = .scaleAspectFit
-        
-        // sample conetnt
-        imageView.image = UIImage(named: "camera")
-        titleLabel.text = "Personal ID"
+        imageView.tintColor = .white
         
         self.update(for: style)
+        
+        addAction { [unowned self] in
+            self.onTap?()
+        }
     }
     
     func update(for style: Style){
-        
+        self.backgroundColor = style == .inactive ? DefaultColorsProvider.pickerBackground : DefaultColorsProvider.lightTint
+        self.titleLabel.textColor = style == .inactive ? .white : DefaultColorsProvider.darkerTint
+        self.imageView.tintColor = style == .inactive ? .white : DefaultColorsProvider.darkerTint
     }
 }

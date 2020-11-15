@@ -57,6 +57,11 @@ class ScrollContainerView: UIView {
     }
     
     fileprivate func addConstraints(){
+        contentContainerView.translatesAutoresizingMaskIntoConstraints = false
+        scrollViewContainerView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        
         scrollViewContainerView.fillContainer()
         scrollView.fillContainer()
         contentContainerView.fillContainer()

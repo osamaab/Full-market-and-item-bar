@@ -14,9 +14,10 @@ class BottomNextButtonView: UIView {
     let backgroundView: UIView = .init()
     let nextButton: RoundedButton = .init()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(title: String? = nil) {
+        super.init(frame: .zero)
         setup()
+        nextButton.setTitle(title, for: .normal)
     }
     
     required init?(coder: NSCoder) {

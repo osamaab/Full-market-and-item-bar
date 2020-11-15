@@ -33,6 +33,8 @@ class NavigationController: UINavigationController {
             .foregroundColor: UIColor.white,
             .font: UIFont.font(for: .bold, size: 24)
         ]
+        
+        navigationBar.backIndicatorImage = UIImage(named: "back")
     }
 }
 
@@ -49,9 +51,15 @@ extension UIViewController {
             navigationItem.backBarButtonItem = .init(title: "", style: .plain, target: nil, action: nil)
             navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(close))
         }
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 
         
         return navigationController
+    }
+    
+    @objc func back(){
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc func close(){

@@ -11,9 +11,9 @@ import UIKit
 /**
  A custom text field that provides the feature of insetting the text inside it
  */
-class InsetedTextField: UITextField {
+class InsetedTextField: BasicTextField {
     
-    @IBInspectable var paddingValue: CGFloat = 0 {
+    var paddingValue: CGFloat = 15 {
         didSet {
             inset = .init(top: 0, left: paddingValue, bottom: 0, right: paddingValue)
         }
@@ -25,17 +25,8 @@ class InsetedTextField: UITextField {
         }
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setup()
-    }
-    
-    func setup(){
+    override func setup(){
+        super.setup()
         self.inset = .init(top: 0, left: paddingValue, bottom: 0, right: paddingValue)
     }
     
