@@ -86,7 +86,9 @@ open class ImagePickerController: NSObject {
 extension ImagePickerController: UIImagePickerControllerDelegate {
 
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.pickerController(picker, didSelect: nil)
+        picker.dismiss(animated: true) { [unowned self] in
+            self.pickerController(picker, didSelect: nil)
+        }
     }
 
     public func imagePickerController(_ picker: UIImagePickerController,
@@ -94,7 +96,10 @@ extension ImagePickerController: UIImagePickerControllerDelegate {
         guard let image = info[.originalImage] as? UIImage else {
             return self.pickerController(picker, didSelect: nil)
         }
-        self.pickerController(picker, didSelect: image)
+        
+        picker.dismiss(animated: true) { [unowned self] in
+            self.pickerController(picker, didSelect: image)
+        }
     }
 }
 

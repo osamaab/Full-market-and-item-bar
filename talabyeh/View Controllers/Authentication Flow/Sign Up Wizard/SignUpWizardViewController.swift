@@ -48,7 +48,7 @@ class SignUpWizardViewController: UIViewController {
     }
     
     @objc func locationViewTapped(){
-        LocationPickerController(location: nil, delegate: self).present(on: self)
+        LocationPickerController(title: "Store Locator", location: nil, delegate: self).present(on: self)
     }
     
     @objc func backButton(){

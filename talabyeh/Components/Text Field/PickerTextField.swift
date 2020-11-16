@@ -15,6 +15,8 @@ class PickerTextField: BorderedTextField {
     let imageView: UIImageView = .init()
     let separatorView: UIView = .init()
     
+    var onTap: (() -> Void)?
+    
     var isSeparatorHidden: Bool {
         set {
             separatorView.isHidden = newValue
@@ -23,8 +25,40 @@ class PickerTextField: BorderedTextField {
         }
     }
     
+    var isImageViewHidden: Bool {
+        set {
+            imageView.isHidden = newValue
+            updateInsets()
+        } get {
+            imageView.isHidden
+        }
+    }
+    
+    
+    fileprivate func updateInsets(){
+        let originalInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        var modifited = originalInset
+        
+        let padding: CGFloat = isImageViewHidden ? 0 : 20
+        
+        if isRTL {
+            modifited.left += padding
+        } else {
+            modifited.right += padding
+        }
+        
+        self.inset = modifited
+    }
+    
     override func setup() {
+        super.setup()
+        
         // add the image view and it's separator
+        imageView.tintColor = DefaultColorsProvider.fieldBorder
+        imageView.contentMode = .scaleAspectFit
+        
+        separatorView.backgroundColor = DefaultColorsProvider.fieldBorder
+        
         addSubview(imageView)
         addSubview(separatorView)
         
@@ -32,27 +66,27 @@ class PickerTextField: BorderedTextField {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         separatorView.translatesAutoresizingMaskIntoConstraints = false
         
-        imageView.backgroundColor = .brown
-        separatorView.backgroundColor = .brown
-        
-        imageView.width(25).height(25).centerVertically().trailing(15)
+        imageView.width(20).height(20).centerVertically().trailing(15)
         separatorView.centerVertically().height(80%).width(1)
         separatorView.Trailing == imageView.Leading - 10
         
         // modify the insets so the text would not go through the icon
-        let originalInset = super.inset
-        var modifited = originalInset
+        self.updateInsets()
         
-        if isRTL {
-            modifited.left += 20
-        } else {
-            modifited.right += 20
-        }
+        // adding a button on top of the text field ( self ) prevents the input view from being shown
+        let button = UIButton()
+        button.addTarget(self, action: #selector(tapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
         
-        self.inset = modifited
+        addSubview(button)
+        button.fillContainer()
     }
     
-    // disable the caret, cause the field should fire a picker
+    @objc func tapped(){
+        onTap?()
+    }
+    
+    // disable the caret, cause the field should fire a picker on it's tap ( this case happens where the user has a keyboard and text fields becomes first responder without a tap )
     override func caretRect(for position: UITextPosition) -> CGRect {
         .zero
     }

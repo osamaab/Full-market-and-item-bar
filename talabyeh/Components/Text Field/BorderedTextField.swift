@@ -13,19 +13,19 @@ import UIKit
  */
 class BorderedTextField: InsetedTextField {
     
-    @IBInspectable var borderColor: UIColor? = UIColor.clear {
+   var borderColor: UIColor? = UIColor.clear {
         didSet {
             layer.borderColor = self.borderColor?.cgColor
         }
     }
     
-    @IBInspectable var borderWidth: CGFloat = 0 {
+    var borderWidth: CGFloat = 0 {
         didSet {
             layer.borderWidth = self.borderWidth
         }
     }
     
-    @IBInspectable var cornerRadius: CGFloat = 0 {
+   var cornerRadius: CGFloat = 0 {
         didSet {
             layer.cornerRadius = self.cornerRadius
             layer.masksToBounds = self.cornerRadius > 0
@@ -36,8 +36,8 @@ class BorderedTextField: InsetedTextField {
     override func setup(){
         super.setup()
         
-        self.layer.cornerRadius = self.cornerRadius
-        self.layer.borderWidth = self.borderWidth
-        self.layer.borderColor = self.borderColor?.cgColor
+        self.layer.cornerRadius = 10
+        self.layer.borderWidth = 1
+        self.layer.borderColor = DefaultColorsProvider.fieldBorder.cgColor
     }
 }

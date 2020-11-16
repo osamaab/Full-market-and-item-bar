@@ -33,6 +33,7 @@ class ValidationTextField: BorderedTextField {
     }
     
     override func setup(){
+        super.setup()
         NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: UITextField.textDidChangeNotification, object: self)
     }
     

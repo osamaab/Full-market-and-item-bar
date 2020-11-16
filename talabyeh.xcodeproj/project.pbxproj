@@ -62,6 +62,11 @@
 		E4E6813B255D435E0051D52D /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E68137255D435E0051D52D /* LocationPickerViewController.swift */; };
 		E4E6813C255D435E0051D52D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E68138255D435E0051D52D /* Location.swift */; };
 		E4E68147255D481D0051D52D /* SampleSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E68146255D481D0051D52D /* SampleSignupViewController.swift */; };
+		E4FF498C2560F43900B4CBC4 /* NewDistributerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF498B2560F43900B4CBC4 /* NewDistributerViewController.swift */; };
+		E4FF49942560F45800B4CBC4 /* NewDistributerContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF49932560F45800B4CBC4 /* NewDistributerContentView.swift */; };
+		E4FF49992561021F00B4CBC4 /* BasicTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF49982561021F00B4CBC4 /* BasicTextField.swift */; };
+		E4FF49A12561087700B4CBC4 /* NewDistributerViewController+Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF49A02561087700B4CBC4 /* NewDistributerViewController+Cards.swift */; };
+		E4FF49A6256115CA00B4CBC4 /* NumbersTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF49A5256115CA00B4CBC4 /* NumbersTextFields.swift */; };
 		F93B1FE225373DAE00E48657 /* SignUpCategoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93B1FE125373DAE00E48657 /* SignUpCategoriesListViewController.swift */; };
 		F94608EE2545D91600C74D95 /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94608ED2545D91600C74D95 /* ProfilePageView.swift */; };
 		F94608F32545D92B00C74D95 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94608F22545D92B00C74D95 /* ProfilePageViewController.swift */; };
@@ -184,6 +189,11 @@
 		E4E68137255D435E0051D52D /* LocationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
 		E4E68138255D435E0051D52D /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		E4E68146255D481D0051D52D /* SampleSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSignupViewController.swift; sourceTree = "<group>"; };
+		E4FF498B2560F43900B4CBC4 /* NewDistributerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDistributerViewController.swift; sourceTree = "<group>"; };
+		E4FF49932560F45800B4CBC4 /* NewDistributerContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDistributerContentView.swift; sourceTree = "<group>"; };
+		E4FF49982561021F00B4CBC4 /* BasicTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTextField.swift; sourceTree = "<group>"; };
+		E4FF49A02561087700B4CBC4 /* NewDistributerViewController+Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewDistributerViewController+Cards.swift"; sourceTree = "<group>"; };
+		E4FF49A5256115CA00B4CBC4 /* NumbersTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTextFields.swift; sourceTree = "<group>"; };
 		F93B1FE125373DAE00E48657 /* SignUpCategoriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCategoriesListViewController.swift; sourceTree = "<group>"; };
 		F94608ED2545D91600C74D95 /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
 		F94608F22545D92B00C74D95 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
@@ -418,10 +428,12 @@
 		E496B2C3255B298A001BEC0F /* Text Field */ = {
 			isa = PBXGroup;
 			children = (
+				E4FF49982561021F00B4CBC4 /* BasicTextField.swift */,
 				E496B2C4255B29A3001BEC0F /* InsetedTextField.swift */,
 				E496B2CE255B2B10001BEC0F /* BorderedTextField.swift */,
 				E4CB7418255D20C80017A499 /* PickerTextField.swift */,
 				E496B2C9255B2ABF001BEC0F /* ValidationTextField.swift */,
+				E4FF49A5256115CA00B4CBC4 /* NumbersTextFields.swift */,
 				E4CB740B255D18610017A499 /* PasswordTextField.swift */,
 			);
 			path = "Text Field";
@@ -522,6 +534,16 @@
 			children = (
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		E4FF498A2560F42F00B4CBC4 /* New Distributer */ = {
+			isa = PBXGroup;
+			children = (
+				E4FF498B2560F43900B4CBC4 /* NewDistributerViewController.swift */,
+				E4FF49A02561087700B4CBC4 /* NewDistributerViewController+Cards.swift */,
+				E4FF49932560F45800B4CBC4 /* NewDistributerContentView.swift */,
+			);
+			path = "New Distributer";
 			sourceTree = "<group>";
 		};
 		F9571B84252CDD9E0090C285 /* Resources */ = {
@@ -647,6 +669,7 @@
 			isa = PBXGroup;
 			children = (
 				E4C705D0255BB67500DD29E3 /* Pickers */,
+				E4FF498A2560F42F00B4CBC4 /* New Distributer */,
 				E496B239255B20B0001BEC0F /* Authentication Flow */,
 				E496B23E255B20EF001BEC0F /* Profile Flow */,
 				E496B23A255B20E8001BEC0F /* Market Flow */,
@@ -955,6 +978,7 @@
 				E4000CC6255C08DF00E89ABB /* MarketCategoryCell.swift in Sources */,
 				E496B249255B214C001BEC0F /* FontProviderType.swift in Sources */,
 				E4000CDF255C106700E89ABB /* PickerPlaceholderView.swift in Sources */,
+				E4FF49992561021F00B4CBC4 /* BasicTextField.swift in Sources */,
 				E4C70612255BC44900DD29E3 /* NibInstantiatable.swift in Sources */,
 				E4C705C6255BB2FA00DD29E3 /* UISearchBar+Additions.swift in Sources */,
 				F96B85242529A05800CEDCF8 /* RegistrationViewController.swift in Sources */,
@@ -972,10 +996,12 @@
 				F990A386254082AB00ABC4CF /* DistributorSignUpViewController.swift in Sources */,
 				E496B2F9255B2FBB001BEC0F /* NetworkConfiguration.swift in Sources */,
 				E4000CF7255C174600E89ABB /* CoordinatorTransitionType.swift in Sources */,
+				E4FF498C2560F43900B4CBC4 /* NewDistributerViewController.swift in Sources */,
 				E4000CA6255C050D00E89ABB /* NSObject+Traits.swift in Sources */,
 				E496B2C5255B29A3001BEC0F /* InsetedTextField.swift in Sources */,
 				F96B85202529A05800CEDCF8 /* AppDelegate.swift in Sources */,
 				F96B85502529B67200CEDCF8 /* ChangeLanguageViewController.swift in Sources */,
+				E4FF49942560F45800B4CBC4 /* NewDistributerContentView.swift in Sources */,
 				E4CB73FF255D158E0017A499 /* ValidationError.swift in Sources */,
 				E4E68147255D481D0051D52D /* SampleSignupViewController.swift in Sources */,
 				E496B260255B22A2001BEC0F /* SignUpCategoriesListView.swift in Sources */,
@@ -993,6 +1019,7 @@
 				E4CB7407255D15B60017A499 /* ValidatorType.swift in Sources */,
 				E4E6813B255D435E0051D52D /* LocationPickerViewController.swift in Sources */,
 				E4CB7414255D19B20017A499 /* Validators.swift in Sources */,
+				E4FF49A12561087700B4CBC4 /* NewDistributerViewController+Cards.swift in Sources */,
 				F94608EE2545D91600C74D95 /* ProfilePageView.swift in Sources */,
 				E4C70603255BBFCD00DD29E3 /* TabBarController.swift in Sources */,
 				F9CC27C625332B6B00408FDA /* SignInViewController.swift in Sources */,
@@ -1011,6 +1038,7 @@
 				F9F65B8C254F1FD300D347D6 /* MarketViewController.swift in Sources */,
 				E496B2F1255B2ED9001BEC0F /* GeneralRoutes.swift in Sources */,
 				F9EA0496252C83E800DC288B /* MainSignUpViewController.swift in Sources */,
+				E4FF49A6256115CA00B4CBC4 /* NumbersTextFields.swift in Sources */,
 				F93B1FE225373DAE00E48657 /* SignUpCategoriesListViewController.swift in Sources */,
 				F9CC27CB25332B8900408FDA /* SignInView.swift in Sources */,
 				E4000CE7255C121900E89ABB /* UIStackView+Additions.swift in Sources */,

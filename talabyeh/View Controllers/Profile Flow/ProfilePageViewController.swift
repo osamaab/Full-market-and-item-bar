@@ -124,4 +124,9 @@ extension ProfilePageViewController {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let newDistributersViewController = NewDistributerViewController()
+        self.navigationController?.pushViewController(newDistributersViewController, animated: true)
+    }
 }

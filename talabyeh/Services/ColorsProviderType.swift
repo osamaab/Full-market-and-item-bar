@@ -20,7 +20,7 @@ struct LightSchemeColorProvider {
     static let tabbarUnselected = #colorLiteral(red: 0.431372549, green: 0.4745098039, blue: 0.5411764706, alpha: 1)
     
     // borders and separators
-    static let fieldBorder = #colorLiteral(red: 0.6862745098, green: 0.6862745098, blue: 0.6862745098, alpha: 1)
+    static let fieldBorder = #colorLiteral(red: 0.831372549, green: 0.831372549, blue: 0.8784313725, alpha: 1)
     
     // element backgrounds
     static let pickerBackground = #colorLiteral(red: 0.6039215686, green: 0.631372549, blue: 0.6941176471, alpha: 1)
@@ -28,8 +28,8 @@ struct LightSchemeColorProvider {
     static let itemBackground = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
     
     // tints
-    static let darkerTint = #colorLiteral(red: 0.06666666667, green: 0.3607843137, blue: 0.1960784314, alpha: 1) //#115C32
-    static let lightTint = #colorLiteral(red: 0.7411764706, green: 0.937254902, blue: 0.2078431373, alpha: 1) //BDEF35
+    static let darkerTint = #colorLiteral(red: 0.06666666667, green: 0.3607843137, blue: 0.1960784314, alpha: 1)
+    static let lightTint = #colorLiteral(red: 0.7411764706, green: 0.937254902, blue: 0.2078431373, alpha: 1)
     
     // backgrounds
     static let background = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
