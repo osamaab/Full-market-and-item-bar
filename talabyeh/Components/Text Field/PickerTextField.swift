@@ -15,7 +15,19 @@ class PickerTextField: BorderedTextField {
     let imageView: UIImageView = .init()
     let separatorView: UIView = .init()
     
-    var onTap: (() -> Void)?
+    var onTap: (() -> Void)? {
+        didSet {
+            if self.onTap != nil && !isButtonAdded {
+                addSubview(button)
+                button.fillContainer()
+                
+                isButtonAdded = true
+            } else {
+                button.removeFromSuperview()
+                isButtonAdded = false
+            }
+        }
+    }
     
     var isSeparatorHidden: Bool {
         set {
@@ -34,6 +46,16 @@ class PickerTextField: BorderedTextField {
         }
     }
     
+    fileprivate var isButtonAdded: Bool = false
+    
+    fileprivate lazy var button: UIButton = {
+        // adding a button on top of the text field ( self ) prevents the input view from being shown
+        let button = UIButton()
+        button.addTarget(self, action: #selector(tapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
     
     fileprivate func updateInsets(){
         let originalInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
@@ -72,14 +94,6 @@ class PickerTextField: BorderedTextField {
         
         // modify the insets so the text would not go through the icon
         self.updateInsets()
-        
-        // adding a button on top of the text field ( self ) prevents the input view from being shown
-        let button = UIButton()
-        button.addTarget(self, action: #selector(tapped), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        
-        addSubview(button)
-        button.fillContainer()
     }
     
     @objc func tapped(){

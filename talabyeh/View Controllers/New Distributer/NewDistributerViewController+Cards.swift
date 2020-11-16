@@ -114,8 +114,8 @@ class NDDeliveryAreaContentView: NDCardContentContainerView {
 }
 
 class NDAvailabilityContentView: NDCardContentContainerView {
-    let datesTextField: PickerTextField = .init()
-    let timesTextField: PickerTextField = .init()
+    let datesTextField: WeekdaysRangePickerTextField = .init()
+    let timesTextField: TimeRangePickerTextField = .init()
     
     let fieldsStackView: UIStackView = .init()
 

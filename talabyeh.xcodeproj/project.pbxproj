@@ -23,6 +23,8 @@
 		E4000CE7255C121900E89ABB /* UIStackView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4000CE6255C121900E89ABB /* UIStackView+Additions.swift */; };
 		E4000CEC255C153300E89ABB /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4000CEB255C153300E89ABB /* Authentication.storyboard */; };
 		E4000CF7255C174600E89ABB /* CoordinatorTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4000CF6255C174600E89ABB /* CoordinatorTransitionType.swift */; };
+		E4151D7525626904009F1D45 /* TimeRangePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4151D7425626904009F1D45 /* TimeRangePickerTextField.swift */; };
+		E4151D7A25626910009F1D45 /* WeekdaysRangePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4151D7925626910009F1D45 /* WeekdaysRangePickerTextField.swift */; };
 		E496B249255B214C001BEC0F /* FontProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B248255B214C001BEC0F /* FontProviderType.swift */; };
 		E496B260255B22A2001BEC0F /* SignUpCategoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B25F255B22A2001BEC0F /* SignUpCategoriesListView.swift */; };
 		E496B2A4255B2730001BEC0F /* ColorsProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2A3255B2730001BEC0F /* ColorsProviderType.swift */; };
@@ -150,6 +152,8 @@
 		E4000CE6255C121900E89ABB /* UIStackView+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Additions.swift"; sourceTree = "<group>"; };
 		E4000CEB255C153300E89ABB /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		E4000CF6255C174600E89ABB /* CoordinatorTransitionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTransitionType.swift; sourceTree = "<group>"; };
+		E4151D7425626904009F1D45 /* TimeRangePickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRangePickerTextField.swift; sourceTree = "<group>"; };
+		E4151D7925626910009F1D45 /* WeekdaysRangePickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdaysRangePickerTextField.swift; sourceTree = "<group>"; };
 		E496B248255B214C001BEC0F /* FontProviderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontProviderType.swift; sourceTree = "<group>"; };
 		E496B25F255B22A2001BEC0F /* SignUpCategoriesListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpCategoriesListView.swift; sourceTree = "<group>"; };
 		E496B2A3255B2730001BEC0F /* ColorsProviderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsProviderType.swift; sourceTree = "<group>"; };
@@ -326,6 +330,15 @@
 			path = "App General";
 			sourceTree = "<group>";
 		};
+		E4151D73256268AC009F1D45 /* More Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				E4151D7425626904009F1D45 /* TimeRangePickerTextField.swift */,
+				E4151D7925626910009F1D45 /* WeekdaysRangePickerTextField.swift */,
+			);
+			path = "More Pickers";
+			sourceTree = "<group>";
+		};
 		E496B235255B2079001BEC0F /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,6 +448,7 @@
 				E496B2C9255B2ABF001BEC0F /* ValidationTextField.swift */,
 				E4FF49A5256115CA00B4CBC4 /* NumbersTextFields.swift */,
 				E4CB740B255D18610017A499 /* PasswordTextField.swift */,
+				E4151D73256268AC009F1D45 /* More Pickers */,
 			);
 			path = "Text Field";
 			sourceTree = "<group>";
@@ -998,6 +1012,7 @@
 				E4000CF7255C174600E89ABB /* CoordinatorTransitionType.swift in Sources */,
 				E4FF498C2560F43900B4CBC4 /* NewDistributerViewController.swift in Sources */,
 				E4000CA6255C050D00E89ABB /* NSObject+Traits.swift in Sources */,
+				E4151D7525626904009F1D45 /* TimeRangePickerTextField.swift in Sources */,
 				E496B2C5255B29A3001BEC0F /* InsetedTextField.swift in Sources */,
 				F96B85202529A05800CEDCF8 /* AppDelegate.swift in Sources */,
 				F96B85502529B67200CEDCF8 /* ChangeLanguageViewController.swift in Sources */,
@@ -1033,6 +1048,7 @@
 				E4C705F2255BBF5400DD29E3 /* CoordinatorType.swift in Sources */,
 				E4CB740C255D18610017A499 /* PasswordTextField.swift in Sources */,
 				E4C705AB255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift in Sources */,
+				E4151D7A25626910009F1D45 /* WeekdaysRangePickerTextField.swift in Sources */,
 				E4000CC1255C08AA00E89ABB /* ItemCell2.swift in Sources */,
 				E4000CBC255C089800E89ABB /* ItemCell.swift in Sources */,
 				F9F65B8C254F1FD300D347D6 /* MarketViewController.swift in Sources */,
