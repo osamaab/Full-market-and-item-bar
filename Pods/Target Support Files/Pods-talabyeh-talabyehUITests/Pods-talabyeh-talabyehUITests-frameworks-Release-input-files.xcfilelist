@@ -2,6 +2,7 @@ ${PODS_ROOT}/Target Support Files/Pods-talabyeh-talabyehUITests/Pods-talabyeh-ta
 ${BUILT_PRODUCTS_DIR}/Actions/Actions.framework
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/AwaitToast/AwaitToast.framework
+${BUILT_PRODUCTS_DIR}/CardScanner/CardScanner.framework
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
 ${BUILT_PRODUCTS_DIR}/LanguageManager-iOS/LanguageManager_iOS.framework
 ${BUILT_PRODUCTS_DIR}/Moya/Moya.framework

@@ -72,6 +72,8 @@ class NewDistributerViewController: UIViewController {
         contentView.insertCardView(with: availabilityView, title: "Availability")
         contentView.insertCardView(with: moneyDistributionView, title: "Where to distribute his money")
         
+        
+        // we need to add the plus button :)
         let plusButton = UIButton()
         plusButton.setImage(UIImage(named: "plus_small"), for: .normal)
         plusButton.translatesAutoresizingMaskIntoConstraints = false

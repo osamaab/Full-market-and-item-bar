@@ -147,10 +147,10 @@ class NDMoneyDistributionContentView: NDCardContentContainerView {
     let horizontalStackView: UIStackView = .init()
 
     let nameTextField: BorderedTextField = .init()
-    let numberTextField: NumbersTextField = .init(maxDigitsCount: 25)
+    let numberTextField: CreditCardNumberTextField = .init()
     
-    let monthTextField: PickerTextField = .init()
-    let yearTextField: PickerTextField = .init()
+    let monthTextField: MonthPickerTextField = .init()
+    let yearTextField: YearPickerTextField = .init()
     let cvvTextField: NumbersTextField = .init(maxDigitsCount: 3)
     
     override func setup() {
@@ -160,13 +160,21 @@ class NDMoneyDistributionContentView: NDCardContentContainerView {
         yearTextField.placeholder = "Year"
         cvvTextField.placeholder = "CVV number"
         
+        
         monthTextField.isSeparatorHidden = true
         monthTextField.isImageViewHidden = true
         yearTextField.isSeparatorHidden = true
         monthTextField.isImageViewHidden = true
         
+        yearTextField.inset = .init(top: 0, left: 10, bottom: 0, right: 10)
+        monthTextField.inset = .init(top: 0, left: 10, bottom: 0, right: 10)
+        cvvTextField.inset = .init(top: 0, left: 10, bottom: 0, right: 10)
+        
+        yearTextField.setContentCompressionResistancePriority(.required, for: .horizontal)
         cvvTextField.setContentCompressionResistancePriority(.required, for: .horizontal)
         cvvTextField.setContentHuggingPriority(UILayoutPriority(240), for: .horizontal)
+        
+        
 
         nameTextField.height(45)
         

@@ -17,7 +17,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     var menuItems: [ProfileMenuItem]
     
     
-    fileprivate var editMenuItem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "edit"), style: .plain, target: self, action: #selector(editButtonTapped))
+    fileprivate lazy var editMenuItem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "edit"), style: .plain, target: self, action: #selector(editButtonTapped))
     fileprivate let profileView = ProfilePageView()
     
     
