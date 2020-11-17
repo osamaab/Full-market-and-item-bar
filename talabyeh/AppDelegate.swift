@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.delegate as! AppDelegate
     }
     
+    var currentCoordinator: CoordinatorType?
+    
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -30,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let profileCoordinator = ProfileCoordinator()
         let tabBarCoordinator = TabBarCoordinator(coordinators: [marketCoordinator, profileCoordinator])
 
+        self.currentCoordinator = tabBarCoordinator
         tabBarCoordinator.start()
         
 //        let authenticationCoordinator = AuthenticationCoordinator()

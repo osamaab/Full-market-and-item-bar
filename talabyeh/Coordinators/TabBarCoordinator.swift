@@ -20,7 +20,6 @@ class TabBarCoordinator: CoordinatorType {
     let coordinators: [TabBarSubCoordinator]
     let tabBarController = TabBarController()
     
-    
     var rootViewController: UIViewController? {
         tabBarController
     }

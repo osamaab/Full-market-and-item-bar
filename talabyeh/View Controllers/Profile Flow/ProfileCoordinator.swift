@@ -39,6 +39,11 @@ class ProfileCoordinator: TabBarSubCoordinator {
         
         self.profileViewController = ProfilePageViewController(headerInfo: headerInfo, menuItems: menuItems)
         self.navigationController = profileViewController.embededInNavigationController()
+        
+        self.profileViewController.editAction = { [unowned self] in
+            let newDistributer = NewDistributerViewController()
+            self.navigationController.pushViewController(newDistributer, animated: true)
+        }
     }
     
     func start() {

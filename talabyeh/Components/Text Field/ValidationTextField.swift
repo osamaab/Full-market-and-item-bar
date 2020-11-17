@@ -69,8 +69,12 @@ class ValidationTextField: BorderedTextField {
     
     func showErrorMessage(message: String) {
         errorMessageLabel.removeFromSuperview()
+        
+        guard let superview = self.superview else {
+            return
+        }
 
-        self.superview!.subviews(errorMessageLabel)
+        superview.subviews(errorMessageLabel)
 
         errorMessageLabel.text = message
         errorMessageLabel.textColor = #colorLiteral(red: 0.7843137255, green: 0, blue: 0, alpha: 1)
