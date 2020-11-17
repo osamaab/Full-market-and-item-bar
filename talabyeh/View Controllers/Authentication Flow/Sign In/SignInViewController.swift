@@ -35,6 +35,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate
         let profileCoordinator = ProfileCoordinator()
         let tabBarCoordinator = TabBarCoordinator(coordinators: [marketCoordinator, profileCoordinator])
 
-        tabBarCoordinator.start()
+        tabBarCoordinator.start(with: .windowRoot(AppDelegate.shared.window!))
     }
 }

@@ -11,14 +11,13 @@ import UIKit
 class ProfileCoordinator: TabBarSubCoordinator {
     
     var rootViewController: UIViewController? {
-        navigationController
+        profileViewController
     }
     
     var tabBarItem: UITabBarItem! {
         .init(title: "Profile", image: UIImage(named: "profile"), selectedImage: nil)
     }
     
-    let navigationController: NavigationController
     let profileViewController: ProfilePageViewController
     
     init(){
@@ -38,15 +37,9 @@ class ProfileCoordinator: TabBarSubCoordinator {
         ]
         
         self.profileViewController = ProfilePageViewController(headerInfo: headerInfo, menuItems: menuItems)
-        self.navigationController = profileViewController.embededInNavigationController()
         
         self.profileViewController.editAction = { [unowned self] in
-            let newDistributer = NewDistributerViewController()
-            self.navigationController.pushViewController(newDistributer, animated: true)
+            
         }
-    }
-    
-    func start() {
-        
     }
 }

@@ -29,14 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let marketCoordinator = MarketCoordinator()
+        let distributersCoordinator = DistributersListCoordinator()
         let profileCoordinator = ProfileCoordinator()
-        let tabBarCoordinator = TabBarCoordinator(coordinators: [marketCoordinator, profileCoordinator])
+        let tabBarCoordinator = TabBarCoordinator(coordinators: [marketCoordinator, distributersCoordinator, profileCoordinator])
 
         self.currentCoordinator = tabBarCoordinator
-        tabBarCoordinator.start()
-        
-//        let authenticationCoordinator = AuthenticationCoordinator()
-//        authenticationCoordinator.start()
+        tabBarCoordinator.start(with: .windowRoot(self.window!))
         
         return true
     }

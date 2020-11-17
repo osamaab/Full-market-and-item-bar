@@ -21,18 +21,13 @@ protocol CoordinatorType: class {
     /**
      tells the coordinator to start it's transitioning, while the transition type isn't yet defined, in later versions we'll specify the transition type with the default implementation, but for now, let's keep things as they are.
      */
-    func start()
+    func start(with transition: CoordinatorTransition)
     
     
     /**
      Called when the coordinator is just about to start the transition
      */
     func prepareToStart()
-    
-    /**
-     Called when the coordinator will hide
-     */
-    func prepareToHide()
 }
 
 
@@ -40,10 +35,6 @@ extension CoordinatorType {
     
     
     func prepareToStart(){
-        
-    }
-    
-    func prepareToHide(){
         
     }
 }

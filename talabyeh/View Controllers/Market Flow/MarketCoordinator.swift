@@ -12,22 +12,16 @@ import UIKit
 class MarketCoordinator: TabBarSubCoordinator {
     
     var rootViewController: UIViewController? {
-        navigationController
+        marketViewController
     }
     
     var tabBarItem: UITabBarItem! {
         .init(title: "Market", image: UIImage(named: "market-selected"), selectedImage: UIImage(named: "market-selected"))
     }
     
-    let navigationController: NavigationController
     let marketViewController: MarketViewController
     
     init(){
         self.marketViewController = .init()
-        self.navigationController = marketViewController.embededInNavigationController()
-    }
-    
-    func start() {
-        
     }
 }

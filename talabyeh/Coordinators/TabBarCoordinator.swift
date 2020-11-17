@@ -29,15 +29,9 @@ class TabBarCoordinator: CoordinatorType {
         
         let viewControllers: [UIViewController] = coordinators.compactMap {
             $0.rootViewController?.tabBarItem = $0.tabBarItem
-            return $0.rootViewController
+            return $0.rootViewController?.embededInNavigationController()
         }
         
         tabBarController.viewControllers = viewControllers
-    }
-    
-    func start() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = self.rootViewController
-        appDelegate.window?.makeKeyAndVisible()
     }
 }
