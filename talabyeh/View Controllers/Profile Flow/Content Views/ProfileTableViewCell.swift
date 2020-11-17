@@ -29,7 +29,7 @@ class ProfileTableViewCell: UITableViewCell{
     }
     
     fileprivate func setup() {
-        
+        selectionStyle = .none
         backgroundColor = UIColor(named: "Light Grey Adaptive")
         
         subviews([icon, label, arrow])

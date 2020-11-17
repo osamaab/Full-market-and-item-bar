@@ -21,8 +21,8 @@ class ProfilePageView: UIView {
     
     convenience init() {
         self.init(frame:CGRect.zero)
-        backgroundColor = DefaultColorsProvider.background
         defaultLayout()
+        customizeApperance()
     }
     
     final private func defaultLayout() {
@@ -39,6 +39,9 @@ class ProfilePageView: UIView {
             phoneNumberLabel
         }
 
+
+//        backgroundColor = DefaultColorsProvider.background
+        backgroundColor = Constants.lightGrey
 
         personalInfoView.backgroundColor = DefaultColorsProvider.background
         nameLabel.textColor = DefaultColorsProvider.text
@@ -71,6 +74,24 @@ class ProfilePageView: UIView {
         phoneNumberLabel.font = .font(for: .regular, size: 13)
         phoneNumberLabel.height(15).centerHorizontally()
         phoneNumberLabel.Top == emailLabel.Bottom + 14.41
+    }
+    
+    
+    fileprivate func customizeApperance(){
+        listTableView.separatorStyle = .none
+        
+        let tableheaderView = UIView(frame: CGRect(x: 0, y: 0, width: listTableView.frame.size.width, height: 18.76))
+        tableheaderView.backgroundColor = UIColor(named: "Light Grey Adaptive")
+        listTableView.tableHeaderView = tableheaderView
+        
+        personalInfoView.layer.borderColor = !isLight  ? #colorLiteral(red: 0.07058823529, green: 0.07058823529, blue: 0.07058823529, alpha: 1) : #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
+       
+        if isLight {
+            personalInfoView.layer.borderWidth = 1
+            personalInfoView.layer.cornerRadius = 15
+            personalInfoView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+            personalInfoView.dropShadow(color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), opacity: 1, offSet: .zero, radius: 10, scale: true)
+        }
     }
 }
 

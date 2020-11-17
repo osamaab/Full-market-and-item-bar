@@ -39,6 +39,7 @@
 		E496B2F1255B2ED9001BEC0F /* GeneralRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2F0255B2ED9001BEC0F /* GeneralRoutes.swift */; };
 		E496B2F9255B2FBB001BEC0F /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2F8255B2FBB001BEC0F /* NetworkConfiguration.swift */; };
 		E496B2FE255B3088001BEC0F /* Moya+DefaultProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2FD255B3088001BEC0F /* Moya+DefaultProvider.swift */; };
+		E4A670392563AAF60057083C /* ProfileMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A670382563AAF60057083C /* ProfileMenuItem.swift */; };
 		E4C705AB255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C705AA255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift */; };
 		E4C705B0255BB18100DD29E3 /* ScreenMessagePresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C705AF255BB18100DD29E3 /* ScreenMessagePresenterType.swift */; };
 		E4C705C6255BB2FA00DD29E3 /* UISearchBar+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C705C5255BB2FA00DD29E3 /* UISearchBar+Additions.swift */; };
@@ -168,6 +169,7 @@
 		E496B2F0255B2ED9001BEC0F /* GeneralRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRoutes.swift; sourceTree = "<group>"; };
 		E496B2F8255B2FBB001BEC0F /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
 		E496B2FD255B3088001BEC0F /* Moya+DefaultProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Moya+DefaultProvider.swift"; sourceTree = "<group>"; };
+		E4A670382563AAF60057083C /* ProfileMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuItem.swift; sourceTree = "<group>"; };
 		E4C705AA255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBlockingLoaderType.swift; sourceTree = "<group>"; };
 		E4C705AF255BB18100DD29E3 /* ScreenMessagePresenterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenMessagePresenterType.swift; sourceTree = "<group>"; };
 		E4C705C5255BB2FA00DD29E3 /* UISearchBar+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Additions.swift"; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 			children = (
 				E4000C98255C00B000E89ABB /* ProfileCoordinator.swift */,
 				F94608F22545D92B00C74D95 /* ProfilePageViewController.swift */,
+				E4A670382563AAF60057083C /* ProfileMenuItem.swift */,
 				E4000CB0255C064900E89ABB /* Content Views */,
 			);
 			path = "Profile Flow";
@@ -470,6 +473,13 @@
 				F990A387254082C500ABC4CF /* DistributorSignUpView.swift */,
 			);
 			path = "Distributor Sign Up";
+			sourceTree = "<group>";
+		};
+		E4A6703D2563B0910057083C /* Distributers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Distributers;
 			sourceTree = "<group>";
 		};
 		E4C705D0255BB67500DD29E3 /* Pickers */ = {
@@ -683,6 +693,7 @@
 			isa = PBXGroup;
 			children = (
 				E4C705D0255BB67500DD29E3 /* Pickers */,
+				E4A6703D2563B0910057083C /* Distributers */,
 				E4FF498A2560F42F00B4CBC4 /* New Distributer */,
 				E496B239255B20B0001BEC0F /* Authentication Flow */,
 				E496B23E255B20EF001BEC0F /* Profile Flow */,
@@ -993,6 +1004,7 @@
 				E496B249255B214C001BEC0F /* FontProviderType.swift in Sources */,
 				E4000CDF255C106700E89ABB /* PickerPlaceholderView.swift in Sources */,
 				E4FF49992561021F00B4CBC4 /* BasicTextField.swift in Sources */,
+				E4A670392563AAF60057083C /* ProfileMenuItem.swift in Sources */,
 				E4C70612255BC44900DD29E3 /* NibInstantiatable.swift in Sources */,
 				E4C705C6255BB2FA00DD29E3 /* UISearchBar+Additions.swift in Sources */,
 				F96B85242529A05800CEDCF8 /* RegistrationViewController.swift in Sources */,

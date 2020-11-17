@@ -22,7 +22,22 @@ class ProfileCoordinator: TabBarSubCoordinator {
     let profileViewController: ProfilePageViewController
     
     init(){
-        self.profileViewController = .init()
+        // doing dummy data here :)
+        let headerInfo = ProfileHeaderInfo(title: "Hussein AlRyalat",
+                                           imageURL: nil,
+                                           subtitle: "hus.sc@aol.com",
+                                           subtitle2: nil)
+        
+        let menuItems = [
+            ProfileMenuItem.changePassword(),
+            .payment(),
+            .orders(),
+            .location(),
+            .information(),
+            .history()
+        ]
+        
+        self.profileViewController = ProfilePageViewController(headerInfo: headerInfo, menuItems: menuItems)
         self.navigationController = profileViewController.embededInNavigationController()
     }
     

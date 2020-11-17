@@ -31,21 +31,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate
     }
     
     @objc func signInButton() {
-        let mainVC = UITabBarController()
-        let profileVC = ProfilePageViewController()
-        profileVC.title = "Profile".localiz()
-        let market = MarketViewController()
-        market.title = "Market".localiz()
-        mainVC.setViewControllers([market,profileVC], animated: true)
-        mainVC.modalTransitionStyle = .crossDissolve
-        mainVC.modalPresentationStyle = .fullScreen
-        mainVC.tabBar.items?[0].image = UIImage(named: "")
-        //mainVC.tabBar.items?[0].selectedImage = UIImage(named: "")
-        mainVC.tabBar.items?[1].image = UIImage(named: "Group 2720")
-        //mainVC.tabBar.items?[1].selectedImage = UIImage(named: "")
-        mainVC.tabBar.tintColor = Constants.darkGreen
-        //mainVC.tabBar.frame.size.height = 82.81
-        //mainVC.tabBar.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        self.present(mainVC, animated: true, completion: nil)
+        let marketCoordinator = MarketCoordinator()
+        let profileCoordinator = ProfileCoordinator()
+        let tabBarCoordinator = TabBarCoordinator(coordinators: [marketCoordinator, profileCoordinator])
+
+        tabBarCoordinator.start()
     }
 }

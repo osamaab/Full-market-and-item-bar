@@ -8,60 +8,41 @@
 
 import UIKit
 
-enum ProfileMenu: String, CaseIterable {
-    case changePassword
-    case payment
-    case orders
-    case location
-    case information
-    case history
-    
-    var title: String {
-        switch self {
-        case .changePassword:
-            return "Change Password".localiz()
-        case .payment:
-            return "Payment".localiz()
-        case .orders:
-            return "Orders".localiz()
-        case .location:
-            return "Store Location".localiz()
-        case .information:
-            return "Full Information".localiz()
-        case .history:
-            return "History".localiz()
-        }
-    }
-    
-    var image: UIImage? {
-        let imageName: String
-        switch self {
-        case .changePassword:
-            imageName = "Group 1447"
-        case .payment:
-            imageName = "Group 1450"
-        case .orders:
-            imageName = "Group 2759"
-        case .location:
-            imageName = "Group 1457"
-        case .information:
-            imageName = "Group 2255"
-        case .history:
-            imageName = "Group 2257"
-        }
-        
-        return UIImage(named: imageName)
-    }
-}
-
+/**
+ The Profile view controller acts as a generic view controller displaying information on the header, with menu items can be actionable
+ */
 class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    let profileView = ProfilePageView()
-    var menuItems: [ProfileMenu] = ProfileMenu.allCases
     
+    var headerInfo: ProfileHeaderInfo
+    var menuItems: [ProfileMenuItem]
+    
+    
+    fileprivate var editMenuItem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "edit"), style: .plain, target: self, action: #selector(editButtonTapped))
+    fileprivate let profileView = ProfilePageView()
+    
+    
+    var editAction: ActionBlock? {
+        didSet {
+            if self.editAction != nil {
+                navigationItem.rightBarButtonItem = editMenuItem
+            } else {
+                navigationItem.rightBarButtonItem = nil
+            }
+        }
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
+    }
+    
+    init(headerInfo: ProfileHeaderInfo, menuItems: [ProfileMenuItem]){
+        self.headerInfo = headerInfo
+        self.menuItems = menuItems
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func loadView() {
@@ -70,32 +51,29 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
     override func viewDidLoad() {
         super.viewDidLoad()
+                
+        profileView.nameLabel.text = headerInfo.title
+        profileView.emailLabel.text = headerInfo.subtitle
+        profileView.phoneNumberLabel.text = headerInfo.subtitle2
         
-        menuItems.remove(at: menuItems.firstIndex(of: .information)!)
-        
-        profileView.backgroundColor = Constants.lightGrey
-        profileView.nameLabel.text = "loai elayan"
-        profileView.emailLabel.text = "loai@loai.com"
-        profileView.phoneNumberLabel.text = "0799034903"
+        profileView.emailLabel.isHidden = headerInfo.subtitle == nil
+        profileView.phoneNumberLabel.isHidden = headerInfo.subtitle2 == nil
+
         
         profileView.listTableView.register(cellClass: ProfileTableViewCell.self)
         profileView.listTableView.delegate = self
         profileView.listTableView.dataSource = self
-        profileView.listTableView.separatorStyle = .none
-        
-        let tableheaderView = UIView(frame: CGRect(x: 0, y: 0, width: profileView.listTableView.frame.size.width, height: 18.76))
-        tableheaderView.backgroundColor = UIColor(named: "Light Grey Adaptive")
-        profileView.listTableView.tableHeaderView = tableheaderView
-        
-        
-        profileView.personalInfoView.layer.borderColor = !isLight  ? #colorLiteral(red: 0.07058823529, green: 0.07058823529, blue: 0.07058823529, alpha: 1) : #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
-       
-        if isLight {
-            profileView.personalInfoView.layer.borderWidth = 1
-            profileView.personalInfoView.layer.cornerRadius = 15
-            profileView.personalInfoView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-            profileView.personalInfoView.dropShadow(color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), opacity: 1, offSet: .zero, radius: 10, scale: true)
-        }
+    }
+    
+    /**
+     The current implementation calls the action associated with the item, subclasses may execute different actions based on the given item
+     */
+    func didSelect(item: ProfileMenuItem){
+        item.action?()
+    }
+    
+    @objc func editButtonTapped(){
+        self.editAction?()
     }
 }
 
@@ -126,7 +104,6 @@ extension ProfilePageViewController {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let newDistributersViewController = NewDistributerViewController()
-        self.navigationController?.pushViewController(newDistributersViewController, animated: true)
+        self.didSelect(item: menuItems[indexPath.row])
     }
 }
