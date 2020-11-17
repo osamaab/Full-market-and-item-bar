@@ -147,7 +147,7 @@ class NDMoneyDistributionContentView: NDCardContentContainerView {
     let horizontalStackView: UIStackView = .init()
 
     let nameTextField: BorderedTextField = .init()
-    let numberTextField: ValidationTextField = .init()
+    let numberTextField: CreditCardNumberTextField = .init()
     
     let monthTextField: MonthPickerTextField = .init()
     let yearTextField: YearPickerTextField = .init()
@@ -159,10 +159,6 @@ class NDMoneyDistributionContentView: NDCardContentContainerView {
         monthTextField.placeholder = "Month"
         yearTextField.placeholder = "Year"
         cvvTextField.placeholder = "CVV number"
-        
-        numberTextField.keyboardType = .decimalPad
-        numberTextField.textContentType = .creditCardNumber
-        numberTextField.validator = PaymentCardValidator()
         
         
         monthTextField.isSeparatorHidden = true

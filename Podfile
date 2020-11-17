@@ -17,6 +17,7 @@ pod 'SDWebImage', '~> 5.0'
 pod 'AwaitToast'
 pod 'NVActivityIndicatorView'
 pod 'Actions'
+pod 'CardScanner'
 
   target 'talabyehTests' do
     inherit! :search_paths

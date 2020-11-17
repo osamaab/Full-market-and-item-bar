@@ -43,6 +43,8 @@
 		E4A670452563B3980057083C /* PaymentCardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A670442563B3980057083C /* PaymentCardValidator.swift */; };
 		E4A6704A2563B52A0057083C /* MonthPickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A670492563B52A0057083C /* MonthPickerTextField.swift */; };
 		E4A6704F2563B5310057083C /* YearPickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A6704E2563B5310057083C /* YearPickerTextField.swift */; };
+		E4A670702563C2A60057083C /* CreditCardNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A6706F2563C2A60057083C /* CreditCardNumberTextField.swift */; };
+		E4A670782563C3580057083C /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A670772563C3580057083C /* UIViewController+Extensions.swift */; };
 		E4C705AB255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C705AA255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift */; };
 		E4C705B0255BB18100DD29E3 /* ScreenMessagePresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C705AF255BB18100DD29E3 /* ScreenMessagePresenterType.swift */; };
 		E4C705C6255BB2FA00DD29E3 /* UISearchBar+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C705C5255BB2FA00DD29E3 /* UISearchBar+Additions.swift */; };
@@ -176,6 +178,8 @@
 		E4A670442563B3980057083C /* PaymentCardValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardValidator.swift; sourceTree = "<group>"; };
 		E4A670492563B52A0057083C /* MonthPickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPickerTextField.swift; sourceTree = "<group>"; };
 		E4A6704E2563B5310057083C /* YearPickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearPickerTextField.swift; sourceTree = "<group>"; };
+		E4A6706F2563C2A60057083C /* CreditCardNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardNumberTextField.swift; sourceTree = "<group>"; };
+		E4A670772563C3580057083C /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		E4C705AA255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBlockingLoaderType.swift; sourceTree = "<group>"; };
 		E4C705AF255BB18100DD29E3 /* ScreenMessagePresenterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenMessagePresenterType.swift; sourceTree = "<group>"; };
 		E4C705C5255BB2FA00DD29E3 /* UISearchBar+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Additions.swift"; sourceTree = "<group>"; };
@@ -345,6 +349,7 @@
 				E4151D7925626910009F1D45 /* WeekdaysRangePickerTextField.swift */,
 				E4A670492563B52A0057083C /* MonthPickerTextField.swift */,
 				E4A6704E2563B5310057083C /* YearPickerTextField.swift */,
+				E4A6706F2563C2A60057083C /* CreditCardNumberTextField.swift */,
 			);
 			path = "More Pickers";
 			sourceTree = "<group>";
@@ -407,6 +412,7 @@
 				E4C70611255BC44900DD29E3 /* NibInstantiatable.swift */,
 				E4C70616255BC45800DD29E3 /* Identifiable.swift */,
 				E4000CE6255C121900E89ABB /* UIStackView+Additions.swift */,
+				E4A670772563C3580057083C /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1020,6 +1026,7 @@
 				E4000CA1255C020800E89ABB /* ProfileTableViewCell.swift in Sources */,
 				E496B2E2255B2D4A001BEC0F /* ActionButton.swift in Sources */,
 				E4000C91255BFF5900E89ABB /* MarketCoordinator.swift in Sources */,
+				E4A670702563C2A60057083C /* CreditCardNumberTextField.swift in Sources */,
 				E496B2CA255B2ABF001BEC0F /* ValidationTextField.swift in Sources */,
 				F98D0E54252DE6F200D46EE9 /* SignUpWizardViewController.swift in Sources */,
 				E4E6813A255D435E0051D52D /* LocationSearchResultsViewController.swift in Sources */,
@@ -1031,6 +1038,7 @@
 				E4C70617255BC45800DD29E3 /* Identifiable.swift in Sources */,
 				F990A386254082AB00ABC4CF /* DistributorSignUpViewController.swift in Sources */,
 				E496B2F9255B2FBB001BEC0F /* NetworkConfiguration.swift in Sources */,
+				E4A670782563C3580057083C /* UIViewController+Extensions.swift in Sources */,
 				E4000CF7255C174600E89ABB /* CoordinatorTransitionType.swift in Sources */,
 				E4FF498C2560F43900B4CBC4 /* NewDistributerViewController.swift in Sources */,
 				E4000CA6255C050D00E89ABB /* NSObject+Traits.swift in Sources */,
@@ -1271,9 +1279,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 98VZ6LKU7M;
+				DEVELOPMENT_TEAM = 445RDPUPND;
 				INFOPLIST_FILE = talabyeh/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1291,9 +1299,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 98VZ6LKU7M;
+				DEVELOPMENT_TEAM = 445RDPUPND;
 				INFOPLIST_FILE = talabyeh/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
