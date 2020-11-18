@@ -31,7 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let marketCoordinator = MarketCoordinator()
         let distributersCoordinator = DistributersListCoordinator()
         let profileCoordinator = ProfileCoordinator()
-        let tabBarCoordinator = TabBarCoordinator(coordinators: [marketCoordinator, distributersCoordinator, profileCoordinator])
+        let testLab = TestLabCoordinator()
+        let tabBarCoordinator = TabBarCoordinator(coordinators: [marketCoordinator, distributersCoordinator, profileCoordinator, testLab])
 
         self.currentCoordinator = tabBarCoordinator
         tabBarCoordinator.start(with: .windowRoot(self.window!))
