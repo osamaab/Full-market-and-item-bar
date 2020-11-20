@@ -11,32 +11,21 @@ import UIKit
 /// Base class for the expandable items. Don't use this class to fill in the expandable table view, since it's not inended to be used in that way.
 public class ExpandableItem: Hashable {
         
-    var title: String
-    let identifier = UUID()
+    let identifier = UUID().uuidString
     
     weak var parent: ExpandableItem? = nil
 
-    // MARK: - Initializers
+    init(){ }
     
-    public init(title: String) {
-        self.title = title
-    }
-    
-    public init(title: String,
-                parent: ExpandableItem) {
-        self.title = title
+    public init(parent: ExpandableItem) {
         self.parent = parent
     }
     
-    public init(title: String,
-                parent: ExpandableItem,
+    public init(parent: ExpandableItem,
                 indentLevel: Int) {
-        self.title = title
         self.parent = parent
     }
-    
-    // MARK: - Hashables
-    
+        
     public func hash(into hasher: inout Hasher) {
         hasher.combine(identifier)
     }
@@ -59,5 +48,22 @@ extension Array where Element == ExpandableItem {
         forEach {
             $0.setParent(parent)
         }
+    }
+}
+
+extension Array where Element == ExpandableItem {
+    func flatten() -> [ExpandableItem] {
+        var originalArray: [ExpandableItem] = []
+        
+        for item in self {
+            if let folder = item as? ExpandableItemFolder {
+                let subArray = folder.subitems.flatten()
+                originalArray.append(contentsOf: subArray)
+            } else {
+                originalArray.append(item)
+            }
+        }
+
+        return  originalArray
     }
 }

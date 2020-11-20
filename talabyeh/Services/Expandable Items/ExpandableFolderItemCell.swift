@@ -21,6 +21,12 @@ class ExpandableFolderItemCell: UICollectionViewCell {
         }
     }
     
+    var title: String? {
+        didSet {
+            titleDidChange()
+        }
+    }
+    
     // MARK: - Initializers
     
     override init(frame: CGRect) {
@@ -43,5 +49,9 @@ class ExpandableFolderItemCell: UICollectionViewCell {
         } else {
             self.backgroundColor = UIColor.red
         }
+    }
+    
+    func titleDidChange(){
+        
     }
 }

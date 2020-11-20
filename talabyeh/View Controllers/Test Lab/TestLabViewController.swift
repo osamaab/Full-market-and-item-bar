@@ -12,12 +12,12 @@ class TestLabViewController: UIViewController {
     
     let items: [ExpandableItemType] = [
         .folder(ExpandableItemFolder(title: "ToDo") {
-            ExpandableItem(title: "Compose Email")
-            ExpandableItem(title: "Watch Netflix")
+            ExpandableItem()
+            ExpandableItem()
         }),
         
-        .item(ExpandableItem(title: "Buy new iPhone")),
-        .item(ExpandableItem(title: "Cleanup"))
+        .item(ExpandableItem()),
+        .item(ExpandableItem())
     ]
     
     lazy var collectionView: UICollectionView = configureCollectionView()
@@ -39,7 +39,6 @@ class TestLabViewController: UIViewController {
         collectionView.backgroundColor = .systemBackground
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(cellClass: ExpandableFolderItemCell.self)
-        
         return collectionView
     }
     
@@ -69,7 +68,7 @@ extension TestLabViewController: ExpandableCollectionViewManagerDelegate {
         return folderCell
     }
     
-    func expandableCollectionViewManager(_ sender: ExpandableCollectionViewManager, cellForItem item: ExpandableItem, at indexPath: IndexPath) -> ExpandableFolderItemCell {
+    func expandableCollectionViewManager(_ sender: ExpandableCollectionViewManager, cellForItem item: ExpandableItem, at indexPath: IndexPath) -> UICollectionViewCell {
         let folderCell = sender.collectionView.dequeueCell(cellClass: ExpandableFolderItemCell.self, for: indexPath)
         
         return folderCell
@@ -77,5 +76,7 @@ extension TestLabViewController: ExpandableCollectionViewManagerDelegate {
     
     func expandableCollectionViewManager(_ sender: ExpandableCollectionViewManager, didSelectItem item: ExpandableItem, isFolder: Bool, at indexPath: IndexPath) {
         
+        let next = CategoriesPickerViewController().embededInNavigationController()
+        present(next, animated: true, completion: nil)
     }
 }

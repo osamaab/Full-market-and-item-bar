@@ -18,6 +18,7 @@ struct ExpandableItemBuilder {
 
 class ExpandableItemFolder: ExpandableItem {
     
+    var title: String
     private(set) var subitems: [ExpandableItem] = []
     
     var isExpanded: Bool = false
@@ -28,14 +29,16 @@ class ExpandableItemFolder: ExpandableItem {
     
     init(title: String,
          isExpanded: Bool = false) {
-        super.init(title: title)
+        self.title = title
+        super.init()
         self.isExpanded = isExpanded
     }
     
     init(title: String,
          isExpanded: Bool = false,
          @ExpandableItemBuilder subitems: () -> [ExpandableItem]) {
-        super.init(title: title)
+        self.title = title
+        super.init()
         self.isExpanded = isExpanded
         
         let subitems = subitems()
@@ -46,7 +49,8 @@ class ExpandableItemFolder: ExpandableItem {
     init(title: String,
          isExpanded: Bool = false,
          @ExpandableItemBuilder subitems: () -> ExpandableItem) {
-        super.init(title: title)
+        self.title = title
+        super.init()
         self.isExpanded = isExpanded
         
         let subitems = [subitems()]

@@ -28,6 +28,15 @@ enum ExpandableItemType: Hashable {
         
         return nil
     }
+    
+    var asExpandableItem: ExpandableItem? {
+        switch self {
+        case .folder(let item):
+            return item
+        case .item(let item):
+            return item
+        }
+    }
 }
 
 
@@ -41,7 +50,7 @@ protocol ExpandableCollectionViewManagerDelegate: class {
     /**
      
      */
-    func expandableCollectionViewManager(_ sender: ExpandableCollectionViewManager, cellForItem item: ExpandableItem, at indexPath: IndexPath) -> ExpandableFolderItemCell
+    func expandableCollectionViewManager(_ sender: ExpandableCollectionViewManager, cellForItem item: ExpandableItem, at indexPath: IndexPath) -> UICollectionViewCell
     
     /**
      reports a selection of given item
