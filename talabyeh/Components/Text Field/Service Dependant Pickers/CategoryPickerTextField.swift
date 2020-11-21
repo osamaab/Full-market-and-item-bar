@@ -14,6 +14,9 @@ class CategoryPickerTextField: PickerTextField {
     var categories: [CategoryItem] = [] {
         didSet {
             self.text = categories.map { $0.title }.joined(separator: ", ")
+            
+            // text field does not call the notification UITextField.textDidChangeNotification upon changing the text manually, so we need to call this to insure receivers stay up to date
+            NotificationCenter.default.post(name: UITextField.textDidChangeNotification, object: self)
         }
     }
     

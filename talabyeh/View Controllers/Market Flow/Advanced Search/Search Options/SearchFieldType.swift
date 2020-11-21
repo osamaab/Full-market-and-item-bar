@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit.UITextField
 
 /**
  A  generic type that specifies the type of input used, with specific identifier
@@ -31,16 +30,6 @@ class BaseSearchFieldType: ExpandableItem, SearchFieldType {
     }
 }
 
-class TextSearchFieldType: BaseSearchFieldType {
 
-}
-
-class LocationSearchFieldType: BaseSearchFieldType {
-    
-}
-
-class CategoryPickerFieldType: BaseSearchFieldType {
-    
-}
 
 

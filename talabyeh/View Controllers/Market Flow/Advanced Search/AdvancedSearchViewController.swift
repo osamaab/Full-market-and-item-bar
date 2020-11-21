@@ -8,27 +8,30 @@
 
 import UIKit
 
+
+
 class AdvancedSearchViewController: UIViewController {
 
     let items: [ExpandableItemType] = [
         .folder(ExpandableItemFolder(title: "Items") {
             TextSearchFieldType(placeholder: "Item Name")
-            CategoryPickerFieldType(placeholder: "Category")
+            CategorySearchFieldType(placeholder: "Category")
         }),
         
         .folder(ExpandableItemFolder(title: "Distributer") {
             TextSearchFieldType(placeholder: "Distributor name")
             LocationSearchFieldType(placeholder: "Covering area")
-            CategoryPickerFieldType(placeholder: "Category")
+            CategorySearchFieldType(placeholder: "Category")
         }),
         
         .folder(ExpandableItemFolder(title: "Company") {
             TextSearchFieldType(placeholder: "Company Name")
             LocationSearchFieldType(placeholder: "Company Location")
-            CategoryPickerFieldType(placeholder: "Category")
+            CategorySearchFieldType(placeholder: "Category")
         })
     ]
     
+    lazy var bottomView: BottomNextButtonView = .init(title: "Search")
     lazy var collectionView: UICollectionView = configureCollectionView()
     lazy var expManager = ExpandableCollectionViewManager(collectionView: self.collectionView, delegate: self, items: self.items)
     
@@ -36,9 +39,17 @@ class AdvancedSearchViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        view.backgroundColor = .white
+        navigationItem.title = "Search"
+        view.backgroundColor = DefaultColorsProvider.background
+        
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        bottomView.translatesAutoresizingMaskIntoConstraints = false
+        
         self.view.addSubview(collectionView)
         collectionView.fillContainer()
+        
+        self.view.addSubview(bottomView)
+        bottomView.bottom(0).leading(0).trailing(0)
         
         items.compactMap { $0.asExpandableItem }.flatten().compactMap { $0 as? SearchFieldType }.forEach {
             collectionView.register(cellClass: cellClass(for: $0))
@@ -46,25 +57,53 @@ class AdvancedSearchViewController: UIViewController {
         
         expManager.updateDataSource()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionView.contentInset.bottom = bottomView.bounds.height + 20
+    }
 
-    func dequeCell(for searchFieldType: SearchFieldType, at indexPath: IndexPath) -> UICollectionViewCell {
-        switch searchFieldType {
-        case is LocationSearchFieldType:
+    /**
+     Given a search field type, this method checks the sub type of the field ( text, location, ... ) and deques a new cell with customizing it's values
+     */
+    func dequeConfiguredCell(for searchFieldType: SearchFieldType, at indexPath: IndexPath) -> UICollectionViewCell {
+        if let asLocation = searchFieldType as? LocationSearchFieldType {
             let cell = collectionView.dequeueCell(cellClass: AdvancedSearchItemCollectionViewCell<LocationPickerTextField>.self, for: indexPath)
-            cell.textField.placeholder = searchFieldType.placeholder
+
+            cell.textField.location = asLocation.location
+            cell.textField.placeholder = asLocation.placeholder
+            cell.onValueChange = {
+                asLocation.location = $0.location
+            }
             
             return cell
-        case is TextSearchFieldType:
-            let cell = collectionView.dequeueCell(cellClass: AdvancedSearchItemCollectionViewCell<ValidationTextField>.self, for: indexPath)
-            cell.textField.placeholder = searchFieldType.placeholder
-            return cell
-        case is CategoryPickerFieldType:
-            let cell =  collectionView.dequeueCell(cellClass: AdvancedSearchItemCollectionViewCell<CategoryPickerTextField>.self, for: indexPath)
-            cell.textField.placeholder = searchFieldType.placeholder
-            return cell
-        default:
-            fatalError("Unsupported search type")
         }
+        
+        if let asText = searchFieldType as? TextSearchFieldType {
+            let cell = collectionView.dequeueCell(cellClass: AdvancedSearchItemCollectionViewCell<ValidationTextField>.self, for: indexPath)
+            
+            cell.textField.placeholder = searchFieldType.placeholder
+            cell.textField.text = asText.text
+            cell.onValueChange = {
+                asText.text = $0.text
+            }
+            
+            return cell
+        }
+        
+        if let asCategory = searchFieldType as? CategorySearchFieldType {
+            let cell =  collectionView.dequeueCell(cellClass: AdvancedSearchItemCollectionViewCell<CategoryPickerTextField>.self, for: indexPath)
+            
+            cell.textField.placeholder = searchFieldType.placeholder
+            cell.textField.categories = asCategory.categories
+            cell.onValueChange = {
+                asCategory.categories = $0.categories
+            }
+            
+            return cell
+        }
+        
+        fatalError("Unsupported search type")
     }
     
     func cellClass(for item: SearchFieldType) -> ReusableCell.Type {
@@ -73,7 +112,7 @@ class AdvancedSearchViewController: UIViewController {
             return AdvancedSearchItemCollectionViewCell<LocationPickerTextField>.self
         case is TextSearchFieldType:
             return AdvancedSearchItemCollectionViewCell<ValidationTextField>.self
-        case is CategoryPickerFieldType:
+        case is CategorySearchFieldType:
             return AdvancedSearchItemCollectionViewCell<CategoryPickerTextField>.self
         default:
             fatalError("Unsupported  search type")
@@ -94,7 +133,7 @@ extension AdvancedSearchViewController: ExpandableCollectionViewManagerDelegate 
             fatalError("expandable items without conforming to search field type is not supported.")
         }
         
-        let cell = dequeCell(for: asSearchType, at: indexPath)
+        let cell = dequeConfiguredCell(for: asSearchType, at: indexPath)
         return cell
     }
     
@@ -106,8 +145,7 @@ extension AdvancedSearchViewController: ExpandableCollectionViewManagerDelegate 
 extension AdvancedSearchViewController {
     func configureCollectionView() -> UICollectionView {
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: generateLayout())
-        collectionView.backgroundColor = .systemBackground
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .clear
         collectionView.register(cellClass: AdvancedSearchFolderCollectionViewCell.self)
         return collectionView
     }

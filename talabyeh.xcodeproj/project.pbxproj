@@ -38,6 +38,9 @@
 		E450C2492563CA3600F6F392 /* DistributersListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E450C2482563CA3600F6F392 /* DistributersListCoordinator.swift */; };
 		E450C24E2563CA5800F6F392 /* DistributersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E450C24D2563CA5800F6F392 /* DistributersListViewController.swift */; };
 		E450C2542563CFE500F6F392 /* DistributerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E450C2532563CFE500F6F392 /* DistributerCollectionViewCell.swift */; };
+		E48C27BF2569DA99006E01FB /* TextSearchFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48C27BE2569DA99006E01FB /* TextSearchFieldType.swift */; };
+		E48C27C42569DA9F006E01FB /* LocationSearchFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48C27C32569DA9F006E01FB /* LocationSearchFieldType.swift */; };
+		E48C27C92569DAA4006E01FB /* CategorySearchFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48C27C82569DAA4006E01FB /* CategorySearchFieldType.swift */; };
 		E496B249255B214C001BEC0F /* FontProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B248255B214C001BEC0F /* FontProviderType.swift */; };
 		E496B260255B22A2001BEC0F /* SignUpCategoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B25F255B22A2001BEC0F /* SignUpCategoriesListView.swift */; };
 		E496B2A4255B2730001BEC0F /* ColorsProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2A3255B2730001BEC0F /* ColorsProviderType.swift */; };
@@ -194,6 +197,9 @@
 		E450C2482563CA3600F6F392 /* DistributersListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributersListCoordinator.swift; sourceTree = "<group>"; };
 		E450C24D2563CA5800F6F392 /* DistributersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributersListViewController.swift; sourceTree = "<group>"; };
 		E450C2532563CFE500F6F392 /* DistributerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributerCollectionViewCell.swift; sourceTree = "<group>"; };
+		E48C27BE2569DA99006E01FB /* TextSearchFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSearchFieldType.swift; sourceTree = "<group>"; };
+		E48C27C32569DA9F006E01FB /* LocationSearchFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchFieldType.swift; sourceTree = "<group>"; };
+		E48C27C82569DAA4006E01FB /* CategorySearchFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySearchFieldType.swift; sourceTree = "<group>"; };
 		E496B248255B214C001BEC0F /* FontProviderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontProviderType.swift; sourceTree = "<group>"; };
 		E496B25F255B22A2001BEC0F /* SignUpCategoriesListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpCategoriesListView.swift; sourceTree = "<group>"; };
 		E496B2A3255B2730001BEC0F /* ColorsProviderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsProviderType.swift; sourceTree = "<group>"; };
@@ -390,6 +396,9 @@
 			isa = PBXGroup;
 			children = (
 				E40FB26B256798A100626569 /* SearchFieldType.swift */,
+				E48C27BE2569DA99006E01FB /* TextSearchFieldType.swift */,
+				E48C27C32569DA9F006E01FB /* LocationSearchFieldType.swift */,
+				E48C27C82569DAA4006E01FB /* CategorySearchFieldType.swift */,
 			);
 			path = "Search Options";
 			sourceTree = "<group>";
@@ -1196,8 +1205,10 @@
 				F94608EE2545D91600C74D95 /* ProfilePageView.swift in Sources */,
 				E4C70603255BBFCD00DD29E3 /* TabBarController.swift in Sources */,
 				E4FAB5A72565007900F25473 /* ExpandableItem.swift in Sources */,
+				E48C27BF2569DA99006E01FB /* TextSearchFieldType.swift in Sources */,
 				E41327922565699000090419 /* AdvancedSearchFolderCollectionViewCell.swift in Sources */,
 				F9CC27C625332B6B00408FDA /* SignInViewController.swift in Sources */,
+				E48C27C92569DAA4006E01FB /* CategorySearchFieldType.swift in Sources */,
 				F94608F32545D92B00C74D95 /* ProfilePageViewController.swift in Sources */,
 				F9F65B91254F205300D347D6 /* MarketScreenView.swift in Sources */,
 				E496B2D8255B2D3F001BEC0F /* BackButton.swift in Sources */,
@@ -1221,6 +1232,7 @@
 				F93B1FE225373DAE00E48657 /* SignUpCategoriesListViewController.swift in Sources */,
 				F9CC27CB25332B8900408FDA /* SignInView.swift in Sources */,
 				E40FB27A2567A91700626569 /* CategoryPickerController.swift in Sources */,
+				E48C27C42569DA9F006E01FB /* LocationSearchFieldType.swift in Sources */,
 				E4000CE7255C121900E89ABB /* UIStackView+Additions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
