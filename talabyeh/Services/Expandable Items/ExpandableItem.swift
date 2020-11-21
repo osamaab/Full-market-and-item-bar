@@ -1,9 +1,9 @@
 //
 //  ExpandableItem.swift
-//  ExpandableCollectionViewKit
+//  talabyeh
 //
-//  Created by Astemir Eleev on 06/10/2019.
-//  Copyright © 2019 Astemir Eleev. All rights reserved.
+//  Created by Hussein AlRyalat on 11/18/2019.
+//  Copyright © 2020 Dominate. All rights reserved.
 //
 
 import UIKit

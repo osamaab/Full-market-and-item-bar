@@ -15,15 +15,39 @@ class CategoriesPickerViewController: UIViewController {
     lazy var headerView: AuthHeaderView = .init(elements: AuthHeaderView.Element.allCases)
     lazy var collectionView: UICollectionView = configureCollectionView()
     lazy var bottomView: BottomNextButtonView = .init(title: "Next")
-
+    
+    var categories: [CategoryItem] = [] {
+        didSet {
+            self.collectionView.reloadData()
+        }
+    }
+    
+    var selectedCategories: [CategoryItem] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
+    var onNext: (() -> Void)?
+    
+    init(title: String){
+        super.init(nibName: nil, bundle: nil)
+        self.title = title
+        self.navigationItem.title = title
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.navigationBar.barTintColor = .white
-        navigationItem.title = "Category"
-        
         // Do any additional setup after loading the view.
-        view.backgroundColor = .white
+        view.backgroundColor = DefaultColorsProvider.background
+        
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(close))
 
         headerView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -45,26 +69,47 @@ class CategoriesPickerViewController: UIViewController {
         bottomView.Top == collectionView.Bottom
         
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.reloadData()
+        
+        bottomView.nextButton.add(event: .touchUpInside) {
+            self.onNext?()
+        }
     }
 }
 
-extension CategoriesPickerViewController: UICollectionViewDataSource {
+extension CategoriesPickerViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        11
+        categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(cellClass: CategoryItemCollectionViewCell.self, for: indexPath)
+        let item = self.categories[indexPath.item]
+        
+        cell.titleLabel.text = item.title
+        cell.imageView.sd_setImage(with: item.imageURL)
+        cell.checkboxView.isSelected = self.selectedCategories.contains(item)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = categories[indexPath.item]
+        if self.selectedCategories.contains(item){
+            self.selectedCategories.remove(at: selectedCategories.firstIndex(of: item)!)
+        } else {
+            self.selectedCategories.append(item)
+        }
+        
+        self.collectionView.reloadData()
     }
 }
 
 extension CategoriesPickerViewController {
     func configureCollectionView() -> UICollectionView {
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: generateLayout())
-        collectionView.backgroundColor = .systemBackground
+        collectionView.backgroundColor = .clear
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(cellClass: CategoryItemCollectionViewCell.self)
         

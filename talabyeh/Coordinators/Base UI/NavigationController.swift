@@ -9,6 +9,8 @@
 import UIKit
 
 class NavigationController: UINavigationController {
+    
+    fileprivate var showsCloseButton: Bool = false
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
@@ -36,18 +38,28 @@ class NavigationController: UINavigationController {
         
         navigationBar.backIndicatorImage = UIImage(named: "back")
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if isBeingPresented {
+            viewControllers.first?.navigationItem.backBarButtonItem = .init(title: "", style: .plain, target: nil, action: nil)
+            viewControllers.first?.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(close))
+        }
+    }
 }
 
 extension UIViewController {
     @discardableResult
     func embededInNavigationController(showsCloseButton: Bool = true, showsNavigationBar: Bool = true) -> NavigationController {
         let navigationController = NavigationController(rootViewController: self)
+        navigationController.showsCloseButton = showsCloseButton
         
         if !showsNavigationBar {
             navigationController.setNavigationBarHidden(true, animated: false)
         }
         
-        if isBeingPresented {
+        if showsCloseButton {
             navigationItem.backBarButtonItem = .init(title: "", style: .plain, target: nil, action: nil)
             navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(close))
         }

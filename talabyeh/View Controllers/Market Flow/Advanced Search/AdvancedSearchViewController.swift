@@ -58,6 +58,10 @@ class AdvancedSearchViewController: UIViewController {
             let cell = collectionView.dequeueCell(cellClass: AdvancedSearchItemCollectionViewCell<ValidationTextField>.self, for: indexPath)
             cell.textField.placeholder = searchFieldType.placeholder
             return cell
+        case is CategoryPickerFieldType:
+            let cell =  collectionView.dequeueCell(cellClass: AdvancedSearchItemCollectionViewCell<CategoryPickerTextField>.self, for: indexPath)
+            cell.textField.placeholder = searchFieldType.placeholder
+            return cell
         default:
             fatalError("Unsupported search type")
         }
@@ -69,6 +73,8 @@ class AdvancedSearchViewController: UIViewController {
             return AdvancedSearchItemCollectionViewCell<LocationPickerTextField>.self
         case is TextSearchFieldType:
             return AdvancedSearchItemCollectionViewCell<ValidationTextField>.self
+        case is CategoryPickerFieldType:
+            return AdvancedSearchItemCollectionViewCell<CategoryPickerTextField>.self
         default:
             fatalError("Unsupported  search type")
         }

@@ -686,13 +686,6 @@
 			path = "Expandable Items";
 			sourceTree = "<group>";
 		};
-		E4FF49852560F0ED00B4CBC4 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
 		E4FF498A2560F42F00B4CBC4 /* New Distributer */ = {
 			isa = PBXGroup;
 			children = (
@@ -812,7 +805,6 @@
 		F98D0E72252F171000D46EE9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				E4FF49852560F0ED00B4CBC4 /* Cells */,
 				E4CB7421255D23300017A499 /* Headers and Footers */,
 				E4CB7420255D23220017A499 /* General General */,
 				E4000CDD255C101600E89ABB /* App General */,

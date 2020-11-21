@@ -23,6 +23,8 @@ class TestLabViewController: UIViewController {
     lazy var collectionView: UICollectionView = configureCollectionView()
     lazy var expManager = ExpandableCollectionViewManager(collectionView: self.collectionView, delegate: self, items: self.items)
     
+    var pickerController: CategoryPickerController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,7 +40,7 @@ class TestLabViewController: UIViewController {
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: generateLayout())
         collectionView.backgroundColor = .systemBackground
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(cellClass: ExpandableFolderItemCell.self)
+        collectionView.register(cellClass: AdvancedSearchFolderCollectionViewCell.self)
         return collectionView
     }
     
@@ -63,20 +65,19 @@ class TestLabViewController: UIViewController {
 
 extension TestLabViewController: ExpandableCollectionViewManagerDelegate {
     func expandableCollectionViewManager(_ sender: ExpandableCollectionViewManager, cellForFolderItem item: ExpandableItemFolder, at indexPath: IndexPath) -> ExpandableFolderItemCell {
-        let folderCell = sender.collectionView.dequeueCell(cellClass: ExpandableFolderItemCell.self, for: indexPath)
-        
+        let folderCell = sender.collectionView.dequeueCell(cellClass: AdvancedSearchFolderCollectionViewCell.self, for: indexPath)
         return folderCell
     }
     
     func expandableCollectionViewManager(_ sender: ExpandableCollectionViewManager, cellForItem item: ExpandableItem, at indexPath: IndexPath) -> UICollectionViewCell {
-        let folderCell = sender.collectionView.dequeueCell(cellClass: ExpandableFolderItemCell.self, for: indexPath)
+        let folderCell = sender.collectionView.dequeueCell(cellClass: AdvancedSearchFolderCollectionViewCell.self, for: indexPath)
+        
+        
         
         return folderCell
     }
     
     func expandableCollectionViewManager(_ sender: ExpandableCollectionViewManager, didSelectItem item: ExpandableItem, isFolder: Bool, at indexPath: IndexPath) {
-        
-        let next = CategoriesPickerViewController().embededInNavigationController()
-        present(next, animated: true, completion: nil)
+
     }
 }
