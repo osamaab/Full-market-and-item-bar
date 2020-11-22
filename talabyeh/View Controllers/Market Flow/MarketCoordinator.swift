@@ -16,7 +16,7 @@ class MarketCoordinator: TabBarSubCoordinator {
     }
     
     var tabBarItem: UITabBarItem! {
-        .init(title: "Market", image: UIImage(named: "market-selected"), selectedImage: UIImage(named: "market-selected"))
+        .init(title: "Market", image: UIImage(named: "market"), selectedImage: UIImage(named: "market-selected"))
     }
     
     let marketViewController: MarketViewController

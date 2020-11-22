@@ -80,6 +80,9 @@
 		E4CB7414255D19B20017A499 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB7413255D19B20017A499 /* Validators.swift */; };
 		E4CB7419255D20C80017A499 /* PickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB7418255D20C80017A499 /* PickerTextField.swift */; };
 		E4CB7423255D23450017A499 /* ScrollContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB7422255D23450017A499 /* ScrollContainerView.swift */; };
+		E4D8428F256AC4CE00D215B4 /* FavoritesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D8428E256AC4CE00D215B4 /* FavoritesCoordinator.swift */; };
+		E4D84297256AC50000D215B4 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D84296256AC50000D215B4 /* FavoritesViewController.swift */; };
+		E4D8429F256AC59200D215B4 /* BigSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D8429E256AC59200D215B4 /* BigSegmentedControl.swift */; };
 		E4E68106255D3B570051D52D /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E68105255D3B570051D52D /* ImagePickerController.swift */; };
 		E4E6810B255D3B700051D52D /* LocationPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E6810A255D3B700051D52D /* LocationPickerController.swift */; };
 		E4E6811F255D40080051D52D /* BottomNextButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E6811E255D40080051D52D /* BottomNextButtonView.swift */; };
@@ -88,8 +91,6 @@
 		E4E6813B255D435E0051D52D /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E68137255D435E0051D52D /* LocationPickerViewController.swift */; };
 		E4E6813C255D435E0051D52D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E68138255D435E0051D52D /* Location.swift */; };
 		E4E68147255D481D0051D52D /* SampleSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E68146255D481D0051D52D /* SampleSignupViewController.swift */; };
-		E4FAB57B2564FF4700F25473 /* TestLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FAB57A2564FF4700F25473 /* TestLabViewController.swift */; };
-		E4FAB5832564FF5100F25473 /* TestLabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FAB5822564FF5100F25473 /* TestLabCoordinator.swift */; };
 		E4FAB5A62565007900F25473 /* ExpandableItemFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FAB5992565007900F25473 /* ExpandableItemFolder.swift */; };
 		E4FAB5A72565007900F25473 /* ExpandableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FAB59A2565007900F25473 /* ExpandableItem.swift */; };
 		E4FAB5A82565007900F25473 /* ExpandableCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FAB59C2565007900F25473 /* ExpandableCollectionViewManager.swift */; };
@@ -237,6 +238,9 @@
 		E4CB7413255D19B20017A499 /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
 		E4CB7418255D20C80017A499 /* PickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTextField.swift; sourceTree = "<group>"; };
 		E4CB7422255D23450017A499 /* ScrollContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollContainerView.swift; sourceTree = "<group>"; };
+		E4D8428E256AC4CE00D215B4 /* FavoritesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCoordinator.swift; sourceTree = "<group>"; };
+		E4D84296256AC50000D215B4 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		E4D8429E256AC59200D215B4 /* BigSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigSegmentedControl.swift; sourceTree = "<group>"; };
 		E4E68105255D3B570051D52D /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
 		E4E6810A255D3B700051D52D /* LocationPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerController.swift; sourceTree = "<group>"; };
 		E4E6811E255D40080051D52D /* BottomNextButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNextButtonView.swift; sourceTree = "<group>"; };
@@ -245,8 +249,6 @@
 		E4E68137255D435E0051D52D /* LocationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
 		E4E68138255D435E0051D52D /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		E4E68146255D481D0051D52D /* SampleSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSignupViewController.swift; sourceTree = "<group>"; };
-		E4FAB57A2564FF4700F25473 /* TestLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLabViewController.swift; sourceTree = "<group>"; };
-		E4FAB5822564FF5100F25473 /* TestLabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLabCoordinator.swift; sourceTree = "<group>"; };
 		E4FAB5992565007900F25473 /* ExpandableItemFolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableItemFolder.swift; sourceTree = "<group>"; };
 		E4FAB59A2565007900F25473 /* ExpandableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableItem.swift; sourceTree = "<group>"; };
 		E4FAB59C2565007900F25473 /* ExpandableCollectionViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableCollectionViewManager.swift; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 				E4E6811E255D40080051D52D /* BottomNextButtonView.swift */,
 				E40FB2942567AD7700626569 /* AuthHeaderView.swift */,
 				E40FB28F2567AA6900626569 /* CheckboxView.swift */,
+				E4D8429E256AC59200D215B4 /* BigSegmentedControl.swift */,
 			);
 			path = "App General";
 			sourceTree = "<group>";
@@ -657,6 +660,15 @@
 			path = "Headers and Footers";
 			sourceTree = "<group>";
 		};
+		E4D8428D256AC47A00D215B4 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				E4D8428E256AC4CE00D215B4 /* FavoritesCoordinator.swift */,
+				E4D84296256AC50000D215B4 /* FavoritesViewController.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 		E4E68123255D431C0051D52D /* Location Picker */ = {
 			isa = PBXGroup;
 			children = (
@@ -666,15 +678,6 @@
 				E4E68138255D435E0051D52D /* Location.swift */,
 			);
 			path = "Location Picker";
-			sourceTree = "<group>";
-		};
-		E4FAB5792564FF3E00F25473 /* Test Lab */ = {
-			isa = PBXGroup;
-			children = (
-				E4FAB5822564FF5100F25473 /* TestLabCoordinator.swift */,
-				E4FAB57A2564FF4700F25473 /* TestLabViewController.swift */,
-			);
-			path = "Test Lab";
 			sourceTree = "<group>";
 		};
 		E4FAB5932565005900F25473 /* Expandable Items */ = {
@@ -820,7 +823,7 @@
 		F98D0E8A252F786200D46EE9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E4FAB5792564FF3E00F25473 /* Test Lab */,
+				E4D8428D256AC47A00D215B4 /* Favorites */,
 				E4C705D0255BB67500DD29E3 /* Pickers */,
 				E4A6703D2563B0910057083C /* Distributers */,
 				E4FF498A2560F42F00B4CBC4 /* New Distributer */,
@@ -1121,7 +1124,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4FAB57B2564FF4700F25473 /* TestLabViewController.swift in Sources */,
 				E4C705B0255BB18100DD29E3 /* ScreenMessagePresenterType.swift in Sources */,
 				F9EA04F4252C90E500DC288B /* RoundedButton.swift in Sources */,
 				E40FB2832567A96B00626569 /* CategoryItemCollectionViewCell.swift in Sources */,
@@ -1153,6 +1155,7 @@
 				E413279A25656BB800090419 /* AdvancedSearchViewController.swift in Sources */,
 				E496B2CA255B2ABF001BEC0F /* ValidationTextField.swift in Sources */,
 				F98D0E54252DE6F200D46EE9 /* SignUpWizardViewController.swift in Sources */,
+				E4D8429F256AC59200D215B4 /* BigSegmentedControl.swift in Sources */,
 				E4E6813A255D435E0051D52D /* LocationSearchResultsViewController.swift in Sources */,
 				E4CB7423255D23450017A499 /* ScrollContainerView.swift in Sources */,
 				E4FAB5A62565007900F25473 /* ExpandableItemFolder.swift in Sources */,
@@ -1177,6 +1180,7 @@
 				F96B85502529B67200CEDCF8 /* ChangeLanguageViewController.swift in Sources */,
 				E4A670452563B3980057083C /* PaymentCardValidator.swift in Sources */,
 				E4FF49942560F45800B4CBC4 /* NewDistributerContentView.swift in Sources */,
+				E4D84297256AC50000D215B4 /* FavoritesViewController.swift in Sources */,
 				E4CB73FF255D158E0017A499 /* ValidationError.swift in Sources */,
 				E4E68147255D481D0051D52D /* SampleSignupViewController.swift in Sources */,
 				E496B260255B22A2001BEC0F /* SignUpCategoriesListView.swift in Sources */,
@@ -1210,9 +1214,9 @@
 				E4C705F7255BBF8200DD29E3 /* TabBarCoordinator.swift in Sources */,
 				F98D0E59252DE73500D46EE9 /* SignUpWizardView.swift in Sources */,
 				E4C705F2255BBF5400DD29E3 /* CoordinatorType.swift in Sources */,
-				E4FAB5832564FF5100F25473 /* TestLabCoordinator.swift in Sources */,
 				E4CB740C255D18610017A499 /* PasswordTextField.swift in Sources */,
 				E4C705AB255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift in Sources */,
+				E4D8428F256AC4CE00D215B4 /* FavoritesCoordinator.swift in Sources */,
 				E40FB26C256798A100626569 /* SearchFieldType.swift in Sources */,
 				E4151D7A25626910009F1D45 /* WeekdaysRangePickerTextField.swift in Sources */,
 				E4000CBC255C089800E89ABB /* ProductCollectionViewCell.swift in Sources */,
