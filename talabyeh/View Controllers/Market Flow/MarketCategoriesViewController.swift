@@ -48,7 +48,6 @@ extension MarketCategoriesViewController {
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: createLayout())
         collectionView.backgroundColor = DefaultColorsProvider.background
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(cellClass: AdvancedSearchFolderCollectionViewCell.self)
         return collectionView
     }
     
