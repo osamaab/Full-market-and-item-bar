@@ -9,7 +9,7 @@
 import UIKit
 import Stevia
 
-class MarketCategoryCell: UICollectionViewCell{
+class MarketCategoryCollectionViewCell: UICollectionViewCell{
     
     let cImage = UIImageView()
     let cTitle = UILabel()
@@ -23,8 +23,7 @@ class MarketCategoryCell: UICollectionViewCell{
         fatalError("init(coder:) has not been implemented")
     }
     
-    fileprivate func setup() {
-        
+    fileprivate func setup() {        
         self.subviews([cImage, cTitle])
         
         

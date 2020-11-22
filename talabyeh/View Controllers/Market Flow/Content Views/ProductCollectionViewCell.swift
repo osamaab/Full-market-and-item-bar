@@ -9,7 +9,7 @@
 import UIKit
 import Stevia
 
-class ItemCell: UICollectionViewCell{
+class ProductCollectionViewCell: UICollectionViewCell{
     
     let cView = UIView()
     let itemImage = UIImageView()
