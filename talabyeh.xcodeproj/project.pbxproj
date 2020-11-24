@@ -63,6 +63,12 @@
 		E4A6704F2563B5310057083C /* YearPickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A6704E2563B5310057083C /* YearPickerTextField.swift */; };
 		E4A670702563C2A60057083C /* CreditCardNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A6706F2563C2A60057083C /* CreditCardNumberTextField.swift */; };
 		E4A670782563C3580057083C /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A670772563C3580057083C /* UIViewController+Extensions.swift */; };
+		E4B2A744256CB5BC0055C1AE /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2A743256CB5BC0055C1AE /* ProductDetailsViewController.swift */; };
+		E4B2A750256CB5DF0055C1AE /* ProductDetailsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2A74F256CB5DF0055C1AE /* ProductDetailsContentView.swift */; };
+		E4B2A755256CBAA40055C1AE /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2A754256CBAA40055C1AE /* RatingView.swift */; };
+		E4B2A75A256CBAC70055C1AE /* QuantitySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2A759256CBAC70055C1AE /* QuantitySelectionView.swift */; };
+		E4B2A75F256CC1D60055C1AE /* VerticalPaddingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2A75E256CC1D60055C1AE /* VerticalPaddingView.swift */; };
+		E4B2A764256CC5F60055C1AE /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2A763256CC5F60055C1AE /* QRCodeView.swift */; };
 		E4C705AB255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C705AA255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift */; };
 		E4C705B0255BB18100DD29E3 /* ScreenMessagePresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C705AF255BB18100DD29E3 /* ScreenMessagePresenterType.swift */; };
 		E4C705C6255BB2FA00DD29E3 /* UISearchBar+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C705C5255BB2FA00DD29E3 /* UISearchBar+Additions.swift */; };
@@ -221,6 +227,12 @@
 		E4A6704E2563B5310057083C /* YearPickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearPickerTextField.swift; sourceTree = "<group>"; };
 		E4A6706F2563C2A60057083C /* CreditCardNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardNumberTextField.swift; sourceTree = "<group>"; };
 		E4A670772563C3580057083C /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		E4B2A743256CB5BC0055C1AE /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		E4B2A74F256CB5DF0055C1AE /* ProductDetailsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsContentView.swift; sourceTree = "<group>"; };
+		E4B2A754256CBAA40055C1AE /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		E4B2A759256CBAC70055C1AE /* QuantitySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantitySelectionView.swift; sourceTree = "<group>"; };
+		E4B2A75E256CC1D60055C1AE /* VerticalPaddingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalPaddingView.swift; sourceTree = "<group>"; };
+		E4B2A763256CC5F60055C1AE /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
 		E4C705AA255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBlockingLoaderType.swift; sourceTree = "<group>"; };
 		E4C705AF255BB18100DD29E3 /* ScreenMessagePresenterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenMessagePresenterType.swift; sourceTree = "<group>"; };
 		E4C705C5255BB2FA00DD29E3 /* UISearchBar+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Additions.swift"; sourceTree = "<group>"; };
@@ -368,15 +380,6 @@
 			path = "Content Views";
 			sourceTree = "<group>";
 		};
-		E4000CB7255C086900E89ABB /* Content Views */ = {
-			isa = PBXGroup;
-			children = (
-				E4000CBB255C089800E89ABB /* ProductCollectionViewCell.swift */,
-				E4000CC5255C08DF00E89ABB /* MarketCategoryCollectionViewCell.swift */,
-			);
-			path = "Content Views";
-			sourceTree = "<group>";
-		};
 		E4000CDD255C101600E89ABB /* App General */ = {
 			isa = PBXGroup;
 			children = (
@@ -488,9 +491,9 @@
 				E4000C90255BFF5900E89ABB /* MarketCoordinator.swift */,
 				F9F65B8B254F1FD300D347D6 /* MarketViewController.swift */,
 				E44AD5E0256A458400574B6A /* MarketCategoriesViewController.swift */,
-				E4000CCA255C090D00E89ABB /* ResultsController.swift */,
+				E4B2A74B256CB5CE0055C1AE /* Product Details */,
+				E4B2A740256CB5900055C1AE /* Deprecated */,
 				E41327902565696B00090419 /* Advanced Search */,
-				E4000CB7255C086900E89ABB /* Content Views */,
 			);
 			path = "Market Flow";
 			sourceTree = "<group>";
@@ -597,6 +600,32 @@
 			path = Distributers;
 			sourceTree = "<group>";
 		};
+		E4B2A740256CB5900055C1AE /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				E4000CCA255C090D00E89ABB /* ResultsController.swift */,
+			);
+			path = Deprecated;
+			sourceTree = "<group>";
+		};
+		E4B2A741256CB5A10055C1AE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E4000CBB255C089800E89ABB /* ProductCollectionViewCell.swift */,
+				E4000CC5255C08DF00E89ABB /* MarketCategoryCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E4B2A74B256CB5CE0055C1AE /* Product Details */ = {
+			isa = PBXGroup;
+			children = (
+				E4B2A743256CB5BC0055C1AE /* ProductDetailsViewController.swift */,
+				E4B2A74F256CB5DF0055C1AE /* ProductDetailsContentView.swift */,
+			);
+			path = "Product Details";
+			sourceTree = "<group>";
+		};
 		E4C705D0255BB67500DD29E3 /* Pickers */ = {
 			isa = PBXGroup;
 			children = (
@@ -648,6 +677,10 @@
 				F9EA04F3252C90E500DC288B /* RoundedButton.swift */,
 				F9EA049A252C858500DC288B /* RoundedView.swift */,
 				E4CB7422255D23450017A499 /* ScrollContainerView.swift */,
+				E4B2A754256CBAA40055C1AE /* RatingView.swift */,
+				E4B2A763256CC5F60055C1AE /* QRCodeView.swift */,
+				E4B2A759256CBAC70055C1AE /* QuantitySelectionView.swift */,
+				E4B2A75E256CC1D60055C1AE /* VerticalPaddingView.swift */,
 			);
 			path = "General General";
 			sourceTree = "<group>";
@@ -811,6 +844,7 @@
 		F98D0E72252F171000D46EE9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E4B2A741256CB5A10055C1AE /* Cells */,
 				E4CB7421255D23300017A499 /* Headers and Footers */,
 				E4CB7420255D23220017A499 /* General General */,
 				E4000CDD255C101600E89ABB /* App General */,
@@ -1128,6 +1162,7 @@
 				F9EA04F4252C90E500DC288B /* RoundedButton.swift in Sources */,
 				E40FB2832567A96B00626569 /* CategoryItemCollectionViewCell.swift in Sources */,
 				E496B2CF255B2B10001BEC0F /* BorderedTextField.swift in Sources */,
+				E4B2A75A256CBAC70055C1AE /* QuantitySelectionView.swift in Sources */,
 				F990A388254082C500ABC4CF /* DistributorSignUpView.swift in Sources */,
 				E4E68139255D435E0051D52D /* LocationSearchHistoryManager.swift in Sources */,
 				E450C2492563CA3600F6F392 /* DistributersListCoordinator.swift in Sources */,
@@ -1156,14 +1191,17 @@
 				E496B2CA255B2ABF001BEC0F /* ValidationTextField.swift in Sources */,
 				F98D0E54252DE6F200D46EE9 /* SignUpWizardViewController.swift in Sources */,
 				E4D8429F256AC59200D215B4 /* BigSegmentedControl.swift in Sources */,
+				E4B2A75F256CC1D60055C1AE /* VerticalPaddingView.swift in Sources */,
 				E4E6813A255D435E0051D52D /* LocationSearchResultsViewController.swift in Sources */,
 				E4CB7423255D23450017A499 /* ScrollContainerView.swift in Sources */,
 				E4FAB5A62565007900F25473 /* ExpandableItemFolder.swift in Sources */,
 				E4C705EC255BBD6100DD29E3 /* UIImage+Addtions.swift in Sources */,
+				E4B2A744256CB5BC0055C1AE /* ProductDetailsViewController.swift in Sources */,
 				E4000CCB255C090D00E89ABB /* ResultsController.swift in Sources */,
 				E4A6704A2563B52A0057083C /* MonthPickerTextField.swift in Sources */,
 				E4E6813C255D435E0051D52D /* Location.swift in Sources */,
 				E4C70617255BC45800DD29E3 /* Identifiable.swift in Sources */,
+				E4B2A755256CBAA40055C1AE /* RatingView.swift in Sources */,
 				F990A386254082AB00ABC4CF /* DistributorSignUpViewController.swift in Sources */,
 				E496B2F9255B2FBB001BEC0F /* NetworkConfiguration.swift in Sources */,
 				E4A670782563C3580057083C /* UIViewController+Extensions.swift in Sources */,
@@ -1172,6 +1210,7 @@
 				E4FF498C2560F43900B4CBC4 /* NewDistributerViewController.swift in Sources */,
 				E4000CA6255C050D00E89ABB /* NSObject+Traits.swift in Sources */,
 				E4151D7525626904009F1D45 /* TimeRangePickerTextField.swift in Sources */,
+				E4B2A764256CC5F60055C1AE /* QRCodeView.swift in Sources */,
 				E496B2C5255B29A3001BEC0F /* InsetedTextField.swift in Sources */,
 				F96B85202529A05800CEDCF8 /* AppDelegate.swift in Sources */,
 				E450C24E2563CA5800F6F392 /* DistributersListViewController.swift in Sources */,
@@ -1214,6 +1253,7 @@
 				E4C705F7255BBF8200DD29E3 /* TabBarCoordinator.swift in Sources */,
 				F98D0E59252DE73500D46EE9 /* SignUpWizardView.swift in Sources */,
 				E4C705F2255BBF5400DD29E3 /* CoordinatorType.swift in Sources */,
+				E4B2A750256CB5DF0055C1AE /* ProductDetailsContentView.swift in Sources */,
 				E4CB740C255D18610017A499 /* PasswordTextField.swift in Sources */,
 				E4C705AB255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift in Sources */,
 				E4D8428F256AC4CE00D215B4 /* FavoritesCoordinator.swift in Sources */,

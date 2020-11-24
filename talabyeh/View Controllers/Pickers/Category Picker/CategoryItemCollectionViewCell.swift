@@ -52,8 +52,7 @@ class CategoryItemCollectionViewCell: UICollectionViewCell {
         containerView.dropShadow(color: .black,
                                  opacity: 0.16,
                                  offSet: .init(width: 0, height: 2),
-                                 radius: 2,
-                                 scale: true)
+                                 radius: 2)
         
         imageView.contentMode = .scaleAspectFit
         

@@ -90,7 +90,7 @@ class ProfilePageView: UIView {
             personalInfoView.layer.borderWidth = 1
             personalInfoView.layer.cornerRadius = 15
             personalInfoView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-            personalInfoView.dropShadow(color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), opacity: 1, offSet: .zero, radius: 10, scale: true)
+            personalInfoView.dropShadow(color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), opacity: 1, offSet: .zero, radius: 10)
         }
     }
 }

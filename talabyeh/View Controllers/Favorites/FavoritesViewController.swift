@@ -63,7 +63,7 @@ extension FavoritesViewController {
     }
     
     func createLayout() -> UICollectionViewLayout {
-        let itemHeightDimension: NSCollectionLayoutDimension = .absolute(160)
+        let itemHeightDimension: NSCollectionLayoutDimension = .estimated(180)
         
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3),
                                               heightDimension: itemHeightDimension)
@@ -86,10 +86,10 @@ extension FavoritesViewController {
         return UICollectionViewDiffableDataSource<Int, Product>(collectionView: self.collectionView) { (collectionView, indexPath, product) -> UICollectionViewCell? in
             let cell = collectionView.dequeueCell(cellClass: ProductCollectionViewCell.self, for: indexPath)
             
-            cell.itemImage.image = UIImage(named: "Rectangle 232")
-            cell.itemTitle.text = "Red Onions"
-            cell.itemSeller.text = "New era market"
-            cell.itemPrice.text = "JD 0.200"
+            cell.imageView.image = UIImage(named: "Rectangle 232")
+            cell.subtitleLabel1.text = "Red Onions"
+            cell.titleLabel.text = "New era market"
+            cell.subtitleLabel2.text = "JD 0.200"
             
             return cell
         }

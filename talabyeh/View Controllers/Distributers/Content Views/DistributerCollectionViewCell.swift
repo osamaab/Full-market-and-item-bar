@@ -37,7 +37,7 @@ class DistributerCollectionViewCell: UICollectionViewCell {
         
         layer.cornerRadius = 5.4
         
-        dropShadow(color: .black, opacity: 0.05, offSet: .init(width: 0, height: 3.4), radius: 3.4, scale: true)
+        dropShadow(color: .black, opacity: 0.05, offSet: .init(width: 0, height: 3.4), radius: 3.4)
         
         titleLabel.font = .font(for: .semiBold, size: 16)
         titleLabel.textColor = DefaultColorsProvider.darkerTint
