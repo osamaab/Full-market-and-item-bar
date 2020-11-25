@@ -58,13 +58,6 @@ extension UIViewController {
         if !showsNavigationBar {
             navigationController.setNavigationBarHidden(true, animated: false)
         }
-        
-        if showsCloseButton {
-            navigationItem.backBarButtonItem = .init(title: "", style: .plain, target: nil, action: nil)
-            navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(close))
-        }
-        
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 
         
         return navigationController
