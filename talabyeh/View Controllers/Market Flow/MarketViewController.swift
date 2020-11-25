@@ -102,12 +102,15 @@ class MarketViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        searchTapped()
+    }
+    
     
     @objc func searchTapped(){
-        let resultsController = ResultsController()
-        resultsController.modalTransitionStyle = .crossDissolve
-        resultsController.modalPresentationStyle = .overFullScreen
-        self.present(resultsController, animated: true, completion: nil)
+        let resultsController = AdvancedSearchViewController()
+        resultsController.modalPresentationStyle = .fullScreen
+        self.present(resultsController.embededInNavigationController(), animated: true, completion: nil)
     }
 }
 

@@ -35,7 +35,7 @@ class BottomNextButtonView: UIView {
         nextButton.layer.borderWidth = 1.5
         nextButton.layer.borderColor = DefaultColorsProvider.darkerTint.cgColor
         nextButton.translatesAutoresizingMaskIntoConstraints = false
-        nextButton.contentEdgeInsets = .init(top: 10, left: 25, bottom: 10, right: 25)
+        nextButton.contentEdgeInsets = .init(top: 12, left: 25, bottom: 12, right: 25)
         nextButton.setTitleColor(DefaultColorsProvider.darkerTint, for: .normal)
         
         backgroundView.fillContainer()
