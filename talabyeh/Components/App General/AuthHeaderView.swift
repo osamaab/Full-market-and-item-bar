@@ -11,10 +11,10 @@ import Stevia
 
 class AuthHeaderView: UIView {
     
-    enum Element: String, CaseIterable {
-        case title
+    enum Element {
+        case title(String)
         case type
-        case subtitle
+        case subtitle(String)
     }
     
     let titleLabel = UILabel()
@@ -36,9 +36,7 @@ class AuthHeaderView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        self.elements = Element.allCases
-        super.init(coder: coder)
-        setup()
+        fatalError()
     }
     
     func setup(){
@@ -95,22 +93,22 @@ class AuthHeaderView: UIView {
         [titleLabel, typeContainerView, subtitleLabel].forEach { $0.isHidden = true }
         elements.forEach {
             switch $0 {
-            case .title:
+            case .title(let title):
                 titleLabel.isHidden = false
+                titleLabel.text = title
                 break
             case .type:
                 typeContainerView.isHidden = false
                 break
-            case .subtitle:
+            case .subtitle(let subtitle):
                 subtitleLabel.isHidden = false
+                subtitleLabel.text = subtitle
                 break
             }
         }
         
-        titleLabel.text = "Welcome to TALABYEH"
         typeTitleLabel.text = "Company"
         typeImageView.image = UIImage(named: "auth_company")
-        subtitleLabel.text = "Please choose the category of resellers You can serve"
     }
     
     override func layoutSubviews() {
