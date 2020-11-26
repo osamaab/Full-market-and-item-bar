@@ -29,11 +29,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let marketCoordinator = MarketCoordinator()
+        
         let distributersCoordinator = DistributersListCoordinator()
+        
+        let cartCoordinator = CartCoordinator()
+        
         let favoritesCoordinator = FavoritesCoordinator()
+        
         let profileCoordinator = ProfileCoordinator()
-        let tabBarCoordinator = TabBarCoordinator(coordinators: [marketCoordinator, distributersCoordinator, favoritesCoordinator, profileCoordinator])
-
+        
+        
+        let tabBarCoordinator = TabBarCoordinator(coordinators: [marketCoordinator, cartCoordinator, distributersCoordinator, favoritesCoordinator, profileCoordinator])
+        
         self.currentCoordinator = tabBarCoordinator
         tabBarCoordinator.start(with: .windowRoot(self.window!))
         

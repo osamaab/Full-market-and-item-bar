@@ -49,29 +49,6 @@ extension UICollectionView {
     }
 }
 
-
-protocol Reloadable {
-    func reloadData()
-}
-
 protocol EmptyInstantiatable {
     static func instantiate() -> Self
-}
-
-extension UIScrollView {
-    @objc func reload(){
-        
-    }
-}
-
-extension UITableView {
-    @objc override func reload() {
-        self.reloadData()
-    }
-}
-
-extension UICollectionView {
-    @objc override func reload() {
-        self.reloadData()
-    }
 }

@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class AdvancedSearchViewController: UIViewController {
 
     let items: [ExpandableItemType] = [

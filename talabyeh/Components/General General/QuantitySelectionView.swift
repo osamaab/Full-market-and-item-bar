@@ -54,8 +54,11 @@ class QuantitySelectionView: UIControl {
             self.valueLabel.text = "\(value)"
         }
     }
+    
+    let style: Style
 
-    init(title: String?, minValue: Int = 1, maxValue: Int = 100) {
+    init(style: Style, title: String?, minValue: Int = 1, maxValue: Int = 100) {
+        self.style = style
         self.title = title
         self.minValue = minValue
         self.maxValue = maxValue
@@ -65,7 +68,8 @@ class QuantitySelectionView: UIControl {
     }
     
     required init?(coder: NSCoder) {
-        title = nil
+        self.style = .small
+        self.title = nil
         self.minValue = 1
         self.maxValue = 100
         self.value = minValue
@@ -74,10 +78,13 @@ class QuantitySelectionView: UIControl {
     }
     
     func setup(){
+        let spacing: CGFloat = style == .big ? 15 : 5
+        let fontSizeForTitle: CGFloat = style == .big ? 14 : 10
+        
         addSubview(verticalStackView)
         verticalStackView.alignment(.center)
             .distribution(.fill)
-            .spacing(15)
+            .spacing(spacing)
             .axis(.vertical)
             .preparedForAutolayout()
         
@@ -91,13 +98,14 @@ class QuantitySelectionView: UIControl {
         titleLabel.text = title
         titleLabel.textAlignment = .center
         titleLabel.textColor = DefaultColorsProvider.secondaryText
-        titleLabel.font = .font(for: .medium, size: 14)
+        titleLabel.font = .font(for: .medium, size: fontSizeForTitle)
         titleLabel.isHidden = title == nil || (title ?? "").isEmpty
         
         setupValueStack()
     }
     
     func setupValueStack(){
+        
         plusButton.Height == minusButton.Height
         plusButton.Height == plusButton.Width
         minusButton.Height == minusButton.Width
@@ -108,14 +116,17 @@ class QuantitySelectionView: UIControl {
             plusButton
         }
 
+        let valuesSpacing: CGFloat = style == .big ? 25 : 10
+        
         valueStackView
             .alignment(.fill)
             .distribution(.equalSpacing)
             .axis(.horizontal)
-            .spacing(25)
+            .spacing(valuesSpacing)
             .preparedForAutolayout()
         
-        let paddingValue: CGFloat = 10
+        let paddingValue: CGFloat = style == .big ? 10 : 4
+        let valueFontSize: CGFloat = style == .big ? 27 : 18
         
         minusButton.contentEdgeInsets = .init(top: paddingValue, left: paddingValue, bottom: paddingValue, right: paddingValue)
         plusButton.contentEdgeInsets = .init(top: paddingValue, left: paddingValue, bottom: paddingValue, right: paddingValue)
@@ -135,7 +146,7 @@ class QuantitySelectionView: UIControl {
         minusButton.tintColor = DefaultColorsProvider.text
 
         
-        valueLabel.font = .font(for: .bold, size: 27)
+        valueLabel.font = .font(for: .bold, size: valueFontSize)
         valueLabel.text = "\(value)"
         valueLabel.textAlignment = .center
         
