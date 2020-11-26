@@ -9,11 +9,40 @@
 import UIKit
 
 class CategoryPickerTextField: PickerTextField {
+    
+    var pickerController: CategoryPickerController?
+    var categories: [CategoryItem] = [] {
+        didSet {
+            self.text = categories.map { $0.title }.joined(separator: ", ")
+            
+            // text field does not call the notification UITextField.textDidChangeNotification upon changing the text manually, so we need to call this to insure receivers stay up to date
+            NotificationCenter.default.post(name: UITextField.textDidChangeNotification, object: self)
+        }
+    }
+    
     override func setup() {
         super.setup()
         
-        onTap = {
+        isSeparatorHidden = true
+        imageView.image = UIImage(named: "pin_small")
+        
+        onTap = { [unowned self] in
             // pick a location  :)
+            self.presentPicker()
         }
+    }
+    
+    func presentPicker(){
+        pickerController = .init(selectedCategories: self.categories, delegate: self)
+        
+        if let topVC = UIApplication.topViewController() {
+            pickerController?.present(on: topVC)
+        }
+    }
+}
+
+extension CategoryPickerTextField: CategoryPickerControllerDelegate {
+    func categoryPickerController(_ sender: CategoryPickerController, didFinishWith categories: [CategoryItem]) {
+        self.categories = categories
     }
 }

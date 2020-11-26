@@ -107,8 +107,7 @@ class NDCardContainerView: UIView {
         dropShadow(color: UIColor.blue.withAlphaComponent(0.16),
                    opacity: 0.5,
                    offSet: .init(width: 0, height: 3),
-                   radius: 4,
-                   scale: true)
+                   radius: 4)
         
         titleLabel.textColor = DefaultColorsProvider.text
         titleLabel.font = .font(for: .bold, size: 21)

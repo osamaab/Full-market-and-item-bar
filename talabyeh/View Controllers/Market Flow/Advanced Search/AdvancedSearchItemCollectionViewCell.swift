@@ -12,6 +12,8 @@ class AdvancedSearchItemCollectionViewCell<T: UITextField>: UICollectionViewCell
     
     fileprivate(set) var textField: T = .init()
     
+    var onValueChange: ((T) -> Void)?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -28,6 +30,8 @@ class AdvancedSearchItemCollectionViewCell<T: UITextField>: UICollectionViewCell
         layer.borderColor = DefaultColorsProvider.fieldBorder.cgColor
         
         reloadContentView()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(textFieldValueChanged), name: UITextField.textDidChangeNotification, object: textField)
     }
     
     func reloadContentView(){
@@ -35,5 +39,13 @@ class AdvancedSearchItemCollectionViewCell<T: UITextField>: UICollectionViewCell
         
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.fillContainer(padding: 0)
+    }
+    
+    @objc func textFieldValueChanged(){
+        self.onValueChange?(self.textField)
+    }
+    
+    override func prepareForReuse() {
+        
     }
 }

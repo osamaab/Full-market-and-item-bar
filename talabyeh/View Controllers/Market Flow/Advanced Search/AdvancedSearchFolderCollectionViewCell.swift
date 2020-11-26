@@ -19,6 +19,7 @@ class AdvancedSearchFolderCollectionViewCell: ExpandableFolderItemCell {
         contentView.addSubview(titleLabel)
         
         titleLabel.text = title
+        titleLabel.font = .font(for: .semiBold, size: 17)
         titleLabel.textAlignment = .center
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.textColor = DefaultColorsProvider.darkerTint
@@ -26,7 +27,7 @@ class AdvancedSearchFolderCollectionViewCell: ExpandableFolderItemCell {
     }
     
     override func expansionStateDidChange() {
-        backgroundColor = isExpanded ? DefaultColorsProvider.lightTint : DefaultColorsProvider.itemBackground
+        backgroundColor = isExpanded ? DefaultColorsProvider.lightTint : DefaultColorsProvider.darkerItemBackground
     }
     
     override func titleDidChange() {

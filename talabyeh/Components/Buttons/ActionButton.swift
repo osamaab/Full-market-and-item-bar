@@ -8,7 +8,21 @@
 
 import UIKit
 
-//TODO: Add implementation
 class ActionButton: UIButton {
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
+    }
+    
+    func setup(){
+        backgroundColor = DefaultColorsProvider.darkerTint
+        setTitleColor(DefaultColorsProvider.background, for: .normal)
+        titleLabel?.font = .font(for: .medium, size: 17)
+    }
 }

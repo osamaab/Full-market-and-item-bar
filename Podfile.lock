@@ -3,6 +3,7 @@ PODS:
   - Alamofire (5.4.0)
   - AwaitToast (1.2.0)
   - CardScanner (0.1.2)
+  - Cosmos (23.0.0)
   - IQKeyboardManager (6.5.6)
   - LanguageManager-iOS (1.2.0)
   - Moya (14.0.0):
@@ -21,6 +22,7 @@ DEPENDENCIES:
   - Actions
   - AwaitToast
   - CardScanner
+  - Cosmos
   - IQKeyboardManager
   - LanguageManager-iOS
   - Moya
@@ -34,6 +36,7 @@ SPEC REPOS:
     - Alamofire
     - AwaitToast
     - CardScanner
+    - Cosmos
     - IQKeyboardManager
     - LanguageManager-iOS
     - Moya
@@ -46,6 +49,7 @@ SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   AwaitToast: 87bbcebcec9b45f530c88e3f38ef0d247f888705
   CardScanner: bfc18d8518a6c8d2817137816338e86156e4a2c4
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   LanguageManager-iOS: 516c4f088435c83cbdbddfc5179f88e4e0d39eb4
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
@@ -53,6 +57,6 @@ SPEC CHECKSUMS:
   SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
   ValidationTextField: 91bc04170ba4b4358912c372e12d7af4c9143ad5
 
-PODFILE CHECKSUM: c7ca7f40230c76d61f4e15b31e74d60a97f24d0f
+PODFILE CHECKSUM: a7b9737cbef987bc3c8d0c0a992852b65ab1108f
 
 COCOAPODS: 1.10.0

@@ -68,14 +68,14 @@ class AuthHeaderView: UIView {
         }
         
         containerStackView.fillContainer()
-        containerStackView.alignment(.fill).distribution(.fill).axis(.vertical).spacing(10)
+        containerStackView.alignment(.fill).distribution(.fill).axis(.vertical).spacing(15)
         
         titleLabel.font = .font(for: .bold, size: 22)
         titleLabel.textColor = DefaultColorsProvider.darkerTint
         
         typeBackgroundView.backgroundColor = DefaultColorsProvider.lightTint
-        typeBackgroundView.layer.cornerRadius = 26 / 2
         typeBackgroundView.height(26)
+        typeBackgroundView.layer.cornerRadius = 13
         typeBackgroundView.fillContainer()
         
         typeImageView.contentMode = .scaleAspectFit
@@ -111,5 +111,10 @@ class AuthHeaderView: UIView {
         typeTitleLabel.text = "Company"
         typeImageView.image = UIImage(named: "auth_company")
         subtitleLabel.text = "Please choose the category of resellers You can serve"
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        typeBackgroundView.layer.cornerRadius = typeBackgroundView.bounds.height / 2
     }
 }
