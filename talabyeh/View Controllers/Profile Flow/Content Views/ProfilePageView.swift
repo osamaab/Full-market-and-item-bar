@@ -40,7 +40,6 @@ class ProfilePageView: UIView {
         }
 
 
-//        backgroundColor = DefaultColorsProvider.background
         backgroundColor = Constants.lightGrey
 
         personalInfoView.backgroundColor = DefaultColorsProvider.background
