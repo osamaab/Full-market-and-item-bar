@@ -17,7 +17,7 @@ class ProductDetailsContentView: UIView {
     
     let headerView: ProductHeaderView = .init()
     let ratingView: RatingView = .init()
-    let quantityView: QuantitySelectionView = .init(title: "Quantity")
+    let quantityView: QuantitySelectionView = .init(style: .big, title: "Quantity")
     let qrCodeView: QRCodeView = .init()
     let descriptionLabel: UILabel = .init()
     let additionalDetailsLabel: UILabel = .init()
