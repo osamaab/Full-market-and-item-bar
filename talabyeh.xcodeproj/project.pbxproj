@@ -39,6 +39,9 @@
 		E450C2492563CA3600F6F392 /* DistributersListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E450C2482563CA3600F6F392 /* DistributersListCoordinator.swift */; };
 		E450C24E2563CA5800F6F392 /* DistributersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E450C24D2563CA5800F6F392 /* DistributersListViewController.swift */; };
 		E450C2542563CFE500F6F392 /* DistributerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E450C2532563CFE500F6F392 /* DistributerCollectionViewCell.swift */; };
+		E45D854A2576265B009ACC8D /* DropdownSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D85492576265B009ACC8D /* DropdownSelectionButton.swift */; };
+		E45D8550257628D9009ACC8D /* ComponentsLabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D854F257628D9009ACC8D /* ComponentsLabCoordinator.swift */; };
+		E45D8558257628EC009ACC8D /* ComponentsLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D8557257628EC009ACC8D /* ComponentsLabViewController.swift */; };
 		E45E552A256F7180008856FD /* CartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45E5529256F7180008856FD /* CartCoordinator.swift */; };
 		E45E5535256F77DC008856FD /* CartSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45E5534256F77DC008856FD /* CartSummaryView.swift */; };
 		E45E5549256F9F4E008856FD /* DeliveryAreaPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45E5548256F9F4E008856FD /* DeliveryAreaPickerViewController.swift */; };
@@ -209,6 +212,9 @@
 		E450C2482563CA3600F6F392 /* DistributersListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributersListCoordinator.swift; sourceTree = "<group>"; };
 		E450C24D2563CA5800F6F392 /* DistributersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributersListViewController.swift; sourceTree = "<group>"; };
 		E450C2532563CFE500F6F392 /* DistributerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributerCollectionViewCell.swift; sourceTree = "<group>"; };
+		E45D85492576265B009ACC8D /* DropdownSelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownSelectionButton.swift; sourceTree = "<group>"; };
+		E45D854F257628D9009ACC8D /* ComponentsLabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsLabCoordinator.swift; sourceTree = "<group>"; };
+		E45D8557257628EC009ACC8D /* ComponentsLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsLabViewController.swift; sourceTree = "<group>"; };
 		E45E5529256F7180008856FD /* CartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCoordinator.swift; sourceTree = "<group>"; };
 		E45E5534256F77DC008856FD /* CartSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartSummaryView.swift; sourceTree = "<group>"; };
 		E45E5548256F9F4E008856FD /* DeliveryAreaPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAreaPickerViewController.swift; sourceTree = "<group>"; };
@@ -464,6 +470,15 @@
 			path = "Content Views";
 			sourceTree = "<group>";
 		};
+		E45D854E257628C9009ACC8D /* Components Lab */ = {
+			isa = PBXGroup;
+			children = (
+				E45D854F257628D9009ACC8D /* ComponentsLabCoordinator.swift */,
+				E45D8557257628EC009ACC8D /* ComponentsLabViewController.swift */,
+			);
+			path = "Components Lab";
+			sourceTree = "<group>";
+		};
 		E45E5544256F9F37008856FD /* Delivery Area */ = {
 			isa = PBXGroup;
 			children = (
@@ -588,6 +603,7 @@
 				E496B2D7255B2D3F001BEC0F /* BackButton.swift */,
 				E496B2DC255B2D44001BEC0F /* BorderedButton.swift */,
 				E496B2E1255B2D4A001BEC0F /* ActionButton.swift */,
+				E45D85492576265B009ACC8D /* DropdownSelectionButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -898,6 +914,7 @@
 		F98D0E8A252F786200D46EE9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E45D854E257628C9009ACC8D /* Components Lab */,
 				E4EE5C9E256F6DE50031BC71 /* Cart */,
 				E4D8428D256AC47A00D215B4 /* Favorites */,
 				E4C705D0255BB67500DD29E3 /* Pickers */,
@@ -1234,6 +1251,7 @@
 				E40FB266256797E800626569 /* LocationPickerTextField.swift in Sources */,
 				E413279A25656BB800090419 /* AdvancedSearchViewController.swift in Sources */,
 				E496B2CA255B2ABF001BEC0F /* ValidationTextField.swift in Sources */,
+				E45D8550257628D9009ACC8D /* ComponentsLabCoordinator.swift in Sources */,
 				F98D0E54252DE6F200D46EE9 /* SignUpWizardViewController.swift in Sources */,
 				E4D8429F256AC59200D215B4 /* BigSegmentedControl.swift in Sources */,
 				E4B2A75F256CC1D60055C1AE /* VerticalPaddingView.swift in Sources */,
@@ -1249,6 +1267,7 @@
 				E4B2A755256CBAA40055C1AE /* RatingView.swift in Sources */,
 				F990A386254082AB00ABC4CF /* DistributorSignUpViewController.swift in Sources */,
 				E496B2F9255B2FBB001BEC0F /* NetworkConfiguration.swift in Sources */,
+				E45D854A2576265B009ACC8D /* DropdownSelectionButton.swift in Sources */,
 				E4A670782563C3580057083C /* UIViewController+Extensions.swift in Sources */,
 				E40FB2722567A2F100626569 /* CategoryPickerTextField.swift in Sources */,
 				E4000CF7255C174600E89ABB /* CoordinatorTransitionType.swift in Sources */,
@@ -1277,6 +1296,7 @@
 				E496B2DD255B2D44001BEC0F /* BorderedButton.swift in Sources */,
 				E4E6810B255D3B700051D52D /* LocationPickerController.swift in Sources */,
 				F9EA049B252C858500DC288B /* RoundedView.swift in Sources */,
+				E45D8558257628EC009ACC8D /* ComponentsLabViewController.swift in Sources */,
 				E4EE5CA0256F6DF50031BC71 /* CartItemsViewController.swift in Sources */,
 				E4FAB5A92565007900F25473 /* ExpandableFolderItemCell.swift in Sources */,
 				E4000C99255C00B000E89ABB /* ProfileCoordinator.swift in Sources */,

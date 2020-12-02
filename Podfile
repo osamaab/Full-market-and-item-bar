@@ -14,11 +14,16 @@ pod 'ValidationTextField'
 pod 'IQKeyboardManager'
 pod 'Moya'
 pod 'SDWebImage', '~> 5.0'
+pod 'Actions'
+
+# Components
+pod 'DropDown'
+pod 'Cosmos'
 pod 'AwaitToast'
 pod 'NVActivityIndicatorView'
-pod 'Actions'
 pod 'CardScanner'
-pod 'Cosmos'
+
+
 
   target 'talabyehTests' do
     inherit! :search_paths
