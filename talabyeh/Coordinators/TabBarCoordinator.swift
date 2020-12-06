@@ -20,7 +20,7 @@ class TabBarCoordinator: CoordinatorType {
     let coordinators: [TabBarSubCoordinator]
     let tabBarController = TabBarController()
     
-    var rootViewController: UIViewController? {
+    var rootViewController: UIViewController {
         tabBarController
     }
     
@@ -28,8 +28,8 @@ class TabBarCoordinator: CoordinatorType {
         self.coordinators = coordinators
         
         let viewControllers: [UIViewController] = coordinators.compactMap {
-            $0.rootViewController?.tabBarItem = $0.tabBarItem
-            return $0.rootViewController?.embededInNavigationController()
+            $0.rootViewController.tabBarItem = $0.tabBarItem
+            return $0.rootViewController.embededInNavigationController()
         }
         
         tabBarController.viewControllers = viewControllers

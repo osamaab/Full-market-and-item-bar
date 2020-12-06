@@ -11,7 +11,7 @@ import UIKit
 
 class FavoritesCoordinator: TabBarSubCoordinator {
     
-    var rootViewController: UIViewController? {
+    var rootViewController: UIViewController {
         favoritesViewController
     }
     

@@ -10,7 +10,7 @@ import UIKit
 
 class ComponentsLabCoordinator: NSObject, TabBarSubCoordinator {
 
-   fileprivate(set) var rootViewController: UIViewController?
+   fileprivate(set) var rootViewController: UIViewController
     
     var tabBarItem: UITabBarItem! {
         .init(title: "Lab", image: UIImage(systemName: "flame"), selectedImage: UIImage(named: "flame.fill"))

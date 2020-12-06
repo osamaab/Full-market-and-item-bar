@@ -38,7 +38,7 @@ extension DistributersListViewController: UICollectionViewDataSource, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        ProfileCoordinator().start(with: .push(self.navigationController!))
+        navigationController?.pushViewController(NewDistributerViewController(), animated: true)
     }
 }
 

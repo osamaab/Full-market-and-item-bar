@@ -11,7 +11,7 @@ import UIKit
 
 class AuthenticationCoordinator: CoordinatorType {
     
-    var rootViewController: UIViewController? {
+    var rootViewController: UIViewController {
         navigationController
     }
     

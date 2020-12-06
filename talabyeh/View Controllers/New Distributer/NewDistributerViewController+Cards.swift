@@ -8,26 +8,7 @@
 
 import UIKit
 
-class NDCardContentContainerView: UIView {
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setup()
-    }
-    
-    func setup(){
-
-    }
-}
-
-
-
-class NDPersonalInformationContentView: NDCardContentContainerView {
+class NDPersonalInformationContentView: BasicViewWithSetup {
     
     let fieldsStackView: UIStackView = .init()
     let pickersStackView: UIStackView = .init()
@@ -78,7 +59,7 @@ class NDPersonalInformationContentView: NDCardContentContainerView {
     }
 }
 
-class NDCarInformationContentView: NDCardContentContainerView {
+class NDCarInformationContentView: BasicViewWithSetup {
    
     let pickersStackView: UIStackView = .init()
     
@@ -98,7 +79,7 @@ class NDCarInformationContentView: NDCardContentContainerView {
     }
 }
 
-class NDDeliveryAreaContentView: NDCardContentContainerView {
+class NDDeliveryAreaContentView: BasicViewWithSetup {
     
     let locationTextField: PickerTextField = .init()
     
@@ -113,7 +94,7 @@ class NDDeliveryAreaContentView: NDCardContentContainerView {
     }
 }
 
-class NDAvailabilityContentView: NDCardContentContainerView {
+class NDAvailabilityContentView: BasicViewWithSetup {
     let datesTextField: WeekdaysRangePickerTextField = .init()
     let timesTextField: TimeRangePickerTextField = .init()
     
@@ -141,7 +122,7 @@ class NDAvailabilityContentView: NDCardContentContainerView {
     }
 }
 
-class NDMoneyDistributionContentView: NDCardContentContainerView {
+class NDMoneyDistributionContentView: BasicViewWithSetup {
     
     let fieldsStackView: UIStackView = .init()
     let horizontalStackView: UIStackView = .init()

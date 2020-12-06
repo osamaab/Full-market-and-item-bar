@@ -31,6 +31,14 @@ class MarketViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.fillContainer()
+        
+        let searchItem = UIBarButtonItem(barButtonSystemItem: .search) { (_) in
+            let toPresent = AdvancedSearchViewController().embededInNavigationController()
+            toPresent.modalPresentationStyle = .fullScreen
+            self.present(toPresent, animated: true, completion: nil)
+        }
+        
+        self.navigationItem.rightBarButtonItem = searchItem
     }
 }
 

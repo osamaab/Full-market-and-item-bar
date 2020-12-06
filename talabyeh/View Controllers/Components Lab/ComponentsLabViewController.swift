@@ -17,15 +17,27 @@ class ComponentsLabViewController: UIViewController {
         view.backgroundColor = DefaultColorsProvider.background1
         
         
-        let choices = (0..<10).map { AnyChoiceItem(title: "Item \($0)") }
-        let selectionButton = DropdownSelectionButton(choices: choices)
+//        let choices = (0..<10).map { AnyChoiceItem(title: "Item \($0)") }
+//        let selectionButton = DropdownSelectionButton(choices: choices)
+//        
+//        selectionButton.contentEdgeInsets = .init(top: 5, left: 20, bottom: 5, right: 20)
+//        selectionButton.setTitle("Items", for: .normal)
+//        selectionButton.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        view.addSubview(selectionButton)
+//        selectionButton.centerInContainer()
         
-        selectionButton.contentEdgeInsets = .init(top: 5, left: 20, bottom: 5, right: 20)
-        selectionButton.setTitle("Items", for: .normal)
-        selectionButton.translatesAutoresizingMaskIntoConstraints = false
+        let button = BorderedButton()
+        button.setTitle("Checkout", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.contentEdgeInsets = .init(top: 5, left: 20, bottom: 5, right: 20)
         
-        view.addSubview(selectionButton)
-        selectionButton.centerInContainer()
+        view.addSubview(button)
+        button.centerInContainer()
+        
+        button.addAction {
+            self.navigationController?.pushViewController(CheckoutViewController(), animated: true)
+        }
     }
     
 

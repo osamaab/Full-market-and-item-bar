@@ -1,21 +1,15 @@
 //
-//  NewDistributerContentView.swift
+//  CheckoutContentView.swift
 //  talabyeh
 //
-//  Created by Hussein Work on 15/11/2020.
+//  Created by Hussein Work on 02/12/2020.
 //  Copyright © 2020 Dominate. All rights reserved.
 //
 
 import UIKit
 
-/**
- See: Page 80 of the design
- 
- The view acts as a sections container, each section represents a card to display.
- */
-class NewDistributerContentView: UIView {
-    
-    lazy var titleLabel: UILabel = .init()
+class CheckoutContentView: UIView {
+
     lazy var containerStackView: UIStackView = .init()
     lazy var scrollContainerView: ScrollContainerView = .init(contentView: containerStackView)
     
@@ -34,26 +28,17 @@ class NewDistributerContentView: UIView {
     fileprivate func setup(){
         backgroundColor = DefaultColorsProvider.background1
         
-        titleLabel.textColor = DefaultColorsProvider.text
-        titleLabel.font = .font(for: .bold, size: 21)
-        
         containerStackView
             .axis(.vertical)
             .alignment(.fill)
             .distribution(.fill)
             .spacing(15)
         
-        containerStackView.addingArrangedSubviews {
-            titleLabel
-        }
-        
         // constraints part :))
         containerStackView.translatesAutoresizingMaskIntoConstraints = false
         scrollContainerView.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        
-        addSubview(scrollContainerView)        
+        addSubview(scrollContainerView)
         scrollContainerView.fillContainer(padding: 20)
     }
     
@@ -67,6 +52,3 @@ class NewDistributerContentView: UIView {
         return newCardView
     }
 }
-
-
-
