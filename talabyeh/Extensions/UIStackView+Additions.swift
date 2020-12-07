@@ -67,3 +67,12 @@ extension UIStackView {
         return self
     }
 }
+
+extension UIView {
+    func subviewsPreparedAL(@SubviewsBuilder content: () -> [UIView]){
+        for view in content() {
+            addSubview(view)
+            view.translatesAutoresizingMaskIntoConstraints = false
+        }
+    }
+}

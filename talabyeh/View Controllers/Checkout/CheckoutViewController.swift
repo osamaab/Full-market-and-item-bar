@@ -13,11 +13,13 @@ class CheckoutViewController: UIViewController {
     
     let contentView: CheckoutContentView = .init()
     
-    
     let cartSummaryView = CHCartSummaryCardView()
     let recipientDetailsCardView = CHRecipientDetailsCardView()
     let deliveryInformationCardView = CHDeliveryInformationCardView()
     let deliveryDateCardView = CHDeliveryDateCardView()
+    let deliveryInstructions = CHDeliveryInstructionsCardView()
+    let paymentMethodView = CHPaymentMethodCardView(paymentMethods: [])
+    let distributerOptionView = CHLabelCardView(title: "If you want specific distributor Please choose..")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,5 +63,8 @@ class CheckoutViewController: UIViewController {
         contentView.insertCardView(with: recipientDetailsCardView, title: "Recipient Details")
         contentView.insertCardView(with: deliveryInformationCardView, title: "Delivery Information")
         contentView.insertCardView(with: deliveryDateCardView, title: "Delivery Date")
+        contentView.insertCardView(with: deliveryInstructions, title: "Delivery Instructions")
+        contentView.insertCardView(with: paymentMethodView, title: "Payment Method")
+        contentView.insertCardView(with: distributerOptionView, title: nil)
     }
 }

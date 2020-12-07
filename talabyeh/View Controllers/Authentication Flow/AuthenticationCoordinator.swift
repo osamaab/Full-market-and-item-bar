@@ -22,11 +22,5 @@ class AuthenticationCoordinator: CoordinatorType {
         self.storyboard = .init(name: "Authentication", bundle: nil)
         self.navigationController = self.storyboard.instantiateInitialViewController() as! UINavigationController
     }
-    
-    func start() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = self.rootViewController
-        appDelegate.window?.makeKeyAndVisible()
-    }
 }
  

@@ -9,7 +9,7 @@
 import UIKit
 
 //TODO: To add implementation..
-class DatePickerTextField: UITextField {
+class DatePickerTextField: PickerTextField {
 
     /*
     // Only override draw() if you perform custom drawing.

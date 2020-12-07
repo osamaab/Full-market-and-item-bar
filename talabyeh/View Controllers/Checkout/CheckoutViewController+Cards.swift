@@ -10,6 +10,7 @@ import UIKit
 import Stevia
 
 
+//MARK: Cart Summary
 class CHCartSummaryCardView: BasicViewWithSetup {
     
     let subtotalView: FieldView<UILabel> = .init(title: "Subtotal")
@@ -76,6 +77,7 @@ class CHCartSummaryCardView: BasicViewWithSetup {
 }
 
 
+//MARK:Recipient Details
 class CHRecipientDetailsCardView: BasicViewWithSetup {
     
     let nameTextField: BorderedTextField = .init()
@@ -107,6 +109,7 @@ class CHRecipientDetailsCardView: BasicViewWithSetup {
     }
 }
 
+//MARK: Delivery Information
 class CHDeliveryInformationCardView: BasicViewWithSetup {
     
     var fieldViews: [CHDeliveryInformationFieldView] = []
@@ -198,6 +201,7 @@ class CHDeliveryInformationFieldView: BasicViewWithSetup {
     }
 }
 
+//MARK: Delivery Date
 class CHDeliveryDateCardView: BasicViewWithSetup {
     
     let containerStackView: UIStackView = .init()
@@ -233,21 +237,203 @@ class CHDeliveryDateCardView: BasicViewWithSetup {
     }
 }
 
+//MARK: Delivery Instructions
 class CHDeliveryInstructionsCardView: BasicViewWithSetup {
     
     let textView = UITextView()
     let checkboxLabel = UILabel()
-    let checkboxView = UIImageView()
+    let checkboxView = CheckboxView()
     let footerLabel = UILabel()
     
     override func setup() {
-        subviews {
+        subviewsPreparedAL {
             checkboxView
             checkboxLabel
             textView
             footerLabel
         }
         
+        textView.font = .font(for: .medium, size: 17)
+        textView.contentInset = .init(top: 15, left: 20, bottom: 15, right: 20)
+        textView.layer.cornerRadius = 8
+        textView.layer.borderWidth = 1
+        textView.layer.borderColor = DefaultColorsProvider.fieldBorder.cgColor
+                
+        checkboxLabel.font = .font(for: .semiBold, size: 14)
+        checkboxLabel.textColor = DefaultColorsProvider.secondaryText
+        checkboxLabel.text = "Call receiver before delivery"
         
+        footerLabel.font = .font(for: .semiBold, size: 12)
+        footerLabel.textColor = DefaultColorsProvider.secondaryText
+        footerLabel.text = "0 of 100 words"
+        
+        // layout
+        checkboxView.height(25).width(25).top(0).leading(0)
+        checkboxLabel.trailing(0)
+        
+        alignVertically(checkboxView, with: checkboxLabel)
+        checkboxLabel.Leading == checkboxView.Trailing + 15
+        
+        textView.height(150).leading(0).trailing(0)
+        textView.Top == checkboxView.Bottom + 15
+        
+        footerLabel.bottom(0).leading(0).trailing(0)
+        footerLabel.Top == textView.Bottom + 15
+    }
+}
+
+
+// looks challenging :)))))))
+//MARK: Payment Method
+class CHPaymentMethodCardView: BasicViewWithSetup {
+    
+    struct PaymentMethodType: Hashable {
+        let id: String = UUID().uuidString
+        let image: UIImage?
+        let title: String
+        
+        func hash(into hasher: inout Hasher) {
+            hasher.combine(id)
+        }
+    }
+    
+    class ItemView: BasicViewWithSetup {
+        let imageView = UIImageView()
+        let titleLabel = UILabel()
+        let checkboxView = CheckboxView()
+        
+        override func setup() {
+            subviewsPreparedAL {
+                imageView
+                titleLabel
+                checkboxView
+            }
+            
+            imageView.layer.cornerRadius = 2
+            imageView.layer.borderWidth = 0.5
+            imageView.layer.borderColor = DefaultColorsProvider.fieldBorder.cgColor
+            imageView.contentMode = .scaleAspectFit
+            
+            titleLabel.font = .font(for: .medium, size: 16)
+            titleLabel.textColor = DefaultColorsProvider.text
+            
+            checkboxView.isSelected = false
+            
+            imageView.leading(0).top(0).bottom(0).width(75)
+            titleLabel.centerVertically()
+            checkboxView.trailing(0).centerVertically().height(20).width(20)
+            
+            titleLabel.Leading == imageView.Trailing + 15
+            titleLabel.Trailing == checkboxView.Leading - 15
+        }
+    }
+    
+    fileprivate var stackView: UIStackView = .init()
+    fileprivate var itemViews: [ItemView] = []
+    fileprivate var dateTextField: DatePickerTextField = .init()
+    fileprivate var placeholderItemView: ItemView = .init()
+    
+    fileprivate(set) var paymentMethods: [PaymentMethodType]
+    
+    init(paymentMethods: [PaymentMethodType]){
+        self.paymentMethods = paymentMethods
+        super.init(frame: .zero)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func setup() {
+        subviewsPreparedAL {
+            stackView
+        }
+        
+        stackView.alignment(.fill)
+            .axis(.vertical)
+            .distribution(.fill)
+            .spacing(15)
+        
+        
+        dateTextField.height(45)
+        stackView.fillContainer()
+        
+        placeholderItemView.checkboxView.isHidden = true
+        placeholderItemView.titleLabel.text = "Add Card"
+        placeholderItemView.height(55)
+        
+        stackView.insertArrangedSubview(placeholderItemView, at: 0)
+        
+        paymentMethods.forEach {
+            add(paymentMethod: $0)
+        }
+    }
+    
+    func add(paymentMethod: PaymentMethodType){
+        insertItemView(for: paymentMethod)
+    }
+    
+    fileprivate func insertItemView(for item: PaymentMethodType){
+        let view = ItemView()
+        view.titleLabel.text = item.title
+        view.imageView.image = item.image
+        view.checkboxView.isSelected = true
+        view.height(55)
+        view.restorationIdentifier = item.id
+        
+        itemViews.append(view)
+        stackView.insertArrangedSubview(view, at: itemViews.count - 1)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let location = touches.first?.location(in: self.stackView) else {
+            return
+        }
+        
+        guard let itemView = (itemViews.first {
+            $0.frame.contains(location)
+        }) else {
+            return
+        }
+        
+        if itemView == placeholderItemView {
+            // placeholder selected, ignoring
+            return
+        }
+        
+        stackView.removeArrangedSubview(dateTextField)
+        dateTextField.removeFromSuperview()
+        
+        itemViews.forEach { $0.checkboxView.isSelected = false }
+        itemView.checkboxView.isSelected = !itemView.checkboxView.isSelected
+        
+        let indexOfSelected = stackView.arrangedSubviews.firstIndex(of: itemView)!
+        stackView.insertArrangedSubview(dateTextField, at: indexOfSelected + 1)
+    }
+}
+
+//MARK: Label
+class CHLabelCardView: BasicViewWithSetup {
+    
+    let titleLabel: UILabel = .init()
+    
+    init(title: String){
+        super.init(frame: .zero)
+        titleLabel.text = title
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func setup() {
+        subviewsPreparedAL {
+            titleLabel
+        }
+        
+        titleLabel.font = .font(for: .bold, size: 18)
+        titleLabel.numberOfLines = 0
+        
+        titleLabel.fillContainer()
     }
 }

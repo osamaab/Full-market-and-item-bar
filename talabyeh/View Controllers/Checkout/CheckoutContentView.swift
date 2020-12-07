@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Stevia
+
 
 class CheckoutContentView: UIView {
 
     lazy var containerStackView: UIStackView = .init()
+    lazy var footerView: CheckoutFooterView = .init()
     lazy var scrollContainerView: ScrollContainerView = .init(contentView: containerStackView)
     
     fileprivate var cardViews: [CardContainerView] = []
@@ -37,18 +40,48 @@ class CheckoutContentView: UIView {
         // constraints part :))
         containerStackView.translatesAutoresizingMaskIntoConstraints = false
         scrollContainerView.translatesAutoresizingMaskIntoConstraints = false
+        footerView.translatesAutoresizingMaskIntoConstraints = false
+
+        footerView.height(50)
         
         addSubview(scrollContainerView)
         scrollContainerView.fillContainer(padding: 20)
+        
+        containerStackView.addArrangedSubview(footerView)
     }
     
     @discardableResult
-    func insertCardView<ContentView: UIView>(with contentView: ContentView, title: String) -> CardContainerView {
+    func insertCardView<ContentView: UIView>(with contentView: ContentView, title: String?) -> CardContainerView {
         let newCardView = CardContainerView(title: title, contentView: contentView)
         
         cardViews.append(newCardView)
-        containerStackView.addArrangedSubview(newCardView)
+        containerStackView.insertArrangedSubview(newCardView, at: cardViews.count - 1)
+        
         
         return newCardView
+    }
+}
+
+class CheckoutFooterView: BasicViewWithSetup {
+    
+    let requestButton: ActionButton = .init()
+    let cancelButton: UIButton = .init()
+    
+    override func setup() {
+        backgroundColor = .clear
+        
+        subviewsPreparedAL {
+            cancelButton
+            requestButton
+        }
+        
+        requestButton.top(0).bottom(0).trailing(0).width(60%)
+        cancelButton.top(0).bottom(0).leading(0).width(35%)
+        
+        requestButton.backgroundColor = DefaultColorsProvider.darkerTint
+        requestButton.setTitle("Request", for: .normal)
+        
+        cancelButton.backgroundColor = DefaultColorsProvider.background
+        cancelButton.setTitle("Cancel", for: .normal)
     }
 }

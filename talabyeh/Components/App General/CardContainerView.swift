@@ -16,18 +16,31 @@ class CardContainerView: UIView {
     let titleLabel: UILabel
     let contentView: UIView
     
+    var title: String? {
+        didSet {
+            titleLabel.text = title
+            
+            if title == nil || (title ?? "").isEmpty {
+                titleLabel.isHidden = true
+            }
+        }
+    }
+    
     fileprivate var containerStack: UIStackView = .init()
     
-    init(title: String, contentView: UIView){
+    init(title: String?, contentView: UIView){
         self.contentView = contentView
         self.titleLabel = .init()
         self.titleLabel.text = title
         super.init(frame: .zero)
         
+        self.title = title
+        if title == nil || (title ?? "").isEmpty {
+            titleLabel.isHidden = true
+        }
+        
         setup()
     }
-    
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
