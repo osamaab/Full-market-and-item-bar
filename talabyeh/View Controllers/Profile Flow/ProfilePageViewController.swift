@@ -51,6 +51,8 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = DefaultColorsProvider.background
                 
         profileView.nameLabel.text = headerInfo.title
         profileView.emailLabel.text = headerInfo.subtitle
@@ -74,6 +76,8 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     
     @objc func editButtonTapped(){
         self.editAction?()
+        
+        navigationController?.pushViewController(DeliveryAreaPickerViewController(), animated: true)
     }
 }
 

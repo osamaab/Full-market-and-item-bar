@@ -20,6 +20,8 @@ class LocationPickerTextField: PickerTextField {
         }
     }
     
+    var onPick: ((Location?) -> Void)?
+    
     override func setup() {
         super.setup()
         
@@ -44,5 +46,6 @@ class LocationPickerTextField: PickerTextField {
 extension LocationPickerTextField: LocationPickerControllerDelegate {
     func locationPickerController(_ sender: LocationPickerController, didFinishWith location: PickedLocation?) {
         self.location = location
+        onPick?(location)
     }
 }

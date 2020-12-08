@@ -12,7 +12,12 @@ import Stevia
 
 class CategoriesPickerViewController: UIViewController {
     
-    lazy var headerView: AuthHeaderView = .init(elements: AuthHeaderView.Element.allCases)
+    lazy var headerView: AuthHeaderView = .init(elements: [
+        .title("Welcome to TALABYEH"),
+        .type,
+        .subtitle("Please choose the category of resellers You can serve")
+    ])
+    
     lazy var collectionView: UICollectionView = configureCollectionView()
     lazy var bottomView: BottomNextButtonView = .init(title: "Next")
     
