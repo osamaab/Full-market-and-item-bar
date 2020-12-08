@@ -16,7 +16,7 @@ protocol CoordinatorType: class {
     /**
      Defines the root navigation of the coordinator
      */
-    var rootViewController: UIViewController? { get }
+    var rootViewController: UIViewController { get }
     
     /**
      tells the coordinator to start it's transitioning, while the transition type isn't yet defined, in later versions we'll specify the transition type with the default implementation, but for now, let's keep things as they are.
@@ -32,8 +32,6 @@ protocol CoordinatorType: class {
 
 
 extension CoordinatorType {
-    
-    
     func prepareToStart(){
         
     }

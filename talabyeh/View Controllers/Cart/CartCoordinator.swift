@@ -10,7 +10,7 @@ import UIKit
 
 class CartCoordinator: TabBarSubCoordinator {
     
-    var rootViewController: UIViewController? {
+    var rootViewController: UIViewController {
         cartViewController
     }
     

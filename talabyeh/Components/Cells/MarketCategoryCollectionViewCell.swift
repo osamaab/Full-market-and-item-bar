@@ -26,7 +26,7 @@ class MarketCategoryCollectionViewCell: UICollectionViewCell{
     fileprivate func setup() {        
         self.subviews([cImage, cTitle])
         
-        
+        cImage.contentMode = .scaleAspectFill
         cImage.width(100%).height(92.12).top(0)
         
         cTitle.font = currentLanguage == .en ? getEnglishFont(11, .semiBold): getArabicFont(11, .heavy)

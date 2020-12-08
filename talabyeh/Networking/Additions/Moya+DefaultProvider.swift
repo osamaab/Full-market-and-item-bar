@@ -9,8 +9,6 @@
 import Foundation
 import Moya
 
-
-
 extension TargetType {
     func request<R: Codable>(_ completion: @escaping ((Result<R, Error>) -> Void)) {
         MoyaProvider<Self>.default().request(self) { (result) in

@@ -10,7 +10,7 @@ import UIKit
 
 class ProfileCoordinator: TabBarSubCoordinator {
     
-    var rootViewController: UIViewController? {
+    var rootViewController: UIViewController {
         profileViewController
     }
     

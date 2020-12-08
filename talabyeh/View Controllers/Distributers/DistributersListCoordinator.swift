@@ -10,7 +10,7 @@ import UIKit
 
 class DistributersListCoordinator: TabBarSubCoordinator {
     
-    var rootViewController: UIViewController? {
+    var rootViewController: UIViewController {
         distributersListViewController
     }
     

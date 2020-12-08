@@ -11,7 +11,7 @@ import UIKit
 
 class MarketCoordinator: TabBarSubCoordinator {
     
-    var rootViewController: UIViewController? {
+    var rootViewController: UIViewController {
         marketViewController
     }
     
