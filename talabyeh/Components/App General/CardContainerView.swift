@@ -26,6 +26,18 @@ class CardContainerView: UIView {
         }
     }
     
+    var cornerRadius: CGFloat = 20 {
+        didSet {
+            layer.cornerRadius = cornerRadius
+        }
+    }
+    
+    var maskedCorners: CACornerMask = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner] {
+        didSet {
+            layer.maskedCorners = maskedCorners
+        }
+    }
+    
     fileprivate var containerStack: UIStackView = .init()
     
     init(title: String?, contentView: UIView){
@@ -48,7 +60,8 @@ class CardContainerView: UIView {
     
     fileprivate func setup(){
         backgroundColor = DefaultColorsProvider.background
-        layer.cornerRadius = 20
+        layer.cornerRadius = cornerRadius
+        layer.maskedCorners = maskedCorners
         
         contentView.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
