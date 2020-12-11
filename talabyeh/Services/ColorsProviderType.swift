@@ -37,7 +37,7 @@ struct LightSchemeColorProvider {
     
     // messages
     static let success = #colorLiteral(red: 0, green: 0.7843137255, blue: 0.5490196078, alpha: 1)
-    static let error = #colorLiteral(red: 0.7843137255, green: 0, blue: 0, alpha: 1)
+    static let error = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)
     static let notice = #colorLiteral(red: 0.7843137255, green: 0.7529411765, blue: 0, alpha: 1)
 }
 

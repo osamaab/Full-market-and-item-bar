@@ -36,7 +36,7 @@ class ComponentsLabViewController: UIViewController {
         button.centerInContainer()
         
         button.addAction {
-            self.navigationController?.pushViewController(PaymentCardsPickerViewController(), animated: true)
+            self.navigationController?.pushViewController(OprationsListViewController(), animated: true)
         }
     }
     
