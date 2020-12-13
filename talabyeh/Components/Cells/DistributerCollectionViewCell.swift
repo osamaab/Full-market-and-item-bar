@@ -19,8 +19,6 @@ class DistributerCollectionViewCell: UICollectionViewCell {
     let locationContainerView: UIView = .init()
     let locationImageView: UIImageView = .init()
     
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -33,10 +31,8 @@ class DistributerCollectionViewCell: UICollectionViewCell {
     
     func setup(){
         backgroundColor = .white
-        contentView.backgroundColor = .white
         
         layer.cornerRadius = 5.4
-        
         dropShadow(color: .black, opacity: 0.05, offSet: .init(width: 0, height: 3.4), radius: 3.4)
         
         titleLabel.font = .font(for: .semiBold, size: 16)
@@ -79,25 +75,25 @@ class DistributerCollectionViewCell: UICollectionViewCell {
         
         titlesStackView.alignment(.fill).distribution(.fill).axis(.vertical).spacing(5).preparedForAutolayout()
         
-        contentView.addSubview(imageView)
-        contentView.addSubview(titlesStackView)
+        self.addSubview(imageView)
+        self.addSubview(titlesStackView)
 
         imageView.width(50)
         imageView.heightEqualsWidth()
-        imageView.Leading == contentView.Leading  + 15
-        imageView.Top >= contentView.Top
+        imageView.Leading == self.Leading  + 15
+        imageView.Top >= self.Top
         imageView.centerVertically()
         
         titlesStackView.Leading == imageView.Trailing + 15
         titlesStackView.centerVertically()
-        titlesStackView.Top >= contentView.Top
+        titlesStackView.Top >= self.Top
         
         locationContainerView.addSubview(locationImageView)
         locationImageView.fillContainer(padding: 10)
         locationImageView.width(12).height(12)
         
-        contentView.addSubview(locationContainerView)
-        contentView.addSubview(arrowImageView)
+        self.addSubview(locationContainerView)
+        self.addSubview(arrowImageView)
         
         arrowImageView.trailing(15).height(12).width(12).centerVertically()
         locationContainerView.centerVertically()
