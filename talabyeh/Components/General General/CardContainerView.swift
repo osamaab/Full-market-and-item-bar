@@ -11,7 +11,7 @@ import UIKit
 /**
  The actual container card
  */
-class CardContainerView: UIView {
+class CardContainerView: BasicCardView {
     
     let titleLabel: UILabel
     let contentView: UIView
@@ -23,18 +23,6 @@ class CardContainerView: UIView {
             if title == nil || (title ?? "").isEmpty {
                 titleLabel.isHidden = true
             }
-        }
-    }
-    
-    var cornerRadius: CGFloat = 20 {
-        didSet {
-            layer.cornerRadius = cornerRadius
-        }
-    }
-    
-    var maskedCorners: CACornerMask = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner] {
-        didSet {
-            layer.maskedCorners = maskedCorners
         }
     }
     
@@ -58,7 +46,9 @@ class CardContainerView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    fileprivate func setup(){
+    override func setup(){
+        super.setup()
+        
         backgroundColor = DefaultColorsProvider.background
         layer.cornerRadius = cornerRadius
         layer.maskedCorners = maskedCorners
@@ -69,11 +59,6 @@ class CardContainerView: UIView {
         // this prevents the title label from being streached.
         titleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
         titleLabel.setContentHuggingPriority(.init(240), for: .vertical)
-        
-        dropShadow(color: UIColor.blue.withAlphaComponent(0.16),
-                   opacity: 0.5,
-                   offSet: .init(width: 0, height: 3),
-                   radius: 4)
         
         titleLabel.textColor = DefaultColorsProvider.text
         titleLabel.font = .font(for: .bold, size: 21)
@@ -94,7 +79,6 @@ class CardContainerView: UIView {
             .alignment(.fill)
             .spacing(20)
             .preparedForAutolayout()
-        
         
         // constraints part :))
         containerStack.top(25).bottom(25).left(20).right(20)

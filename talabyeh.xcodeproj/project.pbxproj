@@ -29,6 +29,7 @@
 		E40FB28B2567A97500626569 /* CategoriesPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40FB28A2567A97500626569 /* CategoriesPickerViewController.swift */; };
 		E40FB2902567AA6900626569 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40FB28F2567AA6900626569 /* CheckboxView.swift */; };
 		E40FB2952567AD7700626569 /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40FB2942567AD7700626569 /* AuthHeaderView.swift */; };
+		E41172EB2587E309005BAB60 /* CertificatesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41172EA2587E309005BAB60 /* CertificatesContentView.swift */; };
 		E41327922565699000090419 /* AdvancedSearchFolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41327912565699000090419 /* AdvancedSearchFolderCollectionViewCell.swift */; };
 		E413279A25656BB800090419 /* AdvancedSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E413279925656BB800090419 /* AdvancedSearchViewController.swift */; };
 		E4151D7525626904009F1D45 /* TimeRangePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4151D7425626904009F1D45 /* TimeRangePickerTextField.swift */; };
@@ -84,12 +85,16 @@
 		E4A6704F2563B5310057083C /* YearPickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A6704E2563B5310057083C /* YearPickerTextField.swift */; };
 		E4A670702563C2A60057083C /* CreditCardNumberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A6706F2563C2A60057083C /* CreditCardNumberTextField.swift */; };
 		E4A670782563C3580057083C /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A670772563C3580057083C /* UIViewController+Extensions.swift */; };
+		E4A9881D2587DAA50006EB3F /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A9881C2587DAA50006EB3F /* LabelView.swift */; };
+		E4A988252587E2490006EB3F /* BasicCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A988242587E2490006EB3F /* BasicCardView.swift */; };
 		E4B2A744256CB5BC0055C1AE /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2A743256CB5BC0055C1AE /* ProductDetailsViewController.swift */; };
 		E4B2A750256CB5DF0055C1AE /* ProductDetailsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2A74F256CB5DF0055C1AE /* ProductDetailsContentView.swift */; };
 		E4B2A755256CBAA40055C1AE /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2A754256CBAA40055C1AE /* RatingView.swift */; };
 		E4B2A75A256CBAC70055C1AE /* QuantitySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2A759256CBAC70055C1AE /* QuantitySelectionView.swift */; };
 		E4B2A75F256CC1D60055C1AE /* VerticalPaddingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2A75E256CC1D60055C1AE /* VerticalPaddingView.swift */; };
 		E4B2A764256CC5F60055C1AE /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2A763256CC5F60055C1AE /* QRCodeView.swift */; };
+		E4B9F4732587E6E4001D5F2F /* CertificatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9F4722587E6E4001D5F2F /* CertificatesViewController.swift */; };
+		E4B9F47B2587E915001D5F2F /* UploadCertificateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9F47A2587E915001D5F2F /* UploadCertificateView.swift */; };
 		E4C1389925833B7800D951F3 /* BaseOprationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C1389825833B7800D951F3 /* BaseOprationCollectionViewCell.swift */; };
 		E4C138A22583846200D951F3 /* OprationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C138A12583846200D951F3 /* OprationsListViewController.swift */; };
 		E4C138AA2583A27300D951F3 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C138A92583A27300D951F3 /* DividerView.swift */; };
@@ -225,6 +230,7 @@
 		E40FB28A2567A97500626569 /* CategoriesPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesPickerViewController.swift; sourceTree = "<group>"; };
 		E40FB28F2567AA6900626569 /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
 		E40FB2942567AD7700626569 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
+		E41172EA2587E309005BAB60 /* CertificatesContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificatesContentView.swift; sourceTree = "<group>"; };
 		E41327912565699000090419 /* AdvancedSearchFolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSearchFolderCollectionViewCell.swift; sourceTree = "<group>"; };
 		E413279925656BB800090419 /* AdvancedSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSearchViewController.swift; sourceTree = "<group>"; };
 		E4151D7425626904009F1D45 /* TimeRangePickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRangePickerTextField.swift; sourceTree = "<group>"; };
@@ -280,12 +286,16 @@
 		E4A6704E2563B5310057083C /* YearPickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearPickerTextField.swift; sourceTree = "<group>"; };
 		E4A6706F2563C2A60057083C /* CreditCardNumberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardNumberTextField.swift; sourceTree = "<group>"; };
 		E4A670772563C3580057083C /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		E4A9881C2587DAA50006EB3F /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
+		E4A988242587E2490006EB3F /* BasicCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCardView.swift; sourceTree = "<group>"; };
 		E4B2A743256CB5BC0055C1AE /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		E4B2A74F256CB5DF0055C1AE /* ProductDetailsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsContentView.swift; sourceTree = "<group>"; };
 		E4B2A754256CBAA40055C1AE /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		E4B2A759256CBAC70055C1AE /* QuantitySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantitySelectionView.swift; sourceTree = "<group>"; };
 		E4B2A75E256CC1D60055C1AE /* VerticalPaddingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalPaddingView.swift; sourceTree = "<group>"; };
 		E4B2A763256CC5F60055C1AE /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		E4B9F4722587E6E4001D5F2F /* CertificatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificatesViewController.swift; sourceTree = "<group>"; };
+		E4B9F47A2587E915001D5F2F /* UploadCertificateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCertificateView.swift; sourceTree = "<group>"; };
 		E4C1389825833B7800D951F3 /* BaseOprationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOprationCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4C138A12583846200D951F3 /* OprationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OprationsListViewController.swift; sourceTree = "<group>"; };
 		E4C138A92583A27300D951F3 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
@@ -452,8 +462,6 @@
 				E40FB2942567AD7700626569 /* AuthHeaderView.swift */,
 				E40FB28F2567AA6900626569 /* CheckboxView.swift */,
 				E4D8429E256AC59200D215B4 /* BigSegmentedControl.swift */,
-				E49B9FCA257781830057EDDE /* FieldView.swift */,
-				E49B9FCF257782FF0057EDDE /* CardContainerView.swift */,
 			);
 			path = "App General";
 			sourceTree = "<group>";
@@ -715,6 +723,24 @@
 			path = Distributers;
 			sourceTree = "<group>";
 		};
+		E4A9881A2587DA5E0006EB3F /* Company Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E4B9F4722587E6E4001D5F2F /* CertificatesViewController.swift */,
+				E4A9881B2587DA980006EB3F /* Views */,
+			);
+			path = "Company Profile";
+			sourceTree = "<group>";
+		};
+		E4A9881B2587DA980006EB3F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E41172EA2587E309005BAB60 /* CertificatesContentView.swift */,
+				E4B9F47A2587E915001D5F2F /* UploadCertificateView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E4B2A741256CB5A10055C1AE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -815,6 +841,10 @@
 				E4B2A75E256CC1D60055C1AE /* VerticalPaddingView.swift */,
 				E49B9FEC2577869B0057EDDE /* BasicViewWithSetup.swift */,
 				E4C138A92583A27300D951F3 /* DividerView.swift */,
+				E4A9881C2587DAA50006EB3F /* LabelView.swift */,
+				E4A988242587E2490006EB3F /* BasicCardView.swift */,
+				E49B9FCF257782FF0057EDDE /* CardContainerView.swift */,
+				E49B9FCA257781830057EDDE /* FieldView.swift */,
 			);
 			path = "General General";
 			sourceTree = "<group>";
@@ -1021,6 +1051,7 @@
 		F98D0E8A252F786200D46EE9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E4A9881A2587DA5E0006EB3F /* Company Profile */,
 				E4C1389625833AE800D951F3 /* Operations */,
 				E48EC2E2257FBFC1005C0E44 /* Payment Cards */,
 				E49B9FD4257783B10057EDDE /* Checkout */,
@@ -1335,6 +1366,7 @@
 				E4C138AF2583AA4B00D951F3 /* FinishedOperationCollectionViewCell.swift in Sources */,
 				E4E68139255D435E0051D52D /* LocationSearchHistoryManager.swift in Sources */,
 				E450C2492563CA3600F6F392 /* DistributersListCoordinator.swift in Sources */,
+				E4B9F47B2587E915001D5F2F /* UploadCertificateView.swift in Sources */,
 				E4EE5CB2256F6FB10031BC71 /* Then.swift in Sources */,
 				E48EC2ED257FC11A005C0E44 /* CreditCardCollectionViewCell.swift in Sources */,
 				E4A0B27625868F4A00AF3CEA /* CheckDistributersOperationAccessoryView.swift in Sources */,
@@ -1377,7 +1409,9 @@
 				E4E6813A255D435E0051D52D /* LocationSearchResultsViewController.swift in Sources */,
 				E4CB7423255D23450017A499 /* ScrollContainerView.swift in Sources */,
 				E4FAB5A62565007900F25473 /* ExpandableItemFolder.swift in Sources */,
+				E4A988252587E2490006EB3F /* BasicCardView.swift in Sources */,
 				E4C705EC255BBD6100DD29E3 /* UIImage+Addtions.swift in Sources */,
+				E41172EB2587E309005BAB60 /* CertificatesContentView.swift in Sources */,
 				E4B2A744256CB5BC0055C1AE /* ProductDetailsViewController.swift in Sources */,
 				E4A6704A2563B52A0057083C /* MonthPickerTextField.swift in Sources */,
 				E4E6813C255D435E0051D52D /* Location.swift in Sources */,
@@ -1410,6 +1444,7 @@
 				E49B9FD6257783BA0057EDDE /* CheckoutCoordinator.swift in Sources */,
 				E4CB73FF255D158E0017A499 /* ValidationError.swift in Sources */,
 				E4E68147255D481D0051D52D /* SampleSignupViewController.swift in Sources */,
+				E4A9881D2587DAA50006EB3F /* LabelView.swift in Sources */,
 				E4C138A22583846200D951F3 /* OprationsListViewController.swift in Sources */,
 				E49B9FE82577866C0057EDDE /* CheckoutViewController+Cards.swift in Sources */,
 				E496B260255B22A2001BEC0F /* SignUpCategoriesListView.swift in Sources */,
@@ -1467,6 +1502,7 @@
 				E40FB27A2567A91700626569 /* CategoryPickerController.swift in Sources */,
 				E4A0B26725868D8600AF3CEA /* OperationDetailsViewController.swift in Sources */,
 				E4C1389925833B7800D951F3 /* BaseOprationCollectionViewCell.swift in Sources */,
+				E4B9F4732587E6E4001D5F2F /* CertificatesViewController.swift in Sources */,
 				E48C27C42569DA9F006E01FB /* LocationSearchFieldType.swift in Sources */,
 				E47D7ACD2580B76100107DF1 /* NewPaymentCreditCardContentView.swift in Sources */,
 				E4000CE7255C121900E89ABB /* UIStackView+Additions.swift in Sources */,
