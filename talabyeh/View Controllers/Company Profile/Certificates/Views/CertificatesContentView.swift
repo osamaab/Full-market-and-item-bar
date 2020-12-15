@@ -70,7 +70,7 @@ extension CertificatesContentView: UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == sectionKind {
-            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.identifier, for: indexPath) as! HeaderView
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TintedLabelCollectionViewSectionHeader.identifier, for: indexPath) as! TintedLabelCollectionViewSectionHeader
             view.titleLabel.text = "Cat Facts 101"
             return view
         }
@@ -84,7 +84,7 @@ extension CertificatesContentView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeLayout())
         collectionView.backgroundColor = .clear
         collectionView.register(cellClass: ItemCell.self)
-        collectionView.register(HeaderView.self, forSupplementaryViewOfKind: sectionKind, withReuseIdentifier: HeaderView.identifier)
+        collectionView.register(TintedLabelCollectionViewSectionHeader.self, forSupplementaryViewOfKind: sectionKind, withReuseIdentifier: TintedLabelCollectionViewSectionHeader.identifier)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         collectionView.dataSource = self
@@ -157,35 +157,6 @@ extension CertificatesContentView {
             
             imageView.leading(0).width(10).height(10).centerVertically()
             titleLabel.leading(15).trailing(0).centerVertically()
-        }
-    }
-    
-    class HeaderView: UICollectionReusableView {
-        
-        let titleLabel: UILabel = .init()
-        
-        override init(frame: CGRect) {
-            super.init(frame: frame)
-            setup()
-        }
-        
-        required init?(coder: NSCoder) {
-            super.init(coder: coder)
-            setup()
-        }
-        
-        func setup(){
-            layer.cornerRadius = 10
-            backgroundColor = DefaultColorsProvider.lightTint
-            
-            addSubview(titleLabel)
-            
-            titleLabel.font = .font(for: .bold, size: 16)
-            titleLabel.textColor = DefaultColorsProvider.darkerTint
-            titleLabel.translatesAutoresizingMaskIntoConstraints = false
-            
-            titleLabel.fillVertically(padding: 5)
-            titleLabel.fillHorizontally(padding: 8)
         }
     }
 }
