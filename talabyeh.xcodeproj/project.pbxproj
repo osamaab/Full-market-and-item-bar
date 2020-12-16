@@ -52,6 +52,9 @@
 		E4749C442588EEAA00479538 /* RoundedFillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4749C432588EEAA00479538 /* RoundedFillButton.swift */; };
 		E4749C4A2588F1BB00479538 /* CompanyInformationInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4749C492588F1BB00479538 /* CompanyInformationInputViewController.swift */; };
 		E4749C522588F1C600479538 /* CompanyInformationInputContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4749C512588F1C600479538 /* CompanyInformationInputContentView.swift */; };
+		E4749C582588FDAF00479538 /* ProfileOptionsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4749C572588FDAF00479538 /* ProfileOptionsContentView.swift */; };
+		E4749C602588FDC600479538 /* CompanyProfileOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4749C5F2588FDC600479538 /* CompanyProfileOptionsViewController.swift */; };
+		E4749C692589038A00479538 /* ChangePasswordContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4749C682589038A00479538 /* ChangePasswordContentView.swift */; };
 		E47D7AC82580B6FE00107DF1 /* NewPaymentCreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D7AC72580B6FE00107DF1 /* NewPaymentCreditCardViewController.swift */; };
 		E47D7ACD2580B76100107DF1 /* NewPaymentCreditCardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D7ACC2580B76100107DF1 /* NewPaymentCreditCardContentView.swift */; };
 		E48C27BF2569DA99006E01FB /* TextSearchFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48C27BE2569DA99006E01FB /* TextSearchFieldType.swift */; };
@@ -82,6 +85,10 @@
 		E49B9FE3257784BA0057EDDE /* CheckoutContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49B9FE2257784BA0057EDDE /* CheckoutContentView.swift */; };
 		E49B9FE82577866C0057EDDE /* CheckoutViewController+Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49B9FE72577866C0057EDDE /* CheckoutViewController+Cards.swift */; };
 		E49B9FED2577869B0057EDDE /* BasicViewWithSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49B9FEC2577869B0057EDDE /* BasicViewWithSetup.swift */; };
+		E49C73F5258A68DA002A5A59 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C73F4258A68DA002A5A59 /* ChangePasswordViewController.swift */; };
+		E49C73FE258A69EC002A5A59 /* CompanyLocationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C73FD258A69EC002A5A59 /* CompanyLocationCollectionViewCell.swift */; };
+		E49C740B258A6A04002A5A59 /* CompanyLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C740A258A6A04002A5A59 /* CompanyLocationsViewController.swift */; };
+		E49C7419258A6D76002A5A59 /* CompanyLocationsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C7418258A6D76002A5A59 /* CompanyLocationsContentView.swift */; };
 		E4A0B26725868D8600AF3CEA /* OperationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A0B26625868D8600AF3CEA /* OperationDetailsViewController.swift */; };
 		E4A0B26D25868E1300AF3CEA /* OperationDetailsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A0B26C25868E1300AF3CEA /* OperationDetailsContentView.swift */; };
 		E4A0B27625868F4A00AF3CEA /* CheckDistributersOperationAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A0B27525868F4A00AF3CEA /* CheckDistributersOperationAccessoryView.swift */; };
@@ -260,6 +267,9 @@
 		E4749C432588EEAA00479538 /* RoundedFillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedFillButton.swift; sourceTree = "<group>"; };
 		E4749C492588F1BB00479538 /* CompanyInformationInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInformationInputViewController.swift; sourceTree = "<group>"; };
 		E4749C512588F1C600479538 /* CompanyInformationInputContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInformationInputContentView.swift; sourceTree = "<group>"; };
+		E4749C572588FDAF00479538 /* ProfileOptionsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOptionsContentView.swift; sourceTree = "<group>"; };
+		E4749C5F2588FDC600479538 /* CompanyProfileOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyProfileOptionsViewController.swift; sourceTree = "<group>"; };
+		E4749C682589038A00479538 /* ChangePasswordContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordContentView.swift; sourceTree = "<group>"; };
 		E47D7AC72580B6FE00107DF1 /* NewPaymentCreditCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPaymentCreditCardViewController.swift; sourceTree = "<group>"; };
 		E47D7ACC2580B76100107DF1 /* NewPaymentCreditCardContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPaymentCreditCardContentView.swift; sourceTree = "<group>"; };
 		E48C27BE2569DA99006E01FB /* TextSearchFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSearchFieldType.swift; sourceTree = "<group>"; };
@@ -290,6 +300,10 @@
 		E49B9FE2257784BA0057EDDE /* CheckoutContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutContentView.swift; sourceTree = "<group>"; };
 		E49B9FE72577866C0057EDDE /* CheckoutViewController+Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CheckoutViewController+Cards.swift"; sourceTree = "<group>"; };
 		E49B9FEC2577869B0057EDDE /* BasicViewWithSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewWithSetup.swift; sourceTree = "<group>"; };
+		E49C73F4258A68DA002A5A59 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		E49C73FD258A69EC002A5A59 /* CompanyLocationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyLocationCollectionViewCell.swift; sourceTree = "<group>"; };
+		E49C740A258A6A04002A5A59 /* CompanyLocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyLocationsViewController.swift; sourceTree = "<group>"; };
+		E49C7418258A6D76002A5A59 /* CompanyLocationsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyLocationsContentView.swift; sourceTree = "<group>"; };
 		E4A0B26625868D8600AF3CEA /* OperationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationDetailsViewController.swift; sourceTree = "<group>"; };
 		E4A0B26C25868E1300AF3CEA /* OperationDetailsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationDetailsContentView.swift; sourceTree = "<group>"; };
 		E4A0B27525868F4A00AF3CEA /* CheckDistributersOperationAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDistributersOperationAccessoryView.swift; sourceTree = "<group>"; };
@@ -586,6 +600,24 @@
 			path = "Information Input";
 			sourceTree = "<group>";
 		};
+		E4749C562588FB3A00479538 /* Profile Options */ = {
+			isa = PBXGroup;
+			children = (
+				E4749C5F2588FDC600479538 /* CompanyProfileOptionsViewController.swift */,
+				E4749C572588FDAF00479538 /* ProfileOptionsContentView.swift */,
+			);
+			path = "Profile Options";
+			sourceTree = "<group>";
+		};
+		E4749C67258901D100479538 /* Change Password */ = {
+			isa = PBXGroup;
+			children = (
+				E49C73F4258A68DA002A5A59 /* ChangePasswordViewController.swift */,
+				E4749C682589038A00479538 /* ChangePasswordContentView.swift */,
+			);
+			path = "Change Password";
+			sourceTree = "<group>";
+		};
 		E48EC2E2257FBFC1005C0E44 /* Payment Cards */ = {
 			isa = PBXGroup;
 			children = (
@@ -746,6 +778,16 @@
 			path = Checkout;
 			sourceTree = "<group>";
 		};
+		E49C73FC258A69E0002A5A59 /* Company Locations */ = {
+			isa = PBXGroup;
+			children = (
+				E49C740A258A6A04002A5A59 /* CompanyLocationsViewController.swift */,
+				E49C7418258A6D76002A5A59 /* CompanyLocationsContentView.swift */,
+				E49C73FD258A69EC002A5A59 /* CompanyLocationCollectionViewCell.swift */,
+			);
+			path = "Company Locations";
+			sourceTree = "<group>";
+		};
 		E4A0B26B25868E0B00AF3CEA /* Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -777,6 +819,9 @@
 		E4A9881A2587DA5E0006EB3F /* Company Profile */ = {
 			isa = PBXGroup;
 			children = (
+				E49C73FC258A69E0002A5A59 /* Company Locations */,
+				E4749C67258901D100479538 /* Change Password */,
+				E4749C562588FB3A00479538 /* Profile Options */,
 				E4749C482588F1AC00479538 /* Information Input */,
 				E4749C242588ED2A00479538 /* Certificates */,
 				E4749C202588ED2100479538 /* Contact Designers */,
@@ -1418,6 +1463,7 @@
 				F990A388254082C500ABC4CF /* DistributorSignUpView.swift in Sources */,
 				E4C138AF2583AA4B00D951F3 /* FinishedOperationCollectionViewCell.swift in Sources */,
 				E4E68139255D435E0051D52D /* LocationSearchHistoryManager.swift in Sources */,
+				E49C7419258A6D76002A5A59 /* CompanyLocationsContentView.swift in Sources */,
 				E450C2492563CA3600F6F392 /* DistributersListCoordinator.swift in Sources */,
 				E4B9F47B2587E915001D5F2F /* UploadCertificateView.swift in Sources */,
 				E4EE5CB2256F6FB10031BC71 /* Then.swift in Sources */,
@@ -1440,6 +1486,7 @@
 				E40FB2902567AA6900626569 /* CheckboxView.swift in Sources */,
 				E4A670392563AAF60057083C /* ProfileMenuItem.swift in Sources */,
 				E4C70612255BC44900DD29E3 /* NibInstantiatable.swift in Sources */,
+				E49C73FE258A69EC002A5A59 /* CompanyLocationCollectionViewCell.swift in Sources */,
 				E44AD5D6256A3B5600574B6A /* CollectionViewSectionHeader.swift in Sources */,
 				E4C705C6255BB2FA00DD29E3 /* UISearchBar+Additions.swift in Sources */,
 				F96B85242529A05800CEDCF8 /* RegistrationViewController.swift in Sources */,
@@ -1453,12 +1500,14 @@
 				E40FB28B2567A97500626569 /* CategoriesPickerViewController.swift in Sources */,
 				E4FAB5A82565007900F25473 /* ExpandableCollectionViewManager.swift in Sources */,
 				E4FAB5AE2565007900F25473 /* ExpandableAnimationFactory.swift in Sources */,
+				E4749C582588FDAF00479538 /* ProfileOptionsContentView.swift in Sources */,
 				E40FB266256797E800626569 /* LocationPickerTextField.swift in Sources */,
 				E413279A25656BB800090419 /* AdvancedSearchViewController.swift in Sources */,
 				E496B2CA255B2ABF001BEC0F /* ValidationTextField.swift in Sources */,
 				E45D8550257628D9009ACC8D /* ComponentsLabCoordinator.swift in Sources */,
 				F98D0E54252DE6F200D46EE9 /* SignUpWizardViewController.swift in Sources */,
 				E4D8429F256AC59200D215B4 /* BigSegmentedControl.swift in Sources */,
+				E4749C692589038A00479538 /* ChangePasswordContentView.swift in Sources */,
 				E4B2A75F256CC1D60055C1AE /* VerticalPaddingView.swift in Sources */,
 				E4E6813A255D435E0051D52D /* LocationSearchResultsViewController.swift in Sources */,
 				E4CB7423255D23450017A499 /* ScrollContainerView.swift in Sources */,
@@ -1481,6 +1530,7 @@
 				E4749C4A2588F1BB00479538 /* CompanyInformationInputViewController.swift in Sources */,
 				E45E552A256F7180008856FD /* CartCoordinator.swift in Sources */,
 				E47D7AC82580B6FE00107DF1 /* NewPaymentCreditCardViewController.swift in Sources */,
+				E49C73F5258A68DA002A5A59 /* ChangePasswordViewController.swift in Sources */,
 				E4FF498C2560F43900B4CBC4 /* NewDistributerViewController.swift in Sources */,
 				E4000CA6255C050D00E89ABB /* NSObject+Traits.swift in Sources */,
 				E4151D7525626904009F1D45 /* TimeRangePickerTextField.swift in Sources */,
@@ -1494,6 +1544,7 @@
 				F96B85502529B67200CEDCF8 /* ChangeLanguageViewController.swift in Sources */,
 				E48EC2E4257FC0EC005C0E44 /* PaymentCardsPickerViewController.swift in Sources */,
 				E4A670452563B3980057083C /* PaymentCardValidator.swift in Sources */,
+				E49C740B258A6A04002A5A59 /* CompanyLocationsViewController.swift in Sources */,
 				E4FF49942560F45800B4CBC4 /* NewDistributerContentView.swift in Sources */,
 				E4D84297256AC50000D215B4 /* FavoritesViewController.swift in Sources */,
 				E49B9FD6257783BA0057EDDE /* CheckoutCoordinator.swift in Sources */,
@@ -1534,6 +1585,7 @@
 				E48C27BF2569DA99006E01FB /* TextSearchFieldType.swift in Sources */,
 				E4C138BE2583AA9000D951F3 /* PendingOperationCollectionViewCell.swift in Sources */,
 				E41327922565699000090419 /* AdvancedSearchFolderCollectionViewCell.swift in Sources */,
+				E4749C602588FDC600479538 /* CompanyProfileOptionsViewController.swift in Sources */,
 				F9CC27C625332B6B00408FDA /* SignInViewController.swift in Sources */,
 				E48C27C92569DAA4006E01FB /* CategorySearchFieldType.swift in Sources */,
 				F94608F32545D92B00C74D95 /* ProfilePageViewController.swift in Sources */,

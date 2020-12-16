@@ -25,7 +25,7 @@ class ComponentsLabViewController: UIViewController {
         button.centerInContainer()
         
         button.addAction {
-            self.navigationController?.pushViewController(CompanyInformationInputViewController(), animated: true)
+            self.navigationController?.pushViewController(CompanyLocationsViewController(), animated: true)
         }
     }
 }
