@@ -15,6 +15,12 @@ protocol ChoiceItemType {
     var title: String { get }
 }
 
+extension ChoiceItemType {
+    func toAny() -> AnyChoiceItem {
+        .init(item: self)
+    }
+}
+
 struct AnyChoiceItem: ChoiceItemType {
     
     let title: String
