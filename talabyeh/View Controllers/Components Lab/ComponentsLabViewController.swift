@@ -25,7 +25,7 @@ class ComponentsLabViewController: UIViewController {
         button.centerInContainer()
         
         button.addAction {
-            self.navigationController?.pushViewController(CLScreensListViewController(), animated: true)
+            self.navigationController?.pushViewController(CLComponentsListViewController(), animated: true)
         }
     }
 }

@@ -3,7 +3,7 @@
 //  talabyeh
 //
 //  Created by Loai Elayan on 11/1/20.
-//  Copyright © 2020 Converged Technology. All rights reserved.
+//  Copyright © 2020 Dominate. All rights reserved.
 //
 
 import UIKit

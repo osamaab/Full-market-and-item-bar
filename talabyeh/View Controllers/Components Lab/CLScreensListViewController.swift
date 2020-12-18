@@ -11,14 +11,14 @@ import Stevia
 
 class CLScreensListViewController: UIViewController {
     
-    typealias DataSource = UICollectionViewDiffableDataSource<Int, CLAnyScreenItem>
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Int, CLAnyScreenItem>
+    typealias DataSource = UICollectionViewDiffableDataSource<Int, CLScreenItem>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Int, CLScreenItem>
     
     lazy var collectionView: UICollectionView = createCollectionView(for: createLayout())
     lazy var dataSource: DataSource = createDataSource(for: collectionView)
 
 
-    fileprivate var items: [CLAnyScreenItem] = []
+    fileprivate var items: [CLScreenItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,7 @@ class CLScreensListViewController: UIViewController {
         var snapshot = Snapshot()
         snapshot.appendSections([0])
         
-        let items = CLAnyScreenItem.getAllAvailable()
+        let items = CLScreenItem.getAllAvailable()
         
         
         snapshot.appendItems(items)

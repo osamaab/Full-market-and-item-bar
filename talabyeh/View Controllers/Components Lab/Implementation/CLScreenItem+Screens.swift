@@ -1,5 +1,5 @@
 //
-//  CLAnyScreenItem+Screens.swift
+//  CLScreenItem+Screens.swift
 //  talabyeh
 //
 //  Created by Hussein Work on 18/12/2020.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-extension CLAnyScreenItem {
-    static func getAllAvailable() -> [CLAnyScreenItem] {
-        readyClasses().map { CLAnyScreenItem(screenClass: $0) } + [profile()]
+extension CLScreenItem {
+    static func getAllAvailable() -> [CLScreenItem] {
+        readyClasses().map { CLScreenItem(screenClass: $0) } + [profile()]
     }
     
     static func profile() -> Self {
-        CLAnyScreenItem(name: "Profile") { () -> UIViewController in
+        CLScreenItem(name: "Profile") { () -> UIViewController in
             let headerInfo = ProfileHeaderInfo(title: "Hussein AlRyalat",
                                                imageURL: nil,
                                                subtitle: "hus.sc@aol.com",

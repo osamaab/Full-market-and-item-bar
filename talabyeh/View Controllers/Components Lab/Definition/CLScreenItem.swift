@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-struct CLAnyScreenItem: Hashable, Equatable {
+struct CLScreenItem: Hashable, Equatable {
     typealias CreateHandler = (() -> UIViewController)
     
-    static func == (lhs: CLAnyScreenItem, rhs: CLAnyScreenItem) -> Bool {
+    static func == (lhs: CLScreenItem, rhs: CLScreenItem) -> Bool {
         lhs.id == rhs.id
     }
     
@@ -64,7 +64,7 @@ struct CLAnyScreenItem: Hashable, Equatable {
     }
 }
 
-extension CLAnyScreenItem {
+extension CLScreenItem {
     init(screenClass: UIViewController.Type){
         let name = String(describing: screenClass)
         let trailingsRemoved = name.replacingOccurrences(of: "ViewController", with: "")
