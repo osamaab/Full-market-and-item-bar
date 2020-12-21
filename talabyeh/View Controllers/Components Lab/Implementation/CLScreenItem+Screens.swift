@@ -8,6 +8,19 @@
 
 import UIKit
 
+extension CLScreensSection {
+    static let profile: CLScreensSection = {
+        let screenClasses = [
+            CompanyLocationsViewController.self,
+            ChangePasswordViewController.self,
+            CompanyProfileOptionsViewController.self,
+            CertificatesViewController.self
+        ]
+        
+        return CLScreensSection(name: "Profile", items: [CLScreenItem.profile()] + screenClasses.map { CLScreenItem(screenClass: $0) })
+    }()
+}
+
 extension CLScreenItem {
     static func getAllAvailable() -> [CLScreenItem] {
         readyClasses().map { CLScreenItem(screenClass: $0) } + [profile()]

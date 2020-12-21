@@ -14,12 +14,26 @@ class CLComponentsListViewController: UIViewController {
     lazy var scrollView: ScrollContainerView = .init(contentView: containerStackView)
     lazy var containerStackView: UIStackView = .init()
     
-    fileprivate(set) var components: [CLComponentItem] = []
-
+    fileprivate(set) var components: [CLComponentItem]
+    
+    init(components: [CLComponentItem] = []){
+        self.components = components
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupContainerView()
+        reRenderAllComponents()
+    }
+    
+    fileprivate func setupContainerView(){
         view.backgroundColor = DefaultColorsProvider.background1
         
         containerStackView
@@ -34,9 +48,6 @@ class CLComponentsListViewController: UIViewController {
         
         scrollView.Top == view.safeAreaLayoutGuide.Top + 20
         scrollView.left(20).right(20).bottom(0)
-        
-        registerDefaultComponents()
-        reRenderAllComponents()
     }
 }
 
@@ -54,12 +65,20 @@ extension CLComponentsListViewController {
         components.append(item)
     }
     
-    func register(attributes: [CLComponentAttribute], for factory: @escaping CLComponentItem.ComponentViewFactory){
+    
+    @discardableResult
+    func register(attributes: [CLComponentAttribute], for factory: @escaping CLComponentItem.ComponentViewFactory) -> CLComponentItem {
         register(name: "", attributes: attributes + [.useClassName], for: factory)
     }
     
-    func register(name: String, attributes: [CLComponentAttribute], for factory: @escaping CLComponentItem.ComponentViewFactory){
-        registerComponent(item: CLAnyComponentItem(name: name, attributes: attributes, factory: factory))
+    
+    @discardableResult
+    func register(name: String, attributes: [CLComponentAttribute], for factory: @escaping CLComponentItem.ComponentViewFactory) -> CLComponentItem {
+        let item =  CLAnyComponentItem(name: name, attributes: attributes, factory: factory)
+        
+        self.registerComponent(item: item)
+        
+        return item
     }
     
     func reRenderAllComponents(){

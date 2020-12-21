@@ -9,16 +9,31 @@
 import UIKit
 import Stevia
 
+
+extension CLScreensSection {
+    static let defaultAll = CLScreensSection(name: "All", items: CLScreenItem.getAllAvailable())
+}
+
 class CLScreensListViewController: UIViewController {
     
-    typealias DataSource = UICollectionViewDiffableDataSource<Int, CLScreenItem>
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Int, CLScreenItem>
+    typealias DataSource = UICollectionViewDiffableDataSource<CLScreensSection, CLScreenItem>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<CLScreensSection, CLScreenItem>
     
     lazy var collectionView: UICollectionView = createCollectionView(for: createLayout())
     lazy var dataSource: DataSource = createDataSource(for: collectionView)
 
 
-    fileprivate var items: [CLScreenItem] = []
+    fileprivate var sections: [CLScreensSection] = []
+    
+    
+    init(sections: [CLScreensSection]){
+        self.sections = sections
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,12 +56,12 @@ class CLScreensListViewController: UIViewController {
     
     func setupDataAndCreateSnapshot(){
         var snapshot = Snapshot()
-        snapshot.appendSections([0])
+        snapshot.appendSections(self.sections)
         
-        let items = CLScreenItem.getAllAvailable()
-        
-        
-        snapshot.appendItems(items)
+        sections.forEach {
+            snapshot.appendItems($0.items, toSection: $0)
+        }
+
         dataSource.apply(snapshot)
     }
 }
@@ -71,6 +86,7 @@ extension CLScreensListViewController {
             let cell = collectionView.dequeueCell(cellClass: CLScreenitemCollectionViewCell.self, for: indexPath)
             cell.titleLabel.text = item.name
             cell.subtitleLabel.text = item.path
+            cell.subtitleLabel.isHidden = item.path?.isEmpty ?? true || item.path == nil
             
             return cell
         }

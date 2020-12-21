@@ -39,6 +39,10 @@
 		E413279A25656BB800090419 /* AdvancedSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E413279925656BB800090419 /* AdvancedSearchViewController.swift */; };
 		E4151D7525626904009F1D45 /* TimeRangePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4151D7425626904009F1D45 /* TimeRangePickerTextField.swift */; };
 		E4151D7A25626910009F1D45 /* WeekdaysRangePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4151D7925626910009F1D45 /* WeekdaysRangePickerTextField.swift */; };
+		E4298490258DB0BB00818E09 /* CLAnyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429848F258DB0BB00818E09 /* CLAnyItem.swift */; };
+		E4298495258DB0C900818E09 /* CLAnySectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4298494258DB0C900818E09 /* CLAnySectionType.swift */; };
+		E429849A258DB0DB00818E09 /* CLComponentsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4298499258DB0DB00818E09 /* CLComponentsSection.swift */; };
+		E429849F258DB0F000818E09 /* CLScreensSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429849E258DB0F000818E09 /* CLScreensSection.swift */; };
 		E44087F4258C9087004196A1 /* CLComponentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44087F3258C9087004196A1 /* CLComponentItem.swift */; };
 		E44087FF258C90BA004196A1 /* CLComponentContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44087FE258C90BA004196A1 /* CLComponentContainerView.swift */; };
 		E4408804258C9135004196A1 /* CLComponentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4408803258C9135004196A1 /* CLComponentsListViewController.swift */; };
@@ -55,6 +59,11 @@
 		E45E552A256F7180008856FD /* CartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45E5529256F7180008856FD /* CartCoordinator.swift */; };
 		E45E5535256F77DC008856FD /* CartSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45E5534256F77DC008856FD /* CartSummaryView.swift */; };
 		E45E5549256F9F4E008856FD /* DeliveryAreaPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45E5548256F9F4E008856FD /* DeliveryAreaPickerViewController.swift */; };
+		E4602D1F258CC4BC004C556B /* CLComponent+Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4602D1E258CC4BC004C556B /* CLComponent+Components.swift */; };
+		E4602D24258CC5D0004C556B /* CLItemsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4602D23258CC5D0004C556B /* CLItemsSection.swift */; };
+		E4602D2F258CC6C9004C556B /* CLLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4602D2E258CC6C9004C556B /* CLLabViewController.swift */; };
+		E4602D34258CC71C004C556B /* CLItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4602D33258CC71C004C556B /* CLItem.swift */; };
+		E4602D39258CC75D004C556B /* CLSectionHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4602D38258CC75D004C556B /* CLSectionHeaderCollectionReusableView.swift */; };
 		E4749C292588ED6C00479538 /* ContactDesignersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4749C282588ED6C00479538 /* ContactDesignersViewController.swift */; };
 		E4749C322588EDD800479538 /* ContactFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4749C312588EDD800479538 /* ContactFormView.swift */; };
 		E4749C3A2588EE1F00479538 /* TintedLabelCollectionViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4749C392588EE1F00479538 /* TintedLabelCollectionViewSectionHeader.swift */; };
@@ -264,6 +273,10 @@
 		E413279925656BB800090419 /* AdvancedSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSearchViewController.swift; sourceTree = "<group>"; };
 		E4151D7425626904009F1D45 /* TimeRangePickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRangePickerTextField.swift; sourceTree = "<group>"; };
 		E4151D7925626910009F1D45 /* WeekdaysRangePickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdaysRangePickerTextField.swift; sourceTree = "<group>"; };
+		E429848F258DB0BB00818E09 /* CLAnyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLAnyItem.swift; sourceTree = "<group>"; };
+		E4298494258DB0C900818E09 /* CLAnySectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLAnySectionType.swift; sourceTree = "<group>"; };
+		E4298499258DB0DB00818E09 /* CLComponentsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLComponentsSection.swift; sourceTree = "<group>"; };
+		E429849E258DB0F000818E09 /* CLScreensSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLScreensSection.swift; sourceTree = "<group>"; };
 		E44087F3258C9087004196A1 /* CLComponentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLComponentItem.swift; sourceTree = "<group>"; };
 		E44087FE258C90BA004196A1 /* CLComponentContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLComponentContainerView.swift; sourceTree = "<group>"; };
 		E4408803258C9135004196A1 /* CLComponentsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLComponentsListViewController.swift; sourceTree = "<group>"; };
@@ -280,6 +293,11 @@
 		E45E5529256F7180008856FD /* CartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCoordinator.swift; sourceTree = "<group>"; };
 		E45E5534256F77DC008856FD /* CartSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartSummaryView.swift; sourceTree = "<group>"; };
 		E45E5548256F9F4E008856FD /* DeliveryAreaPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAreaPickerViewController.swift; sourceTree = "<group>"; };
+		E4602D1E258CC4BC004C556B /* CLComponent+Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLComponent+Components.swift"; sourceTree = "<group>"; };
+		E4602D23258CC5D0004C556B /* CLItemsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLItemsSection.swift; sourceTree = "<group>"; };
+		E4602D2E258CC6C9004C556B /* CLLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLabViewController.swift; sourceTree = "<group>"; };
+		E4602D33258CC71C004C556B /* CLItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLItem.swift; sourceTree = "<group>"; };
+		E4602D38258CC75D004C556B /* CLSectionHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLSectionHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		E4749C282588ED6C00479538 /* ContactDesignersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDesignersViewController.swift; sourceTree = "<group>"; };
 		E4749C312588EDD800479538 /* ContactFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFormView.swift; sourceTree = "<group>"; };
 		E4749C392588EE1F00479538 /* TintedLabelCollectionViewSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintedLabelCollectionViewSectionHeader.swift; sourceTree = "<group>"; };
@@ -519,6 +537,7 @@
 			isa = PBXGroup;
 			children = (
 				E40DFA79258C7A7F00548BD9 /* CLScreenitemCollectionViewCell.swift */,
+				E4602D38258CC75D004C556B /* CLSectionHeaderCollectionReusableView.swift */,
 				E44087FE258C90BA004196A1 /* CLComponentContainerView.swift */,
 			);
 			path = Views;
@@ -527,6 +546,12 @@
 		E40DFA78258C7A7100548BD9 /* Definition */ = {
 			isa = PBXGroup;
 			children = (
+				E4602D33258CC71C004C556B /* CLItem.swift */,
+				E4602D23258CC5D0004C556B /* CLItemsSection.swift */,
+				E429848F258DB0BB00818E09 /* CLAnyItem.swift */,
+				E4298494258DB0C900818E09 /* CLAnySectionType.swift */,
+				E4298499258DB0DB00818E09 /* CLComponentsSection.swift */,
+				E429849E258DB0F000818E09 /* CLScreensSection.swift */,
 				E40DFA8F258C7B9E00548BD9 /* CLScreenItem.swift */,
 				E44087F3258C9087004196A1 /* CLComponentItem.swift */,
 				E4408813258C92E9004196A1 /* CLComponentAttribute.swift */,
@@ -539,6 +564,7 @@
 			isa = PBXGroup;
 			children = (
 				E40DFA98258C810600548BD9 /* CLScreenItem+Screens.swift */,
+				E4602D1E258CC4BC004C556B /* CLComponent+Components.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -601,6 +627,7 @@
 			children = (
 				E45D854F257628D9009ACC8D /* ComponentsLabCoordinator.swift */,
 				E45D8557257628EC009ACC8D /* ComponentsLabViewController.swift */,
+				E4602D2E258CC6C9004C556B /* CLLabViewController.swift */,
 				E40DFA81258C7B3500548BD9 /* CLScreensListViewController.swift */,
 				E4408803258C9135004196A1 /* CLComponentsListViewController.swift */,
 				E40DFA97258C80FC00548BD9 /* Implementation */,
@@ -1511,6 +1538,7 @@
 			files = (
 				E4C705B0255BB18100DD29E3 /* ScreenMessagePresenterType.swift in Sources */,
 				F9EA04F4252C90E500DC288B /* RoundedButton.swift in Sources */,
+				E4602D1F258CC4BC004C556B /* CLComponent+Components.swift in Sources */,
 				E40FB2832567A96B00626569 /* CategoryItemCollectionViewCell.swift in Sources */,
 				E496B2CF255B2B10001BEC0F /* BorderedTextField.swift in Sources */,
 				E4B2A75A256CBAC70055C1AE /* QuantitySelectionView.swift in Sources */,
@@ -1541,6 +1569,7 @@
 				E4FF49992561021F00B4CBC4 /* BasicTextField.swift in Sources */,
 				E4C138AA2583A27300D951F3 /* DividerView.swift in Sources */,
 				E40FB2902567AA6900626569 /* CheckboxView.swift in Sources */,
+				E4602D2F258CC6C9004C556B /* CLLabViewController.swift in Sources */,
 				E4A670392563AAF60057083C /* ProfileMenuItem.swift in Sources */,
 				E4C70612255BC44900DD29E3 /* NibInstantiatable.swift in Sources */,
 				E49C73FE258A69EC002A5A59 /* CompanyLocationCollectionViewCell.swift in Sources */,
@@ -1564,6 +1593,7 @@
 				E496B2CA255B2ABF001BEC0F /* ValidationTextField.swift in Sources */,
 				E45D8550257628D9009ACC8D /* ComponentsLabCoordinator.swift in Sources */,
 				F98D0E54252DE6F200D46EE9 /* SignUpWizardViewController.swift in Sources */,
+				E4298490258DB0BB00818E09 /* CLAnyItem.swift in Sources */,
 				E4D8429F256AC59200D215B4 /* BigSegmentedControl.swift in Sources */,
 				E4749C692589038A00479538 /* ChangePasswordContentView.swift in Sources */,
 				E4B2A75F256CC1D60055C1AE /* VerticalPaddingView.swift in Sources */,
@@ -1572,6 +1602,7 @@
 				E4FAB5A62565007900F25473 /* ExpandableItemFolder.swift in Sources */,
 				E4A988252587E2490006EB3F /* BasicCardView.swift in Sources */,
 				E4C705EC255BBD6100DD29E3 /* UIImage+Addtions.swift in Sources */,
+				E4602D24258CC5D0004C556B /* CLItemsSection.swift in Sources */,
 				E41172EB2587E309005BAB60 /* CertificatesContentView.swift in Sources */,
 				E4B2A744256CB5BC0055C1AE /* ProductDetailsViewController.swift in Sources */,
 				E4A6704A2563B52A0057083C /* MonthPickerTextField.swift in Sources */,
@@ -1584,6 +1615,7 @@
 				E45D854A2576265B009ACC8D /* DropdownSelectionButton.swift in Sources */,
 				E4A670782563C3580057083C /* UIViewController+Extensions.swift in Sources */,
 				E40FB2722567A2F100626569 /* CategoryPickerTextField.swift in Sources */,
+				E429849A258DB0DB00818E09 /* CLComponentsSection.swift in Sources */,
 				E4000CF7255C174600E89ABB /* CoordinatorTransitionType.swift in Sources */,
 				E4749C4A2588F1BB00479538 /* CompanyInformationInputViewController.swift in Sources */,
 				E45E552A256F7180008856FD /* CartCoordinator.swift in Sources */,
@@ -1612,6 +1644,7 @@
 				E4C138A22583846200D951F3 /* OprationsListViewController.swift in Sources */,
 				E49B9FE82577866C0057EDDE /* CheckoutViewController+Cards.swift in Sources */,
 				E496B260255B22A2001BEC0F /* SignUpCategoriesListView.swift in Sources */,
+				E4602D34258CC71C004C556B /* CLItem.swift in Sources */,
 				E4C70608255BBFFC00DD29E3 /* NavigationController.swift in Sources */,
 				E4E68106255D3B570051D52D /* ImagePickerController.swift in Sources */,
 				E4E6811F255D40080051D52D /* BottomNextButtonView.swift in Sources */,
@@ -1648,6 +1681,7 @@
 				E4749C602588FDC600479538 /* CompanyProfileOptionsViewController.swift in Sources */,
 				F9CC27C625332B6B00408FDA /* SignInViewController.swift in Sources */,
 				E48C27C92569DAA4006E01FB /* CategorySearchFieldType.swift in Sources */,
+				E4602D39258CC75D004C556B /* CLSectionHeaderCollectionReusableView.swift in Sources */,
 				F94608F32545D92B00C74D95 /* ProfilePageViewController.swift in Sources */,
 				E496B2D8255B2D3F001BEC0F /* BackButton.swift in Sources */,
 				E496B2AC255B2771001BEC0F /* UIColor+Additions.swift in Sources */,
@@ -1658,6 +1692,7 @@
 				E4B2A750256CB5DF0055C1AE /* ProductDetailsContentView.swift in Sources */,
 				E4CB740C255D18610017A499 /* PasswordTextField.swift in Sources */,
 				E4C705AB255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift in Sources */,
+				E4298495258DB0C900818E09 /* CLAnySectionType.swift in Sources */,
 				E4D8428F256AC4CE00D215B4 /* FavoritesCoordinator.swift in Sources */,
 				E40FB26C256798A100626569 /* SearchFieldType.swift in Sources */,
 				E4151D7A25626910009F1D45 /* WeekdaysRangePickerTextField.swift in Sources */,
@@ -1669,6 +1704,7 @@
 				F9EA0496252C83E800DC288B /* MainSignUpViewController.swift in Sources */,
 				E4FF49A6256115CA00B4CBC4 /* NumbersTextFields.swift in Sources */,
 				E4408804258C9135004196A1 /* CLComponentsListViewController.swift in Sources */,
+				E429849F258DB0F000818E09 /* CLScreensSection.swift in Sources */,
 				E4408814258C92E9004196A1 /* CLComponentAttribute.swift in Sources */,
 				E4A6704F2563B5310057083C /* YearPickerTextField.swift in Sources */,
 				F93B1FE225373DAE00E48657 /* SignUpCategoriesListViewController.swift in Sources */,

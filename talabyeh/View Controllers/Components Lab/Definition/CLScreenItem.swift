@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct CLScreenItem: Hashable, Equatable {
+struct CLScreenItem: CLItem, Hashable, Equatable {
     typealias CreateHandler = (() -> UIViewController)
     
     static func == (lhs: CLScreenItem, rhs: CLScreenItem) -> Bool {

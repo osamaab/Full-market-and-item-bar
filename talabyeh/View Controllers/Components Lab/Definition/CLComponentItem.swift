@@ -8,18 +8,8 @@
 
 import UIKit
 
-protocol CLComponentItem {
+protocol CLComponentItem: CLItem {
     typealias ComponentViewFactory = (() -> UIView)
-
-    /**
-     A custom identifier to identify the component
-     */
-    var id: String { get }
-    
-    /**
-     The name of the component
-     */
-    var name: String { get }
     
     /**
      Custom Attributes for after generating the component

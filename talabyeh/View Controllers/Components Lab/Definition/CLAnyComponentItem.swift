@@ -10,6 +10,7 @@ import UIKit
 
 struct CLAnyComponentItem: CLComponentItem {
     typealias ComponentViewFactory = (() -> UIView)    
+    
     /**
      A custom identifier to identify the component
      */
