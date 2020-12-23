@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TintedLabelCollectionViewSectionHeader: UICollectionReusableView {
+class TintedLabelCollectionReusableView: UICollectionReusableView {
     
     let titleLabel: UILabel = .init()
     
@@ -24,13 +24,13 @@ class TintedLabelCollectionViewSectionHeader: UICollectionReusableView {
     }
     
     override init(frame: CGRect) {
-        self.verticalPadding = 5
-        self.horizontalPadding = 8
+        self.verticalPadding = 8
+        self.horizontalPadding = 15
         super.init(frame: frame)
         setup()
     }
     
-    init(verticalPadding: CGFloat = 5, horizontalPadding: CGFloat = 8){
+    init(verticalPadding: CGFloat = 5, horizontalPadding: CGFloat = 15){
         self.verticalPadding = verticalPadding
         self.horizontalPadding = horizontalPadding
         super.init(frame: .zero)
@@ -51,6 +51,13 @@ class TintedLabelCollectionViewSectionHeader: UICollectionReusableView {
         titleLabel.textColor = DefaultColorsProvider.darkerTint
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
+        setupConstraints()
+    }
+    
+    /**
+     Subviews can override this method to provide custom layout setup
+     */
+    func setupConstraints(){
         titleLabel.fillVertically(padding: verticalPadding)
         titleLabel.fillHorizontally(padding: horizontalPadding)
     }

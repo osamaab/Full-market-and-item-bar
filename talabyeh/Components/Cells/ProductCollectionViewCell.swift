@@ -32,7 +32,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    fileprivate func setup() {
+    func setup() {
         subviews {
             containerView
             subtitleLabel1

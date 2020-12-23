@@ -70,7 +70,7 @@ extension CertificatesContentView: UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == sectionKind {
-            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TintedLabelCollectionViewSectionHeader.identifier, for: indexPath) as! TintedLabelCollectionViewSectionHeader
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TintedLabelCollectionReusableView.identifier, for: indexPath) as! TintedLabelCollectionReusableView
             view.titleLabel.text = "Cat Facts 101"
             return view
         }
@@ -84,7 +84,7 @@ extension CertificatesContentView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeLayout())
         collectionView.backgroundColor = .clear
         collectionView.register(cellClass: ItemCell.self)
-        collectionView.register(TintedLabelCollectionViewSectionHeader.self, forSupplementaryViewOfKind: sectionKind, withReuseIdentifier: TintedLabelCollectionViewSectionHeader.identifier)
+        collectionView.register(TintedLabelCollectionReusableView.self, forSupplementaryViewOfKind: sectionKind, withReuseIdentifier: TintedLabelCollectionReusableView.identifier)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         collectionView.dataSource = self

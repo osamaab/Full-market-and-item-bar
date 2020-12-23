@@ -8,8 +8,8 @@
 
 import Foundation
 
-extension CLComponentsSection {
-    static let buttons: CLComponentsSection = {
+struct CLComponentDefaultRegisteration {
+    let buttons: CLComponentsSection = {
         let components: [CLAnyComponentItem] = [
         
         ]
@@ -17,3 +17,16 @@ extension CLComponentsSection {
         return CLComponentsSection(name: "Buttons", items: components)
     }()
 }
+
+extension CLComponentsSection {
+
+}
+
+//            CLAnyItem(name: "Buttons"),
+//            CLAnyItem(name: "Shared Cells"),
+//            CLAnyItem(name: "Headers and Footers"),
+//            CLAnyItem(name: "General General"),
+//            CLAnyItem(name: "App General"),
+//            CLAnyItem(name: "Buttons"),
+//            CLAnyItem(name: "Text Fields"),
+//            CLAnyItem(name: "Pickers")

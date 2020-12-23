@@ -76,9 +76,10 @@ class PickerPlaceholderView: UIView {
         
         self.update(for: style)
         
-        addAction { [unowned self] in
+        let gesture = addAction { [unowned self] in
             self.onTap?()
         }
+        gesture.cancelsTouchesInView = false
     }
     
     func update(for style: Style){

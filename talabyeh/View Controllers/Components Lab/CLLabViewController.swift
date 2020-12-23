@@ -9,7 +9,8 @@
 import UIKit
 import Stevia
 
-extension CLScreensSection {
+
+extension CLItem {
     func eraseToAnyItem() -> CLAnyItem {
         .init(item: self)
     }
@@ -63,36 +64,36 @@ class CLLabViewController: UIViewController {
     }
     
     func registerDefaultSections(){
-        let inProgressSection = CLAnySectionType(name: "In Progress", items: [
-            
-        ])
+        let defaultScreenRegistration = CLScreensDefaultRegisteration()
+        let screensMirror = Mirror(reflecting: defaultScreenRegistration)
         
         
-        let screensSection = CLAnySectionType(name: "Screens", items: [
-            CLScreensSection.profile
-//            CLAnyItem(name: "Market"),
-//            CLAnyItem(name: "Distributors"),
-//            CLAnyItem(name: "Operations"),
-//            CLAnyItem(name: "Pickers"),
-//            CLAnyItem(name: "Authentication"),
-//            CLAnyItem(name: "Items"),
-//            CLAnyItem(name: "Checkout and Cart"),
-//            CLAnyItem(name: "Payment")
-        ].eraseToAnyItem())
+        var screenSections: [CLScreensSection] = []
+        for element in screensMirror.children {
+            if let screenSection = element.value as? CLScreensSection {
+                screenSections.append(screenSection)
+            }
+        }
         
-        let componentsSection = CLAnySectionType(name: "Components", items: [
-            CLComponentsSection.buttons
-//            CLAnyItem(name: "Buttons"),
-//            CLAnyItem(name: "Shared Cells"),
-//            CLAnyItem(name: "Headers and Footers"),
-//            CLAnyItem(name: "General General"),
-//            CLAnyItem(name: "App General"),
-//            CLAnyItem(name: "Buttons"),
-//            CLAnyItem(name: "Text Fields"),
-//            CLAnyItem(name: "Pickers")
-        ].eraseToAnyItem())
+        let screensSection = CLAnySectionType(name: "Screens",
+                                              items: screenSections.map { $0.eraseToAnyItem() })
         
-        self.sections.append(inProgressSection)
+        
+        // by default, we take all sections defined.
+        let defaultComponentsRegistration = CLComponentDefaultRegisteration()
+        let componentsMirror = Mirror(reflecting: defaultComponentsRegistration)
+
+        
+        var componentsSections: [CLComponentsSection] = []
+        for element in componentsMirror.children {
+            if let componentsSection = element.value as? CLComponentsSection {
+                componentsSections.append(componentsSection)
+            }
+        }
+        
+        let componentsSection = CLAnySectionType(name: "Components",
+                                                 items: componentsSections.map { $0.eraseToAnyItem() })
+        
         self.sections.append(screensSection)
         self.sections.append(componentsSection)
     }
@@ -141,7 +142,7 @@ extension CLLabViewController {
         
         ds.supplementaryViewProvider = { collectionView, kind, indexPath -> UICollectionReusableView? in
             if kind == self.sectionHeaderKind {
-                let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TintedLabelCollectionViewSectionHeader.identifier, for: indexPath) as! TintedLabelCollectionViewSectionHeader
+                let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TintedLabelCollectionReusableView.identifier, for: indexPath) as! TintedLabelCollectionReusableView
                 view.titleLabel.text = self.sections[indexPath.section].name
                 return view
             }
@@ -157,7 +158,7 @@ extension CLLabViewController {
         collectionView.backgroundColor = .clear
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(cellClass: CLScreenitemCollectionViewCell.self)
-        collectionView.register(TintedLabelCollectionViewSectionHeader.self, forSupplementaryViewOfKind: sectionHeaderKind, withReuseIdentifier: TintedLabelCollectionViewSectionHeader.identifier)
+        collectionView.register(TintedLabelCollectionReusableView.self, forSupplementaryViewOfKind: sectionHeaderKind, withReuseIdentifier: TintedLabelCollectionReusableView.identifier)
 
         return collectionView
     }

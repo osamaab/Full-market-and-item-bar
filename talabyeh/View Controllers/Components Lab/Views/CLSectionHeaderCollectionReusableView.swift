@@ -8,6 +8,6 @@
 
 import UIKit
 
-class CLSectionHeaderCollectionReusableView: TintedLabelCollectionViewSectionHeader {
+class CLSectionHeaderCollectionReusableView: TintedLabelCollectionReusableView {
         
 }
