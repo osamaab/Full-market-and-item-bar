@@ -52,7 +52,7 @@ class CartSummaryView: UIView {
         layer.cornerRadius = 12
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
-        dropShadow(color: .black,
+        dropShadow(color: DefaultColorsProvider.baseShadow,
                    opacity: 0.16,
                    offSet: .init(width: 0, height: -2),
                    radius: 4)

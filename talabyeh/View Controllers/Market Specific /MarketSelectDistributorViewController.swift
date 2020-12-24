@@ -1,55 +1,75 @@
 //
-//  DistributersListViewController.swift
+//  MarketSelectDistributorViewController.swift
 //  talabyeh
 //
-//  Created by Hussein Work on 17/11/2020.
+//  Created by Hussein Work on 23/12/2020.
 //  Copyright © 2020 Dominate. All rights reserved.
 //
 
 import UIKit
+import Stevia
 
+class MarketSelectDistributorViewController: UIViewController {
 
-class DistributersListViewController: UIViewController {
+    lazy var headerView: SortAndFilterCollectionReusableView = .init()
+    lazy var collectionView: UICollectionView = makeCollectionView()
+    lazy var saveView: BottomNextButtonView = .init(title: "Save")
     
-    lazy var collectionView = makeCollectionView()
-
+    var selectedIndexPath: IndexPath?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.addSubview(collectionView)
-        collectionView.fillContainer()
-        
+
+        // Do any additional setup after loading the view.
         view.backgroundColor = DefaultColorsProvider.background1
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        view.subviewsPreparedAL {
+            headerView
+            collectionView
+            saveView
+        }
+        
+        headerView.Top == view.safeAreaLayoutGuide.Top + 20
+        headerView.leading(20).trailing(20)
+        
+        collectionView.Top == headerView.Bottom
+        collectionView.leading(0).trailing(0)
+        
+        saveView.Top == collectionView.Bottom
+        saveView.leading(0).trailing(0).bottom(0)
+        
+        collectionView.contentInset.top = 10
+        collectionView.contentInset.bottom = 10
     }
 }
 
-extension DistributersListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension MarketSelectDistributorViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueCell(cellClass: DistributerCollectionViewCell.self, for: indexPath)
-        
-        cell.titleLabel.text = "Hussein AlRyalat"
-        cell.subtitleLabel.text = "Sr. iOS Developer"
+        let cell = collectionView.dequeueCell(cellClass: DistributorCheckboxCollectionViewCell.self, for: indexPath)
+        cell.isSelected = indexPath == selectedIndexPath
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedIndexPath = indexPath
+        self.collectionView.reloadData()
     }
 }
 
-extension DistributersListViewController {
+extension MarketSelectDistributorViewController {
     func makeCollectionView() -> UICollectionView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeLayout())
         collectionView.backgroundColor = .clear
-        collectionView.register(cellClass: DistributerCollectionViewCell.self)
+        collectionView.register(cellClass: DistributorCheckboxCollectionViewCell.self)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        
-        collectionView.dataSource = self
-        collectionView.delegate = self
         
         return collectionView
     }
@@ -66,7 +86,8 @@ extension DistributersListViewController {
         group.interItemSpacing = .fixed(10)
         
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = .init(top: 20, leading: 0, bottom: 20, trailing: 0)
+        section.contentInsets = .init(top: 20, leading: 0, bottom: 5, trailing: 0)
+        
         let layout = UICollectionViewCompositionalLayout(section: section)
         
         
@@ -80,4 +101,3 @@ extension DistributersListViewController {
         return layout
     }
 }
-

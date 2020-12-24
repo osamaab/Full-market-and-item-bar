@@ -17,6 +17,10 @@ class ChangePasswordContentView: BasicViewWithSetup {
     let oldPasswordField = PasswordTextField()
     let newPasswordField = PasswordTextField()
     let confirmNewPasswordField = PasswordTextField()
+    
+    var containerPadding: UIEdgeInsets {
+        .init()
+    }
 
     override func setup() {
         stackView.axis(.vertical)
@@ -26,10 +30,9 @@ class ChangePasswordContentView: BasicViewWithSetup {
             .preparedForAutolayout()
 
         backgroundColor = DefaultColorsProvider.background
-
         
         addSubview(stackView)
-        stackView.fillContainer()
+        stackView.bottom(containerPadding.bottom).top(containerPadding.top).leading(containerPadding.left).trailing(containerPadding.right)
         
         stackView.addingArrangedSubviews {
             labelView

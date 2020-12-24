@@ -68,7 +68,10 @@ class BaseOprationCollectionViewCell: UICollectionViewCell {
         
         containerView.fillContainer()
         containerView.layer.cornerRadius = 10
-        containerView.dropShadow(color: UIColor.black, opacity: 0.16, offSet: .init(width: 0, height: 0), radius: 6)
+        containerView.dropShadow(color: DefaultColorsProvider.baseShadow,
+                                 opacity: 0.16,
+                                 offSet: .init(width: 0, height: 0),
+                                 radius: 6)
         
         self.apply(backgroundType: backgroundType, on: containerView)
     }

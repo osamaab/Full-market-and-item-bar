@@ -29,7 +29,7 @@ class BasicCardView: BasicViewWithSetup {
     }
 
     override func setup() {
-        dropShadow(color: UIColor.blue.withAlphaComponent(0.16),
+        dropShadow(color: DefaultColorsProvider.baseShadow.withAlphaComponent(0.16),
                    opacity: 0.5,
                    offSet: .init(width: 0, height: 3),
                    radius: 4)

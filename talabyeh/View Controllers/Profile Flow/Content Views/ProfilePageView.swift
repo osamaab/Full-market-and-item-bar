@@ -40,13 +40,13 @@ class ProfilePageView: UIView {
         }
 
 
-        backgroundColor = Constants.lightGrey
+        backgroundColor = DefaultColorsProvider.background1
 
         personalInfoView.backgroundColor = DefaultColorsProvider.background
         nameLabel.textColor = DefaultColorsProvider.text
         listTableView.backgroundColor = DefaultColorsProvider.background1
-        emailLabel.textColor = !isLight ? .white : #colorLiteral(red: 0.4980392157, green: 0.5647058824, blue: 0.5098039216, alpha: 1)
-        phoneNumberLabel.textColor = !isLight ? .white : #colorLiteral(red: 0.4980392157, green: 0.5647058824, blue: 0.5098039216, alpha: 1)
+        emailLabel.textColor = !isLight ? DefaultColorsProvider.background : #colorLiteral(red: 0.4980392157, green: 0.5647058824, blue: 0.5098039216, alpha: 1)
+        phoneNumberLabel.textColor = !isLight ? DefaultColorsProvider.background : #colorLiteral(red: 0.4980392157, green: 0.5647058824, blue: 0.5098039216, alpha: 1)
         profileImageView.layer.borderColor =  #colorLiteral(red: 0.4980392157, green: 0.5647058824, blue: 0.5098039216, alpha: 1) //
 
 
@@ -80,7 +80,7 @@ class ProfilePageView: UIView {
         listTableView.separatorStyle = .none
         
         let tableheaderView = UIView(frame: CGRect(x: 0, y: 0, width: listTableView.frame.size.width, height: 18.76))
-        tableheaderView.backgroundColor = UIColor(named: "Light Grey Adaptive")
+        tableheaderView.backgroundColor = DefaultColorsProvider.background1
         listTableView.tableHeaderView = tableheaderView
         
         personalInfoView.layer.borderColor = !isLight  ? #colorLiteral(red: 0.07058823529, green: 0.07058823529, blue: 0.07058823529, alpha: 1) : #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)

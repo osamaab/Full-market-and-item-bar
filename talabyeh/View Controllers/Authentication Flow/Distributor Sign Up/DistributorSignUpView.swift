@@ -27,14 +27,14 @@ class DistributorSignUpView: UIView, UITableViewDelegate, UITableViewDataSource 
 //                self.personalDistributorView.removeFromSuperview()
 //                self.contentTableViewCell.subviews(companyDistributorView)
                 
-                companyDistributorButton.backgroundColor = Constants.lightGreen
+                companyDistributorButton.backgroundColor = DefaultColorsProvider.lightTint
                 companyDistributorButton.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
                 companyDistributorButton.layer.borderWidth = 0
-                companyDistributorButton.setTitleColor(Constants.darkGreen, for: .normal)
-                personalDistributorButton.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
+                companyDistributorButton.setTitleColor(DefaultColorsProvider.darkerTint, for: .normal)
+                personalDistributorButton.backgroundColor = DefaultColorsProvider.itemBackground2
                 personalDistributorButton.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
                 personalDistributorButton.layer.borderWidth = 1
-                personalDistributorButton.setTitleColor(.white, for: .normal)
+                personalDistributorButton.setTitleColor(DefaultColorsProvider.background, for: .normal)
             case .PersonalDistributor:
                 companyDistributorView.isHidden = true
                 personalDistributorView.isHidden = false
@@ -42,14 +42,14 @@ class DistributorSignUpView: UIView, UITableViewDelegate, UITableViewDataSource 
 //                self.companyDistributorView.removeFromSuperview()
 //                self.contentTableViewCell.subviews(personalDistributorView)
                 
-                personalDistributorButton.backgroundColor = Constants.lightGreen
+                personalDistributorButton.backgroundColor = DefaultColorsProvider.lightTint
                 personalDistributorButton.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
                 personalDistributorButton.layer.borderWidth = 0
-                personalDistributorButton.setTitleColor(Constants.darkGreen, for: .normal)
-                companyDistributorButton.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
+                personalDistributorButton.setTitleColor(DefaultColorsProvider.darkerTint, for: .normal)
+                companyDistributorButton.backgroundColor = DefaultColorsProvider.itemBackground2
                 companyDistributorButton.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
                 companyDistributorButton.layer.borderWidth = 1
-                companyDistributorButton.setTitleColor(.white, for: .normal)
+                companyDistributorButton.setTitleColor(DefaultColorsProvider.background, for: .normal)
             default:
                 break
             }
@@ -156,7 +156,7 @@ class DistributorSignUpView: UIView, UITableViewDelegate, UITableViewDataSource 
         
         signUpLabel.text = "Sign Up".localiz()
         signUpLabel.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(17, .regular) : getEnglishFont(17, .medium)
-        signUpLabel.textColor = UIColor(named: AdaptiveColors.darkGrey.rawValue)
+        signUpLabel.textColor = DefaultColorsProvider.itemBackground2
         signUpLabel.textAlignment = .center
         
         signUpLabel/*.top(30)*/.height(40).centerHorizontally()
@@ -165,7 +165,7 @@ class DistributorSignUpView: UIView, UITableViewDelegate, UITableViewDataSource 
         
         welcomeLabel.text = "Welcome to TALABYEH".localiz()
         welcomeLabel.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(22, .bold) : getEnglishFont(22, .bold)
-        welcomeLabel.textColor = UIColor(named: AdaptiveColors.green.rawValue)
+        welcomeLabel.textColor = DefaultColorsProvider.darkerTint
         welcomeLabel.textAlignment = .justified
         
         welcomeLabel.height(26).leading(16)
@@ -179,8 +179,8 @@ class DistributorSignUpView: UIView, UITableViewDelegate, UITableViewDataSource 
         companyDistributorButton.layer.cornerRadius = 10
         companyDistributorButton.layer.borderWidth = 1
         companyDistributorButton.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        companyDistributorButton.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
-        companyDistributorButton.setTitleColor(UIColor(named: AdaptiveColors.green.rawValue), for: .normal)
+        companyDistributorButton.backgroundColor = DefaultColorsProvider.itemBackground2
+        companyDistributorButton.setTitleColor(DefaultColorsProvider.darkerTint, for: .normal)
         companyDistributorButton.titleLabel?.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(17, .heavy) : getEnglishFont(17, .semiBold)
         //companyDistributorButton.titleLabel?.numberOfLines = 2
         companyDistributorButton.titleLabel?.lineBreakMode = .byWordWrapping
@@ -194,8 +194,8 @@ class DistributorSignUpView: UIView, UITableViewDelegate, UITableViewDataSource 
         
         personalDistributorButton.setTitle("Personal\nDistributor".localiz(), for: .normal)
         personalDistributorButton.layer.cornerRadius = 10
-        personalDistributorButton.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
-        personalDistributorButton.setTitleColor(Constants.darkGreen, for: .normal)
+        personalDistributorButton.backgroundColor = DefaultColorsProvider.itemBackground2
+        personalDistributorButton.setTitleColor(DefaultColorsProvider.darkerTint, for: .normal)
         personalDistributorButton.titleLabel?.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(17, .heavy) : getEnglishFont(17, .semiBold)
         //personalDistributorButton.titleLabel?.numberOfLines = 2
         personalDistributorButton.titleLabel?.lineBreakMode = .byWordWrapping
@@ -319,7 +319,7 @@ class DistributorSignUpView: UIView, UITableViewDelegate, UITableViewDataSource 
         icon.image = UIImage(named: "Group 2710")
         icon.top(23).width(28).height(22).centerHorizontally()
         
-        personalPictureView.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
+        personalPictureView.backgroundColor = DefaultColorsProvider.itemBackground2
         personalPictureView.layer.cornerRadius = 10
         personalPictureView.leading(16).width(167).height(91)
         personalPictureView.Top == carType.Bottom + 12 + 22
@@ -342,7 +342,7 @@ class DistributorSignUpView: UIView, UITableViewDelegate, UITableViewDataSource 
         icon2.image = UIImage(named: "Group 2710")
         icon2.top(23).width(28).height(22).centerHorizontally()
         
-        civilIDPictureView.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
+        civilIDPictureView.backgroundColor = DefaultColorsProvider.itemBackground2
         civilIDPictureView.layer.cornerRadius = 10
         civilIDPictureView.trailing(16).width(167).height(91)
         civilIDPictureView.Top == carType.Bottom + 12  + 22
@@ -367,7 +367,7 @@ class DistributorSignUpView: UIView, UITableViewDelegate, UITableViewDataSource 
         icon3.contentMode = .scaleAspectFit
         icon3.top(23).width(28).height(22).centerHorizontally()
         
-        coverageLocationsView.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
+        coverageLocationsView.backgroundColor = DefaultColorsProvider.itemBackground2
         coverageLocationsView.layer.cornerRadius = 10
         coverageLocationsView.leading(16).width(167).height(91)
         coverageLocationsView.Top == civilIDPictureView.Bottom + 10
@@ -391,7 +391,7 @@ class DistributorSignUpView: UIView, UITableViewDelegate, UITableViewDataSource 
         icon4.image = UIImage(named: "Path 2437")
         icon4.top(23).width(28).height(22).centerHorizontally()
         
-        categoryView.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
+        categoryView.backgroundColor = DefaultColorsProvider.itemBackground2
         categoryView.layer.cornerRadius = 10
         categoryView.trailing(16).width(167).height(91)
         categoryView.Top == civilIDPictureView.Bottom + 10

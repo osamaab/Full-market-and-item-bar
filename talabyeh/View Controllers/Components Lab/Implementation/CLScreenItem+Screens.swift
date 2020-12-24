@@ -20,6 +20,7 @@ struct CLScreensDefaultRegisteration {
             CompanyInformationInputViewController.self,
             CertificatesViewController.self,
             ContactDesignersViewController.self,
+            DeliveryAreaPickerViewController.self
         ]
         
         let profile = CLScreenItem(name: "Profile") { () -> UIViewController in
@@ -81,19 +82,37 @@ struct CLScreensDefaultRegisteration {
         return CLScreensSection(name: "Distributors", items: screenClasses.map { CLScreenItem(screenClass: $0) } + [existingScreen, externalScreen])
     }()
     
-    let others: CLScreensSection = {
+    let marketSpecific: CLScreensSection = {
         let screenClasses = [
-            PaymentCardsPickerViewController.self,
-            NewPaymentCreditCardViewController.self,
+            MarketSelectDistributorViewController.self,
+            MarketEditProfileViewController.self,
+            MarketChangePasswordViewController.self,
             CheckoutViewController.self,
             CartItemsViewController.self,
             FavoritesViewController.self,
+        ]
+        
+        return CLScreensSection(name: "Market Specific", items: screenClasses.map { CLScreenItem(screenClass: $0) })
+    }()
+    
+    let payments: CLScreensSection = {
+        let screenClasses = [
+            PaymentCardsPickerViewController.self,
+            NewPaymentCreditCardViewController.self,
+        ]
+        
+        return CLScreensSection(name: "Payments", items: screenClasses.map { CLScreenItem(screenClass: $0) })
+
+    }()
+    
+    let products: CLScreensSection = {
+        let screenClasses = [
             MarketViewController.self,
             MarketCategoriesViewController.self,
             ProductDetailsViewController.self,
             AdvancedSearchViewController.self
         ]
         
-        return CLScreensSection(name: "Others", items: screenClasses.map { CLScreenItem(screenClass: $0) })
+        return CLScreensSection(name: "Products", items: screenClasses.map { CLScreenItem(screenClass: $0) })
     }()
 }

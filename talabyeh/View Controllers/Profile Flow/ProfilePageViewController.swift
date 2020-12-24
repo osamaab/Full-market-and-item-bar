@@ -76,8 +76,6 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     
     @objc func editButtonTapped(){
         self.editAction?()
-        
-        navigationController?.pushViewController(DeliveryAreaPickerViewController(), animated: true)
     }
 }
 
@@ -101,7 +99,7 @@ extension ProfilePageViewController {
         } else {
             cell.icon.image = icon
             cell.icon.image = cell.icon.image?.withRenderingMode(.alwaysTemplate)
-            cell.icon.tintColor = .white
+            cell.icon.tintColor = DefaultColorsProvider.text
         }
         
         return cell

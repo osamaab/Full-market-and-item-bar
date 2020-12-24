@@ -15,7 +15,7 @@ class PendingOperationCollectionViewCell: BaseOprationCollectionViewCell {
         /**
          This will be changed later to support dark mode.
          */
-        .solid(UIColor(rgb: 0x707070))
+        .solid(DefaultColorsProvider.itemBackground3)
     }
     
     // components

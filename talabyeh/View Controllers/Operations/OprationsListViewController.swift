@@ -46,7 +46,6 @@ extension OprationsListViewController: UICollectionViewDataSource, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(OperationDetailsViewController(), animated: true)
     }
 }
 

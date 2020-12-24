@@ -55,7 +55,7 @@ class SignUpCategoriesListViewController: UIViewController, UICollectionViewDele
         
         cell?.checkMark.image = UIImage(named: "Group 2696")
         cell?.checkMark.image = cell?.checkMark.image?.withRenderingMode(.alwaysTemplate)
-        cell?.checkMark.tintColor = UIColor(named: AdaptiveColors.darkGrey.rawValue)
+        cell?.checkMark.tintColor = DefaultColorsProvider.itemBackground2
         
         if selectedIndices.contains(indexPath){
             cell?.checkMark.image = UIImage(named: "Group 2753")
@@ -106,12 +106,12 @@ class CategoryCell: UICollectionViewCell{
         
         self.subviews([cView, cTitle])
         
-        cView.backgroundColor = UIColor(named: AdaptiveColors.lightGrey.rawValue)
+        cView.backgroundColor = DefaultColorsProvider.itemBackground2
         cView.layer.cornerRadius = 11.75
         cView.width(100%).height(78.2).top(0)
         
         cTitle.font = LanguageManager.shared.currentLanguage == .en ? getEnglishFont(13, .semiBold): getArabicFont(13, .heavy)
-        cTitle.textColor = UIColor(named: AdaptiveColors.black.rawValue)
+        cTitle.textColor = DefaultColorsProvider.text
         cTitle.height(15).centerHorizontally()
         cTitle.Top == cView.Bottom + 7.24
         

@@ -56,26 +56,22 @@ class MainSignUpViewController: UIViewController {
             self.view.removeConstraint(signUpBackButtonCenterY)
             backButton.CenterY == signUplabel.CenterY + 3
             
-            //nextButton.contentVerticalAlignment = .top
             nextButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 6, right: 0)
-            
-
-            
         }
         
         
-        lineView1.backgroundColor = UIColor(named: AdaptiveColors.green.rawValue)
-        lineView2.backgroundColor = UIColor(named: AdaptiveColors.green.rawValue)
-        lineView3.backgroundColor = UIColor(named: AdaptiveColors.green.rawValue)
+        lineView1.backgroundColor = DefaultColorsProvider.darkerTint
+        lineView2.backgroundColor = DefaultColorsProvider.darkerTint
+        lineView3.backgroundColor = DefaultColorsProvider.darkerTint
         
         self.companyImage.image = self.companyImage.image?.withRenderingMode(.alwaysTemplate)
-        self.companyImage.tintColor = UIColor(named: AdaptiveColors.green.rawValue)
+        self.companyImage.tintColor = DefaultColorsProvider.darkerTint
         
         self.distributorImage.image = self.companyImage.image?.withRenderingMode(.alwaysTemplate)
-        self.distributorImage.tintColor = UIColor(named: AdaptiveColors.green.rawValue)
+        self.distributorImage.tintColor = DefaultColorsProvider.darkerTint
         
         self.resellerImage.image = self.companyImage.image?.withRenderingMode(.alwaysTemplate)
-        self.resellerImage.tintColor = .white
+        self.resellerImage.tintColor = DefaultColorsProvider.background
     }
     
     
@@ -89,21 +85,21 @@ class MainSignUpViewController: UIViewController {
     {
         let tag = (sender as AnyObject).tag!
         if tag == 0{
-            companyView.backgroundColor = #colorLiteral(red: 0.7823992372, green: 0.9342591763, blue: 0.2648603916, alpha: 1)
-            distributorView.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
-            resellerView.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
+            companyView.backgroundColor = DefaultColorsProvider.lightTint
+            distributorView.backgroundColor = DefaultColorsProvider.itemBackground2
+            resellerView.backgroundColor = DefaultColorsProvider.itemBackground2
             
             chosenUserType = .Company
         }else if tag == 1{
-            distributorView.backgroundColor = #colorLiteral(red: 0.7823992372, green: 0.9342591763, blue: 0.2648603916, alpha: 1)
-            companyView.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
-            resellerView.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
+            distributorView.backgroundColor = DefaultColorsProvider.lightTint
+            companyView.backgroundColor = DefaultColorsProvider.itemBackground2
+            resellerView.backgroundColor = DefaultColorsProvider.itemBackground2
             
             chosenUserType = .Distributor
         }else if tag == 2{
-            resellerView.backgroundColor = #colorLiteral(red: 0.7823992372, green: 0.9342591763, blue: 0.2648603916, alpha: 1)
-            distributorView.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
-            companyView.backgroundColor = UIColor(named: AdaptiveColors.buttonGrey.rawValue)
+            resellerView.backgroundColor = DefaultColorsProvider.lightTint
+            distributorView.backgroundColor = DefaultColorsProvider.itemBackground2
+            companyView.backgroundColor = DefaultColorsProvider.itemBackground2
             
             chosenUserType = .Reseller
         }
@@ -125,20 +121,6 @@ class MainSignUpViewController: UIViewController {
         let signupSample = SampleSignupViewController()
         self.navigationController?.pushViewController(signupSample, animated: true)
     }
-    
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 enum UserTypeEnum {

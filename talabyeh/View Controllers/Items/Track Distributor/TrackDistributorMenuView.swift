@@ -107,7 +107,7 @@ class TrackDistributorMenuView: UIControl {
         
         containerView.backgroundColor = DefaultColorsProvider.background1
         containerView.layer.cornerRadius = 10
-        containerView.dropShadow(color: UIColor.lightGray,
+        containerView.dropShadow(color: DefaultColorsProvider.baseShadow,
                                  opacity: 0.16,
                                  offSet: .init(width: 0, height: 3.4),
                                  radius: 3.4)

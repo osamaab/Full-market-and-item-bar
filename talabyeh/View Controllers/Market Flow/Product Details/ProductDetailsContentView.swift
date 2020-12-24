@@ -143,7 +143,10 @@ class ProductHeaderView: UIView {
         containerView.clipsToBounds = false
         containerView.layer.masksToBounds = false
 
-        containerView.dropShadow(color: UIColor.black, opacity: 0.06, offSet: .init(width: 0, height: 2), radius: 2)
+        containerView.dropShadow(color: DefaultColorsProvider.baseShadow,
+                                 opacity: 0.16,
+                                 offSet: .init(width: 0, height: 2),
+                                 radius: 2)
         
         
         titleLabel.font = .font(for: .medium, size: 17)

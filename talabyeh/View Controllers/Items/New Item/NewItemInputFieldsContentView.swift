@@ -36,7 +36,7 @@ class NewItemInputFieldsContentView: BasicViewWithSetup {
         layer.cornerRadius = 19
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
-        dropShadow(color: UIColor.lightGray,
+        dropShadow(color: DefaultColorsProvider.baseShadow,
                    opacity: 0.16,
                    offSet: .init(width: 0, height: -3.5),
                    radius: 3.5)

@@ -62,7 +62,7 @@ public final class NVActivityIndicatorPresenter: ScreenBlockingLoaderType {
         
         let fadeInAnimation: FadeInAnimation = NVActivityIndicatorView.DEFAULT_FADE_IN_ANIMATION
 
-        containerView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        containerView.backgroundColor = DefaultColorsProvider.background.withAlphaComponent(0.5)
         containerView.restorationIdentifier = Self.restorationIdentifier
         containerView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -73,7 +73,7 @@ public final class NVActivityIndicatorPresenter: ScreenBlockingLoaderType {
         let activityIndicatorView = NVActivityIndicatorView(
             frame: CGRect(x: 0, y: 0, width: blockerSize.width, height: blockerSize.height),
             type: .ballBeat,
-            color: .white,
+            color: DefaultColorsProvider.background,
             padding: 0)
         activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
 

@@ -46,7 +46,7 @@ class SignInView: UIView {
         self.semanticContentAttribute = LanguageManager.shared.currentLanguage == .ar ? .forceRightToLeft : .forceLeftToRight
         
         backButton.setImage(UIImage(named: "back"), for: .normal)
-        backButton.tintColor = .white
+        backButton.tintColor = DefaultColorsProvider.background
         
         if LanguageManager.shared.currentLanguage == .ar{
             backButton.transform = CGAffineTransform(scaleX: -1, y: 1)
@@ -58,7 +58,7 @@ class SignInView: UIView {
         
         signInLabel.text = "Sign In".localiz()
         signInLabel.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(17, .regular) : getEnglishFont(17, .medium)
-        signInLabel.textColor = Constants.darkGrey
+        signInLabel.textColor = DefaultColorsProvider.secondaryText1
         signInLabel.textAlignment = .center
         
         signInLabel/*.top(30)*/.height(40).centerHorizontally()
@@ -66,7 +66,7 @@ class SignInView: UIView {
         
         welcomeLabel.text = "Welcome to TALABYEH".localiz()
         welcomeLabel.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(22, .bold) : getEnglishFont(22, .bold)
-        welcomeLabel.textColor = UIColor(named: "Green Adaptive")//Constants.darkGreen
+        welcomeLabel.textColor = DefaultColorsProvider.darkerTint
         welcomeLabel.textAlignment = .justified
         
         welcomeLabel.height(26).leading(16)
@@ -74,7 +74,7 @@ class SignInView: UIView {
         
         getStartedLabel.text = "Let's get started".localiz()
         getStartedLabel.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(17, .regular) : getEnglishFont(17, .medium)
-        getStartedLabel.textColor = Constants.textGrey
+        getStartedLabel.textColor = DefaultColorsProvider.secondaryText1
         getStartedLabel.textAlignment = .justified
         
         getStartedLabel.height(26).leading(16)

@@ -41,7 +41,7 @@ class DistributerCollectionViewCell: UICollectionViewCell {
     func setup(){
         backgroundColor = DefaultColorsProvider.background
         layer.cornerRadius = 5.4
-        dropShadow(color: .black, opacity: 0.05, offSet: .init(width: 0, height: 3.4), radius: 3.4)
+        dropShadow(color: DefaultColorsProvider.baseShadow, opacity: 0.05, offSet: .init(width: 0, height: 3.4), radius: 3.4)
 
         
         titleLabel.font = .font(for: .semiBold, size: 16)

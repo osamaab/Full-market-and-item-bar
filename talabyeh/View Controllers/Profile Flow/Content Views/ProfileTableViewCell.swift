@@ -30,13 +30,15 @@ class ProfileTableViewCell: UITableViewCell{
     
     fileprivate func setup() {
         selectionStyle = .none
-        backgroundColor = UIColor(named: "Light Grey Adaptive")
+        backgroundColor = DefaultColorsProvider.background1
         
         subviews([icon, label, arrow])
         
         icon.leading(16).height(44).width(44).centerVertically()
-        label.font = LanguageManager.shared.currentLanguage == .en ? getEnglishFont(16, .medium) : getArabicFont(16, .regular)
-        label.textColor = UIColor(named: "Black Adaptive")
+        icon.tintColor = DefaultColorsProvider.darkerTint
+        
+        label.font = .font(for: .medium, size: 16)
+        label.textColor = DefaultColorsProvider.text
         label.height(19).centerVertically()
         label.Leading == icon.Trailing + 8
         
@@ -52,7 +54,7 @@ class ProfileTableViewCell: UITableViewCell{
             let icon = UIImage(named: "right-arrow")
             arrow.image = icon
             arrow.image = arrow.image?.withRenderingMode(.alwaysTemplate)
-            arrow.tintColor = .white
+            arrow.tintColor = DefaultColorsProvider.background
         } else {
             arrow.image = UIImage(named: "right-arrow")
             

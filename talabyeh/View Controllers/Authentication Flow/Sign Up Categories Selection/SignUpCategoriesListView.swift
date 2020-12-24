@@ -57,7 +57,7 @@ class SignUpCategoriesListView: UIView {
         
         catgoryLabel.text = "Category".localiz()
         catgoryLabel.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(17, .heavy) : getEnglishFont(17, .semiBold)
-        catgoryLabel.textColor = UIColor(named: AdaptiveColors.darkGrey.rawValue)
+        catgoryLabel.textColor = DefaultColorsProvider.itemBackground2
         catgoryLabel.textAlignment = .center
         
         catgoryLabel/*.top(30)*/.height(20).centerHorizontally().width(100)
@@ -66,7 +66,7 @@ class SignUpCategoriesListView: UIView {
         
         welcomeLabel.text = "Welcome to TALABYEH".localiz()
         welcomeLabel.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(22, .bold) : getEnglishFont(22, .bold)
-        welcomeLabel.textColor = UIColor(named: AdaptiveColors.green.rawValue)
+        welcomeLabel.textColor = DefaultColorsProvider.darkerTint
         welcomeLabel.textAlignment = .justified
         
         welcomeLabel.height(26).leading(16)
@@ -79,7 +79,7 @@ class SignUpCategoriesListView: UIView {
         
         informativeLabel.text = "Please choose the category of resellers You can serve".localiz()
         informativeLabel.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(16, .regular) : getEnglishFont(16, .medium)
-        informativeLabel.textColor = UIColor(named: AdaptiveColors.green.rawValue)
+        informativeLabel.textColor = DefaultColorsProvider.darkerTint
         informativeLabel.textAlignment = LanguageManager.shared.currentLanguage == .en ? .left : .right
         informativeLabel.numberOfLines = 2
         
@@ -108,7 +108,7 @@ class SignUpCategoriesListView: UIView {
             nextButton.contentVerticalAlignment = .top
         }
         
-        bottomView.backgroundColor = Constants.lightGreen
+        bottomView.backgroundColor = DefaultColorsProvider.lightTint
         bottomView.leading(0).trailing(0).bottom(0).height(83)
         bottomView.Top == categoriesCollectionView.Bottom
         

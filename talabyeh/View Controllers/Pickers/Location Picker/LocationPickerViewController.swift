@@ -49,7 +49,7 @@ open class LocationPickerViewController: UIViewController {
 		if let navigationBar = self.navigationController?.navigationBar,
 			let barTintColor = navigationBar.barTintColor {
 				return barTintColor
-		} else { return .white }
+		} else { return DefaultColorsProvider.background }
 	}()
     
     /// default: .minimal
@@ -174,7 +174,7 @@ open class LocationPickerViewController: UIViewController {
 		}
         
         let barItem =  UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(close))
-        barItem.tintColor = .black
+        barItem.tintColor = DefaultColorsProvider.navigationBarElements
         self.navigationItem.leftBarButtonItem = barItem
 	}
 

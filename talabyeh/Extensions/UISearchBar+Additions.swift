@@ -41,9 +41,8 @@ extension UISearchBar {
             if newValue {
                 if activityIndicator == nil {
                     let newActivityIndicator = UIActivityIndicatorView(style: .gray)
-                    newActivityIndicator.color = UIColor.gray
                     newActivityIndicator.startAnimating()
-                    newActivityIndicator.backgroundColor = textField?.backgroundColor ?? UIColor.white
+                    newActivityIndicator.backgroundColor = textField?.backgroundColor
                     textField?.leftView?.addSubview(newActivityIndicator)
                     let leftViewSize = textField?.leftView?.frame.size ?? CGSize.zero
 
