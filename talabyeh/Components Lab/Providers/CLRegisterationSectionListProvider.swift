@@ -1,17 +1,14 @@
 //
-//  CLScreenItem+Screens.swift
+//  CLRegisterationSectionListProvider.swift
 //  talabyeh
 //
-//  Created by Hussein Work on 18/12/2020.
+//  Created by Hussein Work on 24/12/2020.
 //  Copyright © 2020 Dominate. All rights reserved.
 //
 
 import UIKit
 
-/**
- The lab view controller uses reflection to get properties of the default registration
- */
-struct CLScreensDefaultRegisteration {
+struct CLRegisterationSectionListProvider: CLScreenSectionListProvider {
     let profile: CLScreensSection = {
         let screenClasses = [
             CompanyLocationsViewController.self,
@@ -115,4 +112,23 @@ struct CLScreensDefaultRegisteration {
         
         return CLScreensSection(name: "Products", items: screenClasses.map { CLScreenItem(screenClass: $0) })
     }()
+
+}
+
+
+
+extension CLRegisterationSectionListProvider {
+    func sections() -> [CLScreensSection] {
+        let screensMirror = Mirror(reflecting: self)
+        
+        
+        var screenSections: [CLScreensSection] = []
+        for element in screensMirror.children {
+            if let screenSection = element.value as? CLScreensSection {
+                screenSections.append(screenSection)
+            }
+        }
+        
+        return screenSections
+    }
 }

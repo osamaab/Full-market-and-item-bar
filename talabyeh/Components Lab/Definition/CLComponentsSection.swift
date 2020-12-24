@@ -9,14 +9,18 @@
 import Foundation
 
 struct CLComponentsSection: CLItemsSection, Hashable, Equatable {
-   typealias ItemType = CLAnyComponentItem
+    typealias ItemType = CLComponentItem
     
+    var group: CLComponentGroupIdentifier
+    var items: [CLComponentItem]
     
-    let id: String = UUID().uuidString
+    var id: String {
+        group.id
+    }
     
-    let name: String
-    
-    var items: [CLAnyComponentItem] = []
+    var name: String {
+        group.name
+    }
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)

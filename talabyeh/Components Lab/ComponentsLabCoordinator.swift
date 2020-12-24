@@ -17,7 +17,7 @@ class ComponentsLabCoordinator: NSObject, TabBarSubCoordinator {
     }
     
     override init(){
-        rootViewController = CLLabViewController()
+        rootViewController = CLLabViewController(screensProvider: CLRegisterationSectionListProvider(), componentsProvider: CLAutoComponentsSectionListProvider())
         super.init()
     }
 }

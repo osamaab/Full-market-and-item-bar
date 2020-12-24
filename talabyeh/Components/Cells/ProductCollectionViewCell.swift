@@ -112,3 +112,5 @@ class ProductCollectionViewCell: UICollectionViewCell {
         subtitleLabel2.Top == subtitleLabel1.Bottom + 5
     }
 }
+
+

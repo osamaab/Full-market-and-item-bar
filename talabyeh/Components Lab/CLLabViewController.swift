@@ -39,6 +39,21 @@ class CLLabViewController: UIViewController {
     
     fileprivate(set) var sections: [CLAnySectionType] = []
     
+    let screensProvider: CLScreenSectionListProvider
+    let componentsProvider: CLComponentSectionListProvider
+    
+    init(screensProvider: CLScreenSectionListProvider,
+         componentsProvider: CLComponentSectionListProvider){
+        self.screensProvider = screensProvider
+        self.componentsProvider = componentsProvider
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -64,35 +79,13 @@ class CLLabViewController: UIViewController {
     }
     
     func registerDefaultSections(){
-        let defaultScreenRegistration = CLScreensDefaultRegisteration()
-        let screensMirror = Mirror(reflecting: defaultScreenRegistration)
-        
-        
-        var screenSections: [CLScreensSection] = []
-        for element in screensMirror.children {
-            if let screenSection = element.value as? CLScreensSection {
-                screenSections.append(screenSection)
-            }
-        }
-        
         let screensSection = CLAnySectionType(name: "Screens",
-                                              items: screenSections.map { $0.eraseToAnyItem() })
+                                              items: screensProvider.sections().map { $0.eraseToAnyItem() })
         
         
-        // by default, we take all sections defined.
-        let defaultComponentsRegistration = CLComponentDefaultRegisteration()
-        let componentsMirror = Mirror(reflecting: defaultComponentsRegistration)
-
-        
-        var componentsSections: [CLComponentsSection] = []
-        for element in componentsMirror.children {
-            if let componentsSection = element.value as? CLComponentsSection {
-                componentsSections.append(componentsSection)
-            }
-        }
         
         let componentsSection = CLAnySectionType(name: "Components",
-                                                 items: componentsSections.map { $0.eraseToAnyItem() })
+                                                 items: componentsProvider.sections().map { $0.eraseToAnyItem() })
         
         self.sections.append(screensSection)
         self.sections.append(componentsSection)
