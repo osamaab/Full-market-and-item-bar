@@ -15,7 +15,7 @@ class SampleSignupViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        view.backgroundColor = DefaultColorsProvider.background
+        view.backgroundColor = DefaultColorsProvider.backgroundPrimary
         
         let photoView = PickerPlaceholderView()
         let logoView = PickerPlaceholderView()

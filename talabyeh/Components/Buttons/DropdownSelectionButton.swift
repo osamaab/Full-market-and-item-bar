@@ -81,8 +81,8 @@ class DropdownSelectionButton<ChoiceItem: ChoiceItemType>: RoundedButton {
     }
     
     override func setup(){
-        backgroundColor = DefaultColorsProvider.background
-        setTitleColor(DefaultColorsProvider.darkerTint, for: .normal)
+        backgroundColor = DefaultColorsProvider.backgroundPrimary
+        setTitleColor(DefaultColorsProvider.tintPrimary, for: .normal)
         titleLabel?.font = .font(for: .semiBold, size: 16)
         
         setupSelectionDropdown()
@@ -96,7 +96,7 @@ class DropdownSelectionButton<ChoiceItem: ChoiceItemType>: RoundedButton {
         dropdown.dataSource = choices.map { $0.title }
         dropdown.width = UIScreen.main.bounds.width - 50
         dropdown.setupCornerRadius(15)
-        dropdown.backgroundColor = DefaultColorsProvider.background
+        dropdown.backgroundColor = DefaultColorsProvider.backgroundPrimary
         
         
         dropdown.cellClass = DropdownSelectionItemView.self
@@ -119,8 +119,8 @@ class DropdownSelectionButton<ChoiceItem: ChoiceItemType>: RoundedButton {
     }
     
     func updateSelectionState(){
-        self.backgroundColor = selectedIndex == nil ? DefaultColorsProvider.background : DefaultColorsProvider.darkerTint
-        self.setTitleColor(selectedIndex == nil ? DefaultColorsProvider.darkerTint : DefaultColorsProvider.background, for: .normal)
+        self.backgroundColor = selectedIndex == nil ? DefaultColorsProvider.backgroundPrimary : DefaultColorsProvider.tintPrimary
+        self.setTitleColor(selectedIndex == nil ? DefaultColorsProvider.tintPrimary : DefaultColorsProvider.backgroundPrimary, for: .normal)
     }
     
     @objc func onTap(){

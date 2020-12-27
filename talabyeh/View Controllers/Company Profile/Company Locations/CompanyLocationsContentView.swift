@@ -17,9 +17,9 @@ class CompanyLocationsContentView: BasicViewWithSetup {
     lazy var collectionView: UICollectionView = makeCollectionView()
     
     override func setup() {
-        backgroundColor = DefaultColorsProvider.background
+        backgroundColor = DefaultColorsProvider.backgroundPrimary
         
-        plusButton.tintColor = DefaultColorsProvider.darkerTint
+        plusButton.tintColor = DefaultColorsProvider.tintPrimary
         plusButton.setImage(UIImage(named: "plus_small"), for: .normal)
         
         subviewsPreparedAL {
@@ -55,7 +55,7 @@ extension CompanyLocationsContentView: UICollectionViewDataSource, UICollectionV
 extension CompanyLocationsContentView {
     func makeCollectionView() -> UICollectionView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeLayout())
-        collectionView.backgroundColor = DefaultColorsProvider.background1
+        collectionView.backgroundColor = DefaultColorsProvider.backgroundSecondary
         collectionView.register(cellClass: CompanyLocationCollectionViewCell.self)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         

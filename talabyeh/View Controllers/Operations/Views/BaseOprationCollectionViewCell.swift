@@ -68,7 +68,7 @@ class BaseOprationCollectionViewCell: UICollectionViewCell {
         
         containerView.fillContainer()
         containerView.layer.cornerRadius = 10
-        containerView.dropShadow(color: DefaultColorsProvider.baseShadow,
+        containerView.dropShadow(color: DefaultColorsProvider.decoratorShadow,
                                  opacity: 0.16,
                                  offSet: .init(width: 0, height: 0),
                                  radius: 6)
@@ -81,11 +81,11 @@ class BaseOprationCollectionViewCell: UICollectionViewCell {
         case .solid(let color):
             view.backgroundColor = color
         case .bordered(let color):
-            view.backgroundColor = DefaultColorsProvider.background
+            view.backgroundColor = DefaultColorsProvider.backgroundPrimary
             view.layer.borderColor = color.cgColor
             view.layer.borderWidth = 2
         case .none:
-            view.backgroundColor = DefaultColorsProvider.background
+            view.backgroundColor = DefaultColorsProvider.backgroundPrimary
         case .gradient(let first, let second):
             //Unsupported for now
             break

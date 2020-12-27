@@ -45,9 +45,9 @@ class ExpandableFolderItemCell: UICollectionViewCell {
     
     func expansionStateDidChange(){
         if self.isGroup {
-            self.backgroundColor = DefaultColorsProvider.itemBackground
+            self.backgroundColor = DefaultColorsProvider.containerBackground3
         } else {
-            self.backgroundColor = DefaultColorsProvider.itemBackground2
+            self.backgroundColor = DefaultColorsProvider.containerBackground4
         }
     }
     

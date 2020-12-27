@@ -11,7 +11,7 @@ import UIKit
 class FinishedOperationCollectionViewCell: DefaultOprationCollectionViewCell {
     
     override var backgroundType: BaseOprationCollectionViewCell.BackgroundType {
-        .solid(DefaultColorsProvider.lightTint)
+        .solid(DefaultColorsProvider.tintSecondary)
     }
     
     override func setup() {

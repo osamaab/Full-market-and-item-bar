@@ -23,19 +23,6 @@ extension CLComponentGroupIdentifier: CLItem {
     }
     
     var name: String {
-        switch self {
-        case .buttons:
-            return "Buttons"
-        case .cells:
-            return "Common Cells"
-        case .headersAndFooters:
-            return "Headers and Footers"
-        case .general:
-            return "General"
-        case .textFields:
-            return "Text Fields"
-        case .pickers:
-            return "Pickers"
-        }
+        rawValue.camelCaseToWords().capitalizingFirstLetter()
     }
 }

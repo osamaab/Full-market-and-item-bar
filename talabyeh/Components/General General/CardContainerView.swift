@@ -44,7 +44,7 @@ class CardContainerView: BasicCardView {
     override func setup(){
         super.setup()
         
-        backgroundColor = DefaultColorsProvider.background
+        backgroundColor = DefaultColorsProvider.backgroundPrimary
         layer.cornerRadius = cornerRadius
         layer.maskedCorners = maskedCorners
         
@@ -55,7 +55,7 @@ class CardContainerView: BasicCardView {
         titleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
         titleLabel.setContentHuggingPriority(.init(240), for: .vertical)
         
-        titleLabel.textColor = DefaultColorsProvider.text
+        titleLabel.textColor = DefaultColorsProvider.textPrimary1
         titleLabel.font = .font(for: .bold, size: 21)
         
         

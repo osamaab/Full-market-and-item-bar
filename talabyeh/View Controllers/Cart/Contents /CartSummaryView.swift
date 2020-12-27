@@ -33,7 +33,7 @@ class CartSummaryView: UIView {
     }
     
     func setup(){
-        backgroundColor = DefaultColorsProvider.background
+        backgroundColor = DefaultColorsProvider.backgroundPrimary
         
         subviews {
             titleLabel
@@ -52,7 +52,7 @@ class CartSummaryView: UIView {
         layer.cornerRadius = 12
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
-        dropShadow(color: DefaultColorsProvider.baseShadow,
+        dropShadow(color: DefaultColorsProvider.decoratorShadow,
                    opacity: 0.16,
                    offSet: .init(width: 0, height: -2),
                    radius: 4)

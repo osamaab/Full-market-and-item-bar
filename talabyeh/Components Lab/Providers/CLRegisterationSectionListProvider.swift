@@ -87,6 +87,7 @@ struct CLRegisterationSectionListProvider: CLScreenSectionListProvider {
             CheckoutViewController.self,
             CartItemsViewController.self,
             FavoritesViewController.self,
+            MarketStoreLocationFieldsViewController.self
         ]
         
         return CLScreensSection(name: "Market Specific", items: screenClasses.map { CLScreenItem(screenClass: $0) })

@@ -32,11 +32,11 @@ class NewItemInputFieldsContentView: BasicViewWithSetup {
     let quantityUnitTextField: ChoicesPickerTextField<AnyChoiceItem> = .init(choices: [])
     
     override func setup() {
-        backgroundColor = DefaultColorsProvider.background
+        backgroundColor = DefaultColorsProvider.backgroundPrimary
         layer.cornerRadius = 19
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
-        dropShadow(color: DefaultColorsProvider.baseShadow,
+        dropShadow(color: DefaultColorsProvider.decoratorShadow,
                    opacity: 0.16,
                    offSet: .init(width: 0, height: -3.5),
                    radius: 3.5)

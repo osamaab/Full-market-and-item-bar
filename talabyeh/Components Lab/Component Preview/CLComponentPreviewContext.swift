@@ -32,7 +32,7 @@ class CLDefaultCardComponentContext: CLComponentPreviewContext {
         self.componentPreview = componentPreview
         
         self.containerView = .init()
-        self.containerView.backgroundColor = DefaultColorsProvider.background
+        self.containerView.backgroundColor = DefaultColorsProvider.backgroundPrimary
     }
     
     var containerView: UIView

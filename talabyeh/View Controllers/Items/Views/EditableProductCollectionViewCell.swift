@@ -27,7 +27,7 @@ class EditableProductCollectionViewCell: ProductCollectionViewCell {
             removeButton
         }
         
-        removeButton.tintColor = DefaultColorsProvider.error
+        removeButton.tintColor = DefaultColorsProvider.messageError
         removeButton.setImage(UIImage(named: "plus_small"), for: .normal)
         
         removeButton.width(15).height(15).top(8).trailing(8)

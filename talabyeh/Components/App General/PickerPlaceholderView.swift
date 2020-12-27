@@ -52,7 +52,7 @@ class PickerPlaceholderView: UIView {
     }
     
     func setup(){
-        backgroundColor = DefaultColorsProvider.pickerBackground
+        backgroundColor = DefaultColorsProvider.containerBackground1
         layer.cornerRadius = 10
         
         stackView
@@ -68,11 +68,11 @@ class PickerPlaceholderView: UIView {
         
         // putting a sample image
         titleLabel.font = .font(for: .regular, size: 16)
-        titleLabel.textColor = DefaultColorsProvider.background
+        titleLabel.textColor = DefaultColorsProvider.backgroundPrimary
         titleLabel.textAlignment = .center
         
         imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = DefaultColorsProvider.background
+        imageView.tintColor = DefaultColorsProvider.backgroundPrimary
         
         self.update(for: style)
         
@@ -83,8 +83,8 @@ class PickerPlaceholderView: UIView {
     }
     
     func update(for style: Style){
-        self.backgroundColor = style == .inactive ? DefaultColorsProvider.pickerBackground : DefaultColorsProvider.lightTint
-        self.titleLabel.textColor = style == .inactive ? DefaultColorsProvider.background : DefaultColorsProvider.darkerTint
-        self.imageView.tintColor = style == .inactive ? DefaultColorsProvider.background : DefaultColorsProvider.darkerTint
+        self.backgroundColor = style == .inactive ? DefaultColorsProvider.containerBackground1 : DefaultColorsProvider.tintSecondary
+        self.titleLabel.textColor = style == .inactive ? DefaultColorsProvider.backgroundPrimary : DefaultColorsProvider.tintPrimary
+        self.imageView.tintColor = style == .inactive ? DefaultColorsProvider.backgroundPrimary : DefaultColorsProvider.tintPrimary
     }
 }

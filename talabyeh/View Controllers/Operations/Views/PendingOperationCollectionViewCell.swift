@@ -15,7 +15,7 @@ class PendingOperationCollectionViewCell: BaseOprationCollectionViewCell {
         /**
          This will be changed later to support dark mode.
          */
-        .solid(DefaultColorsProvider.itemBackground3)
+        .solid(DefaultColorsProvider.containerBackground5)
     }
     
     // components
@@ -45,11 +45,11 @@ class PendingOperationCollectionViewCell: BaseOprationCollectionViewCell {
         }
         
         titleLabel.text = "Cart Summary"
-        titleLabel.textColor = DefaultColorsProvider.background
+        titleLabel.textColor = DefaultColorsProvider.backgroundPrimary
         
         [subtotalField, totalField, orderTimeField].forEach {
-            $0.titleLabel.textColor = DefaultColorsProvider.background
-            $0.contentView.textColor = DefaultColorsProvider.background
+            $0.titleLabel.textColor = DefaultColorsProvider.backgroundPrimary
+            $0.contentView.textColor = DefaultColorsProvider.backgroundPrimary
         }
         
         containerStackView.setCustomSpacing(15, after: headerView)
@@ -76,14 +76,14 @@ class PendingOperationHeaderView: BasicViewWithSetup {
         
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "operation-logo")
-        imageView.tintColor = DefaultColorsProvider.background
+        imageView.tintColor = DefaultColorsProvider.backgroundPrimary
         
         titleLabel.font = .font(for: .bold, size: 22)
         titleLabel.text = "Catssss Market"
-        titleLabel.textColor = DefaultColorsProvider.background
+        titleLabel.textColor = DefaultColorsProvider.backgroundPrimary
         
-        callButton.backgroundColor = DefaultColorsProvider.background
-        mapButton.backgroundColor = DefaultColorsProvider.background
+        callButton.backgroundColor = DefaultColorsProvider.backgroundPrimary
+        mapButton.backgroundColor = DefaultColorsProvider.backgroundPrimary
         
         imageView.width(25).height(25).centerVertically().leading(0)
         
@@ -109,10 +109,10 @@ class PendingOperationConfirmationView: BasicViewWithSetup {
         }
         
         [confirmButton, rejectButton].forEach {
-            $0.backgroundColor = DefaultColorsProvider.background
+            $0.backgroundColor = DefaultColorsProvider.backgroundPrimary
             $0.layer.cornerRadius = 10
             $0.titleLabel?.font = .font(for: .bold, size: 22)
-            $0.setTitleColor(DefaultColorsProvider.text, for: .normal)
+            $0.setTitleColor(DefaultColorsProvider.textPrimary1, for: .normal)
             $0.contentEdgeInsets = .init(top: 5, left: 20, bottom: 5, right: 20)
         }
         

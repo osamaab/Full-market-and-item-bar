@@ -18,8 +18,8 @@ class CartCollectionViewCell: UICollectionViewCell {
     
     let imageContainerView = UIView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.backgroundColor = DefaultColorsProvider.background
-        $0.dropShadow(color: DefaultColorsProvider.baseShadow,
+        $0.backgroundColor = DefaultColorsProvider.backgroundPrimary
+        $0.dropShadow(color: DefaultColorsProvider.decoratorShadow,
                       opacity: 0.16,
                       offSet: .init(width: 0, height: 1),
                       radius: 2)
@@ -50,14 +50,14 @@ class CartCollectionViewCell: UICollectionViewCell {
     let likeButton = UIButton().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.setImage(UIImage(named: "heart"), for: .normal)
-        $0.tintColor = DefaultColorsProvider.darkerTint
+        $0.tintColor = DefaultColorsProvider.tintPrimary
     }
     
     
     let topLabel = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.backgroundColor = DefaultColorsProvider.itemBackground
-        $0.textColor = DefaultColorsProvider.background
+        $0.backgroundColor = DefaultColorsProvider.containerBackground3
+        $0.textColor = DefaultColorsProvider.backgroundPrimary
         $0.layer.cornerRadius = 1.7
         $0.font = .font(for: .bold, size: 9)
         $0.textAlignment = .center
@@ -66,13 +66,13 @@ class CartCollectionViewCell: UICollectionViewCell {
     let discountContainerView = UIView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.layer.borderWidth = 1
-        $0.layer.borderColor = DefaultColorsProvider.darkerTint.withAlphaComponent(0.5).cgColor
+        $0.layer.borderColor = DefaultColorsProvider.tintPrimary.withAlphaComponent(0.5).cgColor
     }
     
     let discountLabel: UILabel = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.font = .font(for: .bold, size: 12)
-        $0.textColor = DefaultColorsProvider.darkerTint
+        $0.textColor = DefaultColorsProvider.tintPrimary
         $0.textAlignment = .center
         $0.text = "Disc 5.32 JOD"
     }
@@ -88,7 +88,7 @@ class CartCollectionViewCell: UICollectionViewCell {
     }
     
     func setup(){
-        backgroundColor = DefaultColorsProvider.background
+        backgroundColor = DefaultColorsProvider.backgroundPrimary
         
         imageContainerView.subviews {
             likeButton

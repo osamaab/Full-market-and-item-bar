@@ -28,7 +28,7 @@ class CLComponentsListViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        view.backgroundColor = DefaultColorsProvider.background1
+        view.backgroundColor = DefaultColorsProvider.backgroundSecondary
              
         view.subviewsPreparedAL {
             collectionView

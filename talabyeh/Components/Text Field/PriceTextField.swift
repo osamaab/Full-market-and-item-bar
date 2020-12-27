@@ -32,7 +32,7 @@ class PriceTextField: BorderedTextField {
         
         // add the image view and it's separator
         unitLabel.font = .font(for: .medium, size: 15)
-        unitLabel.textColor = DefaultColorsProvider.secondaryText
+        unitLabel.textColor = DefaultColorsProvider.textSecondary1
         unitLabel.translatesAutoresizingMaskIntoConstraints = false
         unitLabel.text = "JD" // for arbitary reasons
         

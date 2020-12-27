@@ -73,14 +73,14 @@ class CreditCardCollectionViewCell: UICollectionViewCell {
         
         cardNumberTitleLabel.font = .font(for: .regular, size: 12)
         cardNumberTitleLabel.text = "Card Number"
-        cardNumberTitleLabel.textColor = DefaultColorsProvider.secondaryText
+        cardNumberTitleLabel.textColor = DefaultColorsProvider.textSecondary1
         
         cardNumberLabel.text = "• • • • • • • • • • • • 4567"
         cardNumberLabel.font = .font(for: .medium, size: 15)
         
         dateTitleLabel.font = .font(for: .regular, size: 12)
         dateTitleLabel.text = "Month / Year"
-        dateTitleLabel.textColor = DefaultColorsProvider.secondaryText
+        dateTitleLabel.textColor = DefaultColorsProvider.textSecondary1
 
         
         dateLabel.font = .font(for: .medium, size: 15)
@@ -94,10 +94,10 @@ class CreditCardCollectionViewCell: UICollectionViewCell {
         placeholderTitleLabel.font = .font(for: .medium, size: 15)
         placeholderTitleLabel.text = "Add a card"
         placeholderTitleLabel.textAlignment = .center
-        placeholderTitleLabel.textColor = DefaultColorsProvider.secondaryText
+        placeholderTitleLabel.textColor = DefaultColorsProvider.textSecondary1
         
         
-        placeholderImageView.image = UIImage(named: "card-plus")
+        placeholderImageView.image = UIImage(named: "plus_small")
         placeholderImageView.contentMode = .scaleAspectFit
         
         cardContentView.subviewsPreparedAL {

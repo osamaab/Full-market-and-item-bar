@@ -68,7 +68,7 @@ class LocationPickerController: NSObject {
         // button placed on right bottom corner
         locationPicker.showCurrentLocationButton = true // default: true
 
-        locationPicker.currentLocationButtonBackground = DefaultColorsProvider.background
+        locationPicker.currentLocationButtonBackground = DefaultColorsProvider.backgroundPrimary
 
         // ignored if initial location is given, shows that location instead
         locationPicker.showCurrentLocationInitially = true

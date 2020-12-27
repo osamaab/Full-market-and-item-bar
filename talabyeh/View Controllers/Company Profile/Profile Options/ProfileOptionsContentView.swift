@@ -39,7 +39,7 @@ class ProfileOptionsContentView: UIView {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.fillContainer()
         
-        backgroundColor = DefaultColorsProvider.background
+        backgroundColor = DefaultColorsProvider.backgroundPrimary
         
         stackView.axis(.vertical)
             .alignment(.fill)

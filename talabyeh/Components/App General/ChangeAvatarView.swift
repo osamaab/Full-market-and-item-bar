@@ -29,14 +29,14 @@ class ChangeAvatarView: BasicViewWithSetup {
     
     override func setup() {
         layer.borderWidth = 1
-        layer.borderColor = DefaultColorsProvider.fieldBorder.cgColor
+        layer.borderColor = DefaultColorsProvider.decoratorBorder.cgColor
         
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         
         iconView.contentMode = .scaleAspectFit
         iconView.image = UIImage(named: "camera")
-        iconView.tintColor = DefaultColorsProvider.placeholder
+        iconView.tintColor = DefaultColorsProvider.textPlaceholder
         
         subviewsPreparedAL {
             imageView

@@ -76,10 +76,10 @@ class PickerTextField: BorderedTextField {
         super.setup()
         
         // add the image view and it's separator
-        imageView.tintColor = DefaultColorsProvider.fieldBorder
+        imageView.tintColor = DefaultColorsProvider.decoratorBorder
         imageView.contentMode = .scaleAspectFit
         
-        separatorView.backgroundColor = DefaultColorsProvider.fieldBorder
+        separatorView.backgroundColor = DefaultColorsProvider.decoratorBorder
         
         addSubview(imageView)
         addSubview(separatorView)

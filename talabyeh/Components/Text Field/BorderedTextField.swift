@@ -38,6 +38,6 @@ class BorderedTextField: InsetedTextField {
         
         self.layer.cornerRadius = 10
         self.layer.borderWidth = 1
-        self.layer.borderColor = DefaultColorsProvider.fieldBorder.cgColor
+        self.layer.borderColor = DefaultColorsProvider.decoratorBorder.cgColor
     }
 }

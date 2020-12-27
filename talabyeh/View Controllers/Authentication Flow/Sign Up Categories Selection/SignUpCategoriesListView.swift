@@ -25,7 +25,7 @@ class SignUpCategoriesListView: UIView {
     convenience init() {
         
         self.init(frame:CGRect.zero)
-        backgroundColor = DefaultColorsProvider.background
+        backgroundColor = DefaultColorsProvider.backgroundPrimary
         
         defaultLayout()
 
@@ -57,7 +57,7 @@ class SignUpCategoriesListView: UIView {
         
         catgoryLabel.text = "Category".localiz()
         catgoryLabel.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(17, .heavy) : getEnglishFont(17, .semiBold)
-        catgoryLabel.textColor = DefaultColorsProvider.itemBackground2
+        catgoryLabel.textColor = DefaultColorsProvider.containerBackground4
         catgoryLabel.textAlignment = .center
         
         catgoryLabel/*.top(30)*/.height(20).centerHorizontally().width(100)
@@ -66,7 +66,7 @@ class SignUpCategoriesListView: UIView {
         
         welcomeLabel.text = "Welcome to TALABYEH".localiz()
         welcomeLabel.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(22, .bold) : getEnglishFont(22, .bold)
-        welcomeLabel.textColor = DefaultColorsProvider.darkerTint
+        welcomeLabel.textColor = DefaultColorsProvider.tintPrimary
         welcomeLabel.textAlignment = .justified
         
         welcomeLabel.height(26).leading(16)
@@ -79,7 +79,7 @@ class SignUpCategoriesListView: UIView {
         
         informativeLabel.text = "Please choose the category of resellers You can serve".localiz()
         informativeLabel.font = LanguageManager.shared.currentLanguage == .ar ? getArabicFont(16, .regular) : getEnglishFont(16, .medium)
-        informativeLabel.textColor = DefaultColorsProvider.darkerTint
+        informativeLabel.textColor = DefaultColorsProvider.tintPrimary
         informativeLabel.textAlignment = LanguageManager.shared.currentLanguage == .en ? .left : .right
         informativeLabel.numberOfLines = 2
         
@@ -87,7 +87,7 @@ class SignUpCategoriesListView: UIView {
         informativeLabel.Top == headerImage.Bottom + 14
         informativeLabel.Trailing == catgoryLabel.Trailing
         
-        categoriesCollectionView.backgroundColor = DefaultColorsProvider.background
+        categoriesCollectionView.backgroundColor = DefaultColorsProvider.backgroundPrimary
         
         categoriesCollectionView.trailing(16).leading(16)
         categoriesCollectionView.Top == informativeLabel.Bottom + 18
@@ -108,7 +108,7 @@ class SignUpCategoriesListView: UIView {
             nextButton.contentVerticalAlignment = .top
         }
         
-        bottomView.backgroundColor = DefaultColorsProvider.lightTint
+        bottomView.backgroundColor = DefaultColorsProvider.tintSecondary
         bottomView.leading(0).trailing(0).bottom(0).height(83)
         bottomView.Top == categoriesCollectionView.Bottom
         

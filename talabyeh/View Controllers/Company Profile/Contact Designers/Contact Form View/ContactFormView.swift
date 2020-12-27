@@ -18,7 +18,7 @@ class ContactFormView: BasicViewWithSetup {
     
     
     override func setup() {
-        backgroundColor = DefaultColorsProvider.background
+        backgroundColor = DefaultColorsProvider.backgroundPrimary
         
         subviewsPreparedAL {
             labelView

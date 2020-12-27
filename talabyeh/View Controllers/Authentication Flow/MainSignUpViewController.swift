@@ -60,18 +60,18 @@ class MainSignUpViewController: UIViewController {
         }
         
         
-        lineView1.backgroundColor = DefaultColorsProvider.darkerTint
-        lineView2.backgroundColor = DefaultColorsProvider.darkerTint
-        lineView3.backgroundColor = DefaultColorsProvider.darkerTint
+        lineView1.backgroundColor = DefaultColorsProvider.tintPrimary
+        lineView2.backgroundColor = DefaultColorsProvider.tintPrimary
+        lineView3.backgroundColor = DefaultColorsProvider.tintPrimary
         
         self.companyImage.image = self.companyImage.image?.withRenderingMode(.alwaysTemplate)
-        self.companyImage.tintColor = DefaultColorsProvider.darkerTint
+        self.companyImage.tintColor = DefaultColorsProvider.tintPrimary
         
         self.distributorImage.image = self.companyImage.image?.withRenderingMode(.alwaysTemplate)
-        self.distributorImage.tintColor = DefaultColorsProvider.darkerTint
+        self.distributorImage.tintColor = DefaultColorsProvider.tintPrimary
         
         self.resellerImage.image = self.companyImage.image?.withRenderingMode(.alwaysTemplate)
-        self.resellerImage.tintColor = DefaultColorsProvider.background
+        self.resellerImage.tintColor = DefaultColorsProvider.backgroundPrimary
     }
     
     
@@ -85,21 +85,21 @@ class MainSignUpViewController: UIViewController {
     {
         let tag = (sender as AnyObject).tag!
         if tag == 0{
-            companyView.backgroundColor = DefaultColorsProvider.lightTint
-            distributorView.backgroundColor = DefaultColorsProvider.itemBackground2
-            resellerView.backgroundColor = DefaultColorsProvider.itemBackground2
+            companyView.backgroundColor = DefaultColorsProvider.tintSecondary
+            distributorView.backgroundColor = DefaultColorsProvider.containerBackground4
+            resellerView.backgroundColor = DefaultColorsProvider.containerBackground4
             
             chosenUserType = .Company
         }else if tag == 1{
-            distributorView.backgroundColor = DefaultColorsProvider.lightTint
-            companyView.backgroundColor = DefaultColorsProvider.itemBackground2
-            resellerView.backgroundColor = DefaultColorsProvider.itemBackground2
+            distributorView.backgroundColor = DefaultColorsProvider.tintSecondary
+            companyView.backgroundColor = DefaultColorsProvider.containerBackground4
+            resellerView.backgroundColor = DefaultColorsProvider.containerBackground4
             
             chosenUserType = .Distributor
         }else if tag == 2{
-            resellerView.backgroundColor = DefaultColorsProvider.lightTint
-            distributorView.backgroundColor = DefaultColorsProvider.itemBackground2
-            companyView.backgroundColor = DefaultColorsProvider.itemBackground2
+            resellerView.backgroundColor = DefaultColorsProvider.tintSecondary
+            distributorView.backgroundColor = DefaultColorsProvider.containerBackground4
+            companyView.backgroundColor = DefaultColorsProvider.containerBackground4
             
             chosenUserType = .Reseller
         }

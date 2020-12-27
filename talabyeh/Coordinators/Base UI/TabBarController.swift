@@ -15,10 +15,10 @@ class TabBarController: UITabBarController {
 
         // Do any additional setup after loading the view.
         tabBar.isTranslucent = false
-        tabBar.barTintColor = DefaultColorsProvider.background
+        tabBar.barTintColor = DefaultColorsProvider.backgroundPrimary
         tabBar.backgroundImage = .init()
         tabBar.shadowImage = UIImage()
-        tabBar.tintColor = DefaultColorsProvider.darkerTint
-        tabBar.unselectedItemTintColor = DefaultColorsProvider.tabbarUnselected
+        tabBar.tintColor = DefaultColorsProvider.tintPrimary
+        tabBar.unselectedItemTintColor = DefaultColorsProvider.elementUnselected
     }
 }

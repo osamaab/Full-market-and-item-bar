@@ -29,7 +29,7 @@ class ChangePasswordContentView: BasicViewWithSetup {
             .spacing(15)
             .preparedForAutolayout()
 
-        backgroundColor = DefaultColorsProvider.background
+        backgroundColor = DefaultColorsProvider.backgroundPrimary
         
         addSubview(stackView)
         stackView.bottom(containerPadding.bottom).top(containerPadding.top).leading(containerPadding.left).trailing(containerPadding.right)

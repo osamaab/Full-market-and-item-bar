@@ -20,11 +20,11 @@ class ClientPreferOperationAccessoryView: BasicViewWithSetup {
     let alternativeButton: UIButton = .init()
     
     override func setup() {
-        backgroundColor = DefaultColorsProvider.lightTint
+        backgroundColor = DefaultColorsProvider.tintSecondary
         layer.cornerRadius = 10
         
         titleLabel.text = "Client Prefere"
-        titleLabel.textColor = DefaultColorsProvider.darkerTint
+        titleLabel.textColor = DefaultColorsProvider.tintPrimary
         titleLabel.font = .font(for: .bold, size: 22)
         
         topImageView.contentMode = .scaleAspectFit
@@ -36,15 +36,15 @@ class ClientPreferOperationAccessoryView: BasicViewWithSetup {
 
         
         actionButton.setTitle("Okay", for: .normal)
-        actionButton.setTitleColor(DefaultColorsProvider.background, for: .normal)
-        actionButton.backgroundColor = DefaultColorsProvider.darkerTint
+        actionButton.setTitleColor(DefaultColorsProvider.backgroundPrimary, for: .normal)
+        actionButton.backgroundColor = DefaultColorsProvider.tintPrimary
         actionButton.titleLabel?.font = .font(for: .bold, size: 22)
         actionButton.layer.cornerRadius = 10
         actionButton.contentEdgeInsets = .init(top: 12, left: 0, bottom: 12, right: 0)
         
         alternativeButton.setTitle("Select another ditributer", for: .normal)
-        alternativeButton.setTitleColor(DefaultColorsProvider.darkerTint, for: .normal)
-        alternativeButton.backgroundColor = DefaultColorsProvider.background
+        alternativeButton.setTitleColor(DefaultColorsProvider.tintPrimary, for: .normal)
+        alternativeButton.backgroundColor = DefaultColorsProvider.backgroundPrimary
         alternativeButton.titleLabel?.font = .font(for: .bold, size: 22)
         alternativeButton.layer.cornerRadius = 10
         alternativeButton.contentEdgeInsets = .init(top: 12, left: 0, bottom: 12, right: 0)

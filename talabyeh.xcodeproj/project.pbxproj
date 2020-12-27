@@ -54,6 +54,13 @@
 		E4408814258C92E9004196A1 /* CLComponentAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4408813258C92E9004196A1 /* CLComponentAttribute.swift */; };
 		E44AD5D6256A3B5600574B6A /* CollectionViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44AD5D5256A3B5600574B6A /* CollectionViewSectionHeader.swift */; };
 		E44AD5E1256A458400574B6A /* MarketCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44AD5E0256A458400574B6A /* MarketCategoriesViewController.swift */; };
+		E44DB3B82595BB5C009F1809 /* CLColorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DB3B72595BB5C009F1809 /* CLColorItem.swift */; };
+		E44DB3BD2595BB92009F1809 /* CLColorsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DB3BC2595BB92009F1809 /* CLColorsSection.swift */; };
+		E44DB3C22595BBFE009F1809 /* CLColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DB3C12595BBFE009F1809 /* CLColorCollectionViewCell.swift */; };
+		E44DB3CA2595BCF8009F1809 /* CLColorsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DB3C92595BCF8009F1809 /* CLColorsListViewController.swift */; };
+		E44DB3CF2595BDD2009F1809 /* CLConstantColorsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DB3CE2595BDD2009F1809 /* CLConstantColorsProvider.swift */; };
+		E44DB3D42595BDE6009F1809 /* CLColorsListProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DB3D32595BDE6009F1809 /* CLColorsListProviderType.swift */; };
+		E44DB3D92595C37B009F1809 /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44DB3D82595C37B009F1809 /* String+Additions.swift */; };
 		E450C2492563CA3600F6F392 /* DistributersListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E450C2482563CA3600F6F392 /* DistributersListCoordinator.swift */; };
 		E450C24E2563CA5800F6F392 /* DistributersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E450C24D2563CA5800F6F392 /* DistributersListViewController.swift */; };
 		E450C2542563CFE500F6F392 /* DistributerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E450C2532563CFE500F6F392 /* DistributerCollectionViewCell.swift */; };
@@ -81,6 +88,8 @@
 		E4749C602588FDC600479538 /* CompanyProfileOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4749C5F2588FDC600479538 /* CompanyProfileOptionsViewController.swift */; };
 		E4749C692589038A00479538 /* ChangePasswordContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4749C682589038A00479538 /* ChangePasswordContentView.swift */; };
 		E475FB482593A7B00010FCBF /* MarketSelectDistributorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475FB472593A7B00010FCBF /* MarketSelectDistributorViewController.swift */; };
+		E47A06302598768800654953 /* MarketStoreLocationFieldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A062F2598768800654953 /* MarketStoreLocationFieldsViewController.swift */; };
+		E47A063D259876B400654953 /* MarketStoreLocationFIeldsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A063C259876B400654953 /* MarketStoreLocationFIeldsContentView.swift */; };
 		E47D7AC82580B6FE00107DF1 /* NewPaymentCreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D7AC72580B6FE00107DF1 /* NewPaymentCreditCardViewController.swift */; };
 		E47D7ACD2580B76100107DF1 /* NewPaymentCreditCardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D7ACC2580B76100107DF1 /* NewPaymentCreditCardContentView.swift */; };
 		E47E00F32592624B00FC737A /* SelectDistributorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47E00F22592624B00FC737A /* SelectDistributorViewController.swift */; };
@@ -320,6 +329,13 @@
 		E4408813258C92E9004196A1 /* CLComponentAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLComponentAttribute.swift; sourceTree = "<group>"; };
 		E44AD5D5256A3B5600574B6A /* CollectionViewSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewSectionHeader.swift; sourceTree = "<group>"; };
 		E44AD5E0256A458400574B6A /* MarketCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCategoriesViewController.swift; sourceTree = "<group>"; };
+		E44DB3B72595BB5C009F1809 /* CLColorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLColorItem.swift; sourceTree = "<group>"; };
+		E44DB3BC2595BB92009F1809 /* CLColorsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLColorsSection.swift; sourceTree = "<group>"; };
+		E44DB3C12595BBFE009F1809 /* CLColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLColorCollectionViewCell.swift; sourceTree = "<group>"; };
+		E44DB3C92595BCF8009F1809 /* CLColorsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLColorsListViewController.swift; sourceTree = "<group>"; };
+		E44DB3CE2595BDD2009F1809 /* CLConstantColorsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLConstantColorsProvider.swift; sourceTree = "<group>"; };
+		E44DB3D32595BDE6009F1809 /* CLColorsListProviderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLColorsListProviderType.swift; sourceTree = "<group>"; };
+		E44DB3D82595C37B009F1809 /* String+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
 		E450C2482563CA3600F6F392 /* DistributersListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributersListCoordinator.swift; sourceTree = "<group>"; };
 		E450C24D2563CA5800F6F392 /* DistributersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributersListViewController.swift; sourceTree = "<group>"; };
 		E450C2532563CFE500F6F392 /* DistributerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributerCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -347,6 +363,8 @@
 		E4749C5F2588FDC600479538 /* CompanyProfileOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyProfileOptionsViewController.swift; sourceTree = "<group>"; };
 		E4749C682589038A00479538 /* ChangePasswordContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordContentView.swift; sourceTree = "<group>"; };
 		E475FB472593A7B00010FCBF /* MarketSelectDistributorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketSelectDistributorViewController.swift; sourceTree = "<group>"; };
+		E47A062F2598768800654953 /* MarketStoreLocationFieldsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketStoreLocationFieldsViewController.swift; sourceTree = "<group>"; };
+		E47A063C259876B400654953 /* MarketStoreLocationFIeldsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketStoreLocationFIeldsContentView.swift; sourceTree = "<group>"; };
 		E47D7AC72580B6FE00107DF1 /* NewPaymentCreditCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPaymentCreditCardViewController.swift; sourceTree = "<group>"; };
 		E47D7ACC2580B76100107DF1 /* NewPaymentCreditCardContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPaymentCreditCardContentView.swift; sourceTree = "<group>"; };
 		E47E00F22592624B00FC737A /* SelectDistributorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDistributorViewController.swift; sourceTree = "<group>"; };
@@ -604,6 +622,7 @@
 			children = (
 				E40DFA79258C7A7F00548BD9 /* CLScreenitemCollectionViewCell.swift */,
 				E4602D38258CC75D004C556B /* CLSectionHeaderCollectionReusableView.swift */,
+				E44DB3C12595BBFE009F1809 /* CLColorCollectionViewCell.swift */,
 				E44087FE258C90BA004196A1 /* CLComponentContainerView.swift */,
 			);
 			path = Views;
@@ -679,11 +698,21 @@
 			path = "More Pickers";
 			sourceTree = "<group>";
 		};
+		E44DB3B62595BB44009F1809 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				E44DB3B72595BB5C009F1809 /* CLColorItem.swift */,
+				E44DB3BC2595BB92009F1809 /* CLColorsSection.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
 		E4568F4F2593AFE500FA91E4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				E4568F4A2593AFDD00FA91E4 /* MarketEditProfileContentView.swift */,
 				E431C97825946701004C0292 /* MarketChangePasswordContentView.swift */,
+				E47A063C259876B400654953 /* MarketStoreLocationFIeldsContentView.swift */,
 				E4568F402593AD2600FA91E4 /* DistributorCheckboxCollectionViewCell.swift */,
 			);
 			path = Views;
@@ -696,6 +725,8 @@
 				E4602D2E258CC6C9004C556B /* CLLabViewController.swift */,
 				E40DFA81258C7B3500548BD9 /* CLScreensListViewController.swift */,
 				E4EE6BCE2594DC9700D0EDCC /* CLComponentsListViewController.swift */,
+				E44DB3C92595BCF8009F1809 /* CLColorsListViewController.swift */,
+				E44DB3B62595BB44009F1809 /* Colors */,
 				E4EE6BDC2594E7A200D0EDCC /* Providers */,
 				E4EE6BAD2594DA1200D0EDCC /* Component Preview */,
 				E40DFA78258C7A7100548BD9 /* Definition */,
@@ -771,6 +802,7 @@
 				E475FB472593A7B00010FCBF /* MarketSelectDistributorViewController.swift */,
 				E4568F452593AFBE00FA91E4 /* MarketEditProfileViewController.swift */,
 				E431C9802594670B004C0292 /* MarketChangePasswordViewController.swift */,
+				E47A062F2598768800654953 /* MarketStoreLocationFieldsViewController.swift */,
 				E4568F4F2593AFE500FA91E4 /* Views */,
 			);
 			path = "Market Specific ";
@@ -905,6 +937,7 @@
 				E4C705EB255BBD6100DD29E3 /* UIImage+Addtions.swift */,
 				E4000CE6255C121900E89ABB /* UIStackView+Additions.swift */,
 				E4A670772563C3580057083C /* UIViewController+Extensions.swift */,
+				E44DB3D82595C37B009F1809 /* String+Additions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1245,9 +1278,11 @@
 			children = (
 				E4EE6BDD2594E7AA00D0EDCC /* CLScreenListProvider.swift */,
 				E4EE6BE52594E7B100D0EDCC /* CLComponentListProvider.swift */,
+				E44DB3D32595BDE6009F1809 /* CLColorsListProviderType.swift */,
 				E4EE6BEA2594E8D100D0EDCC /* CLRegisterationSectionListProvider.swift */,
 				E4EE6BF72594EA8400D0EDCC /* CLRuntimeComponentsProvider.swift */,
 				E4EE6BEF2594E98000D0EDCC /* CLComponentsRegisterationSectionListProvider.swift */,
+				E44DB3CE2595BDD2009F1809 /* CLConstantColorsProvider.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -1740,6 +1775,7 @@
 				E4000CDF255C106700E89ABB /* PickerPlaceholderView.swift in Sources */,
 				E431C9812594670B004C0292 /* MarketChangePasswordViewController.swift in Sources */,
 				E44087F4258C9087004196A1 /* CLComponentItem.swift in Sources */,
+				E44DB3C22595BBFE009F1809 /* CLColorCollectionViewCell.swift in Sources */,
 				E4FF49992561021F00B4CBC4 /* BasicTextField.swift in Sources */,
 				E4C138AA2583A27300D951F3 /* DividerView.swift in Sources */,
 				E4EE6BAF2594DA1E00D0EDCC /* CLComponentPreview.swift in Sources */,
@@ -1769,6 +1805,7 @@
 				E4749C582588FDAF00479538 /* ProfileOptionsContentView.swift in Sources */,
 				E40FB266256797E800626569 /* LocationPickerTextField.swift in Sources */,
 				E413279A25656BB800090419 /* AdvancedSearchViewController.swift in Sources */,
+				E47A06302598768800654953 /* MarketStoreLocationFieldsViewController.swift in Sources */,
 				E496B2CA255B2ABF001BEC0F /* ValidationTextField.swift in Sources */,
 				E45D8550257628D9009ACC8D /* ComponentsLabCoordinator.swift in Sources */,
 				F98D0E54252DE6F200D46EE9 /* SignUpWizardViewController.swift in Sources */,
@@ -1781,11 +1818,13 @@
 				E4CB7423255D23450017A499 /* ScrollContainerView.swift in Sources */,
 				E4FAB5A62565007900F25473 /* ExpandableItemFolder.swift in Sources */,
 				E4A988252587E2490006EB3F /* BasicCardView.swift in Sources */,
+				E44DB3CA2595BCF8009F1809 /* CLColorsListViewController.swift in Sources */,
 				E4C705EC255BBD6100DD29E3 /* UIImage+Addtions.swift in Sources */,
 				E4602D24258CC5D0004C556B /* CLItemsSection.swift in Sources */,
 				E41172EB2587E309005BAB60 /* CertificatesContentView.swift in Sources */,
 				E4B2A744256CB5BC0055C1AE /* ProductDetailsViewController.swift in Sources */,
 				E4A6704A2563B52A0057083C /* MonthPickerTextField.swift in Sources */,
+				E44DB3B82595BB5C009F1809 /* CLColorItem.swift in Sources */,
 				E4E6813C255D435E0051D52D /* Location.swift in Sources */,
 				E49B9FDE257783F20057EDDE /* CheckoutViewController.swift in Sources */,
 				E48C89C42590F88C000CDE76 /* ItemsViewController.swift in Sources */,
@@ -1821,6 +1860,8 @@
 				E48EC2E4257FC0EC005C0E44 /* PaymentCardsPickerViewController.swift in Sources */,
 				E4A670452563B3980057083C /* PaymentCardValidator.swift in Sources */,
 				E49C740B258A6A04002A5A59 /* CompanyLocationsViewController.swift in Sources */,
+				E44DB3BD2595BB92009F1809 /* CLColorsSection.swift in Sources */,
+				E44DB3CF2595BDD2009F1809 /* CLConstantColorsProvider.swift in Sources */,
 				E4FF49942560F45800B4CBC4 /* NewDistributerContentView.swift in Sources */,
 				E4D84297256AC50000D215B4 /* FavoritesViewController.swift in Sources */,
 				E49B9FD6257783BA0057EDDE /* CheckoutCoordinator.swift in Sources */,
@@ -1846,7 +1887,9 @@
 				E44087FF258C90BA004196A1 /* CLComponentContainerView.swift in Sources */,
 				E4749C292588ED6C00479538 /* ContactDesignersViewController.swift in Sources */,
 				E4E6810B255D3B700051D52D /* LocationPickerController.swift in Sources */,
+				E44DB3D42595BDE6009F1809 /* CLColorsListProviderType.swift in Sources */,
 				F9EA049B252C858500DC288B /* RoundedView.swift in Sources */,
+				E44DB3D92595C37B009F1809 /* String+Additions.swift in Sources */,
 				E4749C522588F1C600479538 /* CompanyInformationInputContentView.swift in Sources */,
 				E4EE5CA0256F6DF50031BC71 /* CartItemsViewController.swift in Sources */,
 				E4FAB5A92565007900F25473 /* ExpandableFolderItemCell.swift in Sources */,
@@ -1905,6 +1948,7 @@
 				E4408804258C9135004196A1 /* _CLComponentsListViewController.swift in Sources */,
 				E429849F258DB0F000818E09 /* CLScreensSection.swift in Sources */,
 				E4408814258C92E9004196A1 /* CLComponentAttribute.swift in Sources */,
+				E47A063D259876B400654953 /* MarketStoreLocationFIeldsContentView.swift in Sources */,
 				E47E010325926B2B00FC737A /* SelectExternalViewController.swift in Sources */,
 				E4A6704F2563B5310057083C /* YearPickerTextField.swift in Sources */,
 				F93B1FE225373DAE00E48657 /* SignUpCategoriesListViewController.swift in Sources */,

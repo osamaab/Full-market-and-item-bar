@@ -46,7 +46,7 @@ class NewDistributerViewController: UIViewController {
     }
     
     fileprivate func setupViews(){
-        self.view.backgroundColor = DefaultColorsProvider.background1
+        self.view.backgroundColor = DefaultColorsProvider.backgroundSecondary
         
         contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.scrollContainerView.scrollView.contentInset.bottom += 100
@@ -82,7 +82,7 @@ class NewDistributerViewController: UIViewController {
         deliveryAreaCardView.addSubview(plusButton)
         plusButton.CenterY == deliveryAreaCardView.titleLabel.CenterY
         plusButton.top(20).trailing(20)
-        plusButton.tintColor = DefaultColorsProvider.darkerTint
+        plusButton.tintColor = DefaultColorsProvider.tintPrimary
         
         plusButton.add(event: .touchUpInside) { [unowned self] in
             self.deliveryAreaPickerTapped()

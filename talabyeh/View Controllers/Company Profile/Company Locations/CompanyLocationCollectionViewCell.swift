@@ -35,7 +35,7 @@ class CompanyLocationCollectionViewCell: UICollectionViewCell {
     }
     
     func setup(){
-        backgroundColor = DefaultColorsProvider.background
+        backgroundColor = DefaultColorsProvider.backgroundPrimary
         
         subviewsPreparedAL {
             leftItemsStackView
@@ -61,17 +61,17 @@ class CompanyLocationCollectionViewCell: UICollectionViewCell {
         
         // now setup the contents
         titleLabel.font = .font(for: .bold, size: 22)
-        titleLabel.textColor = DefaultColorsProvider.text
+        titleLabel.textColor = DefaultColorsProvider.textPrimary1
         titleLabel.text = "City Name"
         
         subtitleLabel.text = "Full Adress\nFull Adress"
         subtitleLabel.numberOfLines = 0
-        subtitleLabel.textColor = DefaultColorsProvider.secondaryText
+        subtitleLabel.textColor = DefaultColorsProvider.textSecondary1
         
         [editButton, removeButton].forEach {
-            $0.backgroundColor = DefaultColorsProvider.darkerTint
+            $0.backgroundColor = DefaultColorsProvider.tintPrimary
             $0.layer.cornerRadius = 11
-            $0.setTitleColor(DefaultColorsProvider.background, for: .normal)
+            $0.setTitleColor(DefaultColorsProvider.backgroundPrimary, for: .normal)
             $0.contentEdgeInsets = .init(top: 5, left: 10, bottom: 5, right: 10)
             $0.titleLabel?.font = .font(for: .bold, size: 16)
         }
@@ -80,12 +80,12 @@ class CompanyLocationCollectionViewCell: UICollectionViewCell {
         removeButton.setTitle("Remove", for: .normal)
         
         mapButton.setTitle("Map", for: .normal)
-        mapButton.setTitleColor(DefaultColorsProvider.darkerTint, for: .normal)
+        mapButton.setTitleColor(DefaultColorsProvider.tintPrimary, for: .normal)
         mapButton.layer.cornerRadius = 11
         mapButton.layer.borderWidth = 0.2
-        mapButton.layer.borderColor = DefaultColorsProvider.darkerTint.cgColor
+        mapButton.layer.borderColor = DefaultColorsProvider.tintPrimary.cgColor
         mapButton.contentEdgeInsets = .init(top: 5, left: 10, bottom: 5, right: 10)
-        mapButton.backgroundColor = DefaultColorsProvider.background
+        mapButton.backgroundColor = DefaultColorsProvider.backgroundPrimary
                 
         leftItemsStackView.addingArrangedSubviews {
             titleLabel
@@ -108,7 +108,7 @@ class CompanyLocationCollectionViewCell: UICollectionViewCell {
     fileprivate func insert(labelView: LabelView){
         labelViews.append(labelView)
         
-        labelView.titleLabel.textColor = DefaultColorsProvider.text
+        labelView.titleLabel.textColor = DefaultColorsProvider.textPrimary1
         labelView.titleLabel.font = .font(for: .medium, size: 14)
 
         let beginTargetIndex = leftItemsStackView.arrangedSubviews.firstIndex(of: subtitleLabel) ?? 0

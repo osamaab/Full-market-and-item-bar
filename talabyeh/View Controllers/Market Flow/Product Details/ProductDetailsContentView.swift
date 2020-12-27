@@ -67,12 +67,12 @@ class ProductDetailsContentView: UIView {
     func setupStyling(){
         descriptionLabel.numberOfLines = 0
         descriptionLabel.font = .font(for: .medium, size: 16)
-        descriptionLabel.textColor = DefaultColorsProvider.secondaryText
+        descriptionLabel.textColor = DefaultColorsProvider.textSecondary1
         descriptionLabel.textAlignment = .center
 
         additionalDetailsLabel.numberOfLines = 0
         additionalDetailsLabel.font = .font(for: .bold, size: 21)
-        additionalDetailsLabel.textColor = DefaultColorsProvider.text
+        additionalDetailsLabel.textColor = DefaultColorsProvider.textPrimary1
         additionalDetailsLabel.textAlignment = .center
         
 
@@ -139,22 +139,22 @@ class ProductHeaderView: UIView {
         subtitleLabel2.translatesAutoresizingMaskIntoConstraints = false
 
         
-        containerView.backgroundColor = DefaultColorsProvider.background
+        containerView.backgroundColor = DefaultColorsProvider.backgroundPrimary
         containerView.clipsToBounds = false
         containerView.layer.masksToBounds = false
 
-        containerView.dropShadow(color: DefaultColorsProvider.baseShadow,
+        containerView.dropShadow(color: DefaultColorsProvider.decoratorShadow,
                                  opacity: 0.16,
                                  offSet: .init(width: 0, height: 2),
                                  radius: 2)
         
         
         titleLabel.font = .font(for: .medium, size: 17)
-        titleLabel.textColor = DefaultColorsProvider.darkerTint
+        titleLabel.textColor = DefaultColorsProvider.tintPrimary
 
         
-        topLabel.backgroundColor = DefaultColorsProvider.itemBackground
-        topLabel.textColor = DefaultColorsProvider.background
+        topLabel.backgroundColor = DefaultColorsProvider.containerBackground3
+        topLabel.textColor = DefaultColorsProvider.backgroundPrimary
         topLabel.layer.cornerRadius = 3
         topLabel.font = .font(for: .bold, size: 12)
         topLabel.textAlignment = .center
@@ -165,11 +165,11 @@ class ProductHeaderView: UIView {
         
         
         subtitleLabel1.font = .font(for: .regular, size: 14)
-        subtitleLabel1.textColor = DefaultColorsProvider.text
+        subtitleLabel1.textColor = DefaultColorsProvider.textPrimary1
         subtitleLabel1.textAlignment = .center
                 
         subtitleLabel2.font = .font(for: .bold, size: 17)
-        subtitleLabel2.textColor = DefaultColorsProvider.text
+        subtitleLabel2.textColor = DefaultColorsProvider.textPrimary1
         subtitleLabel2.textAlignment = .center
         
         containerView.leading(0).trailing(0).top(0).centerHorizontally()

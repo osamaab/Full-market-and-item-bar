@@ -17,7 +17,7 @@ class PaymentCardsPickerViewController: UIViewController {
         view.addSubview(collectionView)
         collectionView.fillContainer()
         
-        view.backgroundColor = DefaultColorsProvider.background1
+        view.backgroundColor = DefaultColorsProvider.backgroundSecondary
     }
 }
 

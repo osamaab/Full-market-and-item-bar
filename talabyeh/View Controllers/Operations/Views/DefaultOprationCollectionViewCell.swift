@@ -29,8 +29,8 @@ class DefaultOprationCollectionViewCell: BaseOprationCollectionViewCell {
         }
         
                 
-        totalField.titleLabel.textColor = DefaultColorsProvider.darkerTint
-        totalField.contentView.textColor = DefaultColorsProvider.darkerTint
+        totalField.titleLabel.textColor = DefaultColorsProvider.tintPrimary
+        totalField.contentView.textColor = DefaultColorsProvider.tintPrimary
         
         containerStackView.setCustomSpacing(15, after: headerView)
         containerStackView.setCustomSpacing(15, after: dividerView)
@@ -55,23 +55,23 @@ class DefaultOperationHeaderView: BasicViewWithSetup {
         }
         
         imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = DefaultColorsProvider.darkerTint
+        imageView.tintColor = DefaultColorsProvider.tintPrimary
         imageView.image = UIImage(named: "operation-logo")
         
         titleLabel.font = .font(for: .bold, size: 22)
         titleLabel.text = "Catssss Market"
-        titleLabel.textColor = DefaultColorsProvider.darkerTint
+        titleLabel.textColor = DefaultColorsProvider.tintPrimary
         
         statusImageView.contentMode = .scaleAspectFit
         
         timeLabel.font = .font(for: .bold, size: 22)
         timeLabel.text = "18:00"
-        timeLabel.textColor = DefaultColorsProvider.darkerTint
+        timeLabel.textColor = DefaultColorsProvider.tintPrimary
         timeLabel.textAlignment = .right
 
         timeTitleLabel.font = .font(for: .bold, size: 12)
         timeTitleLabel.text = "Order time"
-        timeTitleLabel.textColor = DefaultColorsProvider.darkerTint
+        timeTitleLabel.textColor = DefaultColorsProvider.tintPrimary
         timeTitleLabel.textAlignment = .right
 
 

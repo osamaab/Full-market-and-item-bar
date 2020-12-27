@@ -111,7 +111,7 @@ extension MarketViewController {
 extension MarketViewController {
     func createCollectionView() -> UICollectionView {
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: createLayout())
-        collectionView.backgroundColor = DefaultColorsProvider.background
+        collectionView.backgroundColor = DefaultColorsProvider.backgroundPrimary
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(cellClass: AdvancedSearchFolderCollectionViewCell.self)
         return collectionView

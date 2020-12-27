@@ -113,7 +113,7 @@ private class ItemView: UIView {
     
     var isSelected: Bool = false {
         didSet {
-            backgroundColor = isSelected ? DefaultColorsProvider.lightTint : DefaultColorsProvider.darkerItemBackground
+            backgroundColor = isSelected ? DefaultColorsProvider.tintSecondary : DefaultColorsProvider.containerBackground2
         }
     }
     
@@ -138,7 +138,7 @@ private class ItemView: UIView {
         
         
         titleLabel.font = .font(for: .semiBold, size: 17)
-        titleLabel.textColor = DefaultColorsProvider.darkerTint
+        titleLabel.textColor = DefaultColorsProvider.tintPrimary
         titleLabel.numberOfLines = 2
         titleLabel.textAlignment = .center
         

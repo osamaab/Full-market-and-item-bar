@@ -43,12 +43,12 @@ class TintedLabelCollectionReusableView: UICollectionReusableView {
     
     func setup(){
         layer.cornerRadius = 10
-        backgroundColor = DefaultColorsProvider.lightTint
+        backgroundColor = DefaultColorsProvider.tintSecondary
         
         addSubview(titleLabel)
         
         titleLabel.font = .font(for: .bold, size: 16)
-        titleLabel.textColor = DefaultColorsProvider.darkerTint
+        titleLabel.textColor = DefaultColorsProvider.tintPrimary
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         setupConstraints()

@@ -17,11 +17,11 @@ public enum TaskMessageType {
     var color: UIColor {
         switch self {
         case .success:
-            return DefaultColorsProvider.success
+            return DefaultColorsProvider.messageSuccess
         case .failure:
-            return DefaultColorsProvider.error
+            return DefaultColorsProvider.messageError
         case .notice:
-            return DefaultColorsProvider.notice
+            return DefaultColorsProvider.messageNotice
         }
     }
 }
@@ -64,7 +64,7 @@ class ToastScreenMessagePresenter: ScreenMessagePresenterType {
         ToastAppearanceManager.default.numberOfLines = 0
         ToastAppearanceManager.default.height = AutomaticDimension
         ToastAppearanceManager.default.titleEdgeInsets = .init(top: 8, left: 20, bottom: 8, right: 20)
-        ToastAppearanceManager.default.textColor = DefaultColorsProvider.background
+        ToastAppearanceManager.default.textColor = DefaultColorsProvider.backgroundPrimary
         
         
         let toast = Toast.default(text: message, direction: .top)

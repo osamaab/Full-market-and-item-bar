@@ -25,7 +25,7 @@ class CheckoutViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        view.backgroundColor = DefaultColorsProvider.background1
+        view.backgroundColor = DefaultColorsProvider.backgroundSecondary
         hidesBottomBarWhenPushed = true
         
         setupViews()
@@ -33,7 +33,7 @@ class CheckoutViewController: UIViewController {
     }
     
     fileprivate func setupViews(){
-        self.view.backgroundColor = DefaultColorsProvider.background1
+        self.view.backgroundColor = DefaultColorsProvider.backgroundSecondary
         
         contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.scrollContainerView.scrollView.contentInset.bottom += 100

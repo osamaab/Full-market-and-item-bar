@@ -97,7 +97,7 @@ class QuantitySelectionView: UIControl {
         
         titleLabel.text = title
         titleLabel.textAlignment = .center
-        titleLabel.textColor = DefaultColorsProvider.secondaryText
+        titleLabel.textColor = DefaultColorsProvider.textSecondary1
         titleLabel.font = .font(for: .medium, size: fontSizeForTitle)
         titleLabel.isHidden = title == nil || (title ?? "").isEmpty
         
@@ -134,16 +134,16 @@ class QuantitySelectionView: UIControl {
         
         
         plusButton.layer.borderWidth = 0.2
-        plusButton.layer.borderColor = DefaultColorsProvider.text.cgColor
+        plusButton.layer.borderColor = DefaultColorsProvider.textPrimary1.cgColor
         plusButton.setImage(UIImage(named: "plus_small"), for: .normal)
         plusButton.layer.cornerRadius = 3
-        plusButton.tintColor = DefaultColorsProvider.text
+        plusButton.tintColor = DefaultColorsProvider.textPrimary1
         
         minusButton.layer.borderWidth = 0.2
-        minusButton.layer.borderColor = DefaultColorsProvider.text.cgColor
+        minusButton.layer.borderColor = DefaultColorsProvider.textPrimary1.cgColor
         minusButton.setImage(UIImage(named: "plus_small"), for: .normal)
         minusButton.layer.cornerRadius = 3
-        minusButton.tintColor = DefaultColorsProvider.text
+        minusButton.tintColor = DefaultColorsProvider.textPrimary1
 
         
         valueLabel.font = .font(for: .bold, size: valueFontSize)

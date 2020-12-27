@@ -22,7 +22,7 @@ class MarketChangePasswordContentView: ChangePasswordContentView {
         layer.cornerRadius = 10
         layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
-        backgroundColor = DefaultColorsProvider.background
+        backgroundColor = DefaultColorsProvider.backgroundPrimary
         labelView.isHidden = true
         
         let containerView = UIView()
@@ -37,7 +37,7 @@ class MarketChangePasswordContentView: ChangePasswordContentView {
         
         stackView.addArrangedSubview(containerView)
         
-        dropShadow(color: DefaultColorsProvider.baseShadow,
+        dropShadow(color: DefaultColorsProvider.decoratorShadow,
                    opacity: 0.16,
                    offSet: .init(width: 0, height: 3.5), radius: 3.5)
     }

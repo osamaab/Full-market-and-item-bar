@@ -29,14 +29,14 @@ class BottomNextButtonView: UIView {
         addSubview(backgroundView)
         addSubview(nextButton)
         
-        backgroundView.backgroundColor = DefaultColorsProvider.lightTint
+        backgroundView.backgroundColor = DefaultColorsProvider.tintSecondary
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
         
         nextButton.layer.borderWidth = 1.5
-        nextButton.layer.borderColor = DefaultColorsProvider.darkerTint.cgColor
+        nextButton.layer.borderColor = DefaultColorsProvider.tintPrimary.cgColor
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         nextButton.contentEdgeInsets = .init(top: 12, left: 25, bottom: 12, right: 25)
-        nextButton.setTitleColor(DefaultColorsProvider.darkerTint, for: .normal)
+        nextButton.setTitleColor(DefaultColorsProvider.tintPrimary, for: .normal)
         
         backgroundView.fillContainer()
         nextButton.top(15).centerHorizontally().leading(50)

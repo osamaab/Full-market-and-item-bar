@@ -26,17 +26,17 @@ class CLScreenitemCollectionViewCell: UICollectionViewCell {
     }
     
     func setup(){
-        backgroundColor = DefaultColorsProvider.background
+        backgroundColor = DefaultColorsProvider.backgroundPrimary
         
         layer.cornerRadius = 5.4
-        dropShadow(color: DefaultColorsProvider.baseShadow, opacity: 0.05, offSet: .init(width: 0, height: 3.4), radius: 3.4)
+        dropShadow(color: DefaultColorsProvider.decoratorShadow, opacity: 0.05, offSet: .init(width: 0, height: 3.4), radius: 3.4)
 
         titleLabel.font = .font(for: .semiBold, size: 16)
-        titleLabel.textColor = DefaultColorsProvider.darkerTint
+        titleLabel.textColor = DefaultColorsProvider.tintPrimary
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         subtitleLabel.font = .font(for: .regular, size: 13)
-        subtitleLabel.textColor = DefaultColorsProvider.secondaryText
+        subtitleLabel.textColor = DefaultColorsProvider.textSecondary1
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
 
         titlesStackView.addingArrangedSubviews {

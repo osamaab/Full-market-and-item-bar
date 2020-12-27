@@ -32,10 +32,10 @@ class RatingView: UIView {
     func setup(){
         var settings = CosmosSettings()
         settings.emptyBorderWidth = 0
-        settings.emptyColor = DefaultColorsProvider.rating
+        settings.emptyColor = DefaultColorsProvider.messageRating
         settings.fillMode = .half
         settings.filledBorderWidth = 0
-        settings.filledColor = DefaultColorsProvider.rating
+        settings.filledColor = DefaultColorsProvider.messageRating
         settings.updateOnTouch = false
         settings.disablePanGestures = true
         

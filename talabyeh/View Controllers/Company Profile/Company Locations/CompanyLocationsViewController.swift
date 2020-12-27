@@ -19,7 +19,7 @@ class CompanyLocationsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         hidesBottomBarWhenPushed = true
-        view.backgroundColor = DefaultColorsProvider.background
+        view.backgroundColor = DefaultColorsProvider.backgroundPrimary
         
         view.subviewsPreparedAL {
             contentView

@@ -21,7 +21,7 @@ class MarketSelectDistributorViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        view.backgroundColor = DefaultColorsProvider.background1
+        view.backgroundColor = DefaultColorsProvider.backgroundSecondary
         
         collectionView.dataSource = self
         collectionView.delegate = self

@@ -13,11 +13,11 @@ class RoundedFillButton: RoundedButton {
     override func setup() {
         super.setup()
         
-        layer.borderColor = DefaultColorsProvider.darkerTint.cgColor
+        layer.borderColor = DefaultColorsProvider.tintPrimary.cgColor
         layer.borderWidth = 1
         
-        backgroundColor = DefaultColorsProvider.lightTint
-        setTitleColor(DefaultColorsProvider.darkerTint, for: .normal)
+        backgroundColor = DefaultColorsProvider.tintSecondary
+        setTitleColor(DefaultColorsProvider.tintPrimary, for: .normal)
         titleLabel?.font = .font(for: .medium, size: 16)
     }
 }

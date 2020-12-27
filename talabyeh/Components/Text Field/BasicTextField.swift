@@ -22,7 +22,11 @@ class BasicTextField: UITextField {
     
     func setup(){
         font = .font(for: .medium, size: 15)
-        textColor = DefaultColorsProvider.text
+        textColor = DefaultColorsProvider.textPrimary1
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        .init(width: Self.noIntrinsicMetric, height: 50)
     }
 }
 

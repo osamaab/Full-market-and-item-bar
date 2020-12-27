@@ -26,7 +26,7 @@ class CertificatesContentView: BasicViewWithSetup {
     lazy var collectionView: UICollectionView = makeCollectionView()
     
     override func setup() {
-        backgroundColor = DefaultColorsProvider.background
+        backgroundColor = DefaultColorsProvider.backgroundPrimary
         
         subviewsPreparedAL {
             titleView
@@ -36,7 +36,7 @@ class CertificatesContentView: BasicViewWithSetup {
         }
         
         levelsTitleLabel.text = "Levels"
-        levelsTitleLabel.textColor = DefaultColorsProvider.secondaryText
+        levelsTitleLabel.textColor = DefaultColorsProvider.textSecondary1
         levelsTitleLabel.font = .font(for: .bold, size: 16)
         
         titleView.top(0).leading(0).trailing(0)
@@ -150,10 +150,10 @@ extension CertificatesContentView {
             }
             
             imageView.contentMode = .scaleAspectFit
-            imageView.tintColor = DefaultColorsProvider.darkerTint
+            imageView.tintColor = DefaultColorsProvider.tintPrimary
             
             titleLabel.font = .font(for: .light, size: 14)
-            titleLabel.textColor = DefaultColorsProvider.secondaryText
+            titleLabel.textColor = DefaultColorsProvider.textSecondary1
             
             imageView.leading(0).width(10).height(10).centerVertically()
             titleLabel.leading(15).trailing(0).centerVertically()

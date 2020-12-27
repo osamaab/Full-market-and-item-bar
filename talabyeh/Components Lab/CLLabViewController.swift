@@ -41,11 +41,16 @@ class CLLabViewController: UIViewController {
     
     let screensProvider: CLScreenSectionListProvider
     let componentsProvider: CLComponentSectionListProvider
+    let colorsProvider: CLColorsSectionListProvider
     
     init(screensProvider: CLScreenSectionListProvider,
-         componentsProvider: CLComponentSectionListProvider){
+         componentsProvider: CLComponentSectionListProvider,
+         colorsProvider: CLColorsSectionListProvider){
+        
+        
         self.screensProvider = screensProvider
         self.componentsProvider = componentsProvider
+        self.colorsProvider = colorsProvider
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -64,7 +69,7 @@ class CLLabViewController: UIViewController {
     }
     
     func setupCollectionView(){
-        view.backgroundColor = DefaultColorsProvider.background1
+        view.backgroundColor = DefaultColorsProvider.backgroundSecondary
              
         view.subviewsPreparedAL {
             collectionView
@@ -87,8 +92,11 @@ class CLLabViewController: UIViewController {
         let componentsSection = CLAnySectionType(name: "Components",
                                                  items: componentsProvider.sections().map { $0.eraseToAnyItem() })
         
+        let colorsSection = CLAnySectionType(name: "Colors", items: colorsProvider.sections().map { $0.eraseToAnyItem() })
+        
         self.sections.append(screensSection)
         self.sections.append(componentsSection)
+        self.sections.append(colorsSection)
     }
     
     func createSnapshotAndReload(){
@@ -119,6 +127,11 @@ extension CLLabViewController: UICollectionViewDelegate {
         
         if let asComponentsSection = originalItem.underlyingItem as? CLComponentsSection {
             let nextVC = CLComponentsListViewController(components: asComponentsSection.items)
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        }
+        
+        if let asColorsSection = originalItem.underlyingItem as? CLColorsSection {
+            let nextVC = CLColorsListViewController(colorItems: asColorsSection.items)
             self.navigationController?.pushViewController(nextVC, animated: true)
         }
     }
