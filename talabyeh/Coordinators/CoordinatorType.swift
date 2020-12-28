@@ -10,6 +10,10 @@ import UIKit
 
 /**
  A Coordinator is simply defined as a flow manager, in which directs one screen to another within the same flow.
+ 
+ Responsabilities of a coordinator defined as:
+ - Managing the flow between it's screens ( aka. ViewControllers )
+ - Doing the real actions responding to external events come from a view controller
  */
 protocol CoordinatorType: class {
     

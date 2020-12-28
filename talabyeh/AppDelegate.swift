@@ -27,20 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupServices()
         setupApperance()
         
-        
-        let marketCoordinator = MarketCoordinator()
-        
-        let distributersCoordinator = DistributersListCoordinator()
-        
-        let cartCoordinator = CartCoordinator()
-        
-        let favoritesCoordinator = FavoritesCoordinator()
-        
-        let profileCoordinator = ProfileCoordinator()
-        
         let componentsLab = ComponentsLabCoordinator()
-        
-//        let tabBarCoordinator = TabBarCoordinator(coordinators: [marketCoordinator, componentsLab, distributersCoordinator, favoritesCoordinator, profileCoordinator, cartCoordinator])
         
         self.currentCoordinator = componentsLab.embededInNavigationCoordinator()
         currentCoordinator?.start(with: .windowRoot(self.window!))

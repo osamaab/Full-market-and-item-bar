@@ -8,38 +8,9 @@
 
 import UIKit
 
-typealias TransitionCompletion = ((Bool) -> Void)
-
-
 /**
- the transition performs 
- 
- 
+ Describes a transition that happens between two coordinators
  */
-protocol TransitionType {
-    associatedtype SourceViewController: UIViewController
-    associatedtype DestinationViewController: UIViewController
-    
-    func perform(for destination: DestinationViewController, from sourceViewController: SourceViewController, animated: Bool, completion: @escaping TransitionCompletion)
-}
-
-struct NavigationTransitionType<DestinationViewController: UIViewController>: TransitionType {
-    typealias SourceViewController = UINavigationController
-    
-    func perform(for destination: DestinationViewController, from sourceViewController: SourceViewController, animated: Bool, completion: @escaping TransitionCompletion) {
-        sourceViewController.pushViewController(destination, animated: animated)
-    }
-}
-
-struct PresentTransitionType<SourceViewController: UIViewController, DestinationViewController: UIViewController>: TransitionType {
-    
-    func perform(for destination: DestinationViewController, from sourceViewController: SourceViewController, animated: Bool, completion: @escaping TransitionCompletion) {
-        sourceViewController.present(destination, animated: animated) {
-            completion(true)
-        }
-    }
-}
-
 enum CoordinatorTransition {
     case push(UINavigationController)
     case present(UIViewController)
