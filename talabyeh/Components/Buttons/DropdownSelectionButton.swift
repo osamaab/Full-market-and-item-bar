@@ -15,6 +15,12 @@ protocol ChoiceItemType {
     var title: String { get }
 }
 
+extension ChoiceItemType {
+    func toAny() -> AnyChoiceItem {
+        .init(item: self)
+    }
+}
+
 struct AnyChoiceItem: ChoiceItemType {
     
     let title: String
@@ -74,7 +80,7 @@ class DropdownSelectionButton<ChoiceItem: ChoiceItemType>: RoundedButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(){
+    override func setup(){
         backgroundColor = DefaultColorsProvider.background
         setTitleColor(DefaultColorsProvider.darkerTint, for: .normal)
         titleLabel?.font = .font(for: .semiBold, size: 16)

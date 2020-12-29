@@ -15,6 +15,10 @@ class DefaultOprationCollectionViewCell: BaseOprationCollectionViewCell {
     let dividerView = DividerView()
     let totalField = FieldView(contentView: UILabel(), title: "Est. Total")
     
+    override var indexForInjectingContent: Int {
+        containerStackView.arrangedSubviews.firstIndex(of: headerView) ?? 0
+    }
+    
     override func setup() {
         super.setup()
         
@@ -63,10 +67,13 @@ class DefaultOperationHeaderView: BasicViewWithSetup {
         timeLabel.font = .font(for: .bold, size: 22)
         timeLabel.text = "18:00"
         timeLabel.textColor = DefaultColorsProvider.darkerTint
+        timeLabel.textAlignment = .right
 
         timeTitleLabel.font = .font(for: .bold, size: 12)
         timeTitleLabel.text = "Order time"
         timeTitleLabel.textColor = DefaultColorsProvider.darkerTint
+        timeTitleLabel.textAlignment = .right
+
 
         imageView.width(25).height(25).centerVertically().leading(0)
         

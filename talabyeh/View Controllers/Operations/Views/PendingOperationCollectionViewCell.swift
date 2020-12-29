@@ -27,6 +27,10 @@ class PendingOperationCollectionViewCell: BaseOprationCollectionViewCell {
     let orderTimeField = FieldView(contentView: UILabel(), title: "Order Time")
     let confirmView = PendingOperationConfirmationView()
     
+    override var indexForInjectingContent: Int {
+        containerStackView.arrangedSubviews.firstIndex(of: titleLabel) ?? 0
+    }
+    
     override func setup() {
         super.setup()
         

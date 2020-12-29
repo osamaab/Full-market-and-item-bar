@@ -9,6 +9,12 @@
 import UIKit
 import Stevia
 
+
+/**
+ The default operation collectionview cell provides a base methods for subclasse to implement, like the border, background, and the container stack.
+ 
+ Subviews (must) use the containerStackView property when adding any sub-components to the view.
+ */
 class BaseOprationCollectionViewCell: UICollectionViewCell {
     
     enum BackgroundType {
@@ -26,6 +32,13 @@ class BaseOprationCollectionViewCell: UICollectionViewCell {
         .none
     }
     
+    /**
+     Intro: the operation cell sometimes used in other places ( like the operation details screen ), in this case, we need a way to know where to inject any additional views, custom subclasses uses this index to mark a beginning for custom content
+     */
+    var indexForInjectingContent: Int {
+        0
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -37,7 +50,7 @@ class BaseOprationCollectionViewCell: UICollectionViewCell {
     }
     
     func setup(){
-        contentView.subviewsPreparedAL {
+        subviewsPreparedAL {
             containerView
         }
         

@@ -11,15 +11,15 @@ import UIKit
 class RoundedButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
+        setup()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
     }
     
-    func commonInit() {
+    func setup(){
         self.layer.cornerRadius = self.frame.size.height / 2
     }
     
