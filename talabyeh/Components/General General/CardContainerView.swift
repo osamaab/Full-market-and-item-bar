@@ -19,10 +19,7 @@ class CardContainerView: BasicCardView {
     var title: String? {
         didSet {
             titleLabel.text = title
-            
-            if title == nil || (title ?? "").isEmpty {
-                titleLabel.isHidden = true
-            }
+            titleLabel.isHidden = title == nil || (title ?? "").isEmpty
         }
     }
     
@@ -35,9 +32,7 @@ class CardContainerView: BasicCardView {
         super.init(frame: .zero)
         
         self.title = title
-        if title == nil || (title ?? "").isEmpty {
-            titleLabel.isHidden = true
-        }
+        self.titleLabel.isHidden = title == nil || (title ?? "").isEmpty
         
         setup()
     }

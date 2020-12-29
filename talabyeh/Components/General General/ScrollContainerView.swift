@@ -74,7 +74,7 @@ class ScrollContainerView: UIView {
     
     fileprivate func setupContents(with containerView: UIView){
         containerView.addSubview(contentView)
-        contentView.top(0).leading(0).trailing(0).bottom(0)
+        contentView.top(0).leading(0).trailing(0).bottom(>=0)
         
         contentView.backgroundColor = .clear
         contentContainerView.backgroundColor = .clear

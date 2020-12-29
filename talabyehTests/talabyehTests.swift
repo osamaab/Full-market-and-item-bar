@@ -3,7 +3,7 @@
 //  talabyehTests
 //
 //  Created by loai elayan on 10/4/20.
-//  Copyright © 2020 Converged Technology. All rights reserved.
+//  Copyright © 2020 Dominate. All rights reserved.
 //
 
 import XCTest
