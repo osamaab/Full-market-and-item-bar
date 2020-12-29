@@ -41,7 +41,6 @@
 		E45D854A2576265B009ACC8D /* DropdownSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D85492576265B009ACC8D /* DropdownSelectionButton.swift */; };
 		E45D8550257628D9009ACC8D /* ComponentsLabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D854F257628D9009ACC8D /* ComponentsLabCoordinator.swift */; };
 		E45D8558257628EC009ACC8D /* ComponentsLabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D8557257628EC009ACC8D /* ComponentsLabViewController.swift */; };
-		E45D87B32578C4650069B1D8 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D87B22578C4650069B1D8 /* Route.swift */; };
 		E45E552A256F7180008856FD /* CartCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45E5529256F7180008856FD /* CartCoordinator.swift */; };
 		E45E5535256F77DC008856FD /* CartSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45E5534256F77DC008856FD /* CartSummaryView.swift */; };
 		E45E5549256F9F4E008856FD /* DeliveryAreaPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45E5548256F9F4E008856FD /* DeliveryAreaPickerViewController.swift */; };
@@ -87,6 +86,14 @@
 		E4B2A75A256CBAC70055C1AE /* QuantitySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2A759256CBAC70055C1AE /* QuantitySelectionView.swift */; };
 		E4B2A75F256CC1D60055C1AE /* VerticalPaddingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2A75E256CC1D60055C1AE /* VerticalPaddingView.swift */; };
 		E4B2A764256CC5F60055C1AE /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2A763256CC5F60055C1AE /* QRCodeView.swift */; };
+		E4C1389925833B7800D951F3 /* BaseOprationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C1389825833B7800D951F3 /* BaseOprationCollectionViewCell.swift */; };
+		E4C138A22583846200D951F3 /* OprationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C138A12583846200D951F3 /* OprationsListViewController.swift */; };
+		E4C138AA2583A27300D951F3 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C138A92583A27300D951F3 /* DividerView.swift */; };
+		E4C138AF2583AA4B00D951F3 /* FinishedOperationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C138AE2583AA4B00D951F3 /* FinishedOperationCollectionViewCell.swift */; };
+		E4C138B42583AA5200D951F3 /* FaildOperationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C138B32583AA5200D951F3 /* FaildOperationCollectionViewCell.swift */; };
+		E4C138B92583AA8500D951F3 /* OngoingOperationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C138B82583AA8500D951F3 /* OngoingOperationCollectionViewCell.swift */; };
+		E4C138BE2583AA9000D951F3 /* PendingOperationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C138BD2583AA9000D951F3 /* PendingOperationCollectionViewCell.swift */; };
+		E4C138C32583B23700D951F3 /* DefaultOprationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C138C22583B23700D951F3 /* DefaultOprationCollectionViewCell.swift */; };
 		E4C705AB255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C705AA255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift */; };
 		E4C705B0255BB18100DD29E3 /* ScreenMessagePresenterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C705AF255BB18100DD29E3 /* ScreenMessagePresenterType.swift */; };
 		E4C705C6255BB2FA00DD29E3 /* UISearchBar+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C705C5255BB2FA00DD29E3 /* UISearchBar+Additions.swift */; };
@@ -226,7 +233,6 @@
 		E45D85492576265B009ACC8D /* DropdownSelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownSelectionButton.swift; sourceTree = "<group>"; };
 		E45D854F257628D9009ACC8D /* ComponentsLabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsLabCoordinator.swift; sourceTree = "<group>"; };
 		E45D8557257628EC009ACC8D /* ComponentsLabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsLabViewController.swift; sourceTree = "<group>"; };
-		E45D87B22578C4650069B1D8 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		E45E5529256F7180008856FD /* CartCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCoordinator.swift; sourceTree = "<group>"; };
 		E45E5534256F77DC008856FD /* CartSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartSummaryView.swift; sourceTree = "<group>"; };
 		E45E5548256F9F4E008856FD /* DeliveryAreaPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAreaPickerViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +278,14 @@
 		E4B2A759256CBAC70055C1AE /* QuantitySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantitySelectionView.swift; sourceTree = "<group>"; };
 		E4B2A75E256CC1D60055C1AE /* VerticalPaddingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalPaddingView.swift; sourceTree = "<group>"; };
 		E4B2A763256CC5F60055C1AE /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		E4C1389825833B7800D951F3 /* BaseOprationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOprationCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4C138A12583846200D951F3 /* OprationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OprationsListViewController.swift; sourceTree = "<group>"; };
+		E4C138A92583A27300D951F3 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
+		E4C138AE2583AA4B00D951F3 /* FinishedOperationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedOperationCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4C138B32583AA5200D951F3 /* FaildOperationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaildOperationCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4C138B82583AA8500D951F3 /* OngoingOperationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingOperationCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4C138BD2583AA9000D951F3 /* PendingOperationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingOperationCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4C138C22583B23700D951F3 /* DefaultOprationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultOprationCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4C705AA255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBlockingLoaderType.swift; sourceTree = "<group>"; };
 		E4C705AF255BB18100DD29E3 /* ScreenMessagePresenterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenMessagePresenterType.swift; sourceTree = "<group>"; };
 		E4C705C5255BB2FA00DD29E3 /* UISearchBar+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Additions.swift"; sourceTree = "<group>"; };
@@ -702,6 +716,28 @@
 			path = "Product Details";
 			sourceTree = "<group>";
 		};
+		E4C1389625833AE800D951F3 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				E4C138A12583846200D951F3 /* OprationsListViewController.swift */,
+				E4C1389725833B6B00D951F3 /* Views */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		E4C1389725833B6B00D951F3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E4C1389825833B7800D951F3 /* BaseOprationCollectionViewCell.swift */,
+				E4C138C22583B23700D951F3 /* DefaultOprationCollectionViewCell.swift */,
+				E4C138AE2583AA4B00D951F3 /* FinishedOperationCollectionViewCell.swift */,
+				E4C138B32583AA5200D951F3 /* FaildOperationCollectionViewCell.swift */,
+				E4C138B82583AA8500D951F3 /* OngoingOperationCollectionViewCell.swift */,
+				E4C138BD2583AA9000D951F3 /* PendingOperationCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E4C705D0255BB67500DD29E3 /* Pickers */ = {
 			isa = PBXGroup;
 			children = (
@@ -720,7 +756,6 @@
 			children = (
 				E4C705F1255BBF5400DD29E3 /* CoordinatorType.swift */,
 				E4000CF6255C174600E89ABB /* CoordinatorTransitionType.swift */,
-				E45D87B22578C4650069B1D8 /* Route.swift */,
 				E4C705F6255BBF8200DD29E3 /* TabBarCoordinator.swift */,
 				E4C70601255BBFC500DD29E3 /* Base UI */,
 			);
@@ -759,6 +794,7 @@
 				E4B2A759256CBAC70055C1AE /* QuantitySelectionView.swift */,
 				E4B2A75E256CC1D60055C1AE /* VerticalPaddingView.swift */,
 				E49B9FEC2577869B0057EDDE /* BasicViewWithSetup.swift */,
+				E4C138A92583A27300D951F3 /* DividerView.swift */,
 			);
 			path = "General General";
 			sourceTree = "<group>";
@@ -965,6 +1001,7 @@
 		F98D0E8A252F786200D46EE9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E4C1389625833AE800D951F3 /* Operations */,
 				E48EC2E2257FBFC1005C0E44 /* Payment Cards */,
 				E49B9FD4257783B10057EDDE /* Checkout */,
 				E45D854E257628C9009ACC8D /* Components Lab */,
@@ -1275,19 +1312,23 @@
 				E496B2CF255B2B10001BEC0F /* BorderedTextField.swift in Sources */,
 				E4B2A75A256CBAC70055C1AE /* QuantitySelectionView.swift in Sources */,
 				F990A388254082C500ABC4CF /* DistributorSignUpView.swift in Sources */,
+				E4C138AF2583AA4B00D951F3 /* FinishedOperationCollectionViewCell.swift in Sources */,
 				E4E68139255D435E0051D52D /* LocationSearchHistoryManager.swift in Sources */,
 				E450C2492563CA3600F6F392 /* DistributersListCoordinator.swift in Sources */,
 				E4EE5CB2256F6FB10031BC71 /* Then.swift in Sources */,
 				E48EC2ED257FC11A005C0E44 /* CreditCardCollectionViewCell.swift in Sources */,
 				E496B2A4255B2730001BEC0F /* ColorsProviderType.swift in Sources */,
+				E4C138C32583B23700D951F3 /* DefaultOprationCollectionViewCell.swift in Sources */,
 				E4CB7419255D20C80017A499 /* PickerTextField.swift in Sources */,
 				E45E5535256F77DC008856FD /* CartSummaryView.swift in Sources */,
 				E4000CC6255C08DF00E89ABB /* MarketCategoryCollectionViewCell.swift in Sources */,
 				E450C2542563CFE500F6F392 /* DistributerCollectionViewCell.swift in Sources */,
 				E496B249255B214C001BEC0F /* FontProviderType.swift in Sources */,
 				E49B9FD0257782FF0057EDDE /* CardContainerView.swift in Sources */,
+				E4C138B92583AA8500D951F3 /* OngoingOperationCollectionViewCell.swift in Sources */,
 				E4000CDF255C106700E89ABB /* PickerPlaceholderView.swift in Sources */,
 				E4FF49992561021F00B4CBC4 /* BasicTextField.swift in Sources */,
+				E4C138AA2583A27300D951F3 /* DividerView.swift in Sources */,
 				E40FB2902567AA6900626569 /* CheckboxView.swift in Sources */,
 				E4A670392563AAF60057083C /* ProfileMenuItem.swift in Sources */,
 				E4C70612255BC44900DD29E3 /* NibInstantiatable.swift in Sources */,
@@ -1347,6 +1388,7 @@
 				E49B9FD6257783BA0057EDDE /* CheckoutCoordinator.swift in Sources */,
 				E4CB73FF255D158E0017A499 /* ValidationError.swift in Sources */,
 				E4E68147255D481D0051D52D /* SampleSignupViewController.swift in Sources */,
+				E4C138A22583846200D951F3 /* OprationsListViewController.swift in Sources */,
 				E49B9FE82577866C0057EDDE /* CheckoutViewController+Cards.swift in Sources */,
 				E496B260255B22A2001BEC0F /* SignUpCategoriesListView.swift in Sources */,
 				E4C70608255BBFFC00DD29E3 /* NavigationController.swift in Sources */,
@@ -1355,6 +1397,7 @@
 				E4C7060D255BC43600DD29E3 /* ReusableCell.swift in Sources */,
 				E496B2B6255B28C0001BEC0F /* UIView+Additions.swift in Sources */,
 				E496B2DD255B2D44001BEC0F /* BorderedButton.swift in Sources */,
+				E4C138B42583AA5200D951F3 /* FaildOperationCollectionViewCell.swift in Sources */,
 				E4E6810B255D3B700051D52D /* LocationPickerController.swift in Sources */,
 				F9EA049B252C858500DC288B /* RoundedView.swift in Sources */,
 				E45D8558257628EC009ACC8D /* ComponentsLabViewController.swift in Sources */,
@@ -1373,6 +1416,7 @@
 				E44AD5E1256A458400574B6A /* MarketCategoriesViewController.swift in Sources */,
 				E4FAB5A72565007900F25473 /* ExpandableItem.swift in Sources */,
 				E48C27BF2569DA99006E01FB /* TextSearchFieldType.swift in Sources */,
+				E4C138BE2583AA9000D951F3 /* PendingOperationCollectionViewCell.swift in Sources */,
 				E41327922565699000090419 /* AdvancedSearchFolderCollectionViewCell.swift in Sources */,
 				F9CC27C625332B6B00408FDA /* SignInViewController.swift in Sources */,
 				E48C27C92569DAA4006E01FB /* CategorySearchFieldType.swift in Sources */,
@@ -1389,7 +1433,6 @@
 				E4D8428F256AC4CE00D215B4 /* FavoritesCoordinator.swift in Sources */,
 				E40FB26C256798A100626569 /* SearchFieldType.swift in Sources */,
 				E4151D7A25626910009F1D45 /* WeekdaysRangePickerTextField.swift in Sources */,
-				E45D87B32578C4650069B1D8 /* Route.swift in Sources */,
 				E4000CBC255C089800E89ABB /* ProductCollectionViewCell.swift in Sources */,
 				F9F65B8C254F1FD300D347D6 /* MarketViewController.swift in Sources */,
 				E496B2F1255B2ED9001BEC0F /* GeneralRoutes.swift in Sources */,
@@ -1399,6 +1442,7 @@
 				F93B1FE225373DAE00E48657 /* SignUpCategoriesListViewController.swift in Sources */,
 				F9CC27CB25332B8900408FDA /* SignInView.swift in Sources */,
 				E40FB27A2567A91700626569 /* CategoryPickerController.swift in Sources */,
+				E4C1389925833B7800D951F3 /* BaseOprationCollectionViewCell.swift in Sources */,
 				E48C27C42569DA9F006E01FB /* LocationSearchFieldType.swift in Sources */,
 				E47D7ACD2580B76100107DF1 /* NewPaymentCreditCardContentView.swift in Sources */,
 				E4000CE7255C121900E89ABB /* UIStackView+Additions.swift in Sources */,
