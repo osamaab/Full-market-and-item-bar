@@ -11,3 +11,4 @@ ${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
 ${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/ValidationTextField/ValidationTextField.framework
+${BUILT_PRODUCTS_DIR}/XCoordinator/XCoordinator.framework

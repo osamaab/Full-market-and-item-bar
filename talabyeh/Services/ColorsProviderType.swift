@@ -20,8 +20,9 @@ enum ColorGroup: String, CaseIterable {
 }
 
 let DefaultColorsProvider: ColorsProviderType = {
-    let style = AppDelegate.shared.window?.traitCollection.userInterfaceStyle ?? .light
-    return style == .dark ? DarkSchemeColorProvider() : LightSchemeColorProvider()
+    LightSchemeColorProvider()
+//    let style = AppDelegate.shared.window?.traitCollection.userInterfaceStyle ?? .light
+//    return style == .dark ? DarkSchemeColorProvider() : LightSchemeColorProvider()
 }()
 
 
@@ -73,11 +74,11 @@ struct LightSchemeColorProvider: ColorsProviderType {
     let textPlaceholder = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1) // A0A7B7
     
     let elementUnselected = #colorLiteral(red: 0.431372549, green: 0.4745098039, blue: 0.5411764706, alpha: 1) // 6E798A
-    let elementBarBackground = #colorLiteral(red: 0.06666666667, green: 0.3607843137, blue: 0.1960784314, alpha: 1)
-    let elementBarTint = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    let elementBarBackground = #colorLiteral(red: 0.06666666667, green: 0.3607843137, blue: 0.1960784314, alpha: 1) // 115C32
+    let elementBarTint = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) // FFFFFF
     
     let decoratorBorder = #colorLiteral(red: 0.831372549, green: 0.831372549, blue: 0.8784313725, alpha: 1) // 707070
-    let decoratorShadow = UIColor.lightGray
+    let decoratorShadow = #colorLiteral(red: 0.831372549, green: 0.831372549, blue: 0.8784313725, alpha: 1) // 707070
     
     let containerBackground1 = #colorLiteral(red: 0.6039215686, green: 0.631372549, blue: 0.6941176471, alpha: 1) // 9AA1B1
     let containerBackground2 = #colorLiteral(red: 0.8, green: 0.8, blue: 0.8, alpha: 1) // CCCCCC
