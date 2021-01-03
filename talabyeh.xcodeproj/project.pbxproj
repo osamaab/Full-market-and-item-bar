@@ -222,6 +222,11 @@
 		E4FF1B8325A1F4C300AF4194 /* LightSchemeColorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF1B8225A1F4C300AF4194 /* LightSchemeColorProvider.swift */; };
 		E4FF1B8825A1F4EE00AF4194 /* DarkSchemeColorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF1B8725A1F4EE00AF4194 /* DarkSchemeColorProvider.swift */; };
 		E4FF1B9025A1F60900AF4194 /* AdaptiveColorsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF1B8F25A1F60900AF4194 /* AdaptiveColorsProvider.swift */; };
+		E4FF1B9D25A1FD2E00AF4194 /* StatefulViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF1B9C25A1FD2E00AF4194 /* StatefulViewController.swift */; };
+		E4FF1BA325A1FD6B00AF4194 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF1BA225A1FD6B00AF4194 /* EmptyStateView.swift */; };
+		E4FF1BAB25A1FD7800AF4194 /* FailureStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF1BAA25A1FD7800AF4194 /* FailureStateView.swift */; };
+		E4FF1BB025A1FD8000AF4194 /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF1BAF25A1FD8000AF4194 /* LoadingStateView.swift */; };
+		E4FF1BB525A1FD8A00AF4194 /* GeneralStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF1BB425A1FD8A00AF4194 /* GeneralStateView.swift */; };
 		E4FF498C2560F43900B4CBC4 /* NewDistributerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF498B2560F43900B4CBC4 /* NewDistributerViewController.swift */; };
 		E4FF49942560F45800B4CBC4 /* NewDistributerContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF49932560F45800B4CBC4 /* NewDistributerContentView.swift */; };
 		E4FF49992561021F00B4CBC4 /* BasicTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF49982561021F00B4CBC4 /* BasicTextField.swift */; };
@@ -506,6 +511,11 @@
 		E4FF1B8225A1F4C300AF4194 /* LightSchemeColorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightSchemeColorProvider.swift; sourceTree = "<group>"; };
 		E4FF1B8725A1F4EE00AF4194 /* DarkSchemeColorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSchemeColorProvider.swift; sourceTree = "<group>"; };
 		E4FF1B8F25A1F60900AF4194 /* AdaptiveColorsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveColorsProvider.swift; sourceTree = "<group>"; };
+		E4FF1B9C25A1FD2E00AF4194 /* StatefulViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulViewController.swift; sourceTree = "<group>"; };
+		E4FF1BA225A1FD6B00AF4194 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		E4FF1BAA25A1FD7800AF4194 /* FailureStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureStateView.swift; sourceTree = "<group>"; };
+		E4FF1BAF25A1FD8000AF4194 /* LoadingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStateView.swift; sourceTree = "<group>"; };
+		E4FF1BB425A1FD8A00AF4194 /* GeneralStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralStateView.swift; sourceTree = "<group>"; };
 		E4FF498B2560F43900B4CBC4 /* NewDistributerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDistributerViewController.swift; sourceTree = "<group>"; };
 		E4FF49932560F45800B4CBC4 /* NewDistributerContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDistributerContentView.swift; sourceTree = "<group>"; };
 		E4FF49982561021F00B4CBC4 /* BasicTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTextField.swift; sourceTree = "<group>"; };
@@ -1211,6 +1221,7 @@
 			children = (
 				E4C70602255BBFCD00DD29E3 /* TabBarController.swift */,
 				E4C70607255BBFFC00DD29E3 /* NavigationController.swift */,
+				E4FF1B9C25A1FD2E00AF4194 /* StatefulViewController.swift */,
 			);
 			path = "Base UI";
 			sourceTree = "<group>";
@@ -1364,6 +1375,17 @@
 			path = Colors;
 			sourceTree = "<group>";
 		};
+		E4FF1BA125A1FD3700AF4194 /* State Views */ = {
+			isa = PBXGroup;
+			children = (
+				E4FF1BB425A1FD8A00AF4194 /* GeneralStateView.swift */,
+				E4FF1BA225A1FD6B00AF4194 /* EmptyStateView.swift */,
+				E4FF1BAA25A1FD7800AF4194 /* FailureStateView.swift */,
+				E4FF1BAF25A1FD8000AF4194 /* LoadingStateView.swift */,
+			);
+			path = "State Views";
+			sourceTree = "<group>";
+		};
 		E4FF498A2560F42F00B4CBC4 /* New Distributer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1484,6 +1506,7 @@
 		F98D0E72252F171000D46EE9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E4FF1BA125A1FD3700AF4194 /* State Views */,
 				E4B2A741256CB5A10055C1AE /* Cells */,
 				E4CB7421255D23300017A499 /* Headers and Footers */,
 				E4CB7420255D23220017A499 /* General General */,
@@ -1822,6 +1845,7 @@
 				E4568F542593AFF700FA91E4 /* ChangeAvatarView.swift in Sources */,
 				E4749C3A2588EE1F00479538 /* TintedLabelCollectionReusableView.swift in Sources */,
 				E4A0B27625868F4A00AF3CEA /* CheckDistributersOperationAccessoryView.swift in Sources */,
+				E4FF1BB025A1FD8000AF4194 /* LoadingStateView.swift in Sources */,
 				E4BAF6F0259A3B9E00A65D87 /* AppConstants.swift in Sources */,
 				E4BAF6E8259A3B5400A65D87 /* AppCoordinator.swift in Sources */,
 				E4C138C32583B23700D951F3 /* DefaultOprationCollectionViewCell.swift in Sources */,
@@ -1878,6 +1902,7 @@
 				E496B2CA255B2ABF001BEC0F /* ValidationTextField.swift in Sources */,
 				E45D8550257628D9009ACC8D /* ComponentsLabCoordinator.swift in Sources */,
 				F98D0E54252DE6F200D46EE9 /* SignUpWizardViewController.swift in Sources */,
+				E4FF1B9D25A1FD2E00AF4194 /* StatefulViewController.swift in Sources */,
 				E4FF1B7E25A1F4BA00AF4194 /* ColorGroup.swift in Sources */,
 				E4EE6BB92594DA4700D0EDCC /* CLComponentGroupIdentifier.swift in Sources */,
 				E4298490258DB0BB00818E09 /* CLAnyItem.swift in Sources */,
@@ -1988,8 +2013,10 @@
 				E48C89D42590FC6E000CDE76 /* NewItemViewController.swift in Sources */,
 				E4749C602588FDC600479538 /* CompanyProfileOptionsViewController.swift in Sources */,
 				F9CC27C625332B6B00408FDA /* SignInViewController.swift in Sources */,
+				E4FF1BAB25A1FD7800AF4194 /* FailureStateView.swift in Sources */,
 				E48C27C92569DAA4006E01FB /* CategorySearchFieldType.swift in Sources */,
 				E4602D39258CC75D004C556B /* CLSectionHeaderCollectionReusableView.swift in Sources */,
+				E4FF1BA325A1FD6B00AF4194 /* EmptyStateView.swift in Sources */,
 				F94608F32545D92B00C74D95 /* ProfilePageViewController.swift in Sources */,
 				E496B2D8255B2D3F001BEC0F /* BackButton.swift in Sources */,
 				E4EE6BDE2594E7AA00D0EDCC /* CLScreenListProvider.swift in Sources */,
@@ -2025,6 +2052,7 @@
 				E492903D259FF50700B2B67B /* DistributorsCoordinator.swift in Sources */,
 				E47E010325926B2B00FC737A /* SelectExternalViewController.swift in Sources */,
 				E4A6704F2563B5310057083C /* YearPickerTextField.swift in Sources */,
+				E4FF1BB525A1FD8A00AF4194 /* GeneralStateView.swift in Sources */,
 				F93B1FE225373DAE00E48657 /* SignUpCategoriesListViewController.swift in Sources */,
 				F9CC27CB25332B8900408FDA /* SignInView.swift in Sources */,
 				E40FB27A2567A91700626569 /* CategoryPickerController.swift in Sources */,
