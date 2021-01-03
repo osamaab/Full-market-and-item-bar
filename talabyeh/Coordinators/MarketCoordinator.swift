@@ -14,5 +14,17 @@ enum MarketRoute: Route {
 }
 
 class MarketCoordinator: NavigationCoordinator<MarketRoute> {
+    
+    init(){
+        super.init(rootViewController: NavigationController(), initialRoute: .home)
+        rootViewController.tabBarItem = .market
+    }
 
+    override func prepareTransition(for route: RouteType) -> TransitionType {
+        switch route {
+        case .home:
+            let market = MarketViewController()
+            return .push(market)
+        }
+    }
 }

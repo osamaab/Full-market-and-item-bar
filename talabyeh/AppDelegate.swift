@@ -24,12 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        router.setRoot(for: mainWindow)
-        
         setupServices()
         setupApperance()
         
-        
+        router.setRoot(for: mainWindow)
         return true
     }
 }

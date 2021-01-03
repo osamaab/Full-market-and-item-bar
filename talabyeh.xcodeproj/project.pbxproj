@@ -116,6 +116,9 @@
 		E48D141E25789EF400E00ABB /* DatePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48D141D25789EF400E00ABB /* DatePickerTextField.swift */; };
 		E48EC2E4257FC0EC005C0E44 /* PaymentCardsPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48EC2E3257FC0EC005C0E44 /* PaymentCardsPickerViewController.swift */; };
 		E48EC2ED257FC11A005C0E44 /* CreditCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48EC2EC257FC11A005C0E44 /* CreditCardCollectionViewCell.swift */; };
+		E4929038259FF40100B2B67B /* ItemsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4929037259FF40100B2B67B /* ItemsCoordinator.swift */; };
+		E492903D259FF50700B2B67B /* DistributorsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E492903C259FF50700B2B67B /* DistributorsCoordinator.swift */; };
+		E4929042259FF59900B2B67B /* OperationsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4929041259FF59900B2B67B /* OperationsCoordinator.swift */; };
 		E496B249255B214C001BEC0F /* FontProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B248255B214C001BEC0F /* FontProviderType.swift */; };
 		E496B260255B22A2001BEC0F /* SignUpCategoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B25F255B22A2001BEC0F /* SignUpCategoriesListView.swift */; };
 		E496B2A4255B2730001BEC0F /* ColorsProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2A3255B2730001BEC0F /* ColorsProviderType.swift */; };
@@ -393,6 +396,9 @@
 		E48D141D25789EF400E00ABB /* DatePickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTextField.swift; sourceTree = "<group>"; };
 		E48EC2E3257FC0EC005C0E44 /* PaymentCardsPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardsPickerViewController.swift; sourceTree = "<group>"; };
 		E48EC2EC257FC11A005C0E44 /* CreditCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4929037259FF40100B2B67B /* ItemsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCoordinator.swift; sourceTree = "<group>"; };
+		E492903C259FF50700B2B67B /* DistributorsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorsCoordinator.swift; sourceTree = "<group>"; };
+		E4929041259FF59900B2B67B /* OperationsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsCoordinator.swift; sourceTree = "<group>"; };
 		E496B248255B214C001BEC0F /* FontProviderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontProviderType.swift; sourceTree = "<group>"; };
 		E496B25F255B22A2001BEC0F /* SignUpCategoriesListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpCategoriesListView.swift; sourceTree = "<group>"; };
 		E496B2A3255B2730001BEC0F /* ColorsProviderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsProviderType.swift; sourceTree = "<group>"; };
@@ -1185,6 +1191,9 @@
 				E4BAF707259A43C400A65D87 /* CompanyFlowCoordinator.swift */,
 				E4000C98255C00B000E89ABB /* ProfileCoordinator.swift */,
 				E4000C90255BFF5900E89ABB /* MarketCoordinator.swift */,
+				E4929037259FF40100B2B67B /* ItemsCoordinator.swift */,
+				E492903C259FF50700B2B67B /* DistributorsCoordinator.swift */,
+				E4929041259FF59900B2B67B /* OperationsCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -1842,6 +1851,7 @@
 				E4401092259F3C1500FDE5A2 /* Transitions.swift in Sources */,
 				E4749C582588FDAF00479538 /* ProfileOptionsContentView.swift in Sources */,
 				E40FB266256797E800626569 /* LocationPickerTextField.swift in Sources */,
+				E4929042259FF59900B2B67B /* OperationsCoordinator.swift in Sources */,
 				E413279A25656BB800090419 /* AdvancedSearchViewController.swift in Sources */,
 				E47A06302598768800654953 /* MarketStoreLocationFieldsViewController.swift in Sources */,
 				E496B2CA255B2ABF001BEC0F /* ValidationTextField.swift in Sources */,
@@ -1929,6 +1939,7 @@
 				F9EA049B252C858500DC288B /* RoundedView.swift in Sources */,
 				E44DB3D92595C37B009F1809 /* String+Additions.swift in Sources */,
 				E4749C522588F1C600479538 /* CompanyInformationInputContentView.swift in Sources */,
+				E4929038259FF40100B2B67B /* ItemsCoordinator.swift in Sources */,
 				E4EE5CA0256F6DF50031BC71 /* CartItemsViewController.swift in Sources */,
 				E4FAB5A92565007900F25473 /* ExpandableFolderItemCell.swift in Sources */,
 				E40DFA7A258C7A7F00548BD9 /* CLScreenitemCollectionViewCell.swift in Sources */,
@@ -1988,6 +1999,7 @@
 				E429849F258DB0F000818E09 /* CLScreensSection.swift in Sources */,
 				E4408814258C92E9004196A1 /* CLComponentAttribute.swift in Sources */,
 				E47A063D259876B400654953 /* MarketStoreLocationFIeldsContentView.swift in Sources */,
+				E492903D259FF50700B2B67B /* DistributorsCoordinator.swift in Sources */,
 				E47E010325926B2B00FC737A /* SelectExternalViewController.swift in Sources */,
 				E4A6704F2563B5310057083C /* YearPickerTextField.swift in Sources */,
 				F93B1FE225373DAE00E48657 /* SignUpCategoriesListViewController.swift in Sources */,

@@ -29,12 +29,14 @@ extension RoundedFillButton: CLComponentPreview {
         .buttons
     }
     
+    
+    
     static func render(in context: CLComponentPreviewContext) {
         let newButton = self.init()
         newButton.contentEdgeInsets = .init(top: 10, left: 25, bottom: 10, right: 25)
         newButton.setTitle("Tap Meeee", for: .normal)
                 
-        context.containerView.subviewsPreparedAL { () -> [UIView] in
+        context.containerView.subviewsPreparedAL {
             newButton
         }
         
