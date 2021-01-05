@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupApperance()
         
         router.setRoot(for: mainWindow)
+        
         return true
     }
 }

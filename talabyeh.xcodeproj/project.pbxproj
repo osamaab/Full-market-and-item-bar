@@ -119,6 +119,13 @@
 		E4929038259FF40100B2B67B /* ItemsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4929037259FF40100B2B67B /* ItemsCoordinator.swift */; };
 		E492903D259FF50700B2B67B /* DistributorsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E492903C259FF50700B2B67B /* DistributorsCoordinator.swift */; };
 		E4929042259FF59900B2B67B /* OperationsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4929041259FF59900B2B67B /* OperationsCoordinator.swift */; };
+		E494F9E225A49D6D00517CA8 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494F9E125A49D6D00517CA8 /* ContentViewController.swift */; };
+		E494F9E725A4A2B300517CA8 /* ContentRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494F9E625A4A2B300517CA8 /* ContentRepositoryType.swift */; };
+		E494F9EC25A4A2B900517CA8 /* AnyContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494F9EB25A4A2B900517CA8 /* AnyContentRepository.swift */; };
+		E494F9F125A4A2BF00517CA8 /* Emptiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494F9F025A4A2BF00517CA8 /* Emptiable.swift */; };
+		E494F9F625A4A2C500517CA8 /* ContentRequestCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494F9F525A4A2C500517CA8 /* ContentRequestCompletion.swift */; };
+		E494F9FB25A4A52B00517CA8 /* APIContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494F9FA25A4A52B00517CA8 /* APIContentRepository.swift */; };
+		E494FA0025A4A5EF00517CA8 /* ConstantContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494F9FF25A4A5EF00517CA8 /* ConstantContentRepository.swift */; };
 		E496B249255B214C001BEC0F /* FontProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B248255B214C001BEC0F /* FontProviderType.swift */; };
 		E496B260255B22A2001BEC0F /* SignUpCategoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B25F255B22A2001BEC0F /* SignUpCategoriesListView.swift */; };
 		E496B2AC255B2771001BEC0F /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2AB255B2771001BEC0F /* UIColor+Additions.swift */; };
@@ -408,6 +415,13 @@
 		E4929037259FF40100B2B67B /* ItemsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCoordinator.swift; sourceTree = "<group>"; };
 		E492903C259FF50700B2B67B /* DistributorsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorsCoordinator.swift; sourceTree = "<group>"; };
 		E4929041259FF59900B2B67B /* OperationsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationsCoordinator.swift; sourceTree = "<group>"; };
+		E494F9E125A49D6D00517CA8 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		E494F9E625A4A2B300517CA8 /* ContentRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRepositoryType.swift; sourceTree = "<group>"; };
+		E494F9EB25A4A2B900517CA8 /* AnyContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyContentRepository.swift; sourceTree = "<group>"; };
+		E494F9F025A4A2BF00517CA8 /* Emptiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emptiable.swift; sourceTree = "<group>"; };
+		E494F9F525A4A2C500517CA8 /* ContentRequestCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRequestCompletion.swift; sourceTree = "<group>"; };
+		E494F9FA25A4A52B00517CA8 /* APIContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIContentRepository.swift; sourceTree = "<group>"; };
+		E494F9FF25A4A5EF00517CA8 /* ConstantContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantContentRepository.swift; sourceTree = "<group>"; };
 		E496B248255B214C001BEC0F /* FontProviderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontProviderType.swift; sourceTree = "<group>"; };
 		E496B25F255B22A2001BEC0F /* SignUpCategoriesListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpCategoriesListView.swift; sourceTree = "<group>"; };
 		E496B2AB255B2771001BEC0F /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
@@ -924,6 +938,20 @@
 				E47D7ACC2580B76100107DF1 /* NewPaymentCreditCardContentView.swift */,
 			);
 			path = "Content Views";
+			sourceTree = "<group>";
+		};
+		E494FA0725A4A6B500517CA8 /* Content Loading */ = {
+			isa = PBXGroup;
+			children = (
+				E494F9E125A49D6D00517CA8 /* ContentViewController.swift */,
+				E494F9E625A4A2B300517CA8 /* ContentRepositoryType.swift */,
+				E494F9EB25A4A2B900517CA8 /* AnyContentRepository.swift */,
+				E494F9FA25A4A52B00517CA8 /* APIContentRepository.swift */,
+				E494F9FF25A4A5EF00517CA8 /* ConstantContentRepository.swift */,
+				E494F9F525A4A2C500517CA8 /* ContentRequestCompletion.swift */,
+				E494F9F025A4A2BF00517CA8 /* Emptiable.swift */,
+			);
+			path = "Content Loading";
 			sourceTree = "<group>";
 		};
 		E496B235255B2079001BEC0F /* Networking */ = {
@@ -1472,6 +1500,7 @@
 			isa = PBXGroup;
 			children = (
 				F96B851F2529A05800CEDCF8 /* AppDelegate.swift */,
+				E494FA0725A4A6B500517CA8 /* Content Loading */,
 				E4C70601255BBFC500DD29E3 /* Base UI */,
 				E45D854E257628C9009ACC8D /* Components Lab */,
 				E4C705F0255BBF2900DD29E3 /* Coordinators */,
@@ -1875,6 +1904,7 @@
 				E4C70612255BC44900DD29E3 /* NibInstantiatable.swift in Sources */,
 				E49C73FE258A69EC002A5A59 /* CompanyLocationCollectionViewCell.swift in Sources */,
 				E44AD5D6256A3B5600574B6A /* CollectionViewSectionHeader.swift in Sources */,
+				E494F9E225A49D6D00517CA8 /* ContentViewController.swift in Sources */,
 				E40DFA90258C7B9E00548BD9 /* CLScreenItem.swift in Sources */,
 				E4C705C6255BB2FA00DD29E3 /* UISearchBar+Additions.swift in Sources */,
 				F96B85242529A05800CEDCF8 /* RegistrationViewController.swift in Sources */,
@@ -1936,6 +1966,7 @@
 				E47D7AC82580B6FE00107DF1 /* NewPaymentCreditCardViewController.swift in Sources */,
 				E49C73F5258A68DA002A5A59 /* ChangePasswordViewController.swift in Sources */,
 				E4FF498C2560F43900B4CBC4 /* NewDistributerViewController.swift in Sources */,
+				E494FA0025A4A5EF00517CA8 /* ConstantContentRepository.swift in Sources */,
 				E4EE6BEB2594E8D100D0EDCC /* CLRegisterationSectionListProvider.swift in Sources */,
 				E40792DC25923BC600DE563C /* PriceTextField.swift in Sources */,
 				E4BAF708259A43C400A65D87 /* CompanyFlowCoordinator.swift in Sources */,
@@ -1965,6 +1996,7 @@
 				E49B9FE82577866C0057EDDE /* CheckoutViewController+Cards.swift in Sources */,
 				E48C89B72590F04D000CDE76 /* ItemCategoryCollectionViewCell.swift in Sources */,
 				E496B260255B22A2001BEC0F /* SignUpCategoriesListView.swift in Sources */,
+				E494F9F625A4A2C500517CA8 /* ContentRequestCompletion.swift in Sources */,
 				E4602D34258CC71C004C556B /* CLItem.swift in Sources */,
 				E4C70608255BBFFC00DD29E3 /* NavigationController.swift in Sources */,
 				E4E68106255D3B570051D52D /* ImagePickerController.swift in Sources */,
@@ -1973,6 +2005,7 @@
 				E4C7060D255BC43600DD29E3 /* ReusableCell.swift in Sources */,
 				E4749C3F2588EE5D00479538 /* TextView.swift in Sources */,
 				E4401087259F3C0A00FDE5A2 /* Animation+Navigation.swift in Sources */,
+				E494F9E725A4A2B300517CA8 /* ContentRepositoryType.swift in Sources */,
 				E496B2B6255B28C0001BEC0F /* UIView+Additions.swift in Sources */,
 				E496B2DD255B2D44001BEC0F /* BorderedButton.swift in Sources */,
 				E48C89B12590EF39000CDE76 /* ItemCategoriesViewController.swift in Sources */,
@@ -2018,6 +2051,7 @@
 				E4602D39258CC75D004C556B /* CLSectionHeaderCollectionReusableView.swift in Sources */,
 				E4FF1BA325A1FD6B00AF4194 /* EmptyStateView.swift in Sources */,
 				F94608F32545D92B00C74D95 /* ProfilePageViewController.swift in Sources */,
+				E494F9F125A4A2BF00517CA8 /* Emptiable.swift in Sources */,
 				E496B2D8255B2D3F001BEC0F /* BackButton.swift in Sources */,
 				E4EE6BDE2594E7AA00D0EDCC /* CLScreenListProvider.swift in Sources */,
 				E496B2AC255B2771001BEC0F /* UIColor+Additions.swift in Sources */,
@@ -2026,6 +2060,7 @@
 				E4B2A750256CB5DF0055C1AE /* ProductDetailsContentView.swift in Sources */,
 				E4CB740C255D18610017A499 /* PasswordTextField.swift in Sources */,
 				E4EE6BBE2594DA5500D0EDCC /* CLDefaultPreviewViewController.swift in Sources */,
+				E494F9EC25A4A2B900517CA8 /* AnyContentRepository.swift in Sources */,
 				E4C705AB255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift in Sources */,
 				E4298495258DB0C900818E09 /* CLAnySectionType.swift in Sources */,
 				E4401089259F3C0A00FDE5A2 /* Animation+Scale.swift in Sources */,
@@ -2056,6 +2091,7 @@
 				F93B1FE225373DAE00E48657 /* SignUpCategoriesListViewController.swift in Sources */,
 				F9CC27CB25332B8900408FDA /* SignInView.swift in Sources */,
 				E40FB27A2567A91700626569 /* CategoryPickerController.swift in Sources */,
+				E494F9FB25A4A52B00517CA8 /* APIContentRepository.swift in Sources */,
 				E4FF1B8825A1F4EE00AF4194 /* DarkSchemeColorProvider.swift in Sources */,
 				E4A0B26725868D8600AF3CEA /* OperationDetailsViewController.swift in Sources */,
 				E4C1389925833B7800D951F3 /* BaseOprationCollectionViewCell.swift in Sources */,
