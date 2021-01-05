@@ -9,32 +9,37 @@
 import Foundation
 import Moya
 
-
 enum GeneralRoutes {
     case userTypes
     case categories
 }
 
 extension GeneralRoutes: TargetType {
+    
     var baseURL: URL {
-        NetworkConfiguration.current.baseURL
+        URL(string: "http://www.talabyeh.com/Api")!
     }
     
     var path: String {
         switch self {
-        case .categories:
-            return "categories"
         case .userTypes:
             return "get_user_type"
+        case .categories:
+            return "categories"
         }
     }
     
-    
     var method: Moya.Method {
         switch self {
-        case .categories, .userTypes:
+        case .userTypes:
+            return .get
+        case .categories:
             return .get
         }
+    }
+    
+    var headers: [String : String]? {
+        [:]
     }
     
     var sampleData: Data {
@@ -43,12 +48,10 @@ extension GeneralRoutes: TargetType {
     
     var task: Task {
         switch self {
-        case .userTypes, .categories:
+        case .userTypes:
+            return .requestPlain
+        case .categories:
             return .requestPlain
         }
-    }
-    
-    var headers: [String : String]? {
-        [:]
     }
 }

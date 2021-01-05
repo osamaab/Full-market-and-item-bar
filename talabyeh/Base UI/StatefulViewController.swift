@@ -111,7 +111,7 @@ class StatefulViewController<ContentType>: UIViewController {
     func didTransition(from fromState: ViewState){ }
     
     
-    //MARK: Mapping Views for States
+    // MARK: Mapping Views for States
     
     func views(for state: ViewState) -> [UIView] {
         switch state {
