@@ -139,7 +139,6 @@
 		E496B2D8255B2D3F001BEC0F /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2D7255B2D3F001BEC0F /* BackButton.swift */; };
 		E496B2DD255B2D44001BEC0F /* BorderedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2DC255B2D44001BEC0F /* BorderedButton.swift */; };
 		E496B2E2255B2D4A001BEC0F /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2E1255B2D4A001BEC0F /* ActionButton.swift */; };
-		E496B2F1255B2ED9001BEC0F /* GeneralRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2F0255B2ED9001BEC0F /* GeneralRoutes.swift */; };
 		E496B2F9255B2FBB001BEC0F /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2F8255B2FBB001BEC0F /* NetworkConfiguration.swift */; };
 		E496B2FE255B3088001BEC0F /* Moya+DefaultProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2FD255B3088001BEC0F /* Moya+DefaultProvider.swift */; };
 		E49882C62566E1B300446385 /* AdvancedSearchItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49882C52566E1B300446385 /* AdvancedSearchItemCollectionViewCell.swift */; };
@@ -176,6 +175,18 @@
 		E4BAF6E8259A3B5400A65D87 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BAF6E7259A3B5400A65D87 /* AppCoordinator.swift */; };
 		E4BAF6F0259A3B9E00A65D87 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BAF6EF259A3B9E00A65D87 /* AppConstants.swift */; };
 		E4BAF708259A43C400A65D87 /* CompanyFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BAF707259A43C400A65D87 /* CompanyFlowCoordinator.swift */; };
+		E4BD344625A5C4E00007FCE1 /* ResponseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD344525A5C4E00007FCE1 /* ResponseContainer.swift */; };
+		E4BD345225A5C5830007FCE1 /* ParametersConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD345125A5C5830007FCE1 /* ParametersConvertable.swift */; };
+		E4BD345725A5C5AC0007FCE1 /* GeneralAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD345625A5C5AC0007FCE1 /* GeneralAPI.swift */; };
+		E4BD345C25A5C5B60007FCE1 /* AuthenticationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD345B25A5C5B60007FCE1 /* AuthenticationAPI.swift */; };
+		E4BD346125A5C5BC0007FCE1 /* ProductsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD346025A5C5BC0007FCE1 /* ProductsAPI.swift */; };
+		E4BD346E25A5C5CC0007FCE1 /* CompanyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD346D25A5C5CC0007FCE1 /* CompanyAPI.swift */; };
+		E4BD347925A5C60A0007FCE1 /* ServicesHeadersPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD347825A5C60A0007FCE1 /* ServicesHeadersPlugin.swift */; };
+		E4BD348125A5C6930007FCE1 /* RequestLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD348025A5C6930007FCE1 /* RequestLoggerPlugin.swift */; };
+		E4BD348625A5C6CB0007FCE1 /* RetriableRequestPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD348525A5C6CB0007FCE1 /* RetriableRequestPlugin.swift */; };
+		E4BD348B25A5C6F80007FCE1 /* Networking+Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD348A25A5C6F80007FCE1 /* Networking+Aliases.swift */; };
+		E4BD349025A5CA080007FCE1 /* RegisterationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD348F25A5CA080007FCE1 /* RegisterationForm.swift */; };
+		E4BD349B25A5CDE90007FCE1 /* GeneralUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD349A25A5CDE90007FCE1 /* GeneralUserAPI.swift */; };
 		E4C1389925833B7800D951F3 /* BaseOprationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C1389825833B7800D951F3 /* BaseOprationCollectionViewCell.swift */; };
 		E4C138A22583846200D951F3 /* OprationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C138A12583846200D951F3 /* OprationsListViewController.swift */; };
 		E4C138AA2583A27300D951F3 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C138A92583A27300D951F3 /* DividerView.swift */; };
@@ -438,7 +449,6 @@
 		E496B2D7255B2D3F001BEC0F /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		E496B2DC255B2D44001BEC0F /* BorderedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedButton.swift; sourceTree = "<group>"; };
 		E496B2E1255B2D4A001BEC0F /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
-		E496B2F0255B2ED9001BEC0F /* GeneralRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRoutes.swift; sourceTree = "<group>"; };
 		E496B2F8255B2FBB001BEC0F /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
 		E496B2FD255B3088001BEC0F /* Moya+DefaultProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Moya+DefaultProvider.swift"; sourceTree = "<group>"; };
 		E49882C52566E1B300446385 /* AdvancedSearchItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSearchItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -475,6 +485,18 @@
 		E4BAF6E7259A3B5400A65D87 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E4BAF6EF259A3B9E00A65D87 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		E4BAF707259A43C400A65D87 /* CompanyFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyFlowCoordinator.swift; sourceTree = "<group>"; };
+		E4BD344525A5C4E00007FCE1 /* ResponseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseContainer.swift; sourceTree = "<group>"; };
+		E4BD345125A5C5830007FCE1 /* ParametersConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersConvertable.swift; sourceTree = "<group>"; };
+		E4BD345625A5C5AC0007FCE1 /* GeneralAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralAPI.swift; sourceTree = "<group>"; };
+		E4BD345B25A5C5B60007FCE1 /* AuthenticationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationAPI.swift; sourceTree = "<group>"; };
+		E4BD346025A5C5BC0007FCE1 /* ProductsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsAPI.swift; sourceTree = "<group>"; };
+		E4BD346D25A5C5CC0007FCE1 /* CompanyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyAPI.swift; sourceTree = "<group>"; };
+		E4BD347825A5C60A0007FCE1 /* ServicesHeadersPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesHeadersPlugin.swift; sourceTree = "<group>"; };
+		E4BD348025A5C6930007FCE1 /* RequestLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLoggerPlugin.swift; sourceTree = "<group>"; };
+		E4BD348525A5C6CB0007FCE1 /* RetriableRequestPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetriableRequestPlugin.swift; sourceTree = "<group>"; };
+		E4BD348A25A5C6F80007FCE1 /* Networking+Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Networking+Aliases.swift"; sourceTree = "<group>"; };
+		E4BD348F25A5CA080007FCE1 /* RegisterationForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationForm.swift; sourceTree = "<group>"; };
+		E4BD349A25A5CDE90007FCE1 /* GeneralUserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralUserAPI.swift; sourceTree = "<group>"; };
 		E4C1389825833B7800D951F3 /* BaseOprationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOprationCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4C138A12583846200D951F3 /* OprationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OprationsListViewController.swift; sourceTree = "<group>"; };
 		E4C138A92583A27300D951F3 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
@@ -974,8 +996,10 @@
 		E496B235255B2079001BEC0F /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				E4BD347725A5C6000007FCE1 /* Plugins */,
+				E4BD344D25A5C5030007FCE1 /* Input Models */,
 				E496B2B4255B286E001BEC0F /* Additions */,
-				E496B2B3255B2868001BEC0F /* Routes */,
+				E496B2B3255B2868001BEC0F /* APIs */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -1047,18 +1071,24 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		E496B2B3255B2868001BEC0F /* Routes */ = {
+		E496B2B3255B2868001BEC0F /* APIs */ = {
 			isa = PBXGroup;
 			children = (
-				E496B2F0255B2ED9001BEC0F /* GeneralRoutes.swift */,
+				E4BD345625A5C5AC0007FCE1 /* GeneralAPI.swift */,
+				E4BD345B25A5C5B60007FCE1 /* AuthenticationAPI.swift */,
+				E4BD349A25A5CDE90007FCE1 /* GeneralUserAPI.swift */,
+				E4BD346025A5C5BC0007FCE1 /* ProductsAPI.swift */,
+				E4BD346D25A5C5CC0007FCE1 /* CompanyAPI.swift */,
 			);
-			path = Routes;
+			path = APIs;
 			sourceTree = "<group>";
 		};
 		E496B2B4255B286E001BEC0F /* Additions */ = {
 			isa = PBXGroup;
 			children = (
 				E496B2F8255B2FBB001BEC0F /* NetworkConfiguration.swift */,
+				E4BD344525A5C4E00007FCE1 /* ResponseContainer.swift */,
+				E4BD345125A5C5830007FCE1 /* ParametersConvertable.swift */,
 				E496B2FD255B3088001BEC0F /* Moya+DefaultProvider.swift */,
 			);
 			path = Additions;
@@ -1205,6 +1235,25 @@
 			children = (
 			);
 			path = "Choose User";
+			sourceTree = "<group>";
+		};
+		E4BD344D25A5C5030007FCE1 /* Input Models */ = {
+			isa = PBXGroup;
+			children = (
+				E4BD348A25A5C6F80007FCE1 /* Networking+Aliases.swift */,
+				E4BD348F25A5CA080007FCE1 /* RegisterationForm.swift */,
+			);
+			path = "Input Models";
+			sourceTree = "<group>";
+		};
+		E4BD347725A5C6000007FCE1 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				E4BD347825A5C60A0007FCE1 /* ServicesHeadersPlugin.swift */,
+				E4BD348025A5C6930007FCE1 /* RequestLoggerPlugin.swift */,
+				E4BD348525A5C6CB0007FCE1 /* RetriableRequestPlugin.swift */,
+			);
+			path = Plugins;
 			sourceTree = "<group>";
 		};
 		E4C1389625833AE800D951F3 /* Operations */ = {
@@ -1875,7 +1924,9 @@
 			files = (
 				E4C705B0255BB18100DD29E3 /* ScreenMessagePresenterType.swift in Sources */,
 				F9EA04F4252C90E500DC288B /* RoundedButton.swift in Sources */,
+				E4BD348B25A5C6F80007FCE1 /* Networking+Aliases.swift in Sources */,
 				E4401088259F3C0A00FDE5A2 /* Animation+Fade.swift in Sources */,
+				E4BD346125A5C5BC0007FCE1 /* ProductsAPI.swift in Sources */,
 				E40792E6259240C100DE563C /* EditableSectionCollectionReusableView.swift in Sources */,
 				E40FB2832567A96B00626569 /* CategoryItemCollectionViewCell.swift in Sources */,
 				E496B2CF255B2B10001BEC0F /* BorderedTextField.swift in Sources */,
@@ -1919,6 +1970,7 @@
 				E40FB2902567AA6900626569 /* CheckboxView.swift in Sources */,
 				E4602D2F258CC6C9004C556B /* CLLabViewController.swift in Sources */,
 				E4A670392563AAF60057083C /* ProfileMenuItem.swift in Sources */,
+				E4BD348625A5C6CB0007FCE1 /* RetriableRequestPlugin.swift in Sources */,
 				E4C70612255BC44900DD29E3 /* NibInstantiatable.swift in Sources */,
 				E49C73FE258A69EC002A5A59 /* CompanyLocationCollectionViewCell.swift in Sources */,
 				E44AD5D6256A3B5600574B6A /* CollectionViewSectionHeader.swift in Sources */,
@@ -1952,6 +2004,7 @@
 				F98D0E54252DE6F200D46EE9 /* SignUpWizardViewController.swift in Sources */,
 				E4FF1B9D25A1FD2E00AF4194 /* StatefulViewController.swift in Sources */,
 				E4FF1B7E25A1F4BA00AF4194 /* ColorGroup.swift in Sources */,
+				E4BD344625A5C4E00007FCE1 /* ResponseContainer.swift in Sources */,
 				E4EE6BB92594DA4700D0EDCC /* CLComponentGroupIdentifier.swift in Sources */,
 				E4298490258DB0BB00818E09 /* CLAnyItem.swift in Sources */,
 				E4D8429F256AC59200D215B4 /* BigSegmentedControl.swift in Sources */,
@@ -1969,6 +2022,7 @@
 				E4A6704A2563B52A0057083C /* MonthPickerTextField.swift in Sources */,
 				E44DB3B82595BB5C009F1809 /* CLColorItem.swift in Sources */,
 				E4E6813C255D435E0051D52D /* Location.swift in Sources */,
+				E4BD345225A5C5830007FCE1 /* ParametersConvertable.swift in Sources */,
 				E49B9FDE257783F20057EDDE /* CheckoutViewController.swift in Sources */,
 				E48C89C42590F88C000CDE76 /* ItemsViewController.swift in Sources */,
 				E4C70617255BC45800DD29E3 /* Identifiable.swift in Sources */,
@@ -1982,6 +2036,7 @@
 				E429849A258DB0DB00818E09 /* CLComponentsSection.swift in Sources */,
 				E4749C4A2588F1BB00479538 /* CompanyInformationInputViewController.swift in Sources */,
 				E47D7AC82580B6FE00107DF1 /* NewPaymentCreditCardViewController.swift in Sources */,
+				E4BD346E25A5C5CC0007FCE1 /* CompanyAPI.swift in Sources */,
 				E49C73F5258A68DA002A5A59 /* ChangePasswordViewController.swift in Sources */,
 				E4FF498C2560F43900B4CBC4 /* NewDistributerViewController.swift in Sources */,
 				E494FA0025A4A5EF00517CA8 /* ConstantContentRepository.swift in Sources */,
@@ -2011,6 +2066,7 @@
 				E4E68147255D481D0051D52D /* SampleSignupViewController.swift in Sources */,
 				E4A9881D2587DAA50006EB3F /* LabelView.swift in Sources */,
 				E4C138A22583846200D951F3 /* OprationsListViewController.swift in Sources */,
+				E4BD345C25A5C5B60007FCE1 /* AuthenticationAPI.swift in Sources */,
 				E49B9FE82577866C0057EDDE /* CheckoutViewController+Cards.swift in Sources */,
 				E48C89B72590F04D000CDE76 /* ItemCategoryCollectionViewCell.swift in Sources */,
 				E496B260255B22A2001BEC0F /* SignUpCategoriesListView.swift in Sources */,
@@ -2027,9 +2083,11 @@
 				E496B2B6255B28C0001BEC0F /* UIView+Additions.swift in Sources */,
 				E496B2DD255B2D44001BEC0F /* BorderedButton.swift in Sources */,
 				E48C89B12590EF39000CDE76 /* ItemCategoriesViewController.swift in Sources */,
+				E4BD345725A5C5AC0007FCE1 /* GeneralAPI.swift in Sources */,
 				E4C138B42583AA5200D951F3 /* FaildOperationCollectionViewCell.swift in Sources */,
 				E4749C442588EEAA00479538 /* RoundedFillButton.swift in Sources */,
 				E44087FF258C90BA004196A1 /* CLComponentContainerView.swift in Sources */,
+				E4BD349025A5CA080007FCE1 /* RegisterationForm.swift in Sources */,
 				E4749C292588ED6C00479538 /* ContactDesignersViewController.swift in Sources */,
 				E4E6810B255D3B700051D52D /* LocationPickerController.swift in Sources */,
 				E44DB3D42595BDE6009F1809 /* CLColorsListProviderType.swift in Sources */,
@@ -2089,13 +2147,14 @@
 				E4151D7A25626910009F1D45 /* WeekdaysRangePickerTextField.swift in Sources */,
 				E440880C258C928A004196A1 /* CLAnyComponentItem.swift in Sources */,
 				E4000CBC255C089800E89ABB /* ProductCollectionViewCell.swift in Sources */,
+				E4BD348125A5C6930007FCE1 /* RequestLoggerPlugin.swift in Sources */,
 				E4568F462593AFBE00FA91E4 /* MarketEditProfileViewController.swift in Sources */,
 				E4EE6BF02594E98000D0EDCC /* CLComponentsRegisterationSectionListProvider.swift in Sources */,
 				F9F65B8C254F1FD300D347D6 /* MarketViewController.swift in Sources */,
 				E48C89DC2590FC79000CDE76 /* NewItemInputFieldsContentView.swift in Sources */,
 				E4A0B26D25868E1300AF3CEA /* OperationDetailsContentView.swift in Sources */,
 				E48C89E125910259000CDE76 /* ImagesPickerView.swift in Sources */,
-				E496B2F1255B2ED9001BEC0F /* GeneralRoutes.swift in Sources */,
+				E4BD347925A5C60A0007FCE1 /* ServicesHeadersPlugin.swift in Sources */,
 				E4401093259F3C1500FDE5A2 /* TransitionAnimation+Defaults.swift in Sources */,
 				F9EA0496252C83E800DC288B /* MainSignUpViewController.swift in Sources */,
 				E4FF49A6256115CA00B4CBC4 /* NumbersTextFields.swift in Sources */,
@@ -2113,6 +2172,7 @@
 				E40FB27A2567A91700626569 /* CategoryPickerController.swift in Sources */,
 				E494F9FB25A4A52B00517CA8 /* APIContentRepository.swift in Sources */,
 				E4FF1B8825A1F4EE00AF4194 /* DarkSchemeColorProvider.swift in Sources */,
+				E4BD349B25A5CDE90007FCE1 /* GeneralUserAPI.swift in Sources */,
 				E4A0B26725868D8600AF3CEA /* OperationDetailsViewController.swift in Sources */,
 				E4C1389925833B7800D951F3 /* BaseOprationCollectionViewCell.swift in Sources */,
 				E4B9F4732587E6E4001D5F2F /* CertificatesViewController.swift in Sources */,
