@@ -7,3 +7,29 @@
 //
 
 import Foundation
+import Moya
+
+enum generalUser: TargetType{
+    case userFavoriteCompanies(String)
+    
+    var path: String {
+        switch self {
+        case .userFavoriteCompanies:
+            return "user/fav_companies"
+        }
+    }
+    
+    var method: Moya.Method {
+        switch self {
+        case .userFavoriteCompanies:
+            return .get
+        }
+    }
+    
+    var task: Task {
+        switch self {
+        case .userFavoriteCompanies(let username):
+            return .requestParameters(parameters: ["username":username], encoding: JSONEncoding.default)
+        }
+    }
+}
