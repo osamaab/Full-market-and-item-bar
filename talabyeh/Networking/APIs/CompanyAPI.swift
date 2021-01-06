@@ -10,24 +10,24 @@ import Foundation
 import Moya
 
 enum CompanyAPI: TargetType {
-    case item
-    case branches
+    case item(Int)
+    case branches(Int)
     case allCompanies
     case operationStatusList
-    case items
+    case items(Int)
     
     var path: String {
         switch self {
-        case .item:
-            return "company_item/13"
-        case .branches:
-            return "company/get_company_branches/13"
+        case .item(let id):
+            return "company_item/\(id)"
+        case .branches(let id):
+            return "company/get_company_branches/\(id)"
         case .allCompanies:
             return "companies"
         case .operationStatusList:
             return "operation_status/list"
-        case .items:
-            return "company_item/13"
+        case .items(let id):
+            return "company_item/\(id)"
         }
     }
     
