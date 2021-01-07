@@ -8,7 +8,7 @@
 
 import UIKit
 import Stevia
-
+import SDWebImage
 
 class CategoriesPickerViewController: UIViewController {
     

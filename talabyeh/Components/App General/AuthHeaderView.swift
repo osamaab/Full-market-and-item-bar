@@ -90,6 +90,7 @@ class AuthHeaderView: UIView {
         subtitleLabel.numberOfLines = 0
         
         
+        containerStackView.spacing(3)
         [titleLabel, typeContainerView, subtitleLabel].forEach { $0.isHidden = true }
         elements.forEach {
             switch $0 {
@@ -99,6 +100,7 @@ class AuthHeaderView: UIView {
                 break
             case .type:
                 typeContainerView.isHidden = false
+                containerStackView.spacing(15)
                 break
             case .subtitle(let subtitle):
                 subtitleLabel.isHidden = false
@@ -106,6 +108,7 @@ class AuthHeaderView: UIView {
                 break
             }
         }
+        
         
         typeTitleLabel.text = "Company"
         typeImageView.image = UIImage(named: "auth_company")

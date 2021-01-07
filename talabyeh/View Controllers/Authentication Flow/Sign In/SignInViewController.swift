@@ -7,29 +7,22 @@
 //
 
 import UIKit
+import Stevia
 
-class SignInViewController: UIViewController, UITextFieldDelegate
-{
+class SignInViewController: UIViewController {
     
-    let signInView = SignInView()
-    
-    override func loadView() {
-        view = signInView
-    }
+    let contentView = SignInView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = DefaultColorsProvider.backgroundPrimary
         
-        signInView.backButton.addTarget(self, action: #selector(backButton), for: .touchUpInside)
-        signInView.signInButton.addTarget(self, action: #selector(signInButton), for: .touchUpInside)
-    }
-    
-    
-    @objc func backButton() {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    @objc func signInButton() {
+        view.subviewsPreparedAL {
+            contentView
+        }
+        
+        contentView.Top == view.safeAreaLayoutGuide.Top + 20
+        contentView.leading(0).trailing(0)
     }
 }

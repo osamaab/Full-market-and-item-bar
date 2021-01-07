@@ -56,9 +56,6 @@ class SignUpWizardViewController: UIViewController {
     }
     
     @objc func showCategories(){
-        let vc = SignUpCategoriesListViewController()
-        vc.chosenUserType = self.chosenUserType!
-        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

@@ -130,7 +130,6 @@
 		E494F9FB25A4A52B00517CA8 /* APIContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494F9FA25A4A52B00517CA8 /* APIContentRepository.swift */; };
 		E494FA0025A4A5EF00517CA8 /* ConstantContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E494F9FF25A4A5EF00517CA8 /* ConstantContentRepository.swift */; };
 		E496B249255B214C001BEC0F /* FontProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B248255B214C001BEC0F /* FontProviderType.swift */; };
-		E496B260255B22A2001BEC0F /* SignUpCategoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B25F255B22A2001BEC0F /* SignUpCategoriesListView.swift */; };
 		E496B2AC255B2771001BEC0F /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2AB255B2771001BEC0F /* UIColor+Additions.swift */; };
 		E496B2B6255B28C0001BEC0F /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2B5255B28C0001BEC0F /* UIView+Additions.swift */; };
 		E496B2C5255B29A3001BEC0F /* InsetedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2C4255B29A3001BEC0F /* InsetedTextField.swift */; };
@@ -187,6 +186,8 @@
 		E4BD348B25A5C6F80007FCE1 /* Networking+Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD348A25A5C6F80007FCE1 /* Networking+Aliases.swift */; };
 		E4BD349025A5CA080007FCE1 /* RegisterationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD348F25A5CA080007FCE1 /* RegisterationForm.swift */; };
 		E4BD349B25A5CDE90007FCE1 /* GeneralUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD349A25A5CDE90007FCE1 /* GeneralUserAPI.swift */; };
+		E4BD34A025A69F5B0007FCE1 /* ChooseUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD349F25A69F5B0007FCE1 /* ChooseUserViewController.swift */; };
+		E4BD34A625A69F780007FCE1 /* UserTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD34A525A69F780007FCE1 /* UserTypeCollectionViewCell.swift */; };
 		E4C1389925833B7800D951F3 /* BaseOprationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C1389825833B7800D951F3 /* BaseOprationCollectionViewCell.swift */; };
 		E4C138A22583846200D951F3 /* OprationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C138A12583846200D951F3 /* OprationsListViewController.swift */; };
 		E4C138AA2583A27300D951F3 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C138A92583A27300D951F3 /* DividerView.swift */; };
@@ -254,7 +255,6 @@
 		E4FF49A12561087700B4CBC4 /* NewDistributerViewController+Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF49A02561087700B4CBC4 /* NewDistributerViewController+Cards.swift */; };
 		E4FF49A6256115CA00B4CBC4 /* NumbersTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF49A5256115CA00B4CBC4 /* NumbersTextFields.swift */; };
 		E4FF8318259467E500DACBC3 /* CircleConfirmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF8317259467E500DACBC3 /* CircleConfirmButton.swift */; };
-		F93B1FE225373DAE00E48657 /* SignUpCategoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93B1FE125373DAE00E48657 /* SignUpCategoriesListViewController.swift */; };
 		F94608EE2545D91600C74D95 /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94608ED2545D91600C74D95 /* ProfilePageView.swift */; };
 		F94608F32545D92B00C74D95 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94608F22545D92B00C74D95 /* ProfilePageViewController.swift */; };
 		F9571B9F252CEA700090C285 /* SFUIDisplay-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B8F252CEA700090C285 /* SFUIDisplay-Heavy.ttf */; };
@@ -273,7 +273,6 @@
 		F9571BAC252CEA700090C285 /* DIN NEXT™ ARABIC BOLD.otf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B9D252CEA700090C285 /* DIN NEXT™ ARABIC BOLD.otf */; };
 		F9571BAD252CEA700090C285 /* DIN NEXT™ ARABIC LIGHT.otf in Resources */ = {isa = PBXBuildFile; fileRef = F9571B9E252CEA700090C285 /* DIN NEXT™ ARABIC LIGHT.otf */; };
 		F96B85202529A05800CEDCF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B851F2529A05800CEDCF8 /* AppDelegate.swift */; };
-		F96B85242529A05800CEDCF8 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B85232529A05800CEDCF8 /* RegistrationViewController.swift */; };
 		F96B85292529A05A00CEDCF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F96B85282529A05A00CEDCF8 /* Assets.xcassets */; };
 		F96B852C2529A05A00CEDCF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96B852A2529A05A00CEDCF8 /* LaunchScreen.storyboard */; };
 		F96B85372529A05A00CEDCF8 /* talabyehTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B85362529A05A00CEDCF8 /* talabyehTests.swift */; };
@@ -286,7 +285,6 @@
 		F990A388254082C500ABC4CF /* DistributorSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F990A387254082C500ABC4CF /* DistributorSignUpView.swift */; };
 		F9CC27C625332B6B00408FDA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC27C525332B6B00408FDA /* SignInViewController.swift */; };
 		F9CC27CB25332B8900408FDA /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC27CA25332B8900408FDA /* SignInView.swift */; };
-		F9EA0496252C83E800DC288B /* MainSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA0495252C83E800DC288B /* MainSignUpViewController.swift */; };
 		F9EA049B252C858500DC288B /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA049A252C858500DC288B /* RoundedView.swift */; };
 		F9EA04F4252C90E500DC288B /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA04F3252C90E500DC288B /* RoundedButton.swift */; };
 		F9F65B8C254F1FD300D347D6 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F65B8B254F1FD300D347D6 /* MarketViewController.swift */; };
@@ -440,7 +438,6 @@
 		E494F9FA25A4A52B00517CA8 /* APIContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIContentRepository.swift; sourceTree = "<group>"; };
 		E494F9FF25A4A5EF00517CA8 /* ConstantContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantContentRepository.swift; sourceTree = "<group>"; };
 		E496B248255B214C001BEC0F /* FontProviderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontProviderType.swift; sourceTree = "<group>"; };
-		E496B25F255B22A2001BEC0F /* SignUpCategoriesListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpCategoriesListView.swift; sourceTree = "<group>"; };
 		E496B2AB255B2771001BEC0F /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		E496B2B5255B28C0001BEC0F /* UIView+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Additions.swift"; sourceTree = "<group>"; };
 		E496B2C4255B29A3001BEC0F /* InsetedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetedTextField.swift; sourceTree = "<group>"; };
@@ -497,6 +494,8 @@
 		E4BD348A25A5C6F80007FCE1 /* Networking+Aliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Networking+Aliases.swift"; sourceTree = "<group>"; };
 		E4BD348F25A5CA080007FCE1 /* RegisterationForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationForm.swift; sourceTree = "<group>"; };
 		E4BD349A25A5CDE90007FCE1 /* GeneralUserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralUserAPI.swift; sourceTree = "<group>"; };
+		E4BD349F25A69F5B0007FCE1 /* ChooseUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseUserViewController.swift; sourceTree = "<group>"; };
+		E4BD34A525A69F780007FCE1 /* UserTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4C1389825833B7800D951F3 /* BaseOprationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOprationCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4C138A12583846200D951F3 /* OprationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OprationsListViewController.swift; sourceTree = "<group>"; };
 		E4C138A92583A27300D951F3 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
@@ -564,7 +563,6 @@
 		E4FF49A02561087700B4CBC4 /* NewDistributerViewController+Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewDistributerViewController+Cards.swift"; sourceTree = "<group>"; };
 		E4FF49A5256115CA00B4CBC4 /* NumbersTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTextFields.swift; sourceTree = "<group>"; };
 		E4FF8317259467E500DACBC3 /* CircleConfirmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleConfirmButton.swift; sourceTree = "<group>"; };
-		F93B1FE125373DAE00E48657 /* SignUpCategoriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCategoriesListViewController.swift; sourceTree = "<group>"; };
 		F94608ED2545D91600C74D95 /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
 		F94608F22545D92B00C74D95 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		F9571B8F252CEA700090C285 /* SFUIDisplay-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIDisplay-Heavy.ttf"; sourceTree = "<group>"; };
@@ -584,7 +582,6 @@
 		F9571B9E252CEA700090C285 /* DIN NEXT™ ARABIC LIGHT.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC LIGHT.otf"; sourceTree = "<group>"; };
 		F96B851C2529A05700CEDCF8 /* talabyeh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = talabyeh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96B851F2529A05800CEDCF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F96B85232529A05800CEDCF8 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		F96B85282529A05A00CEDCF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F96B852B2529A05A00CEDCF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F96B852D2529A05A00CEDCF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -601,7 +598,6 @@
 		F990A387254082C500ABC4CF /* DistributorSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorSignUpView.swift; sourceTree = "<group>"; };
 		F9CC27C525332B6B00408FDA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		F9CC27CA25332B8900408FDA /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
-		F9EA0495252C83E800DC288B /* MainSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSignUpViewController.swift; sourceTree = "<group>"; };
 		F9EA049A252C858500DC288B /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		F9EA04F3252C90E500DC288B /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		F9F65B8B254F1FD300D347D6 /* MarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
@@ -1008,11 +1004,8 @@
 			isa = PBXGroup;
 			children = (
 				E4000CEB255C153300E89ABB /* Authentication.storyboard */,
-				F9EA0495252C83E800DC288B /* MainSignUpViewController.swift */,
-				F96B85232529A05800CEDCF8 /* RegistrationViewController.swift */,
 				E4E68146255D481D0051D52D /* SampleSignupViewController.swift */,
 				E45E5544256F9F37008856FD /* Delivery Area */,
-				F990A3842540825800ABC4CF /* Sign Up Categories Selection */,
 				F990A3822540822B00ABC4CF /* Sign Up Wizard */,
 				E496B2E6255B2D7F001BEC0F /* Distributor Sign Up */,
 				F990A3832540824000ABC4CF /* Sign In */,
@@ -1208,6 +1201,7 @@
 				E4000CBB255C089800E89ABB /* ProductCollectionViewCell.swift */,
 				E4000CC5255C08DF00E89ABB /* MarketCategoryCollectionViewCell.swift */,
 				E450C2532563CFE500F6F392 /* DistributerCollectionViewCell.swift */,
+				E4BD34A525A69F780007FCE1 /* UserTypeCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1233,6 +1227,7 @@
 		E4BAF714259A46B300A65D87 /* Choose User */ = {
 			isa = PBXGroup;
 			children = (
+				E4BD349F25A69F5B0007FCE1 /* ChooseUserViewController.swift */,
 			);
 			path = "Choose User";
 			sourceTree = "<group>";
@@ -1651,15 +1646,6 @@
 			path = "Sign In";
 			sourceTree = "<group>";
 		};
-		F990A3842540825800ABC4CF /* Sign Up Categories Selection */ = {
-			isa = PBXGroup;
-			children = (
-				F93B1FE125373DAE00E48657 /* SignUpCategoriesListViewController.swift */,
-				E496B25F255B22A2001BEC0F /* SignUpCategoriesListView.swift */,
-			);
-			path = "Sign Up Categories Selection";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1977,7 +1963,6 @@
 				E494F9E225A49D6D00517CA8 /* ContentViewController.swift in Sources */,
 				E40DFA90258C7B9E00548BD9 /* CLScreenItem.swift in Sources */,
 				E4C705C6255BB2FA00DD29E3 /* UISearchBar+Additions.swift in Sources */,
-				F96B85242529A05800CEDCF8 /* RegistrationViewController.swift in Sources */,
 				E4000CA1255C020800E89ABB /* ProfileTableViewCell.swift in Sources */,
 				E4EE6BB42594DA3700D0EDCC /* CLComponentPreviewContext.swift in Sources */,
 				E496B2E2255B2D4A001BEC0F /* ActionButton.swift in Sources */,
@@ -1986,6 +1971,7 @@
 				E47E00FE25926B1300FC737A /* SelectExistingDistributorViewController.swift in Sources */,
 				E49B9FCB257781830057EDDE /* FieldView.swift in Sources */,
 				E49B9FED2577869B0057EDDE /* BasicViewWithSetup.swift in Sources */,
+				E4BD34A625A69F780007FCE1 /* UserTypeCollectionViewCell.swift in Sources */,
 				E45E5549256F9F4E008856FD /* DeliveryAreaPickerViewController.swift in Sources */,
 				E48C89BF2590F513000CDE76 /* ItemsChooseCategoryViewController.swift in Sources */,
 				E40FB28B2567A97500626569 /* CategoriesPickerViewController.swift in Sources */,
@@ -1994,6 +1980,7 @@
 				E4EE6BCF2594DC9700D0EDCC /* CLComponentsListViewController.swift in Sources */,
 				E4FAB5AE2565007900F25473 /* ExpandableAnimationFactory.swift in Sources */,
 				E4401092259F3C1500FDE5A2 /* Transitions.swift in Sources */,
+				E4BD34A025A69F5B0007FCE1 /* ChooseUserViewController.swift in Sources */,
 				E4749C582588FDAF00479538 /* ProfileOptionsContentView.swift in Sources */,
 				E40FB266256797E800626569 /* LocationPickerTextField.swift in Sources */,
 				E4929042259FF59900B2B67B /* OperationsCoordinator.swift in Sources */,
@@ -2069,7 +2056,6 @@
 				E4BD345C25A5C5B60007FCE1 /* AuthenticationAPI.swift in Sources */,
 				E49B9FE82577866C0057EDDE /* CheckoutViewController+Cards.swift in Sources */,
 				E48C89B72590F04D000CDE76 /* ItemCategoryCollectionViewCell.swift in Sources */,
-				E496B260255B22A2001BEC0F /* SignUpCategoriesListView.swift in Sources */,
 				E494F9F625A4A2C500517CA8 /* ContentRequestCompletion.swift in Sources */,
 				E4602D34258CC71C004C556B /* CLItem.swift in Sources */,
 				E4C70608255BBFFC00DD29E3 /* NavigationController.swift in Sources */,
@@ -2156,7 +2142,6 @@
 				E48C89E125910259000CDE76 /* ImagesPickerView.swift in Sources */,
 				E4BD347925A5C60A0007FCE1 /* ServicesHeadersPlugin.swift in Sources */,
 				E4401093259F3C1500FDE5A2 /* TransitionAnimation+Defaults.swift in Sources */,
-				F9EA0496252C83E800DC288B /* MainSignUpViewController.swift in Sources */,
 				E4FF49A6256115CA00B4CBC4 /* NumbersTextFields.swift in Sources */,
 				E4EE6BE62594E7B100D0EDCC /* CLComponentListProvider.swift in Sources */,
 				E4408804258C9135004196A1 /* _CLComponentsListViewController.swift in Sources */,
@@ -2167,7 +2152,6 @@
 				E47E010325926B2B00FC737A /* SelectExternalViewController.swift in Sources */,
 				E4A6704F2563B5310057083C /* YearPickerTextField.swift in Sources */,
 				E4FF1BB525A1FD8A00AF4194 /* GeneralStateView.swift in Sources */,
-				F93B1FE225373DAE00E48657 /* SignUpCategoriesListViewController.swift in Sources */,
 				F9CC27CB25332B8900408FDA /* SignInView.swift in Sources */,
 				E40FB27A2567A91700626569 /* CategoryPickerController.swift in Sources */,
 				E494F9FB25A4A52B00517CA8 /* APIContentRepository.swift in Sources */,

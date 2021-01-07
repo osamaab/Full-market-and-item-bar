@@ -15,8 +15,8 @@ class SignUpWizardView: UIView, UITableViewDelegate, UITableViewDataSource {
 
     
 
-    let backButton = UIButton(/*frame: CGRect(x: 20, y: 42.5, width: 50, height: 50)*/)
-    let signUpLabel = UILabel(/*frame: CGRect(x: 166.5, y: 44, width: 120, height: 47)*/)
+    let backButton = UIButton()
+    let signUpLabel = UILabel()
     let welcomeLabel = UILabel()
     let merchantTypeImage = UIImageView()
     

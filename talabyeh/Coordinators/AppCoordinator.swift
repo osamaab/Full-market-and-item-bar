@@ -13,21 +13,24 @@ enum AppRoutes: Route {
     case chooseUserType
     case company
     case lab
+    case authentication(StrongRouter<AuthenticationRoute>?)
 }
 
 class AppCoordinator: NavigationCoordinator<AppRoutes> {
     
     init(){
-        super.init(rootViewController: NavigationController(autoShowsCloseButton: false), initialRoute: .lab)
+        super.init(rootViewController: NavigationController(autoShowsCloseButton: false), initialRoute: .company)
         rootViewController.view.backgroundColor = DefaultColorsProvider.backgroundPrimary
     }
     
     override func prepareTransition(for route: RouteType) -> TransitionType {
         switch route {
         case .chooseUserType:
+            let chooseUserViewController = ChooseUserViewController()
+            
             return .multiple(
                 .dismissToRoot(animation: .fadeInstant),
-                .presentFullScreen(viewController, animation: .fadeInstant)
+                .presentFullScreen(chooseUserViewController, animation: .fadeInstant)
             )
         case .lab:
             return .multiple(
@@ -38,6 +41,12 @@ class AppCoordinator: NavigationCoordinator<AppRoutes> {
             return .multiple(
                 .dismissToRoot(animation: .fadeInstant),
                 .presentFullScreen(CompanyFlowCoordinator(), animation: .fadeInstant)
+            )
+        case .authentication(let router):
+            let router = router ?? AuthenticationCoordinator().strongRouter
+            return .multiple(
+                .dismissToRoot(animation: .fadeInstant),
+                .presentFullScreen(router, animation: .fadeInstant)
             )
         }
     }
