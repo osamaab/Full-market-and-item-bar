@@ -24,8 +24,13 @@ extension MoyaProvider {
                 mappedCompletion(.failure(error))
             case .success(let response):
                 do {
-                    let result = try response.map(ResultType.self)
-                    mappedCompletion(.success(result))
+                    let result = try response.map(ResponseContainer<ResultType>.self)
+                    
+                    if let results = result.results {
+                        mappedCompletion(.success(results))
+                    } else {
+                        mappedCompletion(.failure(MoyaError.requestMapping("No results where found")))
+                    }
                 } catch {
                     mappedCompletion(.failure(error))
                 }

@@ -56,15 +56,12 @@ class UserTypeCollectionViewCell: UICollectionViewCell {
         dividerView.height(100%)
         imageView.width(30).height(30)
         
-        imageView.image = UIImage(named: "auth_company")
-        titleLabel.text = "Company"
-        
         setSelected(false, animated: false)
     }
     
     func setSelected(_ selected: Bool, animated: Bool){
         let block = {
-            self.backgroundColor = selected ? DefaultColorsProvider.backgroundSecondary : DefaultColorsProvider.containerBackground2
+            self.backgroundColor = selected ? DefaultColorsProvider.tintSecondary : DefaultColorsProvider.containerBackground2
         }
         
         if animated {

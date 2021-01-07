@@ -19,7 +19,7 @@ enum AppRoutes: Route {
 class AppCoordinator: NavigationCoordinator<AppRoutes> {
     
     init(){
-        super.init(rootViewController: NavigationController(autoShowsCloseButton: false), initialRoute: .company)
+        super.init(rootViewController: NavigationController(autoShowsCloseButton: false), initialRoute: .chooseUserType)
         rootViewController.view.backgroundColor = DefaultColorsProvider.backgroundPrimary
     }
     

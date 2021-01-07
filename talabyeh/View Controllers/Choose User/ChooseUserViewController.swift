@@ -9,7 +9,7 @@
 import UIKit
 import Stevia
 
-class ChooseUserViewController: UIViewController {
+class ChooseUserViewController: ContentViewController<[UserType]> {
     
     lazy var headerView: AuthHeaderView = .init(elements: [
                                                     .title("Welcome to TALABIA"),
@@ -18,11 +18,15 @@ class ChooseUserViewController: UIViewController {
     lazy var collectionView: UICollectionView = makeCollectionView()
     lazy var bottomView: BottomNextButtonView = .init(title: "Next")
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    var selectedIndexPath: IndexPath?
+    
+    
+    convenience init(){
+        self.init(contentRepository: APIContentRepositoryType<GeneralAPI, [UserType]>(.userTypes))
+    }
+    
+    override func setupViewsBeforeTransitioning() {
         view.backgroundColor = DefaultColorsProvider.backgroundPrimary
         
         view.subviewsPreparedAL {
@@ -46,20 +50,33 @@ class ChooseUserViewController: UIViewController {
         
         bottomView.Top == collectionView.Bottom
         bottomView.bottom(0).leading(0).trailing(0)
-        
-        collectionView.reloadData()
+    }
+
+    override func contentRequestDidSuccess(with content: [UserType]) {
+        self.collectionView.reloadData()
     }
 }
 
 extension ChooseUserViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
+        (content ?? []).count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let item = content![indexPath.item]
         let cell = collectionView.dequeueCell(cellClass: UserTypeCollectionViewCell.self, for: indexPath)
         
+        cell.titleLabel.text = item.name
+        cell.imageView.sd_setImage(with: item.logo)
+        
+        cell.setSelected(indexPath == selectedIndexPath, animated: false)
+        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedIndexPath = indexPath
+        self.collectionView.reloadData()
     }
 }
 

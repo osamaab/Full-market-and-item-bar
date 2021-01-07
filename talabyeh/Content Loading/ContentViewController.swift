@@ -50,6 +50,8 @@ class ContentViewController<ContentType>: StatefulViewController<ContentType>, C
         failureStateView.retryButton.add(event: .touchUpInside){ [unowned self] in
             self.performRetry()
         }
+        
+        performContentRequest()
     }
     
     

@@ -188,6 +188,7 @@
 		E4BD349B25A5CDE90007FCE1 /* GeneralUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD349A25A5CDE90007FCE1 /* GeneralUserAPI.swift */; };
 		E4BD34A025A69F5B0007FCE1 /* ChooseUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD349F25A69F5B0007FCE1 /* ChooseUserViewController.swift */; };
 		E4BD34A625A69F780007FCE1 /* UserTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD34A525A69F780007FCE1 /* UserTypeCollectionViewCell.swift */; };
+		E4BD34CC25A6AC130007FCE1 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD34CB25A6AC130007FCE1 /* UserType.swift */; };
 		E4C1389925833B7800D951F3 /* BaseOprationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C1389825833B7800D951F3 /* BaseOprationCollectionViewCell.swift */; };
 		E4C138A22583846200D951F3 /* OprationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C138A12583846200D951F3 /* OprationsListViewController.swift */; };
 		E4C138AA2583A27300D951F3 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C138A92583A27300D951F3 /* DividerView.swift */; };
@@ -496,6 +497,7 @@
 		E4BD349A25A5CDE90007FCE1 /* GeneralUserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralUserAPI.swift; sourceTree = "<group>"; };
 		E4BD349F25A69F5B0007FCE1 /* ChooseUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseUserViewController.swift; sourceTree = "<group>"; };
 		E4BD34A525A69F780007FCE1 /* UserTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeCollectionViewCell.swift; sourceTree = "<group>"; };
+		E4BD34CB25A6AC130007FCE1 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		E4C1389825833B7800D951F3 /* BaseOprationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOprationCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4C138A12583846200D951F3 /* OprationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OprationsListViewController.swift; sourceTree = "<group>"; };
 		E4C138A92583A27300D951F3 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
@@ -1251,6 +1253,14 @@
 			path = Plugins;
 			sourceTree = "<group>";
 		};
+		E4BD34CA25A6AC020007FCE1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E4BD34CB25A6AC130007FCE1 /* UserType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E4C1389625833AE800D951F3 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
@@ -1567,6 +1577,7 @@
 				E4C705F0255BBF2900DD29E3 /* Coordinators */,
 				E496B247255B213E001BEC0F /* Services */,
 				E496B242255B2115001BEC0F /* Extensions */,
+				E4BD34CA25A6AC020007FCE1 /* Models */,
 				E496B235255B2079001BEC0F /* Networking */,
 				F98D0E8A252F786200D46EE9 /* View Controllers */,
 				F98D0E72252F171000D46EE9 /* Components */,
@@ -2006,6 +2017,7 @@
 				E4602D24258CC5D0004C556B /* CLItemsSection.swift in Sources */,
 				E41172EB2587E309005BAB60 /* CertificatesContentView.swift in Sources */,
 				E4B2A744256CB5BC0055C1AE /* ProductDetailsViewController.swift in Sources */,
+				E4BD34CC25A6AC130007FCE1 /* UserType.swift in Sources */,
 				E4A6704A2563B52A0057083C /* MonthPickerTextField.swift in Sources */,
 				E44DB3B82595BB5C009F1809 /* CLColorItem.swift in Sources */,
 				E4E6813C255D435E0051D52D /* Location.swift in Sources */,
