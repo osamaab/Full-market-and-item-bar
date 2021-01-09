@@ -12,10 +12,10 @@ struct Product: Equatable, Hashable {
     let id: Int
     let name: String
     let unitID: Int
-    let unit: Unit
+    let unit: ProductUnit
     let categoryID: Int
     let barcode: String
-    let category: Category
+    let category: ProductCategory
 
     enum CodingKeys: String, CodingKey {
         case id, name
@@ -23,6 +23,18 @@ struct Product: Equatable, Hashable {
         case unit
         case categoryID = "category_id"
         case barcode, category
+    }
+}
+
+extension Product {
+    static func sample(title: String) -> Product {
+        Product(id: 1,
+                name: title,
+                unitID: 1,
+                unit: .init(id: 1, title: "KG"),
+                categoryID: 1,
+                barcode: "",
+                category: .init(id: 1, title: "CAT", logo: nil))
     }
 }
 

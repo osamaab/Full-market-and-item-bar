@@ -59,7 +59,7 @@ class ItemsViewController: UIViewController {
         var snapshot = Snapshot()
     
         snapshot.appendSections(self.sections)
-        let items = (0...9).map { Product(title: "Product \($0)") }
+        let items = (0...9).map { Product.sample(title: "Product \($0)") }
         snapshot.appendItems(items)
         
         

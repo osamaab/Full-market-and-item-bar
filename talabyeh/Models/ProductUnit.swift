@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ProductUnit {
+struct ProductUnit: Equatable, Hashable {
     let id: Int
     let title: String
 }

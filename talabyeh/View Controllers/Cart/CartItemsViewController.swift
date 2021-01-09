@@ -39,7 +39,7 @@ class CartItemsViewController: UIViewController {
         
         cartSummaryView.leading(0).trailing(0).bottom(0)
         
-        let items = (0...3).map { CartItem(product: Product(title: "Product \($0)"), quantity: $0 + 1, discountPercentage: $0.isMultiple(of: 2) ? 0.5 : 0) }
+        let items = (0...3).map { CartItem(product: Product.sample(title: "Product \($0)"), quantity: $0 + 1, discountPercentage: $0.isMultiple(of: 2) ? 0.5 : 0) }
         
         // create a snapshot
         var snapshot = NSDiffableDataSourceSnapshot<Int, CartItem>()

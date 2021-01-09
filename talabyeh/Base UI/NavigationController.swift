@@ -10,44 +10,93 @@ import UIKit
 
 class NavigationController: UINavigationController {
     
+    enum Style {
+        /**
+         Primary style means the primaryTint is the barTintColor, and elements have elemnentsColor
+         */
+        case primary
+        
+        /**
+         Secondary refers to that navigation bar barTintColor is backgroundPrimary
+         */
+        case secondary
+    }
+    
     let autoShowsCloseButton: Bool
     
-    init(rootViewController: UIViewController, autoShowsCloseButton: Bool = false){
+    
+    var style: Style {
+        didSet {
+            self.update(for: style)
+        }
+    }
+    
+    init(rootViewController: UIViewController, style: Style = .primary, autoShowsCloseButton: Bool = false){
         self.autoShowsCloseButton = autoShowsCloseButton
+        self.style = style
         super.init(rootViewController: rootViewController)
     }
     
-    init(autoShowsCloseButton: Bool = false){
+    init(style: Style = .primary, autoShowsCloseButton: Bool = false){
         self.autoShowsCloseButton = autoShowsCloseButton
+        self.style = style
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
+        self.style = .primary
         self.autoShowsCloseButton = true
         super.init(coder: aDecoder)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        .lightContent
+        switch navigationBar.barTintColor {
+        case LightSchemeColorProvider.backgroundPrimary:
+            return .darkContent
+        default:
+            return .lightContent
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        navigationBar.tintColor = DefaultColorsProvider.elementBarTint
+        self.update(for: self.style)
+    }
+    
+    func update(for style: Style){
+        let elementsColor: UIColor = {
+            switch self.style {
+            case .primary:
+                return DefaultColorsProvider.elementBarTint
+            case .secondary:
+                return DefaultColorsProvider.tintPrimary
+            }
+        }()
+        
+        let barTintColor: UIColor = {
+            switch self.style {
+            case .primary:
+                return DefaultColorsProvider.elementBarBackground
+            case .secondary:
+                return DefaultColorsProvider.backgroundPrimary
+            }
+        }()
+        
+        navigationBar.tintColor = elementsColor
         navigationBar.shadowImage = UIImage()
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.isTranslucent = false
-        navigationBar.barTintColor = DefaultColorsProvider.elementBarBackground
+        navigationBar.barTintColor = barTintColor
         
         navigationBar.titleTextAttributes = [
-            .foregroundColor: DefaultColorsProvider.elementBarTint,
+            .foregroundColor: elementsColor,
             .font: UIFont.font(for: .bold, size: 16)
         ]
         
         navigationBar.largeTitleTextAttributes = [
-            .foregroundColor: DefaultColorsProvider.elementBarTint,
+            .foregroundColor: elementsColor,
             .font: UIFont.font(for: .bold, size: 24)
         ]
         
@@ -66,13 +115,17 @@ class NavigationController: UINavigationController {
 
 extension UIViewController {
     @discardableResult
-    func embededInNavigationController(autoShowsCloseButton: Bool = true, showsNavigationBar: Bool = true) -> NavigationController {
-        let navigationController = NavigationController(rootViewController: self, autoShowsCloseButton: autoShowsCloseButton)
+    func embededInNavigationController(style: NavigationController.Style = .primary,
+                                       autoShowsCloseButton: Bool = true,
+                                       showsNavigationBar: Bool = true) -> NavigationController {
+        
+        let navigationController = NavigationController(rootViewController: self,
+                                                        style: style,
+                                                        autoShowsCloseButton: autoShowsCloseButton)
         
         if !showsNavigationBar {
             navigationController.setNavigationBarHidden(true, animated: false)
         }
-
         
         return navigationController
     }
@@ -82,7 +135,7 @@ extension UIViewController {
     }
     
     @objc func close(){
-        dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

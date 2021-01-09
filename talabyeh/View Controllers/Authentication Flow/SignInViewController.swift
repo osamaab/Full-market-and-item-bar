@@ -11,7 +11,7 @@ import Stevia
 
 class SignInViewController: UIViewController {
     
-    let contentView = SignInView()
+    let contentView = SignInContentView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
