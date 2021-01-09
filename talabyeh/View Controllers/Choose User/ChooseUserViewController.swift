@@ -11,10 +11,10 @@ import Stevia
 
 
 protocol ChooseUserViewControllerDelegate: class {
-    func chooseUserViewController(_ sender: ChooseUserViewController, didFinishWith user: UserType)
+    func chooseUserViewController(_ sender: ChooseUserViewController, didFinishWith user: APIUserType)
 }
 
-class ChooseUserViewController: ContentViewController<[UserType]> {
+class ChooseUserViewController: ContentViewController<[APIUserType]> {
     
     lazy var headerView: AuthHeaderView = .init(elements: [
                                                     .title("Welcome to TALABIA"),
@@ -29,7 +29,7 @@ class ChooseUserViewController: ContentViewController<[UserType]> {
     weak var delegate: ChooseUserViewControllerDelegate?
     
     convenience init(){
-        self.init(contentRepository: APIContentRepositoryType<GeneralAPI, [UserType]>(.userTypes))
+        self.init(contentRepository: APIContentRepositoryType<GeneralAPI, [APIUserType]>(.userTypes))
     }
     
     override func setupViewsBeforeTransitioning() {
@@ -66,7 +66,7 @@ class ChooseUserViewController: ContentViewController<[UserType]> {
         }
     }
 
-    override func contentRequestDidSuccess(with content: [UserType]) {
+    override func contentRequestDidSuccess(with content: [APIUserType]) {
         self.collectionView.reloadData()
     }
 }

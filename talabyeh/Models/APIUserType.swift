@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct UserType: Equatable, Hashable {
+struct APIUserType: Equatable, Hashable {
     let id: Int
     let name: String
     let logo: URL?
 }
 
-extension UserType: Codable { }
+extension APIUserType: Codable { }

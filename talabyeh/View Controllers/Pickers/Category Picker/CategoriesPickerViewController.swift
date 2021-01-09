@@ -14,7 +14,7 @@ class CategoriesPickerViewController: UIViewController {
     
     lazy var headerView: AuthHeaderView = .init(elements: [
         .title("Welcome to TALABYEH"),
-        .type,
+        .type(.company),
         .subtitle("Please choose the category of resellers You can serve")
     ])
     

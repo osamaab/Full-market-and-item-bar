@@ -189,7 +189,7 @@
 		E4BD349B25A5CDE90007FCE1 /* GeneralUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD349A25A5CDE90007FCE1 /* GeneralUserAPI.swift */; };
 		E4BD34A025A69F5B0007FCE1 /* ChooseUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD349F25A69F5B0007FCE1 /* ChooseUserViewController.swift */; };
 		E4BD34A625A69F780007FCE1 /* UserTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD34A525A69F780007FCE1 /* UserTypeCollectionViewCell.swift */; };
-		E4BD34CC25A6AC130007FCE1 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD34CB25A6AC130007FCE1 /* UserType.swift */; };
+		E4BD34CC25A6AC130007FCE1 /* APIUserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BD34CB25A6AC130007FCE1 /* APIUserType.swift */; };
 		E4C1389925833B7800D951F3 /* BaseOprationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C1389825833B7800D951F3 /* BaseOprationCollectionViewCell.swift */; };
 		E4C138A22583846200D951F3 /* OprationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C138A12583846200D951F3 /* OprationsListViewController.swift */; };
 		E4C138AA2583A27300D951F3 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C138A92583A27300D951F3 /* DividerView.swift */; };
@@ -215,6 +215,9 @@
 		E4CB7423255D23450017A499 /* ScrollContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB7422255D23450017A499 /* ScrollContainerView.swift */; };
 		E4D84297256AC50000D215B4 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D84296256AC50000D215B4 /* FavoritesViewController.swift */; };
 		E4D8429F256AC59200D215B4 /* BigSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D8429E256AC59200D215B4 /* BigSegmentedControl.swift */; };
+		E4DBD75525AA5C56002BFEEA /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DBD75425AA5C56002BFEEA /* UserType.swift */; };
+		E4DBD75D25AA5E75002BFEEA /* DistributorSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DBD75C25AA5E75002BFEEA /* DistributorSignInViewController.swift */; };
+		E4DBD76225AA5ED2002BFEEA /* DistributorSignInContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DBD76125AA5ED2002BFEEA /* DistributorSignInContentView.swift */; };
 		E4E68106255D3B570051D52D /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E68105255D3B570051D52D /* ImagePickerController.swift */; };
 		E4E6810B255D3B700051D52D /* LocationPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E6810A255D3B700051D52D /* LocationPickerController.swift */; };
 		E4E6811F255D40080051D52D /* BottomNextButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E6811E255D40080051D52D /* BottomNextButtonView.swift */; };
@@ -283,7 +286,7 @@
 		F98D0E59252DE73500D46EE9 /* SignupContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D0E58252DE73500D46EE9 /* SignupContentView.swift */; };
 		F98D0E5F252DEDAF00D46EE9 /* Stevia in Frameworks */ = {isa = PBXBuildFile; productRef = F98D0E5E252DEDAF00D46EE9 /* Stevia */; };
 		F990A386254082AB00ABC4CF /* DistributorSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F990A385254082AB00ABC4CF /* DistributorSignUpViewController.swift */; };
-		F990A388254082C500ABC4CF /* DistributorSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F990A387254082C500ABC4CF /* DistributorSignUpView.swift */; };
+		F990A388254082C500ABC4CF /* DistributorSignUpContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F990A387254082C500ABC4CF /* DistributorSignUpContentView.swift */; };
 		F9CC27C625332B6B00408FDA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC27C525332B6B00408FDA /* SignInViewController.swift */; };
 		F9CC27CB25332B8900408FDA /* SignInContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC27CA25332B8900408FDA /* SignInContentView.swift */; };
 		F9EA049B252C858500DC288B /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA049A252C858500DC288B /* RoundedView.swift */; };
@@ -498,7 +501,7 @@
 		E4BD349A25A5CDE90007FCE1 /* GeneralUserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralUserAPI.swift; sourceTree = "<group>"; };
 		E4BD349F25A69F5B0007FCE1 /* ChooseUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseUserViewController.swift; sourceTree = "<group>"; };
 		E4BD34A525A69F780007FCE1 /* UserTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeCollectionViewCell.swift; sourceTree = "<group>"; };
-		E4BD34CB25A6AC130007FCE1 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
+		E4BD34CB25A6AC130007FCE1 /* APIUserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUserType.swift; sourceTree = "<group>"; };
 		E4C1389825833B7800D951F3 /* BaseOprationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOprationCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4C138A12583846200D951F3 /* OprationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OprationsListViewController.swift; sourceTree = "<group>"; };
 		E4C138A92583A27300D951F3 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
@@ -524,6 +527,9 @@
 		E4CB7422255D23450017A499 /* ScrollContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollContainerView.swift; sourceTree = "<group>"; };
 		E4D84296256AC50000D215B4 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		E4D8429E256AC59200D215B4 /* BigSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigSegmentedControl.swift; sourceTree = "<group>"; };
+		E4DBD75425AA5C56002BFEEA /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
+		E4DBD75C25AA5E75002BFEEA /* DistributorSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorSignInViewController.swift; sourceTree = "<group>"; };
+		E4DBD76125AA5ED2002BFEEA /* DistributorSignInContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorSignInContentView.swift; sourceTree = "<group>"; };
 		E4E68105255D3B570051D52D /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
 		E4E6810A255D3B700051D52D /* LocationPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerController.swift; sourceTree = "<group>"; };
 		E4E6811E255D40080051D52D /* BottomNextButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNextButtonView.swift; sourceTree = "<group>"; };
@@ -597,7 +603,7 @@
 		F98D0E53252DE6F200D46EE9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F98D0E58252DE73500D46EE9 /* SignupContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupContentView.swift; sourceTree = "<group>"; };
 		F990A385254082AB00ABC4CF /* DistributorSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorSignUpViewController.swift; sourceTree = "<group>"; };
-		F990A387254082C500ABC4CF /* DistributorSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorSignUpView.swift; sourceTree = "<group>"; };
+		F990A387254082C500ABC4CF /* DistributorSignUpContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorSignUpContentView.swift; sourceTree = "<group>"; };
 		F9CC27C525332B6B00408FDA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		F9CC27CA25332B8900408FDA /* SignInContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInContentView.swift; sourceTree = "<group>"; };
 		F9EA049A252C858500DC288B /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
@@ -743,7 +749,8 @@
 		E4110C3425A702CD00DD8133 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F990A387254082C500ABC4CF /* DistributorSignUpView.swift */,
+				F990A387254082C500ABC4CF /* DistributorSignUpContentView.swift */,
+				E4DBD76125AA5ED2002BFEEA /* DistributorSignInContentView.swift */,
 				F98D0E58252DE73500D46EE9 /* SignupContentView.swift */,
 				F9CC27CA25332B8900408FDA /* SignInContentView.swift */,
 			);
@@ -1018,6 +1025,7 @@
 			children = (
 				E4110C2C25A702C000DD8133 /* ResellerSignUpViewController.swift */,
 				F990A385254082AB00ABC4CF /* DistributorSignUpViewController.swift */,
+				E4DBD75C25AA5E75002BFEEA /* DistributorSignInViewController.swift */,
 				F98D0E53252DE6F200D46EE9 /* SignUpViewController.swift */,
 				F9CC27C525332B6B00408FDA /* SignInViewController.swift */,
 				E45E5548256F9F4E008856FD /* DeliveryAreaPickerViewController.swift */,
@@ -1070,7 +1078,6 @@
 				E4C705AA255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift */,
 				E4C705AF255BB18100DD29E3 /* ScreenMessagePresenterType.swift */,
 				E4FF1B7425A1F49E00AF4194 /* Colors */,
-				E4BAF6F4259A3BA500A65D87 /* Constants */,
 				E4FAB5932565005900F25473 /* Expandable Items */,
 				E4CB73FD255D157D0017A499 /* Validation */,
 			);
@@ -1224,6 +1231,7 @@
 			children = (
 				E4000CA5255C050D00E89ABB /* NSObject+Traits.swift */,
 				E4BAF6EF259A3B9E00A65D87 /* AppConstants.swift */,
+				E4DBD75425AA5C56002BFEEA /* UserType.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -1258,7 +1266,7 @@
 		E4BD34CA25A6AC020007FCE1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E4BD34CB25A6AC130007FCE1 /* UserType.swift */,
+				E4BD34CB25A6AC130007FCE1 /* APIUserType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1573,6 +1581,7 @@
 			isa = PBXGroup;
 			children = (
 				E459A9A925A4C918007810AE /* Application */,
+				E4BAF6F4259A3BA500A65D87 /* Constants */,
 				E494FA0725A4A6B500517CA8 /* Content Loading */,
 				E4C70601255BBFC500DD29E3 /* Base UI */,
 				E45D854E257628C9009ACC8D /* Components Lab */,
@@ -1912,7 +1921,7 @@
 				E40FB2832567A96B00626569 /* CategoryItemCollectionViewCell.swift in Sources */,
 				E496B2CF255B2B10001BEC0F /* BorderedTextField.swift in Sources */,
 				E4B2A75A256CBAC70055C1AE /* QuantitySelectionView.swift in Sources */,
-				F990A388254082C500ABC4CF /* DistributorSignUpView.swift in Sources */,
+				F990A388254082C500ABC4CF /* DistributorSignUpContentView.swift in Sources */,
 				E4C138AF2583AA4B00D951F3 /* FinishedOperationCollectionViewCell.swift in Sources */,
 				E4E68139255D435E0051D52D /* LocationSearchHistoryManager.swift in Sources */,
 				E49C7419258A6D76002A5A59 /* CompanyLocationsContentView.swift in Sources */,
@@ -2002,7 +2011,7 @@
 				E4602D24258CC5D0004C556B /* CLItemsSection.swift in Sources */,
 				E41172EB2587E309005BAB60 /* CertificatesContentView.swift in Sources */,
 				E4B2A744256CB5BC0055C1AE /* ProductDetailsViewController.swift in Sources */,
-				E4BD34CC25A6AC130007FCE1 /* UserType.swift in Sources */,
+				E4BD34CC25A6AC130007FCE1 /* APIUserType.swift in Sources */,
 				E4A6704A2563B52A0057083C /* MonthPickerTextField.swift in Sources */,
 				E44DB3B82595BB5C009F1809 /* CLColorItem.swift in Sources */,
 				E4E6813C255D435E0051D52D /* Location.swift in Sources */,
@@ -2010,6 +2019,7 @@
 				E49B9FDE257783F20057EDDE /* CheckoutViewController.swift in Sources */,
 				E48C89C42590F88C000CDE76 /* ItemsViewController.swift in Sources */,
 				E4C70617255BC45800DD29E3 /* Identifiable.swift in Sources */,
+				E4DBD75525AA5C56002BFEEA /* UserType.swift in Sources */,
 				E4B2A755256CBAA40055C1AE /* RatingView.swift in Sources */,
 				F990A386254082AB00ABC4CF /* DistributorSignUpViewController.swift in Sources */,
 				E496B2F9255B2FBB001BEC0F /* NetworkConfiguration.swift in Sources */,
@@ -2027,7 +2037,9 @@
 				E4EE6BEB2594E8D100D0EDCC /* CLRegisterationSectionListProvider.swift in Sources */,
 				E40792DC25923BC600DE563C /* PriceTextField.swift in Sources */,
 				E4BAF708259A43C400A65D87 /* CompanyFlowCoordinator.swift in Sources */,
+				E4DBD76225AA5ED2002BFEEA /* DistributorSignInContentView.swift in Sources */,
 				E4000CA6255C050D00E89ABB /* NSObject+Traits.swift in Sources */,
+				E4DBD75D25AA5E75002BFEEA /* DistributorSignInViewController.swift in Sources */,
 				E4EE6BF82594EA8400D0EDCC /* CLRuntimeComponentsProvider.swift in Sources */,
 				E4151D7525626904009F1D45 /* TimeRangePickerTextField.swift in Sources */,
 				E4B2A764256CC5F60055C1AE /* QRCodeView.swift in Sources */,

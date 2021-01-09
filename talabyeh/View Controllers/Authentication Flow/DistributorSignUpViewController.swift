@@ -7,26 +7,40 @@
 //
 
 import UIKit
-import LanguageManager_iOS
+import Stevia
 
 class DistributorSignUpViewController: UIViewController {
     
-    let distributorSignUpView = DistributorSignUpView()
-    
-    
-    override func loadView() {
-        view = distributorSignUpView
-    }
+    lazy var scrollView: ScrollContainerView = .init(contentView: contentView)
+    lazy var contentView = DistributorSignUpContentView()
+    lazy var bottomNextView: BottomNextButtonView = .init(title: "Save")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        distributorSignUpView.distributorType = .PersonalDistributor
-        distributorSignUpView.headerImage.image = LanguageManager.shared.currentLanguage == .en ? UIImage(named: "DistributorImageEnglish") : UIImage(named: "DistributorImageArabic")
-        distributorSignUpView.backButton.addTarget(self, action: #selector(backButton), for: .touchUpInside)
+        setupViews()
+        addValidation()
     }
     
-    @objc func backButton(){
-        self.navigationController?.popViewController(animated: true)
+    func setupViews(){
+        view.backgroundColor = DefaultColorsProvider.backgroundPrimary
+        
+        view.subviewsPreparedAL {
+            scrollView
+            bottomNextView
+        }
+        
+        scrollView.Top == view.safeAreaLayoutGuide.Top + 20
+        scrollView.leading(20).trailing(20).bottom(0)
+        
+        bottomNextView.leading(0).trailing(0).bottom(0)
+    }
+    
+    func addValidation(){
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        scrollView.scrollView.contentInset.bottom = bottomNextView.bounds.height + 15
     }
 }
