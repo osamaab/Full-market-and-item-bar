@@ -9,11 +9,6 @@
 import UIKit
 import Stevia
 
-struct Product: Hashable {
-    let title: String
-    let id: String = UUID().uuidString
-}
-
 class FavoritesViewController: UIViewController {
     
     typealias DataSource = UICollectionViewDiffableDataSource<Int, Product>
