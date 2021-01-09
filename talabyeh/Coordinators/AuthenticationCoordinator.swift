@@ -18,6 +18,9 @@ enum UserTypeEnum {
 
 enum AuthenticationRoute: Route {
     case signin
+    case distributorSignup
+    case companySignup
+    case resellerSignup
 }
 
 /**
@@ -25,9 +28,12 @@ enum AuthenticationRoute: Route {
  */
 class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
     
+    init(initialRoute: AuthenticationRoute){
+        super.init(rootViewController: NavigationController(), initialRoute: initialRoute)
+    }
     
     init(){
-        super.init(rootViewController: NavigationController(), initialRoute: .signin)
+        super.init(rootViewController: NavigationController(), initialRoute: .distributorSignup)
     }
     
     override func prepareTransition(for route: RouteType) -> TransitionType {
@@ -35,6 +41,15 @@ class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
         case .signin:
             let signInVC = SignInViewController()
             return .push(signInVC)
+        case .distributorSignup:
+            let disSignup = DistributorSignUpViewController()
+            return .push(disSignup)
+        case .companySignup:
+            let signUpVC = CompanySignUpViewController()
+            return .push(signUpVC)
+        case .resellerSignup:
+            let signUpVC = ResellerSignUpViewController()
+            return .push(signUpVC)
         }
     }
 }

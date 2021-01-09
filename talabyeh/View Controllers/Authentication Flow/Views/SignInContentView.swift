@@ -9,9 +9,7 @@
 import UIKit
 import Stevia
 
-class SignInView: UIView {
-
-
+class SignInContentView: UIView {
     let headerView = AuthHeaderView(elements: [
         .title("Welcome to TALABIA"),
         .subtitle("Let's get started")

@@ -9,6 +9,11 @@
 import UIKit
 import Stevia
 
+
+protocol ChooseUserViewControllerDelegate: class {
+    func chooseUserViewController(_ sender: ChooseUserViewController, didFinishWith user: UserType)
+}
+
 class ChooseUserViewController: ContentViewController<[UserType]> {
     
     lazy var headerView: AuthHeaderView = .init(elements: [
@@ -21,6 +26,7 @@ class ChooseUserViewController: ContentViewController<[UserType]> {
     
     var selectedIndexPath: IndexPath?
     
+    weak var delegate: ChooseUserViewControllerDelegate?
     
     convenience init(){
         self.init(contentRepository: APIContentRepositoryType<GeneralAPI, [UserType]>(.userTypes))
@@ -50,6 +56,14 @@ class ChooseUserViewController: ContentViewController<[UserType]> {
         
         bottomView.Top == collectionView.Bottom
         bottomView.bottom(0).leading(0).trailing(0)
+        
+        
+        bottomView.nextButton.add(event: .touchUpInside){ [unowned self] in
+            if let selectedIndexPath = self.selectedIndexPath, let userType = self.state.content?[selectedIndexPath.item] {
+                
+                self.delegate?.chooseUserViewController(self, didFinishWith: userType)
+            }
+        }
     }
 
     override func contentRequestDidSuccess(with content: [UserType]) {

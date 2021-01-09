@@ -13,7 +13,7 @@ enum AppRoutes: Route {
     case chooseUserType
     case company
     case lab
-    case authentication(StrongRouter<AuthenticationRoute>?)
+    case authentication(AuthenticationRoute)
 }
 
 class AppCoordinator: NavigationCoordinator<AppRoutes> {
@@ -27,11 +27,9 @@ class AppCoordinator: NavigationCoordinator<AppRoutes> {
         switch route {
         case .chooseUserType:
             let chooseUserViewController = ChooseUserViewController()
+            chooseUserViewController.delegate = self
             
-            return .multiple(
-                .dismissToRoot(animation: .fadeInstant),
-                .presentFullScreen(chooseUserViewController, animation: .fadeInstant)
-            )
+            return .push(chooseUserViewController)
         case .lab:
             return .multiple(
                 .dismissToRoot(animation: .fadeInstant),
@@ -42,13 +40,26 @@ class AppCoordinator: NavigationCoordinator<AppRoutes> {
                 .dismissToRoot(animation: .fadeInstant),
                 .presentFullScreen(CompanyFlowCoordinator(), animation: .fadeInstant)
             )
-        case .authentication(let router):
-            let router = router ?? AuthenticationCoordinator().strongRouter
-            return .multiple(
-                .dismissToRoot(animation: .fadeInstant),
-                .presentFullScreen(router, animation: .fadeInstant)
-            )
+        case .authentication(let route):
+            let router = AuthenticationCoordinator(initialRoute: route).strongRouter
+            return .presentFullScreen(router, animation: .fadeInstant)
         }
     }
 }
 
+
+
+extension AppCoordinator: ChooseUserViewControllerDelegate {
+    func chooseUserViewController(_ sender: ChooseUserViewController, didFinishWith user: UserType) {
+        switch user.id {
+        case 1:
+            self.trigger(.authentication(.companySignup))
+        case 2:
+            self.trigger(.authentication(.distributorSignup))
+            break
+        default:
+            self.trigger(.authentication(.resellerSignup))
+            break
+        }
+    }
+}

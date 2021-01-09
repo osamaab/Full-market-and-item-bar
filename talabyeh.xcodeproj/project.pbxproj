@@ -35,6 +35,7 @@
 		E40FB28B2567A97500626569 /* CategoriesPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40FB28A2567A97500626569 /* CategoriesPickerViewController.swift */; };
 		E40FB2902567AA6900626569 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40FB28F2567AA6900626569 /* CheckboxView.swift */; };
 		E40FB2952567AD7700626569 /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40FB2942567AD7700626569 /* AuthHeaderView.swift */; };
+		E4110C2D25A702C000DD8133 /* ResellerSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4110C2C25A702C000DD8133 /* ResellerSignUpViewController.swift */; };
 		E41172EB2587E309005BAB60 /* CertificatesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41172EA2587E309005BAB60 /* CertificatesContentView.swift */; };
 		E41327922565699000090419 /* AdvancedSearchFolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41327912565699000090419 /* AdvancedSearchFolderCollectionViewCell.swift */; };
 		E413279A25656BB800090419 /* AdvancedSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E413279925656BB800090419 /* AdvancedSearchViewController.swift */; };
@@ -221,7 +222,6 @@
 		E4E6813A255D435E0051D52D /* LocationSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E68136255D435E0051D52D /* LocationSearchResultsViewController.swift */; };
 		E4E6813B255D435E0051D52D /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E68137255D435E0051D52D /* LocationPickerViewController.swift */; };
 		E4E6813C255D435E0051D52D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E68138255D435E0051D52D /* Location.swift */; };
-		E4E68147255D481D0051D52D /* SampleSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E68146255D481D0051D52D /* SampleSignupViewController.swift */; };
 		E4EE5CA0256F6DF50031BC71 /* CartItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EE5C9F256F6DF50031BC71 /* CartItemsViewController.swift */; };
 		E4EE5CA9256F6E030031BC71 /* CartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EE5CA8256F6E030031BC71 /* CartCollectionViewCell.swift */; };
 		E4EE5CB2256F6FB10031BC71 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EE5CB1256F6FB10031BC71 /* Then.swift */; };
@@ -279,13 +279,13 @@
 		F96B85372529A05A00CEDCF8 /* talabyehTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B85362529A05A00CEDCF8 /* talabyehTests.swift */; };
 		F96B85422529A05A00CEDCF8 /* talabyehUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B85412529A05A00CEDCF8 /* talabyehUITests.swift */; };
 		F96B85502529B67200CEDCF8 /* ChangeLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B854F2529B67200CEDCF8 /* ChangeLanguageViewController.swift */; };
-		F98D0E54252DE6F200D46EE9 /* SignUpWizardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D0E53252DE6F200D46EE9 /* SignUpWizardViewController.swift */; };
-		F98D0E59252DE73500D46EE9 /* SignUpWizardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D0E58252DE73500D46EE9 /* SignUpWizardView.swift */; };
+		F98D0E54252DE6F200D46EE9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D0E53252DE6F200D46EE9 /* SignUpViewController.swift */; };
+		F98D0E59252DE73500D46EE9 /* SignupContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D0E58252DE73500D46EE9 /* SignupContentView.swift */; };
 		F98D0E5F252DEDAF00D46EE9 /* Stevia in Frameworks */ = {isa = PBXBuildFile; productRef = F98D0E5E252DEDAF00D46EE9 /* Stevia */; };
 		F990A386254082AB00ABC4CF /* DistributorSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F990A385254082AB00ABC4CF /* DistributorSignUpViewController.swift */; };
 		F990A388254082C500ABC4CF /* DistributorSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F990A387254082C500ABC4CF /* DistributorSignUpView.swift */; };
 		F9CC27C625332B6B00408FDA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC27C525332B6B00408FDA /* SignInViewController.swift */; };
-		F9CC27CB25332B8900408FDA /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC27CA25332B8900408FDA /* SignInView.swift */; };
+		F9CC27CB25332B8900408FDA /* SignInContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CC27CA25332B8900408FDA /* SignInContentView.swift */; };
 		F9EA049B252C858500DC288B /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA049A252C858500DC288B /* RoundedView.swift */; };
 		F9EA04F4252C90E500DC288B /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EA04F3252C90E500DC288B /* RoundedButton.swift */; };
 		F9F65B8C254F1FD300D347D6 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F65B8B254F1FD300D347D6 /* MarketViewController.swift */; };
@@ -344,6 +344,7 @@
 		E40FB28A2567A97500626569 /* CategoriesPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesPickerViewController.swift; sourceTree = "<group>"; };
 		E40FB28F2567AA6900626569 /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
 		E40FB2942567AD7700626569 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
+		E4110C2C25A702C000DD8133 /* ResellerSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResellerSignUpViewController.swift; sourceTree = "<group>"; };
 		E41172EA2587E309005BAB60 /* CertificatesContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificatesContentView.swift; sourceTree = "<group>"; };
 		E41327912565699000090419 /* AdvancedSearchFolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSearchFolderCollectionViewCell.swift; sourceTree = "<group>"; };
 		E413279925656BB800090419 /* AdvancedSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSearchViewController.swift; sourceTree = "<group>"; };
@@ -530,7 +531,6 @@
 		E4E68136255D435E0051D52D /* LocationSearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchResultsViewController.swift; sourceTree = "<group>"; };
 		E4E68137255D435E0051D52D /* LocationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
 		E4E68138255D435E0051D52D /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		E4E68146255D481D0051D52D /* SampleSignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSignupViewController.swift; sourceTree = "<group>"; };
 		E4EE5C9F256F6DF50031BC71 /* CartItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemsViewController.swift; sourceTree = "<group>"; };
 		E4EE5CA8256F6E030031BC71 /* CartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4EE5CB1256F6FB10031BC71 /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
@@ -594,12 +594,12 @@
 		F96B85412529A05A00CEDCF8 /* talabyehUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = talabyehUITests.swift; sourceTree = "<group>"; };
 		F96B85432529A05A00CEDCF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F96B854F2529B67200CEDCF8 /* ChangeLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguageViewController.swift; sourceTree = "<group>"; };
-		F98D0E53252DE6F200D46EE9 /* SignUpWizardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWizardViewController.swift; sourceTree = "<group>"; };
-		F98D0E58252DE73500D46EE9 /* SignUpWizardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWizardView.swift; sourceTree = "<group>"; };
+		F98D0E53252DE6F200D46EE9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		F98D0E58252DE73500D46EE9 /* SignupContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupContentView.swift; sourceTree = "<group>"; };
 		F990A385254082AB00ABC4CF /* DistributorSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorSignUpViewController.swift; sourceTree = "<group>"; };
 		F990A387254082C500ABC4CF /* DistributorSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorSignUpView.swift; sourceTree = "<group>"; };
 		F9CC27C525332B6B00408FDA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		F9CC27CA25332B8900408FDA /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		F9CC27CA25332B8900408FDA /* SignInContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInContentView.swift; sourceTree = "<group>"; };
 		F9EA049A252C858500DC288B /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		F9EA04F3252C90E500DC288B /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		F9F65B8B254F1FD300D347D6 /* MarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
@@ -740,6 +740,16 @@
 			path = "Category Picker";
 			sourceTree = "<group>";
 		};
+		E4110C3425A702CD00DD8133 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F990A387254082C500ABC4CF /* DistributorSignUpView.swift */,
+				F98D0E58252DE73500D46EE9 /* SignupContentView.swift */,
+				F9CC27CA25332B8900408FDA /* SignInContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E41327902565696B00090419 /* Advanced Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -763,6 +773,15 @@
 				E4A6706F2563C2A60057083C /* CreditCardNumberTextField.swift */,
 			);
 			path = "More Pickers";
+			sourceTree = "<group>";
+		};
+		E416581625A703770062F95B /* Language Picker */ = {
+			isa = PBXGroup;
+			children = (
+				E4000CEB255C153300E89ABB /* Authentication.storyboard */,
+				F96B854F2529B67200CEDCF8 /* ChangeLanguageViewController.swift */,
+			);
+			path = "Language Picker";
 			sourceTree = "<group>";
 		};
 		E4401079259F3BC900FDE5A2 /* Transitions */ = {
@@ -834,14 +853,6 @@
 			path = "Components Lab";
 			sourceTree = "<group>";
 		};
-		E45E5544256F9F37008856FD /* Delivery Area */ = {
-			isa = PBXGroup;
-			children = (
-				E45E5548256F9F4E008856FD /* DeliveryAreaPickerViewController.swift */,
-			);
-			path = "Delivery Area";
-			sourceTree = "<group>";
-		};
 		E4749C202588ED2100479538 /* Contact Designers */ = {
 			isa = PBXGroup;
 			children = (
@@ -895,7 +906,7 @@
 			path = "Change Password";
 			sourceTree = "<group>";
 		};
-		E475FB462593A79F0010FCBF /* Market Specific  */ = {
+		E475FB462593A79F0010FCBF /* Reseller Specific  */ = {
 			isa = PBXGroup;
 			children = (
 				E475FB472593A7B00010FCBF /* MarketSelectDistributorViewController.swift */,
@@ -904,7 +915,7 @@
 				E47A062F2598768800654953 /* MarketStoreLocationFieldsViewController.swift */,
 				E4568F4F2593AFE500FA91E4 /* Views */,
 			);
-			path = "Market Specific ";
+			path = "Reseller Specific ";
 			sourceTree = "<group>";
 		};
 		E47E00F12592622A00FC737A /* Distributor Screens */ = {
@@ -1005,12 +1016,12 @@
 		E496B239255B20B0001BEC0F /* Authentication Flow */ = {
 			isa = PBXGroup;
 			children = (
-				E4000CEB255C153300E89ABB /* Authentication.storyboard */,
-				E4E68146255D481D0051D52D /* SampleSignupViewController.swift */,
-				E45E5544256F9F37008856FD /* Delivery Area */,
-				F990A3822540822B00ABC4CF /* Sign Up Wizard */,
-				E496B2E6255B2D7F001BEC0F /* Distributor Sign Up */,
-				F990A3832540824000ABC4CF /* Sign In */,
+				E4110C2C25A702C000DD8133 /* ResellerSignUpViewController.swift */,
+				F990A385254082AB00ABC4CF /* DistributorSignUpViewController.swift */,
+				F98D0E53252DE6F200D46EE9 /* SignUpViewController.swift */,
+				F9CC27C525332B6B00408FDA /* SignInViewController.swift */,
+				E45E5548256F9F4E008856FD /* DeliveryAreaPickerViewController.swift */,
+				E4110C3425A702CD00DD8133 /* Views */,
 			);
 			path = "Authentication Flow";
 			sourceTree = "<group>";
@@ -1117,15 +1128,6 @@
 				E4FF8317259467E500DACBC3 /* CircleConfirmButton.swift */,
 			);
 			path = Buttons;
-			sourceTree = "<group>";
-		};
-		E496B2E6255B2D7F001BEC0F /* Distributor Sign Up */ = {
-			isa = PBXGroup;
-			children = (
-				F990A385254082AB00ABC4CF /* DistributorSignUpViewController.swift */,
-				F990A387254082C500ABC4CF /* DistributorSignUpView.swift */,
-			);
-			path = "Distributor Sign Up";
 			sourceTree = "<group>";
 		};
 		E49B9FD4257783B10057EDDE /* Checkout */ = {
@@ -1288,10 +1290,10 @@
 		E4C705D0255BB67500DD29E3 /* Pickers */ = {
 			isa = PBXGroup;
 			children = (
-				F96B854F2529B67200CEDCF8 /* ChangeLanguageViewController.swift */,
 				E4E68105255D3B570051D52D /* ImagePickerController.swift */,
 				E4E6810A255D3B700051D52D /* LocationPickerController.swift */,
 				E40FB2792567A91700626569 /* CategoryPickerController.swift */,
+				E416581625A703770062F95B /* Language Picker */,
 				E40FB2812567A93700626569 /* Category Picker */,
 				E4E68123255D431C0051D52D /* Location Picker */,
 			);
@@ -1621,8 +1623,11 @@
 		F98D0E8A252F786200D46EE9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E4C705D0255BB67500DD29E3 /* Pickers */,
 				E4BAF714259A46B300A65D87 /* Choose User */,
-				E475FB462593A79F0010FCBF /* Market Specific  */,
+				E496B239255B20B0001BEC0F /* Authentication Flow */,
+				E496B23A255B20E8001BEC0F /* Market Flow */,
+				E475FB462593A79F0010FCBF /* Reseller Specific  */,
 				E48C89AF2590EF19000CDE76 /* Items */,
 				E4A9881A2587DA5E0006EB3F /* Company Profile */,
 				E4C1389625833AE800D951F3 /* Operations */,
@@ -1630,31 +1635,10 @@
 				E49B9FD4257783B10057EDDE /* Checkout */,
 				E4EE5C9E256F6DE50031BC71 /* Cart */,
 				E4D8428D256AC47A00D215B4 /* Favorites */,
-				E4C705D0255BB67500DD29E3 /* Pickers */,
 				E4A6703D2563B0910057083C /* Distributers */,
-				E496B239255B20B0001BEC0F /* Authentication Flow */,
 				E496B23E255B20EF001BEC0F /* Profile Flow */,
-				E496B23A255B20E8001BEC0F /* Market Flow */,
 			);
 			path = "View Controllers";
-			sourceTree = "<group>";
-		};
-		F990A3822540822B00ABC4CF /* Sign Up Wizard */ = {
-			isa = PBXGroup;
-			children = (
-				F98D0E53252DE6F200D46EE9 /* SignUpWizardViewController.swift */,
-				F98D0E58252DE73500D46EE9 /* SignUpWizardView.swift */,
-			);
-			path = "Sign Up Wizard";
-			sourceTree = "<group>";
-		};
-		F990A3832540824000ABC4CF /* Sign In */ = {
-			isa = PBXGroup;
-			children = (
-				F9CC27C525332B6B00408FDA /* SignInViewController.swift */,
-				F9CC27CA25332B8900408FDA /* SignInView.swift */,
-			);
-			path = "Sign In";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1990,6 +1974,7 @@
 				E4FF1B9025A1F60900AF4194 /* AdaptiveColorsProvider.swift in Sources */,
 				E4EE6BCF2594DC9700D0EDCC /* CLComponentsListViewController.swift in Sources */,
 				E4FAB5AE2565007900F25473 /* ExpandableAnimationFactory.swift in Sources */,
+				E4110C2D25A702C000DD8133 /* ResellerSignUpViewController.swift in Sources */,
 				E4401092259F3C1500FDE5A2 /* Transitions.swift in Sources */,
 				E4BD34A025A69F5B0007FCE1 /* ChooseUserViewController.swift in Sources */,
 				E4749C582588FDAF00479538 /* ProfileOptionsContentView.swift in Sources */,
@@ -1999,7 +1984,7 @@
 				E47A06302598768800654953 /* MarketStoreLocationFieldsViewController.swift in Sources */,
 				E496B2CA255B2ABF001BEC0F /* ValidationTextField.swift in Sources */,
 				E45D8550257628D9009ACC8D /* ComponentsLabCoordinator.swift in Sources */,
-				F98D0E54252DE6F200D46EE9 /* SignUpWizardViewController.swift in Sources */,
+				F98D0E54252DE6F200D46EE9 /* SignUpViewController.swift in Sources */,
 				E4FF1B9D25A1FD2E00AF4194 /* StatefulViewController.swift in Sources */,
 				E4FF1B7E25A1F4BA00AF4194 /* ColorGroup.swift in Sources */,
 				E4BD344625A5C4E00007FCE1 /* ResponseContainer.swift in Sources */,
@@ -2062,7 +2047,6 @@
 				E4FF49942560F45800B4CBC4 /* NewDistributerContentView.swift in Sources */,
 				E4D84297256AC50000D215B4 /* FavoritesViewController.swift in Sources */,
 				E4CB73FF255D158E0017A499 /* ValidationError.swift in Sources */,
-				E4E68147255D481D0051D52D /* SampleSignupViewController.swift in Sources */,
 				E4A9881D2587DAA50006EB3F /* LabelView.swift in Sources */,
 				E4C138A22583846200D951F3 /* OprationsListViewController.swift in Sources */,
 				E4BD345C25A5C5B60007FCE1 /* AuthenticationAPI.swift in Sources */,
@@ -2132,7 +2116,7 @@
 				E4EE6BDE2594E7AA00D0EDCC /* CLScreenListProvider.swift in Sources */,
 				E496B2AC255B2771001BEC0F /* UIColor+Additions.swift in Sources */,
 				E4000CD3255C095900E89ABB /* AuthenticationCoordinator.swift in Sources */,
-				F98D0E59252DE73500D46EE9 /* SignUpWizardView.swift in Sources */,
+				F98D0E59252DE73500D46EE9 /* SignupContentView.swift in Sources */,
 				E4B2A750256CB5DF0055C1AE /* ProductDetailsContentView.swift in Sources */,
 				E4CB740C255D18610017A499 /* PasswordTextField.swift in Sources */,
 				E4EE6BBE2594DA5500D0EDCC /* CLDefaultPreviewViewController.swift in Sources */,
@@ -2164,7 +2148,7 @@
 				E47E010325926B2B00FC737A /* SelectExternalViewController.swift in Sources */,
 				E4A6704F2563B5310057083C /* YearPickerTextField.swift in Sources */,
 				E4FF1BB525A1FD8A00AF4194 /* GeneralStateView.swift in Sources */,
-				F9CC27CB25332B8900408FDA /* SignInView.swift in Sources */,
+				F9CC27CB25332B8900408FDA /* SignInContentView.swift in Sources */,
 				E40FB27A2567A91700626569 /* CategoryPickerController.swift in Sources */,
 				E494F9FB25A4A52B00517CA8 /* APIContentRepository.swift in Sources */,
 				E4FF1B8825A1F4EE00AF4194 /* DarkSchemeColorProvider.swift in Sources */,
