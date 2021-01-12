@@ -9,11 +9,6 @@
 import UIKit
 import Stevia
 
-struct Product: Hashable {
-    let title: String
-    let id: String = UUID().uuidString
-}
-
 class FavoritesViewController: UIViewController {
     
     typealias DataSource = UICollectionViewDiffableDataSource<Int, Product>
@@ -42,7 +37,7 @@ class FavoritesViewController: UIViewController {
         collectionView.leading(20).trailing(20)
         collectionView.Bottom == view.safeAreaLayoutGuide.Bottom
         
-        let items = (0...9).map { Product(title: "Product \($0)") }
+        let items = (0...9).map { Product.sample(title: "Product \($0)") }
         
         // create a snapshot
         var snapshot = NSDiffableDataSourceSnapshot<Int, Product>()

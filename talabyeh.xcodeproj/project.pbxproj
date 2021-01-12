@@ -215,6 +215,11 @@
 		E4CB7423255D23450017A499 /* ScrollContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB7422255D23450017A499 /* ScrollContainerView.swift */; };
 		E4D84297256AC50000D215B4 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D84296256AC50000D215B4 /* FavoritesViewController.swift */; };
 		E4D8429F256AC59200D215B4 /* BigSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D8429E256AC59200D215B4 /* BigSegmentedControl.swift */; };
+		E4DBD72525AA46A9002BFEEA /* ProductUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DBD72425AA46A9002BFEEA /* ProductUnit.swift */; };
+		E4DBD72A25AA46CD002BFEEA /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DBD72925AA46CD002BFEEA /* Product.swift */; };
+		E4DBD72F25AA472A002BFEEA /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DBD72E25AA472A002BFEEA /* RemoteImage.swift */; };
+		E4DBD73425AA476F002BFEEA /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DBD73325AA476F002BFEEA /* ProductCategory.swift */; };
+		E4DBD73925AA479C002BFEEA /* CoveringArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DBD73825AA479C002BFEEA /* CoveringArea.swift */; };
 		E4DBD75525AA5C56002BFEEA /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DBD75425AA5C56002BFEEA /* UserType.swift */; };
 		E4DBD75D25AA5E75002BFEEA /* DistributorSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DBD75C25AA5E75002BFEEA /* DistributorSignInViewController.swift */; };
 		E4DBD76225AA5ED2002BFEEA /* DistributorSignInContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DBD76125AA5ED2002BFEEA /* DistributorSignInContentView.swift */; };
@@ -527,6 +532,11 @@
 		E4CB7422255D23450017A499 /* ScrollContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollContainerView.swift; sourceTree = "<group>"; };
 		E4D84296256AC50000D215B4 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		E4D8429E256AC59200D215B4 /* BigSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigSegmentedControl.swift; sourceTree = "<group>"; };
+		E4DBD72425AA46A9002BFEEA /* ProductUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductUnit.swift; sourceTree = "<group>"; };
+		E4DBD72925AA46CD002BFEEA /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		E4DBD72E25AA472A002BFEEA /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		E4DBD73325AA476F002BFEEA /* ProductCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
+		E4DBD73825AA479C002BFEEA /* CoveringArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoveringArea.swift; sourceTree = "<group>"; };
 		E4DBD75425AA5C56002BFEEA /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		E4DBD75C25AA5E75002BFEEA /* DistributorSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorSignInViewController.swift; sourceTree = "<group>"; };
 		E4DBD76125AA5ED2002BFEEA /* DistributorSignInContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorSignInContentView.swift; sourceTree = "<group>"; };
@@ -1266,6 +1276,11 @@
 		E4BD34CA25A6AC020007FCE1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E4DBD73825AA479C002BFEEA /* CoveringArea.swift */,
+				E4DBD72E25AA472A002BFEEA /* RemoteImage.swift */,
+				E4DBD72925AA46CD002BFEEA /* Product.swift */,
+				E4DBD72425AA46A9002BFEEA /* ProductUnit.swift */,
+				E4DBD73325AA476F002BFEEA /* ProductCategory.swift */,
 				E4BD34CB25A6AC130007FCE1 /* APIUserType.swift */,
 			);
 			path = Models;
@@ -1981,6 +1996,7 @@
 				E40FB28B2567A97500626569 /* CategoriesPickerViewController.swift in Sources */,
 				E4FAB5A82565007900F25473 /* ExpandableCollectionViewManager.swift in Sources */,
 				E4FF1B9025A1F60900AF4194 /* AdaptiveColorsProvider.swift in Sources */,
+				E4DBD73925AA479C002BFEEA /* CoveringArea.swift in Sources */,
 				E4EE6BCF2594DC9700D0EDCC /* CLComponentsListViewController.swift in Sources */,
 				E4FAB5AE2565007900F25473 /* ExpandableAnimationFactory.swift in Sources */,
 				E4110C2D25A702C000DD8133 /* ResellerSignUpViewController.swift in Sources */,
@@ -1989,6 +2005,7 @@
 				E4749C582588FDAF00479538 /* ProfileOptionsContentView.swift in Sources */,
 				E40FB266256797E800626569 /* LocationPickerTextField.swift in Sources */,
 				E4929042259FF59900B2B67B /* OperationsCoordinator.swift in Sources */,
+				E4DBD72A25AA46CD002BFEEA /* Product.swift in Sources */,
 				E413279A25656BB800090419 /* AdvancedSearchViewController.swift in Sources */,
 				E47A06302598768800654953 /* MarketStoreLocationFieldsViewController.swift in Sources */,
 				E496B2CA255B2ABF001BEC0F /* ValidationTextField.swift in Sources */,
@@ -1998,6 +2015,7 @@
 				E4FF1B7E25A1F4BA00AF4194 /* ColorGroup.swift in Sources */,
 				E4BD344625A5C4E00007FCE1 /* ResponseContainer.swift in Sources */,
 				E4EE6BB92594DA4700D0EDCC /* CLComponentGroupIdentifier.swift in Sources */,
+				E4DBD73425AA476F002BFEEA /* ProductCategory.swift in Sources */,
 				E4298490258DB0BB00818E09 /* CLAnyItem.swift in Sources */,
 				E4D8429F256AC59200D215B4 /* BigSegmentedControl.swift in Sources */,
 				E4749C692589038A00479538 /* ChangePasswordContentView.swift in Sources */,
@@ -2067,6 +2085,7 @@
 				E494F9F625A4A2C500517CA8 /* ContentRequestCompletion.swift in Sources */,
 				E4602D34258CC71C004C556B /* CLItem.swift in Sources */,
 				E4C70608255BBFFC00DD29E3 /* NavigationController.swift in Sources */,
+				E4DBD72F25AA472A002BFEEA /* RemoteImage.swift in Sources */,
 				E4E68106255D3B570051D52D /* ImagePickerController.swift in Sources */,
 				E4568F4B2593AFDD00FA91E4 /* MarketEditProfileContentView.swift in Sources */,
 				E4E6811F255D40080051D52D /* BottomNextButtonView.swift in Sources */,
@@ -2167,6 +2186,7 @@
 				E4BD349B25A5CDE90007FCE1 /* GeneralUserAPI.swift in Sources */,
 				E4A0B26725868D8600AF3CEA /* OperationDetailsViewController.swift in Sources */,
 				E4C1389925833B7800D951F3 /* BaseOprationCollectionViewCell.swift in Sources */,
+				E4DBD72525AA46A9002BFEEA /* ProductUnit.swift in Sources */,
 				E4B9F4732587E6E4001D5F2F /* CertificatesViewController.swift in Sources */,
 				E48C27C42569DA9F006E01FB /* LocationSearchFieldType.swift in Sources */,
 				E4749C322588EDD800479538 /* ContactFormView.swift in Sources */,
