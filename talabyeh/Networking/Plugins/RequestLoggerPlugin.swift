@@ -12,5 +12,10 @@ import Moya
 struct RequestLoggerPlugin: PluginType {
     func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
         //TODO: Use the os.log to print out logs
+        
+    }
+    
+    func willSend(_ request: RequestType, target: TargetType) {
+        print(request.request?.url)
     }
 }

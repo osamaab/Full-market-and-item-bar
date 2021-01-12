@@ -7,9 +7,43 @@
 //
 
 import XCTest
+@testable import Moya
 @testable import talabyeh
 
 class talabyehTests: XCTestCase {
+    
+    
+    func testUserTypesAPI(){
+        let provider: MoyaProvider<GeneralAPI> = .default()
+        
+        
+        let expectation = XCTestExpectation(description: "Testing the User Types API..")
+        provider.request(.userTypes) { (result) in
+            switch result {
+            case .success(let response):
+
+                do {
+                    let mappedType = try response.map(ResponseContainer<[APIUserType]>.self)
+                    if mappedType.status.code != 200 {
+                        XCTFail("Faild for API Error: \(mappedType.status.message)")
+                    }
+
+                    expectation.fulfill()
+                } catch {
+                    XCTFail("Faild for decoding: \(error.localizedDescription)")
+                }
+                
+                break
+            case .failure(let error):
+                XCTFail("MoyaError: \(error.localizedDescription)")
+                break
+            }
+        }
+        
+        
+        // We ask the unit test to wait our expectation to finish.
+        self.wait(for: [expectation], timeout: 10)
+    }
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
