@@ -10,6 +10,7 @@ import Foundation
 
 struct APIUserType: Equatable, Hashable {
     let id: Int
+    let identifier: String
     let name: String
     let logo: URL?
 }

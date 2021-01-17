@@ -142,6 +142,7 @@
 		E496B2F9255B2FBB001BEC0F /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2F8255B2FBB001BEC0F /* NetworkConfiguration.swift */; };
 		E496B2FE255B3088001BEC0F /* Moya+DefaultProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496B2FD255B3088001BEC0F /* Moya+DefaultProvider.swift */; };
 		E49882C62566E1B300446385 /* AdvancedSearchItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49882C52566E1B300446385 /* AdvancedSearchItemCollectionViewCell.swift */; };
+		E49AE6BF25B3AC95001B14C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49AE6BE25B3AC95001B14C8 /* User.swift */; };
 		E49B9FCB257781830057EDDE /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49B9FCA257781830057EDDE /* FieldView.swift */; };
 		E49B9FD0257782FF0057EDDE /* CardContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49B9FCF257782FF0057EDDE /* CardContainerView.swift */; };
 		E49B9FDE257783F20057EDDE /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49B9FDD257783F20057EDDE /* CheckoutViewController.swift */; };
@@ -170,6 +171,9 @@
 		E4B2A75A256CBAC70055C1AE /* QuantitySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2A759256CBAC70055C1AE /* QuantitySelectionView.swift */; };
 		E4B2A75F256CC1D60055C1AE /* VerticalPaddingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2A75E256CC1D60055C1AE /* VerticalPaddingView.swift */; };
 		E4B2A764256CC5F60055C1AE /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2A763256CC5F60055C1AE /* QRCodeView.swift */; };
+		E4B5EA1F25AF7E7A006BD100 /* Distributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5EA1E25AF7E7A006BD100 /* Distributor.swift */; };
+		E4B5EA2725AF7E7F006BD100 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5EA2625AF7E7F006BD100 /* Company.swift */; };
+		E4B5EA2C25AF7E83006BD100 /* Reseller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5EA2B25AF7E83006BD100 /* Reseller.swift */; };
 		E4B9F4732587E6E4001D5F2F /* CertificatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9F4722587E6E4001D5F2F /* CertificatesViewController.swift */; };
 		E4B9F47B2587E915001D5F2F /* UploadCertificateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9F47A2587E915001D5F2F /* UploadCertificateView.swift */; };
 		E4BAF6E8259A3B5400A65D87 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BAF6E7259A3B5400A65D87 /* AppCoordinator.swift */; };
@@ -459,6 +463,7 @@
 		E496B2F8255B2FBB001BEC0F /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
 		E496B2FD255B3088001BEC0F /* Moya+DefaultProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Moya+DefaultProvider.swift"; sourceTree = "<group>"; };
 		E49882C52566E1B300446385 /* AdvancedSearchItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSearchItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		E49AE6BE25B3AC95001B14C8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E49B9FCA257781830057EDDE /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
 		E49B9FCF257782FF0057EDDE /* CardContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContainerView.swift; sourceTree = "<group>"; };
 		E49B9FDD257783F20057EDDE /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
@@ -487,6 +492,9 @@
 		E4B2A759256CBAC70055C1AE /* QuantitySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantitySelectionView.swift; sourceTree = "<group>"; };
 		E4B2A75E256CC1D60055C1AE /* VerticalPaddingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalPaddingView.swift; sourceTree = "<group>"; };
 		E4B2A763256CC5F60055C1AE /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		E4B5EA1E25AF7E7A006BD100 /* Distributor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distributor.swift; sourceTree = "<group>"; };
+		E4B5EA2625AF7E7F006BD100 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		E4B5EA2B25AF7E83006BD100 /* Reseller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reseller.swift; sourceTree = "<group>"; };
 		E4B9F4722587E6E4001D5F2F /* CertificatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificatesViewController.swift; sourceTree = "<group>"; };
 		E4B9F47A2587E915001D5F2F /* UploadCertificateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCertificateView.swift; sourceTree = "<group>"; };
 		E4BAF6E7259A3B5400A65D87 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -1236,6 +1244,17 @@
 			path = "Product Details";
 			sourceTree = "<group>";
 		};
+		E4B5EA1D25AF7E70006BD100 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				E4B5EA1E25AF7E7A006BD100 /* Distributor.swift */,
+				E4B5EA2625AF7E7F006BD100 /* Company.swift */,
+				E4B5EA2B25AF7E83006BD100 /* Reseller.swift */,
+				E49AE6BE25B3AC95001B14C8 /* User.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
 		E4BAF6F4259A3BA500A65D87 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -1276,6 +1295,7 @@
 		E4BD34CA25A6AC020007FCE1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E4B5EA1D25AF7E70006BD100 /* Users */,
 				E4DBD73825AA479C002BFEEA /* CoveringArea.swift */,
 				E4DBD72E25AA472A002BFEEA /* RemoteImage.swift */,
 				E4DBD72925AA46CD002BFEEA /* Product.swift */,
@@ -1970,6 +1990,7 @@
 				E44087F4258C9087004196A1 /* CLComponentItem.swift in Sources */,
 				E44DB3C22595BBFE009F1809 /* CLColorCollectionViewCell.swift in Sources */,
 				E4FF49992561021F00B4CBC4 /* BasicTextField.swift in Sources */,
+				E4B5EA2C25AF7E83006BD100 /* Reseller.swift in Sources */,
 				E4C138AA2583A27300D951F3 /* DividerView.swift in Sources */,
 				E4EE6BAF2594DA1E00D0EDCC /* CLComponentPreview.swift in Sources */,
 				E40FB2902567AA6900626569 /* CheckboxView.swift in Sources */,
@@ -2158,6 +2179,7 @@
 				E40FB26C256798A100626569 /* SearchFieldType.swift in Sources */,
 				E4401094259F3C1500FDE5A2 /* CGAffineTransform+InPlace.swift in Sources */,
 				E4151D7A25626910009F1D45 /* WeekdaysRangePickerTextField.swift in Sources */,
+				E4B5EA2725AF7E7F006BD100 /* Company.swift in Sources */,
 				E440880C258C928A004196A1 /* CLAnyComponentItem.swift in Sources */,
 				E4000CBC255C089800E89ABB /* ProductCollectionViewCell.swift in Sources */,
 				E4BD348125A5C6930007FCE1 /* RequestLoggerPlugin.swift in Sources */,
@@ -2169,9 +2191,11 @@
 				E48C89E125910259000CDE76 /* ImagesPickerView.swift in Sources */,
 				E4BD347925A5C60A0007FCE1 /* ServicesHeadersPlugin.swift in Sources */,
 				E4401093259F3C1500FDE5A2 /* TransitionAnimation+Defaults.swift in Sources */,
+				E4B5EA1F25AF7E7A006BD100 /* Distributor.swift in Sources */,
 				E4FF49A6256115CA00B4CBC4 /* NumbersTextFields.swift in Sources */,
 				E4EE6BE62594E7B100D0EDCC /* CLComponentListProvider.swift in Sources */,
 				E4408804258C9135004196A1 /* _CLComponentsListViewController.swift in Sources */,
+				E49AE6BF25B3AC95001B14C8 /* User.swift in Sources */,
 				E429849F258DB0F000818E09 /* CLScreensSection.swift in Sources */,
 				E4408814258C92E9004196A1 /* CLComponentAttribute.swift in Sources */,
 				E47A063D259876B400654953 /* MarketStoreLocationFIeldsContentView.swift in Sources */,
