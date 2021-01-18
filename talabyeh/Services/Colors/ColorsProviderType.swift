@@ -8,7 +8,6 @@
 
 import UIKit.UIColor
 
-
 let DefaultColorsProvider: ColorsProviderType.Type = AdaptiveColorsProvider.self
 
 protocol ColorsProviderType {

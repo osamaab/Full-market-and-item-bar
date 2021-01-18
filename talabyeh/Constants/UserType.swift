@@ -9,9 +9,9 @@
 import UIKit
 
 enum UserType: Int, CaseIterable, Hashable {
-    case company
-    case distributor
-    case reseller
+    case company = 1
+    case distributor = 2
+    case reseller = 3
     
     
     var title: String {

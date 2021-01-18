@@ -37,6 +37,11 @@
 		E40FB2952567AD7700626569 /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40FB2942567AD7700626569 /* AuthHeaderView.swift */; };
 		E4110C2D25A702C000DD8133 /* ResellerSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4110C2C25A702C000DD8133 /* ResellerSignUpViewController.swift */; };
 		E41172EB2587E309005BAB60 /* CertificatesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41172EA2587E309005BAB60 /* CertificatesContentView.swift */; };
+		E411DF0C25B4AB8200B2706E /* AuthenticationManagerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E411DF0B25B4AB8200B2706E /* AuthenticationManagerType.swift */; };
+		E411DF1125B4AF3100B2706E /* PreferenceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E411DF1025B4AF3100B2706E /* PreferenceStorage.swift */; };
+		E411DF1625B4B06300B2706E /* UserDefaults+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E411DF1525B4B06300B2706E /* UserDefaults+Codable.swift */; };
+		E411DF1F25B4B36A00B2706E /* AuthUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E411DF1E25B4B36A00B2706E /* AuthUserProfile.swift */; };
+		E411DF2425B4B38000B2706E /* DefaultAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E411DF2325B4B38000B2706E /* DefaultAuthenticationManager.swift */; };
 		E41327922565699000090419 /* AdvancedSearchFolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41327912565699000090419 /* AdvancedSearchFolderCollectionViewCell.swift */; };
 		E413279A25656BB800090419 /* AdvancedSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E413279925656BB800090419 /* AdvancedSearchViewController.swift */; };
 		E4151D7525626904009F1D45 /* TimeRangePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4151D7425626904009F1D45 /* TimeRangePickerTextField.swift */; };
@@ -358,6 +363,11 @@
 		E40FB2942567AD7700626569 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
 		E4110C2C25A702C000DD8133 /* ResellerSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResellerSignUpViewController.swift; sourceTree = "<group>"; };
 		E41172EA2587E309005BAB60 /* CertificatesContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificatesContentView.swift; sourceTree = "<group>"; };
+		E411DF0B25B4AB8200B2706E /* AuthenticationManagerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManagerType.swift; sourceTree = "<group>"; };
+		E411DF1025B4AF3100B2706E /* PreferenceStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceStorage.swift; sourceTree = "<group>"; };
+		E411DF1525B4B06300B2706E /* UserDefaults+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Codable.swift"; sourceTree = "<group>"; };
+		E411DF1E25B4B36A00B2706E /* AuthUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserProfile.swift; sourceTree = "<group>"; };
+		E411DF2325B4B38000B2706E /* DefaultAuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAuthenticationManager.swift; sourceTree = "<group>"; };
 		E41327912565699000090419 /* AdvancedSearchFolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSearchFolderCollectionViewCell.swift; sourceTree = "<group>"; };
 		E413279925656BB800090419 /* AdvancedSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSearchViewController.swift; sourceTree = "<group>"; };
 		E4151D7425626904009F1D45 /* TimeRangePickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRangePickerTextField.swift; sourceTree = "<group>"; };
@@ -775,6 +785,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		E411DF1A25B4B36300B2706E /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				E411DF0B25B4AB8200B2706E /* AuthenticationManagerType.swift */,
+				E411DF1E25B4B36A00B2706E /* AuthUserProfile.swift */,
+				E411DF2325B4B38000B2706E /* DefaultAuthenticationManager.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		E41327902565696B00090419 /* Advanced Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -1085,6 +1105,7 @@
 				E4A670772563C3580057083C /* UIViewController+Extensions.swift */,
 				E4401091259F3C1400FDE5A2 /* CGAffineTransform+InPlace.swift */,
 				E44DB3D82595C37B009F1809 /* String+Additions.swift */,
+				E411DF1525B4B06300B2706E /* UserDefaults+Codable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1095,6 +1116,7 @@
 				E496B248255B214C001BEC0F /* FontProviderType.swift */,
 				E4C705AA255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift */,
 				E4C705AF255BB18100DD29E3 /* ScreenMessagePresenterType.swift */,
+				E411DF1A25B4B36300B2706E /* Authentication */,
 				E4FF1B7425A1F49E00AF4194 /* Colors */,
 				E4FAB5932565005900F25473 /* Expandable Items */,
 				E4CB73FD255D157D0017A499 /* Validation */,
@@ -1456,6 +1478,7 @@
 				E4C7060C255BC43600DD29E3 /* ReusableCell.swift */,
 				E4C70611255BC44900DD29E3 /* NibInstantiatable.swift */,
 				E4C70616255BC45800DD29E3 /* Identifiable.swift */,
+				E411DF1025B4AF3100B2706E /* PreferenceStorage.swift */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -1993,6 +2016,7 @@
 				E4B5EA2C25AF7E83006BD100 /* Reseller.swift in Sources */,
 				E4C138AA2583A27300D951F3 /* DividerView.swift in Sources */,
 				E4EE6BAF2594DA1E00D0EDCC /* CLComponentPreview.swift in Sources */,
+				E411DF1F25B4B36A00B2706E /* AuthUserProfile.swift in Sources */,
 				E40FB2902567AA6900626569 /* CheckboxView.swift in Sources */,
 				E4602D2F258CC6C9004C556B /* CLLabViewController.swift in Sources */,
 				E4A670392563AAF60057083C /* ProfileMenuItem.swift in Sources */,
@@ -2014,6 +2038,7 @@
 				E4BD34A625A69F780007FCE1 /* UserTypeCollectionViewCell.swift in Sources */,
 				E45E5549256F9F4E008856FD /* DeliveryAreaPickerViewController.swift in Sources */,
 				E48C89BF2590F513000CDE76 /* ItemsChooseCategoryViewController.swift in Sources */,
+				E411DF2425B4B38000B2706E /* DefaultAuthenticationManager.swift in Sources */,
 				E40FB28B2567A97500626569 /* CategoriesPickerViewController.swift in Sources */,
 				E4FAB5A82565007900F25473 /* ExpandableCollectionViewManager.swift in Sources */,
 				E4FF1B9025A1F60900AF4194 /* AdaptiveColorsProvider.swift in Sources */,
@@ -2026,6 +2051,7 @@
 				E4749C582588FDAF00479538 /* ProfileOptionsContentView.swift in Sources */,
 				E40FB266256797E800626569 /* LocationPickerTextField.swift in Sources */,
 				E4929042259FF59900B2B67B /* OperationsCoordinator.swift in Sources */,
+				E411DF1625B4B06300B2706E /* UserDefaults+Codable.swift in Sources */,
 				E4DBD72A25AA46CD002BFEEA /* Product.swift in Sources */,
 				E413279A25656BB800090419 /* AdvancedSearchViewController.swift in Sources */,
 				E47A06302598768800654953 /* MarketStoreLocationFieldsViewController.swift in Sources */,
@@ -2067,6 +2093,7 @@
 				E40FB2722567A2F100626569 /* CategoryPickerTextField.swift in Sources */,
 				E4568F412593AD2600FA91E4 /* DistributorCheckboxCollectionViewCell.swift in Sources */,
 				E429849A258DB0DB00818E09 /* CLComponentsSection.swift in Sources */,
+				E411DF0C25B4AB8200B2706E /* AuthenticationManagerType.swift in Sources */,
 				E4749C4A2588F1BB00479538 /* CompanyInformationInputViewController.swift in Sources */,
 				E47D7AC82580B6FE00107DF1 /* NewPaymentCreditCardViewController.swift in Sources */,
 				E4BD346E25A5C5CC0007FCE1 /* CompanyAPI.swift in Sources */,
@@ -2208,6 +2235,7 @@
 				E494F9FB25A4A52B00517CA8 /* APIContentRepository.swift in Sources */,
 				E4FF1B8825A1F4EE00AF4194 /* DarkSchemeColorProvider.swift in Sources */,
 				E4BD349B25A5CDE90007FCE1 /* GeneralUserAPI.swift in Sources */,
+				E411DF1125B4AF3100B2706E /* PreferenceStorage.swift in Sources */,
 				E4A0B26725868D8600AF3CEA /* OperationDetailsViewController.swift in Sources */,
 				E4C1389925833B7800D951F3 /* BaseOprationCollectionViewCell.swift in Sources */,
 				E4DBD72525AA46A9002BFEEA /* ProductUnit.swift in Sources */,
