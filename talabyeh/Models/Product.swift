@@ -15,7 +15,7 @@ struct Product: Equatable, Hashable {
     let unit: ProductUnit
     let categoryID: Int
     let barcode: String
-    let category: ProductCategory
+    let category: MainCategory
 
     enum CodingKeys: String, CodingKey {
         case id, name

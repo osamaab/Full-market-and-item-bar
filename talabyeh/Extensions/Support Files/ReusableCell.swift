@@ -53,11 +53,11 @@ extension UICollectionView {
         register(UINib(nibName: cellNib.identifier, bundle: nil), forCellWithReuseIdentifier: cellNib.identifier)
     }
     
-    func register(reusableViewClass: ReusableCell.Type, for kind: String){
+    func register(reusableViewClass: ReusableView.Type, for kind: String){
         register(reusableViewClass, forSupplementaryViewOfKind: kind, withReuseIdentifier: reusableViewClass.identifier)
     }
     
-    func register(reusableViewNib: ReusableCell.Type, for kind: String){
+    func register(reusableViewNib: ReusableView.Type, for kind: String){
         register(UINib(nibName: reusableViewNib.identifier, bundle: nil), forSupplementaryViewOfKind: kind, withReuseIdentifier: reusableViewNib.identifier)
     }
     

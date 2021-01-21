@@ -10,5 +10,5 @@ import Foundation
 
 
 class CategorySearchFieldType: BaseSearchFieldType {
-    var categories: [CategoryItem] = []
+    var categories: [MainCategory] = []
 }

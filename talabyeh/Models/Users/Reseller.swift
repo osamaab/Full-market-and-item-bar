@@ -20,7 +20,7 @@ struct Reseller: Codable {
     let logoPath: URL?
     let username: String
     let user: User
-    let categories: [ProductCategory]
+    let categories: [MainCategory]
 
     enum CodingKeys: String, CodingKey {
         case id = "id"

@@ -12,7 +12,7 @@ import XCoordinator
 enum MarketRoute: Route {
     case home
     case categories
-    case products(ProductCategory)
+    case products(MainCategory)
     case productDetails(Product)
     case advancedSearch
 }

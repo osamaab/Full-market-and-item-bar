@@ -24,7 +24,7 @@ extension GeneralAPI: TargetType {
     var path: String {
         switch self {
         case .userTypes:
-            return "get_user_type"
+            return "user_type/get_list"
         case .categories:
             return "categories"
         case .units:

@@ -16,3 +16,4 @@ struct APIUserType: Equatable, Hashable {
 }
 
 extension APIUserType: Codable { }
+

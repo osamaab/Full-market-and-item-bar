@@ -1,5 +1,5 @@
 //
-//  CategoriesPickerViewController.swift
+//  MainCategoriesPickerViewController.swift
 //  talabyeh
 //
 //  Created by Hussein Work on 20/11/2020.
@@ -10,7 +10,15 @@ import UIKit
 import Stevia
 import SDWebImage
 
-class CategoriesPickerViewController: UIViewController {
+protocol MainCategoriesPickerViewControllerDelegate: class {
+    func mainCategoriesViewController(_ sender: MainCategoriesPickerViewController, didFinishWith categories: [MainCategory])
+}
+
+class MainCategoriesPickerViewController: ContentViewController<[MainCategory]> {
+    
+    static func allCategoriesContent() -> APIContentRepositoryType<GeneralAPI, [MainCategory]> {
+        .init(.categories)
+    }
     
     lazy var headerView: AuthHeaderView = .init(elements: [
         .title("Welcome to TALABYEH"),
@@ -21,22 +29,25 @@ class CategoriesPickerViewController: UIViewController {
     lazy var collectionView: UICollectionView = configureCollectionView()
     lazy var bottomView: BottomNextButtonView = .init(title: "Next")
     
-    var categories: [CategoryItem] = [] {
+    var categories: [MainCategory] = [] {
         didSet {
             self.collectionView.reloadData()
         }
     }
     
-    var selectedCategories: [CategoryItem] = [] {
+    var selectedCategories: [MainCategory] = [] {
         didSet {
             collectionView.reloadData()
         }
     }
     
-    var onNext: (() -> Void)?
+    weak var delegate: MainCategoriesPickerViewControllerDelegate?
     
-    init(title: String){
-        super.init(nibName: nil, bundle: nil)
+    
+    init<Repository: ContentRepositoryType>(contentRepository: Repository,
+                                            userType: UserType,
+                                            title: String) where Repository.ContentType == ContentType {
+        super.init(contentRepository: contentRepository)
         self.title = title
         self.navigationItem.title = title
     }
@@ -44,11 +55,8 @@ class CategoriesPickerViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+    override func setupViewsBeforeTransitioning() {
         view.backgroundColor = DefaultColorsProvider.backgroundPrimary
         
         headerView.translatesAutoresizingMaskIntoConstraints = false
@@ -74,23 +82,28 @@ class CategoriesPickerViewController: UIViewController {
         collectionView.delegate = self
         collectionView.reloadData()
         
-        bottomView.nextButton.add(event: .touchUpInside) {
-            self.onNext?()
+        bottomView.nextButton.add(event: .touchUpInside) { [unowned self] in
+            self.delegate?.mainCategoriesViewController(self, didFinishWith: self.selectedCategories)
         }
+    }
+    
+    override func contentRequestDidSuccess(with content: [MainCategory]) {
+        self.categories = content
+        self.collectionView.reloadData()
     }
 }
 
-extension CategoriesPickerViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension MainCategoriesPickerViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueCell(cellClass: CategoryItemCollectionViewCell.self, for: indexPath)
+        let cell = collectionView.dequeueCell(cellClass: MainCategoryCollectionViewCell.self, for: indexPath)
         let item = self.categories[indexPath.item]
         
         cell.titleLabel.text = item.title
-        cell.imageView.sd_setImage(with: item.imageURL)
+        cell.imageView.sd_setImage(with: item.logo)
         cell.checkboxView.isSelected = self.selectedCategories.contains(item)
         
         return cell
@@ -108,12 +121,12 @@ extension CategoriesPickerViewController: UICollectionViewDataSource, UICollecti
     }
 }
 
-extension CategoriesPickerViewController {
+extension MainCategoriesPickerViewController {
     func configureCollectionView() -> UICollectionView {
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: generateLayout())
         collectionView.backgroundColor = .clear
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(cellClass: CategoryItemCollectionViewCell.self)
+        collectionView.register(cellClass: MainCategoryCollectionViewCell.self)
         
         return collectionView
     }

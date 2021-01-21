@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum UserType: Int, CaseIterable, Hashable {
+enum UserType: Int, CaseIterable, Hashable, Codable {
     case company = 1
     case distributor = 2
     case reseller = 3

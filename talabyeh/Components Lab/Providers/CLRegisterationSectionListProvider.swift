@@ -13,7 +13,14 @@ struct CLRegisterationSectionListProvider: CLScreenSectionListProvider {
     let inProgress: CLScreensSection = {
         let items: [CLScreenItem] = [
             CLScreenItem(name: "Categories Picker", creationHandler: { () -> UIViewController in
-                return CategoriesPickerViewController(title: "Pick Categories")
+                return MainCategoriesPickerViewController(contentRepository: MainCategoriesPickerViewController.allCategoriesContent(),
+                                                          userType: .company,
+                                                          title: "")
+            }),
+            
+            CLScreenItem(name: "Sub-Categories Picker", creationHandler: { () -> UIViewController in
+                return SubCategoriesPickerViewController(categories: [],
+                                                         contentRepository: SubCategoriesPickerViewController.emptyContentRepository(with: []))
             })
         ]
         

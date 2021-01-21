@@ -26,7 +26,7 @@ class MarketViewController: UIViewController, UICollectionViewDelegate, UICollec
         collectionView.delegate = self
 
         collectionView.register(CollectionViewSectionHeader.self, forSupplementaryViewOfKind: headerKind, withReuseIdentifier: CollectionViewSectionHeader.identifier)
-        collectionView.register(cellClass: MarketCategoryCollectionViewCell.self)
+        collectionView.register(cellClass: SubCategoryCollectionViewCell.self)
         collectionView.register(cellClass: ProductCollectionViewCell.self)
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -55,10 +55,10 @@ extension MarketViewController {
         
         switch indexPath.section {
         case 0:
-            let cell = collectionView.dequeueCell(cellClass: MarketCategoryCollectionViewCell.self, for: indexPath)
+            let cell = collectionView.dequeueCell(cellClass: SubCategoryCollectionViewCell.self, for: indexPath)
             
-            cell.cImage.image = UIImage(named: "dummy4")
-            cell.cTitle.text = "Meat"
+            cell.imageView.image = UIImage(named: "dummy4")
+            cell.titleLabel.text = "Meat"
             
             return cell
         case 1..<sectionsCount - 1:

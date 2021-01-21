@@ -20,7 +20,7 @@ struct Company: Codable {
     let fax: String
     let ext: String
     let user: User
-    let categories: [ProductCategory]
+    let categories: [MainCategory]
     let registeredDate: String
 
     enum CodingKeys: String, CodingKey {

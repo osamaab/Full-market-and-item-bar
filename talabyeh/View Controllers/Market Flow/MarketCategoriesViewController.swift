@@ -20,7 +20,7 @@ class MarketCategoriesViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
 
-        collectionView.register(cellClass: MarketCategoryCollectionViewCell.self)
+        collectionView.register(cellClass: SubCategoryCollectionViewCell.self)
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.fillContainer()
@@ -34,10 +34,10 @@ extension MarketCategoriesViewController: UICollectionViewDataSource, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueCell(cellClass: MarketCategoryCollectionViewCell.self, for: indexPath)
+        let cell = collectionView.dequeueCell(cellClass: SubCategoryCollectionViewCell.self, for: indexPath)
         
-        cell.cImage.image = UIImage(named: "dummy4")
-        cell.cTitle.text = "Meat"
+        cell.imageView.image = UIImage(named: "dummy4")
+        cell.titleLabel.text = "Meat"
         
         return cell
     }

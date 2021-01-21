@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct ProductCategory: Equatable, Hashable {
+struct MainCategory: Equatable, Hashable {
     let id: Int
     let title: String
     let logo: URL?
 }
 
-extension ProductCategory: Codable { }
+extension MainCategory: Codable { }

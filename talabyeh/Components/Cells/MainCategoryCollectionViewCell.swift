@@ -9,7 +9,7 @@
 import UIKit
 import Stevia
 
-class CategoryItemCollectionViewCell: UICollectionViewCell {
+class MainCategoryCollectionViewCell: UICollectionViewCell {
     
     let containerView: UIView = .init()
     let titleLabel: UILabel = .init()
