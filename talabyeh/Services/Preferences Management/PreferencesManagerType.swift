@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias DefaultPreferencesController = UserDefaultsPreferencesManager
+
 protocol PreferencesManagerType: class {
     
 }
