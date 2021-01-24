@@ -33,27 +33,18 @@ class ProductCollectionViewCell: UICollectionViewCell {
     }
     
     func setup() {
-        subviews {
+        subviewsPreparedAL {
             containerView
             subtitleLabel1
             subtitleLabel2
         }
 
-        containerView.subviews {
+        containerView.subviewsPreparedAL {
             imageView
             titleLabel
             likeButton
             topLabel
         }
-        
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        likeButton.translatesAutoresizingMaskIntoConstraints = false
-        topLabel.translatesAutoresizingMaskIntoConstraints = false
-        subtitleLabel1.translatesAutoresizingMaskIntoConstraints = false
-        subtitleLabel2.translatesAutoresizingMaskIntoConstraints = false
-
         
         containerView.backgroundColor = DefaultColorsProvider.backgroundPrimary
         containerView.clipsToBounds = false
@@ -69,6 +60,8 @@ class ProductCollectionViewCell: UICollectionViewCell {
         titleLabel.font = .font(for: .medium, size: 12)
         titleLabel.textColor = DefaultColorsProvider.tintPrimary
 
+        imageView.contentMode = .scaleAspectFit
+        
         
         topLabel.backgroundColor = DefaultColorsProvider.containerBackground3
         topLabel.textColor = DefaultColorsProvider.backgroundPrimary
@@ -80,22 +73,18 @@ class ProductCollectionViewCell: UICollectionViewCell {
         likeButton.setImage(UIImage(named: "heart"), for: .normal)
         likeButton.contentMode = .scaleAspectFit
         
-        
         subtitleLabel1.font = .font(for: .medium, size: 12)
         subtitleLabel1.textColor = DefaultColorsProvider.textPrimary1
                 
         subtitleLabel2.font = .font(for: .bold, size: 11)
         subtitleLabel2.textColor = DefaultColorsProvider.textPrimary1
         
-        containerView.leading(0).trailing(0).top(0).centerHorizontally()
-        
-
-        imageView.contentMode = .scaleAspectFit
-        imageView.width(100%).top(20).centerHorizontally()
+        containerView.leading(0).trailing(0).top(0)
         
         titleLabel.bottom(5).centerHorizontally()
         titleLabel.Top == imageView.Bottom + 5
 
+        imageView.width(100%).top(20).centerHorizontally()
         
         topLabel.leading(8).top(8).height(15).width(30)
 
@@ -104,13 +93,34 @@ class ProductCollectionViewCell: UICollectionViewCell {
         likeButton.CenterY == topLabel.CenterY
 
         
-        subtitleLabel1.leading(0)
+        subtitleLabel1.leading(0).centerHorizontally()
         subtitleLabel1.Top == containerView.Bottom + 15
 
         
-        subtitleLabel2.leading(0)
+        subtitleLabel2.leading(0).centerHorizontally()
         subtitleLabel2.Top == subtitleLabel1.Bottom + 5
+        subtitleLabel2.bottom(15)
     }
 }
 
-
+extension ProductCollectionViewCell: CLComponentPreview {
+    static var groupIdentifier: CLComponentGroupIdentifier {
+        .cells
+    }
+    
+    static func render(in context: CLComponentPreviewContext) {
+        let view: Self = .init()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        context.containerView.addSubview(view)
+        
+        view.imageView.image = UIImage(named: "Rectangle 232")
+        view.subtitleLabel1.text = "Red Onions"
+        view.titleLabel.text = "New era market"
+        view.subtitleLabel2.text = "JD 0.200"
+        
+        view.top(20).bottom(20)
+        view.leading(20)
+        view.centerHorizontally()
+    }
+}

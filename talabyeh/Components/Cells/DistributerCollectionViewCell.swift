@@ -170,3 +170,20 @@ class DistributorActionView: UIView {
         imageView.width(12).height(12)
     }
 }
+
+extension DistributerCollectionViewCell: CLComponentPreview {
+    static var groupIdentifier: CLComponentGroupIdentifier {
+        .cells
+    }
+    
+    static func render(in context: CLComponentPreviewContext) {
+        let view: Self = .init()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        context.containerView.addSubview(view)
+        
+        view.top(20).bottom(20)
+        view.leading(20)
+        view.centerHorizontally()
+    }
+}
