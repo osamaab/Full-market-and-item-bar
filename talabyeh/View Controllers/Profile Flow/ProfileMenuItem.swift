@@ -12,27 +12,27 @@ import UIKit.UIImage
 typealias ActionBlock = (() -> Void)
 
 
-/**
- The info taken for the header view for the profile view controller, null values are hidden
- */
-struct ProfileHeaderInfo {
-    let title: String
-    let imageURL: URL?
-    let subtitle: String?
-    let subtitle2: String?
-}
+
 
 /**
  The menu items in the profile view controller
  */
 struct ProfileMenuItem {
+    enum Style: Int, CaseIterable {
+        case normal
+        case highlighted
+    }
+    
+    
     let title: String
     let image: UIImage?
+    let style: Style
     var action: (() -> Void)?
     
-    init(title: String, image: UIImage?, action: ActionBlock? = nil){
+    init(title: String, image: UIImage?, style: Style = .normal, action: ActionBlock? = nil){
         self.title = title
         self.image = image
+        self.style = style
         self.action = action
     }
     

@@ -23,8 +23,12 @@ class ProfileCoordinator: NavigationCoordinator<ProfileRoute> {
     override func prepareTransition(for route: RouteType) -> TransitionType {
         switch route {
         case .home:
-            let header = ProfileHeaderInfo(title: "Hello", imageURL: nil, subtitle: nil, subtitle2: nil)
-            let profile = ProfilePageViewController(headerInfo: header, menuItems: [])
+            let header = ProfileHeaderInfo(title: "Hussein AlRyalat", imageURL: URL(string: "http://placekitten.com/g/200/300"), subtitle: "hus.sc@aol.com", subtitle2: "962 79 6979 186")
+            let profile = ProfileViewController(headerInfo: header, menuItems: [
+                ProfileMenuItem.changePassword(),
+                ProfileMenuItem.history(),
+                ProfileMenuItem.information()
+            ])
             
             return .push(profile)
         }
