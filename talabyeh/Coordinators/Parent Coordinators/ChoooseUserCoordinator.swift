@@ -72,7 +72,6 @@ extension ChoooseUserCoordinator: MainCategoriesPickerViewControllerDelegate {
 
 extension ChoooseUserCoordinator: SubCategoriesPickerViewControllerDelegate {
     func subCategoriesViewController(_ sender: SubCategoriesPickerViewController, didFinishWith categories: [SubCategory]) {
-        
         self.coordinatorDelegate?.chooseUserCoordinator(self, didFinishWith: .init(userType: userType!, categories: sender.mainCategories, subCategories: categories))
     }
 }

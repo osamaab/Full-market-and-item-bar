@@ -11,16 +11,21 @@ import XCoordinator
 
 enum AppRoutes: Route {
     case chooseUserType
-    case company
     case lab
     case authentication(AuthenticationRoute)
+
+    case company
+    case distributor
+    case reseller
     
     static func route(for userType: UserType) -> AppRoutes {
         switch userType {
         case .company:
             return .company
-        default:
-            return .lab
+        case .distributor:
+            return .distributor
+        case .reseller:
+            return .reseller
         }
     }
 }
@@ -34,7 +39,7 @@ class AppCoordinator: NavigationCoordinator<AppRoutes> {
         let root = NavigationController(autoShowsCloseButton: false)
         
         guard let userType = preferencesManager.userType else {
-            super.init(rootViewController: root, initialRoute: .lab)
+            super.init(rootViewController: root, initialRoute: .chooseUserType)
             return
         }
 
@@ -48,18 +53,28 @@ class AppCoordinator: NavigationCoordinator<AppRoutes> {
             
             return .multiple(
                 .dismissToRoot(animation: .fadeInstant),
-                .presentFullScreen(coordinator, animation: .fadeInstant)
-            )
+                .presentFullScreen(coordinator, animation: .fadeInstant))
+            
+            
         case .lab:
             return .multiple(
                 .dismissToRoot(animation: .fadeInstant),
-                .presentFullScreen(ComponentsLabCoordinator(), animation: .fadeInstant)
-            )
+                .presentFullScreen(ComponentsLabCoordinator(), animation: .fadeInstant))
+            
+            
         case .company:
             return .multiple(
                 .dismissToRoot(animation: .fadeInstant),
-                .presentFullScreen(CompanyFlowCoordinator(), animation: .fadeInstant)
-            )
+                .presentFullScreen(CompanyFlowCoordinator(), animation: .fadeInstant))
+        case .distributor:
+            return .multiple(
+                .dismissToRoot(animation: .fadeInstant),
+                .presentFullScreen(CompanyFlowCoordinator(), animation: .fadeInstant))
+        case .reseller:
+            return .multiple(
+                .dismissToRoot(animation: .fadeInstant),
+                .presentFullScreen(CompanyFlowCoordinator(), animation: .fadeInstant))
+            
         case .authentication(let route):
             let router = AuthenticationCoordinator(initialRoute: route).strongRouter
             return .presentFullScreen(router, animation: .fadeInstant)
