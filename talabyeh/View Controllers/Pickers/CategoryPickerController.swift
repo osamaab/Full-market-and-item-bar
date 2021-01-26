@@ -8,16 +8,8 @@
 
 import UIKit
 
-struct CategoryItem: Hashable, Equatable {
-    let title: String
-    let imageURL: URL?
-    
-    // sample id, so we make sure each category is different from the other one
-    let id = UUID().uuidString
-}
-
 protocol CategoryPickerControllerDelegate: class {
-    func categoryPickerController(_ sender: CategoryPickerController, didFinishWith categories: [CategoryItem])
+    func categoryPickerController(_ sender: CategoryPickerController, didFinishWith categories: [MainCategory])
 }
 
 class CategoryPickerController: NSObject {
@@ -25,13 +17,13 @@ class CategoryPickerController: NSObject {
     let title = "Category"
     
     let navigationController: UINavigationController
-    let categoriesViewController: CategoriesPickerViewController
+    let categoriesViewController: MainCategoriesPickerViewController
     
     weak var delegate: CategoryPickerControllerDelegate?
     
-    init(selectedCategories: [CategoryItem] = [], delegate: CategoryPickerControllerDelegate){
-        self.categoriesViewController = .init(title: title)
-        self.navigationController = UINavigationController(rootViewController: self.categoriesViewController)
+    init(selectedCategories: [MainCategory] = [], delegate: CategoryPickerControllerDelegate){
+        self.categoriesViewController = .init(contentRepository: MainCategoriesPickerViewController.allCategoriesContent(), userType: .company, title: "")
+        self.navigationController = NavigationController(rootViewController: categoriesViewController, style: .secondary)
         self.delegate = delegate
         
         super.init()
@@ -47,14 +39,10 @@ class CategoryPickerController: NSObject {
         ]
         
         categoriesViewController.selectedCategories = selectedCategories
-        categoriesViewController.onNext = { [unowned self] in
-            self.delegate?.categoryPickerController(self, didFinishWith: Array(self.categoriesViewController.selectedCategories))
-            self.categoriesViewController.dismiss(animated: true, completion: nil)
-        }
-        
-        categoriesViewController.categories = (0..<11).map {
-            CategoryItem(title: "Category \($0)", imageURL: URL(string: "http://placekitten.com/200/300"))
-        }
+//        categoriesViewController.onNext = { [unowned self] in
+//            self.delegate?.categoryPickerController(self, didFinishWith: Array(self.categoriesViewController.selectedCategories))
+//            self.categoriesViewController.dismiss(animated: true, completion: nil)
+//        }
     }
     
     func present(on viewController: UIViewController){

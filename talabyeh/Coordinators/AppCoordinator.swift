@@ -14,22 +14,42 @@ enum AppRoutes: Route {
     case company
     case lab
     case authentication(AuthenticationRoute)
+    
+    static func route(for userType: UserType) -> AppRoutes {
+        switch userType {
+        case .company:
+            return .company
+        default:
+            return .lab
+        }
+    }
 }
 
 class AppCoordinator: NavigationCoordinator<AppRoutes> {
     
+    let preferencesManager = UserDefaultsPreferencesManager.shared
+    
     init(){
-        super.init(rootViewController: NavigationController(autoShowsCloseButton: false), initialRoute: .lab)
-        rootViewController.view.backgroundColor = DefaultColorsProvider.backgroundPrimary
+        // where we want to go? this can be determinated by the user type, if it exists anyway.
+        let root = NavigationController(autoShowsCloseButton: false)
+        
+        guard let userType = preferencesManager.userType else {
+            super.init(rootViewController: root, initialRoute: .lab)
+            return
+        }
+
+        super.init(rootViewController: root, initialRoute: AppRoutes.route(for: userType))
     }
     
     override func prepareTransition(for route: RouteType) -> TransitionType {
         switch route {
         case .chooseUserType:
-            let chooseUserViewController = ChooseUserViewController()
-            chooseUserViewController.delegate = self
+            let coordinator = ChoooseUserCoordinator(delegate: self)
             
-            return .push(chooseUserViewController)
+            return .multiple(
+                .dismissToRoot(animation: .fadeInstant),
+                .presentFullScreen(coordinator, animation: .fadeInstant)
+            )
         case .lab:
             return .multiple(
                 .dismissToRoot(animation: .fadeInstant),
@@ -47,19 +67,18 @@ class AppCoordinator: NavigationCoordinator<AppRoutes> {
     }
 }
 
-
-
-extension AppCoordinator: ChooseUserViewControllerDelegate {
-    func chooseUserViewController(_ sender: ChooseUserViewController, didFinishWith user: APIUserType) {
-        switch user.id {
-        case 1:
-            self.trigger(.authentication(.companySignup))
-        case 2:
-            self.trigger(.authentication(.distributorSignup))
-            break
+extension AppCoordinator: ChooseUserCoordinatorDelegate {
+    func chooseUserCoordinator(_ sender: ChoooseUserCoordinator, didFinishWith output: ChoooseUserCoordinator.Output) {
+        
+        DefaultPreferencesController.shared.userType = output.userType
+        DefaultPreferencesController.shared.selectedCategories = output.categories
+        DefaultPreferencesController.shared.selectedSubCategories = output.subCategories
+        
+        switch output.userType {
+        case .company:
+            self.trigger(.company)
         default:
-            self.trigger(.authentication(.resellerSignup))
-            break
+            self.trigger(.lab)
         }
     }
 }

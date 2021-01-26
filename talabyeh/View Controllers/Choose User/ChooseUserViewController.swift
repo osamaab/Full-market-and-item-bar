@@ -11,7 +11,7 @@ import Stevia
 
 
 protocol ChooseUserViewControllerDelegate: class {
-    func chooseUserViewController(_ sender: ChooseUserViewController, didFinishWith user: APIUserType)
+    func chooseUserViewController(_ sender: ChooseUserViewController, didFinishWith user: UserType)
 }
 
 class ChooseUserViewController: ContentViewController<[APIUserType]> {
@@ -61,7 +61,7 @@ class ChooseUserViewController: ContentViewController<[APIUserType]> {
         bottomView.nextButton.add(event: .touchUpInside){ [unowned self] in
             if let selectedIndexPath = self.selectedIndexPath, let userType = self.state.content?[selectedIndexPath.item] {
                 
-                self.delegate?.chooseUserViewController(self, didFinishWith: userType)
+                self.delegate?.chooseUserViewController(self, didFinishWith: UserType(rawValue: userType.id)!)
             }
         }
     }

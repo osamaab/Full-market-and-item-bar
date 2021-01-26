@@ -8,10 +8,10 @@
 
 import UIKit
 
-enum UserType: String, CaseIterable, Hashable {
-    case company
-    case distributor
-    case reseller
+enum UserType: Int, CaseIterable, Hashable, Codable {
+    case company = 1
+    case distributor = 2
+    case reseller = 3
     
     
     var title: String {
@@ -26,6 +26,6 @@ enum UserType: String, CaseIterable, Hashable {
     }
     
     var image: UIImage? {
-        return UIImage(named: "auth_\(rawValue)")
+        return UIImage(named: "auth_\(title.lowercased())")
     }
 }

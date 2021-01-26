@@ -9,32 +9,32 @@
 import UIKit
 
 class CategoryPickerTextField: PickerTextField {
-    
+
     var pickerController: CategoryPickerController?
-    var categories: [CategoryItem] = [] {
+    var categories: [MainCategory] = [] {
         didSet {
             self.text = categories.map { $0.title }.joined(separator: ", ")
-            
+
             // text field does not call the notification UITextField.textDidChangeNotification upon changing the text manually, so we need to call this to insure receivers stay up to date
             NotificationCenter.default.post(name: UITextField.textDidChangeNotification, object: self)
         }
     }
-    
+
     override func setup() {
         super.setup()
-        
+
         isSeparatorHidden = true
         imageView.image = UIImage(named: "pin_small")
-        
+
         onTap = { [unowned self] in
             // pick a location  :)
             self.presentPicker()
         }
     }
-    
+
     func presentPicker(){
         pickerController = .init(selectedCategories: self.categories, delegate: self)
-        
+
         if let topVC = UIApplication.topViewController() {
             pickerController?.present(on: topVC)
         }
@@ -42,7 +42,7 @@ class CategoryPickerTextField: PickerTextField {
 }
 
 extension CategoryPickerTextField: CategoryPickerControllerDelegate {
-    func categoryPickerController(_ sender: CategoryPickerController, didFinishWith categories: [CategoryItem]) {
+    func categoryPickerController(_ sender: CategoryPickerController, didFinishWith categories: [MainCategory]) {
         self.categories = categories
     }
 }
