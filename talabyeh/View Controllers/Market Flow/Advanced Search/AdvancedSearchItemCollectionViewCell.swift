@@ -27,7 +27,7 @@ class AdvancedSearchItemCollectionViewCell<T: UITextField>: UICollectionViewCell
     func setup(){
         layer.cornerRadius = 12
         layer.borderWidth = 0.5
-        layer.borderColor = DefaultColorsProvider.fieldBorder.cgColor
+        layer.borderColor = DefaultColorsProvider.decoratorBorder.cgColor
         
         reloadContentView()
         

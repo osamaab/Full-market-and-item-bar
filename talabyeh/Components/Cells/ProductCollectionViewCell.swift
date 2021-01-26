@@ -55,11 +55,11 @@ class ProductCollectionViewCell: UICollectionViewCell {
         subtitleLabel2.translatesAutoresizingMaskIntoConstraints = false
 
         
-        containerView.backgroundColor = DefaultColorsProvider.background
+        containerView.backgroundColor = DefaultColorsProvider.backgroundPrimary
         containerView.clipsToBounds = false
         containerView.layer.masksToBounds = false
 
-        containerView.dropShadow(color: DefaultColorsProvider.baseShadow,
+        containerView.dropShadow(color: DefaultColorsProvider.decoratorShadow,
                                  opacity: 0.16,
                                  offSet: .init(width: 0, height: 2),
                                  radius: 2)
@@ -67,11 +67,11 @@ class ProductCollectionViewCell: UICollectionViewCell {
         
       
         titleLabel.font = .font(for: .medium, size: 12)
-        titleLabel.textColor = DefaultColorsProvider.darkerTint
+        titleLabel.textColor = DefaultColorsProvider.tintPrimary
 
         
-        topLabel.backgroundColor = DefaultColorsProvider.itemBackground
-        topLabel.textColor = DefaultColorsProvider.background
+        topLabel.backgroundColor = DefaultColorsProvider.containerBackground3
+        topLabel.textColor = DefaultColorsProvider.backgroundPrimary
         topLabel.layer.cornerRadius = 1.7
         topLabel.font = .font(for: .bold, size: 9)
         topLabel.textAlignment = .center
@@ -82,10 +82,10 @@ class ProductCollectionViewCell: UICollectionViewCell {
         
         
         subtitleLabel1.font = .font(for: .medium, size: 12)
-        subtitleLabel1.textColor = DefaultColorsProvider.text
+        subtitleLabel1.textColor = DefaultColorsProvider.textPrimary1
                 
         subtitleLabel2.font = .font(for: .bold, size: 11)
-        subtitleLabel2.textColor = DefaultColorsProvider.text
+        subtitleLabel2.textColor = DefaultColorsProvider.textPrimary1
         
         containerView.leading(0).trailing(0).top(0).centerHorizontally()
         
@@ -112,3 +112,5 @@ class ProductCollectionViewCell: UICollectionViewCell {
         subtitleLabel2.Top == subtitleLabel1.Bottom + 5
     }
 }
+
+

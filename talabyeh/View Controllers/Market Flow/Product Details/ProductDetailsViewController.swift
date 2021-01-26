@@ -28,7 +28,7 @@ class ProductDetailsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = DefaultColorsProvider.background
+        view.backgroundColor = DefaultColorsProvider.backgroundPrimary
         
         view.addSubview(scrollView)
         scrollView.fillContainer()

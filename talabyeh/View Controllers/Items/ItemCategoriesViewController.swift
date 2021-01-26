@@ -15,6 +15,7 @@ struct ItemsCategory: Hashable {
 }
 
 class ItemCategoriesViewController: UIViewController, UICollectionViewDelegate {
+    
     typealias DataSource = UICollectionViewDiffableDataSource<Int, ItemsCategory>
     typealias Snapshot = NSDiffableDataSourceSnapshot<Int, ItemsCategory>
     
@@ -25,7 +26,7 @@ class ItemCategoriesViewController: UIViewController, UICollectionViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        view.backgroundColor = DefaultColorsProvider.background
+        view.backgroundColor = DefaultColorsProvider.backgroundPrimary
         
         setupCollectionView()
         

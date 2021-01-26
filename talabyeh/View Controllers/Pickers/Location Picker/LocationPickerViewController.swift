@@ -49,7 +49,7 @@ open class LocationPickerViewController: UIViewController {
 		if let navigationBar = self.navigationController?.navigationBar,
 			let barTintColor = navigationBar.barTintColor {
 				return barTintColor
-		} else { return DefaultColorsProvider.background }
+		} else { return DefaultColorsProvider.backgroundPrimary }
 	}()
     
     /// default: .minimal
@@ -174,7 +174,7 @@ open class LocationPickerViewController: UIViewController {
 		}
         
         let barItem =  UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(close))
-        barItem.tintColor = DefaultColorsProvider.navigationBarElements
+        barItem.tintColor = DefaultColorsProvider.elementBarTint
         self.navigationItem.leftBarButtonItem = barItem
 	}
 
@@ -370,7 +370,7 @@ extension LocationPickerViewController: MKMapViewDelegate {
 		if annotation is MKUserLocation { return nil }
 		
 		let pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "annotation")
-        pin.pinTintColor = DefaultColorsProvider.lightTint
+        pin.pinTintColor = DefaultColorsProvider.tintSecondary
 		// drop only on long press gesture
 		let fromLongPress = annotation is MKPointAnnotation
 		pin.animatesDrop = fromLongPress

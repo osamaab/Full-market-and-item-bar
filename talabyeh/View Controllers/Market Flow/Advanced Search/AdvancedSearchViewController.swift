@@ -38,7 +38,7 @@ class AdvancedSearchViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         navigationItem.title = "Search"
-        view.backgroundColor = DefaultColorsProvider.background
+        view.backgroundColor = DefaultColorsProvider.backgroundPrimary
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         bottomView.translatesAutoresizingMaskIntoConstraints = false

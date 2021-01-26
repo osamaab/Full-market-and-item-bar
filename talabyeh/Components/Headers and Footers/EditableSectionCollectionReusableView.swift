@@ -23,7 +23,7 @@ class EditableSectionCollectionReusableView: TintedLabelCollectionReusableView {
     
     override func setup() {
         editButton.titleLabel?.font = .font(for: .semiBold, size: 17)
-        editButton.setTitleColor(DefaultColorsProvider.secondaryText, for: .normal)
+        editButton.setTitleColor(DefaultColorsProvider.textSecondary1, for: .normal)
         
         subviewsPreparedAL {
             editButton

@@ -43,7 +43,7 @@ class SelectDistributorViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        view.backgroundColor = DefaultColorsProvider.background1
+        view.backgroundColor = DefaultColorsProvider.backgroundSecondary
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -78,7 +78,7 @@ extension SelectDistributorViewController: UICollectionViewDataSource, UICollect
         if indexPath == selectedIndexPath {
             cell.update(style: .selected)
         } else {
-            cell.update(style: listType == .external ? .customTinted(DefaultColorsProvider.pickerBackground) : .regular)
+            cell.update(style: listType == .external ? .customTinted(DefaultColorsProvider.containerBackground1) : .regular)
         }
         
         return cell
@@ -91,9 +91,9 @@ extension SelectDistributorViewController: UICollectionViewDataSource, UICollect
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TintedLabelCollectionReusableView.identifier, for: indexPath) as! TintedLabelCollectionReusableView
             
             view.title = "Request distributor"
-            view.backgroundColor = DefaultColorsProvider.pickerBackground
+            view.backgroundColor = DefaultColorsProvider.containerBackground1
             view.titleLabel.font = .font(for: .semiBold, size: 16)
-            view.titleLabel.textColor = DefaultColorsProvider.background
+            view.titleLabel.textColor = DefaultColorsProvider.backgroundPrimary
             view.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
 
             return view

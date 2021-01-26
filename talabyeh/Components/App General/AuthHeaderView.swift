@@ -69,9 +69,9 @@ class AuthHeaderView: UIView {
         containerStackView.alignment(.fill).distribution(.fill).axis(.vertical).spacing(15)
         
         titleLabel.font = .font(for: .bold, size: 22)
-        titleLabel.textColor = DefaultColorsProvider.darkerTint
+        titleLabel.textColor = DefaultColorsProvider.tintPrimary
         
-        typeBackgroundView.backgroundColor = DefaultColorsProvider.lightTint
+        typeBackgroundView.backgroundColor = DefaultColorsProvider.tintSecondary
         typeBackgroundView.height(26)
         typeBackgroundView.layer.cornerRadius = 13
         typeBackgroundView.fillContainer()
@@ -80,13 +80,13 @@ class AuthHeaderView: UIView {
         typeImageView.height(30).width(30).leading(15).centerVertically()
         
         typeTitleLabel.font = .font(for: .semiBold, size: 17)
-        typeTitleLabel.textColor = DefaultColorsProvider.darkerTint
+        typeTitleLabel.textColor = DefaultColorsProvider.tintPrimary
         typeTitleLabel.centerVertically().trailing(15)
         
         typeTitleLabel.Leading == typeImageView.Trailing + 15
         
         subtitleLabel.font = .font(for: .regular, size: 16)
-        subtitleLabel.textColor = DefaultColorsProvider.darkerTint
+        subtitleLabel.textColor = DefaultColorsProvider.tintPrimary
         subtitleLabel.numberOfLines = 0
         
         

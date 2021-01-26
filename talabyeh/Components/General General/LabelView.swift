@@ -62,10 +62,10 @@ class LabelView: UIView {
 
         
         // default attributes :)
-        imageView.tintColor = DefaultColorsProvider.darkerTint
+        imageView.tintColor = DefaultColorsProvider.tintPrimary
         imageView.contentMode = .scaleAspectFit
         
-        titleLabel.textColor = DefaultColorsProvider.darkerTint
+        titleLabel.textColor = DefaultColorsProvider.tintPrimary
         titleLabel.font = .font(for: .bold, size: 16)
         
         stackView.fillContainer()

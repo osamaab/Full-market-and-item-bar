@@ -48,8 +48,8 @@ class CategoryItemCollectionViewCell: UICollectionViewCell {
         }
         
         containerView.layer.cornerRadius = 12
-        containerView.backgroundColor = DefaultColorsProvider.itemBackground
-        containerView.dropShadow(color: DefaultColorsProvider.baseShadow,
+        containerView.backgroundColor = DefaultColorsProvider.containerBackground3
+        containerView.dropShadow(color: DefaultColorsProvider.decoratorShadow,
                                  opacity: 0.16,
                                  offSet: .init(width: 0, height: 2),
                                  radius: 2)

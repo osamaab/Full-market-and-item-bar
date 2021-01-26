@@ -31,10 +31,10 @@ class CollectionViewSectionHeader: UICollectionReusableView {
         }
         
         titleLable.font = .font(for: .semiBold, size: 17)
-        titleLable.textColor = DefaultColorsProvider.text
+        titleLable.textColor = DefaultColorsProvider.textPrimary1
         
         seeMoreButton.titleLabel?.font = .font(for: .semiBold, size: 12)
-        seeMoreButton.setTitleColor(DefaultColorsProvider.darkerTint, for: .normal)
+        seeMoreButton.setTitleColor(DefaultColorsProvider.tintPrimary, for: .normal)
         
         titleLable.translatesAutoresizingMaskIntoConstraints = false
         seeMoreButton.translatesAutoresizingMaskIntoConstraints = false

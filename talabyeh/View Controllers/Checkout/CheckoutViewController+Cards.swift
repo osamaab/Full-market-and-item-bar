@@ -42,7 +42,7 @@ class CHCartSummaryCardView: BasicViewWithSetup {
             totalView
         }
         
-        separatorView.backgroundColor = DefaultColorsProvider.itemBackground
+        separatorView.backgroundColor = DefaultColorsProvider.containerBackground3
         separatorView.height(1)
         
         addCouponView.contentView.height(35).width(100)
@@ -68,10 +68,10 @@ class CHCartSummaryCardView: BasicViewWithSetup {
         totalView.contentView.text = "JD 320"
         
         totalView.titleLabel.font = .font(for: .bold, size: 18)
-        totalView.titleLabel.textColor = DefaultColorsProvider.darkerTint
+        totalView.titleLabel.textColor = DefaultColorsProvider.tintPrimary
         
         totalView.contentView.font = .font(for: .bold, size: 18)
-        totalView.contentView.textColor = DefaultColorsProvider.darkerTint
+        totalView.contentView.textColor = DefaultColorsProvider.tintPrimary
 
     }
 }
@@ -165,8 +165,8 @@ class CHDeliveryInformationFieldView: BasicViewWithSetup {
     
     override func setup() {
         button.layer.borderWidth = 1
-        button.layer.borderColor = DefaultColorsProvider.fieldBorder.cgColor
-        button.setTitleColor(DefaultColorsProvider.text, for: .normal)
+        button.layer.borderColor = DefaultColorsProvider.decoratorBorder.cgColor
+        button.setTitleColor(DefaultColorsProvider.textPrimary1, for: .normal)
         
         subviews {
             button
@@ -188,8 +188,8 @@ class CHDeliveryInformationFieldView: BasicViewWithSetup {
         self.isSelected = isSelected
         
         let block = {
-            self.button.backgroundColor = isSelected ? DefaultColorsProvider.darkerTint.withAlphaComponent(0.2) : DefaultColorsProvider.background
-            self.button.setTitleColor(isSelected ? DefaultColorsProvider.darkerTint : DefaultColorsProvider.text, for: .normal)
+            self.button.backgroundColor = isSelected ? DefaultColorsProvider.tintPrimary.withAlphaComponent(0.2) : DefaultColorsProvider.backgroundPrimary
+            self.button.setTitleColor(isSelected ? DefaultColorsProvider.tintPrimary : DefaultColorsProvider.textPrimary1, for: .normal)
             self.button.titleLabel?.font = isSelected ? .font(for: .bold, size: 17) : .font(for: .medium, size: 17)
         }
         
@@ -224,7 +224,7 @@ class CHDeliveryDateCardView: BasicViewWithSetup {
         titleLabel.font = .font(for: .medium, size: 14)
         titleLabel.numberOfLines = 0
         titleLabel.text = "Your delivery date should be within 7 days starting from today"
-        titleLabel.textColor = DefaultColorsProvider.darkerTint.withAlphaComponent(0.4)
+        titleLabel.textColor = DefaultColorsProvider.tintPrimary.withAlphaComponent(0.4)
         
         containerStackView.addingArrangedSubviews {
             titleLabel
@@ -257,14 +257,14 @@ class CHDeliveryInstructionsCardView: BasicViewWithSetup {
         textView.contentInset = .init(top: 15, left: 20, bottom: 15, right: 20)
         textView.layer.cornerRadius = 8
         textView.layer.borderWidth = 1
-        textView.layer.borderColor = DefaultColorsProvider.fieldBorder.cgColor
+        textView.layer.borderColor = DefaultColorsProvider.decoratorBorder.cgColor
                 
         checkboxLabel.font = .font(for: .semiBold, size: 14)
-        checkboxLabel.textColor = DefaultColorsProvider.secondaryText
+        checkboxLabel.textColor = DefaultColorsProvider.textSecondary1
         checkboxLabel.text = "Call receiver before delivery"
         
         footerLabel.font = .font(for: .semiBold, size: 12)
-        footerLabel.textColor = DefaultColorsProvider.secondaryText
+        footerLabel.textColor = DefaultColorsProvider.textSecondary1
         footerLabel.text = "0 of 100 words"
         
         // layout
@@ -311,11 +311,11 @@ class CHPaymentMethodCardView: BasicViewWithSetup {
             
             imageView.layer.cornerRadius = 2
             imageView.layer.borderWidth = 0.5
-            imageView.layer.borderColor = DefaultColorsProvider.fieldBorder.cgColor
+            imageView.layer.borderColor = DefaultColorsProvider.decoratorBorder.cgColor
             imageView.contentMode = .scaleAspectFit
             
             titleLabel.font = .font(for: .medium, size: 16)
-            titleLabel.textColor = DefaultColorsProvider.text
+            titleLabel.textColor = DefaultColorsProvider.textPrimary1
             
             checkboxView.isSelected = false
             

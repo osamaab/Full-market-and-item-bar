@@ -29,7 +29,7 @@ class TabBarCoordinator: CoordinatorType {
         
         let viewControllers: [UIViewController] = coordinators.compactMap {
             $0.rootViewController.tabBarItem = $0.tabBarItem
-            return $0.rootViewController.embededInNavigationController()
+            return $0.rootViewController
         }
         
         tabBarController.viewControllers = viewControllers

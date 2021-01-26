@@ -36,13 +36,13 @@ class CategoryPickerController: NSObject {
         
         super.init()
         
-        navigationController.navigationBar.barTintColor = DefaultColorsProvider.background
+        navigationController.navigationBar.barTintColor = DefaultColorsProvider.backgroundPrimary
         navigationController.navigationBar.isTranslucent = false
         navigationController.navigationBar.shadowImage = UIImage()
         navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController.navigationBar.tintColor = DefaultColorsProvider.text
+        navigationController.navigationBar.tintColor = DefaultColorsProvider.textPrimary1
         navigationController.navigationBar.titleTextAttributes = [
-            .foregroundColor: DefaultColorsProvider.secondaryText,
+            .foregroundColor: DefaultColorsProvider.textSecondary1,
             .font: UIFont.font(for: .semiBold, size: 17)
         ]
         

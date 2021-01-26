@@ -39,22 +39,22 @@ class DistributerCollectionViewCell: UICollectionViewCell {
     }
     
     func setup(){
-        backgroundColor = DefaultColorsProvider.background
+        backgroundColor = DefaultColorsProvider.backgroundPrimary
         layer.cornerRadius = 5.4
-        dropShadow(color: DefaultColorsProvider.baseShadow, opacity: 0.05, offSet: .init(width: 0, height: 3.4), radius: 3.4)
+        dropShadow(color: DefaultColorsProvider.decoratorShadow, opacity: 0.05, offSet: .init(width: 0, height: 3.4), radius: 3.4)
 
         
         titleLabel.font = .font(for: .semiBold, size: 16)
-        titleLabel.textColor = DefaultColorsProvider.darkerTint
+        titleLabel.textColor = DefaultColorsProvider.tintPrimary
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = "Hussein AlRyalat"
         
         subtitleLabel.font = .font(for: .regular, size: 13)
-        subtitleLabel.textColor = DefaultColorsProvider.secondaryText
+        subtitleLabel.textColor = DefaultColorsProvider.textSecondary1
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         subtitleLabel.text = "best Developer in the world"
         
-        imageView.backgroundColor = DefaultColorsProvider.itemBackground
+        imageView.backgroundColor = DefaultColorsProvider.containerBackground3
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -117,18 +117,18 @@ class DistributerCollectionViewCell: UICollectionViewCell {
     func update(style: ContentStyle){
         switch style {
         case .regular:
-            titleLabel.textColor = DefaultColorsProvider.darkerTint
-            subtitleLabel.textColor = DefaultColorsProvider.secondaryText
-            backgroundColor = DefaultColorsProvider.background
+            titleLabel.textColor = DefaultColorsProvider.tintPrimary
+            subtitleLabel.textColor = DefaultColorsProvider.textSecondary1
+            backgroundColor = DefaultColorsProvider.backgroundPrimary
             break
         case .selected:
-            titleLabel.textColor = DefaultColorsProvider.background
-            subtitleLabel.textColor = DefaultColorsProvider.background
-            backgroundColor = DefaultColorsProvider.darkerTint
+            titleLabel.textColor = DefaultColorsProvider.backgroundPrimary
+            subtitleLabel.textColor = DefaultColorsProvider.backgroundPrimary
+            backgroundColor = DefaultColorsProvider.tintPrimary
             break
         case .customTinted(let color):
-            titleLabel.textColor = DefaultColorsProvider.background
-            subtitleLabel.textColor = DefaultColorsProvider.background
+            titleLabel.textColor = DefaultColorsProvider.backgroundPrimary
+            subtitleLabel.textColor = DefaultColorsProvider.backgroundPrimary
             backgroundColor = color
             break
         }
@@ -155,12 +155,12 @@ class DistributorActionView: UIView {
     }
     
     func setup(){
-        self.backgroundColor = DefaultColorsProvider.itemBackground
+        self.backgroundColor = DefaultColorsProvider.containerBackground3
         self.layer.cornerRadius = 5
         
         imageView.image = UIImage(named: "pin_small")
         imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = DefaultColorsProvider.darkerTint
+        imageView.tintColor = DefaultColorsProvider.tintPrimary
 
         subviewsPreparedAL { () -> [UIView] in
             imageView

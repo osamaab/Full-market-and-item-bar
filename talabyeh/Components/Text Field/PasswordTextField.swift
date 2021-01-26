@@ -19,11 +19,11 @@ class PasswordTextField: BorderedTextField {
         var color: UIColor {
             switch self {
             case .strong:
-                return DefaultColorsProvider.success
+                return DefaultColorsProvider.messageSuccess
             case .medium:
-                return DefaultColorsProvider.notice
+                return DefaultColorsProvider.messageNotice
             case .weak:
-                return DefaultColorsProvider.error
+                return DefaultColorsProvider.messageError
             }
         }
         

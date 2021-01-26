@@ -24,7 +24,7 @@ class QRCodeView: UIView {
     
     func setup(){
         layer.borderWidth = 1
-        layer.borderColor = DefaultColorsProvider.fieldBorder.cgColor
+        layer.borderColor = DefaultColorsProvider.decoratorBorder.cgColor
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit

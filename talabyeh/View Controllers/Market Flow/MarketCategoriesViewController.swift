@@ -46,7 +46,7 @@ extension MarketCategoriesViewController: UICollectionViewDataSource, UICollecti
 extension MarketCategoriesViewController {
     func createCollectionView() -> UICollectionView {
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: createLayout())
-        collectionView.backgroundColor = DefaultColorsProvider.background
+        collectionView.backgroundColor = DefaultColorsProvider.backgroundPrimary
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }

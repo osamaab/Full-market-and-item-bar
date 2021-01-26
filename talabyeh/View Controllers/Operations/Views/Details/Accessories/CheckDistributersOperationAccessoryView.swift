@@ -42,7 +42,7 @@ class CheckDistributersOperationAccessoryView: BasicViewWithSetup {
         titleLabel.font = .font(for: .bold, size: 22)
         
         mapButton.layer.borderWidth = 1
-        mapButton.layer.borderColor = DefaultColorsProvider.fieldBorder.cgColor
+        mapButton.layer.borderColor = DefaultColorsProvider.decoratorBorder.cgColor
         mapButton.layer.cornerRadius = 2
         mapButton.backgroundColor = .lightGray
         

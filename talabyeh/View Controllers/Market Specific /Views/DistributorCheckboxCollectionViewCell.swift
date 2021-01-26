@@ -31,7 +31,7 @@ class DistributorCheckboxCollectionViewCell: DistributerCollectionViewCell {
         arrowImageView.isHidden = true
         
         checkbox.layer.borderWidth = 1
-        checkbox.layer.borderColor = DefaultColorsProvider.fieldBorder.cgColor
+        checkbox.layer.borderColor = DefaultColorsProvider.decoratorBorder.cgColor
         checkbox.layer.cornerRadius = 15
         checkbox.contentMode = .scaleAspectFit
         

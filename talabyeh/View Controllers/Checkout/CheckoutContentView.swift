@@ -29,7 +29,7 @@ class CheckoutContentView: UIView {
     }
     
     fileprivate func setup(){
-        backgroundColor = DefaultColorsProvider.background1
+        backgroundColor = DefaultColorsProvider.backgroundSecondary
         
         containerStackView
             .axis(.vertical)
@@ -81,12 +81,12 @@ class CheckoutFooterView: BasicViewWithSetup {
         requestButton.top(0).bottom(0).trailing(0).width(60%)
         cancelButton.top(0).bottom(0).leading(0).width(35%)
         
-        requestButton.backgroundColor = DefaultColorsProvider.darkerTint
+        requestButton.backgroundColor = DefaultColorsProvider.tintPrimary
         requestButton.setTitle("Request", for: .normal)
-        requestButton.setTitleColor(DefaultColorsProvider.background, for: .normal)
+        requestButton.setTitleColor(DefaultColorsProvider.backgroundPrimary, for: .normal)
         
-        cancelButton.backgroundColor = DefaultColorsProvider.background
+        cancelButton.backgroundColor = DefaultColorsProvider.backgroundPrimary
         cancelButton.setTitle("Cancel", for: .normal)
-        cancelButton.setTitleColor(DefaultColorsProvider.darkerTint, for: .normal)
+        cancelButton.setTitleColor(DefaultColorsProvider.tintPrimary, for: .normal)
     }
 }

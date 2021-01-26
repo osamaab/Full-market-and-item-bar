@@ -32,9 +32,9 @@ class NewDistributerContentView: UIView {
     }
     
     fileprivate func setup(){
-        backgroundColor = DefaultColorsProvider.background1
+        backgroundColor = DefaultColorsProvider.backgroundSecondary
         
-        titleLabel.textColor = DefaultColorsProvider.text
+        titleLabel.textColor = DefaultColorsProvider.textPrimary1
         titleLabel.font = .font(for: .bold, size: 21)
         
         containerStackView

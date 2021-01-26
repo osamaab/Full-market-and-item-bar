@@ -37,7 +37,7 @@ class CreditCardNumberTextField: ValidationTextField {
         self.validator = PaymentCardValidator()
         
         // add the image view and it's separator
-        imageView.tintColor = DefaultColorsProvider.fieldBorder
+        imageView.tintColor = DefaultColorsProvider.decoratorBorder
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "camera")
         

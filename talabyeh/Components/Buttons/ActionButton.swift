@@ -21,8 +21,8 @@ class ActionButton: UIButton {
     }
     
     func setup(){
-        backgroundColor = DefaultColorsProvider.darkerTint
-        setTitleColor(DefaultColorsProvider.background, for: .normal)
+        backgroundColor = DefaultColorsProvider.tintPrimary
+        setTitleColor(DefaultColorsProvider.backgroundPrimary, for: .normal)
         titleLabel?.font = .font(for: .medium, size: 17)
     }
 }

@@ -66,10 +66,10 @@ class OperationDetailsContentView: BasicViewWithSetup {
     func insert(text: String, for title: String) -> FieldView<UILabel> {
         let newFieldView = FieldView<UILabel>(contentView: UILabel(), title: title)
         newFieldView.titleLabel.font = .font(for: .medium, size: 16)
-        newFieldView.titleLabel.textColor = DefaultColorsProvider.secondaryText
+        newFieldView.titleLabel.textColor = DefaultColorsProvider.textSecondary1
         
         newFieldView.contentView.font = .font(for: .medium, size: 16)
-        newFieldView.contentView.textColor = DefaultColorsProvider.secondaryText
+        newFieldView.contentView.textColor = DefaultColorsProvider.textSecondary1
         newFieldView.contentView.text = text
         
         operationDetailsView.containerStackView.insertArrangedSubview(newFieldView, at: operationDetailsView.indexForInjectingContent + 1)

@@ -11,7 +11,7 @@ import UIKit
 class DividerView: BasicViewWithSetup {
     
     override func setup() {
-        backgroundColor = DefaultColorsProvider.fieldBorder
+        backgroundColor = DefaultColorsProvider.decoratorBorder
     }
     
     override var intrinsicContentSize: CGSize {

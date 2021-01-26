@@ -21,7 +21,7 @@ class NewItemViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        view.backgroundColor = DefaultColorsProvider.background1
+        view.backgroundColor = DefaultColorsProvider.backgroundSecondary
         
         view.subviewsPreparedAL {
             categoryView
@@ -42,7 +42,7 @@ class NewItemViewController: UIViewController {
         categoryView.title = "Cats"
         
         
-        fieldsInputView.backgroundColor = DefaultColorsProvider.background
+        fieldsInputView.backgroundColor = DefaultColorsProvider.backgroundPrimary
     }
     
     override func viewDidLayoutSubviews() {

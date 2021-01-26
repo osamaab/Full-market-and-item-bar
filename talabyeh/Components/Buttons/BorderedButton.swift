@@ -22,10 +22,10 @@ class BorderedButton: UIButton {
     
     func setup(){
         layer.borderWidth = 0.2
-        layer.borderColor = DefaultColorsProvider.darkerTint.cgColor
+        layer.borderColor = DefaultColorsProvider.tintPrimary.cgColor
         
-        backgroundColor = DefaultColorsProvider.background
-        setTitleColor(DefaultColorsProvider.darkerTint, for: .normal)
+        backgroundColor = DefaultColorsProvider.backgroundPrimary
+        setTitleColor(DefaultColorsProvider.tintPrimary, for: .normal)
         titleLabel?.font = .font(for: .medium, size: 17)
     }
 }

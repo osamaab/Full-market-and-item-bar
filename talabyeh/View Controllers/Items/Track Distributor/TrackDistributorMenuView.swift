@@ -60,7 +60,7 @@ class TrackDistributorMenuView: UIControl {
     
     
     func setup() {
-        backgroundColor = DefaultColorsProvider.background1
+        backgroundColor = DefaultColorsProvider.backgroundSecondary
         
         subviewsPreparedAL {
             containerView
@@ -93,21 +93,21 @@ class TrackDistributorMenuView: UIControl {
         imageView.width(30).height(30)
         menuButton.width(25).height(18)
         
-        menuButton.tintColor = DefaultColorsProvider.darkerTint
+        menuButton.tintColor = DefaultColorsProvider.tintPrimary
         menuButton.setImage(UIImage(named: "menu_small"), for: .normal)
         
-        imageView.tintColor = DefaultColorsProvider.darkerTint
+        imageView.tintColor = DefaultColorsProvider.tintPrimary
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "Group 2106")
         
         titleLabel.font = .font(for: .bold, size: 22)
-        titleLabel.textColor = DefaultColorsProvider.darkerTint
+        titleLabel.textColor = DefaultColorsProvider.tintPrimary
         titleLabel.text = "Hussein AlRyalat"
         
         
-        containerView.backgroundColor = DefaultColorsProvider.background1
+        containerView.backgroundColor = DefaultColorsProvider.backgroundSecondary
         containerView.layer.cornerRadius = 10
-        containerView.dropShadow(color: DefaultColorsProvider.baseShadow,
+        containerView.dropShadow(color: DefaultColorsProvider.decoratorShadow,
                                  opacity: 0.16,
                                  offSet: .init(width: 0, height: 3.4),
                                  radius: 3.4)
@@ -128,7 +128,7 @@ class TrackDistributorMenuView: UIControl {
         dropdown.dataSource = options.map { $0.title }
         dropdown.width = UIScreen.main.bounds.width - 50
         dropdown.setupCornerRadius(15)
-        dropdown.backgroundColor = DefaultColorsProvider.background
+        dropdown.backgroundColor = DefaultColorsProvider.backgroundPrimary
         dropdown.direction = .bottom
         dropdown.cornerRadius = 10
         dropdown.hidesOnSelection = false

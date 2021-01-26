@@ -11,14 +11,14 @@ import UIKit
 class FaildOperationCollectionViewCell: DefaultOprationCollectionViewCell {
     
     override var backgroundType: BaseOprationCollectionViewCell.BackgroundType {
-        .bordered(DefaultColorsProvider.error)
+        .bordered(DefaultColorsProvider.messageError)
     }
     
     override func setup() {
         super.setup()
         
         headerView.statusImageView.image = UIImage(named: "operation-faild")
-        headerView.timeLabel.textColor = DefaultColorsProvider.error
-        headerView.timeTitleLabel.textColor = DefaultColorsProvider.error
+        headerView.timeLabel.textColor = DefaultColorsProvider.messageError
+        headerView.timeTitleLabel.textColor = DefaultColorsProvider.messageError
     }
 }

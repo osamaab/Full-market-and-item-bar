@@ -46,7 +46,7 @@ class DeliveryAreaPickerViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        view.backgroundColor = DefaultColorsProvider.background
+        view.backgroundColor = DefaultColorsProvider.backgroundPrimary
         
         view.subviews {
             headerView
@@ -74,7 +74,7 @@ class DeliveryAreaPickerViewController: UIViewController {
         
         pickerTextField.imageView.image = UIImage(named: "plus_small")
         pickerTextField.isSeparatorHidden = false
-        pickerTextField.imageView.tintColor = DefaultColorsProvider.darkerTint
+        pickerTextField.imageView.tintColor = DefaultColorsProvider.tintPrimary
         pickerTextField.onPick = { location in
             // fill the fields with the picked location
             self.pickerTextField.text = nil
@@ -96,7 +96,7 @@ private class HeaderView: UIView {
     let iconImageView = UIImageView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.image = UIImage(named: "delivery_area")
-        $0.tintColor = DefaultColorsProvider.darkerTint
+        $0.tintColor = DefaultColorsProvider.tintPrimary
     }
     
     let subtitleLabel = UILabel().then {

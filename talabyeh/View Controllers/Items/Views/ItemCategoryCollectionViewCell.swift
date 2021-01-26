@@ -23,16 +23,16 @@ class ItemCategoryCollectionViewCell: UICollectionViewCell {
     }
     
     func setup(){
-        backgroundColor = DefaultColorsProvider.background1
+        backgroundColor = DefaultColorsProvider.backgroundSecondary
         
         addSubview(titleLabel)
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = .font(for: .semiBold, size: 17)
-        titleLabel.textColor = DefaultColorsProvider.darkerTint
+        titleLabel.textColor = DefaultColorsProvider.tintPrimary
         
         layer.cornerRadius = 12
-        dropShadow(color: DefaultColorsProvider.baseShadow,
+        dropShadow(color: DefaultColorsProvider.decoratorShadow,
                    opacity: 0.16,
                    offSet: .init(width: 0, height: 3.5),
                    radius: 3.5)

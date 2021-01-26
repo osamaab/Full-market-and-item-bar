@@ -52,7 +52,7 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = DefaultColorsProvider.background
+        view.backgroundColor = DefaultColorsProvider.backgroundPrimary
                 
         profileView.nameLabel.text = headerInfo.title
         profileView.emailLabel.text = headerInfo.subtitle
@@ -99,7 +99,7 @@ extension ProfilePageViewController {
         } else {
             cell.icon.image = icon
             cell.icon.image = cell.icon.image?.withRenderingMode(.alwaysTemplate)
-            cell.icon.tintColor = DefaultColorsProvider.text
+            cell.icon.tintColor = DefaultColorsProvider.textPrimary1
         }
         
         return cell

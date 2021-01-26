@@ -27,17 +27,17 @@ class UploadCertificateView: BasicViewWithSetup {
             optionsButton
         }
         
-        containerView.backgroundColor = DefaultColorsProvider.lightTint
+        containerView.backgroundColor = DefaultColorsProvider.tintSecondary
         containerView.layer.cornerRadius = 10
         
-        plusButton.tintColor = DefaultColorsProvider.darkerTint
+        plusButton.tintColor = DefaultColorsProvider.tintPrimary
         plusButton.setImage(UIImage(named: "plus_small"), for: .normal)
         
         titleLabel.font = .font(for: .medium, size: 19)
-        titleLabel.textColor = DefaultColorsProvider.darkerTint
+        titleLabel.textColor = DefaultColorsProvider.tintPrimary
         titleLabel.text = "Upload Certificate"
         
-        optionsButton.setTitleColor(DefaultColorsProvider.darkerTint, for: .normal)
+        optionsButton.setTitleColor(DefaultColorsProvider.tintPrimary, for: .normal)
         optionsButton.titleLabel?.font = .font(for: .regular, size: 20)
         optionsButton.setTitle("...", for: .normal)
         
