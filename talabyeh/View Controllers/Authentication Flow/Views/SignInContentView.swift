@@ -9,7 +9,7 @@
 import UIKit
 import Stevia
 
-class SignInContentView: UIView {
+class SignInContentView: BasicViewWithSetup {
     let headerView = AuthHeaderView(elements: [
         .title("Welcome to TALABIA"),
         .subtitle("Let's get started")
@@ -17,19 +17,13 @@ class SignInContentView: UIView {
     
     let emailtf = BorderedTextField()
     let passwordtf = BorderedTextField()
-    
     let signInButton = CircleConfirmButton()
     
-    convenience init() {
-        
-        self.init(frame:CGRect.zero)
+    var onAction: ((String, String) -> Void)?
+    
+    override func setup() {
         backgroundColor = DefaultColorsProvider.backgroundPrimary
         
-        defaultLayout()
-
-    }
-    
-    final private func defaultLayout(){
         subviewsPreparedAL {
             headerView
             emailtf
@@ -40,7 +34,7 @@ class SignInContentView: UIView {
         headerView.subtitleLabel.textColor = DefaultColorsProvider.textSecondary1
         
         emailtf.placeholder = "Email"
-        passwordtf.placeholder = "Password".localiz()
+        passwordtf.placeholder = "Password"
         
         
         headerView.top(0).leading(20).trailing(20)
@@ -54,6 +48,14 @@ class SignInContentView: UIView {
         
         signInButton.trailing(20)
         signInButton.Top == passwordtf.Bottom + 35
+        
+        signInButton.add(event: .touchUpInside) { [unowned self] in
+            guard let username = emailtf.text,
+                  let password = passwordtf.text else {
+                return
+            }
+            
+            self.onAction?(username, password)
+        }
     }
-
 }

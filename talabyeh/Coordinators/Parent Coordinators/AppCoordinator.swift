@@ -39,7 +39,7 @@ class AppCoordinator: NavigationCoordinator<AppRoutes> {
         let root = NavigationController(autoShowsCloseButton: false)
         
         guard let userType = preferencesManager.userType else {
-            super.init(rootViewController: root, initialRoute: .chooseUserType)
+            super.init(rootViewController: root, initialRoute: .lab)
             return
         }
 

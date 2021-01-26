@@ -17,7 +17,7 @@ enum UserTypeEnum {
 }
 
 enum AuthenticationRoute: Route {
-    case signin
+    case signin(UserType)
     case distributorSignup
     case companySignup
     case resellerSignup
@@ -38,8 +38,8 @@ class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
     
     override func prepareTransition(for route: RouteType) -> TransitionType {
         switch route {
-        case .signin:
-            let signInVC = SignInViewController()
+        case .signin(let userType):
+            let signInVC = SignInViewController(userType: userType)
             return .push(signInVC)
         case .distributorSignup:
             let disSignup = DistributorSignUpViewController()

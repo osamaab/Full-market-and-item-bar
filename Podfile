@@ -24,6 +24,7 @@ pod 'NVActivityIndicatorView'
 pod 'CardScanner'
 
 pod 'XCoordinator'
+pod 'PromisesSwift'
 
 
   target 'talabyehTests' do
