@@ -9,17 +9,48 @@
 import UIKit
 import XCoordinator
 
-protocol AuthenticationCoordinatorDelegate: class {
-    func authenticationCoordinator(didFinishWith userType: UserTypeEnum)
+
+enum UserTypeEnum {
+    case Company
+    case Distributor
+    case Reseller
 }
 
 enum AuthenticationRoute: Route {
-    case home
+    case signin
+    case distributorSignup
+    case companySignup
+    case resellerSignup
 }
 
 /**
  So the clients don't wanna really care about how the authentication flow "internally" works, right now, the implementation does things with storyboards and xib's, and that's againest our guidelines for doing things, but this should not affect other parts of the app.
  */
 class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
+    
+    init(initialRoute: AuthenticationRoute){
+        super.init(rootViewController: NavigationController(), initialRoute: initialRoute)
+    }
+    
+    init(){
+        super.init(rootViewController: NavigationController(), initialRoute: .distributorSignup)
+    }
+    
+    override func prepareTransition(for route: RouteType) -> TransitionType {
+        switch route {
+        case .signin:
+            let signInVC = SignInViewController()
+            return .push(signInVC)
+        case .distributorSignup:
+            let disSignup = DistributorSignUpViewController()
+            return .push(disSignup)
+        case .companySignup:
+            let signUpVC = CompanySignUpViewController()
+            return .push(signUpVC)
+        case .resellerSignup:
+            let signUpVC = ResellerSignUpViewController()
+            return .push(signUpVC)
+        }
+    }
 }
  

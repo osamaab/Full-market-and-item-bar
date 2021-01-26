@@ -16,7 +16,7 @@ struct APIContentRepositoryType<APITarget: TargetType, ContentType: Codable>: Co
     
     init(_ target: APITarget){
         self.target = target
-        self.provider = .init()
+        self.provider = .default()
     }
     
     func requestContent(completion: @escaping ContentRequestCompletion<ContentType>) {
