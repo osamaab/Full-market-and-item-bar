@@ -13,7 +13,7 @@ class AuthHeaderView: UIView {
     
     enum Element {
         case title(String)
-        case type
+        case type(UserType)
         case subtitle(String)
     }
     
@@ -74,10 +74,11 @@ class AuthHeaderView: UIView {
         typeBackgroundView.backgroundColor = DefaultColorsProvider.tintSecondary
         typeBackgroundView.height(26)
         typeBackgroundView.layer.cornerRadius = 13
+        typeBackgroundView.clipsToBounds = true
         typeBackgroundView.fillContainer()
         
         typeImageView.contentMode = .scaleAspectFit
-        typeImageView.height(30).width(30).leading(15).centerVertically()
+        typeImageView.height(35).width(33).leading(15).centerVertically()
         
         typeTitleLabel.font = .font(for: .semiBold, size: 17)
         typeTitleLabel.textColor = DefaultColorsProvider.tintPrimary
@@ -98,9 +99,14 @@ class AuthHeaderView: UIView {
                 titleLabel.isHidden = false
                 titleLabel.text = title
                 break
-            case .type:
+            case .type(let authType):
                 typeContainerView.isHidden = false
                 containerStackView.spacing(15)
+                
+                typeTitleLabel.text = authType.title
+                typeImageView.image = authType.image
+                
+                typeBackgroundView.layer.cornerRadius = 13
                 break
             case .subtitle(let subtitle):
                 subtitleLabel.isHidden = false
@@ -108,10 +114,6 @@ class AuthHeaderView: UIView {
                 break
             }
         }
-        
-        
-        typeTitleLabel.text = "Company"
-        typeImageView.image = UIImage(named: "auth_company")
     }
     
     override func layoutSubviews() {

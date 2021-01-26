@@ -56,6 +56,10 @@ class BigSegmentedControl: UIControl {
 
         stackView.fillContainer()
         relayoutItems()
+        
+        if items.count > 0 {
+            self.select(index: 0, animated: false)
+        }
     }
     
     func relayoutItems(){
@@ -133,7 +137,8 @@ private class ItemView: UIView {
         
         addSubview(titleLabel)
         
-        titleLabel.fillContainer(padding: 20)
+        titleLabel.fillHorizontally(padding: 20)
+        titleLabel.fillVertically(padding: 10)
         titleLabel.setContentCompressionResistancePriority(.required, for: .vertical)
         
         

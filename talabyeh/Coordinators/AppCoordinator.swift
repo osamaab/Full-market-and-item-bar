@@ -50,7 +50,7 @@ class AppCoordinator: NavigationCoordinator<AppRoutes> {
 
 
 extension AppCoordinator: ChooseUserViewControllerDelegate {
-    func chooseUserViewController(_ sender: ChooseUserViewController, didFinishWith user: UserType) {
+    func chooseUserViewController(_ sender: ChooseUserViewController, didFinishWith user: APIUserType) {
         switch user.id {
         case 1:
             self.trigger(.authentication(.companySignup))

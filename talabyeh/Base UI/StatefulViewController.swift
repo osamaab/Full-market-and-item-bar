@@ -177,13 +177,15 @@ class StatefulViewController<ContentType>: UIViewController {
 
 extension StatefulViewController {
     fileprivate func setupStatefulContent(){
-        [emptyStateView, failureStateView].forEach {
-            view.addSubview($0)
-            $0.fillContainer()
+        view.subviewsPreparedAL {
+            emptyStateView
+            failureStateView
+            loadingView
         }
         
-        view.addSubview(loadingView)
-        loadingView.fillContainer()
+        [emptyStateView, failureStateView, loadingView].forEach {
+            $0.fillContainer()
+        }
         
         let retryBlock = { }
         
