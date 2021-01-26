@@ -30,19 +30,14 @@ class MainCategoryCollectionViewCell: UICollectionViewCell {
         self.contentView.clipsToBounds = false
         self.clipsToBounds = false
         self.containerView.clipsToBounds = false
-        
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        checkboxView.translatesAutoresizingMaskIntoConstraints = false
 
         
-        contentView.subviews {
+        contentView.subviewsPreparedAL {
             containerView
             titleLabel
         }
         
-        containerView.subviews {
+        containerView.subviewsPreparedAL {
             imageView
             checkboxView
         }
@@ -66,11 +61,28 @@ class MainCategoryCollectionViewCell: UICollectionViewCell {
         
         containerView.top(0).leading(0).trailing(0)
         titleLabel.bottom(0).leading(15).trailing(15)
-        
         containerView.Bottom == titleLabel.Top - 15
+    }
+}
 
-        imageView.image = UIImage(named: "sample_category")
-        titleLabel.text = "Accessories"
-        checkboxView.isSelected = true
+
+extension MainCategoryCollectionViewCell: CLComponentPreview {
+    static var groupIdentifier: CLComponentGroupIdentifier {
+        .cells
+    }
+    
+    static func render(in context: CLComponentPreviewContext) {
+        let view: Self = .init()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        context.containerView.addSubview(view)
+        
+        view.imageView.image = UIImage(named: "sample_category")
+        view.titleLabel.text = "Accessories"
+        view.isSelected = true
+        
+        view.top(20).bottom(20)
+        view.leading(20)
+        view.centerHorizontally()
     }
 }
