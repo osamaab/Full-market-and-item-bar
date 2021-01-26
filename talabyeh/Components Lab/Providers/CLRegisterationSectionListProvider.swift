@@ -53,7 +53,7 @@ struct CLRegisterationSectionListProvider: CLScreenSectionListProvider {
                 .history()
             ]
             
-            return ProfilePageViewController(headerInfo: headerInfo, menuItems: menuItems)
+            return ProfileViewController(headerInfo: headerInfo, menuItems: menuItems)
         }
         
         return CLScreensSection(name: "Profile", items: [profile] + screenClasses.map { CLScreenItem(screenClass: $0) })
