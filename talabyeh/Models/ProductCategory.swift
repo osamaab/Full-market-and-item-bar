@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ProductCategory {
+struct ProductCategory: Equatable, Hashable {
     let id: Int
     let title: String
     let logo: URL?

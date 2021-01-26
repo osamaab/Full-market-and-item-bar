@@ -29,11 +29,11 @@ enum AuthenticationRoute: Route {
 class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
     
     init(initialRoute: AuthenticationRoute){
-        super.init(rootViewController: NavigationController(), initialRoute: initialRoute)
+        super.init(rootViewController: NavigationController(style: .secondary, autoShowsCloseButton: true), initialRoute: initialRoute)
     }
     
     init(){
-        super.init(rootViewController: NavigationController(), initialRoute: .distributorSignup)
+        super.init(rootViewController: NavigationController(style: .secondary, autoShowsCloseButton: true), initialRoute: .distributorSignup)
     }
     
     override func prepareTransition(for route: RouteType) -> TransitionType {

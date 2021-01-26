@@ -20,6 +20,8 @@ class CompanySignUpViewController: UIViewController {
         
         setupViews()
         addValidation()
+        
+        navigationItem.title = "Company Signup"
     }
     
     func setupViews(){
