@@ -101,7 +101,6 @@ extension ItemsViewController {
                 view.isEditing = self.editingSections.contains(indexPath.section)
                 
                 
-                print("Section: \(indexPath.section)")
                 view.onEdit = {
                     if self.editingSections.contains(indexPath.section){
                         self.editingSections.remove(indexPath.section)

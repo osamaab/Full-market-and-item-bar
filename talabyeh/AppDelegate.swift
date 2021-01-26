@@ -16,10 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static var shared: AppDelegate {
         UIApplication.shared.delegate as! AppDelegate
     }
-    
-    var currentCoordinator: CoordinatorType?
-    
-    var window: UIWindow?
+        
+    lazy var mainWindow = UIWindow()
+    lazy var router = AppCoordinator().strongRouter
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -27,11 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupServices()
         setupApperance()
         
-        let componentsLab = ComponentsLabCoordinator()
-        
-        self.currentCoordinator = componentsLab.embededInNavigationCoordinator()
-        currentCoordinator?.start(with: .windowRoot(self.window!))
-        
+        router.setRoot(for: mainWindow)
         return true
     }
 }

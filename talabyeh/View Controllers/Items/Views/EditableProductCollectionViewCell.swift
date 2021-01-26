@@ -28,7 +28,7 @@ class EditableProductCollectionViewCell: ProductCollectionViewCell {
         }
         
         removeButton.tintColor = DefaultColorsProvider.messageError
-        removeButton.setImage(UIImage(named: "plus_small"), for: .normal)
+        removeButton.setImage(UIImage(named: "x-small"), for: .normal)
         
         removeButton.width(15).height(15).top(8).trailing(8)
         removeButton.add(event: .touchUpInside) { [unowned self] in

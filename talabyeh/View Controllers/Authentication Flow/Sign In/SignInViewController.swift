@@ -31,10 +31,5 @@ class SignInViewController: UIViewController, UITextFieldDelegate
     }
     
     @objc func signInButton() {
-        let marketCoordinator = MarketCoordinator()
-        let profileCoordinator = ProfileCoordinator()
-        let tabBarCoordinator = TabBarCoordinator(coordinators: [marketCoordinator, profileCoordinator])
-
-        tabBarCoordinator.start(with: .windowRoot(AppDelegate.shared.window!))
     }
 }

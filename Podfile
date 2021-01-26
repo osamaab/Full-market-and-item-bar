@@ -23,6 +23,7 @@ pod 'AwaitToast'
 pod 'NVActivityIndicatorView'
 pod 'CardScanner'
 
+pod 'XCoordinator'
 
 
   target 'talabyehTests' do

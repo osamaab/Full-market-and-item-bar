@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rjJ-Dc-hZt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rjJ-Dc-hZt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -117,34 +117,13 @@
         <!--Main Sign Up View Controller-->
         <scene sceneID="EV1-fI-bar">
             <objects>
-                <viewController id="zLn-85-Dt4" customClass="MainSignUpViewController" customModule="talabyeh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainSignUpViewController" id="zLn-85-Dt4" customClass="MainSignUpViewController" customModule="talabyeh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="raD-xn-p9Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXi-Tn-cUI">
-                                <rect key="frame" x="166.5" y="66" width="81" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="81" id="Ejf-Y9-V7r"/>
-                                    <constraint firstAttribute="height" constant="20" id="aXu-0K-Hud"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="17"/>
-                                <color key="textColor" red="0.60392156860000001" green="0.63137254899999995" blue="0.69411764710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCS-cB-98f">
-                                <rect key="frame" x="20" y="69.5" width="22" height="13"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="22" id="8jh-s1-1Eg"/>
-                                    <constraint firstAttribute="height" constant="13" id="QIC-Yb-I0u"/>
-                                </constraints>
-                                <state key="normal" image="back"/>
-                                <connections>
-                                    <action selector="backButton:" destination="zLn-85-Dt4" eventType="touchUpInside" id="VQy-2l-KMP"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to TALABYEH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLj-SX-IDy">
-                                <rect key="frame" x="20" y="128" width="285" height="30"/>
+                                <rect key="frame" x="20" y="69" width="285" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="oqD-pT-01r"/>
                                     <constraint firstAttribute="width" constant="285" id="ovF-Ys-BT3"/>
@@ -154,7 +133,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's get started" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7N-T7-yFu">
-                                <rect key="frame" x="20" y="158" width="124.5" height="20"/>
+                                <rect key="frame" x="20" y="99" width="124.5" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="cyX-gT-NIz"/>
                                 </constraints>
@@ -163,9 +142,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULf-Im-8uc" customClass="RoundedView" customModule="talabyeh" customModuleProvider="target">
-                                <rect key="frame" x="20" y="229" width="374" height="100"/>
+                                <rect key="frame" x="20" y="170" width="374" height="100"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MQP-K2-bFI">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="auth_company" translatesAutoresizingMaskIntoConstraints="NO" id="MQP-K2-bFI">
                                         <rect key="frame" x="27" y="33.5" width="31" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="33" id="UQh-np-ZEd"/>
@@ -180,8 +159,8 @@
                                             <constraint firstAttribute="width" constant="1" id="r7E-bN-YcU"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8c-50-0BK">
-                                        <rect key="frame" x="104" y="50" width="250" height="0.0"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8c-50-0BK">
+                                        <rect key="frame" x="104" y="40" width="250" height="20"/>
                                         <fontDescription key="fontDescription" name="SFUIDisplay-Semibold" family="SF UI Display" pointSize="17"/>
                                         <color key="textColor" name="Green Adaptive"/>
                                         <nil key="highlightedColor"/>
@@ -210,9 +189,9 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86H-UJ-leU" customClass="RoundedView" customModule="talabyeh" customModuleProvider="target">
-                                <rect key="frame" x="20" y="351" width="374" height="100"/>
+                                <rect key="frame" x="20" y="292" width="374" height="100"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mcA-fC-lxb">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="auth_distributor" translatesAutoresizingMaskIntoConstraints="NO" id="mcA-fC-lxb">
                                         <rect key="frame" x="27" y="33.5" width="31" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="31" id="9GZ-3i-9tp"/>
@@ -227,8 +206,8 @@
                                             <constraint firstAttribute="height" constant="50" id="xgU-gt-i01"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2D-5I-NuJ">
-                                        <rect key="frame" x="104" y="50" width="250" height="0.0"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distributor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2D-5I-NuJ">
+                                        <rect key="frame" x="104" y="40" width="250" height="20"/>
                                         <fontDescription key="fontDescription" name="SFUIDisplay-Semibold" family="SF UI Display" pointSize="17"/>
                                         <color key="textColor" name="Green Adaptive"/>
                                         <nil key="highlightedColor"/>
@@ -257,9 +236,9 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iVz-sj-4Qg" customClass="RoundedView" customModule="talabyeh" customModuleProvider="target">
-                                <rect key="frame" x="20" y="473" width="374" height="100"/>
+                                <rect key="frame" x="20" y="414" width="374" height="100"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aht-Ih-0Qy">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="auth_reseller" translatesAutoresizingMaskIntoConstraints="NO" id="aht-Ih-0Qy">
                                         <rect key="frame" x="27" y="33.5" width="31" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="33" id="Ehu-dT-dD0"/>
@@ -274,8 +253,8 @@
                                             <constraint firstAttribute="width" constant="1" id="N1f-5T-Mde"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilG-6k-Aa4">
-                                        <rect key="frame" x="104" y="50" width="250" height="0.0"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reseller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilG-6k-Aa4">
+                                        <rect key="frame" x="104" y="40" width="250" height="20"/>
                                         <fontDescription key="fontDescription" name="SFUIDisplay-Semibold" family="SF UI Display" pointSize="17"/>
                                         <color key="textColor" name="Green Adaptive"/>
                                         <nil key="highlightedColor"/>
@@ -333,17 +312,13 @@
                         <viewLayoutGuide key="safeArea" id="QP1-Fg-Buy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="WLj-SX-IDy" firstAttribute="top" secondItem="WXi-Tn-cUI" secondAttribute="bottom" constant="42" id="1bJ-Yu-bZG"/>
                             <constraint firstItem="m85-ho-xhx" firstAttribute="bottom" secondItem="QP1-Fg-Buy" secondAttribute="bottom" constant="34" id="3mp-jf-uYT"/>
                             <constraint firstItem="QP1-Fg-Buy" firstAttribute="trailing" secondItem="ULf-Im-8uc" secondAttribute="trailing" constant="20" id="50l-rz-gYe"/>
-                            <constraint firstItem="WXi-Tn-cUI" firstAttribute="centerX" secondItem="QP1-Fg-Buy" secondAttribute="centerX" id="BQf-Cq-1RZ"/>
-                            <constraint firstItem="zCS-cB-98f" firstAttribute="centerY" secondItem="WXi-Tn-cUI" secondAttribute="centerY" id="Ivz-l8-Efz"/>
                             <constraint firstItem="86H-UJ-leU" firstAttribute="top" secondItem="ULf-Im-8uc" secondAttribute="bottom" constant="22" id="KLZ-Xu-i5T"/>
                             <constraint firstItem="L7N-T7-yFu" firstAttribute="leading" secondItem="WLj-SX-IDy" secondAttribute="leading" id="MWD-uo-Ueu"/>
                             <constraint firstItem="iVz-sj-4Qg" firstAttribute="top" secondItem="86H-UJ-leU" secondAttribute="bottom" constant="22" id="ONW-N0-sr4"/>
                             <constraint firstItem="ULf-Im-8uc" firstAttribute="leading" secondItem="QP1-Fg-Buy" secondAttribute="leading" constant="20" id="QYw-mm-j90"/>
                             <constraint firstItem="L7N-T7-yFu" firstAttribute="top" secondItem="WLj-SX-IDy" secondAttribute="bottom" id="R3O-EZ-tVh"/>
-                            <constraint firstItem="WXi-Tn-cUI" firstAttribute="top" secondItem="QP1-Fg-Buy" secondAttribute="top" constant="22" id="SLD-6a-hur"/>
                             <constraint firstItem="m85-ho-xhx" firstAttribute="leading" secondItem="QP1-Fg-Buy" secondAttribute="leading" id="W1t-hb-pEu"/>
                             <constraint firstItem="iVz-sj-4Qg" firstAttribute="leading" secondItem="86H-UJ-leU" secondAttribute="leading" id="Z5i-8c-yRU"/>
                             <constraint firstItem="86H-UJ-leU" firstAttribute="trailing" secondItem="ULf-Im-8uc" secondAttribute="trailing" id="bIc-yu-G88"/>
@@ -351,13 +326,12 @@
                             <constraint firstItem="QP1-Fg-Buy" firstAttribute="trailing" secondItem="m85-ho-xhx" secondAttribute="trailing" id="eVN-DD-obP"/>
                             <constraint firstItem="86H-UJ-leU" firstAttribute="leading" secondItem="ULf-Im-8uc" secondAttribute="leading" id="f4Z-MB-0Cd"/>
                             <constraint firstItem="iVz-sj-4Qg" firstAttribute="trailing" secondItem="86H-UJ-leU" secondAttribute="trailing" id="gcK-Ph-RPC"/>
-                            <constraint firstItem="zCS-cB-98f" firstAttribute="leading" secondItem="QP1-Fg-Buy" secondAttribute="leading" constant="20" id="pbR-0V-3PF"/>
+                            <constraint firstItem="WLj-SX-IDy" firstAttribute="top" secondItem="QP1-Fg-Buy" secondAttribute="top" constant="25" id="iqa-WR-NsC"/>
                             <constraint firstItem="WLj-SX-IDy" firstAttribute="leading" secondItem="QP1-Fg-Buy" secondAttribute="leading" constant="20" id="zcu-9y-TUF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="og9-fU-luc"/>
                     <connections>
-                        <outlet property="backButton" destination="zCS-cB-98f" id="TQg-rv-pIp"/>
                         <outlet property="companyImage" destination="MQP-K2-bFI" id="c7l-Pb-UMU"/>
                         <outlet property="companyLabel" destination="B8c-50-0BK" id="EBJ-HP-SJ2"/>
                         <outlet property="companyView" destination="ULf-Im-8uc" id="Nfa-uQ-Qxt"/>
@@ -372,8 +346,6 @@
                         <outlet property="resellerImage" destination="aht-Ih-0Qy" id="tmE-0z-7Cn"/>
                         <outlet property="resellerLabel" destination="ilG-6k-Aa4" id="3Va-8V-axI"/>
                         <outlet property="resellerView" destination="iVz-sj-4Qg" id="ycf-f1-GUQ"/>
-                        <outlet property="signUpBackButtonCenterY" destination="Ivz-l8-Efz" id="4vQ-GY-Wdg"/>
-                        <outlet property="signUplabel" destination="WXi-Tn-cUI" id="eBo-bT-teS"/>
                         <outlet property="welcomeLabel" destination="WLj-SX-IDy" id="CZU-ZY-NqC"/>
                     </connections>
                 </viewController>
@@ -520,7 +492,9 @@
     <resources>
         <image name="Group 2026" width="172.5780029296875" height="206.69000244140625"/>
         <image name="Group 2725" width="44" height="44"/>
-        <image name="back" width="22.016000747680664" height="13.657999992370605"/>
+        <image name="auth_company" width="44" height="44"/>
+        <image name="auth_distributor" width="44" height="44"/>
+        <image name="auth_reseller" width="44" height="44"/>
         <namedColor name="Button Grey Background Adaptive">
             <color red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

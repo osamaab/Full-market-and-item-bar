@@ -18,6 +18,9 @@ PODS:
     - SDWebImage/Core (= 5.9.4)
   - SDWebImage/Core (5.9.4)
   - ValidationTextField (1.0.4)
+  - XCoordinator (2.0.7):
+    - XCoordinator/Core (= 2.0.7)
+  - XCoordinator/Core (2.0.7)
 
 DEPENDENCIES:
   - Actions
@@ -31,6 +34,7 @@ DEPENDENCIES:
   - NVActivityIndicatorView
   - SDWebImage (~> 5.0)
   - ValidationTextField
+  - XCoordinator
 
 SPEC REPOS:
   trunk:
@@ -46,6 +50,7 @@ SPEC REPOS:
     - NVActivityIndicatorView
     - SDWebImage
     - ValidationTextField
+    - XCoordinator
 
 SPEC CHECKSUMS:
   Actions: 696288b71e88903a69ec8d04123df05ad16125dc
@@ -60,7 +65,8 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
   ValidationTextField: 91bc04170ba4b4358912c372e12d7af4c9143ad5
+  XCoordinator: 9ee654fedef1ffede33d5c11677708a555c00542
 
-PODFILE CHECKSUM: 59de679831697e8eb243a5f37f20c66a68befe2f
+PODFILE CHECKSUM: 95b08a1e469b675b07ef5c13cfad5776ca0a1e77
 
 COCOAPODS: 1.10.0

@@ -49,7 +49,7 @@ extension UIViewController {
 
 public final class NVActivityIndicatorPresenter: ScreenBlockingLoaderType {
         
-    static let window = AppDelegate.shared.window
+    static let window: UIWindow? = AppDelegate.shared.mainWindow
     static let restorationIdentifier = "NVActivityIndicatorViewContainer"
     
     class func startAnimating() {
