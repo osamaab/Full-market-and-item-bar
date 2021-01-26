@@ -28,6 +28,25 @@ extension TargetType {
 
 extension MoyaProvider {
     static func `default`<T: TargetType>() -> MoyaProvider<T> {
-        return MoyaProvider<T>()
+        return MoyaProvider<T>(plugins: [
+            ServicesHeadersPlugin(),
+            RequestLoggerPlugin(),
+            RetriableRequestPlugin()
+        ])
+    }
+}
+
+extension TargetType {
+    var baseURL: URL {
+        NetworkConfiguration.current.baseURL
+    }
+    
+    var sampleData: Data {
+        Data()
+    }
+    
+    
+    var headers: [String : String]? {
+        [:]
     }
 }
