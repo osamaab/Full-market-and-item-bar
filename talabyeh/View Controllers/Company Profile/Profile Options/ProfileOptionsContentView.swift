@@ -12,7 +12,7 @@ class ProfileOptionsContentView: UIView {
     
     let labelView: LabelView = .init(title: "Company Profile", icon: UIImage(named: ""))
     
-    var sectionViews: [TintedLabelCollectionViewSectionHeader] = []
+    var sectionViews: [TintedLabelCollectionReusableView] = []
     
     let stackView: UIStackView = .init()
     
@@ -20,7 +20,7 @@ class ProfileOptionsContentView: UIView {
     
     init(options: [String]){
         self.sectionViews = options.map {
-            let header = TintedLabelCollectionViewSectionHeader(verticalPadding: 12, horizontalPadding: 20)
+            let header = TintedLabelCollectionReusableView(verticalPadding: 12, horizontalPadding: 20)
             header.title = $0
             return header
         }

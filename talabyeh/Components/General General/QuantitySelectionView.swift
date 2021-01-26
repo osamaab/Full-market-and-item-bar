@@ -134,13 +134,13 @@ class QuantitySelectionView: UIControl {
         
         
         plusButton.layer.borderWidth = 0.2
-        plusButton.layer.borderColor = UIColor.black.cgColor
+        plusButton.layer.borderColor = DefaultColorsProvider.text.cgColor
         plusButton.setImage(UIImage(named: "plus_small"), for: .normal)
         plusButton.layer.cornerRadius = 3
         plusButton.tintColor = DefaultColorsProvider.text
         
         minusButton.layer.borderWidth = 0.2
-        minusButton.layer.borderColor = UIColor.black.cgColor
+        minusButton.layer.borderColor = DefaultColorsProvider.text.cgColor
         minusButton.setImage(UIImage(named: "plus_small"), for: .normal)
         minusButton.layer.cornerRadius = 3
         minusButton.tintColor = DefaultColorsProvider.text

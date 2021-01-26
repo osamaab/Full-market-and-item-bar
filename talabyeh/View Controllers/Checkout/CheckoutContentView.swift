@@ -70,6 +70,9 @@ class CheckoutFooterView: BasicViewWithSetup {
     override func setup() {
         backgroundColor = .clear
         
+        requestButton.layer.cornerRadius = 10
+        cancelButton.layer.cornerRadius = 10
+        
         subviewsPreparedAL {
             cancelButton
             requestButton
@@ -80,8 +83,10 @@ class CheckoutFooterView: BasicViewWithSetup {
         
         requestButton.backgroundColor = DefaultColorsProvider.darkerTint
         requestButton.setTitle("Request", for: .normal)
+        requestButton.setTitleColor(DefaultColorsProvider.background, for: .normal)
         
         cancelButton.backgroundColor = DefaultColorsProvider.background
         cancelButton.setTitle("Cancel", for: .normal)
+        cancelButton.setTitleColor(DefaultColorsProvider.darkerTint, for: .normal)
     }
 }

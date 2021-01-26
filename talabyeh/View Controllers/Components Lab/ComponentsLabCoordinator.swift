@@ -17,7 +17,7 @@ class ComponentsLabCoordinator: NSObject, TabBarSubCoordinator {
     }
     
     override init(){
-        rootViewController = ComponentsLabViewController()
+        rootViewController = CLLabViewController()
         super.init()
     }
 }

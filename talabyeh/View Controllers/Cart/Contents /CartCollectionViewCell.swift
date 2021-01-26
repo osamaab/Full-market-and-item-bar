@@ -19,7 +19,7 @@ class CartCollectionViewCell: UICollectionViewCell {
     let imageContainerView = UIView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = DefaultColorsProvider.background
-        $0.dropShadow(color: .black,
+        $0.dropShadow(color: DefaultColorsProvider.baseShadow,
                       opacity: 0.16,
                       offSet: .init(width: 0, height: 1),
                       radius: 2)
@@ -88,7 +88,7 @@ class CartCollectionViewCell: UICollectionViewCell {
     }
     
     func setup(){
-        backgroundColor = .white
+        backgroundColor = DefaultColorsProvider.background
         
         imageContainerView.subviews {
             likeButton

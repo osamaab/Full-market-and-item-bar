@@ -40,10 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let componentsLab = ComponentsLabCoordinator()
         
-        let tabBarCoordinator = TabBarCoordinator(coordinators: [marketCoordinator, componentsLab, distributersCoordinator, favoritesCoordinator, profileCoordinator, cartCoordinator])
+//        let tabBarCoordinator = TabBarCoordinator(coordinators: [marketCoordinator, componentsLab, distributersCoordinator, favoritesCoordinator, profileCoordinator, cartCoordinator])
         
-        self.currentCoordinator = tabBarCoordinator
-        tabBarCoordinator.start(with: .windowRoot(self.window!))
+        self.currentCoordinator = componentsLab.embededInNavigationCoordinator()
+        currentCoordinator?.start(with: .windowRoot(self.window!))
         
         return true
     }

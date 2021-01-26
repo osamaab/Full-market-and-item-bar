@@ -68,8 +68,7 @@ class LocationPickerController: NSObject {
         // button placed on right bottom corner
         locationPicker.showCurrentLocationButton = true // default: true
 
-        // default: navigation bar's `barTintColor` or `UIColor.white`
-        locationPicker.currentLocationButtonBackground = .white
+        locationPicker.currentLocationButtonBackground = DefaultColorsProvider.background
 
         // ignored if initial location is given, shows that location instead
         locationPicker.showCurrentLocationInitially = true

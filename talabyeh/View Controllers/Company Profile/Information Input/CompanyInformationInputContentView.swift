@@ -14,7 +14,7 @@ class CompanyInformationInputContentView: UIView {
     
     let labelView: LabelView = .init(title: "Company Profile", icon: nil)
     
-    let titleView: TintedLabelCollectionViewSectionHeader = .init(verticalPadding: 12, horizontalPadding: 20)
+    let titleView: TintedLabelCollectionReusableView = .init(verticalPadding: 12, horizontalPadding: 20)
     
     let scrollView: ScrollContainerView
     

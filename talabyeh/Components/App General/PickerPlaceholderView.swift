@@ -68,22 +68,23 @@ class PickerPlaceholderView: UIView {
         
         // putting a sample image
         titleLabel.font = .font(for: .regular, size: 16)
-        titleLabel.textColor = .white
+        titleLabel.textColor = DefaultColorsProvider.background
         titleLabel.textAlignment = .center
         
         imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = .white
+        imageView.tintColor = DefaultColorsProvider.background
         
         self.update(for: style)
         
-        addAction { [unowned self] in
+        let gesture = addAction { [unowned self] in
             self.onTap?()
         }
+        gesture.cancelsTouchesInView = false
     }
     
     func update(for style: Style){
         self.backgroundColor = style == .inactive ? DefaultColorsProvider.pickerBackground : DefaultColorsProvider.lightTint
-        self.titleLabel.textColor = style == .inactive ? .white : DefaultColorsProvider.darkerTint
-        self.imageView.tintColor = style == .inactive ? .white : DefaultColorsProvider.darkerTint
+        self.titleLabel.textColor = style == .inactive ? DefaultColorsProvider.background : DefaultColorsProvider.darkerTint
+        self.imageView.tintColor = style == .inactive ? DefaultColorsProvider.background : DefaultColorsProvider.darkerTint
     }
 }

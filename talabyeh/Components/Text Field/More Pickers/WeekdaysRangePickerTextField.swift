@@ -10,7 +10,6 @@ import UIKit
 
 class WeekdaysRangePickerTextField: PickerTextField {
     
-    
     lazy var startingWeekday: Weekday = Weekday.sun {
         didSet {
             pickerView?.reloadComponent(1)

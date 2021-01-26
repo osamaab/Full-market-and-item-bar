@@ -28,19 +28,16 @@ class CartItemsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         view.backgroundColor = DefaultColorsProvider.background1
-     
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        cartSummaryView.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.addSubview(collectionView)
-        view.addSubview(cartSummaryView)
+
+        view.subviewsPreparedAL {
+            collectionView
+            cartSummaryView
+        }
         
         collectionView.Top == view.safeAreaLayoutGuide.Top
         collectionView.leading(0).trailing(0).bottom(0)
         
-        cartSummaryView.leading(0).trailing(0).height(80)
-        cartSummaryView.Bottom == view.safeAreaLayoutGuide.Bottom + 5
-        
+        cartSummaryView.leading(0).trailing(0).bottom(0)
         
         let items = (0...3).map { CartItem(product: Product(title: "Product \($0)"), quantity: $0 + 1, discountPercentage: $0.isMultiple(of: 2) ? 0.5 : 0) }
         

@@ -9,11 +9,6 @@
 import UIKit
 import Stevia
 
-
-extension CLScreensSection {
-    static let defaultAll = CLScreensSection(name: "All", items: CLScreenItem.getAllAvailable())
-}
-
 class CLScreensListViewController: UIViewController {
     
     typealias DataSource = UICollectionViewDiffableDataSource<CLScreensSection, CLScreenItem>
@@ -101,7 +96,7 @@ extension CLScreensListViewController {
     }
     
     func createLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(100))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(60))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
         

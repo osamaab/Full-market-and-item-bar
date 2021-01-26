@@ -12,7 +12,7 @@ import Stevia
 class ContactFormView: BasicViewWithSetup {
 
     let labelView = LabelView(title: "Company Profile", icon: UIImage(named: ""))
-    let contactView = TintedLabelCollectionViewSectionHeader(verticalPadding: 12, horizontalPadding: 20)
+    let contactView = TintedLabelCollectionReusableView(verticalPadding: 12, horizontalPadding: 20)
     let textView = TextView(frame: .zero)
     let sendButton = RoundedFillButton()
     

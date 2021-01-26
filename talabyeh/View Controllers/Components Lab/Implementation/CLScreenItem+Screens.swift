@@ -8,26 +8,22 @@
 
 import UIKit
 
-extension CLScreensSection {
-    static let profile: CLScreensSection = {
+/**
+ The lab view controller uses reflection to get properties of the default registration
+ */
+struct CLScreensDefaultRegisteration {
+    let profile: CLScreensSection = {
         let screenClasses = [
             CompanyLocationsViewController.self,
             ChangePasswordViewController.self,
             CompanyProfileOptionsViewController.self,
-            CertificatesViewController.self
+            CompanyInformationInputViewController.self,
+            CertificatesViewController.self,
+            ContactDesignersViewController.self,
+            DeliveryAreaPickerViewController.self
         ]
         
-        return CLScreensSection(name: "Profile", items: [CLScreenItem.profile()] + screenClasses.map { CLScreenItem(screenClass: $0) })
-    }()
-}
-
-extension CLScreenItem {
-    static func getAllAvailable() -> [CLScreenItem] {
-        readyClasses().map { CLScreenItem(screenClass: $0) } + [profile()]
-    }
-    
-    static func profile() -> Self {
-        CLScreenItem(name: "Profile") { () -> UIViewController in
+        let profile = CLScreenItem(name: "Profile") { () -> UIViewController in
             let headerInfo = ProfileHeaderInfo(title: "Hussein AlRyalat",
                                                imageURL: nil,
                                                subtitle: "hus.sc@aol.com",
@@ -44,29 +40,79 @@ extension CLScreenItem {
             
             return ProfilePageViewController(headerInfo: headerInfo, menuItems: menuItems)
         }
-    }
+        
+        return CLScreensSection(name: "Profile", items: [profile] + screenClasses.map { CLScreenItem(screenClass: $0) })
+    }()
     
-    static func readyClasses() -> [UIViewController.Type] {
-        [
-            CompanyLocationsViewController.self,
-            ChangePasswordViewController.self,
-            CompanyProfileOptionsViewController.self,
-            CompanyInformationInputViewController.self,
-            CertificatesViewController.self,
-            ContactDesignersViewController.self,
+    let items: CLScreensSection = {
+        let screenClasses = [
+            ItemCategoriesViewController.self,
+            ItemsChooseCategoryViewController.self,
+            ItemsViewController.self,
+            NewItemViewController.self
+        ]
+        
+        return CLScreensSection(name: "Items", items: screenClasses.map { CLScreenItem(screenClass: $0) })
+    }()
+    
+    let operations: CLScreensSection = {
+        let screenClasses = [
             OprationsListViewController.self,
             OperationDetailsViewController.self,
-            PaymentCardsPickerViewController.self,
-            NewPaymentCreditCardViewController.self,
+        ]
+        
+        return CLScreensSection(name: "Operations", items: screenClasses.map { CLScreenItem(screenClass: $0) })
+    }()
+    
+    let distributors: CLScreensSection = {
+        let screenClasses = [
+            DistributersListViewController.self,
+            NewDistributerViewController.self,
+            TrackDistributorViewController.self
+        ]
+        
+        let existingScreen = CLScreenItem(name: "Select Existing Distributor") {
+            SelectExistingDistributorViewController()
+        }
+        
+        let externalScreen = CLScreenItem(name: "Select External Distributor"){
+            SelectExternalViewController()
+        }
+        
+        return CLScreensSection(name: "Distributors", items: screenClasses.map { CLScreenItem(screenClass: $0) } + [existingScreen, externalScreen])
+    }()
+    
+    let marketSpecific: CLScreensSection = {
+        let screenClasses = [
+            MarketSelectDistributorViewController.self,
+            MarketEditProfileViewController.self,
+            MarketChangePasswordViewController.self,
             CheckoutViewController.self,
             CartItemsViewController.self,
             FavoritesViewController.self,
-            DistributersListViewController.self,
-            NewDistributerViewController.self,
+        ]
+        
+        return CLScreensSection(name: "Market Specific", items: screenClasses.map { CLScreenItem(screenClass: $0) })
+    }()
+    
+    let payments: CLScreensSection = {
+        let screenClasses = [
+            PaymentCardsPickerViewController.self,
+            NewPaymentCreditCardViewController.self,
+        ]
+        
+        return CLScreensSection(name: "Payments", items: screenClasses.map { CLScreenItem(screenClass: $0) })
+
+    }()
+    
+    let products: CLScreensSection = {
+        let screenClasses = [
             MarketViewController.self,
             MarketCategoriesViewController.self,
             ProductDetailsViewController.self,
             AdvancedSearchViewController.self
         ]
-    }
+        
+        return CLScreensSection(name: "Products", items: screenClasses.map { CLScreenItem(screenClass: $0) })
+    }()
 }

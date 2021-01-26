@@ -15,7 +15,7 @@ class TabBarController: UITabBarController {
 
         // Do any additional setup after loading the view.
         tabBar.isTranslucent = false
-        tabBar.barTintColor = .white
+        tabBar.barTintColor = DefaultColorsProvider.background
         tabBar.backgroundImage = .init()
         tabBar.shadowImage = UIImage()
         tabBar.tintColor = DefaultColorsProvider.darkerTint

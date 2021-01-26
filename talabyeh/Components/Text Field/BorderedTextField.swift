@@ -13,7 +13,7 @@ import UIKit
  */
 class BorderedTextField: InsetedTextField {
     
-   var borderColor: UIColor? = UIColor.clear {
+   var borderColor: UIColor? = .clear {
         didSet {
             layer.borderColor = self.borderColor?.cgColor
         }

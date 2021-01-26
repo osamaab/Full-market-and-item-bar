@@ -168,6 +168,8 @@ public final class DropDown: UIView {
 			}
 		}
 	}
+    
+    public var hidesOnSelection: Bool = true
 
 	//MARK: Constraints
 	fileprivate var heightConstraint: NSLayoutConstraint!
@@ -1127,7 +1129,10 @@ extension DropDown: UITableViewDataSource, UITableViewDelegate {
             deselectRow(at: selectedRowIndex)
         }
         
-        hide()
+        if hidesOnSelection {
+            hide()
+        }
+        
     
 	}
 

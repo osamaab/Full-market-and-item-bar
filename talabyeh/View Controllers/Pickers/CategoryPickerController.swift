@@ -36,7 +36,7 @@ class CategoryPickerController: NSObject {
         
         super.init()
         
-        navigationController.navigationBar.barTintColor = .white
+        navigationController.navigationBar.barTintColor = DefaultColorsProvider.background
         navigationController.navigationBar.isTranslucent = false
         navigationController.navigationBar.shadowImage = UIImage()
         navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)

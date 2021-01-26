@@ -64,7 +64,7 @@ class ToastScreenMessagePresenter: ScreenMessagePresenterType {
         ToastAppearanceManager.default.numberOfLines = 0
         ToastAppearanceManager.default.height = AutomaticDimension
         ToastAppearanceManager.default.titleEdgeInsets = .init(top: 8, left: 20, bottom: 8, right: 20)
-        ToastAppearanceManager.default.textColor = .white
+        ToastAppearanceManager.default.textColor = DefaultColorsProvider.background
         
         
         let toast = Toast.default(text: message, direction: .top)

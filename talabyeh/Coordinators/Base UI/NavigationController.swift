@@ -20,19 +20,19 @@ class NavigationController: UINavigationController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        navigationBar.tintColor = .white
+        navigationBar.tintColor = DefaultColorsProvider.navigationBarElements
         navigationBar.shadowImage = UIImage()
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.isTranslucent = false
-        navigationBar.barTintColor = DefaultColorsProvider.darkerTint
+        navigationBar.barTintColor = DefaultColorsProvider.navigationBar
         
         navigationBar.titleTextAttributes = [
-            .foregroundColor: UIColor.white,
+            .foregroundColor: DefaultColorsProvider.navigationBarElements,
             .font: UIFont.font(for: .bold, size: 16)
         ]
         
         navigationBar.largeTitleTextAttributes = [
-            .foregroundColor: UIColor.white,
+            .foregroundColor: DefaultColorsProvider.navigationBarElements,
             .font: UIFont.font(for: .bold, size: 24)
         ]
         
