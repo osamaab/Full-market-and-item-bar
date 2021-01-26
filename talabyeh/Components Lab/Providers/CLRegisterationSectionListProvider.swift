@@ -9,6 +9,17 @@
 import UIKit
 
 struct CLRegisterationSectionListProvider: CLScreenSectionListProvider {
+    
+    let inProgress: CLScreensSection = {
+        let items: [CLScreenItem] = [
+            CLScreenItem(name: "Categories Picker", creationHandler: { () -> UIViewController in
+                return CategoriesPickerViewController(title: "Pick Categories")
+            })
+        ]
+        
+        return CLScreensSection(name: "In Progress", items: items)
+    }()
+    
     let profile: CLScreensSection = {
         let screenClasses = [
             CompanyLocationsViewController.self,

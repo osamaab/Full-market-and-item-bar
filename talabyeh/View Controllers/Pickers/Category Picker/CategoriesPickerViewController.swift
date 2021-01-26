@@ -51,9 +51,6 @@ class CategoriesPickerViewController: UIViewController {
         // Do any additional setup after loading the view.
         view.backgroundColor = DefaultColorsProvider.backgroundPrimary
         
-        
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(close))
-
         headerView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         bottomView.translatesAutoresizingMaskIntoConstraints = false
