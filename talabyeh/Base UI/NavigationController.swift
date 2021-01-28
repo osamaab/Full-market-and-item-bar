@@ -31,6 +31,8 @@ class NavigationController: UINavigationController {
         }
     }
     
+    
+    
     init(rootViewController: UIViewController, style: Style = .primary, autoShowsCloseButton: Bool = false){
         self.autoShowsCloseButton = autoShowsCloseButton
         self.style = style
@@ -50,8 +52,8 @@ class NavigationController: UINavigationController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        switch navigationBar.barTintColor {
-        case LightSchemeColorProvider.backgroundPrimary:
+        switch navigationBar.barTintColor?.hexString ?? "" {
+        case LightSchemeColorProvider.backgroundPrimary.hexString ?? "":
             return .darkContent
         default:
             return .lightContent
@@ -84,6 +86,8 @@ class NavigationController: UINavigationController {
             }
         }()
         
+        view.backgroundColor = DefaultColorsProvider.backgroundPrimary
+        
         navigationBar.tintColor = elementsColor
         navigationBar.shadowImage = UIImage()
         navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -101,6 +105,7 @@ class NavigationController: UINavigationController {
         ]
         
         navigationBar.backIndicatorImage = UIImage(named: "back")
+        self.setNeedsStatusBarAppearanceUpdate()
     }
     
     override func viewWillAppear(_ animated: Bool) {

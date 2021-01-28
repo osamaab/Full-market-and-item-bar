@@ -39,10 +39,15 @@ class AppCoordinator: NavigationCoordinator<AppRoutes> {
         let root = NavigationController(autoShowsCloseButton: false)
         
         guard let userType = preferencesManager.userType else {
-            super.init(rootViewController: root, initialRoute: .lab)
+            super.init(rootViewController: root, initialRoute: .chooseUserType)
             return
         }
 
+        guard let currentUser = DefaultAuthenticationManager.shared.authProfile else {
+            super.init(rootViewController: root, initialRoute: .authentication(.signin(userType)))
+            return
+        }
+        
         super.init(rootViewController: root, initialRoute: AppRoutes.route(for: userType))
     }
     
@@ -76,8 +81,8 @@ class AppCoordinator: NavigationCoordinator<AppRoutes> {
                 .presentFullScreen(CompanyFlowCoordinator(), animation: .fadeInstant))
             
         case .authentication(let route):
-            let router = AuthenticationCoordinator(initialRoute: route).strongRouter
-            return .presentFullScreen(router, animation: .fadeInstant)
+            let router = AuthenticationCoordinator(delegate: self, initialRoute: route).strongRouter
+            return .presentFullScreen(router, animation: .modal)
         }
     }
 }
@@ -89,11 +94,15 @@ extension AppCoordinator: ChooseUserCoordinatorDelegate {
         DefaultPreferencesController.shared.selectedCategories = output.categories
         DefaultPreferencesController.shared.selectedSubCategories = output.subCategories
         
-        switch output.userType {
-        case .company:
-            self.trigger(.company)
-        default:
-            self.trigger(.lab)
-        }
+        
+        self.trigger(.authentication(.signin(output.userType)))
+    }
+}
+
+extension AppCoordinator: AuthenticationCoordinatorDelegate {
+    func authenticationCoordinator(_ sender: AuthenticationCoordinator, didFinishWith profile: AuthUserProfile) {
+        
+        DefaultAuthenticationManager.shared.login(with: profile)
+        self.trigger(.route(for: profile.userType))
     }
 }

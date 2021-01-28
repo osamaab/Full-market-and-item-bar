@@ -14,13 +14,14 @@ struct Company: Codable {
     let email: String
     let nationalNumber: String
     let telephone: String
-    let logoPath: URL?
+    let logoPath: String
     let lat: String
     let lng: String
     let fax: String
     let ext: String
     let user: User
     let categories: [MainCategory]
+    let subcategories: [SubCategory]
     let registeredDate: String
 
     enum CodingKeys: String, CodingKey {
@@ -36,10 +37,11 @@ struct Company: Codable {
         case ext = "ext"
         case user = "user"
         case categories = "categories"
+        case subcategories = "subcategories"
         case registeredDate = "registered_date"
+   
     }
 }
-
 /**
  {
      "username":"company4@yahoo.com",

@@ -173,6 +173,8 @@ class StatefulViewController<ContentType>: UIViewController {
     }
     
     func didTransitionToLoadingState() { }
+    
+    func retry(){ }
 }
 
 extension StatefulViewController {
@@ -187,10 +189,17 @@ extension StatefulViewController {
             $0.fillContainer()
         }
         
-        let retryBlock = { }
+        let retryBlock = { [unowned self] in
+            self.retry()
+        }
+        
+        emptyStateView.retryButton.setTitle("Retry", for: .normal)
+        failureStateView.retryButton.setTitle("Retry", for: .normal)
         
         emptyStateView.onButtonTap = retryBlock
         failureStateView.onButtonTap = retryBlock
+        
+        
     }
     
     // dimms the view alpha to 1, no, it hides the view

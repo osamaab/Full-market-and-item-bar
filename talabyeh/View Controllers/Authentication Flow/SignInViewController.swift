@@ -47,8 +47,6 @@ class SignInViewController: UIViewController {
             // perform the login..
             
             self.performTask(taskOperation: performLogin(for: self.userType, with: username, password: password)).then { [unowned self] authProfile in
-                
-                
                 self.delegate?.signInViewController(self, didLoginWith: authProfile)
             }
         }

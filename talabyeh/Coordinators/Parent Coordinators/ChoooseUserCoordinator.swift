@@ -51,7 +51,7 @@ class ChoooseUserCoordinator: NavigationCoordinator<ChooseUserRoute> {
             categoriesPicker.delegate = self
             return .push(categoriesPicker)
         case .subCategories(let categories):
-            let categoriesPicker = SubCategoriesPickerViewController(categories: categories, contentRepository: SubCategoriesPickerViewController.emptyContentRepository(with: categories))
+            let categoriesPicker = SubCategoriesPickerViewController(categories: categories, contentRepository: SubCategoriesPickerViewController.fromCategories(with: categories))
             categoriesPicker.delegate = self
             return .push(categoriesPicker)
         }

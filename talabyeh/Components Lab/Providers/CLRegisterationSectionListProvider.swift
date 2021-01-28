@@ -20,7 +20,7 @@ struct CLRegisterationSectionListProvider: CLScreenSectionListProvider {
             
             CLScreenItem(name: "Sub-Categories Picker", creationHandler: { () -> UIViewController in
                 return SubCategoriesPickerViewController(categories: [],
-                                                         contentRepository: SubCategoriesPickerViewController.emptyContentRepository(with: []))
+                                                         contentRepository: SubCategoriesPickerViewController.fromCategories(with: []))
             })
         ]
         

@@ -16,9 +16,10 @@ protocol SubCategoriesPickerViewControllerDelegate: class {
 
 class SubCategoriesPickerViewController: ContentViewController<[SubCategory]> {
     
-    static func emptyContentRepository(with categories: [MainCategory]) -> ConstantContentRepository<[SubCategory]> {
-        .init(content: [])
+    static func fromCategories(with categories: [MainCategory]) -> ConstantContentRepository<[SubCategory]> {
+        .init(content: categories.reduce([], { $0 + $1.subcategories }))
     }
+    
     
     struct MainCategoryWithSubCategories {
         var mainCategory: MainCategory

@@ -15,8 +15,9 @@ struct RequestLoggerPlugin: PluginType {
         print("Request Response:")
         switch result {
         case .success(let response):
-            print(response.request?.url)
+            print(response.request!.url)
 
+            
             if let json = try? response.mapJSON(), let asData = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) {
                 print("Received an API Response: \(String(data: asData, encoding: .utf8) ?? "")")
             } else {

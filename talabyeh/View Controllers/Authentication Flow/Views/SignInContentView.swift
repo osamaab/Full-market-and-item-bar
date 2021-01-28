@@ -15,9 +15,9 @@ class SignInContentView: BasicViewWithSetup {
         .subtitle("Let's get started")
     ])
     
-    let emailtf = BorderedTextField()
-    let passwordtf = BorderedTextField()
-    let signInButton = CircleConfirmButton()
+    let emailtf = ValidationTextField()
+    let passwordtf = PasswordTextField()
+    let signInButton = CircleConfirmButton(imageType: .arrow)
     
     var onAction: ((String, String) -> Void)?
     
@@ -33,9 +33,13 @@ class SignInContentView: BasicViewWithSetup {
         
         headerView.subtitleLabel.textColor = DefaultColorsProvider.textSecondary1
         
+        emailtf.validator = EmailValidatorType()
         emailtf.placeholder = "Email"
+        
         passwordtf.placeholder = "Password"
         
+        
+        signInButton.isEnabled = true
         
         headerView.top(0).leading(20).trailing(20)
         
@@ -48,6 +52,7 @@ class SignInContentView: BasicViewWithSetup {
         
         signInButton.trailing(20)
         signInButton.Top == passwordtf.Bottom + 35
+        signInButton.bottom(25)
         
         signInButton.add(event: .touchUpInside) { [unowned self] in
             guard let username = emailtf.text,

@@ -20,6 +20,8 @@ class DefaultAuthenticationManager: AuthenticationManagerType {
         authProfile != nil && authToken != nil
     }
     
+    static var shared: DefaultAuthenticationManager = .init()
+    
     fileprivate(set) var authProfile: AuthUserProfile?
     fileprivate(set) var userType: UserType?
     fileprivate(set) var authToken: String?
@@ -62,21 +64,22 @@ class DefaultAuthenticationManager: AuthenticationManagerType {
             
             
             // write down to user defaults
-            UserDefaults.standard.set(company, forKey: Keys.profile.rawValue)
+            UserDefaults.standard.set(value: company, forKey: Keys.profile.rawValue)
             break
         case .distributor(let distributor):
             self.userType = .distributor
-            self.authToken = distributor.user.token
+            self.authToken = ""//distributor.user.token
             
-            UserDefaults.standard.set(distributor, forKey: Keys.profile.rawValue)
+            UserDefaults.standard.set(value: distributor, forKey: Keys.profile.rawValue)
             break
         case .reseller(let reseller):
             self.userType = .reseller
             self.authToken = reseller.user.token
             
-            UserDefaults.standard.set(reseller, forKey: Keys.profile.rawValue)
+            UserDefaults.standard.set(value: reseller, forKey: Keys.profile.rawValue)
             break
         }
+        
         
         
         UserDefaults.standard.set(authToken!, forKey: Keys.authToken.rawValue)
