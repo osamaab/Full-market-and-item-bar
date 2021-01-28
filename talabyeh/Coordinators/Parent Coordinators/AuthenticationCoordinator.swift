@@ -18,6 +18,9 @@ enum UserTypeEnum {
 
 enum AuthenticationRoute: Route {
     case signin(UserType)
+    case signUp(UserType)
+    
+    
     case distributorSignup
     case companySignup
     case resellerSignup
@@ -50,6 +53,15 @@ class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
             let signInVC = SignInViewController(userType: userType)
             signInVC.delegate = self
             return .push(signInVC)
+        case .signUp(let userType):
+            switch userType {
+            case .company:
+                return .trigger(.companySignup, on: self)
+            case .distributor:
+                return .trigger(.distributorSignup, on: self)
+            case .reseller:
+                return .trigger(.resellerSignup, on: self)
+            }
         case .distributorSignup:
             let disSignup = DistributorSignUpViewController()
             return .push(disSignup)

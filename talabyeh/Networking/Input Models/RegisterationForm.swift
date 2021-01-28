@@ -13,30 +13,16 @@ struct RegisterationForm {
         let id: Int
     }
     
-    struct Reseller: Codable, ParametersConvertable {
-        let arName: String
-        let enName: String
+    struct Reseller: ParametersConvertable {
+        let en_title: String
         let email: String
         let password: String
-        let facilityNationalNumber: String
+        let national_number: String
         let telephone: String
-        let picture: String
+        let logo_b64: String
         let lat: String
         let lng: String
         let categories: [Category]
-
-        enum CodingKeys: String, CodingKey {
-            case arName = "ar_name"
-            case enName = "en_name"
-            case email = "email"
-            case password = "password"
-            case facilityNationalNumber = "facility_national_number"
-            case telephone = "telephone"
-            case picture = "picture"
-            case lat = "lat"
-            case lng = "lng"
-            case categories = "categories"
-        }
     }
     
     struct Distributor: Codable, ParametersConvertable {

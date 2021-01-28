@@ -42,11 +42,6 @@ class AppCoordinator: NavigationCoordinator<AppRoutes> {
             super.init(rootViewController: root, initialRoute: .chooseUserType)
             return
         }
-
-//        guard let currentUser = DefaultAuthenticationManager.shared.authProfile else {
-//            super.init(rootViewController: root, initialRoute: .authentication(.signin(userType)))
-//            return
-//        }
         
         super.init(rootViewController: root, initialRoute: AppRoutes.route(for: userType))
     }
@@ -95,7 +90,7 @@ extension AppCoordinator: ChooseUserCoordinatorDelegate {
         DefaultPreferencesController.shared.selectedSubCategories = output.subCategories
         
         
-        self.trigger(.authentication(.signin(output.userType)))
+        self.trigger(.authentication(.signUp(output.userType)))
     }
 }
 
