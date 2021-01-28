@@ -88,6 +88,7 @@
 		E45B3B3E25BEEA550013E8E4 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B3B3D25BEEA550013E8E4 /* ProfileHeaderView.swift */; };
 		E45B3B4325BEEAE00013E8E4 /* ProfileMenuItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B3B4225BEEAE00013E8E4 /* ProfileMenuItemCollectionViewCell.swift */; };
 		E45B3B4825BEF5180013E8E4 /* ProfileHeaderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B3B4725BEF5180013E8E4 /* ProfileHeaderInfo.swift */; };
+		E45B3B5325BF21640013E8E4 /* UserTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B3B5225BF21640013E8E4 /* UserTypeModel.swift */; };
 		E45D854A2576265B009ACC8D /* DropdownSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D85492576265B009ACC8D /* DropdownSelectionButton.swift */; };
 		E45D8550257628D9009ACC8D /* ComponentsLabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45D854F257628D9009ACC8D /* ComponentsLabCoordinator.swift */; };
 		E45E5535256F77DC008856FD /* CartSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45E5534256F77DC008856FD /* CartSummaryView.swift */; };
@@ -102,6 +103,8 @@
 		E4680FBC25B6D814009033C3 /* PreferenceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4680FBB25B6D814009033C3 /* PreferenceStorage.swift */; };
 		E4680FC125B6D81B009033C3 /* PreferenceObjectStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4680FC025B6D81B009033C3 /* PreferenceObjectStorage.swift */; };
 		E4680FC925B6D864009033C3 /* AnyOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4680FC825B6D864009033C3 /* AnyOptional.swift */; };
+		E46AB32F25C08DEC006A1C5D /* Moya+Promises.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46AB32E25C08DEC006A1C5D /* Moya+Promises.swift */; };
+		E46AB33825C08EF5006A1C5D /* UserTaskOperatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46AB33725C08EF5006A1C5D /* UserTaskOperatorType.swift */; };
 		E4749C292588ED6C00479538 /* ContactDesignersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4749C282588ED6C00479538 /* ContactDesignersViewController.swift */; };
 		E4749C322588EDD800479538 /* ContactFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4749C312588EDD800479538 /* ContactFormView.swift */; };
 		E4749C3A2588EE1F00479538 /* TintedLabelCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4749C392588EE1F00479538 /* TintedLabelCollectionReusableView.swift */; };
@@ -427,6 +430,7 @@
 		E45B3B3D25BEEA550013E8E4 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		E45B3B4225BEEAE00013E8E4 /* ProfileMenuItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		E45B3B4725BEF5180013E8E4 /* ProfileHeaderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderInfo.swift; sourceTree = "<group>"; };
+		E45B3B5225BF21640013E8E4 /* UserTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeModel.swift; sourceTree = "<group>"; };
 		E45D85492576265B009ACC8D /* DropdownSelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownSelectionButton.swift; sourceTree = "<group>"; };
 		E45D854F257628D9009ACC8D /* ComponentsLabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsLabCoordinator.swift; sourceTree = "<group>"; };
 		E45E5534256F77DC008856FD /* CartSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartSummaryView.swift; sourceTree = "<group>"; };
@@ -441,6 +445,8 @@
 		E4680FBB25B6D814009033C3 /* PreferenceStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceStorage.swift; sourceTree = "<group>"; };
 		E4680FC025B6D81B009033C3 /* PreferenceObjectStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceObjectStorage.swift; sourceTree = "<group>"; };
 		E4680FC825B6D864009033C3 /* AnyOptional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyOptional.swift; sourceTree = "<group>"; };
+		E46AB32E25C08DEC006A1C5D /* Moya+Promises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Moya+Promises.swift"; sourceTree = "<group>"; };
+		E46AB33725C08EF5006A1C5D /* UserTaskOperatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTaskOperatorType.swift; sourceTree = "<group>"; };
 		E4749C282588ED6C00479538 /* ContactDesignersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDesignersViewController.swift; sourceTree = "<group>"; };
 		E4749C312588EDD800479538 /* ContactFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFormView.swift; sourceTree = "<group>"; };
 		E4749C392588EE1F00479538 /* TintedLabelCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintedLabelCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -806,8 +812,9 @@
 			isa = PBXGroup;
 			children = (
 				E411DF0B25B4AB8200B2706E /* AuthenticationManagerType.swift */,
-				E411DF1E25B4B36A00B2706E /* AuthUserProfile.swift */,
 				E411DF2325B4B38000B2706E /* DefaultAuthenticationManager.swift */,
+				E411DF1E25B4B36A00B2706E /* AuthUserProfile.swift */,
+				E45B3B5225BF21640013E8E4 /* UserTypeModel.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -1112,11 +1119,11 @@
 		E496B239255B20B0001BEC0F /* Authentication Flow */ = {
 			isa = PBXGroup;
 			children = (
+				F9CC27C525332B6B00408FDA /* SignInViewController.swift */,
 				E4110C2C25A702C000DD8133 /* ResellerSignUpViewController.swift */,
 				F990A385254082AB00ABC4CF /* DistributorSignUpViewController.swift */,
 				E4DBD75C25AA5E75002BFEEA /* DistributorSignInViewController.swift */,
 				F98D0E53252DE6F200D46EE9 /* SignUpViewController.swift */,
-				F9CC27C525332B6B00408FDA /* SignInViewController.swift */,
 				E45E5548256F9F4E008856FD /* DeliveryAreaPickerViewController.swift */,
 				E4110C3425A702CD00DD8133 /* Views */,
 			);
@@ -1168,6 +1175,7 @@
 				E496B248255B214C001BEC0F /* FontProviderType.swift */,
 				E4C705AA255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift */,
 				E4C705AF255BB18100DD29E3 /* ScreenMessagePresenterType.swift */,
+				E46AB33725C08EF5006A1C5D /* UserTaskOperatorType.swift */,
 				E4680FCD25B6D88A009033C3 /* Preferences Management */,
 				E411DF1A25B4B36300B2706E /* Authentication */,
 				E4FF1B7425A1F49E00AF4194 /* Colors */,
@@ -1196,6 +1204,7 @@
 				E4BD344525A5C4E00007FCE1 /* ResponseContainer.swift */,
 				E4BD345125A5C5830007FCE1 /* ParametersConvertable.swift */,
 				E496B2FD255B3088001BEC0F /* Moya+DefaultProvider.swift */,
+				E46AB32E25C08DEC006A1C5D /* Moya+Promises.swift */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -2074,6 +2083,7 @@
 				E4C138AA2583A27300D951F3 /* DividerView.swift in Sources */,
 				E4EE6BAF2594DA1E00D0EDCC /* CLComponentPreview.swift in Sources */,
 				E411DF1F25B4B36A00B2706E /* AuthUserProfile.swift in Sources */,
+				E45B3B5325BF21640013E8E4 /* UserTypeModel.swift in Sources */,
 				E40FB2902567AA6900626569 /* CheckboxView.swift in Sources */,
 				E4602D2F258CC6C9004C556B /* CLLabViewController.swift in Sources */,
 				E4A670392563AAF60057083C /* ProfileMenuItem.swift in Sources */,
@@ -2102,6 +2112,7 @@
 				E45B3B4325BEEAE00013E8E4 /* ProfileMenuItemCollectionViewCell.swift in Sources */,
 				E4FF1B9025A1F60900AF4194 /* AdaptiveColorsProvider.swift in Sources */,
 				E4DBD73925AA479C002BFEEA /* CoveringArea.swift in Sources */,
+				E46AB33825C08EF5006A1C5D /* UserTaskOperatorType.swift in Sources */,
 				E4EE6BCF2594DC9700D0EDCC /* CLComponentsListViewController.swift in Sources */,
 				E4FAB5AE2565007900F25473 /* ExpandableAnimationFactory.swift in Sources */,
 				E4110C2D25A702C000DD8133 /* ResellerSignUpViewController.swift in Sources */,
@@ -2309,6 +2320,7 @@
 				E4B9F4732587E6E4001D5F2F /* CertificatesViewController.swift in Sources */,
 				E48C27C42569DA9F006E01FB /* LocationSearchFieldType.swift in Sources */,
 				E4749C322588EDD800479538 /* ContactFormView.swift in Sources */,
+				E46AB32F25C08DEC006A1C5D /* Moya+Promises.swift in Sources */,
 				E47D7ACD2580B76100107DF1 /* NewPaymentCreditCardContentView.swift in Sources */,
 				E4FF8318259467E500DACBC3 /* CircleConfirmButton.swift in Sources */,
 				E4680FBC25B6D814009033C3 /* PreferenceStorage.swift in Sources */,

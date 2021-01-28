@@ -12,6 +12,7 @@ struct MainCategory: Equatable, Hashable {
     let id: Int
     let title: String
     let logo: URL?
+    let subcategories: [SubCategory]
 }
 
 extension MainCategory: Codable { }

@@ -13,14 +13,18 @@ struct SubCategory: Equatable, Hashable {
     let categoryID: Int
     let isSelected: Bool?
     let title: String
-    let imageURL: URL?
+    let logoPath: String?
+    
+    var imageURL: URL? {
+        URL(string: logoPath ?? "")
+    }
 
     enum CodingKeys: String, CodingKey {
         case isSelected = "isSelected"
         case id = "id"
         case categoryID = "category_id"
         case title = "title"
-        case imageURL = "logo_path"
+        case logoPath = "logo_path"
     }
 }
 extension SubCategory: Codable { }

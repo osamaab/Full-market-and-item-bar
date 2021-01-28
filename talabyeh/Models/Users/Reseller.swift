@@ -17,7 +17,7 @@ struct Reseller: Codable {
     let lat: String
     let lng: String
     let commercialLicense: String
-    let logoPath: URL?
+    let logoPath: String
     let username: String
     let user: User
     let categories: [MainCategory]

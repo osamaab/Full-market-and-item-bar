@@ -34,7 +34,7 @@ extension Product {
                 unit: .init(id: 1, title: "KG"),
                 categoryID: 1,
                 barcode: "",
-                category: .init(id: 1, title: "CAT", logo: nil))
+                category: .init(id: 1, title: "CAT", logo: nil, subcategories: []))
     }
 }
 

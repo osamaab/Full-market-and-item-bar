@@ -12,4 +12,15 @@ enum AuthUserProfile {
     case company(Company)
     case distributor(Distributor)
     case reseller(Reseller)
+    
+    var userType: UserType {
+        switch self {
+        case .company:
+            return .company
+        case .distributor:
+            return .distributor
+        case .reseller:
+            return .reseller
+        }
+    }
 }

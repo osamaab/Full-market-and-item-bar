@@ -17,10 +17,14 @@ enum UserTypeEnum {
 }
 
 enum AuthenticationRoute: Route {
-    case signin
+    case signin(UserType)
     case distributorSignup
     case companySignup
     case resellerSignup
+}
+
+protocol AuthenticationCoordinatorDelegate: class {
+    func authenticationCoordinator(_ sender: AuthenticationCoordinator, didFinishWith profile: AuthUserProfile)
 }
 
 /**
@@ -28,18 +32,23 @@ enum AuthenticationRoute: Route {
  */
 class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
     
-    init(initialRoute: AuthenticationRoute){
+    weak var coordinatorDelegate: AuthenticationCoordinatorDelegate?
+    
+    init(delegate: AuthenticationCoordinatorDelegate, initialRoute: AuthenticationRoute){
+        self.coordinatorDelegate = delegate
         super.init(rootViewController: NavigationController(style: .secondary, autoShowsCloseButton: true), initialRoute: initialRoute)
     }
     
-    init(){
+    init(delegate: AuthenticationCoordinatorDelegate){
+        self.coordinatorDelegate = delegate
         super.init(rootViewController: NavigationController(style: .secondary, autoShowsCloseButton: true), initialRoute: .distributorSignup)
     }
     
     override func prepareTransition(for route: RouteType) -> TransitionType {
         switch route {
-        case .signin:
-            let signInVC = SignInViewController()
+        case .signin(let userType):
+            let signInVC = SignInViewController(userType: userType)
+            signInVC.delegate = self
             return .push(signInVC)
         case .distributorSignup:
             let disSignup = DistributorSignUpViewController()
@@ -54,3 +63,9 @@ class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
     }
 }
  
+
+extension AuthenticationCoordinator: SignInViewControllerDelegate {
+    func signInViewController(_ sender: SignInViewController, didLoginWith profile: AuthUserProfile) {
+        self.coordinatorDelegate?.authenticationCoordinator(self, didFinishWith: profile)
+    }
+}
