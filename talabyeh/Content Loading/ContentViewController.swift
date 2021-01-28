@@ -25,6 +25,21 @@ class ContentViewController<ContentType>: StatefulViewController<ContentType>, C
         state.content
     }
     
+    
+    /**
+     When true, the content view controller won't transition immeditly to the content state until authentication is passed.
+     */
+    var requiresAuthentication: Bool {
+        false
+    }
+    
+    /**
+     The authentiication manager to use for observing authentication state.
+     */
+    var authenticationProvider: AuthenticationManagerType {
+        DefaultAuthenticationManager.shared
+    }
+    
     init<Repository: ContentRepositoryType>(contentRepository: Repository) where Repository.ContentType == ContentType {
         if let anyRepo = contentRepository as? AnyContentRepository<ContentType> {
             self.contentRepository = anyRepo
@@ -61,6 +76,13 @@ class ContentViewController<ContentType>: StatefulViewController<ContentType>, C
     
     
     func performContentRequest(){
+        let isAuthenticated = self.authenticationProvider.isAuthenticated
+        if requiresAuthentication && !isAuthenticated {
+            transition(to: .unAuthenticated(nil))
+            return
+        }
+        
+        
         self.contentRequestWillStart()
         
         /**
