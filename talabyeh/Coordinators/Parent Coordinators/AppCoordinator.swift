@@ -43,10 +43,10 @@ class AppCoordinator: NavigationCoordinator<AppRoutes> {
             return
         }
 
-        guard let currentUser = DefaultAuthenticationManager.shared.authProfile else {
-            super.init(rootViewController: root, initialRoute: .authentication(.signin(userType)))
-            return
-        }
+//        guard let currentUser = DefaultAuthenticationManager.shared.authProfile else {
+//            super.init(rootViewController: root, initialRoute: .authentication(.signin(userType)))
+//            return
+//        }
         
         super.init(rootViewController: root, initialRoute: AppRoutes.route(for: userType))
     }

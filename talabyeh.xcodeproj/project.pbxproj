@@ -249,6 +249,7 @@
 		E4DBD75525AA5C56002BFEEA /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DBD75425AA5C56002BFEEA /* UserType.swift */; };
 		E4DBD75D25AA5E75002BFEEA /* DistributorSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DBD75C25AA5E75002BFEEA /* DistributorSignInViewController.swift */; };
 		E4DBD76225AA5ED2002BFEEA /* DistributorSignInContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DBD76125AA5ED2002BFEEA /* DistributorSignInContentView.swift */; };
+		E4E1977625C32FE800354BB6 /* UnAuthenticatedStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E1977525C32FE800354BB6 /* UnAuthenticatedStateView.swift */; };
 		E4E68106255D3B570051D52D /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E68105255D3B570051D52D /* ImagePickerController.swift */; };
 		E4E6810B255D3B700051D52D /* LocationPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E6810A255D3B700051D52D /* LocationPickerController.swift */; };
 		E4E6811F255D40080051D52D /* BottomNextButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E6811E255D40080051D52D /* BottomNextButtonView.swift */; };
@@ -591,6 +592,7 @@
 		E4DBD75425AA5C56002BFEEA /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		E4DBD75C25AA5E75002BFEEA /* DistributorSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorSignInViewController.swift; sourceTree = "<group>"; };
 		E4DBD76125AA5ED2002BFEEA /* DistributorSignInContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorSignInContentView.swift; sourceTree = "<group>"; };
+		E4E1977525C32FE800354BB6 /* UnAuthenticatedStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnAuthenticatedStateView.swift; sourceTree = "<group>"; };
 		E4E68105255D3B570051D52D /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
 		E4E6810A255D3B700051D52D /* LocationPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerController.swift; sourceTree = "<group>"; };
 		E4E6811E255D40080051D52D /* BottomNextButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNextButtonView.swift; sourceTree = "<group>"; };
@@ -1613,6 +1615,7 @@
 				E4FF1BA225A1FD6B00AF4194 /* EmptyStateView.swift */,
 				E4FF1BAA25A1FD7800AF4194 /* FailureStateView.swift */,
 				E4FF1BAF25A1FD8000AF4194 /* LoadingStateView.swift */,
+				E4E1977525C32FE800354BB6 /* UnAuthenticatedStateView.swift */,
 			);
 			path = "State Views";
 			sourceTree = "<group>";
@@ -2317,6 +2320,7 @@
 				E4A0B26725868D8600AF3CEA /* OperationDetailsViewController.swift in Sources */,
 				E4C1389925833B7800D951F3 /* BaseOprationCollectionViewCell.swift in Sources */,
 				E4DBD72525AA46A9002BFEEA /* ProductUnit.swift in Sources */,
+				E4E1977625C32FE800354BB6 /* UnAuthenticatedStateView.swift in Sources */,
 				E4B9F4732587E6E4001D5F2F /* CertificatesViewController.swift in Sources */,
 				E48C27C42569DA9F006E01FB /* LocationSearchFieldType.swift in Sources */,
 				E4749C322588EDD800479538 /* ContactFormView.swift in Sources */,

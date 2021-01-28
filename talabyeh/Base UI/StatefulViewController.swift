@@ -14,6 +14,7 @@ enum ViewStateType<ContentType> {
     case loading
     case empty(String)
     case failure(Error)
+    case unAuthenticated(String?)
     
     var content: ContentType? {
         if case .hasContent(let content) = self {
@@ -33,18 +34,21 @@ class StatefulViewController<ContentType>: UIViewController {
     
     
     let emptyStateView: EmptyStateView = {
-        return .init()
+        .init()
     }()
     
     let failureStateView: FailureStateView = {
-        return .init()
+        .init()
     }()
     
     let loadingView: LoadingStateView = {
-        return .init()
+        .init()
     }()
     
-    
+    let unAuthenticatedStateView: UnAuthenticatedStateView = {
+        .init()
+    }()
+
     /**
      The current state of the container
      */
@@ -99,8 +103,10 @@ class StatefulViewController<ContentType>: UIViewController {
             break
         case .hasContent(let result):
             didTransitionToContentState(with: result)
+        case .unAuthenticated(let message):
+            didTransitionToUnAuthenticatedState(with: message)
             break
-        default:
+        case .initial:
             break
         }
         
@@ -125,6 +131,8 @@ class StatefulViewController<ContentType>: UIViewController {
             return viewsForLoadingState()
         case .failure:
             return viewsForFailureState()
+        case .unAuthenticated:
+            return viewsForUnAuthenticatedState()
         }
     }
     
@@ -143,6 +151,10 @@ class StatefulViewController<ContentType>: UIViewController {
         return [loadingView]
     }
     
+    func viewsForUnAuthenticatedState() -> [UIView] {
+        return [unAuthenticatedStateView]
+    }
+    
     /// default implementation returns the views in the content state, but without filling data
     func viewsForInitialState() -> [UIView] {
         return viewsForContentState()
@@ -150,7 +162,7 @@ class StatefulViewController<ContentType>: UIViewController {
     
     /// the default implementation of this method returns all the views except the one's used for other states.
     func viewsForContentState() -> [UIView] {
-        let otherViews = viewsForEmptyState() + viewsForFailureState() + viewsForLoadingState()
+        let otherViews = viewsForEmptyState() + viewsForFailureState() + viewsForLoadingState() + viewsForUnAuthenticatedState()
         let allViews = view.subviews
         
         let viewsForContentState = allViews.filter { !otherViews.contains($0) }
@@ -172,6 +184,10 @@ class StatefulViewController<ContentType>: UIViewController {
         self.emptyStateView.titleLabel.text = message
     }
     
+    func didTransitionToUnAuthenticatedState(with message: String?){
+        self.unAuthenticatedStateView.titleLabel.text = message ?? "Sign in or sign up to continue"
+    }
+    
     func didTransitionToLoadingState() { }
     
     func retry(){ }
@@ -183,9 +199,10 @@ extension StatefulViewController {
             emptyStateView
             failureStateView
             loadingView
+            unAuthenticatedStateView
         }
         
-        [emptyStateView, failureStateView, loadingView].forEach {
+        [emptyStateView, failureStateView, loadingView, unAuthenticatedStateView].forEach {
             $0.fillContainer()
         }
         
@@ -198,8 +215,6 @@ extension StatefulViewController {
         
         emptyStateView.onButtonTap = retryBlock
         failureStateView.onButtonTap = retryBlock
-        
-        
     }
     
     // dimms the view alpha to 1, no, it hides the view
