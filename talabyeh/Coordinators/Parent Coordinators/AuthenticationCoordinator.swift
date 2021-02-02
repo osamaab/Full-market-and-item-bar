@@ -24,6 +24,8 @@ enum AuthenticationRoute: Route {
     case distributorSignup
     case companySignup
     case resellerSignup
+    
+    case chooseCategories(UserType, SubCategoriesPickerCoordinatorDelegate)
 }
 
 protocol AuthenticationCoordinatorDelegate: class {
@@ -66,11 +68,15 @@ class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
             let disSignup = DistributorSignUpViewController()
             return .push(disSignup)
         case .companySignup:
-            let signUpVC = CompanySignUpViewController()
+            let signUpVC = CompanySignUpViewController(router: self.unownedRouter)
+            signUpVC.delegate = self
             return .push(signUpVC)
         case .resellerSignup:
-            let signUpVC = ResellerSignUpViewController()
+            let signUpVC = ResellerSignUpViewController(router: self.unownedRouter)
             return .push(signUpVC)
+        case .chooseCategories(let userType, let delegate):
+            let coordinator = SubCategoriesPickerCoordinator(initialRoute: .new(userType), delegate: delegate)
+            return .presentFullScreen(coordinator)
         }
     }
 }
@@ -78,6 +84,18 @@ class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
 
 extension AuthenticationCoordinator: SignInViewControllerDelegate {
     func signInViewController(_ sender: SignInViewController, didLoginWith profile: AuthUserProfile) {
+        
+        
+        DefaultAuthenticationManager.shared.login(with: profile)
         self.coordinatorDelegate?.authenticationCoordinator(self, didFinishWith: profile)
+    }
+}
+
+extension AuthenticationCoordinator: CompanySignUpViewControllerDelegate {
+    func companySignUpViewController(_ sender: CompanySignUpViewController, didFinishWith company: Company) {
+        
+        
+        DefaultAuthenticationManager.shared.login(with: .company(company))
+        self.coordinatorDelegate?.authenticationCoordinator(self, didFinishWith: .company(company))
     }
 }

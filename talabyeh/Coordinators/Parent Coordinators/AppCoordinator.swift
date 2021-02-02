@@ -55,12 +55,10 @@ class AppCoordinator: NavigationCoordinator<AppRoutes> {
                 .dismissToRoot(animation: .fadeInstant),
                 .presentFullScreen(coordinator, animation: .fadeInstant))
             
-            
         case .lab:
             return .multiple(
                 .dismissToRoot(animation: .fadeInstant),
                 .presentFullScreen(ComponentsLabCoordinator(), animation: .fadeInstant))
-            
             
         case .company:
             return .multiple(
@@ -90,14 +88,12 @@ extension AppCoordinator: ChooseUserCoordinatorDelegate {
         DefaultPreferencesController.shared.selectedSubCategories = output.subCategories
         
         
-        self.trigger(.authentication(.signUp(output.userType)))
+        self.trigger(.route(for: output.userType))
     }
 }
 
 extension AppCoordinator: AuthenticationCoordinatorDelegate {
-    func authenticationCoordinator(_ sender: AuthenticationCoordinator, didFinishWith profile: AuthUserProfile) {
-        
-        DefaultAuthenticationManager.shared.login(with: profile)
+    func authenticationCoordinator(_ sender: AuthenticationCoordinator, didFinishWith profile: AuthUserProfile) {        
         self.trigger(.route(for: profile.userType))
     }
 }

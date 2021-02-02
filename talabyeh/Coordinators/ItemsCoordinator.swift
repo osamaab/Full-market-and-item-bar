@@ -23,7 +23,7 @@ class ItemsCoordinator: NavigationCoordinator<ItemsRoute> {
     override func prepareTransition(for route: RouteType) -> TransitionType {
         switch route {
         case .home:
-            let viewController = ItemsViewController()
+            let viewController = ItemsViewController(contentRepository: ItemsViewController.SampleContentProvider())
             return .push(viewController)
         }
     }

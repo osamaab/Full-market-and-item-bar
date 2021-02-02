@@ -8,6 +8,11 @@
 
 import UIKit
 import Stevia
+import XCoordinator
+
+protocol CompanySignUpViewControllerDelegate: class {
+    func companySignUpViewController(_ sender: CompanySignUpViewController, didFinishWith company: Company)
+}
 
 class CompanySignUpViewController: UIViewController {
     
@@ -21,8 +26,12 @@ class CompanySignUpViewController: UIViewController {
     fileprivate lazy var bottomNextView: BottomNextButtonView = .init(title: "Save")
     
     
+    fileprivate var chooseCategoriesCoordinator: SubCategoriesPickerCoordinator?
     fileprivate var imagePickMode: ImagePickMode = .logo
     
+    let router: UnownedRouter<AuthenticationRoute>
+    
+    weak var delegate: CompanySignUpViewControllerDelegate?
     
     var categories: [SubCategory]? {
         didSet {
@@ -48,8 +57,8 @@ class CompanySignUpViewController: UIViewController {
         }
     }
     
-    init(preferredCategories: [SubCategory]? = nil){
-        // attempt to take categories saved in user defaults
+    init(preferredCategories: [SubCategory]? = nil, router: UnownedRouter<AuthenticationRoute>){
+        self.router = router
         self.categories = preferredCategories
         
         super.init(nibName: nil, bundle: nil)
@@ -94,7 +103,7 @@ class CompanySignUpViewController: UIViewController {
     fileprivate func connectActions(){
         // connecting actions
         contentView.categoryView.onTap = { [unowned self] in
-            
+            self.router.trigger(.chooseCategories(.company, self))
         }
         
         contentView.companyLocationView.onTap = { [unowned self] in
@@ -117,6 +126,39 @@ class CompanySignUpViewController: UIViewController {
                                                     delegate: self)
             imagePicker.present(from: contentView.comLicenceView)
         }
+        
+        self.bottomNextView.nextButton.add(event: .touchUpInside) { [unowned self] in
+            guard let categories = self.categories,
+                  let logo = self.logoImage,
+                  let license = self.licenseImage,
+                  let location = self.companyLocation else {
+                return
+            }
+            
+            guard let companyTF = self.contentView.companytf.text,
+                  let email = self.contentView.emailtf.text,
+                  let password = self.contentView.passwordtf.text,
+                  let nationalNumber = self.contentView.nationalNumbertf.text,
+                  let telephone = self.contentView.telephonetf.text else {
+                return
+            }
+            
+            guard let logo64Base = logo.toBase64() else {
+                fatalError("Corrupted Image")
+            }
+            
+            let lat = "\(location.location.coordinate.latitude)"
+            let lon = "\(location.location.coordinate.longitude)"
+            
+            let form = RegisterationForm.Company(enTitle: companyTF, email: email, password: password, national_number: nationalNumber, telephone: telephone, logo_b64: logo64Base, lat: lat, lng: lon, categories: categories.compactMap { RegisterationForm.Category(id: $0.id).parameters })
+            let route = AuthenticationAPI.companyRegister(form)
+            
+            
+            
+            self.performTask(taskOperation: route.request(Company.self)).then { [unowned self] in
+                self.delegate?.companySignUpViewController(self, didFinishWith: $0)
+            }
+        }
     }
     
     fileprivate func updatePickersState(){
@@ -129,6 +171,13 @@ class CompanySignUpViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         scrollView.scrollView.contentInset.bottom = bottomNextView.bounds.height + 15
+    }
+}
+
+
+extension CompanySignUpViewController: SubCategoriesPickerCoordinatorDelegate {
+    func subCategoriesPickerCoordinator(_ sender: SubCategoriesPickerCoordinator, didFinishWith categories: [SubCategory]) {
+        self.categories = categories
     }
 }
 

@@ -9,35 +9,43 @@
 import UIKit
 import Stevia
 
-class ItemsViewController: UIViewController {
-    typealias DataSource = UICollectionViewDiffableDataSource<ItemsCategory, Product>
-    typealias Snapshot = NSDiffableDataSourceSnapshot<ItemsCategory, Product>
+struct CategoryWithProducts {
+    let category: SubCategory
+    let products: [Product]
+}
+
+
+class ItemsViewController: ContentViewController<[CategoryWithProducts]> {
+    
+    struct SampleContentProvider: ContentRepositoryType {
+        typealias ContentType = [CategoryWithProducts]
+        
+        func requestContent(completion: @escaping ContentRequestCompletion<[CategoryWithProducts]>) {
+            let categories = (0...6).map { SubCategory.sample(id: $0) }
+            let products = (0...6).map { Product.sample(title: "Product \($0)" )}
+            
+            completion(.success(categories.map { CategoryWithProducts(category: $0, products: products) }))
+        }
+    }
+    
+
+    typealias DataSource = UICollectionViewDiffableDataSource<SubCategory, Product>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<SubCategory, Product>
 
     let titleHeaderKind = "title-header"
     
     lazy var collectionView: UICollectionView = createCollectionView(for: createLayout())
     lazy var dataSource: DataSource = createDataSource(for: collectionView)
 
-    fileprivate var sections: [ItemsCategory] = []
+    fileprivate var sections: [SubCategory] = []
     fileprivate var editingSections: Set<Int> = []
     
-    init(sections: [ItemsCategory] = []){
-        self.sections = sections
-        super.init(nibName: nil, bundle: nil)
-    }
     
-    init(){
-        self.sections = [ItemsCategory(title: "Cats")]
-        super.init(nibName: nil, bundle: nil)
+    override var requiresAuthentication: Bool {
+        true
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
+    override func setupViewsBeforeTransitioning() {
         // Do any additional setup after loading the view.
         view.backgroundColor = DefaultColorsProvider.backgroundSecondary
              
@@ -51,16 +59,17 @@ class ItemsViewController: UIViewController {
         
         collectionView.delegate = self
         collectionView.contentInset.top = 20
-        
-        setupDataAndCreateSnapshot()
     }
-    
-    func setupDataAndCreateSnapshot(){
+
+    override func contentRequestDidSuccess(with content: [CategoryWithProducts]) {
         var snapshot = Snapshot()
     
-        snapshot.appendSections(self.sections)
-        let items = (0...9).map { Product.sample(title: "Product \($0)") }
-        snapshot.appendItems(items)
+        
+        self.sections = content.map { $0.category }
+        for category in content {
+            snapshot.appendSections([category.category])
+            snapshot.appendItems(category.products, toSection: category.category)
+        }
         
         
         dataSource.apply(snapshot)
@@ -97,6 +106,7 @@ extension ItemsViewController {
         dataSource.supplementaryViewProvider = { collectionView, kind, indexPath -> UICollectionReusableView? in
             if kind == self.titleHeaderKind {
                 let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: EditableSectionCollectionReusableView.identifier, for: indexPath) as! EditableSectionCollectionReusableView
+                
                 view.titleLabel.text = self.sections[indexPath.section].title
                 view.isEditing = self.editingSections.contains(indexPath.section)
                 

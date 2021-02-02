@@ -42,9 +42,3 @@ struct Company: Codable {
    
     }
 }
-/**
- {
-     "username":"company4@yahoo.com",
-     "password":"PWD"
- }
- */

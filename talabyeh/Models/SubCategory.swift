@@ -28,3 +28,9 @@ struct SubCategory: Equatable, Hashable {
     }
 }
 extension SubCategory: Codable { }
+
+extension SubCategory {
+    static func sample(id: Int) -> SubCategory {
+        .init(id: id, categoryID: id, isSelected: nil, title: "Category \(id)", logoPath: "http://placekitten.com/200/300")
+    }
+}

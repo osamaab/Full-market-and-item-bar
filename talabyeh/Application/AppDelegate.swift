@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         appSetupHandler.setup(for: application, delegate: self, launchOptions: launchOptions)
         router.setRoot(for: mainWindow)
-        
+                
         return true
     }
 }

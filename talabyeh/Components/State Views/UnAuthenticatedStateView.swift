@@ -34,8 +34,8 @@ class UnAuthenticatedStateView: BasicViewWithSetup {
             $0.layer.cornerRadius = 6
         }
         
-        signInButton.setTitle("Sign up", for: .normal)
-        signUpButton.setTitle("Sign in", for: .normal)
+        signInButton.setTitle("Sign In", for: .normal)
+        signUpButton.setTitle("Sign Up", for: .normal)
         
         containerStackView.addingArrangedSubviews { () -> [UIView] in
             titleLabel
