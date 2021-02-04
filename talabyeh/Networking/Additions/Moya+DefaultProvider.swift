@@ -10,8 +10,8 @@ import Foundation
 import Moya
 
 extension MoyaProvider {
-    static func `default`<T: TargetType>() -> MoyaProvider<T> {
-        return MoyaProvider<T>(plugins: [
+    static func `default`() -> MoyaProvider<Target> {
+        return MoyaProvider<Target>(plugins: [
             ServicesHeadersPlugin(),
             RequestLoggerPlugin(),
             RetriableRequestPlugin()

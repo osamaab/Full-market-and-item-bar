@@ -14,26 +14,26 @@ struct RegisterationForm {
     }
     
     struct Reseller: ParametersConvertable {
-        let en_title: String
+        let en_name: String
         let email: String
         let password: String
         let national_number: String
         let telephone: String
-        let logo_b64: String
+        let picture: String
         let lat: String
         let lng: String
-        let categories: [Category]
+        let categories: [[String: Any]]
     }
     
     struct Distributor: ParametersConvertable {
-        let arName: String
-        let enName: String
+        let en_name: String
         let email: String
         let password: String
-        let distTypeId: Int
-        let nationalNumber: String
+        let dist_type_id: Int
+        let national_number: String
         let mobile: String
-        let carTypeId: Int
+        let personal_picture_b64: String
+        let car_type_id: Int
     }
 
     struct Company: ParametersConvertable {

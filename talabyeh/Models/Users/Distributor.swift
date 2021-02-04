@@ -20,6 +20,7 @@ struct Distributor: Codable {
     let carTypeId: Int
     let name: String
     let civilId: String
+    let user: User
 
     enum CodingKeys: String, CodingKey {
         case mobile = "mobile"
@@ -33,6 +34,7 @@ struct Distributor: Codable {
         case carTypeId = "car_type_id"
         case name = "name"
         case civilId = "civil_id"
+        case user
     }
 }
 

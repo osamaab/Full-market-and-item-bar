@@ -12,6 +12,10 @@ class ChoicesPickerTextField<ChoiceItem: ChoiceItemType>: PickerTextField, UIPic
     
     var choices: [ChoiceItem] {
         didSet {
+            if self.selectedIndex == nil, choices.count > 0 {
+                self.selectedIndex = 0
+            }
+            
             pickerView?.reloadAllComponents()
         }
     }

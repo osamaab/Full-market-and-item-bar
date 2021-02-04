@@ -11,7 +11,7 @@ import Foundation
 class DefaultAuthenticationManager: AuthenticationManagerType {
     
     private enum Keys: String, CaseIterable {
-        case userType
+        case authUserType
         case authToken
         case profile
     }
@@ -31,7 +31,7 @@ class DefaultAuthenticationManager: AuthenticationManagerType {
      The default initializer returns data from user defaults.
      */
     init(){
-        let userTypeRaw = UserDefaults.standard.integer(forKey: Keys.userType.rawValue)
+        let userTypeRaw = UserDefaults.standard.integer(forKey: Keys.authUserType.rawValue)
         guard let userType = UserType(rawValue: userTypeRaw) else {
             return
         }
@@ -68,7 +68,7 @@ class DefaultAuthenticationManager: AuthenticationManagerType {
             break
         case .distributor(let distributor):
             self.userType = .distributor
-            self.authToken = ""//distributor.user.token
+            self.authToken = distributor.user.token
             
             UserDefaults.standard.set(value: distributor, forKey: Keys.profile.rawValue)
             break
@@ -83,7 +83,7 @@ class DefaultAuthenticationManager: AuthenticationManagerType {
         
         
         UserDefaults.standard.set(authToken!, forKey: Keys.authToken.rawValue)
-        UserDefaults.standard.set(userType!.rawValue, forKey: Keys.userType.rawValue)
+        UserDefaults.standard.set(userType!.rawValue, forKey: Keys.authUserType.rawValue)
     }
     
     func logout() {

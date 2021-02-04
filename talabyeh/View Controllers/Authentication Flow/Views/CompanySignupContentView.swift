@@ -1,40 +1,33 @@
 //
-//  DistributorSignUpView.swift
+//  SignUpWizardView.swift
 //  talabyeh
 //
-//  Created by Loai Elayan on 10/21/20.
+//  Created by Loai Elayan on 10/7/20.
 //  Copyright © 2020 Dominate. All rights reserved.
 //
 
 import UIKit
 import Stevia
 
-class DistributorSignUpContentView: BasicViewWithSetup {
+class CompanySignupContentView: BasicViewWithSetup {
+    
     
     let containerStackView: UIStackView = .init()
     let fieldsStackView: UIStackView = .init()
     let pickersContainerStackView: UIStackView = .init()
 
-    let headerView: AuthHeaderView = .init(elements: [
-        .title("Welcome to TALABIA"),
-        .subtitle("Register As A Distributor"),
-        .type(.distributor)
-    ])
-    
-    
-    let firstNametf = ValidationTextField()
+    let companytf = ValidationTextField()
     let passwordtf = PasswordTextField()
     let emailtf = ValidationTextField()
     let nationalNumbertf = ValidationTextField()
-    let mobileNumbertf = NumbersTextField(maxDigitsCount: 10, allowsDicimals: false)
-    let carType = ChoicesPickerTextField<CarType>(choices: [])
-
+    let telephonetf = ValidationTextField()
     
-    let personalPictureView = PickerPlaceholderView(title: "Car Picture", image: UIImage(named: "picker_image"))
-    let civilIDPictureView = PickerPlaceholderView(title: "Cart License Picture", image: UIImage(named: "picker_image"))
-//    let coverageLocationsView = PickerPlaceholderView(title: "Coverage locations", image: UIImage(named: "picker_location"))
-//    let categoryView = PickerPlaceholderView(title: "Category", image: UIImage(named: "picker_category"))
     
+    let comLicenceView = PickerPlaceholderView(title: "Commercial license", image: UIImage(named: "picker_image"))
+    let companyLogoView = PickerPlaceholderView(title: "Company logo", image: UIImage(named: "picker_image"))
+    let companyLocationView = PickerPlaceholderView(title: "Company Location", image: UIImage(named: "picker_location"))
+    let categoryView = PickerPlaceholderView(title: "Category", image: UIImage(named: "picker_category"))
+        
     
     override func setup() {
         view.backgroundColor = DefaultColorsProvider.backgroundPrimary
@@ -56,7 +49,6 @@ class DistributorSignUpContentView: BasicViewWithSetup {
             .preparedForAutolayout()
         
         containerStackView.addingArrangedSubviews {
-            headerView
             fieldsStackView
             pickersContainerStackView
         }
@@ -65,30 +57,25 @@ class DistributorSignUpContentView: BasicViewWithSetup {
     }
     
     func setupFields(){
-        firstNametf.placeholder = "Name"
+        companytf.placeholder = "Company Name"
         passwordtf.placeholder = "Password"
         emailtf.placeholder = "Email"
-        nationalNumbertf.placeholder = "National Number"
-        mobileNumbertf.placeholder = "Mobile"
-        carType.placeholder = "Car Type"
-        
-        carType.isImageViewHidden = true
-        carType.isSeparatorHidden = true
+        nationalNumbertf.placeholder = "Facility National Number"
+        telephonetf.placeholder = "Telephone"
         
         fieldsStackView.alignment(.fill).axis(.vertical).distribution(.fillEqually).spacing(10).preparedForAutolayout()
         
         fieldsStackView.addingArrangedSubviews {
-            firstNametf
+            companytf
             passwordtf
             emailtf
             nationalNumbertf
-            mobileNumbertf
-            carType
+            telephonetf
         }
     }
     
     func setupPickers(){
-        [personalPictureView, civilIDPictureView].forEach {
+        [comLicenceView, companyLogoView, companyLocationView, categoryView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
@@ -98,11 +85,11 @@ class DistributorSignUpContentView: BasicViewWithSetup {
         let bottomStack = UIStackView()
         bottomStack.axis(.horizontal).alignment(.fill).distribution(.fillEqually).spacing(15).preparedForAutolayout()
 
-        topStack.arrangedSubviews([personalPictureView, civilIDPictureView])
-//        bottomStack.arrangedSubviews([coverageLocationsView, categoryView])
+        topStack.arrangedSubviews([comLicenceView, companyLogoView])
+        bottomStack.arrangedSubviews([companyLocationView, categoryView])
         
         pickersContainerStackView.alignment(.fill).axis(.vertical).distribution(.fillEqually).spacing(15).preparedForAutolayout()
         
-        pickersContainerStackView.arrangedSubviews([topStack])
+        pickersContainerStackView.arrangedSubviews([topStack, bottomStack])
     }
 }

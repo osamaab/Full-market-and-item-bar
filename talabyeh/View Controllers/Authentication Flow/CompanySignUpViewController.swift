@@ -22,7 +22,7 @@ class CompanySignUpViewController: UIViewController {
     }
     
     fileprivate lazy var scrollView: ScrollContainerView = .init(contentView: contentView)
-    fileprivate lazy var contentView = SignupContentView()
+    fileprivate lazy var contentView = CompanySignupContentView()
     fileprivate lazy var bottomNextView: BottomNextButtonView = .init(title: "Save")
     
     

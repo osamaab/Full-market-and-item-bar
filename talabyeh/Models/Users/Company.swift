@@ -39,6 +39,5 @@ struct Company: Codable {
         case categories = "categories"
         case subcategories = "subcategories"
         case registeredDate = "registered_date"
-   
     }
 }

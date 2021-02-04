@@ -9,7 +9,6 @@
 import UIKit
 import LanguageManager_iOS
 import IQKeyboardManager
-import Moya
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -66,6 +66,7 @@ class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
             }
         case .distributorSignup:
             let disSignup = DistributorSignUpViewController()
+            disSignup.delegate = self
             return .push(disSignup)
         case .companySignup:
             let signUpVC = CompanySignUpViewController(router: self.unownedRouter)
@@ -73,6 +74,7 @@ class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
             return .push(signUpVC)
         case .resellerSignup:
             let signUpVC = ResellerSignUpViewController(router: self.unownedRouter)
+            signUpVC.delegate = self
             return .push(signUpVC)
         case .chooseCategories(let userType, let delegate):
             let coordinator = SubCategoriesPickerCoordinator(initialRoute: .new(userType), delegate: delegate)
@@ -84,17 +86,27 @@ class AuthenticationCoordinator: NavigationCoordinator<AuthenticationRoute> {
 
 extension AuthenticationCoordinator: SignInViewControllerDelegate {
     func signInViewController(_ sender: SignInViewController, didLoginWith profile: AuthUserProfile) {
-        
-        
         DefaultAuthenticationManager.shared.login(with: profile)
         self.coordinatorDelegate?.authenticationCoordinator(self, didFinishWith: profile)
     }
 }
 
+extension AuthenticationCoordinator: ResellerSignUpViewControllerDelegate {
+    func resellerSignUpViewController(sender: ResellerSignUpViewController, didFinishWith reseller: Reseller) {
+        DefaultAuthenticationManager.shared.login(with: .reseller(reseller))
+        self.coordinatorDelegate?.authenticationCoordinator(self, didFinishWith: .reseller(reseller))
+    }
+}
+
+extension AuthenticationCoordinator: DistributorSignUpViewControllerDelegate {
+    func distributorSignUpViewController(_ sender: DistributorSignUpViewController, didFinishWith distributor: Distributor) {
+        DefaultAuthenticationManager.shared.login(with: .distributor(distributor))
+        self.coordinatorDelegate?.authenticationCoordinator(self, didFinishWith: .distributor(distributor))
+    }
+}
+
 extension AuthenticationCoordinator: CompanySignUpViewControllerDelegate {
     func companySignUpViewController(_ sender: CompanySignUpViewController, didFinishWith company: Company) {
-        
-        
         DefaultAuthenticationManager.shared.login(with: .company(company))
         self.coordinatorDelegate?.authenticationCoordinator(self, didFinishWith: .company(company))
     }
