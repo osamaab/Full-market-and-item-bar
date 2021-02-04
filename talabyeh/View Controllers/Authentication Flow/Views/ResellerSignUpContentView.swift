@@ -1,33 +1,29 @@
 //
-//  SignUpWizardView.swift
+//  ResellerSignUpContentView.swift
 //  talabyeh
 //
-//  Created by Loai Elayan on 10/7/20.
-//  Copyright © 2020 Dominate. All rights reserved.
+//  Created by Hussein Work on 04/02/2021.
+//  Copyright © 2021 Dominate. All rights reserved.
 //
 
 import UIKit
-import Stevia
 
-class SignupContentView: BasicViewWithSetup {
-    
-    
+class ResellerSignUpContentView: BasicViewWithSetup {
+
     let containerStackView: UIStackView = .init()
     let fieldsStackView: UIStackView = .init()
     let pickersContainerStackView: UIStackView = .init()
 
-    let companytf = ValidationTextField()
+    let nametf = ValidationTextField()
     let passwordtf = PasswordTextField()
     let emailtf = ValidationTextField()
     let nationalNumbertf = ValidationTextField()
     let telephonetf = ValidationTextField()
-    
-    
-    let comLicenceView = PickerPlaceholderView(title: "Commercial license", image: UIImage(named: "picker_image"))
-    let companyLogoView = PickerPlaceholderView(title: "Company logo", image: UIImage(named: "picker_image"))
-    let companyLocationView = PickerPlaceholderView(title: "Company Location", image: UIImage(named: "picker_location"))
+
+    let licenceView = PickerPlaceholderView(title: "Commercial license", image: UIImage(named: "picker_image"))
+    let storeImageView = PickerPlaceholderView(title: "Store Image", image: UIImage(named: "picker_image"))
+    let storeLocationView = PickerPlaceholderView(title: "Store Location", image: UIImage(named: "picker_location"))
     let categoryView = PickerPlaceholderView(title: "Category", image: UIImage(named: "picker_category"))
-        
     
     override func setup() {
         view.backgroundColor = DefaultColorsProvider.backgroundPrimary
@@ -57,7 +53,7 @@ class SignupContentView: BasicViewWithSetup {
     }
     
     func setupFields(){
-        companytf.placeholder = "Company Name"
+        nametf.placeholder = "Store Name"
         passwordtf.placeholder = "Password"
         emailtf.placeholder = "Email"
         nationalNumbertf.placeholder = "Facility National Number"
@@ -66,7 +62,7 @@ class SignupContentView: BasicViewWithSetup {
         fieldsStackView.alignment(.fill).axis(.vertical).distribution(.fillEqually).spacing(10).preparedForAutolayout()
         
         fieldsStackView.addingArrangedSubviews {
-            companytf
+            nametf
             passwordtf
             emailtf
             nationalNumbertf
@@ -75,7 +71,7 @@ class SignupContentView: BasicViewWithSetup {
     }
     
     func setupPickers(){
-        [comLicenceView, companyLogoView, companyLocationView, categoryView].forEach {
+        [storeImageView, licenceView, storeLocationView, categoryView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
@@ -85,8 +81,8 @@ class SignupContentView: BasicViewWithSetup {
         let bottomStack = UIStackView()
         bottomStack.axis(.horizontal).alignment(.fill).distribution(.fillEqually).spacing(15).preparedForAutolayout()
 
-        topStack.arrangedSubviews([comLicenceView, companyLogoView])
-        bottomStack.arrangedSubviews([companyLocationView, categoryView])
+        topStack.arrangedSubviews([licenceView, storeImageView])
+        bottomStack.arrangedSubviews([storeLocationView, categoryView])
         
         pickersContainerStackView.alignment(.fill).axis(.vertical).distribution(.fillEqually).spacing(15).preparedForAutolayout()
         

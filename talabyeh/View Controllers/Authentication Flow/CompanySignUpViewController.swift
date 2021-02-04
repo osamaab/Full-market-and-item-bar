@@ -1,20 +1,20 @@
 //
-//  ResellerSignUpViewController.swift
+//  SignUpWizardViewController.swift
 //  talabyeh
 //
-//  Created by Hussein Work on 07/01/2021.
-//  Copyright © 2021 Dominate. All rights reserved.
+//  Created by Loai Elayan on 10/7/20.
+//  Copyright © 2020 Dominate. All rights reserved.
 //
 
 import UIKit
-import XCoordinator
 import Stevia
+import XCoordinator
 
-protocol ResellerSignUpViewControllerDelegate: class {
-    func resellerSignUpViewController(sender: ResellerSignUpViewController, didFinishWith reseller: Reseller)
+protocol CompanySignUpViewControllerDelegate: class {
+    func companySignUpViewController(_ sender: CompanySignUpViewController, didFinishWith company: Company)
 }
 
-class ResellerSignUpViewController: UIViewController {
+class CompanySignUpViewController: UIViewController {
     
     enum ImagePickMode: Int {
         case logo
@@ -22,7 +22,7 @@ class ResellerSignUpViewController: UIViewController {
     }
     
     fileprivate lazy var scrollView: ScrollContainerView = .init(contentView: contentView)
-    fileprivate lazy var contentView = ResellerSignUpContentView()
+    fileprivate lazy var contentView = CompanySignupContentView()
     fileprivate lazy var bottomNextView: BottomNextButtonView = .init(title: "Save")
     
     
@@ -31,7 +31,7 @@ class ResellerSignUpViewController: UIViewController {
     
     let router: UnownedRouter<AuthenticationRoute>
     
-    weak var delegate: ResellerSignUpViewControllerDelegate?
+    weak var delegate: CompanySignUpViewControllerDelegate?
     
     var categories: [SubCategory]? {
         didSet {
@@ -51,7 +51,7 @@ class ResellerSignUpViewController: UIViewController {
         }
     }
     
-    var storeLocation: Location? {
+    var companyLocation: Location? {
         didSet {
             updatePickersState()
         }
@@ -78,7 +78,7 @@ class ResellerSignUpViewController: UIViewController {
     }
     
     fileprivate func setupViews(){
-        navigationItem.title = "Reseller Signup"
+        navigationItem.title = "Company Signup"
         
         view.backgroundColor = DefaultColorsProvider.backgroundPrimary
         
@@ -94,7 +94,7 @@ class ResellerSignUpViewController: UIViewController {
     }
     
     fileprivate func addValidation(){
-        contentView.nametf.validator = MaxCharactersValidatorType(maxCharactersCount: 100, fieldName: "Reseller's name")
+        contentView.companytf.validator = MaxCharactersValidatorType(maxCharactersCount: 100, fieldName: "Company name")
         contentView.emailtf.validator = EmailValidatorType()
         contentView.nationalNumbertf.validator = MaxCharactersValidatorType(maxCharactersCount: 100, fieldName: "Facility national number")
         contentView.telephonetf.validator = MaxCharactersValidatorType(maxCharactersCount: 35, fieldName: "Telephone number")
@@ -106,36 +106,36 @@ class ResellerSignUpViewController: UIViewController {
             self.router.trigger(.chooseCategories(.company, self))
         }
         
-        contentView.storeLocationView.onTap = { [unowned self] in
+        contentView.companyLocationView.onTap = { [unowned self] in
             let locationPicker = LocationPickerController(title: "Company Location",
-                                                          location: self.storeLocation,
+                                                          location: self.companyLocation,
                                                           delegate: self)
             locationPicker.present(on: self)
         }
         
-        contentView.storeImageView.onTap = { [unowned self] in
+        contentView.companyLogoView.onTap = { [unowned self] in
             self.imagePickMode = .logo
             let imagePicker = ImagePickerController(presentationController: self,
                                                     delegate: self)
-            imagePicker.present(from: contentView.storeImageView)
+            imagePicker.present(from: contentView.companyLogoView)
         }
         
-        contentView.licenceView.onTap = { [unowned self] in
+        contentView.comLicenceView.onTap = { [unowned self] in
             self.imagePickMode = .license
             let imagePicker = ImagePickerController(presentationController: self,
                                                     delegate: self)
-            imagePicker.present(from: contentView.licenceView)
+            imagePicker.present(from: contentView.comLicenceView)
         }
         
         self.bottomNextView.nextButton.add(event: .touchUpInside) { [unowned self] in
             guard let categories = self.categories,
                   let logo = self.logoImage,
                   let license = self.licenseImage,
-                  let location = self.storeLocation else {
+                  let location = self.companyLocation else {
                 return
             }
             
-            guard let name = self.contentView.nametf.text,
+            guard let companyTF = self.contentView.companytf.text,
                   let email = self.contentView.emailtf.text,
                   let password = self.contentView.passwordtf.text,
                   let nationalNumber = self.contentView.nationalNumbertf.text,
@@ -150,19 +150,22 @@ class ResellerSignUpViewController: UIViewController {
             let lat = "\(location.location.coordinate.latitude)"
             let lon = "\(location.location.coordinate.longitude)"
             
-            let form = RegisterationForm.Reseller(en_name: name, email: email, password: password, national_number: nationalNumber, telephone: telephone, picture: logo64Base, lat: lat, lng: lon, categories: categories.compactMap { RegisterationForm.Category(id: $0.id).parameters })
+            let form = RegisterationForm.Company(enTitle: companyTF, email: email, password: password, national_number: nationalNumber, telephone: telephone, logo_b64: logo64Base, lat: lat, lng: lon, categories: categories.compactMap { RegisterationForm.Category(id: $0.id).parameters })
+            let route = AuthenticationAPI.companyRegister(form)
             
-            self.performTask(taskOperation: AuthenticationAPI.resellerRegister(form).request(Reseller.self)).then {
-                self.delegate?.resellerSignUpViewController(sender: self, didFinishWith: $0)
+            
+            
+            self.performTask(taskOperation: route.request(Company.self)).then { [unowned self] in
+                self.delegate?.companySignUpViewController(self, didFinishWith: $0)
             }
         }
     }
     
     fileprivate func updatePickersState(){
         contentView.categoryView.associatedValue = categories as AnyObject?
-        contentView.storeImageView.associatedValue = logoImage
-        contentView.licenceView.associatedValue = licenseImage
-        contentView.storeLocationView.associatedValue = storeLocation
+        contentView.companyLogoView.associatedValue = logoImage
+        contentView.comLicenceView.associatedValue = licenseImage
+        contentView.companyLocationView.associatedValue = companyLocation
     }
     
     override func viewDidLayoutSubviews() {
@@ -171,13 +174,14 @@ class ResellerSignUpViewController: UIViewController {
     }
 }
 
-extension ResellerSignUpViewController: SubCategoriesPickerCoordinatorDelegate {
+
+extension CompanySignUpViewController: SubCategoriesPickerCoordinatorDelegate {
     func subCategoriesPickerCoordinator(_ sender: SubCategoriesPickerCoordinator, didFinishWith categories: [SubCategory]) {
         self.categories = categories
     }
 }
 
-extension ResellerSignUpViewController: ImagePickerControllerDelegate {
+extension CompanySignUpViewController: ImagePickerControllerDelegate {
     func imagePickerController(_ sender: ImagePickerController, didFinishWith image: UIImage?) {
         guard let image = image else {
             return
@@ -192,8 +196,8 @@ extension ResellerSignUpViewController: ImagePickerControllerDelegate {
     }
 }
 
-extension ResellerSignUpViewController: LocationPickerControllerDelegate {
+extension CompanySignUpViewController: LocationPickerControllerDelegate {
     func locationPickerController(_ sender: LocationPickerController, didFinishWith location: PickedLocation?) {
-        self.storeLocation = location
+        self.companyLocation = location
     }
 }

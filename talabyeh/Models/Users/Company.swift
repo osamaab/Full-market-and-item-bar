@@ -39,12 +39,5 @@ struct Company: Codable {
         case categories = "categories"
         case subcategories = "subcategories"
         case registeredDate = "registered_date"
-   
     }
 }
-/**
- {
-     "username":"company4@yahoo.com",
-     "password":"PWD"
- }
- */

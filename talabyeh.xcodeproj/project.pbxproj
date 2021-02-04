@@ -105,6 +105,7 @@
 		E4680FC925B6D864009033C3 /* AnyOptional.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4680FC825B6D864009033C3 /* AnyOptional.swift */; };
 		E46AB32F25C08DEC006A1C5D /* Moya+Promises.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46AB32E25C08DEC006A1C5D /* Moya+Promises.swift */; };
 		E46AB33825C08EF5006A1C5D /* UserTaskOperatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46AB33725C08EF5006A1C5D /* UserTaskOperatorType.swift */; };
+		E46E808E25C916DB00A516E9 /* SubCategoriesPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46E808D25C916DB00A516E9 /* SubCategoriesPickerCoordinator.swift */; };
 		E4749C292588ED6C00479538 /* ContactDesignersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4749C282588ED6C00479538 /* ContactDesignersViewController.swift */; };
 		E4749C322588EDD800479538 /* ContactFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4749C312588EDD800479538 /* ContactFormView.swift */; };
 		E4749C3A2588EE1F00479538 /* TintedLabelCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4749C392588EE1F00479538 /* TintedLabelCollectionReusableView.swift */; };
@@ -239,6 +240,8 @@
 		E4CB7414255D19B20017A499 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB7413255D19B20017A499 /* Validators.swift */; };
 		E4CB7419255D20C80017A499 /* PickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB7418255D20C80017A499 /* PickerTextField.swift */; };
 		E4CB7423255D23450017A499 /* ScrollContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB7422255D23450017A499 /* ScrollContainerView.swift */; };
+		E4D19DA325CBC78B00A41088 /* CarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D19DA225CBC78B00A41088 /* CarType.swift */; };
+		E4D19DAC25CBCE4800A41088 /* ResellerSignUpContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D19DAB25CBCE4800A41088 /* ResellerSignUpContentView.swift */; };
 		E4D84297256AC50000D215B4 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D84296256AC50000D215B4 /* FavoritesViewController.swift */; };
 		E4D8429F256AC59200D215B4 /* BigSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D8429E256AC59200D215B4 /* BigSegmentedControl.swift */; };
 		E4DBD72525AA46A9002BFEEA /* ProductUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DBD72425AA46A9002BFEEA /* ProductUnit.swift */; };
@@ -313,8 +316,8 @@
 		F96B85372529A05A00CEDCF8 /* talabyehTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B85362529A05A00CEDCF8 /* talabyehTests.swift */; };
 		F96B85422529A05A00CEDCF8 /* talabyehUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B85412529A05A00CEDCF8 /* talabyehUITests.swift */; };
 		F96B85502529B67200CEDCF8 /* ChangeLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B854F2529B67200CEDCF8 /* ChangeLanguageViewController.swift */; };
-		F98D0E54252DE6F200D46EE9 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D0E53252DE6F200D46EE9 /* SignUpViewController.swift */; };
-		F98D0E59252DE73500D46EE9 /* SignupContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D0E58252DE73500D46EE9 /* SignupContentView.swift */; };
+		F98D0E54252DE6F200D46EE9 /* CompanySignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D0E53252DE6F200D46EE9 /* CompanySignUpViewController.swift */; };
+		F98D0E59252DE73500D46EE9 /* CompanySignupContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D0E58252DE73500D46EE9 /* CompanySignupContentView.swift */; };
 		F98D0E5F252DEDAF00D46EE9 /* Stevia in Frameworks */ = {isa = PBXBuildFile; productRef = F98D0E5E252DEDAF00D46EE9 /* Stevia */; };
 		F990A386254082AB00ABC4CF /* DistributorSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F990A385254082AB00ABC4CF /* DistributorSignUpViewController.swift */; };
 		F990A388254082C500ABC4CF /* DistributorSignUpContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F990A387254082C500ABC4CF /* DistributorSignUpContentView.swift */; };
@@ -448,6 +451,7 @@
 		E4680FC825B6D864009033C3 /* AnyOptional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyOptional.swift; sourceTree = "<group>"; };
 		E46AB32E25C08DEC006A1C5D /* Moya+Promises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Moya+Promises.swift"; sourceTree = "<group>"; };
 		E46AB33725C08EF5006A1C5D /* UserTaskOperatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTaskOperatorType.swift; sourceTree = "<group>"; };
+		E46E808D25C916DB00A516E9 /* SubCategoriesPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoriesPickerCoordinator.swift; sourceTree = "<group>"; };
 		E4749C282588ED6C00479538 /* ContactDesignersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDesignersViewController.swift; sourceTree = "<group>"; };
 		E4749C312588EDD800479538 /* ContactFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactFormView.swift; sourceTree = "<group>"; };
 		E4749C392588EE1F00479538 /* TintedLabelCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TintedLabelCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -582,6 +586,8 @@
 		E4CB7413255D19B20017A499 /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
 		E4CB7418255D20C80017A499 /* PickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTextField.swift; sourceTree = "<group>"; };
 		E4CB7422255D23450017A499 /* ScrollContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollContainerView.swift; sourceTree = "<group>"; };
+		E4D19DA225CBC78B00A41088 /* CarType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarType.swift; sourceTree = "<group>"; };
+		E4D19DAB25CBCE4800A41088 /* ResellerSignUpContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResellerSignUpContentView.swift; sourceTree = "<group>"; };
 		E4D84296256AC50000D215B4 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		E4D8429E256AC59200D215B4 /* BigSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigSegmentedControl.swift; sourceTree = "<group>"; };
 		E4DBD72425AA46A9002BFEEA /* ProductUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductUnit.swift; sourceTree = "<group>"; };
@@ -662,8 +668,8 @@
 		F96B85412529A05A00CEDCF8 /* talabyehUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = talabyehUITests.swift; sourceTree = "<group>"; };
 		F96B85432529A05A00CEDCF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F96B854F2529B67200CEDCF8 /* ChangeLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguageViewController.swift; sourceTree = "<group>"; };
-		F98D0E53252DE6F200D46EE9 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		F98D0E58252DE73500D46EE9 /* SignupContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupContentView.swift; sourceTree = "<group>"; };
+		F98D0E53252DE6F200D46EE9 /* CompanySignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanySignUpViewController.swift; sourceTree = "<group>"; };
+		F98D0E58252DE73500D46EE9 /* CompanySignupContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanySignupContentView.swift; sourceTree = "<group>"; };
 		F990A385254082AB00ABC4CF /* DistributorSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorSignUpViewController.swift; sourceTree = "<group>"; };
 		F990A387254082C500ABC4CF /* DistributorSignUpContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorSignUpContentView.swift; sourceTree = "<group>"; };
 		F9CC27C525332B6B00408FDA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -802,10 +808,11 @@
 		E4110C3425A702CD00DD8133 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E4D19DAB25CBCE4800A41088 /* ResellerSignUpContentView.swift */,
 				F990A387254082C500ABC4CF /* DistributorSignUpContentView.swift */,
-				E4DBD76125AA5ED2002BFEEA /* DistributorSignInContentView.swift */,
-				F98D0E58252DE73500D46EE9 /* SignupContentView.swift */,
+				F98D0E58252DE73500D46EE9 /* CompanySignupContentView.swift */,
 				F9CC27CA25332B8900408FDA /* SignInContentView.swift */,
+				E4D19DAA25CBCE3700A41088 /* Deprecated */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -915,6 +922,7 @@
 				E4BAF6E7259A3B5400A65D87 /* AppCoordinator.swift */,
 				E4000CD2255C095900E89ABB /* AuthenticationCoordinator.swift */,
 				E4301CB825B6D40300B50973 /* ChoooseUserCoordinator.swift */,
+				E46E808D25C916DB00A516E9 /* SubCategoriesPickerCoordinator.swift */,
 				E4BAF707259A43C400A65D87 /* CompanyFlowCoordinator.swift */,
 				E45B3B1825BEE6AB0013E8E4 /* DistributorFlowCoordinator.swift */,
 				E45B3B2F25BEE7400013E8E4 /* ResellerFlowCoordinator.swift */,
@@ -1125,7 +1133,7 @@
 				E4110C2C25A702C000DD8133 /* ResellerSignUpViewController.swift */,
 				F990A385254082AB00ABC4CF /* DistributorSignUpViewController.swift */,
 				E4DBD75C25AA5E75002BFEEA /* DistributorSignInViewController.swift */,
-				F98D0E53252DE6F200D46EE9 /* SignUpViewController.swift */,
+				F98D0E53252DE6F200D46EE9 /* CompanySignUpViewController.swift */,
 				E45E5548256F9F4E008856FD /* DeliveryAreaPickerViewController.swift */,
 				E4110C3425A702CD00DD8133 /* Views */,
 			);
@@ -1338,6 +1346,8 @@
 				E4B5EA2625AF7E7F006BD100 /* Company.swift */,
 				E4B5EA2B25AF7E83006BD100 /* Reseller.swift */,
 				E49AE6BE25B3AC95001B14C8 /* User.swift */,
+				E4D19DA225CBC78B00A41088 /* CarType.swift */,
+				E4BD34CB25A6AC130007FCE1 /* APIUserType.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -1391,7 +1401,6 @@
 				E4DBD72425AA46A9002BFEEA /* ProductUnit.swift */,
 				E4DBD73325AA476F002BFEEA /* MainCategory.swift */,
 				E42DD94225B8BE52003F3A5F /* SubCategory.swift */,
-				E4BD34CB25A6AC130007FCE1 /* APIUserType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1498,6 +1507,14 @@
 				E40DFA5E258C788100548BD9 /* SortAndFilterCollectionReusableView.swift */,
 			);
 			path = "Headers and Footers";
+			sourceTree = "<group>";
+		};
+		E4D19DAA25CBCE3700A41088 /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				E4DBD76125AA5ED2002BFEEA /* DistributorSignInContentView.swift */,
+			);
+			path = Deprecated;
 			sourceTree = "<group>";
 		};
 		E4D8428D256AC47A00D215B4 /* Favorites */ = {
@@ -2047,6 +2064,7 @@
 				E496B2CF255B2B10001BEC0F /* BorderedTextField.swift in Sources */,
 				E4B2A75A256CBAC70055C1AE /* QuantitySelectionView.swift in Sources */,
 				F990A388254082C500ABC4CF /* DistributorSignUpContentView.swift in Sources */,
+				E4D19DAC25CBCE4800A41088 /* ResellerSignUpContentView.swift in Sources */,
 				E4C138AF2583AA4B00D951F3 /* FinishedOperationCollectionViewCell.swift in Sources */,
 				E4E68139255D435E0051D52D /* LocationSearchHistoryManager.swift in Sources */,
 				E49C7419258A6D76002A5A59 /* CompanyLocationsContentView.swift in Sources */,
@@ -2109,6 +2127,7 @@
 				E4BD34A625A69F780007FCE1 /* UserTypeCollectionViewCell.swift in Sources */,
 				E45E5549256F9F4E008856FD /* DeliveryAreaPickerViewController.swift in Sources */,
 				E48C89BF2590F513000CDE76 /* ItemsChooseCategoryViewController.swift in Sources */,
+				E4D19DA325CBC78B00A41088 /* CarType.swift in Sources */,
 				E411DF2425B4B38000B2706E /* DefaultAuthenticationManager.swift in Sources */,
 				E40FB28B2567A97500626569 /* MainCategoriesPickerViewController.swift in Sources */,
 				E4FAB5A82565007900F25473 /* ExpandableCollectionViewManager.swift in Sources */,
@@ -2131,7 +2150,7 @@
 				E47A06302598768800654953 /* MarketStoreLocationFieldsViewController.swift in Sources */,
 				E496B2CA255B2ABF001BEC0F /* ValidationTextField.swift in Sources */,
 				E45D8550257628D9009ACC8D /* ComponentsLabCoordinator.swift in Sources */,
-				F98D0E54252DE6F200D46EE9 /* SignUpViewController.swift in Sources */,
+				F98D0E54252DE6F200D46EE9 /* CompanySignUpViewController.swift in Sources */,
 				E4FF1B9D25A1FD2E00AF4194 /* StatefulViewController.swift in Sources */,
 				E4FF1B7E25A1F4BA00AF4194 /* ColorGroup.swift in Sources */,
 				E4BD344625A5C4E00007FCE1 /* ResponseContainer.swift in Sources */,
@@ -2276,7 +2295,7 @@
 				E4EE6BDE2594E7AA00D0EDCC /* CLScreenListProvider.swift in Sources */,
 				E496B2AC255B2771001BEC0F /* UIColor+Additions.swift in Sources */,
 				E4000CD3255C095900E89ABB /* AuthenticationCoordinator.swift in Sources */,
-				F98D0E59252DE73500D46EE9 /* SignupContentView.swift in Sources */,
+				F98D0E59252DE73500D46EE9 /* CompanySignupContentView.swift in Sources */,
 				E4B2A750256CB5DF0055C1AE /* ProductDetailsContentView.swift in Sources */,
 				E4CB740C255D18610017A499 /* PasswordTextField.swift in Sources */,
 				E4EE6BBE2594DA5500D0EDCC /* CLDefaultPreviewViewController.swift in Sources */,
@@ -2298,6 +2317,7 @@
 				F9F65B8C254F1FD300D347D6 /* MarketViewController.swift in Sources */,
 				E48C89DC2590FC79000CDE76 /* NewItemInputFieldsContentView.swift in Sources */,
 				E4A0B26D25868E1300AF3CEA /* OperationDetailsContentView.swift in Sources */,
+				E46E808E25C916DB00A516E9 /* SubCategoriesPickerCoordinator.swift in Sources */,
 				E48C89E125910259000CDE76 /* ImagesPickerView.swift in Sources */,
 				E4BD347925A5C60A0007FCE1 /* ServicesHeadersPlugin.swift in Sources */,
 				E4401093259F3C1500FDE5A2 /* TransitionAnimation+Defaults.swift in Sources */,

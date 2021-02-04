@@ -22,12 +22,14 @@ class MainCategoriesPickerViewController: ContentViewController<[MainCategory]> 
     
     lazy var headerView: AuthHeaderView = .init(elements: [
         .title("Welcome to TALABYEH"),
-        .type(.company),
+        .type(self.userType),
         .subtitle("Please choose the category of resellers You can serve")
     ])
     
     lazy var collectionView: UICollectionView = configureCollectionView()
     lazy var bottomView: BottomNextButtonView = .init(title: "Next")
+    
+    let userType: UserType
     
     var categories: [MainCategory] = [] {
         didSet {
@@ -47,6 +49,7 @@ class MainCategoriesPickerViewController: ContentViewController<[MainCategory]> 
     init<Repository: ContentRepositoryType>(contentRepository: Repository,
                                             userType: UserType,
                                             title: String) where Repository.ContentType == ContentType {
+        self.userType = userType
         super.init(contentRepository: contentRepository)
         self.title = title
         self.navigationItem.title = title

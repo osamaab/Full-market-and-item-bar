@@ -30,7 +30,7 @@ class DistributorFlowCoordinator: TabBarCoordinator<CompanyFlowRoute> {
         self.itemsRouter = ItemsCoordinator().strongRouter
         self.profileRouter = ProfileCoordinator().strongRouter
 
-        super.init(rootViewController: TabBarController(), tabs: [itemsRouter], select: 0)
+        super.init(rootViewController: TabBarController(), tabs: [operationsRouter, profileRouter], select: 0)
     }
     
     override func prepareTransition(for route: RouteType) -> TransitionType {

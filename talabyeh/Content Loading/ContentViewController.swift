@@ -58,17 +58,28 @@ class ContentViewController<ContentType>: StatefulViewController<ContentType>, C
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        emptyStateView.retryButton.add(event: .touchUpInside){ [unowned self] in
-            self.performRetry()
+        unAuthenticatedStateView.signInButton.add(event: .touchUpInside) {
+            guard let currentUserType = UserDefaultsPreferencesManager.shared.userType else {
+                return
+            }
+            
+            AppDelegate.shared.router.trigger(.authentication(.signin(currentUserType)))
         }
         
-        failureStateView.retryButton.add(event: .touchUpInside){ [unowned self] in
-            self.performRetry()
+        unAuthenticatedStateView.signUpButton.add(event: .touchUpInside) {
+            guard let currentUserType = UserDefaultsPreferencesManager.shared.userType else {
+                return
+            }
+            
+            AppDelegate.shared.router.trigger(.authentication(.signUp(currentUserType)))
         }
-        
+
         performContentRequest()
     }
     
+    override func retry() {
+        self.performRetry()
+    }
     
     func performRetry(){
         self.performContentRequest()

@@ -42,11 +42,6 @@ class AppCoordinator: NavigationCoordinator<AppRoutes> {
             super.init(rootViewController: root, initialRoute: .chooseUserType)
             return
         }
-
-//        guard let currentUser = DefaultAuthenticationManager.shared.authProfile else {
-//            super.init(rootViewController: root, initialRoute: .authentication(.signin(userType)))
-//            return
-//        }
         
         super.init(rootViewController: root, initialRoute: AppRoutes.route(for: userType))
     }
@@ -60,12 +55,10 @@ class AppCoordinator: NavigationCoordinator<AppRoutes> {
                 .dismissToRoot(animation: .fadeInstant),
                 .presentFullScreen(coordinator, animation: .fadeInstant))
             
-            
         case .lab:
             return .multiple(
                 .dismissToRoot(animation: .fadeInstant),
                 .presentFullScreen(ComponentsLabCoordinator(), animation: .fadeInstant))
-            
             
         case .company:
             return .multiple(
@@ -95,14 +88,12 @@ extension AppCoordinator: ChooseUserCoordinatorDelegate {
         DefaultPreferencesController.shared.selectedSubCategories = output.subCategories
         
         
-        self.trigger(.authentication(.signin(output.userType)))
+        self.trigger(.route(for: output.userType))
     }
 }
 
 extension AppCoordinator: AuthenticationCoordinatorDelegate {
-    func authenticationCoordinator(_ sender: AuthenticationCoordinator, didFinishWith profile: AuthUserProfile) {
-        
-        DefaultAuthenticationManager.shared.login(with: profile)
+    func authenticationCoordinator(_ sender: AuthenticationCoordinator, didFinishWith profile: AuthUserProfile) {        
         self.trigger(.route(for: profile.userType))
     }
 }

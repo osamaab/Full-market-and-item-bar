@@ -23,6 +23,8 @@ enum AuthenticationAPI {
     case companyRegister(RegisterationForm.Company)
     case distributorRegister(RegisterationForm.Distributor)
     case resellerRegister(RegisterationForm.Reseller)
+    
+    case carTypes
 }
 
 extension AuthenticationAPI: TargetType {    
@@ -36,6 +38,8 @@ extension AuthenticationAPI: TargetType {
             return "distributor/register"
         case .resellerRegister:
             return "reseller/register"
+        case .carTypes:
+            return "car_type/list"
         }
     }
     
@@ -43,6 +47,8 @@ extension AuthenticationAPI: TargetType {
         switch self {
         case .login, .companyRegister, .distributorRegister, .resellerRegister:
             return .post
+        case .carTypes:
+            return .get
         }
     }
     
@@ -57,6 +63,8 @@ extension AuthenticationAPI: TargetType {
             return .requestParameters(parameters: form.parameters, encoding: JSONEncoding.default)
         case .resellerRegister(let form):
             return .requestParameters(parameters: form.parameters, encoding: JSONEncoding.default)
+        case .carTypes:
+            return .requestPlain
         }
     }
 }
