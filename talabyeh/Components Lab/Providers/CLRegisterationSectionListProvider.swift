@@ -21,6 +21,15 @@ struct CLRegisterationSectionListProvider: CLScreenSectionListProvider {
             CLScreenItem(name: "Sub-Categories Picker", creationHandler: { () -> UIViewController in
                 return SubCategoriesPickerViewController(categories: [],
                                                          contentRepository: SubCategoriesPickerViewController.fromCategories(with: []))
+            }),
+            
+            
+            CLScreenItem(name: "City Picker", creationHandler: { () -> UIViewController in
+                return CityPickerViewController(contentRepository: ConstantContentRepository(content: [
+                    CityItem(id: 1, title: "Amman"),
+                    CityItem(id: 2, title: "Irbid"),
+                    CityItem(id: 3, title: "AlKarak")
+                ]))
             })
         ]
         
@@ -35,7 +44,7 @@ struct CLRegisterationSectionListProvider: CLScreenSectionListProvider {
             CompanyInformationInputViewController.self,
             CertificatesViewController.self,
             ContactDesignersViewController.self,
-            DeliveryAreaPickerViewController.self
+            LocationInfoInputViewController.self
         ]
         
         let profile = CLScreenItem(name: "Profile") { () -> UIViewController in

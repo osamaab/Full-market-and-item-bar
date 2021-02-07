@@ -9,7 +9,16 @@
 import UIKit
 import Stevia
 
-class DeliveryAreaPickerViewController: UIViewController {
+/**
+ Used to enter the location information, like the:
+ - name
+ - city
+ - address
+ - building
+ - floor
+ - additional information
+ */
+class LocationInfoInputViewController: UIViewController {
     
     fileprivate var headerView = HeaderView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false

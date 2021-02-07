@@ -21,10 +21,12 @@ class ItemsViewController: ContentViewController<[CategoryWithProducts]> {
         typealias ContentType = [CategoryWithProducts]
         
         func requestContent(completion: @escaping ContentRequestCompletion<[CategoryWithProducts]>) {
-            let categories = (0...6).map { SubCategory.sample(id: $0) }
-            let products = (0...6).map { Product.sample(title: "Product \($0)" )}
+            let categories = (0...1).map { SubCategory.sample(id: $0) }
             
-            completion(.success(categories.map { CategoryWithProducts(category: $0, products: products) }))
+            completion(.success(categories.map { cat in
+                let products = (0...6).map { Product.sample(title: "Product \($0 * (cat.id + 1))" )}
+                return CategoryWithProducts(category: cat, products: products)
+            }))
         }
     }
     
