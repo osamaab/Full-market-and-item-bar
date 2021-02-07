@@ -30,6 +30,8 @@ class ProfileCoordinator: NavigationCoordinator<ProfileRoute> {
                 ProfileMenuItem.information()
             ])
             
+            
+            
             return .push(profile)
         }
     }

@@ -25,6 +25,9 @@ class ContentViewController<ContentType>: StatefulViewController<ContentType>, C
         state.content
     }
     
+    var unwrappedContent: ContentType {
+        state.content!
+    }
     
     /**
      When true, the content view controller won't transition immeditly to the content state until authentication is passed.

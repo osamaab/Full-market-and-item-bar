@@ -51,6 +51,7 @@ class ProfileViewController: UIViewController {
         collectionView.leading(0).trailing(0).bottom(0)
         
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.reloadData()
         
         
@@ -58,10 +59,18 @@ class ProfileViewController: UIViewController {
         headerView.titleLabel.text = headerInfo.title
         headerView.subtitleLabel.text = headerInfo.subtitle
         headerView.tertiaryLabel.text = headerInfo.subtitle2
+        
+        #if DEBUG
+        menuItems.append(ProfileMenuItem(title: "Lab", image: UIImage(systemName: "scribble.variable"), style: .highlighted, action: {
+            AppDelegate.shared.router.trigger(.lab)
+        }))
+        #endif
+        
+        collectionView.reloadData()
     }
 }
 
-extension ProfileViewController: UICollectionViewDataSource {
+extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         menuItems.count
     }
@@ -74,6 +83,11 @@ extension ProfileViewController: UICollectionViewDataSource {
         cell.titleLabel.text = item.title
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = menuItems[indexPath.item]
+        item.action?()
     }
 }
 

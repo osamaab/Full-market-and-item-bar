@@ -47,7 +47,7 @@ class ProfileMenuItemCollectionViewCell: UICollectionViewCell {
         
         
         titleLabel.centerVertically()
-        imageView.leading(20).height(44).width(44).centerVertically()
+        imageView.leading(20).height(30).width(30).centerVertically()
         titleLabel.Leading == imageView.Trailing + 8
         arrowImageView.trailing(20).height(12).width(12).centerVertically()
 
