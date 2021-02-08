@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     lazy var appSetupHandler: AppSetupStepType = DefaultSetupSteps.allSetupSteps()
     lazy var mainWindow = UIWindow()
-    lazy var router = AppCoordinator().strongRouter
+    lazy var router = AppCoordinator(initialRoute: .lab).strongRouter
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

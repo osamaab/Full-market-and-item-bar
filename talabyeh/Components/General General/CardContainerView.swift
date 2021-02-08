@@ -57,6 +57,7 @@ class CardContainerView: BasicCardView {
         
         titleLabel.textColor = DefaultColorsProvider.textPrimary1
         titleLabel.font = .font(for: .bold, size: 21)
+        titleLabel.numberOfLines = 0
         
         
         subviews {
