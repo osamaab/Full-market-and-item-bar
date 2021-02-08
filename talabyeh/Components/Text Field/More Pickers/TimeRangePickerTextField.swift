@@ -38,6 +38,8 @@ class TimeRangePickerTextField: PickerTextField {
         
         timeFormatter.timeStyle = .short
         inputView = picker
+        
+        imageView.image = UIImage(named: "time_picker")
     }
     
     fileprivate func updateText(){

@@ -46,6 +46,10 @@ class AppCoordinator: NavigationCoordinator<AppRoutes> {
         super.init(rootViewController: root, initialRoute: AppRoutes.route(for: userType))
     }
     
+    init(initialRoute: AppRoutes){
+        super.init(rootViewController: NavigationController(autoShowsCloseButton: false), initialRoute: initialRoute)
+    }
+    
     override func prepareTransition(for route: RouteType) -> TransitionType {
         switch route {
         case .chooseUserType:

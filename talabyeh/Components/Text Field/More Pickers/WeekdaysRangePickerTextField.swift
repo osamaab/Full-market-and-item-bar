@@ -37,6 +37,7 @@ class WeekdaysRangePickerTextField: PickerTextField {
         picker.delegate = self
         
         inputView = picker
+        imageView.image = UIImage(named: "calendar_picker")
     }
     
     fileprivate func updateText(){

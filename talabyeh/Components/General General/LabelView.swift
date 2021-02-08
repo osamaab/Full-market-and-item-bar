@@ -51,7 +51,7 @@ class LabelView: UIView {
         fatalError()
     }
     
-    fileprivate func setup(){
+    func setup(){
         addSubview(stackView)
         
         titleLabel.isHidden = title == nil

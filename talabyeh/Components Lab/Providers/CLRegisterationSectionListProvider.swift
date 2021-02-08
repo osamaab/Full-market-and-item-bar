@@ -12,24 +12,16 @@ struct CLRegisterationSectionListProvider: CLScreenSectionListProvider {
     
     let inProgress: CLScreensSection = {
         let items: [CLScreenItem] = [
-            CLScreenItem(name: "Categories Picker", creationHandler: { () -> UIViewController in
-                return MainCategoriesPickerViewController(contentRepository: MainCategoriesPickerViewController.allCategoriesContent(),
-                                                          userType: .company,
-                                                          title: "")
-            }),
-            
-            CLScreenItem(name: "Sub-Categories Picker", creationHandler: { () -> UIViewController in
-                return SubCategoriesPickerViewController(categories: [],
-                                                         contentRepository: SubCategoriesPickerViewController.fromCategories(with: []))
-            }),
-            
-            
             CLScreenItem(name: "City Picker", creationHandler: { () -> UIViewController in
                 return CityPickerViewController(contentRepository: ConstantContentRepository(content: [
                     CityItem(id: 1, title: "Amman"),
                     CityItem(id: 2, title: "Irbid"),
                     CityItem(id: 3, title: "AlKarak")
                 ]))
+            }),
+            
+            CLScreenItem(name: "New Company Branch", creationHandler: { () -> UIViewController in
+                return NewCompanyBranchViewController()
             })
         ]
         
