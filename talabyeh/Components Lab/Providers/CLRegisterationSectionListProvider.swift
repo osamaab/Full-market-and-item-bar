@@ -22,6 +22,10 @@ struct CLRegisterationSectionListProvider: CLScreenSectionListProvider {
             
             CLScreenItem(name: "New Company Branch", creationHandler: { () -> UIViewController in
                 return NewCompanyBranchViewController()
+            }),
+            
+            CLScreenItem(name: "Company Branches", creationHandler: { () -> UIViewController in
+                return CompanyBranchesListViewController()
             })
         ]
         
@@ -35,8 +39,7 @@ struct CLRegisterationSectionListProvider: CLScreenSectionListProvider {
             CompanyProfileOptionsViewController.self,
             CompanyInformationInputViewController.self,
             CertificatesViewController.self,
-            ContactDesignersViewController.self,
-            LocationInfoInputViewController.self
+            ContactDesignersViewController.self
         ]
         
         let profile = CLScreenItem(name: "Profile") { () -> UIViewController in
