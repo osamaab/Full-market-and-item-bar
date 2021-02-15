@@ -12,31 +12,51 @@ import Stevia
 /**
  The Profile view controller acts as a generic view controller displaying information on the header, with menu items can be actionable
  */
-class ProfileViewController: UIViewController {
+class ProfileViewController<UserType: UserModelType>: ContentViewController<UserType>, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    var headerInfo: ProfileHeaderInfo
-    var menuItems: [ProfileMenuItem]
+    struct ProfileDefaultContentRepository: ContentRepositoryType {
+        enum InternalErrorType: String, Error {
+            case unAuthenticated
+        }
+        
+        typealias ContentType = UserType
+        
+        func requestContent(completion: @escaping ContentRequestCompletion<UserType>) {
+            guard DefaultPreferencesController.shared.userType != nil else {
+                fatalError("Can't initialize a profile without a user type!")
+            }
+            
+            guard let currentProfile = DefaultAuthenticationManager.shared.authProfile else {
+                completion(.failure(InternalErrorType.unAuthenticated))
+                return
+            }
+            
+            guard let castedProfile = currentProfile.associatedData as? UserType else {
+                fatalError("Profile: Expected  \(String(describing: UserType.self)) but found a \(String(describing: currentProfile.associatedData))")
+            }
+            
+            completion(.success(castedProfile))
+        }
+    }
+    
+    var menuItems: [ProfileMenuItem] = []
     
     lazy var collectionView: UICollectionView = createCollectionView()
     lazy var headerView: ProfileHeaderView = .init()
     
-    override var preferredStatusBarStyle: UIStatusBarStyle{
-        return .lightContent
-    }
-    
-    init(headerInfo: ProfileHeaderInfo, menuItems: [ProfileMenuItem]){
-        self.headerInfo = headerInfo
-        self.menuItems = menuItems
-        super.init(nibName: nil, bundle: nil)
+    init(){
+        super.init(contentRepository: ProfileDefaultContentRepository())
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
+    
+    override func setupViewsBeforeTransitioning() {
         view.backgroundColor = DefaultColorsProvider.backgroundSecondary
         
         view.subviewsPreparedAL {
@@ -53,24 +73,49 @@ class ProfileViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.reloadData()
-        
-        
-        headerView.imageView.sd_setImage(with: headerInfo.imageURL)
-        headerView.titleLabel.text = headerInfo.title
-        headerView.subtitleLabel.text = headerInfo.subtitle
-        headerView.tertiaryLabel.text = headerInfo.subtitle2
-        
-        #if DEBUG
-        menuItems.append(ProfileMenuItem(title: "Lab", image: UIImage(systemName: "scribble.variable"), style: .highlighted, action: {
-            AppDelegate.shared.router.trigger(.lab)
-        }))
-        #endif
-        
-        collectionView.reloadData()
     }
-}
-
-extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    fileprivate func setupItems(with result: Result<UserType, Error>) -> [ProfileMenuItem] {
+        if case .failure(let error) = result,
+           let asInteranl = error as? ProfileDefaultContentRepository.InternalErrorType,
+           asInteranl == .unAuthenticated {
+        
+            
+            let loginMenuItem = ProfileMenuItem(identifier: .login, title: "Login", image: UIImage(named: "next-selected"), style: .normal) {
+                AppDelegate.shared.router.trigger(.chooseUserType)
+            }
+            
+            return [loginMenuItem] + setupItems()
+        }
+        
+        return setupItems()
+    }
+    
+    func setupItems() -> [ProfileMenuItem] {
+        []
+    }
+    
+    override func contentRequestDidFinish(with result: Result<UserType, Error>) {
+        self.menuItems = setupItems(with: result)
+        self.collectionView.reloadData()
+    }
+    
+    override func contentRequestDidFail(with error: Error) {
+        if let internalError = error as? ProfileDefaultContentRepository.InternalErrorType, internalError == .unAuthenticated {
+            
+            // handle unauthenticated state..
+            self.headerView.titleLabel.text = "Welcome to Talabeyah"
+            self.headerView.subtitleLabel.text = "Login to continue"
+            self.headerView.tertiaryLabel.text = ""
+            self.headerView.imageView.image = nil
+            
+            self.transition(to: .initial)
+        }
+    }
+    
+    func performAction(for item: ProfileMenuItem){
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         menuItems.count
     }
@@ -81,16 +126,21 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
         
         cell.imageView.image = item.image
         cell.titleLabel.text = item.title
+        cell.style = item.style
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = menuItems[indexPath.item]
-        item.action?()
+        
+        if let action = item.action {
+            action()
+        } else {
+            self.performAction(for: item)
+        }
     }
 }
-
 
 extension ProfileViewController {
     func createCollectionView() -> UICollectionView {
@@ -114,7 +164,7 @@ extension ProfileViewController {
 
         
         let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = 0
+        section.interGroupSpacing = 8
         section.contentInsets = .init(top: 20, leading: 0, bottom: 20, trailing: 0)
         
         return UICollectionViewCompositionalLayout(section: section)

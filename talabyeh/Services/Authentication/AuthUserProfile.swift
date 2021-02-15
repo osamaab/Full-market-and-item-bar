@@ -23,4 +23,15 @@ enum AuthUserProfile {
             return .reseller
         }
     }
+    
+    var associatedData: UserModelType {
+        switch self {
+        case .company(let obj):
+            return obj
+        case .distributor(let obj):
+            return obj
+        case .reseller(let obj):
+            return obj
+        }
+    }
 }

@@ -19,9 +19,5 @@ class CheckboxLabelView: LabelView {
     override func setup() {
         super.setup()
         isChecked = false
-        
-        add(gesture: .tap(1)) { [unowned self] in
-            self.isChecked = !self.isChecked
-        }
     }
 }

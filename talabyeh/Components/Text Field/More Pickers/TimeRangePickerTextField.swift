@@ -24,6 +24,24 @@ class TimeRangePickerTextField: PickerTextField {
     
     let timeFormatter = DateFormatter()
     
+    
+    var selectedFirstTime: String? {
+        guard let selectedFirst = pickerView?.selectedRow(inComponent: 0) else {
+            return nil
+        }
+        
+        return startTimes[selectedFirst]
+    }
+    
+    
+    var selectedEndTime: String? {
+        guard let selectedFirst = pickerView?.selectedRow(inComponent: 1) else {
+            return nil
+        }
+        
+        return endTimes[selectedFirst]
+    }
+    
     public var pickerView: UIPickerView? {
         return inputView as? UIPickerView
     }

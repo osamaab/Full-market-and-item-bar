@@ -59,8 +59,8 @@ extension CLLocationCoordinate2D {
 
 extension Location {
 	func toDefaultsDic() -> NSDictionary? {
-		guard let addressDic = placemark.addressDictionary,
-			let placemarkCoordinatesDic = placemark.location?.coordinate.toDefaultsDic()
+		guard let addressDic = placemark?.addressDictionary,
+			let placemarkCoordinatesDic = placemark?.location?.coordinate.toDefaultsDic()
 			else { return nil }
 		
 		var dic: [String: AnyObject] = [
@@ -80,7 +80,9 @@ extension Location {
 		
 		let coordinatesDic = dic[LocationDicKeys.locationCoordinates] as? NSDictionary
 		let coordinate = coordinatesDic.flatMap(CLLocationCoordinate2D.fromDefaultsDic)
-		let location = coordinate.flatMap { CLLocation(latitude: $0.latitude, longitude: $0.longitude) }
+        guard let location = (coordinate.flatMap { CLLocation(latitude: $0.latitude, longitude: $0.longitude) }) else {
+            return nil
+        }
 		
 		return Location(name: dic[LocationDicKeys.name] as? String,
 			location: location, placemark: MKPlacemark(

@@ -28,11 +28,18 @@ enum AppRoutes: Route {
             return .reseller
         }
     }
+    
+    static func authRoute(for userType: UserType) -> AppRoutes {
+        return .authentication(.signin(userType))
+    }
 }
 
 class AppCoordinator: NavigationCoordinator<AppRoutes> {
     
     let preferencesManager = UserDefaultsPreferencesManager.shared
+    let authenticationManager = DefaultAuthenticationManager.shared
+    
+    fileprivate var chooseUserRouter: StrongRouter<ChooseUserRoute>?
     
     init(){
         // where we want to go? this can be determinated by the user type, if it exists anyway.
@@ -40,6 +47,11 @@ class AppCoordinator: NavigationCoordinator<AppRoutes> {
         
         guard let userType = preferencesManager.userType else {
             super.init(rootViewController: root, initialRoute: .chooseUserType)
+            return
+        }
+        
+        guard self.authenticationManager.isAuthenticated else {
+            super.init(rootViewController: root, initialRoute: .authentication(.signin(userType)))
             return
         }
         
@@ -54,11 +66,11 @@ class AppCoordinator: NavigationCoordinator<AppRoutes> {
         switch route {
         case .chooseUserType:
             let coordinator = ChoooseUserCoordinator(delegate: self)
+            self.chooseUserRouter = coordinator.strongRouter
             
             return .multiple(
                 .dismissToRoot(animation: .fadeInstant),
                 .presentFullScreen(coordinator, animation: .fadeInstant))
-            
         case .lab:
             return .multiple(
                 .dismissToRoot(animation: .fadeInstant),
@@ -87,12 +99,12 @@ class AppCoordinator: NavigationCoordinator<AppRoutes> {
 extension AppCoordinator: ChooseUserCoordinatorDelegate {
     func chooseUserCoordinator(_ sender: ChoooseUserCoordinator, didFinishWith output: ChoooseUserCoordinator.Output) {
         
-        DefaultPreferencesController.shared.userType = output.userType
-        DefaultPreferencesController.shared.selectedCategories = output.categories
-        DefaultPreferencesController.shared.selectedSubCategories = output.subCategories
+        preferencesManager.userType = output.userType
+        preferencesManager.selectedCategories = output.categories
+        preferencesManager.selectedSubCategories = output.subCategories
         
         
-        self.trigger(.route(for: output.userType))
+        self.trigger(.authRoute(for: output.userType))
     }
 }
 

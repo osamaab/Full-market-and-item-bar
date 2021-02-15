@@ -330,7 +330,7 @@ extension LocationPickerViewController: UISearchResultsUpdating {
 	}
 	
 	func showItemsForSearchResult(_ searchResult: MKLocalSearch.Response?) {
-		results.locations = searchResult?.mapItems.map { Location(name: $0.name, placemark: $0.placemark) } ?? []
+        results.locations = searchResult?.mapItems.filter { $0.placemark.location != nil }.map { Location(name: $0.name, location: $0.placemark.location!, placemark: $0.placemark) } ?? []
 		results.isShowingHistory = false
 		results.tableView.reloadData()
 	}

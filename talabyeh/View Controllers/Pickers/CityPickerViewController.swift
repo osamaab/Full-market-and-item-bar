@@ -15,13 +15,23 @@ protocol CityPickerViewControllerDelegate: class {
 
 class CityPickerViewController: ContentViewController<[CityItem]> {
     
+    enum SelectionMode {
+        case single
+        case multiple
+    }
+    
     lazy var collectionView: UICollectionView = createCollectionView()
     lazy var labelView: LabelView = .init(title: "City", icon: UIImage(named: "delivery_area"))
     lazy var bottomSaveView: BottomNextButtonView = .init(title: "Save")
     
-    fileprivate var selectedOptions: Set<CityItem> = []
+    var selectedOptions: Set<CityItem> = []
+    var selectionMode: SelectionMode = .multiple
     
     weak var delegate: CityPickerViewControllerDelegate?
+    
+    convenience init(){
+        self.init(contentRepository: APIContentRepositoryType<GeneralAPI, [CityItem]>(.areas))
+    }
     
     override func setupViewsBeforeTransitioning() {
         
@@ -67,10 +77,16 @@ extension CityPickerViewController: UICollectionViewDataSource, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = unwrappedContent[indexPath.item]
-        if selectedOptions.contains(item) {
-            self.selectedOptions.remove(item)
-        } else {
+        
+        if self.selectionMode == .single {
+            self.selectedOptions.removeAll()
             self.selectedOptions.insert(item)
+        } else {
+            if selectedOptions.contains(item) {
+                self.selectedOptions.remove(item)
+            } else {
+                self.selectedOptions.insert(item)
+            }
         }
         
         self.collectionView.reloadData()

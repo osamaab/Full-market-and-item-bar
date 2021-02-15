@@ -24,6 +24,22 @@ class WeekdaysRangePickerTextField: PickerTextField {
         startingWeekday.weekdaysAfter()
     }
     
+    var selectedFirstWeekday: Weekday? {
+        guard let row = pickerView?.selectedRow(inComponent: 0) else {
+            return nil
+        }
+        
+        return startingWeekdayList[row]
+    }
+    
+    var selectedEndWeekday: Weekday? {
+        guard let row = pickerView?.selectedRow(inComponent: 1) else {
+            return nil
+        }
+        
+        return startingWeekdayList[row]
+    }
+    
     public var pickerView: UIPickerView? {
         return inputView as? UIPickerView
     }
@@ -88,13 +104,13 @@ extension WeekdaysRangePickerTextField: UIPickerViewDataSource, UIPickerViewDele
 }
 
 enum Weekday: Int, CaseIterable, Comparable {
-    case sun = 1
+    case fri = 1
+    case sat = 2
+    case sun
     case mon
     case tue
     case wed
     case thu
-    case fri
-    case sat
     
     /**
      The name of the weekday

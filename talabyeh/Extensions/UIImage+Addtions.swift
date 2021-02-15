@@ -25,4 +25,8 @@ extension UIImage {
         guard let imageData = self.pngData() else { return nil }
         return imageData.base64EncodedString(options: Data.Base64EncodingOptions.lineLength64Characters)
     }
+    
+    static func named(_ name: String) -> UIImage? {
+        UIImage(named: name)
+    }
 }

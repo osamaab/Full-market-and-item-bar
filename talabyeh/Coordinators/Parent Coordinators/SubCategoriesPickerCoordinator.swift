@@ -22,7 +22,6 @@ protocol SubCategoriesPickerCoordinatorDelegate: class {
 
 class SubCategoriesPickerCoordinator: NavigationCoordinator<SubCategoriesPickerRoute> {
     
-    
     weak var coordinatorDelegate: SubCategoriesPickerCoordinatorDelegate?
     
     init(initialRoute: RouteType, delegate: SubCategoriesPickerCoordinatorDelegate?){
@@ -51,14 +50,13 @@ class SubCategoriesPickerCoordinator: NavigationCoordinator<SubCategoriesPickerR
 
 extension SubCategoriesPickerCoordinator: MainCategoriesPickerViewControllerDelegate {
     func mainCategoriesViewController(_ sender: MainCategoriesPickerViewController, didFinishWith categories: [MainCategory]) {
-        
-        // now move on to sub-categories
         self.trigger(.from(categories))
     }
 }
 
 extension SubCategoriesPickerCoordinator: SubCategoriesPickerViewControllerDelegate {
     func subCategoriesViewController(_ sender: SubCategoriesPickerViewController, didFinishWith categories: [SubCategory]) {
+        
         self.coordinatorDelegate?.subCategoriesPickerCoordinator(self, didFinishWith: categories)
         self.trigger(.dismiss)
     }

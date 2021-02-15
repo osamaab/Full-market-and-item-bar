@@ -21,11 +21,7 @@ struct CLRegisterationSectionListProvider: CLScreenSectionListProvider {
             }),
             
             CLScreenItem(name: "New Company Branch", creationHandler: { () -> UIViewController in
-                return NewCompanyBranchViewController()
-            }),
-            
-            CLScreenItem(name: "Company Branches", creationHandler: { () -> UIViewController in
-                return CompanyBranchesListViewController()
+                return CompanyNewStoreLocationViewController()
             })
         ]
         
@@ -34,7 +30,6 @@ struct CLRegisterationSectionListProvider: CLScreenSectionListProvider {
     
     let profile: CLScreensSection = {
         let screenClasses = [
-            CompanyLocationsViewController.self,
             ChangePasswordViewController.self,
             CompanyProfileOptionsViewController.self,
             CompanyInformationInputViewController.self,
@@ -42,25 +37,7 @@ struct CLRegisterationSectionListProvider: CLScreenSectionListProvider {
             ContactDesignersViewController.self
         ]
         
-        let profile = CLScreenItem(name: "Profile") { () -> UIViewController in
-            let headerInfo = ProfileHeaderInfo(title: "Hussein AlRyalat",
-                                               imageURL: nil,
-                                               subtitle: "hus.sc@aol.com",
-                                               subtitle2: nil)
-            
-            let menuItems = [
-                ProfileMenuItem.changePassword(),
-                .payment(),
-                .orders(),
-                .location(),
-                .information(),
-                .history()
-            ]
-            
-            return ProfileViewController(headerInfo: headerInfo, menuItems: menuItems)
-        }
-        
-        return CLScreensSection(name: "Profile", items: [profile] + screenClasses.map { CLScreenItem(screenClass: $0) })
+        return CLScreensSection(name: "Profile", items: screenClasses.map { CLScreenItem(screenClass: $0) })
     }()
     
     let items: CLScreensSection = {
