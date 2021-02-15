@@ -11,32 +11,21 @@ import XCoordinator
 
 
 enum DistributorFlowRoute: Route {
-    case market
-    case operations
-    case items
     case profile
 }
 
-class DistributorFlowCoordinator: TabBarCoordinator<CompanyFlowRoute> {
+class DistributorFlowCoordinator: TabBarCoordinator<DistributorFlowRoute> {
     
-    let marketRouter: StrongRouter<MarketRoute>
-    let operationsRouter: StrongRouter<OperationsRoute>
-    let itemsRouter: StrongRouter<ItemsRoute>
-    let profileRouter: StrongRouter<ProfileRoute>
+    let profileRouter: StrongRouter<DistributorProfileRoute>
 
     init(){
-        self.marketRouter = MarketCoordinator().strongRouter
-        self.operationsRouter = OperationsCoordinator().strongRouter
-        self.itemsRouter = ItemsCoordinator().strongRouter
-        self.profileRouter = ProfileCoordinator().strongRouter
+        self.profileRouter = DistributorProfileCoordinator().strongRouter
 
-        super.init(rootViewController: TabBarController(), tabs: [operationsRouter, profileRouter], select: 0)
+        super.init(rootViewController: TabBarController(), tabs: [profileRouter], select: 0)
     }
     
     override func prepareTransition(for route: RouteType) -> TransitionType {
         switch route {
-        case .market:
-            return .select(marketRouter)
         case .profile:
             return .select(profileRouter)
         }

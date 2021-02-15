@@ -17,19 +17,19 @@ enum CompanyFlowRoute: Route {
 class CompanyFlowCoordinator: TabBarCoordinator<CompanyFlowRoute> {
     
     let marketRouter: StrongRouter<MarketRoute>
-    let profileRouter: StrongRouter<ProfileRoute>
+    let profileRouter: StrongRouter<CompanyProfileRoute>
     let itemsRouter: StrongRouter<ItemsRoute>
     let distributorsRouter: StrongRouter<DistributorsRoute>
     let operationsRouter: StrongRouter<OperationsRoute>
-        
+            
     init(){
         self.marketRouter = MarketCoordinator().strongRouter
-        self.profileRouter = ProfileCoordinator().strongRouter
+        self.profileRouter = CompanyProfileCoordinator().strongRouter
         self.itemsRouter = ItemsCoordinator().strongRouter
         self.distributorsRouter = DistributorsCoordinator().strongRouter
         self.operationsRouter = OperationsCoordinator().strongRouter
         
-        super.init(rootViewController: TabBarController(), tabs: [itemsRouter, profileRouter], select: 0)
+        super.init(rootViewController: TabBarController(), tabs: [profileRouter], select: 0)
     }
     
     override func prepareTransition(for route: RouteType) -> TransitionType {

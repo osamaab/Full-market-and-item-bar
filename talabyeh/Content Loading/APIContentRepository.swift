@@ -41,7 +41,6 @@ extension MoyaProvider {
             case .success(let response):
                 let decoder = JSONDecoder()
 
-                
                 do {
                     let result = try decoder.decode(ResponseContainer<ResultType>.self, from: response.data)
                     
@@ -52,13 +51,13 @@ extension MoyaProvider {
                     }
                 } catch {
                     let errorResult = try? decoder.decode(ResponseContainer<String>.self, from: response.data)
+                    
                     if let result = errorResult?.results {
                         mappedCompletion(.failure(APIError(message: result)))
+                    } else {
+                        print("Internal Error Mapping: \(error)")
+                        mappedCompletion(.failure(error))
                     }
-                    
-                    
-                    print("Internal Error Mapping: \(error)")
-                    mappedCompletion(.failure(error))
                 }
             }
         }

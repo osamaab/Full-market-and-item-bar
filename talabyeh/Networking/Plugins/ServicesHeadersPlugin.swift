@@ -22,6 +22,10 @@ struct ServicesHeadersPlugin: PluginType {
             defaultHeaders["Language"] = language
         }
         
+        if let authToken = DefaultAuthenticationManager.shared.authToken {
+            defaultHeaders["Authorization"] = "Token \(authToken)"
+        }
+        
         defaultHeaders["App-Version"] = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
         
         defaultHeaders.forEach {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Distributor: Codable {
+struct Distributor: Codable, UserModelType {
     let mobile: String
     let personalPicturePath: String
     let id: Int
