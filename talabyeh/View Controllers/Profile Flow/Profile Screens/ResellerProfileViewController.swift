@@ -24,7 +24,12 @@ class ResellerProfileViewController: ProfileViewController<Reseller> {
     
     override func setupItems() -> [ProfileMenuItem] {
         [
-
+            .information(),
+            .changePassword(),
+            .resellerBranches(),
+            .payment(),
+            .history(),
+            .settings()
         ]
     }
     
@@ -33,5 +38,19 @@ class ResellerProfileViewController: ProfileViewController<Reseller> {
         self.headerView.subtitleLabel.text = content.email
         self.headerView.tertiaryLabel.text = content.telephone
         self.headerView.imageView.sd_setImage(with: URL(string: content.logoPath), completed: nil)
+    }
+    
+    
+    override func performAction(for item: ProfileMenuItem) {
+        switch item.identifier {
+        case .branches:
+            router.trigger(.storeLocations)
+        case .myInformation:
+            router.trigger(.editCategories)
+        case .password:
+            router.trigger(.changePassword)
+        default:
+            break
+        }
     }
 }

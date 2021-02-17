@@ -35,9 +35,11 @@ class SignInContentView: BasicViewWithSetup {
         
         emailtf.validator = EmailValidatorType()
         emailtf.placeholder = "Email"
+        emailtf.textContentType = .emailAddress
+        
         
         passwordtf.placeholder = "Password"
-        
+        passwordtf.showsPasswordStrength = false
         
         signInButton.isEnabled = true
         

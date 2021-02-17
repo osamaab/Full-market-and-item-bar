@@ -85,7 +85,7 @@ struct CLRegisterationSectionListProvider: CLScreenSectionListProvider {
             MarketChangePasswordViewController.self,
             CheckoutViewController.self,
             CartItemsViewController.self,
-            FavoritesViewController.self,
+            FavoritesContainerViewController.self,
             MarketStoreLocationFieldsViewController.self
         ]
         

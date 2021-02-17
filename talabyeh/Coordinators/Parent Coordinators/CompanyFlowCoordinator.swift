@@ -12,6 +12,7 @@ import XCoordinator
 enum CompanyFlowRoute: Route {
     case market
     case profile
+    case items
 }
 
 class CompanyFlowCoordinator: TabBarCoordinator<CompanyFlowRoute> {
@@ -29,7 +30,7 @@ class CompanyFlowCoordinator: TabBarCoordinator<CompanyFlowRoute> {
         self.distributorsRouter = DistributorsCoordinator().strongRouter
         self.operationsRouter = OperationsCoordinator().strongRouter
         
-        super.init(rootViewController: TabBarController(), tabs: [profileRouter], select: 0)
+        super.init(rootViewController: TabBarController(), tabs: [itemsRouter, profileRouter], select: 0)
     }
     
     override func prepareTransition(for route: RouteType) -> TransitionType {
@@ -38,6 +39,8 @@ class CompanyFlowCoordinator: TabBarCoordinator<CompanyFlowRoute> {
             return .select(marketRouter)
         case .profile:
             return .select(profileRouter)
+        case .items:
+            return .select(itemsRouter)
         }
     }
 }

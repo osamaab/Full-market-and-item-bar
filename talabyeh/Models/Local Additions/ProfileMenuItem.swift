@@ -30,6 +30,7 @@ struct ProfileMenuItem: Equatable, Hashable {
         case payment
         case history
         case settings
+        case password
     }
     
     static func == (lhs: ProfileMenuItem, rhs: ProfileMenuItem) -> Bool {
@@ -71,12 +72,20 @@ extension ProfileMenuItem {
         return ProfileMenuItem(identifier: .myInformation, title: "My Information", image: .named("menu_info"), style: .highlighted)
     }
     
+    static  func changePassword() -> ProfileMenuItem {
+        return ProfileMenuItem(identifier: .password, title: "Change Password", image: .named("menu_password"))
+    }
+    
     static func items() -> ProfileMenuItem {
         return ProfileMenuItem(identifier: .items, title: "All Items", image: .named("menu_items"), style: .highlighted)
     }
     
     static func companyBranches() -> ProfileMenuItem {
         return .init(identifier: .branches, title: "Store location / Deliver locations", image: .named("menu_branches"))
+    }
+    
+    static func resellerBranches() -> ProfileMenuItem {
+        return .init(identifier: .branches, title: "Store/ Storage location", image: .named("menu_branches"))
     }
     
     static func companyProfile() -> ProfileMenuItem {

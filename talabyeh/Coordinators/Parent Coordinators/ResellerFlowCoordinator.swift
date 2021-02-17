@@ -11,22 +11,27 @@ import XCoordinator
 
 enum ResellerFlowRoute: Route {
     case profile
+    case favorites
 }
 
 class ResellerFlowCoordinator: TabBarCoordinator<ResellerFlowRoute> {
     
     let profileRouter: StrongRouter<ResellerProfileRoute>
+    let favoritesRouter: StrongRouter<FavoritesRoute>
 
     init(){
         self.profileRouter = ResellerProfileCoordinator().strongRouter
+        self.favoritesRouter = FavoritesCoordinator().strongRouter
 
-        super.init(rootViewController: TabBarController(), tabs: [profileRouter], select: 0)
+        super.init(rootViewController: TabBarController(), tabs: [favoritesRouter, profileRouter], select: 0)
     }
     
     override func prepareTransition(for route: RouteType) -> TransitionType {
         switch route {
         case .profile:
             return .select(profileRouter)
+        case .favorites:
+            return .select(favoritesRouter)
         }
     }
 }

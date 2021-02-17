@@ -11,6 +11,7 @@ import Moya
 
 enum ProfileAPI: TargetType {
     case profile
+    case changePassword(String, String) // old pas, new pass
 }
 
 extension ProfileAPI {
@@ -18,6 +19,8 @@ extension ProfileAPI {
         switch self {
         case .profile:
             return "user/profile"
+        case .changePassword:
+            return "user/change_password"
         }
     }
     
@@ -25,6 +28,8 @@ extension ProfileAPI {
         switch self {
         case .profile:
             return .get
+        case .changePassword:
+            return .put
         }
     }
     
@@ -32,6 +37,8 @@ extension ProfileAPI {
         switch self {
         case .profile:
             return .requestPlain
+        case .changePassword(let old, let new):
+            return .requestParameters(parameters: ["password": old, "new_password": new], encoding: JSONEncoding.default)
         }
     }
 }

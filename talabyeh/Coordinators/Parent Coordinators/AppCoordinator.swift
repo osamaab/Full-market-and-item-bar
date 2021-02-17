@@ -83,11 +83,11 @@ class AppCoordinator: NavigationCoordinator<AppRoutes> {
         case .distributor:
             return .multiple(
                 .dismissToRoot(animation: .fadeInstant),
-                .presentFullScreen(CompanyFlowCoordinator(), animation: .fadeInstant))
+                .presentFullScreen(DistributorFlowCoordinator(), animation: .fadeInstant))
         case .reseller:
             return .multiple(
                 .dismissToRoot(animation: .fadeInstant),
-                .presentFullScreen(CompanyFlowCoordinator(), animation: .fadeInstant))
+                .presentFullScreen(ResellerFlowCoordinator(), animation: .fadeInstant))
             
         case .authentication(let route):
             let router = AuthenticationCoordinator(delegate: self, initialRoute: route).strongRouter

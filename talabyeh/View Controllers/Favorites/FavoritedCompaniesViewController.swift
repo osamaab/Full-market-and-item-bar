@@ -1,59 +1,60 @@
 //
-//  FavoritesViewController.swift
+//  FavoritedCompaniesViewController.swift
 //  talabyeh
 //
-//  Created by Hussein Work on 22/11/2020.
-//  Copyright © 2020 Dominate. All rights reserved.
+//  Created by Hussein Work on 15/02/2021.
+//  Copyright © 2021 Dominate. All rights reserved.
 //
 
 import UIKit
 import Stevia
+import XCoordinator
 
-class FavoritesViewController: UIViewController {
+class FavoritedCompaniesViewController: ContentViewController<[Company]> {
+
+    typealias DataSource = UICollectionViewDiffableDataSource<Int, Company>
     
-    typealias DataSource = UICollectionViewDiffableDataSource<Int, Product>
-    
-    lazy var segmentedControl = BigSegmentedControl(items: ["Items", "Companies"])
     lazy var collectionView: UICollectionView = createCollectionView()
     lazy var dataSource: DataSource = createDataSource()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    let router: UnownedRouter<FavoritesRoute>
+    
+    init(router: UnownedRouter<FavoritesRoute>){
+        self.router = router
+        super.init(contentRepository: APIContentRepositoryType<FavoritesAPI, [Company]>(.companies))
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func setupViewsBeforeTransitioning() {
         view.backgroundColor = DefaultColorsProvider.backgroundSecondary
-     
-        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
+
         
-        view.addSubview(segmentedControl)
-        view.addSubview(collectionView)
+        view.subviewsPreparedAL {
+            collectionView
+        }
         
-        segmentedControl.Top == view.safeAreaLayoutGuide.Top + 20
-        segmentedControl.leading(20).trailing(20)
-        segmentedControl.select(index: 0, animated: true)
-        
-        collectionView.Top == segmentedControl.Bottom
+        collectionView.Top == view.Top
         collectionView.leading(20).trailing(20)
         collectionView.Bottom == view.safeAreaLayoutGuide.Bottom
-        
-        let items = (0...9).map { Product.sample(title: "Product \($0)") }
-        
-        // create a snapshot
-        var snapshot = NSDiffableDataSourceSnapshot<Int, Product>()
+    }
+    
+    override func contentRequestDidSuccess(with content: [Company]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Int, Company>()
         snapshot.appendSections([0])
-        snapshot.appendItems(items)
+        snapshot.appendItems(content)
         dataSource.apply(snapshot)
     }
 }
 
-
-extension FavoritesViewController {
+extension FavoritedCompaniesViewController {
     func createCollectionView() -> UICollectionView {
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: createLayout())
         collectionView.backgroundColor = .clear
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(cellClass: ProductCollectionViewCell.self)
+        collectionView.register(cellClass: CompanyCollectionViewCell.self)
         return collectionView
     }
     
@@ -78,13 +79,19 @@ extension FavoritesViewController {
     }
     
     func createDataSource() -> DataSource {
-        return UICollectionViewDiffableDataSource<Int, Product>(collectionView: self.collectionView) { (collectionView, indexPath, product) -> UICollectionViewCell? in
-            let cell = collectionView.dequeueCell(cellClass: ProductCollectionViewCell.self, for: indexPath)
+        return UICollectionViewDiffableDataSource<Int, Company>(collectionView: self.collectionView) { (collectionView, indexPath, item) -> UICollectionViewCell? in
+            let cell = collectionView.dequeueCell(cellClass: CompanyCollectionViewCell.self, for: indexPath)
             
-            cell.imageView.image = UIImage(named: "Rectangle 232")
-            cell.subtitleLabel1.text = "Red Onions"
-            cell.titleLabel.text = "New era market"
-            cell.subtitleLabel2.text = "JD 0.200"
+            cell.imageView.sd_setImage(with: URL(string: item.logoPath), completed: nil)
+            cell.titleLabel.text = item.title
+            
+            cell.likeButton.add(event: .valueChanged) { [unowned self] in
+                if cell.likeButton.isChecked {
+                    self.router.trigger(.favoriteCompany(item))
+                } else {
+                    self.router.trigger(.unfavoriteCompany(item))
+                }
+            }
             
             return cell
         }

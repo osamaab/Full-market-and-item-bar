@@ -1,5 +1,5 @@
 //
-//  NewCompanyBranchHeaderView.swift
+//  NewStoreLocationHeaderView.swift
 //  talabyeh
 //
 //  Created by Hussein Work on 08/02/2021.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewCompanyBranchHeaderView: UICollectionReusableView {
+class NewStoreLocationHeaderView: UICollectionReusableView {
     
     let titleLabel = UILabel().then {
         $0.font = .font(for: .semiBold, size: 17)

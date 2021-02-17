@@ -1,16 +1,16 @@
 //
-//  CompanyBranchesCoordinator.swift
+//  StoreLocationsCoordinator.swift
 //  talabyeh
 //
-//  Created by Hussein Work on 14/02/2021.
+//  Created by Hussein Work on 15/02/2021.
 //  Copyright © 2021 Dominate. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import XCoordinator
 import Promises
 
-enum CompanyBranchesRoute: Route {
+enum StoreLocationsRoute: Route {
     case list
     case new
     case edit(StoreLocation)
@@ -18,27 +18,20 @@ enum CompanyBranchesRoute: Route {
     case map(StoreLocation)
 }
 
-class CompanyBranchesCoordinator: NavigationCoordinator<CompanyBranchesRoute> {
-    
-    let company: Company
-    
-    init(company: Company){
-        self.company = company
+class StoreLocationsCoordinator: NavigationCoordinator<StoreLocationsRoute> {
+        
+    init(){
         super.init(rootViewController: NavigationController(style: .secondary, autoShowsCloseButton: true), initialRoute: .list)
     }
     
     override func prepareTransition(for route: RouteType) -> TransitionType {
         switch route {
         case .list:
-            return .push(CompanyStoreLocationListViewController(router: self.unownedRouter))
+            return .push(StoreLocationListViewController(router: self.unownedRouter))
         case .new:
-            let newVC = CompanyNewStoreLocationViewController()
-            newVC.delegate = self
-            return .push(newVC)
-        case .edit(let location):
-            let editVC = CompanyEditStoreLocationViewController(storeLocation: location)
-            editVC.delegate = self
-            return .push(editVC)
+            fatalError("Subclasses should implementn this")
+        case .edit:
+            fatalError("Subclasses should implement this")
         case .delete(let location):
             let alert = UIAlertController(title: "Delete \(location.name)", message: "Are you sure you want to delete this location?", preferredStyle: .alert)
             
@@ -61,31 +54,13 @@ class CompanyBranchesCoordinator: NavigationCoordinator<CompanyBranchesRoute> {
         }
     }
     
-    
+
     fileprivate func performDelete(for location: StoreLocation){
         
         self.rootViewController.performTask(taskOperation: StoreLocationsAPI.delete(location.id).request(String.self)).then {
             
             self.rootViewController.showMessage(message: $0, messageType: .success)
             self.rootViewController.dismiss(animated: true, completion: nil)
-        }
-    }
-}
-
-extension CompanyBranchesCoordinator: CompanyNewStoreLocationViewControllerDelegate {
-    func companyNewStoreLocationViewController(_ sender: CompanyNewStoreLocationViewController, didFinishWith location: NewStoreLocation) {
-        
-        
-        let task: Promise<String>
-        if let _ = sender as? CompanyEditStoreLocationViewController {
-            task = StoreLocationsAPI.edit(location).request(String.self)
-        } else {
-            task = StoreLocationsAPI.new(location).request(String.self)
-        }
-        
-        sender.performTask(taskOperation: task).then {
-            self.rootViewController.showMessage(message: $0, messageType: .success)
-            self.rootViewController.popViewController(animated: true)
         }
     }
 }

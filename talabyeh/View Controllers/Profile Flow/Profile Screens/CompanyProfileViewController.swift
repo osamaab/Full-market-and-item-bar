@@ -26,6 +26,7 @@ class CompanyProfileViewController: ProfileViewController<Company> {
         [
             .information(),
             .items(),
+            .changePassword(),
             .companyBranches(),
             .companyProfile(),
             .payment(),
@@ -44,9 +45,11 @@ class CompanyProfileViewController: ProfileViewController<Company> {
     override func performAction(for item: ProfileMenuItem) {
         switch item.identifier {
         case .branches:
-            router.trigger(.branches)
+            router.trigger(.storeLocations)
         case .myInformation:
             router.trigger(.editCategories)
+        case .password:
+            router.trigger(.changePassword)
         default:
             break
         }
