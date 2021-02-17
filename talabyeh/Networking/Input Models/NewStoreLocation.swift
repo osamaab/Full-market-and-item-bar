@@ -39,19 +39,20 @@ struct NewStoreLocation {
         streetName: String,
         buildingName: String,
         floor: String,
-        additionalDirections: String
+        additionalDirections: String,
+        workingDays: [WorkingDayInput]
     ) -> NewStoreLocation {
-        return .init(id: id, name: name, lat: lat, lng: lng, streetName: streetName, buildingName: buildingName, floor: floor, additionalDirections: additionalDirections, allowDelivery: nil, allowPickup: nil, phones: nil, fax: nil, emails: nil, coveringAreas: nil, workingDays: nil)
+        return .init(id: id, name: name, lat: lat, lng: lng, streetName: streetName, buildingName: buildingName, floor: floor, additionalDirections: additionalDirections, allowDelivery: nil, allowPickup: nil, phones: nil, fax: nil, emails: nil, coveringAreas: nil, workingDays: workingDays)
     }
 
     enum CodingKeys: String, CodingKey {
         case id
         case lat = "lat"
         case lng = "lng"
-        case streetName = "en_street_name"
+        case streetName = "street_name"
         case name = "en_location_name"
-        case buildingName = "en_building_name"
-        case additionalDirections = "en_additional_directions"
+        case buildingName = "building_name"
+        case additionalDirections = "additional_directions"
         case allowDelivery = "allow_delivery"
         case allowPickup = "allow_pickup"
         case floor = "floor"

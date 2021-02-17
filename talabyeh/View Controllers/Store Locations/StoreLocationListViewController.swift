@@ -10,18 +10,18 @@ import UIKit
 import XCoordinator
 import Stevia
 
-class CompanyStoreLocationListViewController: ContentViewController<[StoreLocation]> {
+class StoreLocationListViewController: ContentViewController<[StoreLocation]> {
     
-    lazy var headerView: NewCompanyBranchHeaderView = .init()
+    lazy var headerView: NewStoreLocationHeaderView = .init()
     lazy var collectionView: UICollectionView = makeCollectionView()
     
     override var requiresAuthentication: Bool {
         true
     }
     
-    let router: UnownedRouter<CompanyBranchesRoute>
+    let router: UnownedRouter<StoreLocationsRoute>
     
-    init(router: UnownedRouter<CompanyBranchesRoute>){
+    init(router: UnownedRouter<StoreLocationsRoute>){
         self.router = router
         super.init(contentRepository: APIContentRepositoryType<StoreLocationsAPI, [StoreLocation]>(.storeLocations))
     }
@@ -50,22 +50,40 @@ class CompanyStoreLocationListViewController: ContentViewController<[StoreLocati
     }
     
     override func contentRequestDidSuccess(with content: [StoreLocation]) {
+        /*
+        Because yet we don't know how many detail item each store location has, we register cells based on the number of detail items each store location has, this ensures cells reused have the same number of detail item, so no need to manipulate the view each time we call reuseCell.
+         */
+        Set(content.map { $0.detailItems() }.map {
+            "store_location_with_\($0.count)_items"
+        }).forEach {
+            print("registering a new cell with \($0)")
+            collectionView.register(StoreLocationCollectionViewCell.self, forCellWithReuseIdentifier: $0)
+        }
+        
+        
+        
         collectionView.reloadData()
     }
 }
 
-extension CompanyStoreLocationListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension StoreLocationListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         content?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueCell(cellClass: CompanyBranchCollectionViewCell.self, for: indexPath)
         let item = unwrappedContent[indexPath.item]
+        
+        /*
+         dequeues a cell for a specific number of items, this ensures performance.
+         */
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "store_location_with_\(item.detailItems().count)_items", for: indexPath) as! StoreLocationCollectionViewCell
         
         cell.titleLabel.text = item.name
         cell.summaryLabel.text = item.formattedSummary()
+        cell.summaryLabel.isHidden = item.formattedSummary().isEmpty
         cell.subtitleLabel.text = item.formattedAddress()
+        
         cell.set(items: item.detailItems())
         
         
@@ -81,11 +99,10 @@ extension CompanyStoreLocationListViewController: UICollectionViewDataSource, UI
     }
 }
 
-extension CompanyStoreLocationListViewController {
+extension StoreLocationListViewController {
     func makeCollectionView() -> UICollectionView {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: makeLayout())
         collectionView.backgroundColor = .clear
-        collectionView.register(cellClass: CompanyBranchCollectionViewCell.self)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         collectionView.dataSource = self
@@ -118,3 +135,37 @@ extension CompanyStoreLocationListViewController {
     }
 }
 
+
+extension StoreLocationCollectionViewCell {
+    func set(items: [StoreLocation.DetailItem]){
+        if self.labelsViews.count != items.count {
+            // reset the label views, this should happen only once.
+            print("Resetting Labels count for \(items.count)")
+            
+            labelsViews.forEach {
+                containerStackView.removeArrangedSubview($0)
+                $0.removeFromSuperview()
+            }
+            
+            self.labelsViews.removeAll()
+            
+            // attempt to insert label views with items count
+            items.forEach {
+                self.insertLabelView(with: $0.text, icon: UIImage(named: "store_\($0.identifier.rawValue)"))
+            }
+            
+            return
+        }
+         
+        print("Reusing existing Labels for \(items.count)")
+        items.enumerated().forEach {
+            let index = $0.offset
+            let element = $0.element
+            
+            if index < labelsViews.count {
+                labelsViews[index].icon = UIImage(named: "store_\(element.identifier.rawValue)")
+                labelsViews[index].titleLabel.text = element.text
+            }
+        }
+    }
+}

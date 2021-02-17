@@ -45,6 +45,8 @@ class PasswordTextField: BorderedTextField {
     
     private var strengthText = UILabel()
     
+    var showsPasswordStrength: Bool = true
+    
     override func setup() {
         super.setup()
         
@@ -62,7 +64,7 @@ class PasswordTextField: BorderedTextField {
     }
 
     func showPasswordStrengthMessage(type: PasswordStrength?) {
-        guard let type = type else {
+        guard let type = type, showsPasswordStrength else {
             strengthText.removeFromSuperview()
             return
         }

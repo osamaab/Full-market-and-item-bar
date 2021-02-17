@@ -11,9 +11,9 @@ import XCoordinator
 
 enum CompanyProfileRoute: Route {
     case profile
-    case branches
+    case storeLocations
     case editCategories
-    
+    case changePassword
 }
 
 class CompanyProfileCoordinator: NavigationCoordinator<CompanyProfileRoute> {
@@ -22,6 +22,7 @@ class CompanyProfileCoordinator: NavigationCoordinator<CompanyProfileRoute> {
     let authenticationManager = DefaultAuthenticationManager.shared
     
     fileprivate var editCategoriesRouter: StrongRouter<SubCategoriesPickerRoute>?
+    fileprivate var changePasswordRouter: StrongRouter<ChangePasswordRoute>?
     
     init(){
         super.init(rootViewController: NavigationController(), initialRoute: .profile)
@@ -33,7 +34,7 @@ class CompanyProfileCoordinator: NavigationCoordinator<CompanyProfileRoute> {
         case .profile:
             let profile = CompanyProfileViewController(router: self.unownedRouter)
             return .push(profile)
-        case .branches:
+        case .storeLocations:
             guard let profile = authenticationManager.authProfile, let asCompany = profile.associatedData as? Company else {
                 AppDelegate.shared.router.trigger(.authentication(.signin(.company)))
                 return .none()
@@ -46,6 +47,9 @@ class CompanyProfileCoordinator: NavigationCoordinator<CompanyProfileRoute> {
             self.editCategoriesRouter = coordinator.strongRouter
             
             return .presentFullScreen(coordinator)
+        case .changePassword:
+            let router = ChangePasswordCoordinator()
+            return .presentFullScreen(router)
         }
     }
 }

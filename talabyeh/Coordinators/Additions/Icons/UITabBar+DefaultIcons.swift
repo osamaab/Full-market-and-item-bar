@@ -14,6 +14,9 @@ extension UITabBarItem {
     
     static let market: UITabBarItem = .init(title: "Market", image: UIImage(named: "market"), selectedImage: UIImage(named: "market-selected"))
     
+    static let favorites: UITabBarItem = .init(title: "Favorites", image: UIImage(named: "favorites"), selectedImage: UIImage(named: "favorites-selected"))
+
+    
     static let items: UITabBarItem = .init(title: "Items", image: UIImage(named: "items"), selectedImage: UIImage(named: "items-selected"))
     
     static let distributors: UITabBarItem = .init(title: "Distributors", image: UIImage(named: "distributors"), selectedImage: UIImage(named: "distributors-selected"))

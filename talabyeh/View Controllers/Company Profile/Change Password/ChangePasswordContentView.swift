@@ -12,7 +12,7 @@ class ChangePasswordContentView: BasicViewWithSetup {
 
     let stackView: UIStackView = .init()
     
-    let labelView: LabelView = .init(title: "Company Profile", icon: nil)
+    let labelView: LabelView = .init(title: "Change Password", icon: .named("menu_password"))
 
     let oldPasswordField = PasswordTextField()
     let newPasswordField = PasswordTextField()
@@ -28,6 +28,8 @@ class ChangePasswordContentView: BasicViewWithSetup {
             .distribution(.fill)
             .spacing(15)
             .preparedForAutolayout()
+        
+        oldPasswordField.showsPasswordStrength = false
 
         backgroundColor = DefaultColorsProvider.backgroundPrimary
         

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Company: Codable, UserModelType {
+struct Company: Equatable, Hashable, UserModelType {
     let id: Int
     let title: String
     let email: String
@@ -23,6 +23,14 @@ struct Company: Codable, UserModelType {
     let categories: [MainCategory]
     let subcategories: [SubCategory]
     let registeredDate: String
+    
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -41,3 +49,5 @@ struct Company: Codable, UserModelType {
         case registeredDate = "registered_date"
     }
 }
+
+extension Company: Codable { }

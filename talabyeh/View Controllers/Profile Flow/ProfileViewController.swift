@@ -32,7 +32,7 @@ class ProfileViewController<UserType: UserModelType>: ContentViewController<User
             }
             
             guard let castedProfile = currentProfile.associatedData as? UserType else {
-                fatalError("Profile: Expected  \(String(describing: UserType.self)) but found a \(String(describing: currentProfile.associatedData))")
+                fatalError("Profile: Expected \(String(describing: UserType.self)) but found a \(String(describing: currentProfile.associatedData))")
             }
             
             completion(.success(castedProfile))

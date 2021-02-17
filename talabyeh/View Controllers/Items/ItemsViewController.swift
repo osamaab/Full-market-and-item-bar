@@ -11,7 +11,7 @@ import Stevia
 
 struct CategoryWithProducts {
     let category: SubCategory
-    let products: [Product]
+    let products: [ProductTemplate]
 }
 
 
@@ -24,15 +24,15 @@ class ItemsViewController: ContentViewController<[CategoryWithProducts]> {
             let categories = (0...1).map { SubCategory.sample(id: $0) }
             
             completion(.success(categories.map { cat in
-                let products = (0...6).map { Product.sample(title: "Product \($0 * (cat.id + 1))" )}
+                let products = (0...6).map { ProductTemplate.sample(title: "Product \($0 * (cat.id + 1))" )}
                 return CategoryWithProducts(category: cat, products: products)
             }))
         }
     }
     
 
-    typealias DataSource = UICollectionViewDiffableDataSource<SubCategory, Product>
-    typealias Snapshot = NSDiffableDataSourceSnapshot<SubCategory, Product>
+    typealias DataSource = UICollectionViewDiffableDataSource<SubCategory, ProductTemplate>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<SubCategory, ProductTemplate>
 
     let titleHeaderKind = "title-header"
     

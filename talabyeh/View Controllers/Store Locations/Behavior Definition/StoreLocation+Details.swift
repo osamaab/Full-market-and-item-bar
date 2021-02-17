@@ -60,6 +60,10 @@ extension StoreLocation {
     func formattedSummary() -> String {
         var parts: [String] = []
         
+        // workaround to identify store location used for company or reseller: check the covering areas variable
+        if self.coveringAreas == nil {
+            return ""
+        }
         
         if let hasPickup = self.allowPickup {
             if hasPickup {

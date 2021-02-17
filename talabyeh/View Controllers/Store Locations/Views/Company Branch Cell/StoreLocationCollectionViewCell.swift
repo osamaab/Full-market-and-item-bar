@@ -1,5 +1,5 @@
 //
-//  CompanyBranchCollectionViewCell.swift
+//  StoreLocationCollectionViewCell.swift
 //  talabyeh
 //
 //  Created by Hussein Work on 08/02/2021.
@@ -9,7 +9,7 @@
 import UIKit
 import Stevia
 
-class CompanyBranchCollectionViewCell: UICollectionViewCell {
+class StoreLocationCollectionViewCell: UICollectionViewCell {
     
     let containerStackView = UIStackView().then {
         $0.alignment(.fill)
@@ -70,7 +70,7 @@ class CompanyBranchCollectionViewCell: UICollectionViewCell {
     var onEditTap: ActionBlock?
     
     
-    fileprivate var labelsViews: [LabelView] = []
+    var labelsViews: [LabelView] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -119,12 +119,6 @@ class CompanyBranchCollectionViewCell: UICollectionViewCell {
         dropShadow(color: UIColor.lightGray,
                    opacity: 0.16,
                    offSet: .init(width: 0, height: 3.4), radius: 3.4)
-            
-        insertLabelView(with: "+96 79 00000000", icon: UIImage(named: "clock_small"))
-        insertLabelView(with: "+96 79 00000000", icon: UIImage(named: "clock_small"))
-        insertLabelView(with: "+96 79 00000000", icon: UIImage(named: "clock_small"))
-        insertLabelView(with: "+96 79 00000000", icon: UIImage(named: "clock_small"))
-        insertLabelView(with: "+96 79 00000000", icon: UIImage(named: "clock_small"))
     }
     
     func insertLabelView(with title: String, icon: UIImage?){
@@ -136,19 +130,5 @@ class CompanyBranchCollectionViewCell: UICollectionViewCell {
         labelsViews.append(newLabelView)
         
         containerStackView.insertArrangedSubview(newLabelView, at: containerStackView.arrangedSubviews.firstIndex(of: summaryLabel)!)
-    }
-    
-    func set(items: [StoreLocation.DetailItem]){
-        let labelsViews = self.labelsViews
-                
-        items.reversed().enumerated().forEach {
-            let index = $0.offset
-            let element = $0.element
-            
-            if index < labelsViews.count {
-                labelsViews[index].icon = UIImage(named: "store_\(element.identifier.rawValue)")
-                labelsViews[index].titleLabel.text = element.text
-            }
-        }
     }
 }

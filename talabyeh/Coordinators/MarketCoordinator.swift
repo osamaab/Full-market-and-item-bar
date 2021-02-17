@@ -13,7 +13,7 @@ enum MarketRoute: Route {
     case home
     case categories
     case products(MainCategory)
-    case productDetails(Product)
+    case productDetails(ProductTemplate)
     case advancedSearch
 }
 
