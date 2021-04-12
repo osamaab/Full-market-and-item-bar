@@ -1,6 +1,0 @@
-framework module Pods_talabyehTests {
-  umbrella header "Pods-talabyehTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

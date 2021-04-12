@@ -5,8 +5,9 @@ PODS:
   - CardScanner (0.1.2)
   - Cosmos (23.0.0)
   - DropDown (2.3.13)
+  - FSPagerView (0.8.3)
   - IQKeyboardManager (6.5.6)
-  - LanguageManager-iOS (1.2.0)
+  - LanguageManager-iOS (1.2.3)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
@@ -14,12 +15,17 @@ PODS:
   - NVActivityIndicatorView (5.1.1):
     - NVActivityIndicatorView/Base (= 5.1.1)
   - NVActivityIndicatorView/Base (5.1.1)
-  - PromisesObjC (1.2.12)
-  - PromisesSwift (1.2.12):
-    - PromisesObjC (= 1.2.12)
-  - SDWebImage (5.9.4):
-    - SDWebImage/Core (= 5.9.4)
-  - SDWebImage/Core (5.9.4)
+  - PickerView (0.4.0)
+  - PromisesObjC (1.2.11)
+  - PromisesSwift (1.2.11):
+    - PromisesObjC (= 1.2.11)
+  - QuickLayout (3.0.0)
+  - Resolver (1.4.1)
+  - SDWebImage (5.10.2):
+    - SDWebImage/Core (= 5.10.2)
+  - SDWebImage/Core (5.10.2)
+  - SwiftEntryKit (1.2.7):
+    - QuickLayout (= 3.0.0)
   - ValidationTextField (1.0.4)
   - XCoordinator (2.0.7):
     - XCoordinator/Core (= 2.0.7)
@@ -31,12 +37,16 @@ DEPENDENCIES:
   - CardScanner
   - Cosmos
   - DropDown
+  - FSPagerView
   - IQKeyboardManager
   - LanguageManager-iOS
   - Moya
   - NVActivityIndicatorView
+  - PickerView
   - PromisesSwift
+  - Resolver
   - SDWebImage (~> 5.0)
+  - SwiftEntryKit
   - ValidationTextField
   - XCoordinator
 
@@ -48,13 +58,18 @@ SPEC REPOS:
     - CardScanner
     - Cosmos
     - DropDown
+    - FSPagerView
     - IQKeyboardManager
     - LanguageManager-iOS
     - Moya
     - NVActivityIndicatorView
+    - PickerView
     - PromisesObjC
     - PromisesSwift
+    - QuickLayout
+    - Resolver
     - SDWebImage
+    - SwiftEntryKit
     - ValidationTextField
     - XCoordinator
 
@@ -65,16 +80,21 @@ SPEC CHECKSUMS:
   CardScanner: bfc18d8518a6c8d2817137816338e86156e4a2c4
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
-  LanguageManager-iOS: 516c4f088435c83cbdbddfc5179f88e4e0d39eb4
+  LanguageManager-iOS: 020a6849c97949683926773fd5b82baceaa142db
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
-  PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
-  PromisesSwift: 64085cf6e5fc1b5001f90cf31e87a1f1621fefee
-  SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
+  PickerView: a736ea986d992aa3ef32423f475fdf3f3a0cf7d4
+  PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
+  PromisesSwift: fed4eb6f7a29846a22624d1b86b77e1dedb88724
+  QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
+  Resolver: c293d0177cbc69fcb700cfd49922ae2122c1829c
+  SDWebImage: b969dcfc02c40a5da71eac0b03b8f1a0c794a86f
+  SwiftEntryKit: 537c92699d6034efb1ef9c32b11e0b37c97aa589
   ValidationTextField: 91bc04170ba4b4358912c372e12d7af4c9143ad5
   XCoordinator: 9ee654fedef1ffede33d5c11677708a555c00542
 
-PODFILE CHECKSUM: 46977b321a9e5ad59103f374d9b117b67e000ef9
+PODFILE CHECKSUM: dcef6e382608bd836a852669c330b17e4e73575c
 
 COCOAPODS: 1.10.0
