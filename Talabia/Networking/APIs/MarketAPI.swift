@@ -12,6 +12,7 @@ import Moya
 enum MarketAPI {
     case market(Int?, Int?)
     case companyMarket(Int)
+    case allCompany
     
     
     case advancedSearchProducts(Int?, String?)
@@ -30,6 +31,8 @@ extension MarketAPI: TargetType {
             return "user/items/filter"
         case .advancedSearchCompanies:
             return "companies/filter"
+        case .allCompany:
+            return "companies"
         }
     }
     
@@ -41,6 +44,8 @@ extension MarketAPI: TargetType {
             return .get
         case .advancedSearchCompanies, .advancedSearchProducts:
             return .post
+        case .allCompany:
+            return.get
         }
     }
     
@@ -53,6 +58,8 @@ extension MarketAPI: TargetType {
         case .advancedSearchProducts(let catID, let text):
             return .requestParameters(parameters: ["name": text ?? "", "category_id": catID], encoding: URLEncoding.default)
         case .market:
+            return .requestPlain
+        case .allCompany:
             return .requestPlain
         }
     }

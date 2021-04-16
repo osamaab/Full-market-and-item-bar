@@ -30,8 +30,8 @@ class BannerCollectionViewCell: UICollectionViewCell{
     }
     
     private func setupUI() {
-        pagerView.frame = CGRect(x: 0, y: 0, width: view.layer.frame.width, height: view.layer.frame.height)
-        pageControl.frame = CGRect(x: 5, y: view.layer.frame.height - 25, width: 100, height: 30)
+        pagerView.frame = CGRect(x: 0, y: 0, width: view.layer.frame.width, height: view.layer.frame.height + 15)
+        pageControl.frame = CGRect(x: 5, y: view.layer.frame.height - 10, width: 100, height: 30)
         pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
         pagerView.delegate = self
         pagerView.dataSource = self
@@ -69,6 +69,7 @@ class BannerCollectionViewCell: UICollectionViewCell{
         }
         
 //        pagerView.addSubview(pageControl)
+        view.height(140)
         pagerView.Width == view.Width
         pagerView.Top == view.Top
         pagerView.Height == superview.view.Height

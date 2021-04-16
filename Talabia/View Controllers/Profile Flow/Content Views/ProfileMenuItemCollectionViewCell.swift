@@ -18,10 +18,16 @@ class ProfileMenuItemCollectionViewCell: UICollectionViewCell {
     
     var style: ProfileMenuItem.Style = .normal {
         didSet {
-            self.backgroundColor = style == .normal ? DefaultColorsProvider.backgroundSecondary : DefaultColorsProvider.tintSecondary
-            self.titleLabel.font = style == .normal ?
+            self.backgroundColor = style == .normal ? .white : DefaultColorsProvider.tintSecondary
+            
+                titleLabel.font = style == .normal ?
                 .font(for: .regular, size: 17) :
                 .font(for: .bold, size: 17)
+                
+            arrowImageView.image = style == .normal ?
+               UIImage(named: "right-arrow"):
+               UIImage(named: "see_more")
+
         }
     }
     
@@ -36,7 +42,7 @@ class ProfileMenuItemCollectionViewCell: UICollectionViewCell {
     }
     
     func setup(){
-        backgroundColor = DefaultColorsProvider.backgroundSecondary
+        backgroundColor = DefaultColorsProvider.backgroundPrimary
                
         imageView.tintColor = DefaultColorsProvider.tintPrimary
         imageView.contentMode = .center
@@ -60,7 +66,7 @@ class ProfileMenuItemCollectionViewCell: UICollectionViewCell {
         worningImageView.isHidden = false
         worningImageView.clipsToBounds = true
         worningImageView.width(17).height(17).centerVertically()
-        worningImageView.Trailing == arrowImageView.Leading - 17
+        worningImageView.Trailing == arrowImageView.Leading - 10
 
         style = .normal
     }

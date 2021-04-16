@@ -43,6 +43,14 @@ protocol AuthenticationManagerType: class {
      Removes any credentials for the current user.
      */
     func logout()
+    
+    
+    /**
+     A client can trigger a specific action to be performed only the user is authenticated, a typical scenario would be:
+     - If the user is already authenticated, then perform the block
+     - If not, then present the authentication coordinator ( sign in or signup ), with it's completion to be the given block
+     */
+    func performIfAuthenticated(_ block: @escaping (() -> Void))
 }
 
 

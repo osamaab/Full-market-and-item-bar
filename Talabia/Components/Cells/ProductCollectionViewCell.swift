@@ -16,8 +16,8 @@ class ProductCollectionViewCell: UICollectionViewCell {
         $0.clipsToBounds = false
         $0.layer.masksToBounds = false
         
-        $0.dropShadow(color: DefaultColorsProvider.decoratorShadow,
-                                 opacity: 0.16,
+        $0.dropShadow(color: .gray,
+                      opacity: 0.3,
                                  offSet: .init(width: 0, height: 2),
                                  radius: 2)
     }

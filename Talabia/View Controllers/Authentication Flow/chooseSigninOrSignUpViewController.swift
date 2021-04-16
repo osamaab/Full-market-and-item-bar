@@ -34,6 +34,8 @@ class chooseSigninOrSignUpViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"), action: {
+        self.navigationController?.popViewController(animated: true)})
         super.viewDidLoad()
 
         

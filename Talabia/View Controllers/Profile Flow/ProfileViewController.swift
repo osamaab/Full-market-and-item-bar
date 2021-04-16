@@ -14,6 +14,8 @@ import Stevia
  */
 class ProfileViewController<ProfileUser: UserModelType>: ContentViewController<ProfileUser>, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    let preferencesManager = UserDefaultsPreferencesManager.shared
+    
     struct ProfileDefaultContentRepository: ContentRepositoryType {
         enum InternalErrorType: String, Error {
             case unAuthenticated
@@ -32,7 +34,6 @@ class ProfileViewController<ProfileUser: UserModelType>: ContentViewController<P
             }
             
             guard let castedProfile = currentProfile.associatedData as? ProfileUser else {
-//                fatalError("Profile: Expected \(String(describing: ProfileUser.self)) but found a \(String(describing: currentProfile.associatedData))")
                 return
             }
             
@@ -61,28 +62,25 @@ class ProfileViewController<ProfileUser: UserModelType>: ContentViewController<P
         return .lightContent
     }
     override func setupViewsBeforeTransitioning() {
-        
-        view.backgroundColor = DefaultColorsProvider.backgroundSecondary
+       
+        view.backgroundColor = DefaultColorsProvider.backgroundPrimary
         setupNavigationBarRightView()
-
+        
             view.subviewsPreparedAL {
                 headerView
                 collectionView
             }
     
-        
+        headerView.layer.cornerRadius = 13
         headerView.Top == view.safeAreaLayoutGuide.Top
         headerView.leading(0).trailing(0)
         
         collectionView.Top == headerView.Bottom
         collectionView.leading(0).trailing(0).bottom(0)
         
-//        headerView.editButton.add(event: .touchUpInside) { [unowned self] in
-//            self.performAction(for: .editProfile)
-//        }
-        
         collectionView.dataSource = self
         collectionView.delegate = self
+        
         collectionView.reloadData()
     }
     
@@ -98,10 +96,6 @@ class ProfileViewController<ProfileUser: UserModelType>: ContentViewController<P
             
             return [loginMenuItem] + setupItems()
         }
-        
-//        let logoutItem = ProfileMenuItem(identifier: .logout, title: "Logout", image: nil, style: .highlighted){
-//            AppDelegate.shared.router.trigger(.logout)
-//        }
         
         return  setupItems()
     }
@@ -145,6 +139,8 @@ class ProfileViewController<ProfileUser: UserModelType>: ContentViewController<P
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(cellClass: ProfileMenuItemCollectionViewCell.self, for: indexPath)
         let item = menuItems[indexPath.item]
+
+        
         
         cell.imageView.image = item.image
         cell.titleLabel.text = item.title
@@ -155,7 +151,6 @@ class ProfileViewController<ProfileUser: UserModelType>: ContentViewController<P
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = menuItems[indexPath.item]
-        
         if let action = item.action {
             action()
         } else {

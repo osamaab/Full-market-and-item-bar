@@ -10,6 +10,9 @@ import UIKit
 
 
 extension UITabBarItem {
+    
+    static let companyProfile: UITabBarItem = .init(title: "Profile", image: UIImage(named: "company-profile"), selectedImage: UIImage(named: "company-profile-selected"))
+    
     static let profile: UITabBarItem = .init(title: "Profile", image: UIImage(named: "profile"), selectedImage: UIImage(named: "profile-selected"))
     
     static let market: UITabBarItem = .init(title: "Market", image: UIImage(named: "market"), selectedImage: UIImage(named: "market-selected"))

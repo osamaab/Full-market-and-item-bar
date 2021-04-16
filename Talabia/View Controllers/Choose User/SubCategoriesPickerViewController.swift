@@ -69,7 +69,7 @@ class SubCategoriesPickerViewController: ContentViewController<[MainCategory]>, 
         titleLabel.Top == view.safeAreaLayoutGuide.Top + 15
         titleLabel.leading(20).centerHorizontally()
         
-        collectionView.leading(0).trailing(0)
+        collectionView.leading(15).trailing(15)
         collectionView.Top == titleLabel.Bottom + 15
 //        collectionView.Bottom == view.safeAreaLayoutGuide.Bottom
         collectionView.Bottom == view.Bottom
@@ -169,14 +169,14 @@ extension SubCategoriesPickerViewController {
            heightDimension: .fractionalHeight(1.0))
          let ItemSpace = NSCollectionLayoutItem(layoutSize: itemSize)
         ItemSpace.contentInsets = NSDirectionalEdgeInsets(
-          top: 15,
+          top: 10,
           leading: 10,
-          bottom: 5,
+          bottom: 10,
           trailing: 10)
          //2
         let groupSize = NSCollectionLayoutSize(
            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalWidth(0.39))
+            heightDimension: .fractionalWidth(0.37))
          let group = NSCollectionLayoutGroup.horizontal(
            layoutSize: groupSize,
            subitem: ItemSpace,
@@ -195,6 +195,7 @@ extension SubCategoriesPickerViewController {
             boundaryItem
         ]
         section.orthogonalScrollingBehavior = .none
+        section.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 35, trailing: 0)
         return UICollectionViewCompositionalLayout(section: section)
     }
     func addBackButton() {

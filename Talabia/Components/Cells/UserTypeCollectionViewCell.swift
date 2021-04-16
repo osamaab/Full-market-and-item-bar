@@ -83,7 +83,7 @@ class UserTypeCollectionViewCell: UICollectionViewCell {
         }
         
         if animated {
-            UIView.animate(withDuration: 0.3, animations: block)
+            UIView.animate(withDuration: 0, animations: block)
         } else {
             block()
         }

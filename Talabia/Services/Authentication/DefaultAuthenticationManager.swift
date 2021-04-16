@@ -92,4 +92,12 @@ class DefaultAuthenticationManager: AuthenticationManagerType {
             UserDefaults.standard.removeObject(forKey: $0.rawValue)
         }
     }
+    
+    func performIfAuthenticated(_ block: @escaping (() -> Void)) {
+        //TODO: implement me
+        
+        
+        
+        
+    }
 }

@@ -79,8 +79,8 @@ class AuthHeaderView: UIView {
         typeBackgroundView.clipsToBounds = true
         typeBackgroundView.fillContainer()
         
-        typeImageView.contentMode = .scaleAspectFit
-        typeImageView.height(35).width(33).leading(15).centerVertically()
+        typeImageView.contentMode = .scaleToFill
+        typeImageView.height(40).width(37).leading(10).centerVertically()
         
         typeTitleLabel.font = .font(for: .semiBold, size: 17)
         typeTitleLabel.textColor = DefaultColorsProvider.tintPrimary

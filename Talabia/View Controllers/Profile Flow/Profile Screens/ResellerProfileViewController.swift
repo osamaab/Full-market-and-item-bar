@@ -25,11 +25,11 @@ class ResellerProfileViewController: ProfileViewController<Reseller> {
     override func setupItems() -> [ProfileMenuItem] {
         [
             .information(),
-            .changePassword(),
             .resellerBranches(),
             .payment(),
-            .history(),
-            .settings()
+            .companyHistory(),
+            .settings(),
+            .notification()
         ]
     }
     

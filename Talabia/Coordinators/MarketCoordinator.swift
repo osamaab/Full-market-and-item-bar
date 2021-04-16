@@ -14,18 +14,21 @@ import XCoordinator
 enum MarketRoute: Route {
     case home
     case company(Company)
+    case allCompanies
     
-    case categories
+    case categories([MainCategory])
     
     case products(MainCategory)
     case productDetails(Product)
 
     case advancedSearch
     case chooseStoreLocation(selected: DeliveryType?, delegate: MarketChooseLocationViewControllerDelegate)
+    case login
 }
 
 class MarketCoordinator: NavigationCoordinator<MarketRoute> {
     
+    let preferencesManager = UserDefaultsPreferencesManager.shared
     init(){
         super.init(rootViewController: NavigationController(), initialRoute: .home)
         rootViewController.tabBarItem = .market
@@ -36,8 +39,8 @@ class MarketCoordinator: NavigationCoordinator<MarketRoute> {
         case .home:
             let market = MarketViewController(router: self.unownedRouter, market: .full)
             return .push(market)
-        case .categories:
-            let categories = MarketCategoriesViewController()
+        case .categories(let categories):
+            let categories = MarketCategoriesViewController(contentRepository: ConstantContentRepository(content: categories))
             return .push(categories)
         case .company(let company):
             return .push(MarketViewController(router: self.unownedRouter, market: .company(company)))
@@ -52,7 +55,27 @@ class MarketCoordinator: NavigationCoordinator<MarketRoute> {
         case .chooseStoreLocation(let location, let delegate):
             MarketChooseLocationViewController(selectedLocation: location, delegate: delegate).present()
             return .none()
-        }
+        case .login:
+            
+            let vc = chooseSigninOrSignUpViewController
+                { method in
+                    switch method {
+                    case .signUp:
+                        self.preferencesManager.didTappedSignUp = true
+                        AppDelegate.shared.router.trigger(.chooseUserType, completion: nil)
+                        break
+                    
+                    case .signIn:
+                        AppDelegate.shared.router.trigger(.authentication(.signin), completion: nil)
+                        break
+                    }
+                }
+            vc.title = "Market"
+            return .push(vc)
+        case .allCompanies:
+            let vc = AllCompaniesViewController(contentRepository: AllCompaniesViewController.allCompanyContent())
+           
+            return .push(vc)        }
     }
 }
 extension MarketCoordinator: SubCategoriesPickerCoordinatorDelegate {

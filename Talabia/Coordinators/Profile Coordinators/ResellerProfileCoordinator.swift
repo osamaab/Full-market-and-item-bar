@@ -51,11 +51,10 @@ class ResellerProfileCoordinator: NavigationCoordinator<ResellerProfileRoute> {
                         break
                     }
                 }
-            vc.title = "Profile"
+          
             return .push(vc)
         case .profile:
             let profile = ResellerProfileViewController(router: self.unownedRouter)
-            profile.title = "Profile"
             return .push(profile)
         case .editProfile:
             guard let reseller = DefaultAuthenticationManager.shared.authProfile?.associatedData as? Reseller else {

@@ -112,8 +112,11 @@ class CompanySignUpViewController: UIViewController {
         guard let logo = self.logoImage else {
             throw InputCardViewValidationError.missingFields
         }
+        
         contentView.worningImageView.removeFromSuperview()
-        guard let logo64Base = logo.toBase64() else {
+        
+        
+        guard let logo64Base = logo.optimizedIfNeeded()?.toBase64() else {
             fatalError("Corrupted Image")
         }
         

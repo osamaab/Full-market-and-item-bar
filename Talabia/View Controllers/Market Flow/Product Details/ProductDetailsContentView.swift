@@ -14,9 +14,10 @@ import Stevia
 class ProductDetailsContentView: UIView {
     
     let containerStackView: UIStackView = .init()
+    let preferencesManager = UserDefaultsPreferencesManager.shared
     
     let headerView: ProductHeaderView = .init()
-    let ratingView: RatingView = .init()
+    var ratingView: RatingView = .init()
     let quantityView: QuantitySelectionView = .init(style: .big, title: "Quantity")
     let qrCodeView: QRCodeView = .init()
     let descriptionLabel: UILabel = .init()
@@ -43,8 +44,8 @@ class ProductDetailsContentView: UIView {
         containerStackView.addingArrangedSubviews {
             headerView.embededInVerticalPaddingView()
             ratingView.embededInVerticalPaddingView()
-            quantityView.embededInVerticalPaddingView()
-            qrCodeView.embededInVerticalPaddingView(topPadding: 10, bottomPadding: 10)
+//            quantityView.embededInVerticalPaddingView()
+//            qrCodeView.embededInVerticalPaddingView(topPadding: 10, bottomPadding: 10)
             descriptionLabel
             additionalDetailsLabel
             alternativeButton
@@ -65,9 +66,9 @@ class ProductDetailsContentView: UIView {
     }
     
     func setupStyling(){
-        descriptionLabel.numberOfLines = 0
-        descriptionLabel.font = .font(for: .medium, size: 16)
-        descriptionLabel.textColor = DefaultColorsProvider.textSecondary1
+        
+        descriptionLabel.font = .font(for: .regular, size: 15)
+        descriptionLabel.textColor = .black
         descriptionLabel.textAlignment = .center
 
         additionalDetailsLabel.numberOfLines = 0
@@ -77,15 +78,33 @@ class ProductDetailsContentView: UIView {
         
 
         actionButton.contentEdgeInsets = .init(top: 12, left: 0, bottom: 12, right: 0)
+        actionButton.clipsToBounds = true
+        actionButton.layer.cornerRadius = 13
         alternativeButton.contentEdgeInsets = .init(top: 12, left: 0, bottom: 12, right: 0)
+        alternativeButton.clipsToBounds = true
+        alternativeButton.layer.cornerRadius = 13
+        
+//        if preferencesManager.userType == .company {
+//            actionButton.removeFromSuperview()
+//            alternativeButton.removeFromSuperview()
+//        }
     }
     
     func setupConstraints(){
         qrCodeView.height(150)
         qrCodeView.Height == qrCodeView.Width
         
+        actionButton.width(250)
+//        alternativeButton.width(250)
+        
+//        containerStackView.leading(35).trailing(35).bottom(35).top(35)
+//        self.leading(0).trailing(0).bottom(0).top(0)
         headerView.imageView.height(150)
         containerStackView.setCustomSpacing(25, after: additionalDetailsLabel)
+        containerStackView.centerHorizontally()
+        descriptionLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+        descriptionLabel.setContentHuggingPriority(.defaultLow, for: .vertical)
+
     }
 }
 
@@ -118,14 +137,15 @@ class ProductHeaderView: UIView {
     fileprivate func setup() {
         subviews {
             containerView
+            titleLabel
             subtitleLabel1
             subtitleLabel2
+            
         }
 
         containerView.subviews {
             imageView
-            titleLabel
-            likeButton
+//            titleLabel
             topLabel
         }
         
@@ -141,29 +161,34 @@ class ProductHeaderView: UIView {
         containerView.backgroundColor = DefaultColorsProvider.backgroundPrimary
         containerView.clipsToBounds = false
         containerView.layer.masksToBounds = false
+        containerView.layer.cornerRadius = 13
+        containerView.width(260).height(200)
 
-        containerView.dropShadow(color: DefaultColorsProvider.decoratorShadow,
-                                 opacity: 0.16,
+        containerView.dropShadow(color: .gray,
+                                 opacity: 0.2,
                                  offSet: .init(width: 0, height: 2),
                                  radius: 2)
         
         
-        titleLabel.font = .font(for: .medium, size: 17)
-        titleLabel.textColor = DefaultColorsProvider.tintPrimary
+        titleLabel.font = .font(for: .bold, size: 17)
+        titleLabel.textColor = .black
 
         
-        topLabel.backgroundColor = DefaultColorsProvider.containerBackground3
+        topLabel.backgroundColor = DefaultColorsProvider.containerBackground1
         topLabel.textColor = DefaultColorsProvider.backgroundPrimary
-        topLabel.layer.cornerRadius = 3
-        topLabel.font = .font(for: .bold, size: 12)
+        topLabel.layer.cornerRadius = 5
+//        topLabel.numberOfLines = 1
+        topLabel.clipsToBounds = true
+        topLabel.font = .font(for: .bold, size: 15)
         topLabel.textAlignment = .center
 
         
-        likeButton.setImage(UIImage(named: "heart"), for: .normal)
-        likeButton.contentMode = .scaleAspectFit
+//        likeButton.setImage(UIImage(named: "heart"), for: .normal)
+//        likeButton.contentMode = .scaleAspectFit
+//
         
-        
-        subtitleLabel1.font = .font(for: .regular, size: 14)
+         
+        subtitleLabel1.font = .font(for: .bold, size: 17)
         subtitleLabel1.textColor = DefaultColorsProvider.textPrimary1
         subtitleLabel1.textAlignment = .center
                 
@@ -172,27 +197,22 @@ class ProductHeaderView: UIView {
         subtitleLabel2.textAlignment = .center
         
         containerView.leading(0).trailing(0).top(0).centerHorizontally()
-        
+        containerView.height(200)
 
         imageView.contentMode = .scaleAspectFit
-        imageView.width(100%).top(20).centerHorizontally()
+        imageView.width(100%).bottom(10).leading(0).trailing(0)
         
-        titleLabel.Trailing == likeButton.Leading - 15
-        titleLabel.bottom(15).centerHorizontally()
-        titleLabel.Top == imageView.Bottom + 8
+         
+        titleLabel.centerHorizontally()
+        titleLabel.Top == containerView.Bottom + 20
+//        titleLabel.leading(90).trailing(90)
 
         
-        topLabel.leading(8).top(8).height(25).width(40)
-
-        
-        likeButton.trailing(8).height(30).width(30)
-        likeButton.CenterY == topLabel.CenterY
-
-        
+        topLabel.leading(16).top(16).height(25).width(40)
+    
         subtitleLabel1.leading(0).centerHorizontally()
-        subtitleLabel1.Top == containerView.Bottom + 15
+        subtitleLabel1.Top ==  titleLabel.Bottom + 5
 
-        
         subtitleLabel2.leading(0).centerHorizontally()
         subtitleLabel2.Top == subtitleLabel1.Bottom + 5
         subtitleLabel2.bottom(0)

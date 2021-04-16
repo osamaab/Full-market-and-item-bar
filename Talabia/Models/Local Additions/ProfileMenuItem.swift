@@ -31,10 +31,12 @@ struct ProfileMenuItem: Equatable, Hashable {
         case companyProfile
         case payment
         case history
+        case companyHistory
         case settings
         case password
         case editProfile
         case notification
+        case favorits
         
         case coveringAreas
         case orders
@@ -80,7 +82,7 @@ struct ProfileMenuItem: Equatable, Hashable {
 extension ProfileMenuItem {
     
     static func notification() -> ProfileMenuItem {
-        return ProfileMenuItem(identifier: .notification , title: "Notification", image: .named("menu_exclamation"))
+        return ProfileMenuItem(identifier: .notification , title: "Notifications", image: .named("menu_exclamation"))
     }
     
     static func logout() -> ProfileMenuItem {
@@ -100,11 +102,11 @@ extension ProfileMenuItem {
     }
     
     static func companyBranches() -> ProfileMenuItem {
-        return .init(identifier: .branches, title: "Store location / Deliver locations", image: .named("menu_branches"))
+        return .init(identifier: .branches, title: "Deliver locations", image: .named("menu_branches"))
     }
     
     static func resellerBranches() -> ProfileMenuItem {
-        return .init(identifier: .branches, title: "Store/ Storage location", image: .named("menu_branches"))
+        return .init(identifier: .branches, title: "Store/ Storage location", image: .named("menu_location"))
     }
     
     static func companyProfile() -> ProfileMenuItem {
@@ -117,6 +119,14 @@ extension ProfileMenuItem {
     
     static func history() -> ProfileMenuItem {
         return .init(identifier: .history, title: "Orders History", image: .named("menu_orders"))
+    }
+    
+    static func companyHistory() -> ProfileMenuItem {
+        return .init(identifier: .companyHistory, title: "History", image: .named("menu_history"))
+    }
+    
+    static func favorits() -> ProfileMenuItem {
+        return .init(identifier: .companyHistory, title: "Favorites", image: .named("menu_favorit"))
     }
     
     static func settings() -> ProfileMenuItem {

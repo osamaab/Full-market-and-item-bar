@@ -10,7 +10,9 @@ import UIKit
 import Cosmos
 
 class RatingView: UIView {
-    
+    weak var ratingSlider: UISlider!
+   
+   
     var rating: Double = 3 {
         didSet {
             self.ratingView.rating = rating
@@ -27,19 +29,21 @@ class RatingView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
+      
     }
     
     func setup(){
         var settings = CosmosSettings()
         settings.emptyBorderWidth = 0
-        settings.emptyColor = DefaultColorsProvider.messageRating
+        settings.emptyColor = DefaultColorsProvider.backgroundSecondary
         settings.fillMode = .half
         settings.filledBorderWidth = 0
         settings.filledColor = DefaultColorsProvider.messageRating
-        settings.updateOnTouch = false
+        settings.updateOnTouch = true
         settings.disablePanGestures = true
         
         ratingView.settings = settings
+        
         ratingView.rating = rating
         
         ratingView.translatesAutoresizingMaskIntoConstraints = false
@@ -47,4 +51,5 @@ class RatingView: UIView {
         addSubview(ratingView)
         ratingView.fillContainer()
     }
+    
 }

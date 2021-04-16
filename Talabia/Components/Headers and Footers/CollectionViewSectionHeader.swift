@@ -13,6 +13,7 @@ class CollectionViewSectionHeader: UICollectionReusableView {
 
     lazy var seeMoreButton: UIButton = .init()
     lazy var titleLable: UILabel = .init()
+   public var onTouchComplitionHandler:(()-> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,7 +42,7 @@ class CollectionViewSectionHeader: UICollectionReusableView {
         titleLable.leading(0).top(10)
         titleLable.centerVertically()
         
-        seeMoreButton.trailing(0)
+        seeMoreButton.trailing(5)
         seeMoreButton.CenterY == titleLable.CenterY
         seeMoreButton.Leading >= titleLable.Trailing
     }

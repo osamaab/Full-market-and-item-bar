@@ -32,16 +32,17 @@ class CompanyProfileCoordinator: NavigationCoordinator<CompanyProfileRoute> {
     fileprivate var changePasswordRouter: StrongRouter<ChangePasswordRoute>?
     fileprivate var editProfileRouter: StrongRouter<EditProfileRoute>?
     fileprivate var itemsRouter: StrongRouter<ItemsRoute>?
+    
     init(){
         
-            guard self.authenticationManager.isAuthenticated else {
-                super.init(rootViewController: NavigationController(), initialRoute:.notLogin )
-                rootViewController.tabBarItem = .profile
-                return
-            }
-            
-       super.init(rootViewController: NavigationController(), initialRoute: .profile)
-        rootViewController.tabBarItem = .profile
+        guard self.authenticationManager.isAuthenticated else {
+            super.init(rootViewController: NavigationController(), initialRoute:.notLogin )
+            rootViewController.tabBarItem = .companyProfile
+            return
+        }
+        
+        super.init(rootViewController: NavigationController(), initialRoute: .profile)
+        rootViewController.tabBarItem = .companyProfile
     }
 
     override func prepareTransition(for route: RouteType) -> TransitionType {
@@ -64,7 +65,6 @@ class CompanyProfileCoordinator: NavigationCoordinator<CompanyProfileRoute> {
             return .push(vc)
         case .profile:
             let profile = CompanyProfileViewController(router: self.unownedRouter)
-            profile.title = "Profile"
             return .push(profile)
         case .editProfile:
             guard let company = DefaultAuthenticationManager.shared.authProfile?.associatedData as? Company else {

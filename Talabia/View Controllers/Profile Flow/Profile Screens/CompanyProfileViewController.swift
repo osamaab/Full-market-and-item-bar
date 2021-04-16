@@ -24,14 +24,16 @@ class CompanyProfileViewController: ProfileViewController<Company> {
     
     override func setupItems() -> [ProfileMenuItem] {
         [
-            .information(),
+//            .information(),
             .items(),
-            .changePassword(),
+//            .changePassword(),
             .companyBranches(),
-            .companyProfile(),
             .payment(),
-            .history(),
-            .settings()
+//            .companyProfile(),
+            .companyHistory(),
+            .favorits(),
+            .notification(),
+            .settings(),
         ]
     }
     

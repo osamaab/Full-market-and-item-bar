@@ -1,15 +1,14 @@
 //
-//  SubCategoryCollectionViewCell.swift
-//  talabyeh
+//  MarketAllSubCategorysCollectionViewCell.swift
+//  Talabia
 //
-//  Created by Hussein Work on 11/11/20.
-//  Copyright © 2020 Dominate. All rights reserved.
+//  Created by Osama Abu hdba on 13/04/2021.
+//  Copyright © 2021 Dominate. All rights reserved.
 //
 
 import UIKit
 import Stevia
-
-class SubCategoryCollectionViewCell: UICollectionViewCell{
+class MarketAllSubCategorysCollectionViewCell: UICollectionViewCell {
     
     let imageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
@@ -23,10 +22,6 @@ class SubCategoryCollectionViewCell: UICollectionViewCell{
         $0.textAlignment = .center
     }
     
-    let checkbox = CustomiseCheckboxView(frame: .zero).then {
-        $0.isHidden = true
-        
-    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,21 +33,20 @@ class SubCategoryCollectionViewCell: UICollectionViewCell{
         fatalError("init(coder:) has not been implemented")
     }
     
-    fileprivate func setup() {        
+    fileprivate func setup() {
         subviewsPreparedAL {
             imageView
             titleLabel
-            checkbox
         }
         
-        checkbox.width(20).height(20).top(5).trailing(5)
-        imageView.height(80%)
-        imageView.width(100%)
+       
+        imageView.height(105)
+        imageView.width(105)
         imageView.top(0).leading(0).trailing(0)
 
         titleLabel.centerHorizontally().leading(0)
-        titleLabel.Top == imageView.Bottom + 8
-        titleLabel.Bottom == Bottom
         titleLabel.height(20)
+        titleLabel.Top == imageView.Bottom + 7
+        titleLabel.Bottom == Bottom
     }
 }

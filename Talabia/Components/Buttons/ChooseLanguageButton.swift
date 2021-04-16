@@ -32,5 +32,6 @@ class ChooseLanguageButton: UIButton {
         
         contentEdgeInsets = .init(top: 0, left: 15, bottom: 8, right: 15)
         self.setTitle("عربي", for: .normal)
+        self.titleEdgeInsets = .init(top: -3, left: 0, bottom: 0, right: 0)
     }
 }

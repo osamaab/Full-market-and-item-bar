@@ -143,15 +143,6 @@ extension CompanyMarketViewController {
         case 0:
             let cell = collectionView.dequeueCell(cellClass: BannerCollectionViewCell.self, for: indexPath)
             cell.setupPagerView(items: banners)
-//            cell.segmentedControl.addTarget(self, action: #selector(suitDidChange), for: .valueChanged)
-//            if #available(iOS 14.0, *) {
-//                cell.segmentedControl.actionForSegment(at: 0)
-//                cell.imageView.image = UIImage(named: "\(ban)")
-//            } else {
-                // Fallback on earlier versions
-//            }
-
-//            cell.imageView.image = UIImage(named: "\(ban)")
 
             return cell
         case 1:
@@ -358,8 +349,6 @@ extension CompanyMarketViewController {
             section.contentInsets = .init(top: 0, leading: 20, bottom: 20, trailing: 20)
             return section
         }
-        
-        
         return layout
     }
 }
@@ -431,14 +420,6 @@ extension CompanyMarketViewController{
         stackView.addArrangedSubview(deliverToButton)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: deliveryToView)
     }
-//    @objc func suitDidChange(_ segmantedControll: UISegmentedControl) {
-//        switch segmantedControll.selectedSegmentIndex {
-//        case 0:
-//            UIImage(named: "\(Banners[0])")
-//        case 1:
-//            UIImage(named: "\(Banners[1])")
-//        default:
-//            break
-//        }
+    
     }
 

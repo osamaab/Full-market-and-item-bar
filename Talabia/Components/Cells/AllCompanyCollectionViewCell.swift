@@ -1,20 +1,20 @@
 //
-//  CategoryItemCollectionViewCell.swift
-//  talabyeh
+//  AllCompanyCollectionViewCell.swift
+//  Talabia
 //
-//  Created by Hussein Work on 20/11/2020.
-//  Copyright © 2020 Dominate. All rights reserved.
+//  Created by Osama Abu hdba on 15/04/2021.
+//  Copyright © 2021 Dominate. All rights reserved.
 //
 
 import UIKit
 import Stevia
 
-class MainCategoryCollectionViewCell: UICollectionViewCell {
+class AllCompanyCollectionViewCell: UICollectionViewCell {
     
     let containerView: UIView = .init()
     let titleLabel: UILabel = .init()
     let imageView: UIImageView = .init()
-    let checkboxView: CheckboxView = .init()
+    let checkboxView: FavoriteButton = .init()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,11 +25,17 @@ class MainCategoryCollectionViewCell: UICollectionViewCell {
         super.init(coder: coder)
         setup()
     }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.checkboxView.isChecked = false
+        
+    }
     
     func setup(){
         self.contentView.clipsToBounds = false
         self.clipsToBounds = false
         self.containerView.clipsToBounds = false
+        imageView.contentMode = .scaleAspectFit
 
         
         contentView.subviewsPreparedAL {
@@ -41,21 +47,20 @@ class MainCategoryCollectionViewCell: UICollectionViewCell {
             imageView
             checkboxView
         }
-//        containerView.height(78).width(104)
-        containerView.layer.cornerRadius = 12
-        containerView.backgroundColor = DefaultColorsProvider.containerBackground3
+
+        containerView.backgroundColor = DefaultColorsProvider.backgroundPrimary
         containerView.dropShadow(color: DefaultColorsProvider.decoratorShadow,
-                                 opacity: 0.16,
+                                 opacity: 0.3,
                                  offSet: .init(width: 0, height: 2),
                                  radius: 2)
         
         imageView.contentMode = .scaleAspectFit
         
         
-        imageView.centerHorizontally().centerVertically()
-        imageView.width(50%)
-        imageView.height(50%)
-        checkboxView.top(8).trailing(8).width(20).height(20)
+        imageView.centerVertically().centerHorizontally()
+        imageView.width(100%)
+        imageView.height(70%)
+        checkboxView.top(3).trailing(3).width(40).height(40)
         
         titleLabel.textAlignment = .center
         titleLabel.font = .font(for: .regular, size: 15)
@@ -68,25 +73,3 @@ class MainCategoryCollectionViewCell: UICollectionViewCell {
         containerView.Bottom == titleLabel.Top - 15
     }
 }
-
-
-//extension MainCategoryCollectionViewCell: CLComponentPreview {
-//    static var groupIdentifier: CLComponentGroupIdentifier {
-//        .cells
-//    }
-//    
-//    static func render(in context: CLComponentPreviewContext) {
-//        let view: Self = .init()
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        
-//        context.containerView.addSubview(view)
-//        
-//        view.imageView.image = UIImage(named: "sample_category")
-//        view.titleLabel.text = "Accessories"
-//        view.isSelected = true
-//        
-//        view.top(20).bottom(20)
-//        view.leading(20)
-//        view.centerHorizontally()
-//    }
-//}

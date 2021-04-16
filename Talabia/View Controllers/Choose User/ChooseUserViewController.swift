@@ -41,12 +41,9 @@ class ChooseUserViewController: ContentViewController<[APIUserType]> {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log in", action: {
             self.delegate?.chooseUserViewControllerDidChooseLogin(self)
         })
-
-
+        
         self.navigationItem.rightBarButtonItem?.tintColor = DefaultColorsProvider.tintPrimary
         
-        
-    
         self.navigationItem.rightBarButtonItem?.tintColor = DefaultColorsProvider.tintPrimary
         
         view.backgroundColor = DefaultColorsProvider.backgroundPrimary
@@ -58,17 +55,16 @@ class ChooseUserViewController: ContentViewController<[APIUserType]> {
             bottomView
         }
         
-        
-        
         chooseLanguageButton.trailing(20)
         chooseLanguageButton.height(48)
-        chooseLanguageButton.CenterY == headerView.CenterY
+        //        chooseLanguageButton.CenterY == headerView.CenterY
+        chooseLanguageButton.Top == view.safeAreaLayoutGuide.Top + 45
         
         headerView.subtitleLabel.textColor = DefaultColorsProvider.textSecondary1
         
         bottomView.nextButton.backgroundColor = DefaultColorsProvider.tintSecondary
         bottomView.nextButton.setTitleColor(DefaultColorsProvider.tintPrimary, for: .normal)
-
+        
         
         headerView.Top == view.safeAreaLayoutGuide.Top + 45
         headerView.leading(20).trailing(20)
@@ -79,7 +75,6 @@ class ChooseUserViewController: ContentViewController<[APIUserType]> {
         bottomView.Top == collectionView.Bottom
         bottomView.bottom(0).leading(0).trailing(0)
         
-//        self.collectionView.reloadData()
         bottomView.nextButton.add(event: .touchUpInside){ [unowned self] in
             if let selectedIndexPath = self.selectedIndexPath, let userType = self.state.content?[selectedIndexPath.item] {
                 
@@ -87,7 +82,7 @@ class ChooseUserViewController: ContentViewController<[APIUserType]> {
             }
         }
     }
-
+    
     override func contentRequestDidSuccess(with content: [APIUserType]) {
         self.collectionView.reloadData()
     }
@@ -115,14 +110,8 @@ extension ChooseUserViewController: UICollectionViewDataSource, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-           
-            
-            self.selectedIndexPath = indexPath
-            
-            
-           
+        self.selectedIndexPath = indexPath
         self.collectionView.reloadData()
-        
     }
 }
 

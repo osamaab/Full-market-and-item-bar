@@ -23,6 +23,7 @@ struct Company: Equatable, Hashable {
     let categories: [MainCategory]?
     let subcategories: [SubCategory]?
     let registeredDate: String
+    var isSelected: Bool?
     
     static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id
@@ -32,6 +33,9 @@ struct Company: Equatable, Hashable {
         hasher.combine(id)
     }
 
+    mutating func setSsSelected(isSelected: Bool) {
+        self.isSelected = isSelected
+    }
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case title = "title"

@@ -165,7 +165,7 @@ extension MainCategoriesPickerViewController {
          //2
          let groupSize = NSCollectionLayoutSize(
            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalWidth(0.33))
+            heightDimension: .fractionalWidth(0.31))
          let group = NSCollectionLayoutGroup.horizontal(
            layoutSize: groupSize,
            subitem: ItemSpace,
@@ -173,6 +173,7 @@ extension MainCategoriesPickerViewController {
         group.contentInsets = .init(top: 0, leading: 10, bottom: 0, trailing: 10)
          //3
          let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = .init(top: 0, leading: 0, bottom: 10, trailing: 0)
          let layout = UICollectionViewCompositionalLayout(section: section)
          return layout
        

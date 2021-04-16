@@ -15,8 +15,8 @@ class CompanyCollectionViewCell: UICollectionViewCell {
         $0.backgroundColor = DefaultColorsProvider.backgroundPrimary
         $0.layer.cornerRadius = 6
 
-        $0.dropShadow(color: DefaultColorsProvider.decoratorShadow,
-                                 opacity: 0.16,
+        $0.dropShadow(color: .gray,
+                      opacity: 0.3,
                                  offSet: .init(width: 0, height: 2),
                                  radius: 2)
     }
