@@ -82,6 +82,7 @@ class ProfileViewController<ProfileUser: UserModelType>: ContentViewController<P
         collectionView.delegate = self
         
         collectionView.reloadData()
+        
     }
     
     fileprivate func setupItems(with result: Result<ProfileUser, Error>) -> [ProfileMenuItem] {
@@ -112,7 +113,28 @@ class ProfileViewController<ProfileUser: UserModelType>: ContentViewController<P
             self.headerView.titleLabel.text = content.name
             self.headerView.subtitleLabel.text = content.email
             self.headerView.tertiaryLabel.text = content.mobile
-            self.headerView.imageView.sd_setImage(with: content.imageURL, completed: nil)
+            guard let imageUrl = content.imageURL else {
+                self.headerView.imageView.image = UIImage(named: "profile_PlaceHolder")
+             
+                self.headerView.imageView.layer.cornerRadius = headerView.imageView.frame.width / 2
+                self.headerView.imageView.contentMode = .scaleToFill
+//                self.headerView.imageView.dropShadow(color: .gray,
+//                                                     opacity: 0.3,
+//                                                       offSet: .init(width: 0, height: 3.4),
+//                                                       radius: 3.4)
+                self.headerView.imageView.clipsToBounds = true 
+                return
+            }
+//            self.headerView.imageView.image = UIImage(named: "profile_PlaceHolder")
+//            self.headerView.imageView.dropShadow(color: .gray,
+//                                                 opacity: 0.3,
+//                                                   offSet: .init(width: 0, height: 3.4),
+//                                                   radius: 3.4)
+            
+            self.headerView.imageView.layer.cornerRadius = 50
+            self.headerView.imageView.contentMode = .scaleAspectFill
+            self.headerView.imageView.clipsToBounds = true
+            self.headerView.imageView.sd_setImage(with: imageUrl, completed: nil)
         }
     }
     
@@ -123,7 +145,7 @@ class ProfileViewController<ProfileUser: UserModelType>: ContentViewController<P
             self.headerView.titleLabel.text = "Welcome to Talabeyah"
             self.headerView.subtitleLabel.text = "Login to continue"
             self.headerView.tertiaryLabel.text = ""
-            self.headerView.imageView.image = nil
+            self.headerView.imageView.image = UIImage(named: "profile_PlaceHolder")
             
             self.transition(to: .initial)
         }

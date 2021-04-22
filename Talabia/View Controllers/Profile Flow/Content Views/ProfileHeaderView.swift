@@ -14,13 +14,16 @@ class ProfileHeaderView: BasicViewWithSetup {
     let preferencesManager = UserDefaultsPreferencesManager.shared
     
     let imageView = UIImageView().then {
-        $0.contentMode = .scaleAspectFill
+        $0.contentMode = .scaleToFill
         $0.backgroundColor = DefaultColorsProvider.backgroundPrimary
-        $0.layer.cornerRadius = 50
-        $0.clipsToBounds = true
-        $0.layer.borderWidth = 50
+//        $0.layer.cornerRadius = $0.frame.width / 2
+//        $0.clipsToBounds = true
         $0.layer.borderColor = .init(red: 1, green: 0, blue: 0, alpha: 0)
-        $0.layer.masksToBounds = true
+//        $0.layer.masksToBounds = false
+        $0.dropShadow(color: .gray,
+                      opacity: 0.3,
+                        offSet: .init(width: 0, height: 3.4),
+                        radius: 3.4)
     }
     
     let titleLabel = UILabel().then {
@@ -77,6 +80,8 @@ class ProfileHeaderView: BasicViewWithSetup {
         containerStackView.layer.cornerRadius = 13
         imageView.width(100).height(100)
         editButton.top(20).trailing(15).width(20).height(20)
+//        imageView.layer.cornerRadius = 50
+//        imageView.image = UIImage(systemName: "person.crop.circle")
     }
     
 }

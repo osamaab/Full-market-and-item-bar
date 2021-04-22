@@ -30,6 +30,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     let titleLabel = UILabel().then {
         $0.font = .font(for: .regular, size: 13)
         $0.textColor = DefaultColorsProvider.tintPrimary
+        $0.textAlignment = .center
     }
     
     let likeButton = FavoriteButton()
@@ -37,14 +38,16 @@ class ProductCollectionViewCell: UICollectionViewCell {
     let topLabel = UILabel().then {
         $0.backgroundColor = DefaultColorsProvider.containerBackground1
         $0.textColor = DefaultColorsProvider.backgroundPrimary
-        $0.layer.cornerRadius = 1.7
-        $0.font = .font(for: .regular, size: 13)
+        $0.layer.cornerRadius = 2
+        $0.clipsToBounds = true
+        $0.font = .font(for: .bold, size: 9)
         $0.textAlignment = .center
     }
     
     let subtitleLabel1 = UILabel().then {
         $0.font = .font(for: .regular, size: 13)
         $0.textColor = DefaultColorsProvider.textPrimary1
+        $0.textAlignment = .left
     }
     
     let subtitleLabel2 = UILabel().then {
@@ -82,15 +85,15 @@ class ProductCollectionViewCell: UICollectionViewCell {
         titleLabel.Top == imageView.Bottom + 5
 
         imageView.top(20).centerHorizontally()
-        imageView.height(100).width(100).centerHorizontally()
+        imageView.height(100).width(100%).centerHorizontally()
         
-        topLabel.leading(8).top(8).height(15).width(30)
+        topLabel.leading(8).top(8).height(15).width(28)
 
-        likeButton.trailing(8).height(40).width(40)
+        likeButton.trailing(0).height(40).width(40)
         likeButton.CenterY == topLabel.CenterY
         
         subtitleLabel1.leading(0).centerHorizontally()
-        subtitleLabel1.Top == containerView.Bottom + 15
+        subtitleLabel1.Top == containerView.Bottom + 8
 
         
         subtitleLabel2.leading(0).centerHorizontally()

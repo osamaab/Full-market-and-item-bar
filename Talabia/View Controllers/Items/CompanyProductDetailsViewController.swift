@@ -9,47 +9,54 @@
 import UIKit
 import XCoordinator
 
-class CompanyProductDetailsViewController: UIViewController {
+class CompanyProductDetailsViewController: ContentViewController<Product> {
 
-    let scrollView: ScrollContainerView
-    let contentView: CompanyProductDetailsContentView
-    let product: Product
-
-    var router: UnownedRouter<ItemsRoute>
+    lazy var scrollView: ScrollContainerView = .init(contentView: contentView)
+    lazy var contentView: CompanyProductDetailsContentView = .init()
     
-    init(product: Product, router: UnownedRouter<ItemsRoute>){
-        self.product = product
-        self.contentView = .init()
-        self.scrollView = .init(contentView: contentView)
+    var router: UnownedRouter<ItemsRoute>
+    let subCategory: SubCategory
+    
+    init(product: Product, router: UnownedRouter<ItemsRoute>, subCategory: SubCategory){
         self.router = router
-        super.init(nibName: nil, bundle: nil)
+        self.subCategory = subCategory
+        super.init(contentRepository: ConstantContentRepository(content: product))
+    }
+    
+    init<R: ContentRepositoryType>(contentRepository: R, router: UnownedRouter<ItemsRoute>, subCategory: SubCategory) where R.ContentType == ContentType {
+        self.router = router
+        self.subCategory = subCategory
+        super.init(contentRepository: contentRepository)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    override func setupViewsBeforeTransitioning() {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = DefaultColorsProvider.backgroundSecondary
-        
+        view.backgroundColor = DefaultColorsProvider.backgroundPrimary
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", action: {
+            self.router.trigger(.newItem(self.subCategory))
+        })
+        addBackButton()
+        title = "Product Details"
         view.addSubview(scrollView)
         scrollView.fillContainer()
+    }
+    
+    override func contentRequestDidSuccess(with content: Product) {
+        let product = content
         
-        
-        contentView.topLabel.text = product.unit.title
-        contentView.titleLabel.text = product.item.name
+        contentView.topLabel.text = "KG"//product.unit.title
+        contentView.titleLabel.text = "\(product.item.name)-\(product.totalQuantity)KG"
         contentView.priceLabel.text = "JD \(product.price)"
         contentView.descriptionLabel.text = product.description
         
-        contentView.imageView.sd_setImage(with: product.images.first?.url, completed: nil)
-        
+        contentView.imageView.image = UIImage(named: "tomato")
         if let firstHistory = product.history.first {
-            contentView.productionLabel.text = "Production\n\(firstHistory.productionDate)"
-            contentView.expirationLabel.text = "Expiration\n\(firstHistory.expirationDate)"
+            contentView.productionLabel.text = "Production Date\n\(firstHistory.productionDate)"
+            contentView.expirationLabel.text = "Exp. Date\n\(firstHistory.expirationDate)"
         }
         
         product.history.forEach {
@@ -57,7 +64,29 @@ class CompanyProductDetailsViewController: UIViewController {
         }
         
         contentView.newQuantityButton.add(event: .touchUpInside) {
-            self.router.trigger(.newQuantity(self.product))
+            self.router.trigger(.newQuantity(product, self))
         }
+    }
+}
+
+extension CompanyProductDetailsViewController: NewProductQuantityViewControllerDelegate {
+    func newProductQuantityViewController(_ sender: NewProductQuantityViewController, didFinishWith form: NewProductQuantityViewController.NewQuantityForm) {
+        
+        sender.performTask(taskOperation: ItemsAPI.newQuantity(.init(userItemId: sender.product.id, quantity: form.quantity, productionDate: form.productionDate.apiFormattedDate, expirationDate: form.expirationDate.apiFormattedDate)).request(String.self)).then {
+            
+            sender.dismiss()
+            
+            self.retry()
+            self.showMessage(message: $0, messageType: .success)
+        }
+    }
+    func addBackButton() {
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(UIImage(named: "back"), for: .normal)
+        backButton.addTarget(self, action: #selector(self.backAction(_:)), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+    }
+    @objc func backAction(_ sender: UIButton) {
+        let _ = navigationController?.popViewController(animated: true)
     }
 }

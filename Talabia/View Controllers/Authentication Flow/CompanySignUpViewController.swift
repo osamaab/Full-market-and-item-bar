@@ -38,6 +38,7 @@ class CompanySignUpViewController: UIViewController {
     var logoImage: UIImage? {
         didSet {
             updatePickersState()
+//            updatePlaceHolderImaged()
         }
     }
     
@@ -103,18 +104,23 @@ class CompanySignUpViewController: UIViewController {
             throw InputCardViewValidationError.missingFields
         }
        
-        guard let license = self.licenseImage,
-              let location = self.companyLocation
-        else
-        {
+        guard let license = self.licenseImage else{
+            contentView.comLicenceWorningImageView.isHidden = false
             throw InputCardViewValidationError.missingFields
         }
+        contentView.comLicenceWorningImageView.isHidden = true
+        
         guard let logo = self.logoImage else {
+            contentView.companyWorningImageView.isHidden = false
             throw InputCardViewValidationError.missingFields
         }
+        contentView.companyWorningImageView.isHidden = true
         
-        contentView.worningImageView.removeFromSuperview()
-        
+        guard let location = self.companyLocation else {
+            contentView.companyLocationWorningImageView.isHidden = false
+            throw InputCardViewValidationError.missingFields
+        }
+        contentView.companyLocationWorningImageView.isHidden = true
         
         guard let logo64Base = logo.optimizedIfNeeded()?.toBase64() else {
             fatalError("Corrupted Image")
@@ -132,15 +138,23 @@ class CompanySignUpViewController: UIViewController {
     func updatePickersState(){
         contentView.categoryView.associatedValue = categories as AnyObject?
         contentView.companyLogoView.associatedValue = logoImage
+//        contentView.companyLogoView.imageView.image = logoImage
         contentView.comLicenceView.associatedValue = licenseImage
         contentView.companyLocationView.associatedValue = companyLocation
     }
+    private func updatePlaceHolderImaged() {
+        let image = contentView.companyLogoView.imageView
+        contentView.companyLogoView.stackView.removeArrangedSubview(contentView.companyLogoView.titleLabel)
+        contentView.companyLogoView.stackView.top(0).bottom(0).leading(0).trailing(0)
+        contentView.companyLogoView.stackView.addArrangedSubview(image)
+        image.image = logoImage
+        contentView.companyLogoView.imageView.contentMode = .scaleAspectFit
+
+    }
     
     fileprivate func addValidation(){
-//        contentView.companytf.validator = MaxCharactersValidatorType(maxCharactersCount: 100, fieldName: "Company name")
         contentView.emailtf.validator = EmailValidatorType()
         contentView.nationalNumbertf.validator = MaxCharactersValidatorType(maxCharactersCount: 100, fieldName: "Facility national number")
-//        contentView.telephonetf.validator = MaxCharactersValidatorType(maxCharactersCount: 35, fieldName: "Telephone number")
     }
     
     fileprivate func connectActions(){

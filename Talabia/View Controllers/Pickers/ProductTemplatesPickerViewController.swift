@@ -26,7 +26,6 @@ class ProductTemplatesPickerViewController: ContentViewController<[ProductTempla
     let pickerView: PickerView = .init()
     let bottomView: BottomNextButtonView = .init(title: "Next")
     
-    var selectedProduct: ProductTemplate?
     var filterCategory: SubCategory?
     
     fileprivate(set) var items: [ProductTemplate] = []
@@ -35,6 +34,7 @@ class ProductTemplatesPickerViewController: ContentViewController<[ProductTempla
         self.init(contentRepository: APIContentRepositoryType<ItemsAPI, [ProductTemplate]>(.productTemplates))
     }
     
+    var selectedProduct: ProductTemplate?
     override func setupViewsBeforeTransitioning() {
         view.subviewsPreparedAL { () -> [UIView] in
             pickerView

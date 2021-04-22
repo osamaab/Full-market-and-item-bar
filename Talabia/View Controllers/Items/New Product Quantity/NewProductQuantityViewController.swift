@@ -27,7 +27,7 @@ class NewProductQuantityViewController: UIViewController {
     
     let contentView: NewProductQuantityContentView = .init()
     
-    init(product: Product, delegate: NewProductQuantityViewControllerDelegate? = nil) {
+    init(product: Product, delegate: NewProductQuantityViewControllerDelegate?) {
         self.product = product
         self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
@@ -39,7 +39,7 @@ class NewProductQuantityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         self.view.backgroundColor = DefaultColorsProvider.backgroundSecondary
         
         self.view.subviewsPreparedAL {

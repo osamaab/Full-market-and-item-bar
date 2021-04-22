@@ -14,9 +14,9 @@ class AllItemsCoordinator: ItemsCoordinator {
         switch route {
         case .userCategories:
             let viewController = ItemCategoriesViewController(router: self.unownedRouter)
-            return .push(viewController as! Presentable)
+            return .push(viewController)
         case .items(let subcategory):
-            let viewController = ItemsViewController(router: self.unownedRouter, category: subcategory, api: .myProducts)
+            let viewController = ItemsViewController(router: self.unownedRouter, category: subcategory, api: .myProducts, delegate: self)
             viewController.allowsEditing = false
             return .push(viewController)
         default:

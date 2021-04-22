@@ -16,8 +16,13 @@ class CompanyProductDetailsContentView: BasicViewWithSetup {
     // history view
     
     let imageContainerView = BasicCardView().then {
-        $0.layer.cornerRadius = 20
-//        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 7
+        $0.clipsToBounds = true
+        $0.dropShadow(color: .gray,
+                      opacity: 0.3,
+                                 offSet: .init(width: 0, height: 2),
+                                 radius: 2)
+    
     }
     
     let detailsContainerView = BasicCardView()
@@ -48,7 +53,8 @@ class CompanyProductDetailsContentView: BasicViewWithSetup {
         $0.backgroundColor = DefaultColorsProvider.containerBackground1
         $0.textColor = DefaultColorsProvider.backgroundPrimary
         $0.layer.cornerRadius = 3
-        $0.font = .font(for: .bold, size: 12)
+        $0.clipsToBounds = true
+        $0.font = .font(for: .bold, size: 15)
         $0.textAlignment = .center
     }
     
@@ -58,7 +64,7 @@ class CompanyProductDetailsContentView: BasicViewWithSetup {
         $0.backgroundColor = DefaultColorsProvider.tintSecondary
         $0.setTitleColor(DefaultColorsProvider.tintPrimary, for: .normal)
         $0.setTitle("Add new quantity", for: .normal)
-        $0.titleLabel?.font = .font(for: .semiBold, size: 17)
+        $0.titleLabel?.font = .font(for: .bold, size: 17)
         $0.contentEdgeInsets = .init(top: 6, left: 20, bottom: 6, right: 20)
     }
     
@@ -66,28 +72,28 @@ class CompanyProductDetailsContentView: BasicViewWithSetup {
         $0.textAlignment = .center
         $0.font = .font(for: .bold, size: 21)
         $0.textColor = DefaultColorsProvider.textPrimary1
-        $0.text = "Product History"
+        $0.text = "Product history"
     }
     
     let titleLabel = UILabel().then {
-        $0.font = .font(for: .semiBold, size: 17)
+        $0.font = .font(for: .bold, size: 17)
         $0.textColor = DefaultColorsProvider.textPrimary1
         $0.textAlignment = .center
     }
     
     let priceLabel = UILabel().then {
-        $0.font = .font(for: .semiBold, size: 21)
+        $0.font = .font(for: .bold, size: 17)
         $0.textColor = DefaultColorsProvider.textPrimary1
         $0.textAlignment = .center
     }
     
     let ratingView = RatingView().then {
-        $0.isHidden = true
+        $0.isHidden = false
     }
     
     let descriptionLabel = UILabel().then {
-        $0.font = .font(for: .medium, size: 16)
-        $0.textColor = DefaultColorsProvider.textSecondary2
+        $0.font = .font(for: .regular, size: 15)
+        $0.textColor = .black
         $0.numberOfLines = 0
         $0.textAlignment = .center
     }
@@ -116,10 +122,12 @@ class CompanyProductDetailsContentView: BasicViewWithSetup {
         }
         
         backgroundColor = DefaultColorsProvider.backgroundSecondary
+        view.backgroundColor = DefaultColorsProvider.backgroundSecondary
+        historyStackView.backgroundColor = DefaultColorsProvider.backgroundSecondary
         
         imageContainerView.top(20).width(70%).centerHorizontally().height(200)
         detailsContainerView.leading(20).trailing(20)
-        historyContainerView.bottom(20).trailing(20).leading(20)
+        historyContainerView.bottom(20).trailing(-18).leading(-18)
         
         detailsContainerView.Top == imageContainerView.Bottom - 30
         historyContainerView.Top == detailsContainerView.Bottom + 20
@@ -159,7 +167,8 @@ class CompanyProductDetailsContentView: BasicViewWithSetup {
             historyStackView
         }
         
-        historyStackView.top(20).leading(20).bottom(20).trailing(20)
+        historyStackView.top(0).leading(20).bottom(20).trailing(20)
+    
         
         historyStackView.addingArrangedSubviews {
             historyTitleLabel

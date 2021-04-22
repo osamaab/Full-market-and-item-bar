@@ -21,6 +21,9 @@ final class UserDefaultsPreferencesManager {
     @ObjectStorage(key: .selectedCategories)
     var selectedCategories: [MainCategory]?
     
+    @ObjectStorage(key: .selectedCategoryWithSelecctedSubCategory)
+    var selectedCategoriesWithSelectedSubCategory: [MainCategory]?
+    
     @ObjectStorage(key: .selectedSubCategories)
     var selectedSubCategories: [SubCategory]?
     

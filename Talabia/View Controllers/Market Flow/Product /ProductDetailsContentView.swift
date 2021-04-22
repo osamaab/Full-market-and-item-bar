@@ -84,10 +84,10 @@ class ProductDetailsContentView: UIView {
         alternativeButton.clipsToBounds = true
         alternativeButton.layer.cornerRadius = 13
         
-//        if preferencesManager.userType == .company {
-//            actionButton.removeFromSuperview()
-//            alternativeButton.removeFromSuperview()
-//        }
+        if preferencesManager.userType == .company {
+            actionButton.removeFromSuperview()
+            alternativeButton.removeFromSuperview()
+        }
     }
     
     func setupConstraints(){
@@ -144,6 +144,7 @@ class ProductHeaderView: UIView {
         }
 
         containerView.subviews {
+//            likeButton
             imageView
 //            titleLabel
             topLabel
@@ -185,8 +186,10 @@ class ProductHeaderView: UIView {
         
 //        likeButton.setImage(UIImage(named: "heart"), for: .normal)
 //        likeButton.contentMode = .scaleAspectFit
-//
-        
+//        likeButton.isHidden = false
+//        likeButton.becomeFirstResponder()
+
+//        likeButton.bottom(15).trailing(15)
          
         subtitleLabel1.font = .font(for: .bold, size: 17)
         subtitleLabel1.textColor = DefaultColorsProvider.textPrimary1

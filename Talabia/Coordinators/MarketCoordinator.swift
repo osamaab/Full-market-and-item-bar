@@ -20,6 +20,7 @@ enum MarketRoute: Route {
     
     case products(MainCategory)
     case productDetails(Product)
+    case categoryDetails(SubCategory)
 
     case advancedSearch
     case chooseStoreLocation(selected: DeliveryType?, delegate: MarketChooseLocationViewControllerDelegate)
@@ -43,7 +44,9 @@ class MarketCoordinator: NavigationCoordinator<MarketRoute> {
             let categories = MarketCategoriesViewController(contentRepository: ConstantContentRepository(content: categories))
             return .push(categories)
         case .company(let company):
-            return .push(MarketViewController(router: self.unownedRouter, market: .company(company)))
+            let vc = CompanyDetailsViewController(router: self.unownedRouter, market: .company(company))
+            vc.title = "\(company.name)"
+            return .push(vc)
         case .products(_):
             fatalError("Not really ready :)")
         case .productDetails(let product):
@@ -71,11 +74,19 @@ class MarketCoordinator: NavigationCoordinator<MarketRoute> {
                     }
                 }
             vc.title = "Market"
+            vc.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"),
+                action: {
+                vc.navigationController?.popViewController(animated: true)})
             return .push(vc)
         case .allCompanies:
             let vc = AllCompaniesViewController(contentRepository: AllCompaniesViewController.allCompanyContent())
-           
-            return .push(vc)        }
+            return .push(vc)
+        case .categoryDetails(let subCategory):
+            let vc = CategoryDetailsViewController(router: self.unownedRouter, market:.category(subCategory))
+            vc.title = "\(subCategory.title)"
+            return .push(vc)
+        
+        }
     }
 }
 extension MarketCoordinator: SubCategoriesPickerCoordinatorDelegate {

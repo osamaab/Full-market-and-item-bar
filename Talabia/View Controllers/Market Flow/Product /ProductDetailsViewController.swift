@@ -30,9 +30,7 @@ class ProductDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "\(String(describing: product.item.name))"
-        
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"search-Icon"), action: {})
+        title = "Product details"
         addBackButton()
     
         scrollView.translatesAutoresizingMaskIntoConstraints = false

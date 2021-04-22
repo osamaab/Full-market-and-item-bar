@@ -76,10 +76,15 @@ extension ChoooseUserCoordinator: ChooseUserViewControllerDelegate {
     func chooseUserViewControllerDidChooseLogin(_ sender: ChooseUserViewController) {
         self.coordinatorDelegate?.chooseUserCoordinatorDidChooseLogin(self)
     }
+    func MainCategoriesPickerViewControllerDidChooseSkip(_ sender: ChooseUserViewController){
+        
+    }
 }
 
 extension ChoooseUserCoordinator: MainCategoriesPickerViewControllerDelegate {
     func mainCategoriesViewController(_ sender: MainCategoriesPickerViewController, didFinishWith categories: [MainCategory]) {
+        UserDefaultsPreferencesManager.shared.selectedCategories = categories
+        
         self.trigger(.subCategories(categories, userType!))
     }
     func MainCategoriesPickerViewControllerDidChooseSkip(_ sender: MainCategoriesPickerViewController){

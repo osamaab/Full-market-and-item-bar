@@ -102,8 +102,6 @@ class AppCoordinator: NavigationCoordinator<AppRoutes> {
             return .multiple(
                 .dismissToRoot(),
                 .presentFullScreen(coordinator))
-//            AppDelegate.shared.router.trigger(.authentication(.signin), completion: nil)
-//            return .trigger(.authentication(.signin), on: self)
         case .reseller:
             let coordinator = ResellerFlowCoordinator()
             self.currentFlowCoordinator = coordinator

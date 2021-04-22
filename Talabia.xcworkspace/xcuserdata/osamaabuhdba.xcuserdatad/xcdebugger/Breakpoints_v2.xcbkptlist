@@ -7,40 +7,8 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "47A5CFDB-48C1-4625-8B69-A9018B53A827"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Talabia/Components/Text Field/TextFieldValedation.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
-            landmarkName = "showWorninghMessage(type:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "929D193A-9A61-4E70-A916-691C809906B7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Talabia/Components/Text Field/TextFieldValedation.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
-            landmarkName = "showWorninghMessage(type:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "7D64C4CE-EAB0-42E4-B0CF-F705597C0BAF"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Talabia/Components/General General/RatingView.swift"
@@ -55,15 +23,31 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0A52FC65-7428-426F-B129-ED08E1F5B9B2"
+            uuid = "056AC963-7BF6-45EF-90FD-628AB3BCD5C2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Talabia/View Controllers/Profile Flow/ProfileViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "contentRequestDidFail(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F4DDAB55-0D9A-490D-B951-54DF4449E70C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Talabia/View Controllers/Market Flow/MarketViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "contentRepository"
             landmarkType = "24">
          </BreakpointContent>
@@ -71,96 +55,304 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AEE326F7-BAF3-46BB-AAB1-E656029CB7AB"
+            uuid = "09E2B3EA-E065-4EAA-AFDE-F497E9AA0C17"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Talabia/View Controllers/Market Flow/MarketViewController.swift"
+            filePath = "Talabia/View Controllers/Items/ItemsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
-            landmarkName = "collectionView(_:viewForSupplementaryElementOfKind:at:)"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
+            landmarkName = "newProductQuantityViewController(_:didFinishWith:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "09E2B3EA-E065-4EAA-AFDE-F497E9AA0C17 - 35dec2e15df61d0f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Talabia.ItemsViewController.newProductQuantityViewController(_: Talabia.NewProductQuantityViewController, didFinishWith: Talabia.NewProductQuantityViewController.NewQuantityForm) -&gt; ()"
+                  moduleName = "Talabia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osamaabuhdba/Desktop/Talabia/Talabia/Talabia/View%20Controllers/Items/ItemsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "237"
+                  endingLineNumber = "237"
+                  offsetFromSymbolStart = "46">
+               </Location>
+               <Location
+                  uuid = "09E2B3EA-E065-4EAA-AFDE-F497E9AA0C17 - 36f67ce3d5c7f3b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;Talabia.CategoryWithProducts&gt;, Swift.Error&gt;) -&gt; () in Talabia.ItemsViewController.newProductQuantityViewController(_: Talabia.NewProductQuantityViewController, didFinishWith: Talabia.NewProductQuantityViewController.NewQuantityForm) -&gt; ()"
+                  moduleName = "Talabia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osamaabuhdba/Desktop/Talabia/Talabia/Talabia/View%20Controllers/Items/ItemsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "237"
+                  endingLineNumber = "237"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2BA1E2ED-6360-4ACC-B97B-1E78E291B51A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Talabia/View Controllers/Items/MainCategoryViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "setupViewsBeforeTransitioning()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8A677291-5650-4531-B748-C54E4A5DB91C"
+            uuid = "09742026-0D9A-4ABA-8CFF-ECB8DDFFBB05"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Talabia/View Controllers/Market Flow/MarketViewController.swift"
+            filePath = "Talabia/View Controllers/Items/MainCategoryViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "setupViewsBeforeTransitioning()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4323C632-40C3-4214-BB78-A437AEA94D13"
+            uuid = "63EBAE58-2AE7-4281-A265-B78293BBDCE6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Talabia/View Controllers/Market Flow/MarketViewController.swift"
+            filePath = "Talabia/View Controllers/Items/MainCategoryViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "273"
-            endingLineNumber = "273"
-            landmarkName = "action(sender:)"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "init(router:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E706C4E8-0963-4EF2-B2C7-D950755C1032"
+            uuid = "FA2F60A7-FC46-46D9-AB25-50036D0ABDD8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Talabia/View Controllers/Market Flow/MarketViewController.swift"
+            filePath = "Talabia/Components/App General/ImagesPickerView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "284"
-            endingLineNumber = "284"
-            landmarkName = "productAction(sender:)"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "imagePickerController(_:didFinishWith:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "93CB00B1-87EB-4133-9642-DB77F9AA736A"
+            uuid = "DFEA2476-C5AB-4DDB-864C-BC662E10877D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Talabia/View Controllers/Market Flow/MarketViewController.swift"
+            filePath = "Talabia/Components/App General/ImagesPickerView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
-            landmarkName = "collectionView(_:viewForSupplementaryElementOfKind:at:)"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "imagePickerController(_:didFinishWith:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1CB8D072-EEE3-473F-A8BB-06E28F292C43"
+            uuid = "049419CC-1887-46A9-856D-A392D87A180E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Talabia/View Controllers/Market Flow/MarketViewController.swift"
+            filePath = "Talabia/Coordinators/ItemsCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
-            landmarkName = "collectionView(_:viewForSupplementaryElementOfKind:at:)"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "authenticationCoordinator(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "049419CC-1887-46A9-856D-A392D87A180E - 8bf2316cd393d670"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Talabia.ItemsCoordinator.authenticationCoordinator(Talabia.ItemsViewController) -&gt; ()"
+                  moduleName = "Talabia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osamaabuhdba/Desktop/Talabia/Talabia/Talabia/Coordinators/ItemsCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "34">
+               </Location>
+               <Location
+                  uuid = "049419CC-1887-46A9-856D-A392D87A180E - bd2c713d223a674e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;Talabia.CategoryWithProducts&gt;, Swift.Error&gt;) -&gt; () in Talabia.ItemsCoordinator.authenticationCoordinator(Talabia.ItemsViewController) -&gt; ()"
+                  moduleName = "Talabia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osamaabuhdba/Desktop/Talabia/Talabia/Talabia/Coordinators/ItemsCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "775839CD-8388-4D6C-BED4-DF8FF6BF6148"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Talabia/View Controllers/Items/ItemsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "requestContent(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B27794C7-D74D-4343-8F02-982F922EE2E2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Talabia/View Controllers/Items/ItemsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "contentRequestDidSuccess(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A59DD9E2-B7CF-4D40-8B2C-4C63CD12BEE8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Talabia/View Controllers/Items/ItemsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "contentRequestDidSuccess(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "13295C59-7683-47B5-9223-DFAF40580783"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Talabia/View Controllers/Items/CompanyProductDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "contentRequestDidSuccess(with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "13295C59-7683-47B5-9223-DFAF40580783 - 2f66e04edbd6efc9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Talabia.CompanyProductDetailsViewController.contentRequestDidSuccess(with: Talabia.Product) -&gt; ()"
+                  moduleName = "Talabia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osamaabuhdba/Desktop/Talabia/Talabia/Talabia/View%20Controllers/Items/CompanyProductDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "4742">
+               </Location>
+               <Location
+                  uuid = "13295C59-7683-47B5-9223-DFAF40580783 - 528b27795b1d1684"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Talabia.ProductHistoryEntry) -&gt; () in Talabia.CompanyProductDetailsViewController.contentRequestDidSuccess(with: Talabia.Product) -&gt; ()"
+                  moduleName = "Talabia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/osamaabuhdba/Desktop/Talabia/Talabia/Talabia/View%20Controllers/Items/CompanyProductDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "77">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C81BAECF-5A99-4B59-A1DF-7DA6920F9158"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Talabia/View Controllers/Items/CompanyProductDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "contentRequestDidSuccess(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "68444602-359F-4DAC-873E-8C39956691F2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Talabia/View Controllers/Items/CompanyProductDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "contentRequestDidSuccess(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -16,6 +16,7 @@ class MarketViewController: ContentViewController<Market>, UICollectionViewDeleg
     enum MarketType {
         case full
         case company(Company)
+        case category(SubCategory)
         
         var contentRepository: AnyContentRepository<Market> {
             switch self {
@@ -23,6 +24,8 @@ class MarketViewController: ContentViewController<Market>, UICollectionViewDeleg
                 return APIContentRepositoryType<MarketAPI, Market>(.market(10, 0)).eraseToAnyContentRepository()
             case .company(let company):
                 return APIContentRepositoryType<MarketAPI, Market>(.companyMarket(company.id)).eraseToAnyContentRepository()
+            case .category(let subCategory):
+                return APIContentRepositoryType<MarketAPI, Market>(.categoryDetails(subCategory.id)).eraseToAnyContentRepository()
             }
         }
     }
@@ -102,14 +105,14 @@ class MarketViewController: ContentViewController<Market>, UICollectionViewDeleg
             [unowned self] in
             self.router.trigger(.advancedSearch)
         }
-        
+        self.navigationItem.rightBarButtonItem =  searchItem
         
         if self.preferencesManager.userType == .company || self.preferencesManager.userType == .distributor {
             self.title = "Market"
         } else {
             setupNavigationBarleftView()
         }
-        self.navigationItem.rightBarButtonItem =  searchItem
+        
     }
     
     override func contentRequestDidSuccess(with content: Market) {
@@ -189,7 +192,7 @@ extension MarketViewController {
             cell.imageView.image = UIImage(named: "tomato")
             cell.subtitleLabel1.text = product.item.name
             cell.titleLabel.text = product.username
-            cell.topLabel.text = "KG" //product.unit.title
+            cell.topLabel.text = "1KG" //product.unit.title
             cell.subtitleLabel2.text = product.price.priceFormatted
             cell.likeButton.addTarget(self, action: #selector(productAction(sender:)), for: .touchUpInside)
             cell.likeButton.tag = indexPath.row
@@ -217,7 +220,17 @@ extension MarketViewController {
                 header.seeMoreButton.titleEdgeInsets = .init(top: 0, left: -15, bottom: 0, right: 0)
                 header.seeMoreButton.imageEdgeInsets = .init(top: 2, left: 60, bottom: 0, right: -15)
                 header.seeMoreButton.addAction { [unowned self] in
-                    self.router.trigger(.categories(self.preferencesManager.selectedCategories ?? []))
+                    let categories = self.preferencesManager.selectedCategories ?? []
+                    let selectedSubCategories = self.preferencesManager.selectedSubCategories ?? []
+                    
+                    var newCategories: [MainCategory] = []
+                    categories.forEach { mainCat in
+                        let selectedSub = selectedSubCategories.filter { $0.categoryID == mainCat.id }
+                        
+                        newCategories.append(.init(id: mainCat.id, title: mainCat.title, logo: mainCat.logo, subcategories: selectedSub))
+                    }
+                    
+                    self.router.trigger(.categories(newCategories))
                 }
             case 2:
                 header.titleLable.text = "New Companies"
@@ -248,13 +261,14 @@ extension MarketViewController {
             break
             
         case 1:
-            // select category to filter
+            self.router.trigger(.categoryDetails(categories[indexPath.item]))
             break
         case 2:
-            if DefaultAuthenticationManager.shared.isAuthenticated {
-            }else{
-                self.router.trigger(.login)
-            }
+//            if DefaultAuthenticationManager.shared.isAuthenticated {
+                self.router.trigger(.company(companies[indexPath.item]))
+//            }else{
+//                self.router.trigger(.login)
+//            }
         case 3:
             self.router.trigger(.productDetails(products[indexPath.item]))
         default:
@@ -262,15 +276,20 @@ extension MarketViewController {
         }
     }
     @objc func action(sender: UIButton){
-        let index = sender.tag
-        let item = companies[index]
-        if self.checkedfavaritCompany.contains(item){
-            self.checkedfavaritCompany.remove(at: checkedfavaritCompany.firstIndex(of: item)!)
-        } else {
-            self.checkedfavaritCompany.append(item)
-        }
-        //         self.collectionView.reloadData()
-        self.collectionView.reloadItems(at: [IndexPath(item: index, section: 2)])
+//        if DefaultAuthenticationManager.shared.isAuthenticated {
+            let index = sender.tag
+            let item = companies[index]
+            if self.checkedfavaritCompany.contains(item){
+                self.checkedfavaritCompany.remove(at: checkedfavaritCompany.firstIndex(of: item)!)
+            } else {
+                self.checkedfavaritCompany.append(item)
+            }
+            //         self.collectionView.reloadData()
+            self.collectionView.reloadItems(at: [IndexPath(item: index, section: 2)])
+//        }else {
+//            self.router.trigger(.login)
+//        }
+       
     }
     @objc func productAction(sender: UIButton){
         let index = sender.tag
@@ -338,7 +357,7 @@ extension MarketViewController {
                                                       heightDimension: itemHeightDimension)
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 
-                item.contentInsets = .init(top: 0, leading: 5 , bottom: 0, trailing: 5)
+                item.contentInsets = .init(top: 0, leading: 10 , bottom: 0, trailing: 10)
                 
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.82), heightDimension: .fractionalWidth(0.3)), subitem: item, count: 3)
                 //                group.interItemSpacing = .fixed(10)
@@ -347,14 +366,14 @@ extension MarketViewController {
                 section.orthogonalScrollingBehavior = .continuous
             //                section.interGroupSpacing = 30
             case 2:
-                let itemHeightDimension: NSCollectionLayoutDimension = .absolute(130)
+                let itemHeightDimension: NSCollectionLayoutDimension = .fractionalHeight(1.0)
                 
-                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3),
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                       heightDimension: itemHeightDimension)
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                
+                item.contentInsets = .init(top: 0, leading: 0 , bottom: 0, trailing: 0)
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                       heightDimension: itemHeightDimension)
+                                                       heightDimension: .fractionalWidth(0.35))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 3)
                 group.interItemSpacing = .fixed(20)
                 
@@ -362,12 +381,12 @@ extension MarketViewController {
                 section.interGroupSpacing = 15
                 section.orthogonalScrollingBehavior = .continuous
             case 3:
-                let itemHeightDimension: NSCollectionLayoutDimension = .estimated(180)
+                let itemHeightDimension: NSCollectionLayoutDimension = .estimated(130)
                 
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3),
                                                       heightDimension: itemHeightDimension)
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                
+                item.contentInsets = .init(top: 0, leading: 0 , bottom: 0, trailing: 0)
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                        heightDimension: itemHeightDimension)
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 3)

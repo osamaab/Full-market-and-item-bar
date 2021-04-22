@@ -15,7 +15,9 @@ class CompanySignupContentView: BasicViewWithSetup {
     let containerStackView: UIStackView = .init()
     let fieldsStackView: UIStackView = .init()
     let pickersContainerStackView: UIStackView = .init()
-    let worningImageView: UIImageView = .init()
+    let companyWorningImageView: UIImageView = .init()
+    let companyLocationWorningImageView: UIImageView = .init()
+    let comLicenceWorningImageView: UIImageView = .init()
 
     let companytf = CompanyTextField()
     let passwordtf = PasswordTextField()
@@ -81,7 +83,7 @@ class CompanySignupContentView: BasicViewWithSetup {
     }
     
     func setupPickers(){
-        [comLicenceView, companyLogoView, companyLocationView, categoryView,worningImageView].forEach {
+        [comLicenceView, companyLogoView, companyLocationView, categoryView,companyWorningImageView, comLicenceWorningImageView, companyLocationWorningImageView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
@@ -99,10 +101,23 @@ class CompanySignupContentView: BasicViewWithSetup {
         pickersContainerStackView.arrangedSubviews([topStack, bottomStack])
     
         categoryView.isHidden = true
-        worningImageView.image = UIImage(named: "operation-faild")
-        worningImageView.isHidden = false
-        companyLogoView.addSubview(worningImageView)
-        worningImageView.top(15).trailing(15).width(17).height(17)
+        
+        companyWorningImageView.image = UIImage(named: "operation-faild")
+        companyWorningImageView.isHidden = true
+        
+        comLicenceWorningImageView.image = UIImage(named: "operation-faild")
+        comLicenceWorningImageView.isHidden = true
+        
+        companyLocationWorningImageView.image = UIImage(named: "operation-faild")
+        companyLocationWorningImageView.isHidden = true
+        
+        companyLogoView.addSubview(companyWorningImageView)
+        comLicenceView.addSubview(comLicenceWorningImageView)
+        companyLocationView.addSubview(companyLocationWorningImageView)
+        
+        companyWorningImageView.top(15).trailing(15).width(17).height(17)
+        comLicenceWorningImageView.top(15).trailing(15).width(17).height(17)
+        companyLocationWorningImageView.top(15).trailing(15).width(17).height(17)
 
     }
 }

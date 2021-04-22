@@ -36,7 +36,7 @@ class NewItemViewController: ContentViewController<[ProductUnit]> {
     
     override func setupViewsBeforeTransitioning() {
         view.backgroundColor = DefaultColorsProvider.backgroundSecondary
-        
+        addBackButton() 
         view.subviewsPreparedAL {
             categoryView
             scrollView
@@ -68,7 +68,7 @@ class NewItemViewController: ContentViewController<[ProductUnit]> {
                 return
             }
             
-            let images = self.fieldsInputView.imagesPickerView.images.compactMap { $0.toBase64() }
+            let images = self.fieldsInputView.imagesPickerView.images.compactMap { $0.optimizedIfNeeded()?.toBase64() }
             if images.isEmpty {
                 self.showMessage(message: "Please Add Images", messageType: .failure)
                 return
@@ -88,5 +88,15 @@ class NewItemViewController: ContentViewController<[ProductUnit]> {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         scrollView.scrollView.contentInset.bottom = bottomNextView.bounds.height
+    }
+    func addBackButton() {
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(UIImage(named: "back"), for: .normal)
+        backButton.titleEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: -15)
+        backButton.addTarget(self, action: #selector(self.backAction(_:)), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+    }
+    @objc func backAction(_ sender: UIButton) {
+        let _ = navigationController?.popViewController(animated: true)
     }
 }

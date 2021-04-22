@@ -186,10 +186,10 @@ class MopileTextField: BorderedTextField {
     func showMopileWorninghMessage(type: MopileValedation?) {
         if type == .valid {
             hideWorningMessage()
-//            companySignUp?.bottomNextView.nextButton.isEnabled = false
+
         }else {
             showWorningMessage()
-//            companySignUp?.bottomNextView.nextButton.isEnabled = true
+
             worningImageView.removeFromSuperview()
             subviews(worningImageView)
             worningImageView.image = UIImage(named: "operation-faild")
@@ -246,11 +246,9 @@ class WebsiteTextField: BorderedTextField {
     
     func showWorninghMessage(type: WebsiteValedation?) {
         if type == .valid {
-//            companySignUp?.bottomNextView.nextButton.isEnabled = true
             hideWorningMessage()
         }else {
             showWorningMessage()
-//            companySignUp?.bottomNextView.nextButton.isEnabled = false
             worningImageView.removeFromSuperview()
             subviews(worningImageView)
             worningImageView.image = UIImage(named: "operation-faild")

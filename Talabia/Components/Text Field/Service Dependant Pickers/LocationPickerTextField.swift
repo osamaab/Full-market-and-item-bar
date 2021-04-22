@@ -26,7 +26,7 @@ class LocationPickerTextField: PickerTextField {
         super.setup()
         
         isSeparatorHidden = true
-        imageView.image = UIImage(named: "pin_small")
+        imageView.image = UIImage(named: "Pin-Small")
         
         onTap = { [unowned self] in
             // pick a location  :)

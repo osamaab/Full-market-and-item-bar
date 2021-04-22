@@ -11,7 +11,7 @@ import UIKit
 
 extension UITabBarItem {
     
-    static let companyProfile: UITabBarItem = .init(title: "Profile", image: UIImage(named: "company-profile"), selectedImage: UIImage(named: "company-profile-selected"))
+    static let companyProfile: UITabBarItem = .init(title: "Profile", image: UIImage(named: "Profile UP"), selectedImage: UIImage(named: "Profile DOWN"))
     
     static let profile: UITabBarItem = .init(title: "Profile", image: UIImage(named: "profile"), selectedImage: UIImage(named: "profile-selected"))
     
@@ -22,7 +22,7 @@ extension UITabBarItem {
     
     static let items: UITabBarItem = .init(title: "Items", image: UIImage(named: "items"), selectedImage: UIImage(named: "items-selected"))
     
-    static let distributors: UITabBarItem = .init(title: "Distributors", image: UIImage(named: "distributors"), selectedImage: UIImage(named: "distributors-selected"))
+    static let distributors: UITabBarItem = .init(title: "Distributors", image: UIImage(named: "Dis. UP"), selectedImage: UIImage(named: "Dis. DOWN"))
 
     static let operation: UITabBarItem = .init(title: "Operation", image: UIImage(named: "operations"), selectedImage: UIImage(named: "operations-selected"))
 

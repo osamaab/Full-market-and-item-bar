@@ -21,7 +21,7 @@ class MainCategoriesPickerViewController: ContentViewController<[MainCategory]> 
     static func allCategoriesContent() -> APIContentRepositoryType<GeneralAPI, [MainCategory]> {
         .init(.categories)
     }
-    
+    let preferencesManager = UserDefaultsPreferencesManager.shared
     lazy var headerView: AuthHeaderView = .init(elements: [
         .title("Welcome to TALABIA"),
         .type(self.userType),
@@ -32,9 +32,10 @@ class MainCategoriesPickerViewController: ContentViewController<[MainCategory]> 
     lazy var bottomView: BottomNextButtonView = .init(title: "Next")
     
     let userType: UserType
-    
+
     var categories: [MainCategory] = [] {
         didSet {
+    
             self.collectionView.reloadData()
         }
     }
@@ -67,11 +68,12 @@ class MainCategoriesPickerViewController: ContentViewController<[MainCategory]> 
         let textAttributes = [NSAttributedString.Key.foregroundColor:DefaultColorsProvider.elementUnselected]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"), action: {
-            AppDelegate.shared.router.trigger(.chooseUserType)
+//            AppDelegate.shared.router.trigger(.chooseUserType)
+            self.navigationController?.popViewController(animated: true)
         })
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Skip", action: { [unowned self] in
-            self.delegate?.MainCategoriesPickerViewControllerDidChooseSkip(self)
-        })
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Skip", action: { [unowned self] in
+//            self.delegate?.MainCategoriesPickerViewControllerDidChooseSkip(self)
+//        })
         self.navigationItem.rightBarButtonItem?.tintColor = DefaultColorsProvider.tintPrimary
         
         
@@ -98,6 +100,11 @@ class MainCategoriesPickerViewController: ContentViewController<[MainCategory]> 
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.reloadData()
+        if preferencesManager.selectedCategories != [] {
+            selectedCategories = preferencesManager.selectedCategories ?? []
+        }else {
+            selectedCategories = []
+        }
         
         bottomView.nextButton.add(event: .touchUpInside) { [unowned self] in
             if selectedCategories.count > 0 {
@@ -121,9 +128,10 @@ extension MainCategoriesPickerViewController: UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(cellClass: MainCategoryCollectionViewCell.self, for: indexPath)
         let item = self.categories[indexPath.item]
-        
         cell.titleLabel.text = item.title
         cell.imageView.sd_setImage(with: item.logo)
+        
+//        cell.checkboxView.isSelected = self.storedSelectedCategories.contains(item)
         cell.checkboxView.isSelected = self.selectedCategories.contains(item)
         
         return cell

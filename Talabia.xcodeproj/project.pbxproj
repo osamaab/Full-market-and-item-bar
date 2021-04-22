@@ -9,10 +9,15 @@
 /* Begin PBXBuildFile section */
 		C91427C8261992A4006F26AA /* DistributorsOperationsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91427C7261992A4006F26AA /* DistributorsOperationsCoordinator.swift */; };
 		C91427CD2619A185006F26AA /* TalabiaCordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91427CC2619A185006F26AA /* TalabiaCordinator.swift */; };
+		C97EB19126303F04001629EB /* MainCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97EB19026303F04001629EB /* MainCategoriesViewController.swift */; };
+		C97EB1962630A3AA001629EB /* SubCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97EB1952630A3AA001629EB /* SubCategoryViewController.swift */; };
 		C98B1B4A26105CDE00F3770E /* ChooseLanguageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B1B4926105CDE00F3770E /* ChooseLanguageButton.swift */; };
 		C98B1B5426109E3A00F3770E /* ApperanceSetupStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B1B5326109E3A00F3770E /* ApperanceSetupStep.swift */; };
 		C98B1B782611C26500F3770E /* chooseSigninOrSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B1B772611C26400F3770E /* chooseSigninOrSignUpViewController.swift */; };
 		C98B1B802611C49200F3770E /* chooseSigninOrSignUpcontentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B1B7F2611C49200F3770E /* chooseSigninOrSignUpcontentView.swift */; };
+		C98C93DA262CD30F0073A25A /* CategoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C93D9262CD30E0073A25A /* CategoryDetailsViewController.swift */; };
+		C98C93EF262D62710073A25A /* CompanyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C93EE262D62710073A25A /* CompanyDetailsViewController.swift */; };
+		C98C93F4262D68310073A25A /* CompanyBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98C93F3262D68310073A25A /* CompanyBannerCollectionViewCell.swift */; };
 		C9976D1C26259B9000DAEA9E /* MarketAllSubCategorysCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9976D1B26259B9000DAEA9E /* MarketAllSubCategorysCollectionViewCell.swift */; };
 		C9976D302628183D00DAEA9E /* AllCompaniesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9976D2F2628183D00DAEA9E /* AllCompaniesViewController.swift */; };
 		C9976D35262821A300DAEA9E /* AllCompanyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9976D34262821A300DAEA9E /* AllCompanyCollectionViewCell.swift */; };
@@ -235,7 +240,6 @@
 		E4A0B26D25868E1300AF3CEA /* OperationDetailsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A0B26C25868E1300AF3CEA /* OperationDetailsContentView.swift */; };
 		E4A0B27625868F4A00AF3CEA /* CheckDistributersOperationAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A0B27525868F4A00AF3CEA /* CheckDistributersOperationAccessoryView.swift */; };
 		E4A0B27E258697CC00AF3CEA /* ClientPreferOperationAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A0B27D258697CC00AF3CEA /* ClientPreferOperationAccessoryView.swift */; };
-		E4A503C925EE37A300556EDF /* CompanyMarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A503C825EE37A300556EDF /* CompanyMarketViewController.swift */; };
 		E4A670392563AAF60057083C /* ProfileMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A670382563AAF60057083C /* ProfileMenuItem.swift */; };
 		E4A670452563B3980057083C /* PaymentCardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A670442563B3980057083C /* PaymentCardValidator.swift */; };
 		E4A6704A2563B52A0057083C /* MonthPickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A670492563B52A0057083C /* MonthPickerTextField.swift */; };
@@ -444,10 +448,15 @@
 		6AAA51FBE740FA7A03A29768 /* Pods-Talabia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talabia.release.xcconfig"; path = "Target Support Files/Pods-Talabia/Pods-Talabia.release.xcconfig"; sourceTree = "<group>"; };
 		C91427C7261992A4006F26AA /* DistributorsOperationsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributorsOperationsCoordinator.swift; sourceTree = "<group>"; };
 		C91427CC2619A185006F26AA /* TalabiaCordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalabiaCordinator.swift; sourceTree = "<group>"; };
+		C97EB19026303F04001629EB /* MainCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCategoriesViewController.swift; sourceTree = "<group>"; };
+		C97EB1952630A3AA001629EB /* SubCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryViewController.swift; sourceTree = "<group>"; };
 		C98B1B4926105CDE00F3770E /* ChooseLanguageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguageButton.swift; sourceTree = "<group>"; };
 		C98B1B5326109E3A00F3770E /* ApperanceSetupStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApperanceSetupStep.swift; sourceTree = "<group>"; };
 		C98B1B772611C26400F3770E /* chooseSigninOrSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chooseSigninOrSignUpViewController.swift; sourceTree = "<group>"; };
 		C98B1B7F2611C49200F3770E /* chooseSigninOrSignUpcontentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chooseSigninOrSignUpcontentView.swift; sourceTree = "<group>"; };
+		C98C93D9262CD30E0073A25A /* CategoryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsViewController.swift; sourceTree = "<group>"; };
+		C98C93EE262D62710073A25A /* CompanyDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyDetailsViewController.swift; sourceTree = "<group>"; };
+		C98C93F3262D68310073A25A /* CompanyBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyBannerCollectionViewCell.swift; sourceTree = "<group>"; };
 		C9976D1B26259B9000DAEA9E /* MarketAllSubCategorysCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketAllSubCategorysCollectionViewCell.swift; sourceTree = "<group>"; };
 		C9976D2F2628183D00DAEA9E /* AllCompaniesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCompaniesViewController.swift; sourceTree = "<group>"; };
 		C9976D34262821A300DAEA9E /* AllCompanyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCompanyCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -670,7 +679,6 @@
 		E4A0B26C25868E1300AF3CEA /* OperationDetailsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationDetailsContentView.swift; sourceTree = "<group>"; };
 		E4A0B27525868F4A00AF3CEA /* CheckDistributersOperationAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDistributersOperationAccessoryView.swift; sourceTree = "<group>"; };
 		E4A0B27D258697CC00AF3CEA /* ClientPreferOperationAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientPreferOperationAccessoryView.swift; sourceTree = "<group>"; };
-		E4A503C825EE37A300556EDF /* CompanyMarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyMarketViewController.swift; sourceTree = "<group>"; };
 		E4A670382563AAF60057083C /* ProfileMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuItem.swift; sourceTree = "<group>"; };
 		E4A670442563B3980057083C /* PaymentCardValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardValidator.swift; sourceTree = "<group>"; };
 		E4A670492563B52A0057083C /* MonthPickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthPickerTextField.swift; sourceTree = "<group>"; };
@@ -912,12 +920,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C9976D262628179E00DAEA9E /* CompanyDetails */ = {
+		C98C93DE262D61120073A25A /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				E44AD5E0256A458400574B6A /* MarketCategoriesViewController.swift */,
+				C98C93D9262CD30E0073A25A /* CategoryDetailsViewController.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		C9976D262628179E00DAEA9E /* Company */ = {
 			isa = PBXGroup;
 			children = (
 				C9976D2F2628183D00DAEA9E /* AllCompaniesViewController.swift */,
+				C98C93EE262D62710073A25A /* CompanyDetailsViewController.swift */,
 			);
-			path = CompanyDetails;
+			path = Company;
 			sourceTree = "<group>";
 		};
 		E4000CB0255C064900E89ABB /* Content Views */ = {
@@ -1333,6 +1351,8 @@
 			isa = PBXGroup;
 			children = (
 				E48C89B02590EF39000CDE76 /* ItemCategoriesViewController.swift */,
+				C97EB19026303F04001629EB /* MainCategoriesViewController.swift */,
+				C97EB1952630A3AA001629EB /* SubCategoryViewController.swift */,
 				E48C89C32590F88C000CDE76 /* ItemsViewController.swift */,
 				E4535D7325E311AB00C3FD3A /* CompanyProductDetailsViewController.swift */,
 				E48C89D32590FC6E000CDE76 /* NewItemViewController.swift */,
@@ -1457,11 +1477,10 @@
 			isa = PBXGroup;
 			children = (
 				F9F65B8B254F1FD300D347D6 /* MarketViewController.swift */,
-				E4A503C825EE37A300556EDF /* CompanyMarketViewController.swift */,
-				E44AD5E0256A458400574B6A /* MarketCategoriesViewController.swift */,
 				E4DEABC325F7975700FA189E /* MarketChooseLocationViewController.swift */,
-				C9976D262628179E00DAEA9E /* CompanyDetails */,
-				E4B2A74B256CB5CE0055C1AE /* Product Details */,
+				C98C93DE262D61120073A25A /* Category */,
+				C9976D262628179E00DAEA9E /* Company */,
+				E4B2A74B256CB5CE0055C1AE /* Product  */,
 				E41327902565696B00090419 /* Advanced Search */,
 			);
 			path = "Market Flow";
@@ -1643,17 +1662,18 @@
 				E42B636625E6D524007C0718 /* OrderHistoryItemCollectionViewCell.swift */,
 				C9A8046D26209F5800120D59 /* BannerCollectionViewCell.swift */,
 				C9976D34262821A300DAEA9E /* AllCompanyCollectionViewCell.swift */,
+				C98C93F3262D68310073A25A /* CompanyBannerCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		E4B2A74B256CB5CE0055C1AE /* Product Details */ = {
+		E4B2A74B256CB5CE0055C1AE /* Product  */ = {
 			isa = PBXGroup;
 			children = (
 				E4B2A743256CB5BC0055C1AE /* ProductDetailsViewController.swift */,
 				E4B2A74F256CB5DF0055C1AE /* ProductDetailsContentView.swift */,
 			);
-			path = "Product Details";
+			path = "Product ";
 			sourceTree = "<group>";
 		};
 		E4B5EA1D25AF7E70006BD100 /* Users */ = {
@@ -2645,6 +2665,7 @@
 				E49C73F5258A68DA002A5A59 /* ChangePasswordViewController.swift in Sources */,
 				E4FF498C2560F43900B4CBC4 /* NewDistributorViewController.swift in Sources */,
 				E494FA0025A4A5EF00517CA8 /* ConstantContentRepository.swift in Sources */,
+				C98C93DA262CD30F0073A25A /* CategoryDetailsViewController.swift in Sources */,
 				E4EE6BEB2594E8D100D0EDCC /* CLRegisterationSectionListProvider.swift in Sources */,
 				E40792DC25923BC600DE563C /* PriceTextField.swift in Sources */,
 				E4BAF708259A43C400A65D87 /* CompanyFlowCoordinator.swift in Sources */,
@@ -2737,11 +2758,11 @@
 				C9A8044D261C8ADA00120D59 /* customiseCheckBox.swift in Sources */,
 				E407E45825DB0519000C3496 /* ResellerEditStoreLocationViewController.swift in Sources */,
 				E4D7205025D1C0D80079ACDF /* NewStoreLocationHeaderView.swift in Sources */,
-				E4A503C925EE37A300556EDF /* CompanyMarketViewController.swift in Sources */,
 				E496B2FE255B3088001BEC0F /* Moya+DefaultProvider.swift in Sources */,
 				E407E45325DB0510000C3496 /* ResellerNewStoreLocationViewController.swift in Sources */,
 				E4CB7407255D15B60017A499 /* ValidatorType.swift in Sources */,
 				E4E6813B255D435E0051D52D /* LocationPickerViewController.swift in Sources */,
+				C98C93EF262D62710073A25A /* CompanyDetailsViewController.swift in Sources */,
 				E459A9BB25A4CE4C007810AE /* KeyboardSetupStep.swift in Sources */,
 				E4CB7414255D19B20017A499 /* Validators.swift in Sources */,
 				E48090AC25D8EC9B007227BD /* UserModelType.swift in Sources */,
@@ -2814,6 +2835,8 @@
 				E46E808E25C916DB00A516E9 /* SubCategoriesPickerCoordinator.swift in Sources */,
 				E48C89E125910259000CDE76 /* ImagesPickerView.swift in Sources */,
 				E4BD347925A5C60A0007FCE1 /* ServicesHeadersPlugin.swift in Sources */,
+				C98C93F4262D68310073A25A /* CompanyBannerCollectionViewCell.swift in Sources */,
+				C97EB1962630A3AA001629EB /* SubCategoryViewController.swift in Sources */,
 				E4D7204825D1B93D0079ACDF /* StoreLocationCollectionViewCell.swift in Sources */,
 				E4B5EA1F25AF7E7A006BD100 /* Distributor.swift in Sources */,
 				E4F2034B25ECF6920077829E /* MarketAPI.swift in Sources */,
@@ -2827,6 +2850,7 @@
 				E47E010325926B2B00FC737A /* SelectExternalViewController.swift in Sources */,
 				E42B636225E6D4DF007C0718 /* OrderHistoryViewController.swift in Sources */,
 				E4A6704F2563B5310057083C /* YearPickerTextField.swift in Sources */,
+				C97EB19126303F04001629EB /* MainCategoriesViewController.swift in Sources */,
 				E48F2E4725D847A900345F8C /* CompanyProfileViewController.swift in Sources */,
 				E4FF1BB525A1FD8A00AF4194 /* GeneralStateView.swift in Sources */,
 				F9CC27CB25332B8900408FDA /* SignInContentView.swift in Sources */,

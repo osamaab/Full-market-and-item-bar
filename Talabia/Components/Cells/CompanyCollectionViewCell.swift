@@ -23,7 +23,7 @@ class CompanyCollectionViewCell: UICollectionViewCell {
     
     
     let imageView = UIImageView().then {
-        $0.contentMode = .scaleAspectFit
+        $0.contentMode = .scaleToFill
     }
     let titleLabel = UILabel().then {
         $0.font = .font(for: .regular, size: 13)
@@ -64,10 +64,10 @@ class CompanyCollectionViewCell: UICollectionViewCell {
 //        titleLabel.bottom(5).centerHorizontally()
 //        titleLabel.Top == imageView.Bottom + 5
 
-        imageView.width(100).centerHorizontally()
-        imageView.height(100)
-        imageView.top(24)
-        imageView.Bottom == titleLabel.Top
+        imageView.height(70%).centerHorizontally()
+        imageView.leading(0).trailing(0)
+        imageView.top(24).bottom(10)
+//        imageView.Bottom == titleLabel.Top
         likeButton.trailing(0).height(40).width(40).top(-3)
     }
 }

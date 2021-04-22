@@ -35,7 +35,7 @@ class AllCompaniesViewController: ContentViewController<[Company]> {
     }
     
     override func setupViewsBeforeTransitioning() {
-        title = "Items"
+        title = "Companies"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"search-Icon"), action: {})
         addBackButton()
                

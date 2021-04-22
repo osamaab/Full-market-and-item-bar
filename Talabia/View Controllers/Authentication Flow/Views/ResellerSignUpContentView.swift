@@ -13,7 +13,9 @@ class ResellerSignUpContentView: BasicViewWithSetup {
     let containerStackView: UIStackView = .init()
     let fieldsStackView: UIStackView = .init()
     let pickersContainerStackView: UIStackView = .init()
-    let worningImageView: UIImageView = .init()
+    let storeWorningImageView: UIImageView = .init()
+    let licenceWorningImageView: UIImageView = .init()
+    let storeLocationWorningImageView: UIImageView = .init()
 
     let nametf = CompanyTextField()
     let passwordtf = PasswordTextField()
@@ -75,7 +77,7 @@ class ResellerSignUpContentView: BasicViewWithSetup {
     }
     
     func setupPickers(){
-        [storeImageView, licenceView, storeLocationView, categoryView, worningImageView].forEach {
+        [storeImageView, licenceView, storeLocationView, categoryView, storeWorningImageView, licenceWorningImageView, storeLocationWorningImageView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
@@ -93,9 +95,22 @@ class ResellerSignUpContentView: BasicViewWithSetup {
         pickersContainerStackView.arrangedSubviews([topStack, bottomStack])
         
         categoryView.isHidden = true
-        worningImageView.image = UIImage(named: "operation-faild")
-        worningImageView.isHidden = false
-        storeImageView.addSubview(worningImageView)
-        worningImageView.top(15).trailing(15).width(17).height(17)
+        storeWorningImageView.image = UIImage(named: "operation-faild")
+        storeWorningImageView.isHidden = true
+        
+        licenceWorningImageView.image = UIImage(named: "operation-faild")
+        licenceWorningImageView.isHidden = true
+        
+        storeLocationWorningImageView.image = UIImage(named: "operation-faild")
+        storeLocationWorningImageView.isHidden = true
+        
+       storeImageView.addSubview(storeWorningImageView)
+        storeWorningImageView.top(15).trailing(15).width(17).height(17)
+        
+        licenceView.addSubview(licenceWorningImageView)
+        licenceWorningImageView.top(15).trailing(15).width(17).height(17)
+        
+        storeLocationView.addSubview(storeLocationWorningImageView)
+        storeLocationWorningImageView.top(15).trailing(15).width(17).height(17)
     }
 }

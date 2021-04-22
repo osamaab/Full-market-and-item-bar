@@ -32,7 +32,7 @@ struct Product: Equatable, Hashable {
         case id
         case totalQuantity = "item_total_quantity"
         case description
-//        case username
+        case username
         case price
         case item
         case unit
@@ -48,6 +48,6 @@ extension Product: Codable {
 
 extension Double {
     var priceFormatted: String {
-        "JD\(self)"
+        "JD \(self)"
     }
 }

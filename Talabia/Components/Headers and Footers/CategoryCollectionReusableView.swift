@@ -31,6 +31,10 @@ class CategoryCollectionReusableView: UICollectionReusableView {
     func setup(){
         backgroundColor = DefaultColorsProvider.containerBackground3
         layer.cornerRadius = 10
+        dropShadow(color: .gray,
+                      opacity: 0.3,
+                                 offSet: .init(width: 0, height: 2),
+                                 radius: 2)
         
         titleLabel.font = .font(for: .bold, size: 17)
         titleLabel.textColor = DefaultColorsProvider.tintPrimary

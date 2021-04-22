@@ -13,13 +13,13 @@ struct ProductTemplate: Equatable, Hashable {
     let name: String
     let barcode: String
     let subcategoryID: Int
-//    let unit: ProductUnit
+    let unit: Int //ProductUnit
 //    let category: SubCategory
 
     enum CodingKeys: String, CodingKey {
         case id
         case name
-//        case unit
+        case unit = "unit_id"
         case barcode
         case subcategoryID = "subcategory_id"
 //        case category = "subcategory"

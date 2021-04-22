@@ -20,7 +20,7 @@ class SubCategoriesPickerViewController: ContentViewController<[MainCategory]>, 
         case single
         case multiple
     }
-    
+    let preferencesManager = UserDefaultsPreferencesManager.shared
     static func preferencesCategories() -> ConstantContentRepository<[SubCategory]> {
         guard let subcategories = DefaultPreferencesController.shared.selectedSubCategories else {
             fatalError("")
@@ -71,7 +71,6 @@ class SubCategoriesPickerViewController: ContentViewController<[MainCategory]>, 
         
         collectionView.leading(15).trailing(15)
         collectionView.Top == titleLabel.Bottom + 15
-//        collectionView.Bottom == view.safeAreaLayoutGuide.Bottom
         collectionView.Bottom == view.Bottom
         bottomView.leading(0).trailing(0).bottom(0)
         
@@ -79,6 +78,12 @@ class SubCategoriesPickerViewController: ContentViewController<[MainCategory]>, 
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.reloadData()
+        
+        if preferencesManager.selectedSubCategories != [] {
+            selectedCategories = preferencesManager.selectedSubCategories ?? []
+        }else {
+            selectedCategories = []
+        }
         
         bottomView.nextButton.add(event: .touchUpInside) { [unowned self] in
             if selectedCategories.count > 0 {
@@ -186,7 +191,7 @@ extension SubCategoriesPickerViewController {
          let section = NSCollectionLayoutSection(group: group)
 //         let layout = UICollectionViewCompositionalLayout(section: section)
 //         return layout
-        let boundaryItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+        let boundaryItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.95),
                                                       heightDimension: .estimated(60))
         let boundaryItem = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: boundaryItemSize,
                                                                        elementKind: Self.headerElementKind,
@@ -210,6 +215,16 @@ extension SubCategoriesPickerViewController {
     }
     @IBAction func backAction(_ sender: UIButton) {
         let _ = navigationController?.popViewController(animated: true)
+    }
+    func removeBackButton() {
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(UIImage(named: "back"), for: .normal)
+        backButton.setTitle("Category", for: .normal)
+        backButton.isHidden = true
+        backButton.titleEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: -15)
+        backButton.setTitleColor(DefaultColorsProvider.tintPrimary, for: .normal)
+        backButton.titleLabel?.font = .font(for: .bold, size: 17)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
     }
 }
 

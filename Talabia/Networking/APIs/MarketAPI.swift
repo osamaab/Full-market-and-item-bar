@@ -13,6 +13,7 @@ enum MarketAPI {
     case market(Int?, Int?)
     case companyMarket(Int)
     case allCompany
+    case categoryDetails(Int)
     
     
     case advancedSearchProducts(Int?, String?)
@@ -26,6 +27,8 @@ extension MarketAPI: TargetType {
             return  "non_user/market"
         case .companyMarket(let id):
             return "company/market/\(id)"
+        case.categoryDetails(let id):
+        return "reseller/market/\(id)"
         
         case .advancedSearchProducts:
             return "user/items/filter"
@@ -46,6 +49,8 @@ extension MarketAPI: TargetType {
             return .post
         case .allCompany:
             return.get
+        case .categoryDetails:
+            return .get
         }
     }
     
@@ -58,6 +63,8 @@ extension MarketAPI: TargetType {
         case .advancedSearchProducts(let catID, let text):
             return .requestParameters(parameters: ["name": text ?? "", "category_id": catID], encoding: URLEncoding.default)
         case .market:
+            return .requestPlain
+        case .categoryDetails:
             return .requestPlain
         case .allCompany:
             return .requestPlain

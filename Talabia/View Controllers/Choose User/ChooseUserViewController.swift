@@ -14,10 +14,15 @@ import XCoordinator
 protocol ChooseUserViewControllerDelegate: class {
     func chooseUserViewController(_ sender: ChooseUserViewController, didFinishWith user: UserType)
     func chooseUserViewControllerDidChooseLogin(_ sender: ChooseUserViewController)
+    func MainCategoriesPickerViewControllerDidChooseSkip(_ sender: ChooseUserViewController)
+
 }
 
 class ChooseUserViewController: ContentViewController<[APIUserType]> {
-    
+
+
+    @Injected var preferencesManager: DefaultPreferencesController
+
     lazy var headerView: AuthHeaderView = .init(elements: [
                                                     .title("Welcome to TALABIA"),
                                                     .subtitle("Let's get started")])
@@ -84,6 +89,14 @@ class ChooseUserViewController: ContentViewController<[APIUserType]> {
     }
     
     override func contentRequestDidSuccess(with content: [APIUserType]) {
+        
+        let selectedUserTypeFromPrefenreces = self.preferencesManager.userType
+        
+        
+        
+        if let selected = (content.firstIndex { $0.id == self.preferencesManager.userType?.rawValue }) {
+            self.selectedIndexPath = IndexPath(item: selected, section: 0)
+        }
         self.collectionView.reloadData()
     }
 }

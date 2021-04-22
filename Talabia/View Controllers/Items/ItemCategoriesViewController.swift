@@ -31,8 +31,13 @@ class ItemCategoriesViewController: SubCategoriesPickerViewController {
     override func setupViewsBeforeTransitioning() {
         super.setupViewsBeforeTransitioning()
         bottomView.removeFromSuperview()
-        collectionView.contentInset.bottom = 0
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), action: {})
+        titleLabel.removeFromSuperview()
+        super.removeBackButton()
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "plus-Button"), action: { [weak self] in
+            self?.router.trigger(.allCategories)
+        })
+        collectionView.contentInset.top = 20
+        collectionView.top(0).bottom(0).leading(0).trailing(0)
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

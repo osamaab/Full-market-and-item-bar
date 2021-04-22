@@ -14,10 +14,13 @@ struct CategoryWithProducts {
     let category: SubCategory
     let products: [Product]
 }
-
+protocol ItemsViewControllerDelegate: class {
+    func authenticationCoordinator(_ sender: ItemsViewController)
+}
 
 class ItemsViewController: ContentViewController<[CategoryWithProducts]> {
     
+    let category: SubCategory
     struct DefaultContentRepositoryType: ContentRepositoryType {
         typealias ContentType = [CategoryWithProducts]
         
@@ -29,7 +32,7 @@ class ItemsViewController: ContentViewController<[CategoryWithProducts]> {
             self.api = api
         }
         
-        func requestContent(completion: @escaping ContentRequestCompletion<[CategoryWithProducts]>) {
+         func requestContent(completion: @escaping ContentRequestCompletion<[CategoryWithProducts]>) {
             APIContentRepositoryType<ItemsAPI, [Product]>(api).requestContent { (result) in
                 switch result {
                 case .success(let products):
@@ -46,6 +49,8 @@ class ItemsViewController: ContentViewController<[CategoryWithProducts]> {
     typealias DataSource = UICollectionViewDiffableDataSource<SubCategory, Product>
     typealias Snapshot = NSDiffableDataSourceSnapshot<SubCategory, Product>
 
+    weak var delegate: ItemsViewControllerDelegate?
+    
     let titleHeaderKind = "title-header"
     
     lazy var collectionView: UICollectionView = createCollectionView(for: createLayout())
@@ -62,13 +67,16 @@ class ItemsViewController: ContentViewController<[CategoryWithProducts]> {
     
     var router: UnownedRouter<ItemsRoute>
     
-    init<R: ContentRepositoryType>(router: UnownedRouter<ItemsRoute>, contentRepository: R) where R.ContentType == ContentType {
+    init<R: ContentRepositoryType>(router: UnownedRouter<ItemsRoute>, contentRepository: R, category: SubCategory) where R.ContentType == ContentType {
         self.router = router
+        self.category = category
         super.init(contentRepository: contentRepository)
     }
     
-    init(router: UnownedRouter<ItemsRoute>, category: SubCategory, api: ItemsAPI = .marketProducts){
+    init(router: UnownedRouter<ItemsRoute>, category: SubCategory, api: ItemsAPI = .marketProducts, delegate: ItemsViewControllerDelegate?){
         self.router = router
+        self.delegate = delegate
+        self.category = category
         super.init(contentRepository: DefaultContentRepositoryType(category: category, api: api))
     }
     
@@ -79,7 +87,7 @@ class ItemsViewController: ContentViewController<[CategoryWithProducts]> {
         // Do any additional setup after loading the view.
         title = "Items"
         view.backgroundColor = DefaultColorsProvider.backgroundSecondary
-             
+        addBackButton() 
         view.subviewsPreparedAL {
             collectionView
         }
@@ -120,7 +128,7 @@ class ItemsViewController: ContentViewController<[CategoryWithProducts]> {
 
 extension ItemsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.router.trigger(.details(dataSource.itemIdentifier(for: indexPath)!))
+        self.router.trigger(.details(dataSource.itemIdentifier(for: indexPath)!, category))
     }
 }
 
@@ -133,11 +141,12 @@ extension ItemsViewController {
 
             cell.imageView.image = UIImage(named: "Rectangle 232")
             cell.subtitleLabel1.text = item.item.name
-            cell.titleLabel.text = item.username
+            cell.titleLabel.text = ""//item.username
             cell.subtitleLabel2.text = "\(item.price) JD"
-            cell.topLabel.text = item.unit.title
+            cell.topLabel.text = "1KG"//item.unit.title
             cell.isEditing = self.editingSections.contains(indexPath.section)
-            cell.imageView.sd_setImage(with: item.images.first?.url, completed: nil)
+//            cell.imageView.sd_setImage(with: item.images.first?.url, completed: nil)
+            cell.imageView.image = UIImage(named: "tomato")
             
             cell.likeButton.alpha = 0
             cell.onRemoveButtonTap = { [unowned self] in
@@ -220,4 +229,25 @@ extension ItemsViewController {
         
         return layout
     }
+}
+
+extension ItemsViewController: NewProductQuantityViewControllerDelegate{
+    func newProductQuantityViewController(_ sender: NewProductQuantityViewController, didFinishWith form: NewProductQuantityViewController.NewQuantityForm) {
+
+        requestContent { _ in}
+    }
+    func addBackButton() {
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(UIImage(named: "back"), for: .normal)
+        backButton.setTitle("Category", for: .normal)
+        backButton.titleEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: -15)
+        backButton.setTitleColor(DefaultColorsProvider.tintPrimary, for: .normal)
+        backButton.titleLabel?.font = .font(for: .bold, size: 17)
+        backButton.addTarget(self, action: #selector(self.backAction(_:)), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+    }
+    @objc func backAction(_ sender: UIButton) {
+        let _ = navigationController?.popViewController(animated: true)
+    }
+
 }

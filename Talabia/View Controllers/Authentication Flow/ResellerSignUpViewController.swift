@@ -91,15 +91,22 @@ class ResellerSignUpViewController: UIViewController {
     }
     
     func verifyContent() throws -> RegisterationForm.Reseller {
-        guard
-              let license = self.licenseImage,
-              let location = self.storeLocation else {
+        guard let license = self.licenseImage else {
+            contentView.licenceWorningImageView.isHidden = false
             throw InputCardViewValidationError.missingFields
         }
+        contentView.licenceWorningImageView.isHidden = true
+        
         guard let logo = self.logoImage else {
+            contentView.storeWorningImageView.isHidden = false
             throw InputCardViewValidationError.missingFields
         }
-        contentView.worningImageView.removeFromSuperview()
+        contentView.storeWorningImageView.isHidden = true
+        guard let location = self.storeLocation else {
+            contentView.storeLocationWorningImageView.isHidden = false
+            throw InputCardViewValidationError.missingFields
+        }
+        contentView.storeLocationWorningImageView.isHidden = true
         
         guard let name = self.contentView.nametf.text,
               let email = self.contentView.emailtf.text,
@@ -130,10 +137,8 @@ class ResellerSignUpViewController: UIViewController {
     }
     
     fileprivate func addValidation(){
-//        contentView.nametf.validator = MaxCharactersValidatorType(maxCharactersCount: 100, fieldName: "Reseller's name")
         contentView.emailtf.validator = EmailValidatorType()
         contentView.nationalNumbertf.validator = MaxCharactersValidatorType(maxCharactersCount: 100, fieldName: "Facility national number")
-//        contentView.telephonetf.validator = MaxCharactersValidatorType(maxCharactersCount: 35, fieldName: "Telephone number")
     }
     
     fileprivate func connectActions(){

@@ -10,7 +10,7 @@ import Foundation
 
 struct Reseller: Codable {
     let id: Int
-    let name: String
+    let name: String = "osama"
     let email: String
     let facilityNationalNumber: String
     let telephone: String
