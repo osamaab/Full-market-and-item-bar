@@ -1,0 +1,21 @@
+${PODS_ROOT}/Target Support Files/Pods-Talabia/Pods-Talabia-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Actions/Actions.framework
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/AwaitToast/AwaitToast.framework
+${BUILT_PRODUCTS_DIR}/CardScanner/CardScanner.framework
+${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework
+${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework
+${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework
+${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
+${BUILT_PRODUCTS_DIR}/LanguageManager-iOS/LanguageManager_iOS.framework
+${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
+${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework
+${BUILT_PRODUCTS_DIR}/PickerView/PickerView.framework
+${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework
+${BUILT_PRODUCTS_DIR}/PromisesSwift/Promises.framework
+${BUILT_PRODUCTS_DIR}/QuickLayout/QuickLayout.framework
+${BUILT_PRODUCTS_DIR}/Resolver/Resolver.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/SwiftEntryKit/SwiftEntryKit.framework
+${BUILT_PRODUCTS_DIR}/ValidationTextField/ValidationTextField.framework
+${BUILT_PRODUCTS_DIR}/XCoordinator/XCoordinator.framework

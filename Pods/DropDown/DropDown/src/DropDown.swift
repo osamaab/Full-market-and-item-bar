@@ -168,8 +168,6 @@ public final class DropDown: UIView {
 			}
 		}
 	}
-    
-    public var hidesOnSelection: Bool = true
 
 	//MARK: Constraints
 	fileprivate var heightConstraint: NSLayoutConstraint!
@@ -364,14 +362,6 @@ public final class DropDown: UIView {
 			reloadAllComponents()
 		}
 	}
-    
-    public var cellClass: DropDownCell.Type? {
-        didSet {
-            tableView.register(cellClass, forCellReuseIdentifier: DPDConstant.ReusableIdentifier.DropDownCell)
-            templateCell = nil
-            reloadAllComponents()
-        }
-    }
 	
 	//MARK: Content
 
@@ -721,7 +711,7 @@ extension DropDown {
 		let anchorViewX = anchorView?.plainView.windowFrame?.minX ?? window.frame.midX - (width / 2)
 		let anchorViewY = anchorView?.plainView.windowFrame?.minY ?? window.frame.midY - (tableHeight / 2)
 		
-        let x: CGFloat = 20//anchorViewX + bottomOffset.x
+		let x = anchorViewX + bottomOffset.x
 		let y = anchorViewY + bottomOffset.y
 		
 		let maxY = y + tableHeight
@@ -745,7 +735,7 @@ extension DropDown {
 		let anchorViewX = anchorView?.plainView.windowFrame?.minX ?? 0
 		let anchorViewMaxY = anchorView?.plainView.windowFrame?.maxY ?? 0
 
-        let x: CGFloat = 20//anchorViewX + topOffset.x
+		let x = anchorViewX + topOffset.x
 		var y = (anchorViewMaxY + topOffset.y) - tableHeight
 
 		let windowY = window.bounds.minY + DPDConstant.UI.HeightPadding
@@ -1129,10 +1119,7 @@ extension DropDown: UITableViewDataSource, UITableViewDelegate {
             deselectRow(at: selectedRowIndex)
         }
         
-        if hidesOnSelection {
-            hide()
-        }
-        
+        hide()
     
 	}
 

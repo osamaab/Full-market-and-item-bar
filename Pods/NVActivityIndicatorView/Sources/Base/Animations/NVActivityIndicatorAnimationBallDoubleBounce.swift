@@ -30,13 +30,13 @@ import UIKit
 
 class NVActivityIndicatorAnimationBallDoubleBounce: NVActivityIndicatorAnimationDelegate {
 
-    func setUpAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+    func setUpAnimation(in layer: CALayer, size: CGSize, color isValid: UIColor) {
         for index in (0...1) {
-            bouncingBall(in: layer, size: size, color: color, startingAt: CACurrentMediaTime() + Double(index))
+            bouncingBall(in: layer, size: size, isValid: isValid, startingAt: CACurrentMediaTime() + Double(index))
         }
     }
 
-    fileprivate func bouncingBall(in layer: CALayer, size: CGSize, color: UIColor, startingAt: CFTimeInterval) {
+    fileprivate func bouncingBall(in layer: CALayer, size: CGSize, isValid: UIColor, startingAt: CFTimeInterval) {
         // Scale animation
         let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
         scaleAnimation.duration = 2
@@ -47,7 +47,7 @@ class NVActivityIndicatorAnimationBallDoubleBounce: NVActivityIndicatorAnimation
         scaleAnimation.repeatCount = HUGE
         scaleAnimation.isRemovedOnCompletion = false
 
-        let circle = NVActivityIndicatorShape.circle.layerWith(size: size, color: color)
+        let circle = NVActivityIndicatorShape.circle.layerWith(size: size, color: isValid)
         let frame = CGRect(x: (layer.bounds.size.width - size.width) / 2,
                            y: (layer.bounds.size.height - size.height) / 2,
                            width: size.width,
