@@ -36,7 +36,7 @@ class ItemsViewController: ContentViewController<[CategoryWithProducts]> {
             APIContentRepositoryType<ItemsAPI, [Product]>(api).requestContent { (result) in
                 switch result {
                 case .success(let products):
-                    let includedProducts = products.filter { $0.item.subcategoryID == category.id }
+                    let includedProducts = products.filter { $0.item?.subcategoryID == category.id }
                     completion(.success([CategoryWithProducts(category: self.category, products: includedProducts)]))
                     return
                 case .failure(let error):
@@ -140,10 +140,10 @@ extension ItemsViewController {
             
 
             cell.imageView.image = UIImage(named: "Rectangle 232")
-            cell.subtitleLabel1.text = item.item.name
+            cell.subtitleLabel1.text = item.item?.name
             cell.titleLabel.text = ""//item.username
-            cell.subtitleLabel2.text = "\(item.price) JD"
-            cell.topLabel.text = "1KG"//item.unit.title
+            cell.subtitleLabel2.text = "\(String(describing: item.price)) JD"
+            cell.topLabel.text = "KG"//item.unit.title
             cell.isEditing = self.editingSections.contains(indexPath.section)
 //            cell.imageView.sd_setImage(with: item.images.first?.url, completed: nil)
             cell.imageView.image = UIImage(named: "tomato")

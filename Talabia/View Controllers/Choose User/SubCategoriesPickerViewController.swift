@@ -69,7 +69,7 @@ class SubCategoriesPickerViewController: ContentViewController<[MainCategory]>, 
         titleLabel.Top == view.safeAreaLayoutGuide.Top + 15
         titleLabel.leading(20).centerHorizontally()
         
-        collectionView.leading(15).trailing(15)
+        collectionView.leading(10).trailing(10)
         collectionView.Top == titleLabel.Bottom + 15
         collectionView.Bottom == view.Bottom
         bottomView.leading(0).trailing(0).bottom(0)

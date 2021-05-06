@@ -81,9 +81,9 @@ class NewItemViewController: ContentViewController<[ProductUnit]> {
     }
     
     override func contentRequestDidSuccess(with content: [ProductUnit]) {
-        self.fieldsInputView.unitTextField.choices = content.map { AnyChoiceItem(id: "\($0.id)", title: $0.title) }
+        self.fieldsInputView.unitTextField.choices = content.map { AnyChoiceItem(id: "\($0.id)", title: $0.title ?? "Osama") }
         self.fieldsInputView.nameTextField.filterCategory = self.category
-    }
+    }   
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

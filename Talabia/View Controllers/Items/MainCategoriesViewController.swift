@@ -9,23 +9,32 @@
 import UIKit
 import XCoordinator
 import SDWebImage
+import Stevia
 
 class MainCategoryViewController: MainCategoriesPickerViewController {
     
     var router: UnownedRouter<ItemsRoute>
+
+    static func preferencesCategories() -> ConstantContentRepository<[MainCategory]> {
+        guard let subcategories = DefaultPreferencesController.shared.selectedCategories else {
+            fatalError("")
+        }
+        
+        return .init(content: subcategories)
+    }
     
     init(router: UnownedRouter<ItemsRoute>) {
         self.router = router
-        let contentRepository = MainCategoriesPickerViewController.allCategoriesContent()
+        let contentRepository = MainCategoryViewController.preferencesCategories()
         let userType =  UserDefaultsPreferencesManager.shared.userType!
         super.init(contentRepository: contentRepository, userType: userType, title: "")
     }
-    
-    
+
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func setupViewsBeforeTransitioning() {
         super.setupViewsBeforeTransitioning()
         bottomView.removeFromSuperview()
@@ -34,22 +43,22 @@ class MainCategoryViewController: MainCategoriesPickerViewController {
         self.title = "Items"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor(hex: "#FFFFFF") ]
             navigationController?.navigationBar.titleTextAttributes = textAttributes
-       
+
         collectionView.contentInset.top = 5
         collectionView.top(0).bottom(0).leading(0).trailing(0)
     }
-    
+
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! MainCategoryCollectionViewCell
         cell.checkboxView.isHidden = true
         return cell
     }
-    
+
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         self.router.trigger(.subCategory(categories[indexPath.item]))
     }
-    
+
     func addBackButton() {
         let backButton = UIButton(type: .custom)
         backButton.setImage(UIImage(named: "back"), for: .normal)

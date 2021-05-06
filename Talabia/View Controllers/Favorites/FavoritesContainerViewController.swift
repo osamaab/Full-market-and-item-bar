@@ -33,7 +33,8 @@ class FavoritesContainerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Favorites"
+        title = "Favourites"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"search-Icon"), action: {})
 
         // Do any additional setup after loading the view.
         view.backgroundColor = DefaultColorsProvider.backgroundSecondary
@@ -42,9 +43,10 @@ class FavoritesContainerViewController: UIViewController {
             segmentedControl
         }
         
-        segmentedControl.Top == view.safeAreaLayoutGuide.Top + 20
+        segmentedControl.Top == view.safeAreaLayoutGuide.Top + 10
         segmentedControl.leading(20).trailing(20)
-        segmentedControl.select(index: 0, animated: false)
+        segmentedControl.height(50)
+        segmentedControl.select(index: 0, animated: true)
         
         segmentedControl.add(event: .valueChanged){ [unowned self] in
             self.select(index: segmentedControl.selectedIndex ?? 0, retryIfNeeded: true)

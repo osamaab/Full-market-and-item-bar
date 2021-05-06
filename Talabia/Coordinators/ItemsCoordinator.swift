@@ -81,7 +81,7 @@ class ItemsCoordinator: NavigationCoordinator<ItemsRoute> {
         case .details(let product, let subCategory):
             return .push(CompanyProductDetailsViewController(product: product, router: self.unownedRouter, subCategory: subCategory))
         case .remove(let product):
-            let alert = UIAlertController(title: "Delete \(product.item.name)", message: "Are you sure you want to delete this product?", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Delete \(product.item?.name)", message: "Are you sure you want to delete this product?", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
                 self.performDelete(for: product)
@@ -130,6 +130,12 @@ extension ItemsCoordinator: ItemsViewControllerDelegate {
         sender.requestContent { _ in
         }
     }
-    
-    
+}
+extension ItemsCoordinator {
+    func nbhb(){
+        preferencesManager.selectedCategories?.forEach({ (main) in
+        
+        })
+    }
+   
 }

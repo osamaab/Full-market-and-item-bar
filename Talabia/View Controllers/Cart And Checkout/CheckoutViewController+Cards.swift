@@ -71,7 +71,7 @@ class CHDeliveryLocationCardView: BasicViewWithSetup {
 class CHCartSummaryCardView: BasicViewWithSetup {
     
     let subtotalView: FieldView<UILabel> = .init(title: "Subtotal")
-//    let promotionDiscountsView: FieldView<UILabel> = .init(title: "Promotion Discounts")
+    let promotionDiscountsView: FieldView<UILabel> = .init(title: "Promotion Discounts")
 //    let addCouponView: FieldView<BorderedTextField> = .init(title: "Add Copoun")
     let separatorView: DividerView = .init(axis: .horizontal)
     let deliveryChargesView: FieldView<UILabel> = .init(title: "Delivery Charges")
@@ -92,7 +92,7 @@ class CHCartSummaryCardView: BasicViewWithSetup {
         
         containerStackView.addingArrangedSubviews {
             subtotalView
-//            promotionDiscountsView
+            promotionDiscountsView
             separatorView
 //            addCouponView
             deliveryChargesView
@@ -110,7 +110,7 @@ class CHCartSummaryCardView: BasicViewWithSetup {
     fileprivate func moreSetup(){
         let fieldsWithLabelContent: [FieldView<UILabel>] = [
             subtotalView,
-//            promotionDiscountsView,
+            promotionDiscountsView,
             deliveryChargesView,
             totalView
         ]
@@ -120,7 +120,7 @@ class CHCartSummaryCardView: BasicViewWithSetup {
         }
         
         subtotalView.contentView.text = "JD 360"
-//        promotionDiscountsView.contentView.text = "JD 3.000"
+        promotionDiscountsView.contentView.text = "JD 3.000"
         deliveryChargesView.contentView.text = "Rs. 0.00"
         totalView.contentView.text = "JD 320"
         
@@ -138,13 +138,13 @@ class CHCartSummaryCardView: BasicViewWithSetup {
 class CHRecipientDetailsCardView: BasicViewWithSetup {
     
     let nameTextField: BorderedTextField = .init()
-//    let phoneCodeTextField: BorderedTextField = .init()
+    let phoneCodeTextField: BorderedTextField = .init()
     let phoneTextField: NumbersTextField = .init(maxDigitsCount: 10)
     
     override func setup() {
         subviewsPreparedAL {
             nameTextField
-//            phoneCodeTextField
+            phoneCodeTextField
             phoneTextField
         }
         
@@ -156,15 +156,16 @@ class CHRecipientDetailsCardView: BasicViewWithSetup {
         
         phoneTextField.Trailing == nameTextField.Trailing
         phoneTextField.Top == nameTextField.Bottom + 15
-        phoneTextField.Leading == nameTextField.Leading
+//        phoneTextField.Leading == nameTextField.Leading
         phoneTextField.bottom(0)
 
         
-//        phoneCodeTextField.bottom(0).width(25%)
-//        phoneCodeTextField.Leading == nameTextField.Leading
-//        phoneCodeTextField.Trailing == phoneTextField.Leading - 15
-//        phoneTextField.Bottom == phoneCodeTextField.Bottom
-//        phoneCodeTextField.CenterY == phoneTextField.CenterY
+        phoneCodeTextField.bottom(0).width(25%)
+        phoneCodeTextField.Leading == nameTextField.Leading
+        phoneCodeTextField.Trailing == phoneTextField.Leading - 15
+        phoneTextField.Bottom == phoneCodeTextField.Bottom
+        phoneCodeTextField.CenterY == phoneTextField.CenterY
+        phoneCodeTextField.placeholder = "+962"
 
     }
 }
@@ -362,7 +363,7 @@ class CHPaymentMethodCardView: BasicViewWithSetup {
         }
         
         static func cash() -> PaymentMethodType {
-            return PaymentMethodType(id: "cash", image: nil, title: "Cash")
+            return PaymentMethodType(id: "Cash", image: UIImage(named: "plus-small"), title: "Cash")
         }
         
         static func credit() -> PaymentMethodType {
@@ -372,27 +373,34 @@ class CHPaymentMethodCardView: BasicViewWithSetup {
     
     class ItemView: BasicViewWithSetup {
         let imageView = UIImageView()
+        let containerImageView = UIView()
         let titleLabel = UILabel()
         let checkboxView = CheckboxView()
         
         override func setup() {
             subviewsPreparedAL {
-                imageView
+                containerImageView
                 titleLabel
                 checkboxView
             }
             
-            imageView.layer.cornerRadius = 2
-            imageView.layer.borderWidth = 0.5
-            imageView.layer.borderColor = DefaultColorsProvider.decoratorBorder.cgColor
-            imageView.contentMode = .scaleAspectFit
+//            imageView.layer.cornerRadius = 2
+//            imageView.layer.borderWidth = 0.5
+//            imageView.layer.borderColor = DefaultColorsProvider.decoratorBorder.cgColor
+//            imageView.contentMode = .scaleAspectFit
+            
+            containerImageView.layer.cornerRadius = 2
+            containerImageView.layer.borderWidth = 0.5
+            containerImageView.layer.borderColor = DefaultColorsProvider.decoratorBorder.cgColor
+            containerImageView.contentMode = .scaleAspectFit
+            containerImageView.addSubview(imageView)
             
             titleLabel.font = .font(for: .medium, size: 16)
             titleLabel.textColor = DefaultColorsProvider.textPrimary1
             
             checkboxView.isSelected = false
             
-            imageView.leading(0).top(0).bottom(0).width(75)
+            containerImageView.leading(0).top(0).bottom(0).width(75)
             titleLabel.centerVertically()
             checkboxView.trailing(0).centerVertically().height(20).width(20)
             
@@ -438,9 +446,13 @@ class CHPaymentMethodCardView: BasicViewWithSetup {
         
         placeholderItemView.checkboxView.isHidden = true
         placeholderItemView.titleLabel.text = "Add Card"
+        placeholderItemView.imageView.image = UIImage(named: "plus-Button")?.withTintColor(.gray)
+        placeholderItemView.imageView.alpha = 1.0
+        
         placeholderItemView.height(55)
         
         stackView.insertArrangedSubview(placeholderItemView, at: 0)
+        
         
         paymentMethods.forEach {
             add(paymentMethod: $0)

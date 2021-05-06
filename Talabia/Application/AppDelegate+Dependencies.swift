@@ -21,7 +21,7 @@ extension Resolver: ResolverRegistering {
         }.implements(AppSetupStepType.self)
         
         register {
-            DefaultCartManager()
+            AnotherCartManagerType()
         }.implements(CartManagerType.self)
         
         register {

@@ -12,6 +12,8 @@ import XCoordinator
 enum DistributorProfileRoute: Route {
     case notLogin
     case profile
+    case setting
+    case changePassword
 }
 
 class DistributorProfileCoordinator: NavigationCoordinator<DistributorProfileRoute> {
@@ -49,6 +51,12 @@ class DistributorProfileCoordinator: NavigationCoordinator<DistributorProfileRou
         case .profile:
             let profile = DistributorProfileViewController(router: self.unownedRouter)
             return .push(profile)
+        case .setting:
+            let vc = DistributorSettingsViewController(router: self.unownedRouter)
+            return .push(vc)
+        case .changePassword:
+            let router = ChangePasswordCoordinator()
+            return .presentFullScreen(router)
         }
     }
 }

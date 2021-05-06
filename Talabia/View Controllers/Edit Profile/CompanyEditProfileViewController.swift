@@ -25,7 +25,7 @@ class CompanyEditProfileViewController: CompanySignUpViewController {
         super.viewDidLoad()
 
         
-        if let lat = Double(company.lat), let lng = Double(company.lng) {
+        if let lat = Double(company.lat ?? ""), let lng = Double(company.lng ?? "") {
             self.companyLocation = Location(name: nil, location: .init(latitude: lat, longitude: lng))
         }
         
@@ -45,7 +45,6 @@ class CompanyEditProfileViewController: CompanySignUpViewController {
         }
         
         let logo64Base = self.logoImage?.toBase64()
-//        let logo64Base = "iVBORw0KGgoAAAANSUh"
         let lat: String
         let lon: String
         
@@ -53,8 +52,8 @@ class CompanyEditProfileViewController: CompanySignUpViewController {
             lat = "\(location.location.coordinate.latitude)"
             lon = "\(location.location.coordinate.longitude)"
         } else {
-            lat = company.lat
-            lon = company.lng
+            lat = company.lat ?? ""
+            lon = company.lng ?? ""
         }
         
         

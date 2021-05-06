@@ -52,7 +52,6 @@ class QuantitySelectionView: UIControl {
     var value: Int {
         didSet {
             self.valueLabel.text = "\(value)"
-            self.onValueChange?(value)
         }
     }
 
@@ -129,7 +128,7 @@ class QuantitySelectionView: UIControl {
             .preparedForAutolayout()
         
         let paddingValue: CGFloat = style == .big ? 10 : 4
-        let valueFontSize: CGFloat = style == .big ? 27 : 18
+        let valueFontSize: CGFloat = style == .big ? 27 : 17
         
         minusButton.contentEdgeInsets = .init(top: paddingValue, left: paddingValue, bottom: paddingValue, right: paddingValue)
         plusButton.contentEdgeInsets = .init(top: paddingValue, left: paddingValue, bottom: paddingValue, right: paddingValue)
@@ -157,6 +156,7 @@ class QuantitySelectionView: UIControl {
             let newValue = self.value + 1
             if newValue <= self.maxValue {
                 self.value = newValue
+                self.onValueChange?(self.value)
             }
             
             self.sendActions(for: .valueChanged)
@@ -164,8 +164,13 @@ class QuantitySelectionView: UIControl {
         
         minusButton.add(event: .touchUpInside) { [unowned self] in
             let newValue = self.value - 1
+            if newValue == 0 {
+                self.value = 0
+                self.onValueChange?(self.value)
+            }
             if newValue >= self.minValue {
                 self.value = newValue
+                self.onValueChange?(self.value)
             }
             
             self.sendActions(for: .valueChanged)

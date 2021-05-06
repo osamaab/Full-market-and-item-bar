@@ -43,10 +43,10 @@ class ProductsViewController: ContentViewController<[Product]>, UICollectionView
     
     func configureItem(item: Product, for cell: ProductCollectionViewCell, at indexPath: IndexPath){
         cell.titleLabel.text = item.username
-        cell.subtitleLabel1.text = item.item.name
+        cell.subtitleLabel1.text = item.item?.name
         cell.subtitleLabel2.text = "PRICE"
-        cell.topLabel.text = item.unit.title
-        cell.likeButton.isChecked = true // by default
+        cell.topLabel.text = item.unit?.title
+        cell.likeButton.isChecked = false // by default
         cell.likeButton.isHidden = !self.isFavoriteFeatureAvailable
     }
     

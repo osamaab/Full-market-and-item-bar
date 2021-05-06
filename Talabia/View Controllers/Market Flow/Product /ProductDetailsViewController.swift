@@ -13,8 +13,10 @@ class ProductDetailsViewController: UIViewController {
     let scrollView: ScrollContainerView
     let contentView: ProductDetailsContentView
     let product: Product
+    var isSelected: Bool?
     
     @Injected var cartManager: CartManagerType
+    @Injected var preferencesManager: DefaultPreferencesController
     
     init(product: Product){
         self.product = product
@@ -42,13 +44,14 @@ class ProductDetailsViewController: UIViewController {
         
         
         contentView.headerView.topLabel.text = "KG" //product.unit.title
-        contentView.headerView.titleLabel.text = "\(product.item.name)-\(product.price)KG"
-        contentView.headerView.subtitleLabel1.text = "JD \(product.price)"
+        contentView.headerView.titleLabel.text = "\(product.item?.name ?? "")-(\(product.price ?? 0))KG"
+        contentView.headerView.companyTitleLabel.text = "\(product.username ?? "Osama.Co")"
+        contentView.headerView.subtitleLabel1.text = "JD \(String(describing: product.price ?? 0))"
         contentView.descriptionLabel.text = product.description
         
 //        contentView.headerView.imageView.sd_setImage(with: product.images.first?.url, completed: nil)
         contentView.headerView.imageView.image = UIImage(named: "tomato")
-        if let firstHistory = product.history.first {
+        if let firstHistory = product.history?.first {
             contentView.additionalDetailsLabel.text = "Production Date\n\(firstHistory.productionDate)\n\nExp. Date\n\(firstHistory.expirationDate)"
             let attrString = NSMutableAttributedString(string: contentView.additionalDetailsLabel.text ?? "")
             let style = NSMutableParagraphStyle()
@@ -62,28 +65,84 @@ class ProductDetailsViewController: UIViewController {
         contentView.descriptionLabel.text = product.description
         
 
-        contentView.actionButton.setTitle("Add to Cart", for: .normal)
+//        contentView.actionButton.setTitle("Add to Cart", for: .normal)
         contentView.alternativeButton.setTitle("Buy Now", for: .normal)
         
-        contentView.actionButton.add(event: .touchUpInside) { [unowned self] in
-            self.attemptToAddProduct(self.product)
+        contentView.actionButton.add(event: .touchUpInside) { [weak self] in
+            guard let self = self else { return }
+            if self.isSelected == true {
+                self.attemptToRemoveProduct(self.product)
+                self.isSelected = !self.isSelected!
+            }else {
+                self.attemptToAddProduct(self.product)
+                self.isSelected = !self.isSelected!
+                self.anmation()
+            }
         }
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        if preferencesManager.currentCart?.products.count == 0 {
+            cartManager.clearCart()
+        }
+        let items = preferencesManager.currentCart?.products.contains(CartItem(product: self.product, quantity: self.contentView.quantityView.value))
+        if items ?? false {
+            removeButton()
+            isSelected = true
+        }else{
+            addButton()
+            isSelected = false
+    }
+    }
+    func removeButton(){
+        contentView.actionButton.setTitle("Remove from the Cart", for: .normal)
+    }
+    func addButton(){
+        contentView.actionButton.setTitle("Add to Cart", for: .normal)
+    }
+    private func anmation() {
+        let imageV = contentView.headerView.imageView
+        let originalTransform = imageV.transform
+        let scaledTransform = originalTransform.scaledBy(x: 0.2, y: 0.2)
+        let scaledAndTranslatedTransform = scaledTransform.translatedBy(x: -500, y: 4700)
+        UIView.animate(withDuration: 1.2) {
+            imageV.transform = scaledAndTranslatedTransform
+        } completion: { _ in
+            imageV.transform = CGAffineTransform(scaleX: 0, y: 0)
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+                imageV.image = UIImage(named: "tomato")
+                imageV.transform = .identity
+
+            }, completion: nil)
+        }
+
     }
     
     func attemptToAddProduct(_ product: Product){
         do {
             try cartManager.add(product: self.product, for: self.contentView.quantityView.value)
             self.showMessage(message: "Product added successfuly", messageType: .success)
+            self.removeButton()
+            updateBadgeValue()
         } catch let error as CartManagerError {
             switch error {
             case .differentCompany:
                 self.showMessage(message: "Product belongs to different company than the one in your cart, cart will be cleared.", messageType: .failure)
                 self.cartManager.clearCart()
+                self.attemptToAddProduct(product)
                 break
+            case .alreadyExists:
+                self.showMessage(message: "Product Already Exists", messageType: .failure)
+                self.removeButton()
             }
         } catch {
             self.showMessage(message: error.localizedDescription, messageType: .failure)
         }
+    }
+    func attemptToRemoveProduct(_ product: Product){
+             cartManager.remove(product: self.product)
+        updateBadgeValue()
+            self.showMessage(message: "Product removed successfuly", messageType: .success)
+            self.addButton()
     }
     func addBackButton() {
         let backButton = UIButton(type: .custom)
@@ -94,4 +153,22 @@ class ProductDetailsViewController: UIViewController {
     @objc func backAction(_ sender: UIButton) {
         let _ = navigationController?.popViewController(animated: true)
     }
+     func updateBadgeValue() {
+        if let tabItems = self.tabBarController?.tabBar.items {
+        let tabItem = tabItems[1]
+        tabItem.badgeValue = "\(self.cartManager.orderedItems().count)"
+    }
+    
+}
+}
+
+
+extension UIView {
+
+    var snapshot: UIImage {
+        return UIGraphicsImageRenderer(size: bounds.size).image { _ in
+            drawHierarchy(in: bounds, afterScreenUpdates: true)
+        }
+    }
+
 }

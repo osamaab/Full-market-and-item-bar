@@ -17,7 +17,7 @@ enum ChangePasswordRoute: Route {
 class ChangePasswordCoordinator: NavigationCoordinator<ChangePasswordRoute> {
     
     init(){
-        super.init(rootViewController: NavigationController(style: .secondary, autoShowsCloseButton: true), initialRoute: .changePassword)
+        super.init(rootViewController: NavigationController(style: .primary, autoShowsCloseButton: true), initialRoute: .changePassword)
     }
     
     override func prepareTransition(for route: RouteType) -> TransitionType {

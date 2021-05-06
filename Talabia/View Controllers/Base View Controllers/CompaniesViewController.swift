@@ -41,7 +41,7 @@ class CompaniesViewController: ContentViewController<[Company]> {
     }
     
     func configureItem(item: Company, for cell: CompanyCollectionViewCell, at indexPath: IndexPath){
-        cell.imageView.sd_setImage(with: URL(string: item.logoPath), completed: nil)
+        cell.imageView.sd_setImage(with: URL(string: item.logoPath ?? ""), completed: nil)
         cell.titleLabel.text = item.title
     }
 }

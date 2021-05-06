@@ -15,4 +15,5 @@ enum PreferenceKey: String {
     case currentCart
     case didTappedSignUp
     case selectedCategoryWithSelecctedSubCategory
+    case selectedProducts
 }

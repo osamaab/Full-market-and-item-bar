@@ -19,6 +19,7 @@ struct ProfileMenuItem: Equatable, Hashable {
     enum Style: Int, Equatable, Hashable, CaseIterable {
         case normal
         case highlighted
+        case imageChanged
     }
     
     enum Identifier: String, CaseIterable {
@@ -41,6 +42,15 @@ struct ProfileMenuItem: Equatable, Hashable {
         case coveringAreas
         case orders
         case status
+        
+        // settings cases
+        case bannerBage
+        case accountLevel
+        case contctUs
+        case changePassword
+        case language
+        case darkMode
+        
         
         
     }
@@ -95,6 +105,21 @@ extension ProfileMenuItem {
     
     static  func changePassword() -> ProfileMenuItem {
         return ProfileMenuItem(identifier: .password, title: "Change Password", image: .named("menu_password"))
+    }
+    static func bannerBage() -> ProfileMenuItem {
+        return .init(identifier: .bannerBage, title: "Banner page", image: .named("banner_Setting"))
+    }
+    static func accountLevel() -> ProfileMenuItem {
+        return .init(identifier: .accountLevel, title: "Account level", image: .named("rate_Setting"))
+    }
+    static func contctUs() -> ProfileMenuItem {
+        return .init(identifier: .contctUs, title: "Contact us", image: .named("contactUs_Setting"))
+    }
+    static func language() -> ProfileMenuItem {
+        return .init(identifier: .language, title: "Language", image: .named("Lan_Setting"), style: .imageChanged);
+    }
+    static func darkMode() -> ProfileMenuItem {
+        return .init(identifier: .darkMode, title: "Dark mood", image: .named("Mode_Setting"))
     }
     
     static func items() -> ProfileMenuItem {
@@ -156,4 +181,8 @@ extension ProfileMenuItem {
     static func status() -> ProfileMenuItem {
         return .init(identifier: .status, title: "Status", image: .named("menu_status"))
     }
+}
+// MARK:- Profile Settings Specific
+extension ProfileMenuItem {
+   
 }

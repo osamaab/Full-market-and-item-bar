@@ -10,15 +10,17 @@ import Foundation
 
 struct Product: Equatable, Hashable {
     let id: Int
-    let totalQuantity: Int
+    let totalQuantity: Int?
+    let useritemid: Int?
     let username: String? = "__hussein"
     let description: String?
-    let price: Double
+    let price: Double?
+    let itemName: String?
         
-    let unit: ProductUnit
-    let item: ProductTemplate
-    let images: [RemoteImage]
-    let history: [ProductHistoryEntry]
+    let unit: ProductUnit?
+    let item: ProductTemplate?
+    let images: [RemoteImage]?
+    let history: [ProductHistoryEntry]?
     
     static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id
@@ -31,6 +33,7 @@ struct Product: Equatable, Hashable {
     enum CodingKeys: String, CodingKey {
         case id
         case totalQuantity = "item_total_quantity"
+        case useritemid = "user_item_id"
         case description
         case username
         case price
@@ -38,6 +41,8 @@ struct Product: Equatable, Hashable {
         case unit
         case images
         case history
+        case itemName = "item_name"
+        
     }
 }
 

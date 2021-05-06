@@ -13,12 +13,12 @@ class CartSummaryView: UIView {
     
     let titleLabel = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.font = .font(for: .medium, size: 16)
+        $0.font = .font(for: .bold, size: 17)
     }
     
     let valueLabel = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.font = .font(for: .bold, size: 13)
+        $0.font = .font(for: .bold, size: 17)
         $0.textAlignment = .right
     }
 
@@ -52,8 +52,8 @@ class CartSummaryView: UIView {
         layer.cornerRadius = 12
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
-        dropShadow(color: DefaultColorsProvider.decoratorShadow,
-                   opacity: 0.16,
+        dropShadow(color: .gray,
+                   opacity: 0.30,
                    offSet: .init(width: 0, height: -2),
                    radius: 4)
     }

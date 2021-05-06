@@ -11,7 +11,7 @@ import NVActivityIndicatorView
 
 class LoadingStateView: UIView {
         
-    let activityIndicatorView: NVActivityIndicatorView = .init(frame: .zero, type: .ballBeat, color: DefaultColorsProvider.tintPrimary, padding: nil)
+    static let activityIndicatorView: NVActivityIndicatorView = .init(frame: .zero, type: .ballBeat, color:  DefaultColorsProvider.tintPrimary, padding: nil)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,16 +23,16 @@ class LoadingStateView: UIView {
         setup()
     }
     
-    fileprivate func setup(){
+     func setup(){
         self.backgroundColor = .clear//DefaultColorsProvider.backgroundPrimary
         
         subviewsPreparedAL { () -> [UIView] in
-            activityIndicatorView
+            LoadingStateView.activityIndicatorView
         }
         
-        activityIndicatorView.width(35).height(35)
-        activityIndicatorView.centerInContainer()
-        activityIndicatorView.startAnimating()
+        LoadingStateView.activityIndicatorView.width(35).height(35)
+        LoadingStateView.activityIndicatorView.centerInContainer()
+        LoadingStateView.activityIndicatorView.startAnimating()
     }
 }
 

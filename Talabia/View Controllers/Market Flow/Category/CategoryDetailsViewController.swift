@@ -141,10 +141,10 @@ extension CategoryDetailsViewController {
             let product = products[indexPath.item]
             let cell = collectionView.dequeueCell(cellClass: ProductCollectionViewCell.self, for: indexPath)
             cell.imageView.image = UIImage(named: "tomato")
-            cell.subtitleLabel1.text = product.item.name
+            cell.subtitleLabel1.text = product.item?.name
             cell.titleLabel.text = product.username
             cell.topLabel.text = "1KG" //product.unit.title
-            cell.subtitleLabel2.text = product.price.priceFormatted
+            cell.subtitleLabel2.text = product.price?.priceFormatted
             cell.likeButton.addTarget(self, action: #selector(productAction(sender:)), for: .touchUpInside)
             cell.likeButton.tag = indexPath.row
             cell.likeButton.isChecked = productSelectedCategories.contains(product)

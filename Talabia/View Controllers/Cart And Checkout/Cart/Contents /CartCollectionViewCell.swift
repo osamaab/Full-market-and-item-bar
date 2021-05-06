@@ -19,20 +19,25 @@ class CartCollectionViewCell: UICollectionViewCell {
     let imageContainerView = UIView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = DefaultColorsProvider.backgroundPrimary
-        $0.dropShadow(color: DefaultColorsProvider.decoratorShadow,
-                      opacity: 0.16,
+        $0.dropShadow(color: .gray,
+                      opacity: 0.3,
                       offSet: .init(width: 0, height: 1),
                       radius: 2)
     }
     
     let titleLabel = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.font = .font(for: .semiBold, size: 14)
+        $0.font = .font(for: .bold, size: 15)
+       
+    }
+    let titleLabelSpace = UILabel().then {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.font = .font(for: .bold, size: 15)
     }
     
     let subtitleLabel = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.font = .font(for: .medium, size: 13)
+        $0.font = .font(for: .regular, size: 15)
     }
     
     let quantitySelectionView = QuantitySelectionView(style: .small, title: nil).then {
@@ -41,26 +46,25 @@ class CartCollectionViewCell: UICollectionViewCell {
     
     let midItemsStackView: UIStackView = UIStackView().then {
         $0.alignment(.leading)
-            .distribution(.fill)
+//            .distribution(.fill)
             .axis(.vertical)
             .spacing(15)
             .preparedForAutolayout()
     }
     
-    let likeButton = UIButton().then {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.setImage(UIImage(named: "heart"), for: .normal)
-        $0.tintColor = DefaultColorsProvider.tintPrimary
+    let likeButton = FavoriteButton().then{
+        $0.isHidden = false
     }
     
     
     let topLabel = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.backgroundColor = DefaultColorsProvider.containerBackground3
+        $0.backgroundColor = DefaultColorsProvider.containerBackground1
         $0.textColor = DefaultColorsProvider.backgroundPrimary
-        $0.layer.cornerRadius = 1.7
         $0.font = .font(for: .bold, size: 9)
         $0.textAlignment = .center
+        $0.layer.cornerRadius = 2
+        $0.clipsToBounds = true
     }
     
     let discountContainerView = UIView().then {
@@ -91,9 +95,9 @@ class CartCollectionViewCell: UICollectionViewCell {
         backgroundColor = DefaultColorsProvider.backgroundPrimary
         
         imageContainerView.subviews {
-            likeButton
             topLabel
             imageView
+            likeButton
         }
         
         discountContainerView.addSubview(discountLabel)
@@ -108,6 +112,7 @@ class CartCollectionViewCell: UICollectionViewCell {
         midItemsStackView.addingArrangedSubviews {
             titleLabel
             subtitleLabel
+            titleLabelSpace
             quantitySelectionView
         }
         
@@ -115,19 +120,21 @@ class CartCollectionViewCell: UICollectionViewCell {
     }
     
     func setupLayout(){
-        imageContainerView.leading(20).bottom(20).centerVertically()
-        imageContainerView.width(25%)
-        imageView.centerInContainer().leading(10).top(20)
+        imageContainerView.leading(20).bottom(8).centerVertically()
+        imageContainerView.width(22%)
+        imageView.centerInContainer().leading(10).top(8)
         
         topLabel.leading(8).top(8).height(15).width(30)
-        likeButton.trailing(8).height(20).width(20).bottom(20)
+        likeButton.trailing(0).height(40).width(40).bottom(0)
 
         
         midItemsStackView.Leading == imageContainerView.Trailing + 15
         midItemsStackView.Bottom == imageContainerView.Bottom
         midItemsStackView.Top >= contentView.Top
         midItemsStackView.CenterY == contentView.CenterY
-        
+        quantitySelectionView.setContentCompressionResistancePriority(.required, for: .vertical)
+        quantitySelectionView.setContentHuggingPriority(.defaultLow, for: .vertical)
+        midItemsStackView.setCustomSpacing(2, after: titleLabel)
         discountContainerView.Leading == midItemsStackView.Trailing + 15
         discountContainerView.Bottom == midItemsStackView.Bottom
         discountContainerView.trailing(20)

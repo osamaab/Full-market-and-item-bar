@@ -42,7 +42,3 @@ extension UserDefaultsPreferencesManager: PreferencesManagerType {
 }
 
 
-struct CartContents: Codable {
-    let products: Set<CartItem>
-    let companyUsername: String
-}

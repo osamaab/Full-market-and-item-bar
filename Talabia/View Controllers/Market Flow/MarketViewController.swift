@@ -30,6 +30,8 @@ class MarketViewController: ContentViewController<Market>, UICollectionViewDeleg
         }
     }
     
+    @Injected var cartManager: CartManagerType
+    
     let bannerHeaderKind = "header-banner-kind"
     let headerKind = "header-kind"
     
@@ -90,7 +92,7 @@ class MarketViewController: ContentViewController<Market>, UICollectionViewDeleg
         } else {
             collectionView.contentInset = .init(top: 0, left: -20, bottom: 0, right: 0)
         }
-        
+//        FavoritedProductsViewController.createObserver()
         collectionView.register(reusableViewClass: CollectionViewSectionHeader.self, for: headerKind)
         collectionView.register(reusableViewClass: BannerViewSectionHeader.self, for: bannerHeaderKind)
         
@@ -112,12 +114,22 @@ class MarketViewController: ContentViewController<Market>, UICollectionViewDeleg
         } else {
             setupNavigationBarleftView()
         }
-        
+        if let tabItems = self.tabBarController?.tabBar.items {
+        let tabItem = tabItems[1]
+        tabItem.badgeValue = "\(self.cartManager.orderedItems().count)"
+            if self.cartManager.orderedItems().count == 0 {
+                tabItem.badgeValue = nil
+            }
+            if self.preferencesManager.userType == .company || self.preferencesManager.userType == .distributor {
+                tabItem.badgeValue = nil
+            }
+        }
     }
     
     override func contentRequestDidSuccess(with content: Market) {
         self.collectionView.reloadData()
     }
+    
 }
 
 extension MarketViewController: MarketChooseLocationViewControllerDelegate {
@@ -144,6 +156,7 @@ extension MarketViewController {
         case 2:
             return companies.count
         case 3:
+            
             return products.count
         default:
             return 0
@@ -181,7 +194,7 @@ extension MarketViewController {
             }else {
                 cell.likeButton.isEnabled = false
             }
-            cell.likeButton.addTarget(self, action: #selector(action(sender:)), for: .touchUpInside)
+            cell.likeButton.addTarget(self, action: #selector(companyAction(sender:)), for: .touchUpInside)
             cell.likeButton.tag = indexPath.row
             cell.titleLabel.text = company.name
             cell.likeButton.isChecked = checkedfavaritCompany.contains(company)
@@ -190,10 +203,10 @@ extension MarketViewController {
             let product = products[indexPath.item]
             let cell = collectionView.dequeueCell(cellClass: ProductCollectionViewCell.self, for: indexPath)
             cell.imageView.image = UIImage(named: "tomato")
-            cell.subtitleLabel1.text = product.item.name
+            cell.subtitleLabel1.text = product.item?.name
             cell.titleLabel.text = product.username
             cell.topLabel.text = "1KG" //product.unit.title
-            cell.subtitleLabel2.text = product.price.priceFormatted
+            cell.subtitleLabel2.text = product.price?.priceFormatted
             cell.likeButton.addTarget(self, action: #selector(productAction(sender:)), for: .touchUpInside)
             cell.likeButton.tag = indexPath.row
             cell.likeButton.isChecked = productSelectedCategories.contains(product)
@@ -275,14 +288,19 @@ extension MarketViewController {
             break
         }
     }
-    @objc func action(sender: UIButton){
+    @objc func companyAction(sender: UIButton){
 //        if DefaultAuthenticationManager.shared.isAuthenticated {
             let index = sender.tag
             let item = companies[index]
+        let name = Notification.Name(rawValue: companyFav)
             if self.checkedfavaritCompany.contains(item){
                 self.checkedfavaritCompany.remove(at: checkedfavaritCompany.firstIndex(of: item)!)
+                self.router.trigger(.unfavoriteCompany(item))
+                NotificationCenter.default.post(name: name, object: nil)
             } else {
                 self.checkedfavaritCompany.append(item)
+                self.router.trigger(.favoriteCompany(item))
+                NotificationCenter.default.post(name: name, object: nil)
             }
             //         self.collectionView.reloadData()
             self.collectionView.reloadItems(at: [IndexPath(item: index, section: 2)])
@@ -294,12 +312,37 @@ extension MarketViewController {
     @objc func productAction(sender: UIButton){
         let index = sender.tag
         let item = products[index]
+        let name = Notification.Name(rawValue: productFav)
+        
+        
         if self.productSelectedCategories.contains(item){
             self.productSelectedCategories.remove(at: productSelectedCategories.firstIndex(of: item)!)
+            
+            FavoritesAPI.unfavoriteProduct(item.id).request(String.self).then { _ in
+                NotificationCenter.default.post(name: name, object: nil)
+            }
+            .catch {
+                self.showMessage(message: $0.localizedDescription, messageType: .failure)
+                self.productSelectedCategories.append(item)
+                self.collectionView.reloadItems(at: [IndexPath(item: index, section: 3)])
+            }
+            
         } else {
             self.productSelectedCategories.append(item)
+//            self.router.trigger(.favoriteProduct(item))
+            
+            FavoritesAPI.favoriteProduct(item.id, item.totalQuantity ?? 0).request(String.self).then { _ in
+                NotificationCenter.default.post(name: name, object: nil)
+            }
+            .catch {
+                self.showMessage(message: $0.localizedDescription, messageType: .failure)
+
+                self.productSelectedCategories.remove(at: self.productSelectedCategories.firstIndex(of: item)!)
+                self.collectionView.reloadItems(at: [IndexPath(item: index, section: 3)])
+            }
+
         }
-        //        self.collectionView.reloadData()
+        
         self.collectionView.reloadItems(at: [IndexPath(item: index, section: 3)])
     }
 }
