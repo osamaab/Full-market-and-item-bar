@@ -44,6 +44,9 @@
 		C9EFA6A626426DF9009BF6F9 /* AccountLevelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EFA6A526426DF9009BF6F9 /* AccountLevelCollectionViewCell.swift */; };
 		C9EFA6AC26427045009BF6F9 /* AccountLevelCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EFA6AB26427045009BF6F9 /* AccountLevelCollectionReusableView.swift */; };
 		C9EFA6AE26429086009BF6F9 /* CheckDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EFA6AD26429085009BF6F9 /* CheckDotView.swift */; };
+		C9EFA6B826460A5E009BF6F9 /* lang-ar.json in Resources */ = {isa = PBXBuildFile; fileRef = C9EFA6B626460A5E009BF6F9 /* lang-ar.json */; };
+		C9EFA6B926460A5E009BF6F9 /* lang-en.json in Resources */ = {isa = PBXBuildFile; fileRef = C9EFA6B726460A5E009BF6F9 /* lang-en.json */; };
+		C9EFA6BB26461F3D009BF6F9 /* APPLE_LANGUAGE_KEY.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EFA6BA26461F3D009BF6F9 /* APPLE_LANGUAGE_KEY.swift */; };
 		CC20C5899017F17D235D43A6 /* Pods_Talabia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC09FED4C8A6910C1D7CDCF /* Pods_Talabia.framework */; };
 		E4000C91255BFF5900E89ABB /* MarketCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4000C90255BFF5900E89ABB /* MarketCoordinator.swift */; };
 		E4000C99255C00B000E89ABB /* CompanyProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4000C98255C00B000E89ABB /* CompanyProfileCoordinator.swift */; };
@@ -500,6 +503,9 @@
 		C9EFA6A526426DF9009BF6F9 /* AccountLevelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountLevelCollectionViewCell.swift; sourceTree = "<group>"; };
 		C9EFA6AB26427045009BF6F9 /* AccountLevelCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountLevelCollectionReusableView.swift; sourceTree = "<group>"; };
 		C9EFA6AD26429085009BF6F9 /* CheckDotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDotView.swift; sourceTree = "<group>"; };
+		C9EFA6B626460A5E009BF6F9 /* lang-ar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-ar.json"; sourceTree = "<group>"; };
+		C9EFA6B726460A5E009BF6F9 /* lang-en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-en.json"; sourceTree = "<group>"; };
+		C9EFA6BA26461F3D009BF6F9 /* APPLE_LANGUAGE_KEY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPLE_LANGUAGE_KEY.swift; sourceTree = "<group>"; };
 		CB081D855C5E0A2CC41B10E3 /* Pods_TalabiaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TalabiaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4000C90255BFF5900E89ABB /* MarketCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCoordinator.swift; sourceTree = "<group>"; };
 		E4000C98255C00B000E89ABB /* CompanyProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyProfileCoordinator.swift; sourceTree = "<group>"; };
@@ -1023,6 +1029,15 @@
 				C9EFA6AB26427045009BF6F9 /* AccountLevelCollectionReusableView.swift */,
 			);
 			path = AccountCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		C9EFA6B526460A39009BF6F9 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				C9EFA6B626460A5E009BF6F9 /* lang-ar.json */,
+				C9EFA6B726460A5E009BF6F9 /* lang-en.json */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		E4000CB0255C064900E89ABB /* Content Views */ = {
@@ -1609,6 +1624,7 @@
 		E496B247255B213E001BEC0F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C9EFA6BA26461F3D009BF6F9 /* APPLE_LANGUAGE_KEY.swift */,
 				E496B248255B214C001BEC0F /* FontProviderType.swift */,
 				E4C705AA255BB06E00DD29E3 /* ScreenBlockingLoaderType.swift */,
 				E4C705AF255BB18100DD29E3 /* ScreenMessagePresenterType.swift */,
@@ -2176,6 +2192,7 @@
 		F9571B84252CDD9E0090C285 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C9EFA6B526460A39009BF6F9 /* Localization */,
 				F9571B8D252CEA700090C285 /* Fonts */,
 				F96B85282529A05A00CEDCF8 /* Assets.xcassets */,
 				F96B852A2529A05A00CEDCF8 /* LaunchScreen.storyboard */,
@@ -2446,10 +2463,12 @@
 				F9571BAD252CEA700090C285 /* DIN NEXT™ ARABIC LIGHT.otf in Resources */,
 				F9571BAC252CEA700090C285 /* DIN NEXT™ ARABIC BOLD.otf in Resources */,
 				F9571BAA252CEA700090C285 /* DIN NEXT™ ARABIC REGULAR.otf in Resources */,
+				C9EFA6B826460A5E009BF6F9 /* lang-ar.json in Resources */,
 				F9571BA3252CEA700090C285 /* SFUIDisplay-Bold.ttf in Resources */,
 				F9571BA6252CEA700090C285 /* SFUIDisplay-Black.ttf in Resources */,
 				F9571BA1252CEA700090C285 /* SFUIDisplay-Semibold.ttf in Resources */,
 				F9571BA0252CEA700090C285 /* SFUIDisplay-Light.ttf in Resources */,
+				C9EFA6B926460A5E009BF6F9 /* lang-en.json in Resources */,
 				F9F842F5252A2BAD00593C8A /* Localizable.strings in Resources */,
 				C9A80448261C69BD00120D59 /* SFUIDisplay-Regular.ttf in Resources */,
 				F96B85292529A05A00CEDCF8 /* Assets.xcassets in Resources */,
@@ -2912,6 +2931,7 @@
 				E4B2A750256CB5DF0055C1AE /* ProductDetailsContentView.swift in Sources */,
 				E4CB740C255D18610017A499 /* TextFieldValedation.swift in Sources */,
 				E4EE6BBE2594DA5500D0EDCC /* CLDefaultPreviewViewController.swift in Sources */,
+				C9EFA6BB26461F3D009BF6F9 /* APPLE_LANGUAGE_KEY.swift in Sources */,
 				E4F022D325DCF5F700273CDE /* ItemsAPI.swift in Sources */,
 				E4680FC925B6D864009033C3 /* AnyOptional.swift in Sources */,
 				E48090C725D8F276007227BD /* ResellerProfileCoordinator.swift in Sources */,

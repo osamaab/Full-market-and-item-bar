@@ -110,4 +110,36 @@ extension UIFont {
     static func font(for trait: FontTrait, size: CGFloat) -> UIFont {
         DefaultFontProvider.dynamic.font(for: trait, size: size)
     }
+    
+}
+
+extension String {
+    
+    var localization: String {
+        let lang = UserDefaultsPreferencesManager.shared.currentLanguages?.rawValue ?? Language.arabic.rawValue
+        
+        if let path = Bundle.main.path(forResource: "lang-\(lang)", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
+                //                let jsonObj = JSON(data: data)
+                let jsonDic = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                //                print(jsonDic!["couponNumber"]!)
+                //                print("jsonData:\(jsonDic!)")
+                if jsonDic![self] != nil {
+                    return jsonDic![self] as! String
+                }
+                if !(jsonDic?.isEmpty)! {
+                    //                    print("jsonData:\(jsonObj)")
+                    return "_"+self
+                } else {
+                    return "_"+self
+                    
+                }
+            } catch _ {
+                return "_"+self
+            }
+        } else {
+            return "_"+self
+        }
+    }
 }

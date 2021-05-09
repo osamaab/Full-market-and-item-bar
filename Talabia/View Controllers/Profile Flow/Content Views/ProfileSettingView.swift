@@ -23,6 +23,20 @@ import Stevia
 
         $0.layer.cornerRadius = 11
     }
+    
+    let LanguageButonView = UIView().then{
+        $0.layer.borderWidth = 1
+        $0.layer.borderColor = DefaultColorsProvider.tintPrimary.cgColor;
+        $0.layer.cornerRadius = 11
+    }
+    let label = UILabel().then{
+        $0.text = "Arabic".localization
+        $0.font = .font(for: .regular, size: 17)
+        $0.textColor = DefaultColorsProvider.tintPrimary
+    }
+    let imageView = UIImageView().then{
+        $0.image = UIImage(named: "Lan_Setting")
+    }
     let ModeButton = UIButton().then{
         $0.setTitle("Design Mood", for: .normal)
         $0.setTitleColor(DefaultColorsProvider.tintPrimary, for: .normal)
@@ -47,7 +61,8 @@ import Stevia
     
     override func setup() {
         subviewsPreparedAL {
-            containerStackView
+//            containerStackView
+            LanguageButonView
         }
         
         containerStackView
@@ -56,17 +71,26 @@ import Stevia
             .spacing(8)
             .axis(.vertical)
         
-        containerStackView.addingArrangedSubviews {
-            LanguageButton
+//        containerStackView.addingArrangedSubviews {
+//            LanguageButonView
+//        }
+        LanguageButonView.subviewsPreparedAL{
+            label
+            imageView
         }
         containerStackView.leading(16).trailing(16).bottom(0).top(0)
         containerStackView.clipsToBounds = false
         containerStackView.height(108)
-        LanguageButton.top(0).trailing(0).bottom(0).leading(0)
-        LanguageButton.height(50)
+//        LanguageButton.top(0).trailing(0).bottom(0).leading(0)
+//        LanguageButton.height(50)
         ModeButton.top(0).trailing(0).bottom(0).leading(0)
         ModeButton.height(50)
         
+        LanguageButonView.Width == view.Width
+        LanguageButonView.height(50)
+        imageView.leading(25).top(10)
+        label.Leading == imageView.Trailing + 10
+        label.centerVertically()
         
         LanguageButton.titleEdgeInsets = .init(
             top: 0,

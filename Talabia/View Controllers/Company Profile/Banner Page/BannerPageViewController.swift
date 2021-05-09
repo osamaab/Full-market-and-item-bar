@@ -111,14 +111,32 @@ class BannerPageViewController: UIViewController {
 }
         
 extension BannerPageViewController: ImagePickerControllerDelegate {
-    func imagePickerController(_ sender: ImagePickerController, didFinishWith image: UIImage?) {
-        guard let image = image else {
-            return
-        }
-        
-        switch imagePickMode {
-        case .logo:
-            self.logoImage = image
+    func editImagePickerController(_ sender: ImagePickerController, didFinishWith info: [UIImagePickerController.InfoKey: Any]) {
+        if let image = info[.editedImage] as? UIImage {
+            switch imagePickMode {
+            case .logo:
+                self.logoImage = image
+            }
+            
+        }else {
+            if let image = info[.originalImage] as? UIImage {
+                switch imagePickMode {
+                case .logo:
+                    self.logoImage = image
+            }
         }
     }
+}
+    
+    func imagePickerController(_ sender: ImagePickerController, didFinishWith image: UIImage?) {
+//        guard let image = image else {
+//            return
+//        }
+//
+//        switch imagePickMode {
+//        case .logo:
+//            self.logoImage = image
+//        }
+    }
+   
 }

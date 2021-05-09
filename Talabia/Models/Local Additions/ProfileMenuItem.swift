@@ -92,70 +92,70 @@ struct ProfileMenuItem: Equatable, Hashable {
 extension ProfileMenuItem {
     
     static func notification() -> ProfileMenuItem {
-        return ProfileMenuItem(identifier: .notification , title: "Notifications", image: .named("menu_exclamation"))
+        return ProfileMenuItem(identifier: .notification , title: "Notifications".localization, image: .named("menu_exclamation"))
     }
     
     static func logout() -> ProfileMenuItem {
-        return ProfileMenuItem(identifier: .logout, title: "Logout", image: nil)
+        return ProfileMenuItem(identifier: .logout, title: "Logout".localization, image: nil)
     }
     
     static func information() -> ProfileMenuItem {
-        return ProfileMenuItem(identifier: .myInformation, title: "My Information", image: .named("menu_info"), style: .highlighted)
+        return ProfileMenuItem(identifier: .myInformation, title: "My Information".localization, image: .named("menu_info"), style: .highlighted)
     }
     
     static  func changePassword() -> ProfileMenuItem {
-        return ProfileMenuItem(identifier: .password, title: "Change Password", image: .named("menu_password"))
+        return ProfileMenuItem(identifier: .password, title: "Change Password".localization, image: .named("menu_password"))
     }
     static func bannerBage() -> ProfileMenuItem {
-        return .init(identifier: .bannerBage, title: "Banner page", image: .named("banner_Setting"))
+        return .init(identifier: .bannerBage, title: "Banner page".localization, image: .named("banner_Setting"))
     }
     static func accountLevel() -> ProfileMenuItem {
-        return .init(identifier: .accountLevel, title: "Account level", image: .named("rate_Setting"))
+        return .init(identifier: .accountLevel, title: "Account level".localization, image: .named("rate_Setting"))
     }
     static func contctUs() -> ProfileMenuItem {
-        return .init(identifier: .contctUs, title: "Contact us", image: .named("contactUs_Setting"))
+        return .init(identifier: .contctUs, title: "Contact us".localization, image: .named("contactUs_Setting"))
     }
     static func language() -> ProfileMenuItem {
-        return .init(identifier: .language, title: "Language", image: .named("Lan_Setting"), style: .imageChanged);
+        return .init(identifier: .language, title: "Language".localization, image: .named("Lan_Setting"), style: .imageChanged);
     }
     static func darkMode() -> ProfileMenuItem {
-        return .init(identifier: .darkMode, title: "Dark mood", image: .named("Mode_Setting"))
+        return .init(identifier: .darkMode, title: "Dark mood".localization, image: .named("Mode_Setting"))
     }
     
     static func items() -> ProfileMenuItem {
-        return ProfileMenuItem(identifier: .items, title: "All Items", image: .named("menu_items"), style: .highlighted)
+        return ProfileMenuItem(identifier: .items, title: "All Items".localization, image: .named("menu_items"), style: .highlighted)
     }
     
     static func companyBranches() -> ProfileMenuItem {
-        return .init(identifier: .branches, title: "Deliver locations", image: .named("menu_branches"))
+        return .init(identifier: .branches, title: "Deliver locations".localization, image: .named("menu_branches"))
     }
     
     static func resellerBranches() -> ProfileMenuItem {
-        return .init(identifier: .branches, title: "Store/ Storage location", image: .named("menu_location"))
+        return .init(identifier: .branches, title: "Store/ Storage location".localization, image: .named("menu_location"))
     }
     
     static func companyProfile() -> ProfileMenuItem {
-        return .init(identifier: .companyProfile, title: "Company Profile", image: .named("menu_profile"))
+        return .init(identifier: .companyProfile, title: "Company Profile".localization, image: .named("menu_profile"))
     }
     
     static func payment() -> ProfileMenuItem {
-        return .init(identifier: .payment, title: "Payment", image: .named("menu_payment"))
+        return .init(identifier: .payment, title: "Payment".localization, image: .named("menu_payment"))
     }
     
     static func history() -> ProfileMenuItem {
-        return .init(identifier: .history, title: "Orders History", image: .named("menu_orders"))
+        return .init(identifier: .history, title: "Orders History".localization, image: .named("menu_orders"))
     }
     
     static func companyHistory() -> ProfileMenuItem {
-        return .init(identifier: .companyHistory, title: "History", image: .named("menu_history"))
+        return .init(identifier: .companyHistory, title: "History".localization, image: .named("menu_history"))
     }
     
     static func favorits() -> ProfileMenuItem {
-        return .init(identifier: .companyHistory, title: "Favorites", image: .named("menu_favorit"))
+        return .init(identifier: .companyHistory, title: "Favorites".localization, image: .named("menu_favorit"))
     }
     
     static func settings() -> ProfileMenuItem {
-        return .init(identifier: .settings, title: "Settings", image: .named("menu_preferences"))
+        return .init(identifier: .settings, title: "Welcome".localization, image: .named("menu_preferences"))
     }
 }
 
@@ -169,17 +169,17 @@ extension ProfileMenuItem {
     
     // covering areas
     static func coveringAreas() -> ProfileMenuItem {
-        return .init(identifier: .coveringAreas, title: "Covering Areas", image: .named("menu_areas"))
+        return .init(identifier: .coveringAreas, title: "Covering Areas".localization, image: .named("menu_areas"))
     }
     
     // orders
     static func orders() -> ProfileMenuItem {
-        return .init(identifier: .orders, title: "Orders", image: .named("menu_orders"))
+        return .init(identifier: .orders, title: "Orders".localization, image: .named("menu_orders"))
     }
     
     // status
     static func status() -> ProfileMenuItem {
-        return .init(identifier: .status, title: "Status", image: .named("menu_status"))
+        return .init(identifier: .status, title: "Status".localization, image: .named("menu_status"))
     }
 }
 // MARK:- Profile Settings Specific

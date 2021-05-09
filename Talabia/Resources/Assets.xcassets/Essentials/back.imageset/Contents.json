@@ -2,7 +2,18 @@
   "images" : [
     {
       "filename" : "Path 2586.svg",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "language-direction" : "left-to-right"
+    },
+    {
+      "idiom" : "universal",
+      "language-direction" : "left-to-right",
+      "locale" : "ar"
+    },
+    {
+      "idiom" : "universal",
+      "language-direction" : "left-to-right",
+      "locale" : "en"
     }
   ],
   "info" : {
@@ -10,6 +21,7 @@
     "version" : 1
   },
   "properties" : {
+    "localizable" : true,
     "template-rendering-intent" : "template"
   }
 }

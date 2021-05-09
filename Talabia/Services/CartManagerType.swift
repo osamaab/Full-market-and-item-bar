@@ -35,7 +35,7 @@ enum CartManagerError: Error {
     case alreadyExists
 }
 
-protocol CartManagerType: class {
+protocol CartManagerType: AnyObject {
     
     
     /**

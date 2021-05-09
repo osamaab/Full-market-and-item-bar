@@ -1,15 +1,21 @@
 {
   "images" : [
     {
-      "filename" : "right-arrow.png",
+      "filename" : "Path 2586.svg",
       "idiom" : "universal",
       "language-direction" : "left-to-right"
     },
     {
-      "filename" : "right-arrow-1.png",
+      "filename" : "Path 2586-1.svg",
       "idiom" : "universal",
       "language-direction" : "left-to-right",
       "locale" : "ar"
+    },
+    {
+      "filename" : "Path 2586-2.svg",
+      "idiom" : "universal",
+      "language-direction" : "left-to-right",
+      "locale" : "en"
     }
   ],
   "info" : {
@@ -17,6 +23,7 @@
     "version" : 1
   },
   "properties" : {
-    "localizable" : true
+    "localizable" : true,
+    "template-rendering-intent" : "template"
   }
 }

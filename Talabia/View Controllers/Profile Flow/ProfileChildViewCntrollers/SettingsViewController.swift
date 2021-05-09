@@ -49,22 +49,31 @@ class SettingsViewController<ProfileUser: UserModelType>: ContentViewController<
         }
         topView.Top == view.safeAreaLayoutGuide.Top + 20
         topView.leading(8).trailing(8)
-        topView.Bottom == collectionView.Top
-        collectionView.Top == topView.Bottom
+        
+        collectionView.Top == topView.Bottom + 10
         collectionView.leading(10).trailing(10).bottom(0)
+
+        topView.height(60)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.reloadData()
         
-        topView.LanguageButton.add(event: .touchUpInside){ [unowned self] in
-            if self.isSelected == true {
-                self.topView.LanguageButton.setTitle("Arabic", for: .normal)
-                self.isSelected = !self.isSelected
+        topView.LanguageButonView.add(gesture: .tap(1)) { [unowned self] in
+            var transition: UIView.AnimationOptions = .transitionFlipFromLeft
+            if UserDefaultsPreferencesManager.shared.currentLanguages != Language.arabic{
+                L102Language.setAppleLAnguageTo(lang: "ar")
+                UserDefaultsPreferencesManager.shared.currentLanguages = Language.arabic
+                UIView.appearance().semanticContentAttribute = .forceRightToLeft
+                topView.label.text = "Arabic"
             }else {
-                self.topView.LanguageButton.setTitle("English", for: .normal)
-                self.isSelected = !self.isSelected
-                
+                L102Language.setAppleLAnguageTo(lang: "en")
+                UserDefaultsPreferencesManager.shared.currentLanguages = Language.english
+                transition = .transitionFlipFromRight
+                UIView.appearance().semanticContentAttribute = .forceLeftToRight
+                topView.label.text = "English"
             }
+            AppDelegate.shared.router.trigger(.markets(UserType.company))
+
         }
         
     }

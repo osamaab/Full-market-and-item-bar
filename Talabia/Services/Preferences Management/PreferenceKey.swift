@@ -16,4 +16,10 @@ enum PreferenceKey: String {
     case didTappedSignUp
     case selectedCategoryWithSelecctedSubCategory
     case selectedProducts
+    case language
+}
+
+enum Language: String, Codable {
+    case arabic = "ar"
+    case english = "en"
 }
