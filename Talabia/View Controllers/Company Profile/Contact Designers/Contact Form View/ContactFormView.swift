@@ -21,24 +21,25 @@ class ContactFormView: BasicViewWithSetup {
         backgroundColor = DefaultColorsProvider.backgroundPrimary
         
         subviewsPreparedAL {
-            labelView
-            contactView
+//            labelView
+//            contactView
             textView
-            sendButton
+//            sendButton
         }
         
         sendButton.contentEdgeInsets = .init(top: 12, left: 20, bottom: 12, right: 20)
         sendButton.setTitle("Send", for: .normal)
-        
+        textView.placeholder = "Message"
         contactView.titleLabel.text = "Contact our Designers"
         
         labelView.leading(0).trailing(0).top(0)
         contactView.leading(0).trailing(0)
-        textView.leading(0).trailing(0).height(100)
+//        textView.leading(0).trailing(0).height(100)
+        textView.leading(10).trailing(10).height(100%)
         sendButton.width(70%).centerHorizontally().bottom(0)
         
         contactView.Top == labelView.Bottom + 15
-        textView.Top == contactView.Bottom + 15
+//        textView.Top == contactView.Bottom
         sendButton.Top == textView.Bottom + 15
     }
 }

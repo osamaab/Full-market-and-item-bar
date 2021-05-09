@@ -28,6 +28,6 @@ extension UITabBarItem {
 
     static let talabia: UITabBarItem = .init(title: "Talabia", image: UIImage(named: "talabia"), selectedImage: UIImage(named: "talabia-selected"))
     
-    static let cart: UITabBarItem = .init(title: "Cart", image: UIImage(named: "cart"), selectedImage: UIImage(named: "cart-selected"))
+    static let cart: UITabBarItem = .init(title: "My cart", image: UIImage(named: "cart"), selectedImage: UIImage(named: "cart-selected"))
 
 }

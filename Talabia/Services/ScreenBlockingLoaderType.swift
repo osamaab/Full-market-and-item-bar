@@ -68,12 +68,12 @@ public final class NVActivityIndicatorPresenter: ScreenBlockingLoaderType {
         
         fadeInAnimation(containerView)
         
-        let blockerSize = CGSize(width: 60, height: 60)
+        let blockerSize = CGSize(width: 60, height: 30)
 
         let activityIndicatorView = NVActivityIndicatorView(
             frame: CGRect(x: 0, y: 0, width: blockerSize.width, height: blockerSize.height),
             type: .ballBeat,
-            color: DefaultColorsProvider.backgroundPrimary,
+            color: DefaultColorsProvider.tintPrimary,
             padding: 0)
         activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
 

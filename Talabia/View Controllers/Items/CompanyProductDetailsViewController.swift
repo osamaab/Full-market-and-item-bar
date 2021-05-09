@@ -49,18 +49,18 @@ class CompanyProductDetailsViewController: ContentViewController<Product> {
         let product = content
         
         contentView.topLabel.text = "KG"//product.unit.title
-        contentView.titleLabel.text = "\(product.item.name)-\(product.totalQuantity)KG"
-        contentView.priceLabel.text = "JD \(product.price)"
+        contentView.titleLabel.text = "\(product.item?.name ?? "")-\(product.totalQuantity ?? 0)KG" 
+        contentView.priceLabel.text = "JD \(product.price ?? 0.0)"
         contentView.descriptionLabel.text = product.description
         
         contentView.imageView.image = UIImage(named: "tomato")
-        if let firstHistory = product.history.first {
+        if let firstHistory = product.history?.first {
             contentView.productionLabel.text = "Production Date\n\(firstHistory.productionDate)"
             contentView.expirationLabel.text = "Exp. Date\n\(firstHistory.expirationDate)"
         }
         
-        product.history.forEach {
-            contentView.addHistoryText("\(product.item.name) - \($0.quantity)\(product.unit.title) - \($0.expirationDate)")
+        product.history?.forEach {
+            contentView.addHistoryText("\(String(describing: product.item?.name)) - \($0.quantity)\(String(describing: product.unit?.title)) - \($0.expirationDate)")
         }
         
         contentView.newQuantityButton.add(event: .touchUpInside) {

@@ -2,7 +2,7 @@
 //  ProfilePageViewController.swift
 //  talabyeh
 //
-//  Created by Loai Elayan on 10/25/20.
+//  Created by Loai  Elayan on 10/25/20.
 //  Copyright © 2020 Dominate. All rights reserved.
 //
 
@@ -161,9 +161,6 @@ class ProfileViewController<ProfileUser: UserModelType>: ContentViewController<P
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(cellClass: ProfileMenuItemCollectionViewCell.self, for: indexPath)
         let item = menuItems[indexPath.item]
-
-        
-        
         cell.imageView.image = item.image
         cell.titleLabel.text = item.title
         cell.style = item.style

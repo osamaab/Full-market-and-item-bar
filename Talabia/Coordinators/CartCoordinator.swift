@@ -15,6 +15,7 @@ enum CartRoute: Route {
     case cart
     case checkout(CartContents)
     case selectPreferredDistributor
+    case productDetails(Product)
 }
 
 class CartCoordiantor: NavigationCoordinator<CartRoute> {
@@ -46,7 +47,7 @@ class CartCoordiantor: NavigationCoordinator<CartRoute> {
                         break
                     }
                 }
-            vc.title = "Cart"
+            vc.title = "My cart"
             return .push(vc)
         case .cart:
             return .push(CartItemsViewController(router: self.unownedRouter))
@@ -54,6 +55,9 @@ class CartCoordiantor: NavigationCoordinator<CartRoute> {
             return .push(CheckoutViewController(router: self.unownedRouter, cart: cart))
         case .selectPreferredDistributor:
             return .push(SelectPreferredDistributorViewController())
+        case .productDetails(let product):
+            let details = ProductDetailsViewController(product: product)
+            return .push(details)
         }
     }
 }

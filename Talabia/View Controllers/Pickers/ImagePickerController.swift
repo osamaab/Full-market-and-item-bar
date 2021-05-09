@@ -14,8 +14,14 @@ private let cancelTitle = "Cancel"
 
 public protocol ImagePickerControllerDelegate: class {
     func imagePickerController(_ sender: ImagePickerController, didFinishWith image: UIImage?)
+    func editImagePickerController(_ sender: ImagePickerController, didFinishWith info: [UIImagePickerController.InfoKey: Any])
 }
 
+extension ImagePickerControllerDelegate {
+    func editImagePickerController(_ sender: ImagePickerController, didFinishWith info: [UIImagePickerController.InfoKey: Any]) {
+    
+    }
+}
 open class ImagePickerController: NSObject {
     
     /**
@@ -37,7 +43,7 @@ open class ImagePickerController: NSObject {
         self.delegate = delegate
 
         self.pickerController.delegate = self
-        self.pickerController.allowsEditing = false
+        self.pickerController.allowsEditing = true
         self.pickerController.mediaTypes = ["public.image"]
         
         type(of: self).current = self
@@ -101,6 +107,11 @@ extension ImagePickerController: UIImagePickerControllerDelegate {
             self?.pickerController(picker, didSelect: image)
         }
     }
+//    public func editImagePickerController(_ sender: ImagePickerController, didFinishWith info: [UIImagePickerController.InfoKey: Any]) {
+//        guard let image = info[.originalImage] as? UIImage else {
+//            return self.pickerController(picker, didSelect: nil)
+//        }
+//    }
 }
 
 extension ImagePickerController: UINavigationControllerDelegate { }

@@ -46,7 +46,14 @@ class ChooseUserViewController: ContentViewController<[APIUserType]> {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log in", action: {
             self.delegate?.chooseUserViewControllerDidChooseLogin(self)
         })
-        
+        if self.preferencesManager.userType != nil {
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "close"), action: {
+                AppDelegate.shared.router.trigger(.markets(self.preferencesManager.userType ??
+                                                            UserType.reseller))
+            })
+            
+        }
+      
         self.navigationItem.rightBarButtonItem?.tintColor = DefaultColorsProvider.tintPrimary
         
         self.navigationItem.rightBarButtonItem?.tintColor = DefaultColorsProvider.tintPrimary

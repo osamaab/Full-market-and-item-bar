@@ -83,9 +83,20 @@ extension AllCompaniesViewController: UICollectionViewDataSource, UICollectionVi
         let item = items[index]
         if self.selectedCategories.contains(item){
             self.selectedCategories.remove(at: selectedCategories.firstIndex(of: item)!)
+            FavoritesAPI.unfavoriteCompany(item.id).request(String.self).catch {
+                self.showMessage(message: $0.localizedDescription, messageType: .failure)
+                self.selectedCategories.remove(at: self.selectedCategories.firstIndex(of: item)!)
+                self.collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
+            }
         } else {
             self.selectedCategories.append(item)
+            FavoritesAPI.favoriteCompany(item.id).request(String.self).catch {
+                self.showMessage(message: $0.localizedDescription, messageType: .failure)
+                self.selectedCategories.append(item)
+                self.collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
+            }
         }
+        
         self.collectionView.reloadItems(at: [IndexPath(item: index, section: 0)])
     }
 }

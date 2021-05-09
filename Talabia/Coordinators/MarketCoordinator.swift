@@ -8,7 +8,7 @@
 
 import UIKit
 import XCoordinator
-
+import Promises
 
 
 enum MarketRoute: Route {
@@ -17,6 +17,11 @@ enum MarketRoute: Route {
     case allCompanies
     
     case categories([MainCategory])
+    
+    case favoriteProduct(Product)
+    case unfavoriteProduct(Product)
+    case favoriteCompany(Company)
+    case unfavoriteCompany(Company)
     
     case products(MainCategory)
     case productDetails(Product)
@@ -59,7 +64,6 @@ class MarketCoordinator: NavigationCoordinator<MarketRoute> {
             MarketChooseLocationViewController(selectedLocation: location, delegate: delegate).present()
             return .none()
         case .login:
-            
             let vc = chooseSigninOrSignUpViewController
                 { method in
                     switch method {
@@ -85,8 +89,20 @@ class MarketCoordinator: NavigationCoordinator<MarketRoute> {
             let vc = CategoryDetailsViewController(router: self.unownedRouter, market:.category(subCategory))
             vc.title = "\(subCategory.title)"
             return .push(vc)
-        
+        case .unfavoriteProduct(let product):
+            FavoritesAPI.unfavoriteProduct(product.id).request(String.self)
+            return .none()
+        case .unfavoriteCompany(let company):
+            return self.performTask(task: FavoritesAPI.unfavoriteCompany(company.id).request(String.self))
+        case .favoriteProduct(let product):
+            return self.performTask(task: FavoritesAPI.favoriteProduct(product.id, product.totalQuantity ?? 0).request(String.self))
+        case .favoriteCompany(let company):
+            return performTask(task: FavoritesAPI.favoriteCompany(company.id).request(String.self))
+            
         }
+    }
+    fileprivate func performTask(task: Promise<String>) -> TransitionType {
+        return .none()
     }
 }
 extension MarketCoordinator: SubCategoriesPickerCoordinatorDelegate {
@@ -96,8 +112,4 @@ extension MarketCoordinator: SubCategoriesPickerCoordinatorDelegate {
     func chooseUserCoordinatorDidChooseSkip(_ sender: SubCategoriesPickerCoordinator) {
         self.trigger(.home)
     }
-    
-    
-    
-    
 }

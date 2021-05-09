@@ -18,7 +18,7 @@ struct Distributor: Codable {
     let email: String
     let drivingLicensePath: String?
 //    let carTypeId: Int
-    let name: String
+    let name: String = "osama"
     let civilId: String
     let user: User?
 

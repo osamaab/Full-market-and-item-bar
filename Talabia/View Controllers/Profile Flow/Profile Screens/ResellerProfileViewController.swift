@@ -43,6 +43,10 @@ class ResellerProfileViewController: ProfileViewController<Reseller> {
             router.trigger(.editCategories)
         case .password:
             router.trigger(.changePassword)
+        case .settings:
+            router.trigger(.setting)
+        case.notification:
+            router.trigger(.notification)
         default:
             break
         }

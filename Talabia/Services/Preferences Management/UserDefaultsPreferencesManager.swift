@@ -29,6 +29,9 @@ final class UserDefaultsPreferencesManager {
     
     @ObjectStorage(key: .currentCart)
     var currentCart: CartContents?
+    
+    @ObjectStorage(key: .language)
+    var currentLanguages: Language?
 }
 
 extension UserDefaultsPreferencesManager: PreferencesManagerType {
@@ -42,7 +45,3 @@ extension UserDefaultsPreferencesManager: PreferencesManagerType {
 }
 
 
-struct CartContents: Codable {
-    let products: Set<CartItem>
-    let companyUsername: String
-}

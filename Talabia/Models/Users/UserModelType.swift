@@ -47,6 +47,7 @@ extension Company: UserModelType {
 }
 
 extension Distributor: UserModelType {
+    
     var mobile: String? {
         telephone
     }

@@ -11,7 +11,7 @@ import Stevia
 
 class ProfileMenuItemCollectionViewCell: UICollectionViewCell {
 
-    let imageView: UIImageView = .init()
+    var imageView: UIImageView = .init()
     let titleLabel: UILabel = .init()
     let arrowImageView: ArrowImageView = .init()
     let worningImageView: UIImageView = .init()
@@ -27,6 +27,11 @@ class ProfileMenuItemCollectionViewCell: UICollectionViewCell {
             arrowImageView.image = style == .normal ?
                UIImage(named: "right-arrow"):
                UIImage(named: "see_more")
+            
+            if style == .imageChanged {
+                imageView = style == .imageChanged ?
+                    imageView.top(6) : imageView.top(8)
+            }
 
         }
     }

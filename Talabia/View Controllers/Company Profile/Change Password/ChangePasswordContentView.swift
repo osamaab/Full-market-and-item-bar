@@ -37,7 +37,7 @@ class ChangePasswordContentView: BasicViewWithSetup {
         stackView.bottom(containerPadding.bottom).top(containerPadding.top).leading(containerPadding.left).trailing(containerPadding.right)
         
         stackView.addingArrangedSubviews {
-            labelView
+//            labelView
             oldPasswordField
             newPasswordField
             confirmNewPasswordField
@@ -45,7 +45,7 @@ class ChangePasswordContentView: BasicViewWithSetup {
         
         oldPasswordField.placeholder = "Old Password"
         newPasswordField.placeholder = "New Password"
-        confirmNewPasswordField.placeholder = "Confirm New Password"
+        confirmNewPasswordField.placeholder = "New Password again"
 
         [oldPasswordField, newPasswordField, confirmNewPasswordField].forEach {
             $0.height(50)

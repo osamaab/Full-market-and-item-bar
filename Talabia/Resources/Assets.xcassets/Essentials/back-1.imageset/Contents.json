@@ -1,0 +1,29 @@
+{
+  "images" : [
+    {
+      "filename" : "Path 2586.svg",
+      "idiom" : "universal",
+      "language-direction" : "left-to-right"
+    },
+    {
+      "filename" : "Path 2586-1.svg",
+      "idiom" : "universal",
+      "language-direction" : "left-to-right",
+      "locale" : "ar"
+    },
+    {
+      "filename" : "Path 2586-2.svg",
+      "idiom" : "universal",
+      "language-direction" : "left-to-right",
+      "locale" : "en"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "localizable" : true,
+    "template-rendering-intent" : "template"
+  }
+}

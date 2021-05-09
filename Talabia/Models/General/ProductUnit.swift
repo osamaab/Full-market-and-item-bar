@@ -10,7 +10,7 @@ import Foundation
 
 struct ProductUnit: Equatable, Hashable {
     let id: Int
-    let title: String
+    let title: String?
 }
 
 extension ProductUnit: Codable { }

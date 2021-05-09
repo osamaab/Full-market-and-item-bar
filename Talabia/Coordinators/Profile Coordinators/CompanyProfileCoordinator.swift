@@ -21,6 +21,11 @@ enum CompanyProfileRoute: Route {
     
     case moreInformation
     case allItems
+    case setting
+    case contactUs
+    case bannerPage
+    case notification
+    case accountLevel
 }
 
 class CompanyProfileCoordinator: NavigationCoordinator<CompanyProfileRoute> {
@@ -94,8 +99,22 @@ class CompanyProfileCoordinator: NavigationCoordinator<CompanyProfileRoute> {
         case .allItems:
             let coordinator = AllItemsCoordinator(rootViewController: NavigationController(style: .secondary, autoShowsCloseButton: true))
             itemsRouter = coordinator.strongRouter
-            
             return .presentFullScreen(coordinator)
+        case .setting:
+            let vc = CompanySettingsViewController(router: self.unownedRouter)
+            return .push(vc)
+        case .contactUs:
+            let router = ContactUsCoordinator()
+            return .presentFullScreen(router)
+        case .bannerPage:
+            let router = BannerPageCoordinator()
+            return .presentFullScreen(router)
+        case .notification:
+            let vc = NotficationViewController()
+            return.push(vc)
+        case.accountLevel:
+            let vc = AccountLevelViewController()
+            return.push(vc)
         }
     }
 }

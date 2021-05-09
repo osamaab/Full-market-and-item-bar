@@ -21,7 +21,6 @@ class SignInViewController: UIViewController {
         let username: String
         let password: String
     }
-    
     let contentView = SignInContentView()
     weak var delegate: SignInViewControllerDelegate?
 
@@ -38,8 +37,7 @@ class SignInViewController: UIViewController {
         contentView.leading(0).trailing(0)
         contentView.Bottom == view.Bottom
         contentView.onAction = { [unowned self] username, password in
-            // perform the login..
-
+            
             self.delegate?.signInViewController(self, didLoginWith: .init(username: username, password: password))
         }
     }

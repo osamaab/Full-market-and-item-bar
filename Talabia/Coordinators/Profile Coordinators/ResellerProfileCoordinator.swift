@@ -16,6 +16,8 @@ enum ResellerProfileRoute: Route {
     case storeLocations
     case editCategories
     case changePassword
+    case setting
+    case notification
 }
 
 class ResellerProfileCoordinator: NavigationCoordinator<ResellerProfileRoute> {
@@ -79,6 +81,12 @@ class ResellerProfileCoordinator: NavigationCoordinator<ResellerProfileRoute> {
         case .changePassword:
             let router = ChangePasswordCoordinator()
             return .presentFullScreen(router)
+        case .setting:
+            let vc = ResellerSettingsViewController(router: self.unownedRouter)
+            return .push(vc)
+        case .notification:
+            let vc = NotficationViewController()
+            return.push(vc)
         }
     }
 }

@@ -12,7 +12,7 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        UIView.appearance().semanticContentAttribute = UserDefaultsPreferencesManager.shared.currentLanguages == Language.arabic ? .forceRightToLeft : .forceLeftToRight
         // Do any additional setup after loading the view.
         tabBar.isTranslucent = false
         tabBar.barTintColor = DefaultColorsProvider.backgroundPrimary

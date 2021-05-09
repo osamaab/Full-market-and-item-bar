@@ -63,7 +63,7 @@ class FavoritesCoordinator: NavigationCoordinator<FavoritesRoute> {
         case .unfavoriteCompany(let company):
             return self.performTask(task: FavoritesAPI.unfavoriteCompany(company.id).request(String.self))
         case .favoriteProduct(let product):
-            return self.performTask(task: FavoritesAPI.favoriteProduct(product.id, product.totalQuantity).request(String.self))
+            return self.performTask(task: FavoritesAPI.favoriteProduct(product.id, product.totalQuantity ?? 0).request(String.self))
             
         case .favoriteCompany(let company):
             return performTask(task: FavoritesAPI.favoriteCompany(company.id).request(String.self))
@@ -71,10 +71,9 @@ class FavoritesCoordinator: NavigationCoordinator<FavoritesRoute> {
     }
     
     fileprivate func performTask(task: Promise<String>) -> TransitionType {
-        rootViewController.performTask(taskOperation: task).then {
-            self.rootViewController.showMessage(message: $0, messageType: .success)
-        }
-        
+//        rootViewController.performTask(taskOperation: task).then {
+//            self.rootViewController.showMessage(message: $0, messageType: .success)
+//        }
         return .none()
     }
 }

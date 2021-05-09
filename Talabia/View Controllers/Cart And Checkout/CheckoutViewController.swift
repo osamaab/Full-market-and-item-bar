@@ -69,7 +69,6 @@ class CheckoutViewController: UIViewController {
     
     fileprivate func setupViews(){
         self.view.backgroundColor = DefaultColorsProvider.backgroundSecondary
-        
         contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.scrollContainerView.scrollView.contentInset.bottom += 100
         contentView.scrollContainerView.scrollView.contentInset.top += 20
@@ -94,7 +93,6 @@ class CheckoutViewController: UIViewController {
         contentView.insertCardView(with: deliveryDateCardView, title: "Delivery Date")
         contentView.insertCardView(with: deliveryInstructions, title: "Delivery Instructions")
         contentView.insertCardView(with: paymentMethodView, title: "Payment Method")
-       
         let distributorOptionCard = contentView.insertCardView(with: distributerOptionView, title: nil)
         distributorOptionCard.backgroundColor = DefaultColorsProvider.tintSecondary
         

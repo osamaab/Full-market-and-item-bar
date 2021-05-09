@@ -51,6 +51,11 @@ class CompanyProfileViewController: ProfileViewController<Company> {
             router.trigger(.moreInformation)
         case .items:
             router.trigger(.allItems)
+        case .settings:
+            router.trigger(.setting)
+        case.notification:
+            router.trigger(.notification)
+        
         default:
             break
         }

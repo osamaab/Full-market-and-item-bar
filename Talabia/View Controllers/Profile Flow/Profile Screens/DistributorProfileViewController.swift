@@ -42,5 +42,25 @@ class DistributorProfileViewController: ProfileViewController<Distributor> {
         self.headerView.tertiaryLabel.text = content.mobile
         self.headerView.imageView.sd_setImage(with: URL(string: content.personalPicturePath ?? ""), completed: nil)
     }
+    override func performAction(for item: ProfileMenuItem.Identifier) {
+        switch item {
+//        case .editProfile:
+//            router.trigger(.editProfile)
+//        case .branches:
+//            router.trigger(.storeLocations)
+//        case .myInformation:
+//            router.trigger(.editCategories)
+//        case .password:
+//            router.trigger(.changePassword)
+//        case .companyProfile:
+//            router.trigger(.moreInformation)
+//        case .items:
+//            router.trigger(.allItems)
+        case .settings:
+            router.trigger(.setting)
+        default:
+            break
+        }
+    }
 }
 

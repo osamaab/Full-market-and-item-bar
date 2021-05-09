@@ -18,7 +18,7 @@ class ProductDetailsContentView: UIView {
     
     let headerView: ProductHeaderView = .init()
     var ratingView: RatingView = .init()
-    let quantityView: QuantitySelectionView = .init(style: .big, title: "Quantity")
+    let quantityView: QuantitySelectionView = .init(style: .small, title: nil)
     let qrCodeView: QRCodeView = .init()
     let descriptionLabel: UILabel = .init()
     let additionalDetailsLabel: UILabel = .init()
@@ -44,6 +44,7 @@ class ProductDetailsContentView: UIView {
         containerStackView.addingArrangedSubviews {
             headerView.embededInVerticalPaddingView()
             ratingView.embededInVerticalPaddingView()
+            quantityView
 //            quantityView.embededInVerticalPaddingView()
 //            qrCodeView.embededInVerticalPaddingView(topPadding: 10, bottomPadding: 10)
             descriptionLabel
@@ -75,7 +76,7 @@ class ProductDetailsContentView: UIView {
         additionalDetailsLabel.font = .font(for: .bold, size: 21)
         additionalDetailsLabel.textColor = DefaultColorsProvider.textPrimary1
         additionalDetailsLabel.textAlignment = .center
-        
+        quantityView.minValue = 1
 
         actionButton.contentEdgeInsets = .init(top: 12, left: 0, bottom: 12, right: 0)
         actionButton.clipsToBounds = true
@@ -116,6 +117,7 @@ class ProductHeaderView: UIView {
     let containerView = UIView()
     
     let imageView = UIImageView()
+    let companyTitleLabel = UILabel()
     let titleLabel = UILabel()
     
     let likeButton = UIButton()
@@ -146,7 +148,7 @@ class ProductHeaderView: UIView {
         containerView.subviews {
 //            likeButton
             imageView
-//            titleLabel
+            companyTitleLabel
             topLabel
         }
         
@@ -157,7 +159,7 @@ class ProductHeaderView: UIView {
         topLabel.translatesAutoresizingMaskIntoConstraints = false
         subtitleLabel1.translatesAutoresizingMaskIntoConstraints = false
         subtitleLabel2.translatesAutoresizingMaskIntoConstraints = false
-
+        companyTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         containerView.backgroundColor = DefaultColorsProvider.backgroundPrimary
         containerView.clipsToBounds = false
@@ -198,14 +200,17 @@ class ProductHeaderView: UIView {
         subtitleLabel2.font = .font(for: .bold, size: 17)
         subtitleLabel2.textColor = DefaultColorsProvider.textPrimary1
         subtitleLabel2.textAlignment = .center
+        companyTitleLabel.font = .font(for: .bold, size: 17)
+        companyTitleLabel.textColor = DefaultColorsProvider.tintPrimary
         
         containerView.leading(0).trailing(0).top(0).centerHorizontally()
         containerView.height(200)
 
         imageView.contentMode = .scaleAspectFit
-        imageView.width(100%).bottom(10).leading(0).trailing(0)
-        
-         
+        imageView.width(100%).bottom(30).leading(0).trailing(0)
+        companyTitleLabel.Top == imageView.Bottom
+        companyTitleLabel.centerHorizontally()
+       
         titleLabel.centerHorizontally()
         titleLabel.Top == containerView.Bottom + 20
 //        titleLabel.leading(90).trailing(90)

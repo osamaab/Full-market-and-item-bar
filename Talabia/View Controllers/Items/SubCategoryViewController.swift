@@ -17,6 +17,7 @@ class SubCategoryViewController: ContentViewController<MainCategory>, UICollecti
     
     var router: UnownedRouter<ItemsRoute>
     lazy var collectionView: UICollectionView = configureCollectionView()
+    let preferencesManager = UserDefaultsPreferencesManager.shared
     let category: MainCategory
     init(router: UnownedRouter<ItemsRoute>,category: MainCategory) {
         self.router = router

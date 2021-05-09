@@ -32,6 +32,8 @@ enum ProfileAPI: TargetType {
     
     case changePassword(String, String) // old pas, new pass
     case editAdditionalInfo(CompanyAdditionalInfoInput)
+    
+    case updateBanner(Banner)
 }
 
 extension ProfileAPI {
@@ -43,6 +45,8 @@ extension ProfileAPI {
             return "user/change_password"
         case .editAdditionalInfo:
             return "company/additional_info/edit"
+        case .updateBanner:
+            return "company/banner/update"
         }
     }
     
@@ -51,7 +55,9 @@ extension ProfileAPI {
         case .profile:
             return .get
         case .changePassword, .editAdditionalInfo:
-            return .put
+            return .post
+        case .updateBanner:
+            return .post
         }
     }
     
@@ -63,6 +69,8 @@ extension ProfileAPI {
             return .requestParameters(parameters: ["password": old, "new_password": new], encoding: JSONEncoding.default)
         case .editAdditionalInfo(let input):
             return .requestJSONEncodable(input)
+        case.updateBanner(let banner):
+            return.requestJSONEncodable(banner)
         }
     }
 }

@@ -26,6 +26,7 @@ class ChangePasswordViewController: UIViewController {
     weak var delegate: ChangePasswordViewControllerDelegate?
     
     override func viewDidLoad() {
+        title = "Change Password"
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.        

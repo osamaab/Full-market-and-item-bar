@@ -101,25 +101,3 @@ class ProductCollectionViewCell: UICollectionViewCell {
         subtitleLabel2.bottom(15)
     }
 }
-
-extension ProductCollectionViewCell: CLComponentPreview {
-    static var groupIdentifier: CLComponentGroupIdentifier {
-        .cells
-    }
-    
-    static func render(in context: CLComponentPreviewContext) {
-        let view: Self = .init()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
-        context.containerView.addSubview(view)
-        
-        view.imageView.image = UIImage(named: "Rectangle 232")
-        view.subtitleLabel1.text = "Red Onions"
-        view.titleLabel.text = "New era market"
-        view.subtitleLabel2.text = "JD 0.200"
-        
-        view.top(20).bottom(20)
-        view.leading(20)
-        view.centerHorizontally()
-    }
-}
