@@ -30,6 +30,8 @@ enum MarketRoute: Route {
     case advancedSearch
     case chooseStoreLocation(selected: DeliveryType?, delegate: MarketChooseLocationViewControllerDelegate)
     case login
+    case companyMarket(Product)
+    case companyInfo
 }
 
 class MarketCoordinator: NavigationCoordinator<MarketRoute> {
@@ -56,6 +58,7 @@ class MarketCoordinator: NavigationCoordinator<MarketRoute> {
             fatalError("Not really ready :)")
         case .productDetails(let product):
             let details = ProductDetailsViewController(product: product)
+            details.delegate = self
             return .push(details)
         case .advancedSearch:
             let router = AdvancedSearchCoordinator().strongRouter
@@ -98,7 +101,12 @@ class MarketCoordinator: NavigationCoordinator<MarketRoute> {
             return self.performTask(task: FavoritesAPI.favoriteProduct(product.id, product.totalQuantity ?? 0).request(String.self))
         case .favoriteCompany(let company):
             return performTask(task: FavoritesAPI.favoriteCompany(company.id).request(String.self))
-            
+        case .companyMarket(let companyId):
+            let vc = CompanyDetailsViewController(router: self.unownedRouter, market:.companyMarket(companyId))
+            return .push(vc)
+        case .companyInfo:
+            let vc = CompanyMoreInfoViewController(router: unownedRouter.self)
+            return .push(vc)
         }
     }
     fileprivate func performTask(task: Promise<String>) -> TransitionType {
@@ -111,5 +119,11 @@ extension MarketCoordinator: SubCategoriesPickerCoordinatorDelegate {
     
     func chooseUserCoordinatorDidChooseSkip(_ sender: SubCategoriesPickerCoordinator) {
         self.trigger(.home)
+    }
+}
+extension MarketCoordinator: ProductDetailsViewControllerDelegate {
+    func ProductDetailsViewControllerDidTapAdd(_ sender: ProductDetailsViewController, didFinishWith product: Product) {
+//        let items = Company.self
+        self.trigger(.companyMarket(product))
     }
 }

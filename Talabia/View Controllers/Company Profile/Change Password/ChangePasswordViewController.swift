@@ -9,7 +9,7 @@
 import UIKit
 import Stevia
 
-protocol ChangePasswordViewControllerDelegate: class {
+protocol ChangePasswordViewControllerDelegate: AnyObject {
     func changePasswordViewController(_ sender: ChangePasswordViewController, didFinishWith output: ChangePasswordViewController.Output)
 }
 

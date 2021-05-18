@@ -9,7 +9,7 @@
 import UIKit
 import Stevia
 
-protocol CompanyMoreInformationViewControllerDelegate: class {
+protocol CompanyMoreInformationViewControllerDelegate: AnyObject {
     func companyMoreInformationViewController(_ sender: CompanyMoreInformationViewController, didFinishWith input: CompanyAdditionalInfoInput)
 }
 

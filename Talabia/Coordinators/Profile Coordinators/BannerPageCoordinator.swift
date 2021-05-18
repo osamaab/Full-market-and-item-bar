@@ -24,8 +24,17 @@ class BannerPageCoordinator: NavigationCoordinator<BannerPageRoute> {
         switch route {
         case .banner:
             let vc = BannerPageViewController()
-//            vc.delegate = self
+            vc.delegate = self
             return .push(vc)
+        }
+    }
+}
+
+extension BannerPageCoordinator: BannerPageViewControllerDelegate {
+    func bannerPageViewController(_ sender: BannerPageViewController, didFinishWith image: Banner) {
+        self.rootViewController.performTask(taskOperation: ProfileAPI.updateBanner(image).request(BannerResponse.self)).then {_ in 
+            self.rootViewController.showMessage(message: "$", messageType: .success)
+            self.performTransition(.dismiss(), with: .init(animated: true))
         }
     }
 }

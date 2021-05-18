@@ -153,6 +153,8 @@ extension AppCoordinator: ChooseUserCoordinatorDelegate {
         
         if self.preferencesManager.didTappedSignUp == true {
             self.trigger(.authRoute(for: output.userType, categories: output.categories, subCategories: output.subCategories))
+        }else if self.preferencesManager.didTappedEditProfile == true {
+//            AppDelegate.shared.router.trigger()
         }else {
             self.trigger(.markets(output.userType))
             preferencesManager.didTappedSignUp = false

@@ -15,6 +15,7 @@ class CompanyDetailsViewController: ContentViewController<Market>, UICollectionV
     enum MarketType {
         case full
         case company(Company)
+        case companyMarket(Product)
         
         var contentRepository: AnyContentRepository<Market> {
             switch self {
@@ -22,6 +23,8 @@ class CompanyDetailsViewController: ContentViewController<Market>, UICollectionV
                 return APIContentRepositoryType<MarketAPI, Market>(.market(10, 0)).eraseToAnyContentRepository()
             case .company(let company):
                 return APIContentRepositoryType<MarketAPI, Market>(.companyMarket(company.id)).eraseToAnyContentRepository()
+            case .companyMarket(let companyId):
+                return APIContentRepositoryType<MarketAPI,Market>(.companyMarket(companyId.companyId)).eraseToAnyContentRepository()
             }
         }
     }
@@ -151,7 +154,7 @@ extension CompanyDetailsViewController {
             let cell = collectionView.dequeueCell(cellClass: ProductCollectionViewCell.self, for: indexPath)
             cell.imageView.image = UIImage(named: "tomato")
             cell.subtitleLabel1.text = product.item?.name
-            cell.titleLabel.text = product.username
+            cell.titleLabel.text = product.companyTitle
             cell.topLabel.text = "1KG" //product.unit.title
             cell.subtitleLabel2.text = product.price?.priceFormatted
             cell.likeButton.addTarget(self, action: #selector(productAction(sender:)), for: .touchUpInside)
@@ -200,7 +203,8 @@ extension CompanyDetailsViewController {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            break
+            self.router.trigger(.companyInfo)
+        break
         case 1:
             break
         case 2:

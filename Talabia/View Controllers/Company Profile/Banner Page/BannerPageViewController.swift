@@ -9,14 +9,17 @@
 import UIKit
 import Stevia
 
-protocol BannerPageViewControllerDelegate: class {
+protocol BannerPageViewControllerDelegate: AnyObject {
     func bannerPageViewController(_ sender: BannerPageViewController, didFinishWith image: Banner)
+}
+struct BannerResponse: Codable {
+    let results: String?
 }
 
 struct Banner:Codable {
     let banner64: String
     enum CodingKeys: String, CodingKey {
-            case banner64 = "banner_b64"
+        case banner64 = "banner_b64"
     }
 }
 
@@ -39,50 +42,40 @@ class BannerPageViewController: UIViewController {
         title = "Banner page"
         super.viewDidLoad()
         view.subviewsPreparedAL {
-           contentView
-           bottomNextView
+            contentView
+            bottomNextView
         }
-//        view.backgroundColor = .red
         contentView.Top == view.safeAreaLayoutGuide.Top + 20
-//        contentView.Bottom == bottomNextView.Top
         contentView.addPicButton.isEnabled = true
         bottomNextView.leading(0).trailing(0).bottom(0)
         contentView.leading(10).trailing(10)
         addActions()
-
-        
-      
-        
-        }
-        
-
+    }
+    
     fileprivate func addActions(){
         contentView.addPicButton.addAction {[unowned self] in
             self.imagePickMode = .logo
-                let imagePicker = ImagePickerController(presentationController: self,
-                                                        delegate: self)
-            
+            let imagePicker = ImagePickerController(presentationController: self,
+                                                    delegate: self)
             imagePicker.present(from: contentView.addPicButton)
         }
         self.bottomNextView.nextButton.add(event: .touchUpInside) { [unowned self] in
             
             do {
                 let form = try self.updateToBase64()
-                ProfileAPI.updateBanner(form).request(String.self).then{_ in
-                    self.showMessage(message: "success", messageType: .success)
-                }
+                self.delegate?.bannerPageViewController(self, didFinishWith: form)
             } catch {
                 self.showMessage(message: "Please fill all fields", messageType: .failure)
             }
         }
     }
-        
+    
     
     private func updateImageView(){
         contentView.imageView.image = logoImage
         
     }
-     func updateToBase64() throws -> Banner{
+    func updateToBase64() throws -> Banner{
         guard let logo = self.logoImage else {
             return Banner(banner64: "")
         }
@@ -90,26 +83,11 @@ class BannerPageViewController: UIViewController {
             fatalError("Corrupted Image")
         }
         let imageString = Banner(banner64: logo64Base)
-       
+        
         return imageString
-        
     }
-//    func updateServer(){
-//        self.bottomNextView.nextButton.add(event: .touchUpInside) { [unowned self] in
-//            do {
-//                let form = try self.updateToBase64()
-//                ProfileAPI.updateBanner(form).request(String.self).then { _ in
-//                    self.showMessage(message: "Banner updated succsesfully", messageType: .success)
-//                } catch
-//                {
-//                self.showMessage(message: "Please fill all fields", messageType: .failure)
-//            }
-//    }
-//   
-//        }}
-    
 }
-        
+
 extension BannerPageViewController: ImagePickerControllerDelegate {
     func editImagePickerController(_ sender: ImagePickerController, didFinishWith info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[.editedImage] as? UIImage {
@@ -123,20 +101,11 @@ extension BannerPageViewController: ImagePickerControllerDelegate {
                 switch imagePickMode {
                 case .logo:
                     self.logoImage = image
+                }
             }
         }
     }
-}
     
     func imagePickerController(_ sender: ImagePickerController, didFinishWith image: UIImage?) {
-//        guard let image = image else {
-//            return
-//        }
-//
-//        switch imagePickMode {
-//        case .logo:
-//            self.logoImage = image
-//        }
     }
-   
 }

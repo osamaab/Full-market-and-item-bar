@@ -9,7 +9,7 @@
 import UIKit
 import Stevia
 
-protocol NewItemViewControllerDelegate: class {
+protocol NewItemViewControllerDelegate: AnyObject {
     func newItemViewController(_ sender: NewItemViewController, didFinishWith product: NewItemInput)
 }
 

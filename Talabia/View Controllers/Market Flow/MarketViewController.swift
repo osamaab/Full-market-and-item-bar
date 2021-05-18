@@ -17,6 +17,7 @@ class MarketViewController: ContentViewController<Market>, UICollectionViewDeleg
         case full
         case company(Company)
         case category(SubCategory)
+        case companyMarket(Product)
         
         var contentRepository: AnyContentRepository<Market> {
             switch self {
@@ -26,6 +27,8 @@ class MarketViewController: ContentViewController<Market>, UICollectionViewDeleg
                 return APIContentRepositoryType<MarketAPI, Market>(.companyMarket(company.id)).eraseToAnyContentRepository()
             case .category(let subCategory):
                 return APIContentRepositoryType<MarketAPI, Market>(.categoryDetails(subCategory.id)).eraseToAnyContentRepository()
+            case .companyMarket(let companyId):
+                return APIContentRepositoryType<MarketAPI,Market>(.companyMarket(companyId.companyId)).eraseToAnyContentRepository()
             }
         }
     }
@@ -204,7 +207,7 @@ extension MarketViewController {
             let cell = collectionView.dequeueCell(cellClass: ProductCollectionViewCell.self, for: indexPath)
             cell.imageView.image = UIImage(named: "tomato")
             cell.subtitleLabel1.text = product.item?.name
-            cell.titleLabel.text = product.username
+            cell.titleLabel.text = product.companyTitle
             cell.topLabel.text = "1KG" //product.unit.title
             cell.subtitleLabel2.text = product.price?.priceFormatted
             cell.likeButton.addTarget(self, action: #selector(productAction(sender:)), for: .touchUpInside)

@@ -85,16 +85,16 @@ func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection s
         return header
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let item = items[indexPath.item]
-        if self.selectedItems.contains(item){
-            self.selectedItems.remove(at: selectedItems.firstIndex(of: item)!)
-        } else {
-            self.selectedItems.append(item)
-        }
-       
-        self.collectionView.reloadItems(at: [indexPath])
-    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let item = items[indexPath.item]
+//        if self.selectedItems.contains(item){
+//            self.selectedItems.remove(at: selectedItems.firstIndex(of: item)!)
+//        } else {
+//            self.selectedItems.append(item)
+//        }
+//
+//        self.collectionView.reloadItems(at: [indexPath])
+//    }
 }
 extension AccountLevelViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func configureCollectionView() -> UICollectionView {

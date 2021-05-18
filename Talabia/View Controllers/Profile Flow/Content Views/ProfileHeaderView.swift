@@ -72,9 +72,9 @@ class ProfileHeaderView: BasicViewWithSetup {
             .spacing(5)
             .axis(.vertical)
         
-        if preferencesManager.userType == .reseller {
-            editButton.removeFromSuperview()
-        }
+//        if preferencesManager.userType == .reseller {
+//            editButton.removeFromSuperview()
+//        }
         containerStackView.top(20).trailing(20).centerVertically().centerHorizontally()
         containerStackView.clipsToBounds = false
         containerStackView.layer.cornerRadius = 13

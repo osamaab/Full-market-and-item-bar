@@ -16,6 +16,8 @@ struct Product: Equatable, Hashable {
     let description: String?
     let price: Double?
     let itemName: String?
+    let companyId: Int
+    let companyTitle: String?
         
     let unit: ProductUnit?
     let item: ProductTemplate?
@@ -42,6 +44,8 @@ struct Product: Equatable, Hashable {
         case images
         case history
         case itemName = "item_name"
+        case companyId = "company_id"
+        case companyTitle = "company_title"
         
     }
 }

@@ -82,7 +82,11 @@ class ProfileViewController<ProfileUser: UserModelType>: ContentViewController<P
         collectionView.delegate = self
         
         collectionView.reloadData()
-        
+       
+        headerView.editButton.addAction { [unowned self] in
+            AppDelegate.shared.router.trigger(.chooseUserType)
+            self.preferencesManager.didTappedEditProfile = true
+        }
     }
     
     fileprivate func setupItems(with result: Result<ProfileUser, Error>) -> [ProfileMenuItem] {
@@ -91,7 +95,7 @@ class ProfileViewController<ProfileUser: UserModelType>: ContentViewController<P
            asInteranl == .unAuthenticated {
         
             
-            let loginMenuItem = ProfileMenuItem(identifier: .login, title: "Login", image: UIImage(named: "next-selected"), style: .normal) {
+            let loginMenuItem = ProfileMenuItem(identifier: .login, title: "Login", image: UIImage(named: "next-selected"), style: .normal) { [weak self] in
                 AppDelegate.shared.router.trigger(.chooseSignInMethod)
             }
             

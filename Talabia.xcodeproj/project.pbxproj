@@ -31,6 +31,8 @@
 		C9A8046E26209F5900120D59 /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8046D26209F5800120D59 /* BannerCollectionViewCell.swift */; };
 		C9A804AF2622351800120D59 /* TextSignUpValedaation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A804AE2622351600120D59 /* TextSignUpValedaation.swift */; };
 		C9A804B7262316FD00120D59 /* TextFieldMaxExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A804B6262316FD00120D59 /* TextFieldMaxExtention.swift */; };
+		C9B96197265261D700A48893 /* CompanyMoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B96196265261D700A48893 /* CompanyMoreInfoViewController.swift */; };
+		C9B9619B2652643000A48893 /* CompanyMoreInfoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B9619A2652643000A48893 /* CompanyMoreInfoContentView.swift */; };
 		C9CF4FEB26145CFC003DF594 /* test model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CF4FEA26145CFC003DF594 /* test model.swift */; };
 		C9D54D3926369FC400229247 /* FavoritsProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D54D3826369FC400229247 /* FavoritsProductCollectionViewCell.swift */; };
 		C9D54D3E2637423D00229247 /* FavouritsCompaniesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D54D3D2637423D00229247 /* FavouritsCompaniesCollectionViewCell.swift */; };
@@ -490,6 +492,8 @@
 		C9A8046D26209F5800120D59 /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewCell.swift; sourceTree = "<group>"; };
 		C9A804AE2622351600120D59 /* TextSignUpValedaation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSignUpValedaation.swift; sourceTree = "<group>"; };
 		C9A804B6262316FD00120D59 /* TextFieldMaxExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldMaxExtention.swift; sourceTree = "<group>"; };
+		C9B96196265261D700A48893 /* CompanyMoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyMoreInfoViewController.swift; sourceTree = "<group>"; };
+		C9B9619A2652643000A48893 /* CompanyMoreInfoContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyMoreInfoContentView.swift; sourceTree = "<group>"; };
 		C9CF4FEA26145CFC003DF594 /* test model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "test model.swift"; sourceTree = "<group>"; };
 		C9D54D3826369FC400229247 /* FavoritsProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritsProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		C9D54D3D2637423D00229247 /* FavouritsCompaniesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritsCompaniesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -993,8 +997,18 @@
 			children = (
 				C9976D2F2628183D00DAEA9E /* AllCompaniesViewController.swift */,
 				C98C93EE262D62710073A25A /* CompanyDetailsViewController.swift */,
+				C9B961952652615C00A48893 /* CompanyMoreInformation */,
 			);
 			path = Company;
+			sourceTree = "<group>";
+		};
+		C9B961952652615C00A48893 /* CompanyMoreInformation */ = {
+			isa = PBXGroup;
+			children = (
+				C9B96196265261D700A48893 /* CompanyMoreInfoViewController.swift */,
+				C9B9619A2652643000A48893 /* CompanyMoreInfoContentView.swift */,
+			);
+			path = CompanyMoreInformation;
 			sourceTree = "<group>";
 		};
 		C9EFA69426411EE1009BF6F9 /* Banner Page */ = {
@@ -2979,6 +2993,7 @@
 				C9D54D3E2637423D00229247 /* FavouritsCompaniesCollectionViewCell.swift in Sources */,
 				E429849F258DB0F000818E09 /* CLScreensSection.swift in Sources */,
 				E47A063D259876B400654953 /* MarketStoreLocationFIeldsContentView.swift in Sources */,
+				C9B9619B2652643000A48893 /* CompanyMoreInfoContentView.swift in Sources */,
 				E492903D259FF50700B2B67B /* DistributorsCoordinator.swift in Sources */,
 				E47E010325926B2B00FC737A /* SelectExternalViewController.swift in Sources */,
 				E42B636225E6D4DF007C0718 /* OrderHistoryViewController.swift in Sources */,
@@ -2997,6 +3012,7 @@
 				C9EFA69A26414B8A009BF6F9 /* BannerPageCoordinator.swift in Sources */,
 				E4C1389925833B7800D951F3 /* BaseOprationCollectionViewCell.swift in Sources */,
 				E4DBD72525AA46A9002BFEEA /* ProductUnit.swift in Sources */,
+				C9B96197265261D700A48893 /* CompanyMoreInfoViewController.swift in Sources */,
 				E4E1977625C32FE800354BB6 /* UnAuthenticatedStateView.swift in Sources */,
 				E48C27C42569DA9F006E01FB /* LocationSearchFieldType.swift in Sources */,
 				C98B1B782611C26500F3770E /* chooseSigninOrSignUpViewController.swift in Sources */,

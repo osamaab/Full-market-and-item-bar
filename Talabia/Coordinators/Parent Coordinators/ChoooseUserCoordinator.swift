@@ -24,6 +24,7 @@ protocol ChooseUserCoordinatorDelegate: class {
 
 class ChoooseUserCoordinator: NavigationCoordinator<ChooseUserRoute> {
     fileprivate var currentFlowCoordinator: Presentable?
+    let preferencesManager = UserDefaultsPreferencesManager.shared
     struct Output {
         let userType: UserType
         let categories: [MainCategory]
@@ -97,6 +98,11 @@ extension ChoooseUserCoordinator: SubCategoriesPickerViewControllerDelegate {
     func subCategoriesViewController(_ sender: SubCategoriesPickerViewController, didFinishWith categories: [SubCategory]) {
         self.coordinatorDelegate?.chooseUserCoordinator(self, didFinishWith: .init(userType: userType!, categories: sender.items, subCategories: categories))
         
-        
+        if self.preferencesManager.didTappedEditProfile == true {
+            AppDelegate.shared.router.trigger(.authentication(.signup(preferencesManager.userType!, preferencesManager.selectedCategories ?? [], preferencesManager.selectedSubCategories ?? [])))
+            preferencesManager.didTappedEditProfile = false
+        }else {
+            preferencesManager.didTappedEditProfile = false
+        }
     }
 }

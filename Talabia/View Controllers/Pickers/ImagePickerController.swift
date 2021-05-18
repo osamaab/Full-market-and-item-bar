@@ -99,19 +99,20 @@ extension ImagePickerController: UIImagePickerControllerDelegate {
 
     public func imagePickerController(_ picker: UIImagePickerController,
                                       didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        self.delegate?.editImagePickerController(self, didFinishWith: info)
+        
         guard let image = info[.originalImage] as? UIImage else {
             return self.pickerController(picker, didSelect: nil)
         }
-        
-        picker.dismiss(animated: true) { [weak self] in
-            self?.pickerController(picker, didSelect: image)
+
+        picker.dismiss(animated: true) { [unowned self] in
+            if let editedImage = info[.editedImage] as? UIImage {
+                self.delegate?.imagePickerController(self, didFinishWith: editedImage)
+            } else {
+                self.delegate?.imagePickerController(self, didFinishWith: image)
+            }
         }
     }
-//    public func editImagePickerController(_ sender: ImagePickerController, didFinishWith info: [UIImagePickerController.InfoKey: Any]) {
-//        guard let image = info[.originalImage] as? UIImage else {
-//            return self.pickerController(picker, didSelect: nil)
-//        }
-//    }
 }
 
 extension ImagePickerController: UINavigationControllerDelegate { }

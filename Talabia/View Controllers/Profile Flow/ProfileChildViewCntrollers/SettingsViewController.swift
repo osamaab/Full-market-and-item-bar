@@ -15,6 +15,7 @@ class SettingsViewController<ProfileUser: UserModelType>: ContentViewController<
     lazy var topView: ProfileSettingView = .init()
     var menuItems: [ProfileMenuItem] = []
     var isSelected = false
+    let preferencesManager = UserDefaultsPreferencesManager.shared
     struct ProfileDefaultContentRepository: ContentRepositoryType {
         enum InternalErrorType: String, Error {
             case unAuthenticated
@@ -43,6 +44,7 @@ class SettingsViewController<ProfileUser: UserModelType>: ContentViewController<
         title = "Settings"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back"), action: {            self.navigationController?.popViewController(animated: true)
         })
+        hidesBottomBarWhenPushed = true
         view.subviewsPreparedAL {
             topView
             collectionView
@@ -72,7 +74,7 @@ class SettingsViewController<ProfileUser: UserModelType>: ContentViewController<
                 UIView.appearance().semanticContentAttribute = .forceLeftToRight
                 topView.label.text = "English"
             }
-            AppDelegate.shared.router.trigger(.markets(UserType.company))
+            AppDelegate.shared.router.trigger(.markets(preferencesManager.userType!))
 
         }
         

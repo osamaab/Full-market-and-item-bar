@@ -15,9 +15,6 @@ final class UserDefaultsPreferencesManager {
     @ObjectStorage(key: .userType)
     var userType: UserType?
     
-    @ObjectStorage(key: .didTappedSignUp)
-    var didTappedSignUp: Bool?
-    
     @ObjectStorage(key: .selectedCategories)
     var selectedCategories: [MainCategory]?
     
@@ -32,6 +29,12 @@ final class UserDefaultsPreferencesManager {
     
     @ObjectStorage(key: .language)
     var currentLanguages: Language?
+    
+    @ObjectStorage(key: .didTappedSignUp)
+    var didTappedSignUp: Bool?
+    
+    @ObjectStorage(key: .didTappedEditProfile)
+    var didTappedEditProfile: Bool?
 }
 
 extension UserDefaultsPreferencesManager: PreferencesManagerType {

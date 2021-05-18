@@ -99,6 +99,9 @@ extension ImagesPickerView: UICollectionViewDataSource, UICollectionViewDelegate
 
 extension ImagesPickerView: ImagePickerControllerDelegate {
     func imagePickerController(_ sender: ImagePickerController, didFinishWith image: UIImage?) {
+        if self.items.count >= 7 {
+            return
+        }
         guard let image = image else {
             return
         }

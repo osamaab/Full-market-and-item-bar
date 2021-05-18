@@ -13,7 +13,7 @@ class NotficationViewController: UIViewController {
 
     lazy var collectionView: UICollectionView = configureCollectionView()
     var items: [String] = ["LsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjads","LsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjahdsLsdjadfhjads"] // For Test Purpose
-    
+    var counter = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Notifications"
@@ -33,8 +33,17 @@ func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection s
 }
  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueCell(cellClass: NotficationCollectionViewCell.self, for: indexPath)
-    let item = items[indexPath.item]
-    cell.titleLabel.text = item
+    // this counter just for test purpose
+    if counter == 0 {
+        let item = items[indexPath.item]
+        cell.titleLabel.text = item
+        counter += 1
+    }else {
+        let item = items[indexPath.item]
+        cell.titleLabel.text = item
+        cell.containerView.layer.borderWidth = 0
+    }
+    
     return cell
 }
 }
@@ -55,14 +64,14 @@ extension NotficationViewController: UICollectionViewDataSource, UICollectionVie
            heightDimension: .fractionalHeight(1.0))
          let ItemSpace = NSCollectionLayoutItem(layoutSize: itemSize)
         ItemSpace.contentInsets = NSDirectionalEdgeInsets(
-          top: 5,
+          top: 0,
           leading: 0,
-          bottom: 5,
+          bottom: 0,
           trailing: 0)
          //2
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalWidth(0.45))
+            heightDimension: .fractionalWidth(0.42))
          let group = NSCollectionLayoutGroup.horizontal(
            layoutSize: groupSize,
            subitem: ItemSpace,

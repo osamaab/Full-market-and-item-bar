@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import XCoordinator
+
+protocol ProductDetailsViewControllerDelegate: AnyObject {
+    func ProductDetailsViewControllerDidTapAdd(_ sender: ProductDetailsViewController, didFinishWith product: Product)
+}
 
 class ProductDetailsViewController: UIViewController {
     
@@ -14,6 +19,8 @@ class ProductDetailsViewController: UIViewController {
     let contentView: ProductDetailsContentView
     let product: Product
     var isSelected: Bool?
+    
+    weak var delegate: ProductDetailsViewControllerDelegate?
     
     @Injected var cartManager: CartManagerType
     @Injected var preferencesManager: DefaultPreferencesController
@@ -76,6 +83,8 @@ class ProductDetailsViewController: UIViewController {
             }else {
                 self.attemptToAddProduct(self.product)
                 self.isSelected = !self.isSelected!
+//                MarketAPI.companyMarket(self.product.companyId).request(Market.self)
+                self.delegate?.ProductDetailsViewControllerDidTapAdd(self, didFinishWith: self.product)
                 self.anmation()
             }
         }

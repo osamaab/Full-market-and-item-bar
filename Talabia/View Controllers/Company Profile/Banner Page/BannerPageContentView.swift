@@ -13,7 +13,7 @@ import Stevia
 class BannerPageContentView: BasicViewWithSetup{
     
     let imageView = UIImageView().then {
-        $0.contentMode = .scaleAspectFit
+        $0.contentMode = .scaleToFill
         $0.image = UIImage(named: "banner_PlaceHolder")
     }
     let titleLabel = UILabel().then {
@@ -63,7 +63,8 @@ class BannerPageContentView: BasicViewWithSetup{
         contanerView.leading(0).trailing(0)
         
         imageView.Width == contanerView.Width
-        imageView.Height == contanerView.Height
+//        imageView.Height == contanerView.Height
+        imageView.height(136)
         imageView.top(0).leading(0).trailing(0)
         imageView.height(136)
 

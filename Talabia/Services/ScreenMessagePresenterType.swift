@@ -29,7 +29,7 @@ public enum TaskMessageType {
 /**
  A type that presents a message into the screen, using alert or toast like.
  */
-protocol ScreenMessagePresenterType: class {
+protocol ScreenMessagePresenterType: AnyObject {
     func show(message: String, messageType: TaskMessageType)
 }
 

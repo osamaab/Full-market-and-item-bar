@@ -8,7 +8,7 @@
 
 import Foundation
 import Moya
-//import OSLog
+import OSLog
 
 struct RequestLoggerPlugin: PluginType {
     func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {

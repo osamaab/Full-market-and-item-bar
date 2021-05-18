@@ -47,7 +47,7 @@ class CartItemsViewController: UIViewController {
         
         
         collectionView.Top == view.safeAreaLayoutGuide.Top
-        collectionView.leading(0).trailing(0).bottom(0)
+        collectionView.leading(0).trailing(0).bottom(10)
         cartSummaryView.leading(0).trailing(0).bottom(3)
         
         cartSummaryView.add(gesture: .tap(1)) { [unowned self] in
@@ -63,6 +63,11 @@ class CartItemsViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         applySnapshot()
+        if let tabItems = self.tabBarController?.tabBar.items {
+        let tabItem = tabItems[1]
+        tabItem.badgeValue = "\(self.cartManager.orderedItems().count)"
+        tabItem.badgeValue = nil
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -94,13 +99,13 @@ class CartItemsViewController: UIViewController {
             snapshot.appendItems(Array(products))
             self.dataSource.apply(snapshot)
             self.updateTotalSummary()
-            if let tabItems = self.tabBarController?.tabBar.items {
-            let tabItem = tabItems[1]
-            tabItem.badgeValue = "\(self.cartManager.orderedItems().count)"
-                if self.cartManager.orderedItems().count == 0 {
-                    tabItem.badgeValue = nil
-                }
-            }
+//            if let tabItems = self.tabBarController?.tabBar.items {
+//            let tabItem = tabItems[1]
+//            tabItem.badgeValue = "\(self.cartManager.orderedItems().count)"
+//                if self.cartManager.orderedItems().count == 0 {
+//                    tabItem.badgeValue = nil
+//                }
+//            }
             
         }
     }
@@ -127,7 +132,7 @@ extension CartItemsViewController {
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
         
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = .init(top: 0, leading: 0, bottom: 20, trailing: 0)
+        section.contentInsets = .init(top: 0, leading: 0, bottom: 40, trailing: 0)
         
         return UICollectionViewCompositionalLayout(section: section)
     }
